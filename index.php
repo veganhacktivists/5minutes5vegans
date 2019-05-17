@@ -149,7 +149,7 @@ header('Location: https://5minutes5vegans.org/mobile');
 <div class="redditnotice">
 <i class="fas fa-info-circle"></i>&nbsp;&nbsp;<b>/r/Vegan</b> shows a thread with people we think need your help!&nbsp;&nbsp;<i class="fas fa-user"></i>&nbsp;&nbsp;<a href="https://www.reddit.com/" target="_blank"><u>Register for a reddit.com account</u></a>!
 </div>
-<iframe is="x-frame-bypass" src="https://www.reddit.com/r/vegan/comments/b8gonx/random_thoughts_small_questions_and_general/?sort=new" style="width:100%; height:100vh;" frameborder="0"></iframe>
+<iframe is="x-frame-bypass" src="https://www.reddit.com/r/vegan/comments/bhnuy7/random_thoughts_small_questions_and_general/?sort=new" style="width:100%; height:100vh;" frameborder="0"></iframe>
 </div>
 
 <!-- load tumblr -->
