@@ -171,7 +171,7 @@ header('Location: https://5minutes5vegans.org/mobile');
 Whoa! Thank you so much for taking an interest in supporting us & our activism! We really appreciate it. ❤️<br><br>
 This project is one of many from <a href="http://YouAreTheirVoice.com" target="_blank" style="color: #e6461a;">YouAreTheirVoice.com</a> and we're 100% funded by <a href="https://www.patreon.com/youaretheirvoice" target="_blank" style="color: #e6461a;">our Patreon</a> supporters. It doesn't matter whether it' $1 or $5, any amount is appreciated beyond words... plus you also get goodies!
 <br><br>
-Special thanks to <a href="http://YourVeganFallacyIs.com" target="_blank" style="color: #e6461a;">YourVeganFallacyIs</a> for lending his coding knowledge, and more importantly, his time. Last but not least a very special thanks to <a href="https://twitter.com/plorry" target="_blank" style="color: #e6461a;">@Plorry</a> (Andrew Gardner) for his bot <a href="https://twitter.com/vegassist" target="_blank" style="color: #e6461a;">@VegAssist</a>!
+A very special thanks to <a href="https://twitter.com/plorry" target="_blank" style="color: #e6461a;">@Plorry</a> (Andrew Gardner) for his bot <a href="https://twitter.com/vegassist" target="_blank" style="color: #e6461a;">@VegAssist</a>!
 <br>
 <center style="margin-top: -20px;"><a href="https://www.patreon.com/youaretheirvoice" target="_blank"><img src="https://5minutes5vegans.org/images/patreon-button.png" alt="Patreon Donation Button"></a></center>
 <br>
