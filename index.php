@@ -169,11 +169,11 @@ header('Location: https://5minutes5vegans.org/mobile');
 <tr>
 <td style="width: 60%;"><p style="margin-top: 40px !important;background-color: #ffffff;padding: 0px 20px 5px 20px;margin-top: 14px;border-radius: 25px;color: #000;padding: 32px;margin: 52px;">
 Whoa! Thank you so much for taking an interest in supporting us & our activism! We really appreciate it. ❤️<br><br>
-This project is one of many from <a href="http://YouAreTheirVoice.com" target="_blank" style="color: #e6461a;">YouAreTheirVoice.com</a> and we're 100% funded by <a href="https://www.patreon.com/youaretheirvoice" target="_blank" style="color: #e6461a;">our Patreon</a> supporters. It doesn't matter whether it' $1 or $5, any amount is appreciated beyond words... plus you also get goodies!
+This project is one of many from <a href="http://VeganHacktivists.org" target="_blank" style="color: #e6461a;">VeganHacktivists.org</a> and we're 100% funded by <a href="https://www.patreon.com/veganhacktivists" target="_blank" style="color: #e6461a;">our Patreon</a> supporters. It doesn't matter whether it' $1 or $5, any amount is appreciated beyond words... plus you also get goodies!
 <br><br>
 A very special thanks to <a href="https://twitter.com/plorry" target="_blank" style="color: #e6461a;">@Plorry</a> (Andrew Gardner) for his bot <a href="https://twitter.com/vegassist" target="_blank" style="color: #e6461a;">@VegAssist</a>!
 <br>
-<center style="margin-top: -20px;"><a href="https://www.patreon.com/youaretheirvoice" target="_blank"><img src="https://5minutes5vegans.org/images/patreon-button.png" alt="Patreon Donation Button"></a></center>
+<center style="margin-top: -20px;"><a href="https://www.patreon.com/veganhacktivists" target="_blank"><img src="https://5minutes5vegans.org/images/patreon-button.png" alt="Patreon Donation Button"></a></center>
 <br>
 </p>
 </td>
@@ -186,7 +186,7 @@ A very special thanks to <a href="https://twitter.com/plorry" target="_blank" st
 
 <!-- bottom notice bar-->
 <div style="position: sticky;bottom: -1;width: 100%;padding: 5px 0px 5px 0px;  background-color: #3b5998; color:fff;">
-<i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;<b>Dont see anything?</b> Disable browser extensions that could be blocking our scripts!&nbsp;&nbsp;<i class="fas fa-info-circle"></i>&nbsp;&nbsp;<a href="https://youaretheirvoice.com/contact?5m5v" target="_blank"><u>Contact</u></a> or <a href="https://www.patreon.com/youaretheirvoice" target="_blank"><u>Donate</u></a>.
+<i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;<b>Dont see anything?</b> Disable browser extensions that could be blocking our scripts!&nbsp;&nbsp;<i class="fas fa-info-circle"></i>&nbsp;&nbsp;<a href="https://youaretheirvoice.com/contact?5m5v" target="_blank"><u>Contact</u></a> or <a href="https://www.patreon.com/veganhacktivists" target="_blank"><u>Donate</u></a>.
 </div>
 
 </div>
