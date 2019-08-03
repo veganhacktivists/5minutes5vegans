@@ -8,13 +8,30 @@ require('./bootstrap');
 
 var startTime, timerInterval;
 $(() => {
+    startTimer();
+    $('.timer-restart').click(startTimer);
+});
+
+function startTimer() {
+
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 1000);
-});
+
+    $('.timer-complete').hide(400);
+    $('.timer-section').show(400);
+}
 
 function updateTimer() {
 
-    var time = new Date(5 * 60 * 1000 + startTime - Date.now())
-    $('.timer-display').html(time.getMinutes() + ':' + time.getSeconds());
+    var timestamp = 5 * 60 * 1000 + startTime - Date.now();
+    if( timestamp < 0 ) {
+        clearInterval( timerInterval );
+        $('.timer-section').hide(400);
+        $('.timer-complete').show(400);
+        return;
+    }
+
+    var time = new Date(timestamp)
+    $('.timer-display').html(time.getMinutes() + ':' + ('0'+ time.getSeconds()).substr(-2));
 
 }
