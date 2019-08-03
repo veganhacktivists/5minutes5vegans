@@ -5,3 +5,16 @@
  */
 
 require('./bootstrap');
+
+var startTime, timerInterval;
+$(() => {
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 1000);
+});
+
+function updateTimer() {
+
+    var time = new Date(5 * 60 * 1000 + startTime - Date.now())
+    $('.timer-display').html(time.getMinutes() + ':' + time.getSeconds());
+
+}

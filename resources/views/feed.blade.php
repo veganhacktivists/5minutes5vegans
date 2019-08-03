@@ -7,7 +7,7 @@
     <hr/>
     I wanna go vegan, but cheese.
     <hr/>
-    I wanna go vegan, but my brain is to clogged by cholesterol to think logically.
+    I wanna go vegan, but my brain is too clogged by cholesterol to think logically.
 </div>
 
 @endsection

@@ -7,13 +7,17 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.logo {
-    width: 300px;
-}
-
 .card {
 
     @extend .text-light;
     background-color: $modal-bg;
 
+}
+
+.bg-pink {
+    background-color: #ff0097;
+}
+
+.logo {
+    width: 120%;
 }

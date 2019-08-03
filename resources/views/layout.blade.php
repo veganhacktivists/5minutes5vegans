@@ -23,7 +23,7 @@
 
             <div class="row">
 
-                <div class="col-2 p-2">
+                <div class="col-5 p-3">
 
                     @include('inc.sidebar')
 
@@ -33,11 +33,11 @@
 
                     <div class="d-flex flex-column">
 
-                        <div class="p-2">
+                        <div class="p-3">
                             @include('inc.nav')
                         </div>
 
-                        <div class="flex-grow p-2">
+                        <div class="flex-grow p-3">
                             @yield('main')
                         </div>
 
