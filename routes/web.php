@@ -11,6 +11,14 @@
 |
 */
 
-Auth::routes();
 
-Route::view('/', 'feed')->name('feed');
+Route::group( [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
+    ], function () {
+
+    Auth::routes();
+
+    Route::view('/', 'feed')->name('feed');
+
+});

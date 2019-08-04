@@ -34,7 +34,7 @@
                     <div class="d-flex flex-column">
 
                         <div class="p-3">
-                            @include('inc.nav')
+                            @include('inc.navbar')
                         </div>
 
                         <div class="flex-grow p-3">

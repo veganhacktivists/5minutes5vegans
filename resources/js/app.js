@@ -16,7 +16,7 @@ function startTimer() {
 
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 1000);
-
+    $('.timer-display').html('5:00')
     $('.timer-complete').hide(400);
     $('.timer-section').show(400);
 }
