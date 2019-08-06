@@ -18,4 +18,9 @@
     </div>
 </h3>
 <hr/>
-@include('verbiage.index')
+
+@if(isset($verbiages))
+    @include('verbiage.index')
+@else
+    HIiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+@endif

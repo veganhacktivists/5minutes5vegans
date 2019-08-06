@@ -1,1 +1,3 @@
-<span class="text-light">Some mad verbiage texts here that people can copy-paste. That'd be neat.</span>
+<div class="d-flex align-content-start flex-wrap">
+    @each( 'verbiage.verbiage', $verbiages, 'verbiage' );
+</div>

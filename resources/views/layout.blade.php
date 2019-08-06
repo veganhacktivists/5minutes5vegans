@@ -37,7 +37,7 @@
                             @include('inc.navbar')
                         </div>
 
-                        <div class="flex-grow p-3">
+                        <div class="flex-grow">
                             @yield('main')
                         </div>
 
