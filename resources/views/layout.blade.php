@@ -21,7 +21,7 @@
 
         <div class="container-fluid">
 
-            <div class="row">
+            <div class="row no-gutters">
 
                 <div class="col-5 p-3">
 

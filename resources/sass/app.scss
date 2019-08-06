@@ -25,3 +25,8 @@
 .timer-complete {
     display: none;
 }
+
+.verbiage-link:hover {
+    @extend .text-success;
+    cursor: pointer;
+}

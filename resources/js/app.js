@@ -6,6 +6,11 @@
 
 require('./bootstrap');
 
+
+/*********
+ * TIMER *
+ *********/
+
 var startTime, timerInterval;
 $(() => {
     startTimer();
@@ -35,3 +40,16 @@ function updateTimer() {
     $('.timer-display').html(time.getMinutes() + ':' + ('0'+ time.getSeconds()).substr(-2));
 
 }
+
+
+
+/************
+ * VERBIAGE *
+ ************/
+
+$(() => {
+    $('.verbiage-link').click(function(e){
+        console.log(e);
+        $('.verbiage-message').val(e.currentTarget.dataset.verbiage);
+    });
+});
