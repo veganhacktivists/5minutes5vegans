@@ -69,10 +69,10 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password-confirm', __('Confirm Password'), [ 'class' => 'col-md-4 col-form-label text-md-right' ]) }}
+                            {{ Form::label('password_confirmation', __('Confirm Password'), [ 'class' => 'col-md-4 col-form-label text-md-right' ]) }}
 
                             <div class="col-md-6">
-                                {{ Form::password('password-confirm', [
+                                {{ Form::password('password_confirmation', [
                                     'class' => 'form-control' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
                                     'required' => true,
                                 ]) }}
