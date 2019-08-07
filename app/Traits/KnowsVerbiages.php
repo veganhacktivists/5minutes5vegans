@@ -10,7 +10,6 @@
 
             switch( \App::getLocale() ) {
                 case 'en-GB':
-                    return $this->getEnglishVerbiages();
                 default:
                     return $this->getEnglishVerbiages();
             }
