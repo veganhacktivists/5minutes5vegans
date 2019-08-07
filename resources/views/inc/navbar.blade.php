@@ -27,6 +27,14 @@
         </a>
     </div>
     <div class="col-auto">
-        <span class="">{{ link_to_route( 'register', __('Register') ) }} {{__('or')}} {{ link_to_route( 'login', __('Login') ) }}</span>
+        @guest
+            {{ link_to_route( 'register', __('Register') ) }} {{__('or')}} {{ link_to_route( 'login', __('Login') ) }}
+        @endguest
+
+        @auth
+        {{ Form::open([ 'route' => 'logout']) }}
+            <button type="submit" class="btn btn-primary">{{__('Logout')}}</button>
+        {{ Form::close() }}
+        @endauth
     </div>
 </div>
