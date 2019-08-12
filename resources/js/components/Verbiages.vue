@@ -71,7 +71,7 @@
 
             <textarea v-model="selected.message" class="col w-100 p-3" rows="4" v-bind:readonly="!editing"></textarea>
 
-            <div class="col-auto d-flex flex-column justify-content-between">
+            <div v-if="customVerbiages" class="col-auto d-flex flex-column justify-content-between">
                 <button
                     v-if="!editing"
                     class="btn btn-primary"
@@ -132,6 +132,7 @@
             return {
                 defaultVerbiages: this.$parent.defaultVerbiages,
                 customVerbiages: this.$parent.customVerbiages,
+                authenticated: this.$parent.authenticated,
                 custom: false,
                 editing: false,
                 creating: false,
