@@ -19,8 +19,8 @@
 </h3>
 <hr/>
 
-@if(isset($verbiages))
-    @include('verbiage.index')
+@if(route::is('feed'))
+    @include('inc.verbiage')
 @else
     HIiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 @endif

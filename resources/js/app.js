@@ -5,7 +5,9 @@
  */
 
 require('./bootstrap');
-
+window.Vue = require('vue')
+require('vue-resource')
+require('fontawesome-iconpicker');
 
 /*********
  * TIMER *
@@ -15,6 +17,17 @@ var startTime, timerInterval;
 $(() => {
     startTimer();
     $('.timer-restart').click(startTimer);
+
+    let token = document.head.querySelector('meta[name="csrf-token"]');
+
+    if (token) {
+        Vue.http.interceptors.push((request, next) => {
+            request.headers.set('X-CSRF-TOKEN', token.content);
+            next();
+        });
+    } else
+        console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+
 });
 
 function startTimer() {
@@ -41,15 +54,5 @@ function updateTimer() {
 
 }
 
+Vue.component('verbiages', require('./components/Verbiages.vue').default)
 
-
-/************
- * VERBIAGE *
- ************/
-
-$(() => {
-    $('.verbiage-link').click(function(e){
-        console.log(e);
-        $('.verbiage-message').val(e.currentTarget.dataset.verbiage);
-    });
-});
