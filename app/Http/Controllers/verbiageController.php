@@ -19,8 +19,7 @@ class VerbiageController extends Controller
     public function store( Request $request ) {
 
         $data = $request->validate($this::verbiageRules);
-        $data['user_id'] = Auth::id();
-        $verbiage = Verbiage::Create( $data );
+        $verbiage = Auth::user()->verbiages()->create($data);
 
         return response()->json( [ 'success' => true, 'id' => $verbiage->id ] );
     }
@@ -28,8 +27,7 @@ class VerbiageController extends Controller
     public function update( Request $request, Verbiage $verbiage ) {
 
         $data = $request->validate($this::verbiageRules);
-        $verbiage->fill( $data );
-        $verbiage->save();
+        $verbiage->update( $data );
 
         return response()->json( [ 'success' => true ] );
     }
