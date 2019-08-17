@@ -32,7 +32,6 @@ class VerbiageController extends Controller
 
     public function destroy( Verbiage $verbiage ) {
 
-        sleep(10);
         $verbiage->delete();
 
         return response()->json( [ 'success' => true ] );
