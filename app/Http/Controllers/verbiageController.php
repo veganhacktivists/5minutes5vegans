@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Traits\KnowsVerbiages;
+use Illuminate\Support\Facades\Auth;
 use App\Verbiage;
 
 class VerbiageController extends Controller
@@ -17,7 +16,6 @@ class VerbiageController extends Controller
     ];
 
     public function store( Request $request ) {
-
         $data = $request->validate($this::verbiageRules);
         $verbiage = Auth::user()->verbiages()->create($data);
 
@@ -34,6 +32,7 @@ class VerbiageController extends Controller
 
     public function destroy( Verbiage $verbiage ) {
 
+        sleep(10);
         $verbiage->delete();
 
         return response()->json( [ 'success' => true ] );

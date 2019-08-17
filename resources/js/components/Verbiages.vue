@@ -35,8 +35,8 @@
                         <span class="caret"></span>
                     </button>
                     -->
-                    <input class="form-control" type="text" v-model="selected.icon"/>
-                    <input class="form-control" type="text" v-model="selected.title"/>
+                    <input v-bind:disabled="busy" class="form-control" type="text" v-model="selected.icon"/>
+                    <input v-bind:disabled="busy" class="form-control" type="text" v-model="selected.title"/>
                 </div>
                 <div
                     v-else
@@ -69,7 +69,13 @@
         </div>
         <div class="p-2 row">
 
-            <textarea v-model="selected.message" class="col w-100 p-3" rows="4" v-bind:readonly="!editing"></textarea>
+            <textarea
+                v-model="selected.message"
+                class="col w-100 p-3"
+                rows="4"
+                v-bind:readonly="!editing"
+                v-bind:disabled="busy"
+            ></textarea>
 
             <div v-if="customVerbiages" class="col-auto d-flex flex-column justify-content-between">
                 <button
@@ -98,7 +104,7 @@
                     Edit
                 </button>
                 <button
-                    v-if="selected.id && editing"
+                    v-if="(selected.id && editing) || creating"
                     class="btn btn-warning"
                     v-on:click="endEditing"
                     v-bind:disabled="busy"
@@ -123,7 +129,14 @@
 
 <script>
 
-    var defaultMessage = 'Click any of the subjects above to get a clear-cut message to swiftly copy and send.';
+    const defaultMessage = 'Click any of the subjects above to get a clear-cut message to swiftly copy and send.';
+
+    Vue.http.interceptors.push(function(req) {
+        this.busy = true;
+        return function( res ) {
+            this.busy = false;
+        }
+    });
 
     export default {
 
@@ -142,11 +155,16 @@
 
         },
 
+        created: function() {
+
+
+        },
+
         methods: {
 
             startEditing: function() {
                 this.editing = true;
-                this.backup = [ this.selected.icon, this.selected.title, this.selected.message ];
+                this.backup = {...this.selected};
             },
 
             endEditing: function() {
@@ -159,11 +177,9 @@
                     if(!this.customVerbiages.length)
                         this.custom = false;
 
-                } else {
-                    this.selected.icon = this.backup[0];
-                    this.selected.title = this.backup[1];
-                    this.selected.message = this.backup[2];
-                }
+                } else
+                    this.selected = this.backup;
+
                 this.editing = false;
 
             },
@@ -180,56 +196,47 @@
                 this.creating = true;
                 this.editing = true;
                 this.custom = true;
-                this.selected = { id: -1, title: 'New message', icon: 'fas fa-leaf', message: this.selected.message };
+                this.selected = { title: 'New message', icon: 'fas fa-leaf', message: this.selected.message };
                 this.customVerbiages.push( this.selected );
 
             },
 
             saveVerbiage: function() {
 
-                this.busy = true;
                 if( this.creating )
                     this.$http.post('/verbiage/', this.selected).then( r => {
                         this.selected.id = r.body.id;
                         this.creating = false;
-                        this.busy = false;
-                    }, r => {
-                        alert(r.body.message);
-                        console.log(r);
-                        this.busy = false;
-                    });
+                        this.editing = false;
+                    }, this.failedRequest);
                 else
                     this.$http.put('/verbiage/' + this.selected.id, this.selected).then( r => {
-                        this.busy = false;
-                    }, r => {
-                        alert(r.body.message);
-                        console.log(r);
-                        this.busy = false;
-                    });
+                        this.editing = false;
+                    }, this.failedRequest);
 
-                this.editing = false;
             },
 
             deleteVerbiage: function() {
 
-                if(!confirm('Are you sure you want to delete "' + this.selected.title + '"?'))
+                if(!confirm(`Are you sure you want to delete '${this.selected.title}'?`))
                     return
 
-                this.busy = true;
-                var index = this.customVerbiages.indexOf(this.selected);
+                const index = this.customVerbiages.indexOf(this.selected);
+
 
                 this.$http.delete('/verbiage/' + this.selected.id).then( r => {
                     this.customVerbiages.splice(index, 1);
-                    this.busy = false;
                     if(!this.customVerbiages.length)
                         this.custom = false;
-                }, r => {
-                    alert(r.body.message);
-                    console.error(r);
-                    this.busy = false;
-                });
+                }, this.failedRequest);
 
             },
+
+            failedRequest: function(r) {
+                alert(r.body.message);
+                console.error(r);
+            }
+
         },
 
         directives: {
