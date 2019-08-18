@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function verbiages() {
-        return $this->hasMany('App\verbiage');
+        return $this->hasMany('App\Verbiage');
     }
 
 }

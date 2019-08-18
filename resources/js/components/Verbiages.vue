@@ -1,8 +1,6 @@
 <template>
-
     <div>
         <div class="row px-3">
-
             <div
                 v-if="!custom"
                 v-for="verbiage in defaultVerbiages"
@@ -14,15 +12,8 @@
                 {{ verbiage.title }}
             </div>
 
-            <div
-                v-if="custom"
-                v-for="verbiage in customVerbiages"
-                class="text-white col-3"
-            >
-                <div
-                    class="form-row"
-                    v-if="selected == verbiage && editing"
-                >
+            <div v-if="custom" v-for="verbiage in customVerbiages" class="text-white col-3">
+                <div class="form-row" v-if="selected == verbiage && editing">
                     <!--
                     <button
                         v-iconpicker
@@ -35,8 +26,19 @@
                         <span class="caret"></span>
                     </button>
                     -->
-                    <input v-bind:disabled="busy" class="form-control" type="text" v-model="selected.icon"/>
-                    <input v-bind:disabled="busy" class="form-control" type="text" v-model="selected.title"/>
+                    <input
+                        v-bind:disabled="busy"
+                        class="form-control"
+                        type="text"
+                        v-model="selected.icon"
+                        v-iconpicker
+                    />
+                    <input
+                        v-bind:disabled="busy"
+                        class="form-control"
+                        type="text"
+                        v-model="selected.title"
+                    />
                 </div>
                 <div
                     v-else
@@ -47,7 +49,6 @@
                     {{ verbiage.title }}
                 </div>
             </div>
-
         </div>
 
         <div class="pt-2 row text-center text-white" v-if="customVerbiages.length">
@@ -56,19 +57,14 @@
                 v-bind:class="{ 'bg-primary': !custom, 'bg-secondary': custom }"
                 v-on:click="custom = false"
                 class="col-6"
-            >
-                Default messages
-            </div>
+            >Default messages</div>
             <div
                 v-bind:class="{ 'bg-primary': custom, 'bg-secondary': !custom }"
                 v-on:click="custom = true"
                 class="col-6"
-            >
-                Custom messages
-            </div>
+            >Custom messages</div>
         </div>
         <div class="p-2 row">
-
             <textarea
                 v-model="selected.message"
                 class="col w-100 p-3"
@@ -83,169 +79,142 @@
                     class="btn btn-primary"
                     v-on:click="createVerbiage"
                     v-bind:disabled="busy"
-                >
-                    New
-                </button>
+                >New</button>
                 <button
                     v-if="editing"
                     class="btn btn-success"
                     v-on:click="saveVerbiage"
                     v-bind:disabled="busy"
-                >
-                    Save
-                </button>
+                >Save</button>
 
                 <button
                     v-if="selected.id && !editing"
                     v-on:click="startEditing"
                     class="btn btn-primary"
                     v-bind:disabled="busy"
-                >
-                    Edit
-                </button>
+                >Edit</button>
                 <button
                     v-if="(selected.id && editing) || creating"
                     class="btn btn-warning"
                     v-on:click="endEditing"
                     v-bind:disabled="busy"
-                >
-                    Cancel
-                </button>
+                >Cancel</button>
 
                 <button
                     v-if="selected.id && !creating"
                     class="btn btn-danger"
                     v-on:click="deleteVerbiage"
                     v-bind:disabled="busy"
-                >
-                    Delete
-                </button>
+                >Delete</button>
             </div>
         </div>
-
     </div>
-
 </template>
 
 <script>
+const defaultMessage =
+    'Click any of the subjects above to get a clear-cut message to swiftly copy and send.'
 
-    const defaultMessage = 'Click any of the subjects above to get a clear-cut message to swiftly copy and send.';
+Vue.http.interceptors.push(function(req) {
+    this.busy = true
+    return function(res) {
+        this.busy = false
+    }
+})
 
-    Vue.http.interceptors.push(function(req) {
-        this.busy = true;
-        return function( res ) {
-            this.busy = false;
+export default {
+    data: function() {
+        return {
+            defaultVerbiages: this.$parent.defaultVerbiages,
+            customVerbiages: this.$parent.customVerbiages,
+            authenticated: this.$parent.authenticated,
+            custom: false,
+            editing: false,
+            creating: false,
+            busy: false,
+            selected: { message: defaultMessage },
         }
-    });
+    },
 
-    export default {
+    created: function() {},
 
-        data: function() {
-
-            return {
-                defaultVerbiages: this.$parent.defaultVerbiages,
-                customVerbiages: this.$parent.customVerbiages,
-                authenticated: this.$parent.authenticated,
-                custom: false,
-                editing: false,
-                creating: false,
-                busy: false,
-                selected: { 'message': defaultMessage }
-            };
-
+    methods: {
+        startEditing: function() {
+            this.editing = true
+            this.backup = { ...this.selected }
         },
 
-        created: function() {
+        endEditing: function() {
+            if (this.creating) {
+                this.selected = { message: defaultMessage }
+                this.customVerbiages.pop()
+                this.creating = false
 
+                if (!this.customVerbiages.length) this.custom = false
+            } else this.selected = this.backup
 
+            this.editing = false
         },
 
-        methods: {
+        selectVerbiage: function(verbiage) {
+            if (!this.editing) this.selected = verbiage
+        },
 
-            startEditing: function() {
-                this.editing = true;
-                this.backup = {...this.selected};
-            },
-
-            endEditing: function() {
-
-                if( this.creating ) {
-                    this.selected = { 'message': defaultMessage };
-                    this.customVerbiages.pop();
-                    this.creating = false;
-
-                    if(!this.customVerbiages.length)
-                        this.custom = false;
-
-                } else
-                    this.selected = this.backup;
-
-                this.editing = false;
-
-            },
-
-            selectVerbiage: function(verbiage) {
-
-                if( !this.editing )
-                    this.selected = verbiage;
-
-            },
-
-            createVerbiage: function() {
-
-                this.creating = true;
-                this.editing = true;
-                this.custom = true;
-                this.selected = { title: 'New message', icon: 'fas fa-leaf', message: this.selected.message };
-                this.customVerbiages.push( this.selected );
-
-            },
-
-            saveVerbiage: function() {
-
-                if( this.creating )
-                    this.$http.post('/verbiage/', this.selected).then( r => {
-                        this.selected.id = r.body.id;
-                        this.creating = false;
-                        this.editing = false;
-                    }, this.failedRequest);
-                else
-                    this.$http.put('/verbiage/' + this.selected.id, this.selected).then( r => {
-                        this.editing = false;
-                    }, this.failedRequest);
-
-            },
-
-            deleteVerbiage: function() {
-
-                if(!confirm(`Are you sure you want to delete '${this.selected.title}'?`))
-                    return
-
-                const index = this.customVerbiages.indexOf(this.selected);
-
-
-                this.$http.delete('/verbiage/' + this.selected.id).then( r => {
-                    this.customVerbiages.splice(index, 1);
-                    if(!this.customVerbiages.length)
-                        this.custom = false;
-                }, this.failedRequest);
-
-            },
-
-            failedRequest: function(r) {
-                alert(r.body.message);
-                console.error(r);
+        createVerbiage: function() {
+            this.creating = true
+            this.editing = true
+            this.custom = true
+            this.selected = {
+                title: 'New message',
+                icon: 'fas fa-leaf',
+                message: this.selected.message,
             }
-
+            this.customVerbiages.push(this.selected)
         },
 
-        directives: {
-            iconpicker: {
-                bind: function (el) {
-                    $(el).iconpicker()
-                }
-            }
-        }
+        saveVerbiage: function() {
+            if (this.creating)
+                this.$http.post('/verbiage/', this.selected).then((r) => {
+                    this.selected.id = r.body.id
+                    this.creating = false
+                    this.editing = false
+                }, this.failedRequest)
+            else
+                this.$http
+                    .put('/verbiage/' + this.selected.id, this.selected)
+                    .then((r) => {
+                        this.editing = false
+                    }, this.failedRequest)
+        },
 
-    };
+        deleteVerbiage: function() {
+            if (
+                !confirm(
+                    `Are you sure you want to delete '${this.selected.title}'?`,
+                )
+            )
+                return
+
+            const index = this.customVerbiages.indexOf(this.selected)
+
+            this.$http.delete('/verbiage/' + this.selected.id).then((r) => {
+                this.customVerbiages.splice(index, 1)
+                if (!this.customVerbiages.length) this.custom = false
+            }, this.failedRequest)
+        },
+
+        failedRequest: function(r) {
+            alert(r.body.message)
+            console.error(r)
+        },
+    },
+
+    directives: {
+        iconpicker: {
+            inserted: function(el) {
+                $(el).iconpicker()
+            },
+        },
+    },
+}
 </script>
