@@ -24,7 +24,7 @@ This contains the various phrases and sentences used throughout the project. Whe
 Add your new translation at the end of the list and don't forget to add a comma after the last item. Make sure that all the data is wrapped within { and } brackets.
 
 ## Tweet translations
-These translations have to be dynamic to bypass the Twitter spam filter when people keep copy-pasting them. To that end we use regex to construct these translations. Regex is normally used for pattern matching, but we use it for text generation through patterns instead, this may be a bit confusing. The gist is that our project takes the regex pattern and generates a text at random that could be matched by it.
+These translations have to be dynamic to bypass the Twitter spam filter when people keep copy-pasting them. To that end we use regular expressions (regex) to construct these translations. Regex is normally used for pattern matching, but we use it for text generation through patterns instead, this may be a bit confusing. The gist is that our project takes the regex pattern and generates a text at random that could be matched by it.
 For those unfamiliar with regex, these are the few things you should know to be able to do most translations:
  * A lot of non-alphanumeric characters have a meaning in regex, prefix them with a backslash (\\) to negate their meaning.
  * Parentheses mark parts of the text as a group.
