@@ -1,0 +1,39 @@
+.landing {
+  background-color: #d3ccbf;
+}
+
+.container-newsletter {
+  background-color: #bdddb1;
+  padding: 20px;
+  margin-left: 7rem;
+  border-bottom-right-radius: 15%;
+  height: 100%;
+  width: 46%;
+}
+
+.cover {
+  background: no-repeat center/cover;
+}
+
+.scroll .hero {
+  transform: scale(0.98);
+}
+
+.hero {
+  background-attachment: fixed;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.hero .container-fluid {
+  z-index: 10;
+}

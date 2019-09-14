@@ -19,6 +19,7 @@ Route::group( [
 
     Auth::routes();
 
-    Route::get('/', 'FeedController@index')->name('feed');
+    Route::get('/', 'Controller@index');
+    Route::get('/feed', 'FeedController@index')->name('feed');
 
 });

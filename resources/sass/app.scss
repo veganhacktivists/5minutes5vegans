@@ -7,6 +7,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import './landing';
+
+@import './md-form';
+
 .card {
 
     @extend .text-light;
@@ -29,4 +33,22 @@
 .verbiage-link:hover {
     @extend .text-success;
     cursor: pointer;
+}
+
+.flag-container {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+}
+
+.flag {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
 }
