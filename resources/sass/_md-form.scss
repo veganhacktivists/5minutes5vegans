@@ -4,8 +4,11 @@ Inspired by https://codepen.io/deeej/pen/VBeWWz
 */
 
 // Base Variables
-$colour-primary: #26C6DA;
+/*$colour-primary: #26C6DA;
 $colour-secondary: #673AB7;
+*/
+$colour-primary: $md-form-line-color;
+$colour-secondary: lighten($md-form-line-color, 20%);
 $colour-grey: #555555;
 $grid-gutter-width: 30px;
 $input-padding-horizontal: $grid-gutter-width / 3;
@@ -31,6 +34,7 @@ $input-padding-vertical: $grid-gutter-width / 3;
   .form-group-md {
     padding: $grid-gutter-width / 2 $grid-gutter-width / 2 0;
     align-self: flex-end;
+    width: 100%;
   }
 }
 
@@ -115,7 +119,7 @@ $input-padding-vertical: $grid-gutter-width / 3;
   left: 0;
   right: 0;
   height: 2px;
-  @include horizontal-gradient($colour-primary,$colour-secondary);
+  @include horizontal-gradient($colour-primary, $colour-secondary);
   &:after {
     content: "";
     height: 2px;

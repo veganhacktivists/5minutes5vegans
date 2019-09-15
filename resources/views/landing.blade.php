@@ -41,7 +41,7 @@
           <a href="" class="mr-2 btn btn-link">
             <div class="d-none d-xl-inline">Login</div>
           </a>
-          <a href="" class="btn btn-primary">
+          <a href="" class="btn btn-cta btn-primary">
             <div class="d-none d-xl-inline">Open free account</div>
           </a>
         </div>
@@ -55,9 +55,9 @@
   <div class="container-fluid container-fluid-max">
     <div class="row">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <h1 class="text-white">Take a challenge to help as many people become <span>vegan</span> as possible in merely 5 minutes!</h1>
+        <h1 class="text-white heading">Take a challenge to help as many people become <span>vegan</span> as possible in merely 5 minutes!</h1>
         <div class="mt-3">
-          <a class="btn btn-primary bg-red text-white mr-2" href="#howdoesitwork" role="button">Get started below</a>
+          <a class="btn btn-primary btn-cta bg-red text-white mr-2" href="#howdoesitwork" role="button">Get started below</a>
         </div> 
       </div>
     </div>
@@ -65,64 +65,85 @@
 </section>
   <!-- How does it work Section -->
   <section id="howdoesitwork" class="d-flex align-items-center position-relative vh-100 cover hero" style="background-image:url({{ asset('images/landing/background-cows.jpg') }});">
-  <div class="container-fluid container-fluid-max">
-    <div class="row text-center py-5">
-      <div class="col-12 pb-4">
-        <h2 class="text-red align-left">How does it work?</h2>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-4">Let us explain</div>
-      <div class="col-12 col-sm-6 col-lg-4">What do I need?</div>
-      <div class="col-12 col-sm-6 col-lg-4">Why should I login?</div>
-      <div class="col-12 action-band">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-sm-6 col-lg-4">Okay &ndash; I'm ready!</div>
-            <div class="col-12 col-sm-6 col-lg-4">Pick language</div>
-            <div class="col-12 col-sm-6 col-lg-4">Take up the challenge</div>
-          </div>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-12 pb-4">
+          <h2 class="heading text-left">How does it work?</h2>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="number-block">01</div>
+            <div class="step-block">
+              <h3 class="subheading text-uppercase">Let us explain</h3>
+              <p>Our vegan robots are constantly scanning social media and picking posts and comments of people interested in veganism.</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="number-block">02</div>
+            <div class="step-block">
+              <h3 class="subheading text-uppercase">What do I need?</h3>
+              <p>You should have Twitter® profile. We've prepared helpful, easy to copy resources about ethical, health and environmental aspects of veganism so you don't need to remember details.</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="number-block">03</div>
+            <div class="step-block">
+              <h3 class="subheading text-uppercase">Why should I login?</h3>
+              <p>When you register a free account, you will be able to edit and add quick to copy answers to the most common questions people curious about veganism have.</p>
+            </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container-fluid container-fluix-max">
-    <div class="col-12 pt-3">
-        <a class="btn bg-red text-white" target="_blank" href="" role="button">...</a>
+    <div class="col-12 action-band">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-sm-6 col-lg-4 step-block">Okay &ndash; I'm ready!</div>
+              <div class="col-12 col-sm-6 col-lg-4 step-block">Pick language</div>
+              <div class="col-12 col-sm-6 col-lg-4 step-block">Take up the challenge</div>
+            </div>
       </div>
+    </div>
   </div>
 </section>
   <!-- Else Section -->
   <section id="process" class="process">
-  <div class="container-fluid container-fluid-max">
-    <div class="row text-center py-5">
+  <div class="container">
+    <div class="row py-5">
       <div class="col-6 pb-4">
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h2 class="text-red">What else can I do?</h2>
+              <h2 class="heading">What else can I do?</h2>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <div class="number-block">1</div>
-              <h3>Be the voice of the animals</h3>
-              <p>Whether you have a lot of time or litte, whether you're new or experienced, there's an organization that's looking for help to spread compassionate vegan message.</p>
-              <p><small>View Vegan Activism Website</small></p>
+              <div class="number-block">01</div>
+              <div class="step-block">
+                <h3 class="subheading text-uppercase">Be the voice of the animals</h3>
+                <p>Whether you have a lot of time or litte, whether you're new or experienced, there's an organization that's looking for help to spread compassionate vegan message.</p>
+                <p><small>View Vegan Activism Website</small></p>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-            <div class="number-block">2</div>
-              <h3>Check our other projects</h3>
+            <div class="number-block">02</div>
+            <div class="step-block">
+              <h3 class="subheading text-uppercase">Check our other projects</h3>
               <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan, completely free projects worth supporting.</p>
               <p><small>View vegan Hacktivists Website</small></p>
             </div>
+            </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <div class="number-block">3</div>
-                <h3>Donate <i class="fas fa-hand-holding-heart"></i></h3>
+              <div class="number-block">03</div>
+              <div class="step-block">
+                <h3 class="subheading text-uppercase">Donate <i class="fas fa-hand-holding-heart"></i></h3>
                 <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan, completely free projects worth supporting.</p>
                 <p><small>View our Patreon Profile</small></p>
+              </div>
               </div>
             </div>
         </div>
@@ -131,14 +152,16 @@
         <div class="container container-newsletter">
             <div class="row">
               <div class="col-12">
-              <h2 class="text-green">Newsletter</h2>
+              <h2 class="heading">Newsletter</h2>
               </div>
             </div>
             <div class="row">
               <div class="col-12">
-                <div class="number-block"><i class="fas fas-mail"></i></div>
-                <h3>Subscribe to our news</h3>
-                <p>Taking utmost care of keeping your email address secure, we'll deliver news, updates and more vegan activism related info in no more than two emails a month.</p>
+                <div style="margin-left: -4rem;" class="number-block"><i class="far fa-envelope"></i></div>
+                <div>
+                  <h3 class="text-uppercase subheading">Subscribe to our news</h3>
+                  <p>Taking utmost care of keeping your email address secure, we'll deliver news, updates and more vegan activism related info in no more than two emails a month.</p>
+                </div>
             </div>
           </div>
             <div class="row">
@@ -147,18 +170,18 @@
                   <div class="form-row">
                     <div class="form-group-md">
                         <input class="form-control-md" type="text" id="newsletter_name" name="newsletter_name" />
-                        <label for="newsletter_name">Your name</label>
+                        <label class="text-white text-uppercase" for="newsletter_name">Your name</label>
                         <div class="line"></div>
                       </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group-md">
                       <input class="form-control-md" type="email" id="newsletter_email" name="newsletter_email" />
-                      <label for="newsletter_email">Your email</label>
+                      <label class="text-white text-uppercase" for="newsletter_email">Your email</label>
                       <div class="line"></div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary">Subscribe</button>
+                  <button type="submit" class="btn btn-cta btn-primary float-right">Subscribe</button>
                 </form>
               </div>
             </div>

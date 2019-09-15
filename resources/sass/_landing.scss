@@ -1,14 +1,27 @@
+$font-family-serif: "Lora";
+
 .landing {
   background-color: #d3ccbf;
 }
 
 .container-newsletter {
   background-color: #bdddb1;
-  padding: 20px;
+  padding: 3rem;
   margin-left: 7rem;
   border-bottom-right-radius: 15%;
   height: 100%;
-  width: 46%;
+  width: 80%;
+  .heading {
+    color: $heading-text-color;
+  }
+}
+
+.heading {
+  font-family: $font-family-serif;
+}
+
+.subheading{
+  color: $sub-heading-text-color;
 }
 
 .cover {
@@ -31,9 +44,43 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 100%);
 }
 
 .hero .container-fluid {
   z-index: 10;
+}
+
+.btn-cta {
+  background-color: $button-cta-color;
+  border-color: $button-cta-color;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  
+  &:hover {
+    background-color: darken($button-cta-color, 10%);
+    border-color: darken($button-cta-color, 10%);
+  }
+}
+
+.number-block {
+  float: left;
+  color: $heading-text-color;
+  &::after {
+    content: ' —';
+  }
+}
+
+.step-block {
+  padding-left: 4rem;
+}
+
+.action-band {
+  border: 1px solid $heading-text-color;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 2rem 0;
+  
+  .step-block {
+    padding-left: 5rem;
+  }
 }
