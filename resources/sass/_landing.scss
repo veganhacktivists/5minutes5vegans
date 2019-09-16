@@ -4,10 +4,18 @@ $font-family-serif: "Lora";
   background-color: #d3ccbf;
 }
 
+.btn-link, .lnk {
+  color: $button-cta-color;
+  &:hover {
+    text-decoration: none;
+    color: darken($button-cta-color, 10%);
+  }
+}
+
 .container-newsletter {
   background-color: #bdddb1;
   padding: 3rem;
-  margin-left: 7rem;
+  // margin-left: 7rem;
   border-bottom-right-radius: 15%;
   height: 100%;
   width: 80%;
@@ -16,7 +24,7 @@ $font-family-serif: "Lora";
   }
 }
 
-.heading {
+.font-serif {
   font-family: $font-family-serif;
 }
 
@@ -83,4 +91,9 @@ $font-family-serif: "Lora";
   .step-block {
     padding-left: 5rem;
   }
+}
+
+// not sure why container is in front of row and col
+.z-fix {
+  z-index: 2;
 }

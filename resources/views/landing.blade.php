@@ -52,13 +52,16 @@
     <main>
   <!-- Banner Section -->
   <section id="home" class="d-flex align-items-center position-relative vh-100 cover hero" style="background-image:url({{ asset('images/landing/banner-top.jpg') }});">
-  <div class="container-fluid container-fluid-max">
+  <div class="container z-fix">
     <div class="row">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <h1 class="text-white heading">Take a challenge to help as many people become <span>vegan</span> as possible in merely 5 minutes!</h1>
+        <h1 class="heading font-serif mb-5 mt-5">Take a challenge to help as many people become <span>vegan</span> as possible in merely 5 minutes!</h1>
         <div class="mt-3">
           <a class="btn btn-primary btn-cta bg-red text-white mr-2" href="#howdoesitwork" role="button">Get started below</a>
         </div> 
+      </div>
+      <div class="col-12 col-md-4 col-lg-6 col-xl-5">
+        <img src="{{ asset('images/landing/banner-food.png')  }}" alt="food">
       </div>
     </div>
   </div>
@@ -69,7 +72,7 @@
     <div class="container">
       <div class="row py-5">
         <div class="col-12 pb-4">
-          <h2 class="heading text-left">How does it work?</h2>
+          <h2 class="heading font-serif text-left mb-5">How does it work?</h2>
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
             <div class="number-block">01</div>
@@ -97,8 +100,16 @@
     <div class="col-12 action-band">
       <div class="container">
           <div class="row">
-              <div class="col-12 col-sm-6 col-lg-4 step-block">Okay &ndash; I'm ready!</div>
-              <div class="col-12 col-sm-6 col-lg-4 step-block">Pick language</div>
+              <div class="col-12 col-sm-6 col-lg-4 step-block font-serif">Okay &ndash; I'm ready!</div>
+              <div class="col-12 col-sm-6 col-lg-4 step-block">
+                Pick language <select class="custom-select">
+                  @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <option value="{{ $localeCode }}">
+                        <img src="https://www.countryflags.io/{{ getCountry( $properties ) }}/flat/32.png" class="flag rounded-circle" />
+                    </option>
+                  @endforeach
+                </select>
+              </div>
               <div class="col-12 col-sm-6 col-lg-4 step-block">Take up the challenge</div>
             </div>
       </div>
@@ -109,11 +120,11 @@
   <section id="process" class="process">
   <div class="container">
     <div class="row py-5">
-      <div class="col-6 pb-4">
+      <div class="col-lg-6 col-sm-12 pb-4">
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h2 class="heading">What else can I do?</h2>
+              <h2 class="heading font-serif mb-5">What else can I do?</h2>
             </div>
           </div>
           <div class="row">
@@ -122,7 +133,9 @@
               <div class="step-block">
                 <h3 class="subheading text-uppercase">Be the voice of the animals</h3>
                 <p>Whether you have a lot of time or litte, whether you're new or experienced, there's an organization that's looking for help to spread compassionate vegan message.</p>
-                <p><small>View Vegan Activism Website</small></p>
+                <p class="font-weight-bold">
+                  <a href="#" class="lnk">View Vegan Activism Website</a>
+                </p>
               </div>
             </div>
           </div>
@@ -132,7 +145,9 @@
             <div class="step-block">
               <h3 class="subheading text-uppercase">Check our other projects</h3>
               <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan, completely free projects worth supporting.</p>
-              <p><small>View vegan Hacktivists Website</small></p>
+              <p class="font-weight-bold">
+                <a href="#" class="lnk">View vegan Hacktivists Website</a>
+              </p>
             </div>
             </div>
           </div>
@@ -142,17 +157,19 @@
               <div class="step-block">
                 <h3 class="subheading text-uppercase">Donate <i class="fas fa-hand-holding-heart"></i></h3>
                 <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan, completely free projects worth supporting.</p>
-                <p><small>View our Patreon Profile</small></p>
+                <p class="font-weight-bold">
+                  <a href="#" class="lnk"> View our Patreon Profile</a>
+                </p>
               </div>
               </div>
             </div>
         </div>
       </div>
-      <div class="col-6">
-        <div class="container container-newsletter">
+      <div class="col-lg-6 col-sm-12">
+        <div class="container container-newsletter ml-md-7">
             <div class="row">
               <div class="col-12">
-              <h2 class="heading">Newsletter</h2>
+              <h2 class="heading font-serif">Newsletter</h2>
               </div>
             </div>
             <div class="row">
@@ -198,7 +215,7 @@
       <div class="col-12 col-md-6 footer-child copyright">you are their voice logo</div>
       <div class="col-12 col-md-6 footer-child">
         <div>
-          <small>Website hosted and designed by vegan hacktivists with love <i class="fas fas-heart"></i></small>
+          <small class=" font-serif">Website hosted and designed by vegan hacktivists with love <i class="fas fas-heart"></i></small>
         </div>
       </div>
     </div>
