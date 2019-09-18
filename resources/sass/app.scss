@@ -11,6 +11,10 @@
 
 @import './md-form';
 
+html {
+    scroll-behavior: smooth;
+}
+
 .card {
 
     @extend .text-light;

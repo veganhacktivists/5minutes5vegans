@@ -60,7 +60,7 @@
           <a class="btn btn-primary btn-cta bg-red text-white mr-2" href="#howdoesitwork" role="button">Get started below</a>
         </div> 
       </div>
-      <div class="col-12 col-md-4 col-lg-6 col-xl-5">
+      <div class="col-12 col-md-4 col-lg-6 col-xl-5 d-none d-md-block">
         <img src="{{ asset('images/landing/banner-food.png')  }}" alt="food">
       </div>
     </div>
@@ -212,11 +212,16 @@
 <footer class="py-5 page-footer">
   <div class="container-fluid container-fluid-max">
     <div class="row">
-      <div class="col-12 col-md-6 footer-child copyright">you are their voice logo</div>
-      <div class="col-12 col-md-6 footer-child">
+      <div class="col-12 col-md-6 col-lg-4 footer-child">
+        <img src="" alt="you are their voice logo" class="float-left" />
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 footer-child text-center">
         <div>
-          <small class=" font-serif">Website hosted and designed by vegan hacktivists with love <i class="fas fas-heart"></i></small>
+          <small class=" font-serif">Website hosted and designed by vegan hacktivists with love <i class="far fa-heart"></i></small>
         </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 footer-child">
+        <img src="" alt="hacktivists logo" class="float-right" />
       </div>
     </div>
   </div>
