@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/twitteroauth', 'OauthController@index')->name('twitteroauth');
 
 Route::group( [
         'prefix' => LaravelLocalization::setLocale(),
