@@ -1,13 +1,34 @@
-<div class="text-center">
+<!-- <div class="text-center">
     <a href="{{ route('feed') }}"><img class="w-50 logo" src="{{ asset('images/logo.png') }}"/></a>
+</div> -->
+<div class="row no-gutters">
+    <div class="col text-left">
+        <img class="logo" src="{{ asset('images/logo.svg') }}"/>
+    </div>
+    <div class="col text-center timer-section">
+        <div class="timer-display">
+            <div class="minutes">5</div>
+            <div class="seconds">00</div>
+        </div>
+    </div>
+    <div class="col text-right">
+      <div id="donate-button">
+        <div id="donate-corner-left"></div>
+        <div id="donate-corner-border-left"></div>
+        <div id="donate-corner-right"></div>
+        <div id="donate-corner-border-right"></div>
+        Donate <i class="fa fa-heart"></i>
+      </div>
+    </div>
+</div>
+<div id="minutes-left" class="text-center mb-5">
+    MINUTES LEFT
 </div>
 
-<h3 class="text-white">
+<h3 id="easy-to-copy-resources" class="pb-1">EASY TO COPY RESOURCES</h3>
+
+<!-- <h3 class="">
     <div class="p-3 text-center">{!! __('sidebar.header') !!}</div>
-    <div class="row justify-content-center no-gutters timer-section">
-        <div class="timer-display col-auto mr-2">5:00</div>
-        <div class="col-auto"><i class="fas fa-stopwatch"></i></div>
-    </div>
     <div class="timer-complete text-center text-success">
         <small>{!! __('sidebar.success') !!}
             <br/>
@@ -16,8 +37,7 @@
             </button>
         </small>
     </div>
-</h3>
-<hr/>
+</h3> -->
 
 @if(isset($verbiages))
     @include('verbiage.index')

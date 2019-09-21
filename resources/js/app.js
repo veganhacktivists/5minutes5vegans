@@ -17,11 +17,17 @@ $(() => {
     $('.timer-restart').click(startTimer);
 });
 
+function setTimer(minutes, seconds){
+    $('.timer-display .minutes').html(minutes)
+    $('.timer-display .seconds').html(seconds)
+}
+
 function startTimer() {
 
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 1000);
-    $('.timer-display').html('5:00')
+    // $('.timer-display').html('5:00')
+    setTimer('05', '00')
     $('.timer-complete').hide(400);
     $('.timer-section').show(400);
 }
@@ -37,7 +43,8 @@ function updateTimer() {
     }
 
     var time = new Date(timestamp)
-    $('.timer-display').html(time.getMinutes() + ':' + ('0'+ time.getSeconds()).substr(-2));
+    // $('.timer-display').html(time.getMinutes() + ':' + ('0'+ time.getSeconds()).substr(-2));
+    setTimer(('0'+ time.getMinutes()).substr(-2), ('0'+ time.getSeconds()).substr(-2))
 
 }
 

@@ -1,10 +1,22 @@
 @extends('layout')
 
-@section( 'main' )
-<a class="twitter-timeline" data-lang="{{ App::getLocale() }}" data-theme="dark" data-link-color="#19CF86" href="https://twitter.com/vegassist?ref_src=twsrc%5Etfw">
-    Loading Twitter feed...<br/>
-    If this message doesn't go away, make sure you have scripts enabled and try refreshing the page.<br/>
-</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+@section('page_content')
 
+<div id="feed" class="row no-gutters">
+
+    <div id="leftside" class="col-sm-6">
+
+        @include('inc.sidebar')
+
+    </div>
+
+    <div id="rightside" class="col-sm-6">
+        
+        <div id="rightside-inner" class="">
+        	@include('inc.twitter')
+    	</div>
+
+    </div>
+
+</div>
 @endsection
