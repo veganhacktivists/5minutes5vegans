@@ -78,7 +78,7 @@ class OauthController extends Controller
     private function oauth_data($token, $data = null) {
         $key = 'oauth_tokens.' . $token;
         if($data)
-            session()->put($key, $data);
+            return session()->put($key, $data);
         else
             return session()->pull($key);
     }
