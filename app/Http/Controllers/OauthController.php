@@ -15,28 +15,26 @@ class OauthController extends Controller
 
 
         if( $request->oauth_token && $request->oauth_verifier ) {
-            $data = $this->oauth_data($request->oauth_token);
+            $data = self::oauth_data($request->oauth_token);
             if( !$data )
-                return $this->general_error();
+                return self::general_error();
 
             try {
                 $connection = new TwitterOAuth\TwitterOAuth($data['consumer_key'], $data['consumer_secret']);
                 $connection->setTimeouts(20, 20);
                 $data = $connection->oauth("oauth/access_token", ['oauth_token' => $request->oauth_token, 'oauth_verifier' => $request->oauth_verifier]);
             } catch(TwitterOAuth\TwitterOAuthException $e) {
-                dd($e);
-                $message = json_decode($e->getMessage())->errors[0]->message;
-                return view('twitteroauth.index')->withErrors(['general' => $message]);
+                return self::twitter_error($e->getMessage());
             }
 
             return view('twitteroauth.result', $data);
         }
 
         if( $request->denied)
-            if( $this->oauth_data($request->denied) )
-                return $this->general_error('You have denied the authorisation.');
+            if( self::oauth_data($request->denied) )
+                return self::general_error('You have denied the authorisation.');
             else
-                return $this->general_error();
+                return self::general_error();
 
         return view('twitteroauth.index');
 
@@ -46,7 +44,7 @@ class OauthController extends Controller
 
         if( $request->consumer_key || $request->consumer_secret ) {
             if( !($request->consumer_key && $request->consumer_secret ) )
-                return $this->general_error('Either both credentials need to be supplied or neither, only one was supplied.');
+                return self::general_error('Either both credentials need to be supplied or neither, only one was supplied.');
 
             $data = $request->validate( [
                 'consumer_key' => 'regex:/^[a-zA-Z0-9]{25}/',
@@ -67,15 +65,15 @@ class OauthController extends Controller
             $url = $connection->url('oauth/authorize', ['oauth_token' => $request_token['oauth_token']]);
         } catch(TwitterOAuth\TwitterOAuthException $e) {
             $message = json_decode($e->getMessage())->errors[0]->message;
-            return view('twitteroauth.index')->withErrors(['general' => $message]);
+            return self::twitter_error($message);
         }
 
-        $this->oauth_data($request_token['oauth_token'], $data);
+        self::oauth_data($request_token['oauth_token'], $data);
         return redirect($url);
 
     }
 
-    private function oauth_data($token, $data = null) {
+    private static function oauth_data($token, $data = null) {
         $key = 'oauth_tokens.' . $token;
         if($data)
             return session()->put($key, $data);
@@ -83,8 +81,12 @@ class OauthController extends Controller
             return session()->pull($key);
     }
 
-    private function general_error($error = self::ERROR_GENERIC) {
+    private static function general_error($error = self::ERROR_GENERIC) {
         return redirect()->route('twitteroauth')->withErrors(['general' => $error]);
+    }
+
+    private static function twitter_error($error) {
+        return self::general_error('Twitter error: ' . $error);
     }
 
 }
