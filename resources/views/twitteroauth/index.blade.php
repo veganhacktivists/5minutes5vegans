@@ -36,7 +36,7 @@ If left empty, this will use the keys of the official 5M5V app, which will gener
 
     <div class="col-md-6">
         {{ form::text('consumer_secret', false, [
-            'class' => 'form-control' . ( $errors->has('consumer_key') ? ' is-invalid' : '' ),
+            'class' => 'form-control' . ( $errors->has('consumer_secret') ? ' is-invalid' : '' ),
             'placeholder' => 'Aa1Bb2Cc3Dd4Ee5Ff6Gg7Hh8Ii9Jj0Kk1Ll2Mm3Nn4Oo5Pp6Qq'
         ])}}
         @error('consumer_secret')
