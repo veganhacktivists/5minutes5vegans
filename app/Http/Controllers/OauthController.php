@@ -21,6 +21,7 @@ class OauthController extends Controller
 
             try {
                 $connection = new TwitterOAuth\TwitterOAuth($data['consumer_key'], $data['consumer_secret']);
+                $connection->setTimeouts(20, 20);
                 $data = $connection->oauth("oauth/access_token", ['oauth_token' => $request->oauth_token, 'oauth_verifier' => $request->oauth_verifier]);
             } catch(TwitterOAuth\TwitterOAuthException $e) {
                 dd($e);
@@ -61,6 +62,7 @@ class OauthController extends Controller
 
         try {
             $connection = new TwitterOAuth\TwitterOAuth($data['consumer_key'], $data['consumer_secret']);
+            $connection->setTimeouts(20, 20);
             $request_token = $connection->oauth('oauth/request_token', ['oauth_callback' => route('twitteroauth')]);
             $url = $connection->url('oauth/authorize', ['oauth_token' => $request_token['oauth_token']]);
         } catch(TwitterOAuth\TwitterOAuthException $e) {
