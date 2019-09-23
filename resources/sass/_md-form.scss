@@ -17,11 +17,6 @@ $input-padding-vertical: $grid-gutter-width / 3;
 // Linear Gradient Mixin
 @mixin horizontal-gradient($from, $to, $stop: 100%) {
   background-color: $from;
-  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
-  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
-  background-image: -o-linear-gradient(left, $from 0%, $to $stop);
-  background: -ms-linear-gradient(left, $from 0%, $to $stop);
   background: linear-gradient(to right, $from 0%, $to $stop);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
 }

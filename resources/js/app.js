@@ -52,4 +52,14 @@ $(() => {
         console.log(e);
         $('.verbiage-message').val(e.currentTarget.dataset.verbiage);
     });
+
+    bindLanguageSelector();
 });
+
+
+function bindLanguageSelector(){
+    const $languageDropdown = $('.lang-selector-dropdown');
+    $('.lang-selector-container').click(e => {
+        $languageDropdown.toggle();
+    })
+}

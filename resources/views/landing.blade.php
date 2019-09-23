@@ -21,20 +21,23 @@
     <header class="fixed-top page-header">
     <div class="container-fluid container-fluid-max">
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
-      <a class="navbar-brand" href="#">
-        <img src="{{ asset('images/landing/5m5v logo.png') }}"  alt="logo">
-      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
       <div class="collapse navbar-collapse justify-content-lg-between" id="navbarNav">
+        <a class="navbar-brand" href="#">
+          <img src="{{ asset('images/landing/5m5v logo.png') }}"  alt="logo">
+        </a>
         <ul class="navbar-nav">
           @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                <li class="nav-item">
-                 <a class="nav-link flag-container" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                    <img src="https://www.countryflags.io/{{ getCountry( $properties ) }}/flat/32.png"/ class="flag rounded-circle {{ LaravelLocalization::getCurrentLocale() == $localeCode ? 'img-thumbnail' : '' }}">
-                </a>
-               </li> 
+            <li class="nav-item">
+              <a class="nav-link flag-container" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                <img src="{{ asset('images/landing/'.getCountry( $properties )) }}.png"/ class="rounded-circle flag">
+                @if(LaravelLocalization::getCurrentLocale() == $localeCode)
+                  <img class="flag-selected" src="{{ asset('images/landing/active language.png') }}" />
+                @endif
+              </a>
+            </li> 
           @endforeach
         </ul>
         <div class="text-white">
@@ -102,13 +105,21 @@
           <div class="row">
               <div class="col-12 col-sm-6 col-lg-4 step-block font-serif">Okay &ndash; I'm ready!</div>
               <div class="col-12 col-sm-6 col-lg-4 step-block">
-                Pick language <select class="custom-select">
+                Pick language: {{ getCurrentCountryName() }}
+                <div class="lang-selector-container">
+                  <img class="lang-selector-img" src="{{ asset('images/landing/'.getCurrentCountry()) }}.png" /> <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="lang-selector-dropdown">
                   @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <option value="{{ $localeCode }}">
-                        <img src="https://www.countryflags.io/{{ getCountry( $properties ) }}/flat/32.png" class="flag rounded-circle" />
-                    </option>
+                    @if(LaravelLocalization::getCurrentLocale() != $localeCode)
+                      <div>
+                        <a hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                          {{ $properties['name'] }} <img src="{{ asset('images/landing/'.getCountry( $properties )) }}.png"/ class="rounded-circle flag">
+                        </a>
+                      </div>
+                    @endif
                   @endforeach
-                </select>
+                </div>
               </div>
               <div class="col-12 col-sm-6 col-lg-4 step-block">Take up the challenge</div>
             </div>

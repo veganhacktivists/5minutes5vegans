@@ -39,20 +39,40 @@ html {
     cursor: pointer;
 }
 
-.flag-container {
+.flag-container, .flag {
     position: relative;
-    width: 32px;
-    height: 32px;
-    overflow: hidden;
+    top: 0;
+    left: 0;
 }
 
-.flag {
+.flag-selected {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 100%;
-    width: auto;
-    -webkit-transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
+    top: 5px;
+    left: 11px;
+}
+
+.lang-selector-container {
+    display: inline-block;
+    cursor: pointer;
+    img {
+        position: relative;
+        top: 8px;
+    }
+}
+
+.lang-selector-dropdown {
+    display: none;
+    position: absolute;
+    right: 6rem;
+    background: $modal-bg;
+    padding: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    a {
+        color: #fff;
+    }
+    img {
+        position: relative;
+        top: 8px;
+    }
 }

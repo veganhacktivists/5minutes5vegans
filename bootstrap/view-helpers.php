@@ -8,3 +8,6 @@
         return getCountry( LaravelLocalization::getSupportedLocales()[ LaravelLocalization::getCurrentLocale() ] );
     }
 
+    function getCurrentCountryName() {
+        return LaravelLocalization::getCurrentLocaleName();
+    }
