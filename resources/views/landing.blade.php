@@ -109,16 +109,18 @@
                 <div class="lang-selector-container">
                   <img class="lang-selector-img" src="{{ asset('images/landing/'.getCurrentCountry()) }}.png" /> <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="lang-selector-dropdown">
+                <div tabindex="-1" class="lang-selector-dropdown">
+                  <div class="d-flex flex-column align-content-start">
                   @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     @if(LaravelLocalization::getCurrentLocale() != $localeCode)
                       <div>
                         <a hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                          {{ $properties['name'] }} <img src="{{ asset('images/landing/'.getCountry( $properties )) }}.png"/ class="rounded-circle flag">
+                          <span class="mr-3">{{ $properties['name'] }}</span> <img src="{{ asset('images/landing/'.getCountry( $properties )) }}.png"/ class="rounded-circle flag">
                         </a>
                       </div>
                     @endif
                   @endforeach
+                  </div>
                 </div>
               </div>
               <div class="col-12 col-sm-6 col-lg-4 step-block">Take up the challenge</div>

@@ -63,16 +63,21 @@ html {
 .lang-selector-dropdown {
     display: none;
     position: absolute;
-    right: 6rem;
+    right: 5rem;
     background: $modal-bg;
-    padding: 10px;
+    padding: 10px 25px;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     a {
         color: #fff;
     }
+    span {
+        position: relative; 
+        top: 1rem;
+    }
     img {
         position: relative;
         top: 8px;
+        float: right;
     }
 }

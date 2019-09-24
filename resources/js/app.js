@@ -43,23 +43,34 @@ function updateTimer() {
 
 
 
+
+$(() => {
+    bindVerbiageLink();
+    bindLanguageSelector();
+});
+
 /************
  * VERBIAGE *
  ************/
 
-$(() => {
+function bindVerbiageLink(){
     $('.verbiage-link').click(function(e){
         console.log(e);
         $('.verbiage-message').val(e.currentTarget.dataset.verbiage);
     });
+}
 
-    bindLanguageSelector();
-});
-
+/*********************
+ * Language Selector *
+ *********************/
 
 function bindLanguageSelector(){
     const $languageDropdown = $('.lang-selector-dropdown');
+
+    $languageDropdown.on('blur', () => $languageDropdown.hide());
+
     $('.lang-selector-container').click(e => {
-        $languageDropdown.toggle();
-    })
+        e.preventDefault();
+        $languageDropdown.show().focus();
+    });
 }
