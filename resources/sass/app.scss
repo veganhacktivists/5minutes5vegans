@@ -7,6 +7,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import '~fontawesome-iconpicker/dist/css/fontawesome-iconpicker.css';
+
 .card {
 
     @extend .text-light;
@@ -185,6 +187,7 @@
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 .verbiage-index {
 	font-size: 12px;
 }
@@ -265,3 +268,8 @@
     border-radius:16px;
     border:4px solid #fff
 }
+=======
+.fade.in {
+    opacity: 1;
+}
+>>>>>>> feat/custom-verbiages
