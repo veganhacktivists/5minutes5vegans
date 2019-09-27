@@ -61,10 +61,8 @@ class TweetRegexService {
             $bodyParts = $tweet['body'];
             $body = [];
 
-            foreach ($bodyParts as $bodyPart) {
-                $parts = $bodyPart;
-                $part = $parts[array_rand($parts)];
-                $body[] = $this->compileAndGenerate($compiler, $part);
+            foreach ($bodyParts as $strings) {
+                $body[] = $this->compileAndGenerate($compiler, $strings);
             }
 
             $results[] = [
@@ -77,13 +75,15 @@ class TweetRegexService {
         return json_encode($results);
     }
 
-    private function compileAndGenerate($compiler, $string) {
+    private function compileAndGenerate($compiler, $strings) {
         // If there's an error in a regex string we grab a new one and try again.
         $MAX_ATTEMPTS = 3;
         $attempts = 0;
         $result = '';
 
         do {
+            $string = $strings[array_rand($strings)];
+
             try {
                 $ast = $compiler->parse($string);
                 $generator = new Isotropic(new Random());
