@@ -9,7 +9,7 @@
 @section('page_content')
     <div class="container-fluid" style="background-color: gainsboro;">
         <div class="container py-5">
-            <!-- Header --> 
+            <!-- Header -->
             <div class="row">
                 <div class="col-sm">
                     <a href="{{ route('feed') }}"><img class="w-25" src="{{ asset('images/logo.png') }}"/></a>
@@ -25,10 +25,10 @@
             <!-- Content -->
             <div class="row mt-5 mx-auto w-75">
                 <div class="col login-pane login-pane-left">
-                    <span class="d-flex">
+                    <div class="d-flex">
                         <h1 class="mr-auto">{{ __('Register') }}</h1>
-                        <a class="small font-weight-bold my-auto" href="#">Or login&nbsp;<i class="fas fa-caret-right"></i></a>
-                    </span>
+                    <a class="small font-weight-bold my-auto" href="{{ route('login') }}">Or login&nbsp;<i class="fas fa-caret-right"></i></a>
+                    </div>
                     <p class="mt-3">
                         When you register a free account, you will be able to edit
                         and add quick to copy answers to the most common questions
@@ -99,7 +99,9 @@
 
                         <div class="form-inline">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="newsletter-check">
+                                {{ Form::checkbox('newsletter-check', null, false, [
+                                    "class" => "form-check-input",
+                                ]) }}
                                 <label class="form-check-label small" for="newsletter-check">I'd like to receive newsletter</label>
                             </div>
                             {{ Form::submit(__('Create Account'), ['class' => 'btn btn-sm btn-primary swirvy-box ml-auto']) }}
@@ -109,22 +111,22 @@
                 <div class="col login-pane login-pane-right">
                     <h3>Start without account</h3>
                     <h5 class="my-5 font-weight-bold"><div class="horz-line"></div>PICK YOUR LANGUAGE.</h5>
-                    
-                    <div class="d-flex mb-5 lang-flags">
-                        <div class="border-dark border-right">
+
+                    <div class="d-flex mb-5 lang-flags button-group">
+                        <button class="btn border-dark border-right">
                             <img src="{{ asset('images/en-flag.png') }}">
-                        </div>
-                        <div class="border-dark border-right">
+                        </button>
+                        <button class="btn border-dark border-right">
                             <img src="{{ asset('images/de-flag.png') }}">
-                        </div>
-                        <div class="border-dark border-right">
+                        </button>
+                        <button class="btn border-dark border-right">
                             <img src="{{ asset('images/fr-flag.png') }}">
-                        </div>
-                        <div>
+                        </button>
+                        <button class="btn">
                             <img src="{{ asset('images/es-flag.png') }}">
-                        </div>
+                        </button>
                     </div>
-                    
+
                     <h5 class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
                     <div class="d-flex align-middle">
                     <span class="mr-auto my-5 font-weight-bold text-white">And take up the challenge!</span>
@@ -134,16 +136,18 @@
             </div>
         </div>
         <!-- Footer -->
-        <div class="d-flex flex-row justify-content-between align-items-center pb-3">
-            <div>
-                <a href="https://youaretheirvoice.com/"><img style="height: 45px;" src="{{ asset('images/yatv-logo.png') }}"></a>
-            </div>
-            <div class="text-secondary">
-                Website hosted and designed by vegan hactivists with love&nbsp;<i class="fas fa-heart text-danger"></i>
-            </div>
-            <div>
-                <a href="https://veganhacktivists.org/"><img class="float-right" style="height: 45px;" src="https://i.imgur.com/xSHDo4E.png"></a>
-            </div>
-        </div>
+        {{-- <footer> --}}
+            <footer class="d-flex flex-row justify-content-between align-items-center py-3">
+                <div>
+                    <a href="https://youaretheirvoice.com/"><img src="{{ asset('images/yatv-logo.png') }}"></a>
+                </div>
+                <div class="text-secondary">
+                    Website hosted and designed by vegan hactivists with love&nbsp;<i class="fas fa-heart text-danger"></i>
+                </div>
+                <div>
+                    <a href="https://veganhacktivists.org/"><img class="float-right" src="https://i.imgur.com/xSHDo4E.png"></a>
+                </div>
+            </footer>
+        {{-- </footer> --}}
     </div>
 @endsection

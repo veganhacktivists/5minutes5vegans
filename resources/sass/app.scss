@@ -50,7 +50,7 @@
             border-bottom: 1px solid $teal;
         }
     }
-    
+
     &.login-pane-right {
         border-radius: 0 0 90px 0;
         float: right;
@@ -81,7 +81,7 @@
     border: solid #0f251d 1px;
     height: 100px;
 
-    div {
+    button {
         height: 100%;
         $flag-box-width: calc(100% / 4);
         width: $flag-box-width;
@@ -89,7 +89,7 @@
         align-items: center;
     }
 
-    div img {
+    button img {
         width: 20px;
         height: 20px;
         border-radius: 50%;
@@ -105,7 +105,7 @@
         color: #209774;
         background-color: #209774;
         border-radius: 50%;
-    
+
         div {
             margin-top: 16%;
             margin-left: 16%;
@@ -122,4 +122,8 @@
             }
         }
     }
+}
+
+footer img {
+    height: 45px;
 }
