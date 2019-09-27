@@ -49,4 +49,54 @@ class TweetRegexService {
 
         return $message;
     }
+
+    public function generate_tweets($tweets) {
+        $grammar = new Read('hoa://Library/Regex/Grammar.pp');
+        $compiler = Llk::load($grammar);
+        $results = [];
+
+        foreach ($tweets as $tweet) {
+            $icon = $tweet['icon'];
+            $title = $tweet['title'];
+            $bodyParts = $tweet['body'];
+            $body = [];
+
+            foreach ($bodyParts as $bodyPart) {
+                $parts = $bodyPart;
+                $part = $parts[array_rand($parts)];
+                $body[] = $this->compileAndGenerate($compiler, $part);
+            }
+
+            $results[] = [
+                'icon' => $icon,
+                'title' => $title,
+                'body' => join(' ', $body)
+            ];
+        }
+
+        return json_encode($results);
+    }
+
+    private function compileAndGenerate($compiler, $string) {
+        // If there's an error in a regex string we grab a new one and try again.
+        $MAX_ATTEMPTS = 3;
+        $attempts = 0;
+        $result = '';
+
+        do {
+            try {
+                $ast = $compiler->parse($string);
+                $generator = new Isotropic(new Random());
+                $result = $generator->visit($ast);
+            } catch (\Hoa\Regex\Exception $exception) {
+                Log::warning('The following regex caused an error: ' . $string);
+                $attempts++;
+                continue;
+            }
+
+            break;
+        } while ($attempts < $MAX_ATTEMPTS);
+
+        return $result;
+    }
 }

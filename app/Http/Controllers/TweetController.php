@@ -16,4 +16,10 @@ class TweetController extends Controller
     {
         return $tweetRegexService->generate_message(__('tweet.tweet'));
     }
+
+
+    public function tweets(TweetRegexService $tweetRegexService)
+    {
+        return $tweetRegexService->generate_tweets(__('tweets'));
+    }
 }
