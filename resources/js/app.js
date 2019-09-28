@@ -67,7 +67,10 @@ function bindVerbiageLink(){
 function bindLanguageSelector(){
     const $languageDropdown = $('.lang-selector-dropdown');
 
-    $languageDropdown.on('blur', () => $languageDropdown.hide());
+    //  without the timeout it can happen that the dropdown closes before the anchor can be clicked
+    $languageDropdown.on('blur', () =>
+        setTimeout(() => $languageDropdown.hide(), 100)
+    );
 
     $('.lang-selector-container').click(e => {
         e.preventDefault();
