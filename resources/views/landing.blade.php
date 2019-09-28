@@ -9,8 +9,6 @@
         <title>5 Minutes 5 Vegans</title>
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/app.js') }}"></script>
-        @yield('scripts')
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         @yield('css')
@@ -52,7 +50,7 @@
     </nav>
   </div>
 </header>
-    <main>
+    <main id="main">
   <!-- Banner Section -->
   <section id="home" class="d-flex align-items-center position-relative vh-100 cover hero" style="background-image:url({{ asset('images/landing/banner-top.jpg') }});">
   <div class="container z-fix">
@@ -88,7 +86,7 @@
             <div class="number-block">02</div>
             <div class="step-block">
               <h3 class="subheading text-uppercase">What do I need?</h3>
-              <p>You should have Twitter® profile. We've prepared helpful, easy to copy resources about ethical, health and environmental aspects of veganism so you don't need to remember details.</p>
+              <p>You should have Twitter<sup>®</sup> profile. We've prepared helpful, easy to copy resources about ethical, health and environmental aspects of veganism so you don't need to remember details.</p>
             </div>
         </div>
         <div class="col-12 col-sm-6 col-lg-4">
@@ -103,8 +101,8 @@
     <div class="col-12 action-band">
       <div class="container">
           <div class="row">
-              <div class="col-12 col-sm-6 col-lg-4 step-block font-serif">Okay &ndash; I'm ready!</div>
-              <div class="col-12 col-sm-6 col-lg-4 step-block">
+              <div class="col-12 col-lg-4 step-block font-serif">Okay &ndash; I'm ready!</div>
+              <div class="col-12 col-lg-4 step-block">
                 Pick language: {{ getCurrentCountryName() }}
                 <div class="lang-selector-container">
                   <img class="lang-selector-img" src="{{ asset('images/landing/'.getCurrentCountry()) }}.png" /> <i class="fas fa-chevron-down"></i>
@@ -123,7 +121,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-sm-6 col-lg-4 step-block">Take up the challenge</div>
+              <div class="col-12 col-lg-4 step-block">
+                <p>Take up the challenge</p>
+                <a href="#" class="">
+                  <img class="challenge-button img-fluid float-right" src="{{ asset('images/landing/take the challenge.svg') }}" alt="take the challenge" />
+                </a>
+              </div>
             </div>
       </div>
     </div>
@@ -239,6 +242,10 @@
     </div>
   </div>
 </footer>
+      <script src="{{ asset('js/manifest.js') }}"></script>
+      <script src="{{ asset('js/vendor.js') }}"></script>
+      <script src="{{ asset('js/app.js') }}"></script>
+      @yield('scripts')
     </body>
 </html>
 

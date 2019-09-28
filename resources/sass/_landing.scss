@@ -86,11 +86,38 @@ $font-family-serif: "Lora";
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 2rem 0;
+  max-height: 5rem;
   
   .step-block {
     padding-left: 5rem;
   }
 }
+
+.challenge-button {
+  position: relative;
+  max-height: 45px;
+  right: 9rem;
+  top: -3rem;
+}
+
+@include media-breakpoint-up(lg) {
+  .challenge-button {
+    max-height: 90px;
+    max-width: 90px;
+    top: -4.6rem;
+    right: -1rem;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .challenge-button {
+    max-height: 150px;
+    max-width: 150px;
+    top: -6rem;
+    right: -1rem;
+  }
+}
+
 
 // not sure why container is in front of row and col
 .z-fix {
