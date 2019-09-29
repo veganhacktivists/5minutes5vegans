@@ -1,4 +1,4 @@
-<div class="row px-3">
+<div class="row">
     @each( 'verbiage.verbiage', $verbiages, 'verbiage' )
 </div>
 <div class="p-2 row">
