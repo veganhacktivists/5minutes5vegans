@@ -106,6 +106,12 @@ $font-family-serif: "Lora";
   top: -3rem;
 }
 
+.footer-child {
+  img {
+    width: 50px;
+  }
+}
+
 @include media-breakpoint-up(lg) {
   .challenge-button {
     max-height: 90px;
