@@ -1,0 +1,125 @@
+$font-family-serif: "Lora";
+
+.landing {
+  background-color: #d3ccbf;
+}
+
+.btn-link, .lnk {
+  color: $button-cta-color;
+  &:hover {
+    text-decoration: none;
+    color: darken($button-cta-color, 10%);
+  }
+}
+
+.container-newsletter {
+  background-color: #bdddb1;
+  padding: 3rem;
+  border-bottom-right-radius: 15%;
+  height: 100%;
+  width: 80%;
+  .heading {
+    color: $heading-text-color;
+  }
+}
+
+.font-serif {
+  font-family: $font-family-serif;
+}
+
+.subheading{
+  color: $sub-heading-text-color;
+}
+
+.cover {
+  background: no-repeat center/cover;
+}
+
+.scroll .hero {
+  transform: scale(0.98);
+}
+
+.hero {
+  background-attachment: fixed;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hero .container-fluid {
+  z-index: 10;
+}
+
+.btn-cta {
+  background-color: $button-cta-color;
+  border-color: $button-cta-color;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  
+  &:hover {
+    background-color: darken($button-cta-color, 10%);
+    border-color: darken($button-cta-color, 10%);
+  }
+}
+
+.number-block {
+  float: left;
+  color: $heading-text-color;
+  &::after {
+    content: ' —';
+  }
+}
+
+.step-block {
+  padding-left: 4rem;
+}
+
+.action-band {
+  border: 1px solid $heading-text-color;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 2rem 0;
+  max-height: 5rem;
+  
+  .step-block {
+    padding-left: 5rem;
+  }
+}
+
+.challenge-button {
+  position: relative;
+  max-height: 45px;
+  right: 9rem;
+  top: -3rem;
+}
+
+@include media-breakpoint-up(lg) {
+  .challenge-button {
+    max-height: 90px;
+    max-width: 90px;
+    top: -4.6rem;
+    right: -1rem;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .challenge-button {
+    max-height: 150px;
+    max-width: 150px;
+    top: -6rem;
+    right: -1rem;
+  }
+}
+
+
+// not sure why container is in front of row and col
+.z-fix {
+  z-index: 2;
+}

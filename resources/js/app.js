@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap');
-
+var fullpage = require('fullpage.js');
 
 /*********
  * TIMER *
@@ -43,13 +43,50 @@ function updateTimer() {
 
 
 
+
+$(() => {
+    bindVerbiageLink();
+    bindLanguageSelector();
+    initializeFullpage();
+});
+
 /************
  * VERBIAGE *
  ************/
 
-$(() => {
+function bindVerbiageLink(){
     $('.verbiage-link').click(function(e){
         console.log(e);
         $('.verbiage-message').val(e.currentTarget.dataset.verbiage);
     });
-});
+}
+
+/*********************
+ * Language Selector *
+ *********************/
+
+function bindLanguageSelector(){
+    const $languageDropdown = $('.lang-selector-dropdown');
+
+    //  without the timeout it can happen that the dropdown closes before the anchor can be clicked
+    $languageDropdown.on('blur', () =>
+        setTimeout(() => $languageDropdown.hide(), 100)
+    );
+
+    $('.lang-selector-container').click(e => {
+        e.preventDefault();
+        $languageDropdown.show().focus();
+    });
+}
+
+function initializeFullpage(){
+    /*$('#main').fullpage({
+		//options here
+		autoScrolling:true,
+		scrollHorizontally: true
+    });*/
+    new fullpage('#main', {
+        navigation: true,
+        sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
+    });
+}
