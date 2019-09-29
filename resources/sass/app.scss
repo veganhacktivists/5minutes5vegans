@@ -164,8 +164,11 @@
 }
 
 .verbiage-link {
-    padding-top: 100%;
-	position: relative;
+    /*padding-top: 100%;*/
+	/*position: relative;*/
+    background-color: #E7F9EC;
+    border-top: 2px solid #D4E9D0;
+    padding: 5px 10px;
 }
 
 .verbiage-inner {
@@ -187,18 +190,22 @@
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 .verbiage-index {
 	font-size: 12px;
 }
 
-.verbiage-inner i {
-    font-size: 50px;
-    padding-bottom: 10px;
+.verbiage-link i {
+    /*font-size: 50px;*/
+    /*padding-bottom: 10px;*/
+    font-size: 25px;
+    padding-top: 4px;
 }
 
-.verbiage-inner p {
+.verbiage-link p {
 	color: $dark-text;
+    display: inline;
+    padding-left: 7px;
+    font-size: 17px;
 }
 
 #feed {
@@ -207,7 +214,7 @@
 }
 
 #leftside, #rightside {
-	padding: 60px;
+	padding: 30px;
 }
 
 #leftside {
@@ -268,8 +275,7 @@
     border-radius:16px;
     border:4px solid #fff
 }
-=======
+
 .fade.in {
     opacity: 1;
 }
->>>>>>> feat/custom-verbiages

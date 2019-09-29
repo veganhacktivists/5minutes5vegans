@@ -15,7 +15,7 @@ class FeedController extends Controller
         if(Auth::check())
             $verbiages = Auth::user()->verbiages;
         else
-            $verbiages = null;
+            $verbiages = [];
 
         return view('feed', [
             'defaultVerbiages' => $this->getVerbiages(),

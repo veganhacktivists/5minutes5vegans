@@ -5,11 +5,13 @@
                 v-if="!custom"
                 v-for="verbiage in defaultVerbiages"
                 v-on:click="selectVerbiage(verbiage)"
-                v-bind:class="{ 'verbiage-link': !editing }"
-                class="text-white col-3"
+                v-bind:class="{ 'verbiage-container': !editing }"
+                class="col-sm-3 px-1"
             >
-                <i :class="verbiage.icon" class="fa-fw"></i>
-                {{ verbiage.title }}
+                <div class="verbiage-link" data-verbiage="{ verbiage.message }">
+                    <i :class="verbiage.icon" class="fa-fw"></i>
+                    <p>{{ verbiage.title }}</p>
+                </div>
             </div>
 
             <div v-if="custom" v-for="verbiage in customVerbiages" class="text-white col-3">
