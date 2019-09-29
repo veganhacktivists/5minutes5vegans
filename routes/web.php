@@ -28,3 +28,9 @@ Route::group( [
     Route::get('/tweets', 'TweetController@tweets');
 
 });
+
+Route::middleware( [ 'auth', 'ownsVerbiage' ] )->group(function () {
+
+    Route::resource( 'verbiage', 'verbiageController' )->only( 'store', 'update', 'destroy' );
+
+});
