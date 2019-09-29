@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Lora');
 
 // Variables
 @import 'variables';
@@ -8,6 +8,13 @@
 @import '~bootstrap/scss/bootstrap';
 
 @import '~fontawesome-iconpicker/dist/css/fontawesome-iconpicker.css';
+@import './landing';
+
+@import './md-form';
+
+html {
+    scroll-behavior: smooth;
+}
 
 .card {
 
@@ -278,4 +285,47 @@
 
 .fade.in {
     opacity: 1;
+}
+
+.flag-container, .flag {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.flag-selected {
+    position: absolute;
+    top: 5px;
+    left: 11px;
+}
+
+.lang-selector-container {
+    display: inline-block;
+    cursor: pointer;
+    img {
+        position: relative;
+        top: 8px;
+    }
+}
+
+.lang-selector-dropdown {
+    display: none;
+    position: absolute;
+    right: 5rem;
+    background: $modal-bg;
+    padding: 10px 25px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    a {
+        color: #fff;
+    }
+    span {
+        position: relative; 
+        top: 1rem;
+    }
+    img {
+        position: relative;
+        top: 8px;
+        float: right;
+    }
 }

@@ -20,9 +20,11 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "5m5v-bot": "^1.1.0",
         "bootstrap": "^4.3.1",
         "fontawesome-iconpicker": "^3.2.0",
         "intercooler": "^1.2.2",
+        "fullpage.js": "^3.0.7",
         "jquery": "^3.4.1",
         "popper": "^1.0.1",
         "popper.js": "^1.15.0",

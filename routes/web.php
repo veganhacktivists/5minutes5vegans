@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/twitteroauth', 'OauthController@index')->name('twitteroauth');
+Route::post('/twitteroauth', 'OauthController@verify')->name('twitteroauth.verify');
 
 Route::group( [
         'prefix' => LaravelLocalization::setLocale(),
@@ -19,7 +21,11 @@ Route::group( [
 
     Auth::routes();
 
-    Route::get('/', 'FeedController@index')->name('feed');
+    Route::get('/', 'Controller@index');
+    Route::get('/feed', 'FeedController@index')->name('feed');
+
+    Route::get('/tweet', 'TweetController@tweet');
+    Route::get('/tweets', 'TweetController@tweets');
 
 });
 
