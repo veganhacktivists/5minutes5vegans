@@ -111,3 +111,11 @@ function initializeFullpage(){
         sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
     });
 }
+
+new Vue({
+    el: 'verbiages',
+    data: {
+        defaultVerbiages: @json( $defaultVerbiages ),
+        customVerbiages: @json( $customVerbiages ),
+    }
+});
