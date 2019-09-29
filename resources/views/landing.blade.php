@@ -27,7 +27,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-lg-between" id="navbarNav">
           <a class="navbar-brand" href="#">
-            <img src="{{ asset('images/logo.svg') }}" alt="logo">
+            <img class="logo" src="{{ asset('images/logo.svg') }}" alt="logo">
           </a>
           <ul class="navbar-nav">
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
