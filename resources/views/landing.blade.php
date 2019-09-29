@@ -138,7 +138,7 @@
               </div>
               <div class="col-12 col-lg-4 step-block">
                 <p>Take up the challenge</p>
-                <a href="#" class="">
+                <a href="{{ action('FeedController@index') }}" class="">
                   <img class="challenge-button img-fluid float-right"
                     src="{{ asset('images/landing/take the challenge.svg') }}" alt="take the challenge" />
                 </a>
