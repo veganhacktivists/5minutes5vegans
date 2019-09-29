@@ -25,6 +25,7 @@ $font-family-serif: "Lora";
 
 .font-serif {
   font-family: $font-family-serif;
+  font-weight: lighter;
 }
 
 .subheading{
@@ -42,6 +43,7 @@ $font-family-serif: "Lora";
 .hero {
   background-attachment: fixed;
   transition: transform 0.5s ease-in-out;
+  padding: 5rem 0;
 }
 
 .hero::after {
@@ -91,6 +93,10 @@ $font-family-serif: "Lora";
   .step-block {
     padding-left: 5rem;
   }
+}
+
+.language-selector-block {
+  top: -1rem;
 }
 
 .challenge-button {

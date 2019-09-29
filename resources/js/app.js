@@ -5,7 +5,6 @@
  */
 
 require('./bootstrap');
-var fullpage = require('fullpage.js');
 
 /*********
  * TIMER *
@@ -47,7 +46,6 @@ function updateTimer() {
 $(() => {
     bindVerbiageLink();
     bindLanguageSelector();
-    initializeFullpage();
 });
 
 /************
@@ -76,17 +74,5 @@ function bindLanguageSelector(){
     $('.lang-selector-container').click(e => {
         e.preventDefault();
         $languageDropdown.show().focus();
-    });
-}
-
-function initializeFullpage(){
-    /*$('#main').fullpage({
-		//options here
-		autoScrolling:true,
-		scrollHorizontally: true
-    });*/
-    new fullpage('#main', {
-        navigation: true,
-        sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
     });
 }
