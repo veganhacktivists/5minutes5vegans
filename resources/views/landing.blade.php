@@ -43,12 +43,8 @@
             @endforeach
           </ul>
           <div class="text-white">
-            <a href="" class="mr-2 btn btn-link">
-              Login
-            </a>
-            <a href="" class="btn btn-cta btn-primary">
-              Open free account
-            </a>
+            {{ link_to_route('login', 'Login', null, array('class' => 'mr-2 btn btn-link')) }}
+            {{ link_to_route('register', 'Open free account', null, array('class' => 'btn btn-cta btn-primary')) }}
           </div>
         </div>
       </nav>
@@ -138,7 +134,7 @@
               </div>
               <div class="col-12 col-lg-4 step-block">
                 <p>Take up the challenge</p>
-                <a href="{{ action('FeedController@index') }}" class="">
+                <a href="{{ route('feed') }}">
                   <img class="challenge-button img-fluid float-right"
                     src="{{ asset('images/landing/take the challenge.svg') }}" alt="take the challenge" />
                 </a>
@@ -167,7 +163,7 @@
                     <p>Whether you have a lot of time or litte, whether you're new or experienced, there's an
                       organization that's looking for help to spread compassionate vegan message.</p>
                     <p class="font-weight-bold">
-                      <a href="#" class="lnk">View Vegan Activism Website</a>
+                      {{ link_to('https://youaretheirvoice.com/', 'View Vegan Activism Website', array('class' => 'lnk')) }}
                     </p>
                   </div>
                 </div>
@@ -180,7 +176,7 @@
                     <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan,
                       completely free projects worth supporting.</p>
                     <p class="font-weight-bold">
-                      <a href="#" class="lnk">View vegan Hacktivists Website</a>
+                      {{ link_to('https://veganhacktivists.org', 'View vegan Hacktivists Website', array('class' => 'lnk')) }}
                     </p>
                   </div>
                 </div>
@@ -193,7 +189,7 @@
                     <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan,
                       completely free projects worth supporting.</p>
                     <p class="font-weight-bold">
-                      <a href="#" class="lnk"> View our Patreon Profile</a>
+                      {{ link_to('https://www.patreon.com/veganhacktivists', 'View our Patreon Profile', array('class' => 'lnk')) }}
                     </p>
                   </div>
                 </div>
