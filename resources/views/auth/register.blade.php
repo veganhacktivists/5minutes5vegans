@@ -9,7 +9,7 @@
 @endsection
 
 @section('page_content')
-<div class="container-fluid" style="background-image: url({{ asset('images/landing/background-cows.jpg') }})">
+<div class="container-fluid" style="background-image: url({{ asset('images/5minutes5vegans_design_v1_login_bg.png') }})">
         <div class="container py-5">
             <!-- Header -->
             <div class="row">
