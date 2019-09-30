@@ -338,8 +338,22 @@ html {
     border-radius: 17px 0 17px 0;
 }
 
+.login-panes {
+    @media (min-width: 768px) {
+        width: 100%;
+    }
+
+    @media (min-width: 992px) {
+        width: 90%;
+    }
+
+    @media (min-width: 1200px) {
+        width: 75%;
+    }
+}
+
 .login-pane {
-    padding: 5.5em 4em 4em 4em;
+    padding: 10% 5% 5% 5%;
     opacity: 0.8;
 
     h1, h2, h3, h4, h5 {
@@ -377,8 +391,8 @@ html {
 
 .horz-line {
     position: relative;
-    left: -57px;
-    width: 54px;
+    left: -12.5%;
+    width: 12%;
     height: 20px;
     border-bottom: 1px solid $teal;
     top: 10px;

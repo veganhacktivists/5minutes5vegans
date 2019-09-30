@@ -4,8 +4,6 @@
 
 @section('scripts')
     <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
-    {{-- @parent
-    <script src="{{ mix('js/login-landing.js') }}" defer></script> --}}
 @endsection
 
 @section('page_content')
@@ -25,7 +23,7 @@
                 </div>
             </div>
             <!-- Content -->
-            <div class="row mt-5 mx-auto w-75">
+            <div class="row mt-5 mx-auto login-panes">
                 <div class="col login-pane login-pane-left">
                     <div id="register-pane">
                         <div class="d-flex">
