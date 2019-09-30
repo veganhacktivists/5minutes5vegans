@@ -253,7 +253,7 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 footer-child">
-          <img src="{{ asset('images/VHLogo_small_150.png') }}" alt="hacktivists logo" class="float-right" />
+          <img src="{{ asset('images/VHLogo_small_200.png') }}" alt="hacktivists logo" class="float-right" />
         </div>
       </div>
     </div>
