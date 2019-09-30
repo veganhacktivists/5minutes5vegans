@@ -1,31 +1,20 @@
 @extends('layout')
 
 @section('page_content')
-<div class="container-fluid">
 
-    <div class="row no-gutters">
+<div id="feed" class="row no-gutters">
 
-        <div class="col-sm-6 p-3">
+    <div id="leftside" class="col-sm-6">
 
-            @include('inc.sidebar')
+        @include('inc.sidebar')
 
-        </div>
+    </div>
 
-        <div class="col">
+    <div id="rightside" class="col-sm-6">
 
-            <div class="d-flex flex-column">
-
-                <div class="p-3">
-                    @include('inc.navbar')
-                </div>
-
-                <div class="flex-grow">
-                    @include('inc.twitter')
-                </div>
-
-            </div>
-
-        </div>
+        <div id="rightside-inner" class="">
+        	@include('inc.twitter')
+    	</div>
 
     </div>
 

@@ -15,3 +15,5 @@ yarn-error.log
 /public/mix-manifest.json
 
 .php_cs.cache
+
+5m5v-config.yaml

@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Auth;
 use App\Traits\KnowsVerbiages;
+use App\Verbiage;
 
 class FeedController extends Controller
 {
@@ -9,7 +12,15 @@ class FeedController extends Controller
 
     public function index() {
 
-        return view('feed', [ 'verbiages' => $this->getVerbiages() ] );
+        if(Auth::check())
+            $verbiages = Auth::user()->verbiages;
+        else
+            $verbiages = [];
+
+        return view('feed', [
+            'defaultVerbiages' => $this->getVerbiages(),
+            'customVerbiages' => $verbiages
+        ]);
 
     }
 

@@ -5,7 +5,10 @@
  */
 
 require('./bootstrap');
-
+window.Vue = require('vue')
+require('vue-resource')
+require('fontawesome-iconpicker');
+var fullpage = require('fullpage.js');
 
 /*********
  * TIMER *
@@ -15,13 +18,20 @@ var startTime, timerInterval;
 $(() => {
     startTimer();
     $('.timer-restart').click(startTimer);
+
 });
+
+function setTimer(minutes, seconds){
+    $('.timer-display .minutes').html(minutes)
+    $('.timer-display .seconds').html(seconds)
+}
 
 function startTimer() {
 
     startTime = Date.now();
     timerInterval = setInterval(updateTimer, 1000);
-    $('.timer-display').html('5:00')
+    // $('.timer-display').html('5:00')
+    setTimer('05', '00')
     $('.timer-complete').hide(400);
     $('.timer-section').show(400);
 }
@@ -37,19 +47,75 @@ function updateTimer() {
     }
 
     var time = new Date(timestamp)
-    $('.timer-display').html(time.getMinutes() + ':' + ('0'+ time.getSeconds()).substr(-2));
+    // $('.timer-display').html(time.getMinutes() + ':' + ('0'+ time.getSeconds()).substr(-2));
+    setTimer(('0'+ time.getMinutes()).substr(-2), ('0'+ time.getSeconds()).substr(-2))
 
 }
 
+Vue.component('verbiages', require('./components/Verbiages.vue').default)
 
+// Register CSRF token for use with vue-resource
+let token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+    Vue.http.interceptors.push((request, next) => {
+        request.headers.set('X-CSRF-TOKEN', token.content);
+        next();
+    });
+} else
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+
+$(() => {
+    bindVerbiageLink();
+    bindLanguageSelector();
+    initializeFullpage();
+});
 
 /************
  * VERBIAGE *
  ************/
 
-$(() => {
+function bindVerbiageLink(){
     $('.verbiage-link').click(function(e){
         console.log(e);
         $('.verbiage-message').val(e.currentTarget.dataset.verbiage);
     });
+}
+
+/*********************
+ * Language Selector *
+ *********************/
+
+function bindLanguageSelector(){
+    const $languageDropdown = $('.lang-selector-dropdown');
+
+    //  without the timeout it can happen that the dropdown closes before the anchor can be clicked
+    $languageDropdown.on('blur', () =>
+        setTimeout(() => $languageDropdown.hide(), 100)
+    );
+
+    $('.lang-selector-container').click(e => {
+        e.preventDefault();
+        $languageDropdown.show().focus();
+    });
+}
+
+function initializeFullpage(){
+    /*$('#main').fullpage({
+		//options here
+		autoScrolling:true,
+		scrollHorizontally: true
+    });*/
+    new fullpage('#main', {
+        navigation: true,
+        sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
+    });
+}
+
+new Vue({
+    el: 'verbiages',
+    data: {
+        defaultVerbiages: [],
+        customVerbiages: [],
+    }
 });
