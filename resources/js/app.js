@@ -67,6 +67,8 @@ if (token) {
 $(() => {
     bindVerbiageLink();
     bindLanguageSelector();
+    initializeMdForm();
+    initializeVue();
 });
 
 /************
@@ -98,10 +100,34 @@ function bindLanguageSelector(){
     });
 }
 
-new Vue({
-    el: 'verbiages',
-    data: {
-        defaultVerbiages: [],
-        customVerbiages: [],
+/*************
+ * Init Vue  *
+ *************/
+
+function initializeVue(){
+    if(!$('#verbiages').length) {
+        return;
     }
-});
+
+    new Vue({
+        el: '#verbiages',
+        data: {
+            defaultVerbiages: [],
+            customVerbiages: [],
+        }
+    });
+}
+
+
+/******************
+ * MD Form Helper *
+ ******************/
+function initializeMdForm () {
+    $('.form-control-md').blur((event) => {
+        if ($(event.target).val()) {
+            $(event.target).addClass('has-value');
+        } else {
+            $(event.target).removeClass('has-value');
+        }
+    });
+}

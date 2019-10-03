@@ -26,7 +26,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-lg-between" id="navbarNav">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand mt-3" href="#">
             <img class="logo" src="{{ asset('images/logo.svg') }}" alt="logo">
           </a>
           <ul class="navbar-nav">
@@ -57,34 +57,30 @@
       <div class="container z-fix">
         <div class="row">
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-            <h1 class="heading font-serif mb-5 mt-5">Take a challenge to help as many people become <span>vegan</span>
+            <h1 class="heading font-serif mb-5 mt-5">Take the challenge to help as many people become <span>vegan</span>
               as possible in merely 5 minutes!</h1>
             <div class="mt-3">
-              <a class="btn btn-primary btn-cta bg-red text-white mr-2" href="#howdoesitwork" role="button">Get started
+              <a class="btn btn-primary btn-cta bg-red text-white mr-2 p-3 font-weight-bold" href="#howdoesitwork" role="button">Get started
                 below</a>
             </div>
           </div>
-          <div class="col-12 col-md-4 col-lg-6 col-xl-5 d-none d-md-block">
+          <div class="col-12 col-md-4 col-lg-6 col-xl-5 d-none d-md-block w-100">
             <img src="{{ asset('images/landing/banner-food.png')  }}" alt="food">
           </div>
         </div>
       </div>
     </section>
     <!-- How does it work Section -->
-    <section id="howdoesitwork" class="d-flex align-items-center position-relative cover hero"
+    <section id="howdoesitwork" class="d-flex align-items-center position-relative cover hero pt-0"
       style="background-image:url({{ asset('images/landing/background-cows.jpg') }});">
       <div class="container-fluid">
         <div class="container">
           <div class="row py-5">
-            <div class="col-12 pb-4">
-              <h2 class="heading font-serif text-left mb-5">How does it work?</h2>
-            </div>
             <div class="col-12 col-sm-6 col-lg-4">
               <div class="number-block">01</div>
               <div class="step-block">
-                <h3 class="subheading text-uppercase">Let us explain</h3>
-                <p>Our vegan robots are constantly scanning social media and picking posts and comments of people
-                  interested in veganism.</p>
+                <h3 class="subheading text-uppercase">How does it work?</h3>
+                <p>Our vegan robots are constantly scanning social media and re-tweeting comments of people interested in going vegan! Use this website to find those people and help support them where possible.</p>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
@@ -104,13 +100,12 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-12 action-band">
+        <div class="col-12 action-band text-white">
           <div class="container">
             <div class="row">
-              <div class="col-12 col-lg-4 step-block font-serif">Okay &ndash; I'm ready!</div>
+              <div class="col-12 col-lg-4 step-block">Pick a language an click play!</div>
               <div class="col-12 col-lg-4 step-block language-selector-block">
-                Pick language: {{ getCurrentCountryName() }}
+                {{ getCurrentCountryName() }}
                 <div class="lang-selector-container">
                   <img class="lang-selector-img" src="{{ mb_strtolower(asset('images/landing/'.getCurrentCountry()), 'UTF-8') }}.png" /> <i
                     class="fas fa-chevron-down"></i>
@@ -121,7 +116,7 @@
                     @if(LaravelLocalization::getCurrentLocale() != $localeCode)
                     <div>
                       <a hreflang="{{ $localeCode }}"
-                        href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                        href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}#howdoesitwork">
                         <span class="mr-3">{{ $properties['name'] }}</span> <img
                           src="{{ mb_strtolower(asset('images/landing/'.getCountry( $properties )), 'UTF-8') }}.png"/
                           class="rounded-circle flag">
@@ -133,7 +128,7 @@
                 </div>
               </div>
               <div class="col-12 col-lg-4 step-block">
-                <p>Take up the challenge</p>
+                <p>Let's go!</p>
                 <a href="{{ route('feed') }}">
                   <img class="challenge-button img-fluid float-right"
                     src="{{ asset('images/landing/take the challenge.svg') }}" alt="take the challenge" />
@@ -142,6 +137,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
     <!-- Else Section -->
@@ -168,7 +164,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row mt-3">
                 <div class="col-12">
                   <div class="number-block">02</div>
                   <div class="step-block">
@@ -181,7 +177,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row mt-3">
                 <div class="col-12">
                   <div class="number-block">03</div>
                   <div class="step-block">
@@ -205,7 +201,7 @@
               </div>
               <div class="row">
                 <div class="col-12">
-                  <div style="margin-left: -4rem;" class="number-block"><i class="far fa-envelope"></i></div>
+                  <div style="margin-left: -5.5rem;" class="number-block"><i style="font-size: 150%;" class="far fa-envelope"></i></div>
                   <div>
                     <h3 class="text-uppercase subheading">Subscribe to our news</h3>
                     <p>Taking utmost care of keeping your email address secure, we'll deliver news, updates and more
@@ -219,14 +215,14 @@
                     <div class="form-row">
                       <div class="form-group-md">
                         <input class="form-control-md" type="text" id="newsletter_name" name="newsletter_name" />
-                        <label class="text-white text-uppercase" for="newsletter_name">Your name</label>
+                        <label class="text-uppercase" for="newsletter_name">Your name</label>
                         <div class="line"></div>
                       </div>
                     </div>
                     <div class="form-row">
                       <div class="form-group-md">
                         <input class="form-control-md" type="email" id="newsletter_email" name="newsletter_email" />
-                        <label class="text-white text-uppercase" for="newsletter_email">Your email</label>
+                        <label class="text-uppercase" for="newsletter_email">Your email</label>
                         <div class="line"></div>
                       </div>
                     </div>
@@ -241,19 +237,20 @@
       </div>
     </section>
   </main>
-  <footer class="py-5 page-footer">
+  <footer class="py-5 page-footer text-white">
     <div class="container-fluid container-fluid-max">
       <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 footer-child">
+        <div class="col-12 col-md-6 col-lg-4">
+            Follow us on <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram') }}
         </div>
-        <div class="col-12 col-md-6 col-lg-4 footer-child text-center">
+        <div class="col-12 col-md-6 col-lg-4 text-center">
           <div>
             <small class=" font-serif">Website hosted and designed by vegan hacktivists with love
               <i class="far fa-heart"></i></small>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 footer-child">
-          <img src="{{ asset('images/VHLogo_small_200.png') }}" alt="hacktivists logo" class="float-right" />
+        <div class="col-12 col-md-6 col-lg-4 text-right">
+            {{ link_to('https://www.patreon.com/veganhacktivists', 'Support us on Patreon') }}
         </div>
       </div>
     </div>
