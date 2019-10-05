@@ -294,10 +294,18 @@ html {
 }
 
 .flag-selected {
+    left: 4px;
     position: absolute;
     top: 5px;
-    left: 11px;
 }
+
+@include media-breakpoint-up(lg) {
+    .flag-selected {    
+        left: 11px;
+    }
+  }
+
+
 
 .lang-selector-container {
     display: inline-block;
@@ -311,7 +319,7 @@ html {
 .lang-selector-dropdown {
     display: none;
     position: absolute;
-    right: 5rem;
+    left: 2rem;
     background: $modal-bg;
     padding: 10px 25px;
     border-top-left-radius: 50px;

@@ -66,7 +66,7 @@ if (token) {
 
 $(() => {
     bindLanguageSelector();
-
+    initializeMdForm();
     new Vue({ el: 'verbiages' });
 });
 
@@ -85,5 +85,17 @@ function bindLanguageSelector(){
     $('.lang-selector-container').click(e => {
         e.preventDefault();
         $languageDropdown.show().focus();
+    });
+
+/******************
+ * MD Form Helper *
+ ******************/
+function initializeMdForm () {
+    $('.form-control-md').blur((event) => {
+        if ($(event.target).val()) {
+            $(event.target).addClass('has-value');
+        } else {
+            $(event.target).removeClass('has-value');
+        }
     });
 }
