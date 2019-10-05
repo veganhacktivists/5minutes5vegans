@@ -65,22 +65,10 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 
 $(() => {
-    bindVerbiageLink();
     bindLanguageSelector();
     initializeMdForm();
-    initializeVue();
+    new Vue({ el: 'verbiages' });
 });
-
-/************
- * VERBIAGE *
- ************/
-
-function bindVerbiageLink(){
-    $('.verbiage-link').click(function(e){
-        console.log(e);
-        $('.verbiage-message').val(e.currentTarget.dataset.verbiage);
-    });
-}
 
 /*********************
  * Language Selector *
@@ -98,26 +86,6 @@ function bindLanguageSelector(){
         e.preventDefault();
         $languageDropdown.show().focus();
     });
-}
-
-/*************
- * Init Vue  *
- *************/
-
-function initializeVue(){
-    if(!$('#verbiages').length) {
-        return;
-    }
-
-    new Vue({
-        el: '#verbiages',
-        data: {
-            defaultVerbiages: [],
-            customVerbiages: [],
-        }
-    });
-}
-
 
 /******************
  * MD Form Helper *
