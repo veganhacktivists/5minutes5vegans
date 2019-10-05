@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="row px-3">
+        <div class="row px-3" v-if="defaultVerbiages">
             <div
                 v-if="!custom"
                 v-for="verbiage in defaultVerbiages"
@@ -8,7 +8,7 @@
                 v-bind:class="{ 'verbiage-container': !editing }"
                 class="col-sm-3 px-1"
             >
-                <div class="verbiage-link" data-verbiage="{ verbiage.message }">
+                <div class="verbiage-link">
                     <i :class="verbiage.icon" class="fa-fw"></i>
                     <p>{{ verbiage.title }}</p>
                 </div>
@@ -53,6 +53,10 @@
             </div>
         </div>
 
+        <div v-else>
+            Loading supportive messages...
+        </div>
+
         <div class="pt-2 row text-center text-white" v-if="customVerbiages.length">
             <div
                 role="button"
@@ -68,7 +72,7 @@
         </div>
         <div class="p-2 row">
             <textarea
-                v-model="selected.message"
+                v-model="selected.body"
                 class="col w-100 p-3"
                 rows="4"
                 v-bind:readonly="!editing"
@@ -127,18 +131,25 @@ Vue.http.interceptors.push(function(req) {
 export default {
     data: function() {
         return {
-            defaultVerbiages: this.$parent.defaultVerbiages,
-            customVerbiages: this.$parent.customVerbiages,
-            authenticated: this.$parent.authenticated,
+            defaultVerbiages: false,
+            customVerbiages: false,
             custom: false,
             editing: false,
             creating: false,
             busy: false,
-            selected: { message: defaultMessage },
+            selected: { body: defaultMessage },
         }
     },
 
-    created: function() {},
+    created: function() {
+        this.$http
+            .get('tweets')
+            .then((r) => {
+                this.defaultVerbiages = r.body
+            }, () => {
+                this.created()
+            })
+    },
 
     methods: {
         startEditing: function() {
@@ -148,7 +159,7 @@ export default {
 
         endEditing: function() {
             if (this.creating) {
-                this.selected = { message: defaultMessage }
+                this.selected = { body: defaultMessage }
                 this.customVerbiages.pop()
                 this.creating = false
 
@@ -169,7 +180,7 @@ export default {
             this.selected = {
                 title: 'New message',
                 icon: 'fas fa-leaf',
-                message: this.selected.message,
+                body: this.selected.body,
             }
             this.customVerbiages.push(this.selected)
         },
