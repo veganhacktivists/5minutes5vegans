@@ -5,7 +5,7 @@ This is the repository containing the language files for the 5 Minutes 5 Vegans 
 You will find three types of files in here:
  * Keyworded translations (\<lang\>/\<section\>.php)
  * Phrase translations (\<lang\>.json)
- * Tweet translations (\<lang\>/tweet.php)
+ * Tweet translations (\<lang\>/tweets.php)
 
 ## Technical details
 These language files are either JSON or PHP files, which means that they are subject to certain technical requirements to be parsed correctly. 

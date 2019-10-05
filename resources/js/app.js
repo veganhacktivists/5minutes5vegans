@@ -8,7 +8,6 @@ require('./bootstrap');
 window.Vue = require('vue')
 require('vue-resource')
 require('fontawesome-iconpicker');
-var fullpage = require('fullpage.js');
 
 /*********
  * TIMER *
@@ -66,21 +65,10 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 
 $(() => {
-    bindVerbiageLink();
     bindLanguageSelector();
-    initializeFullpage();
+
+    new Vue({ el: 'verbiages' });
 });
-
-/************
- * VERBIAGE *
- ************/
-
-function bindVerbiageLink(){
-    $('.verbiage-link').click(function(e){
-        console.log(e);
-        $('.verbiage-message').val(e.currentTarget.dataset.verbiage);
-    });
-}
 
 /*********************
  * Language Selector *
@@ -99,23 +87,3 @@ function bindLanguageSelector(){
         $languageDropdown.show().focus();
     });
 }
-
-function initializeFullpage(){
-    /*$('#main').fullpage({
-		//options here
-		autoScrolling:true,
-		scrollHorizontally: true
-    });*/
-    new fullpage('#main', {
-        navigation: true,
-        sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
-    });
-}
-
-new Vue({
-    el: 'verbiages',
-    data: {
-        defaultVerbiages: [],
-        customVerbiages: [],
-    }
-});

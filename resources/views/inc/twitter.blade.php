@@ -1,5 +1,5 @@
 <div id="Twitter" class="iframecontent">
-<a class="twitter-timeline" data-lang="{{ App::getLocale() }}" data-theme="light" data-link-color="#19CF86" href="https://twitter.com/vegassist?ref_src=twsrc%5Etfw">
+<a class="twitter-timeline" data-lang="{{ App::getLocale() }}" data-theme="light" data-link-color="#19CF86" href="https://twitter.com/5m5v_{{ App::getLocale() }}">
     Loading Twitter feed...<br/>
     If this message doesn't go away, make sure you have scripts enabled and try refreshing the page.<br/>
 </a>
