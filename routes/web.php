@@ -19,18 +19,19 @@ Route::group( [
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
     ], function () {
 
-    Auth::routes();
+        Auth::routes();
 
-    Route::get('/', 'Controller@index');
-    Route::get('/feed', 'FeedController@index')->name('feed');
+        Route::get('/', 'Controller@index');
+        Route::get('/feed', 'FeedController@index')->name('feed');
 
-    Route::get('/tweet', 'TweetController@tweet');
-    Route::get('/tweets', 'TweetController@tweets');
+        Route::get('/tweet', 'TweetController@tweet');
+        Route::get('/tweets', 'TweetController@tweets');
 
-});
+        Route::get('/login', function () {
+            return redirect()->route('register', ['login' => true]);
+        })->name('login');
+    });
 
 Route::middleware( [ 'auth', 'ownsVerbiage' ] )->group(function () {
-
     Route::resource( 'verbiage', 'verbiageController' )->only( 'store', 'update', 'destroy' );
-
 });

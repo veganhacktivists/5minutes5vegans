@@ -87,4 +87,3 @@ function bindLanguageSelector(){
         $languageDropdown.show().focus();
     });
 }
-
