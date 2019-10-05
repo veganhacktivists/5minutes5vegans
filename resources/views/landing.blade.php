@@ -103,7 +103,7 @@
         <div class="col-12 action-band text-white">
           <div class="container">
             <div class="row">
-              <div class="col-12 col-lg-4 step-block">Pick a language an click play!</div>
+              <div class="col-12 col-lg-4 step-block">Pick a language and click play!</div>
               <div class="col-12 col-lg-4 step-block language-selector-block">
                 {{ getCurrentCountryName() }}
                 <div class="lang-selector-container">
