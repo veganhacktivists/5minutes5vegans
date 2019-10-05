@@ -14,7 +14,10 @@ class TweetController extends Controller
      */
     public function tweets(TweetRegexService $tweetRegexService)
     {
-        return $tweetRegexService->generate_tweets(__('tweets'));
+        $tweets = $tweetRegexService->generate_tweets(__('tweets'));
+        return response()
+            ->json($tweets)
+            ->header('Cache-Control', 'private, max-age=604800');
     }
 
 }

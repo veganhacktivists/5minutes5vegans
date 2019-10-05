@@ -75,7 +75,7 @@ class TweetRegexService {
             ];
         }
 
-        return json_encode($results);
+        return $results;
     }
 
     private function compileAndGenerate($compiler, $strings) {
