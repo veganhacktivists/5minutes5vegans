@@ -3,8 +3,8 @@
 return [
 
     [
-        'icon' => 'General info',
-        'title' => 'fas fa-info-circle',
+        'icon' => 'fas fa-info-circle',
+        'title' => 'General info',
         'body' =>[
             [
                 'You should do it! Most vegans say the only regret they have is that they didn\'t do it earlier.'
