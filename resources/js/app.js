@@ -86,6 +86,7 @@ function bindLanguageSelector(){
         e.preventDefault();
         $languageDropdown.show().focus();
     });
+}
 
 /******************
  * MD Form Helper *

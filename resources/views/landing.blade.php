@@ -172,7 +172,7 @@
                     <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan,
                       completely free projects worth supporting.</p>
                     <p class="font-weight-bold">
-                      {{ link_to('https://veganhacktivists.org', 'View vegan Hacktivists Website', array('class' => 'lnk')) }}
+                      {{ link_to('https://veganhacktivists.org', 'View Vegan Hacktivists Website', array('class' => 'lnk')) }}
                     </p>
                   </div>
                 </div>
