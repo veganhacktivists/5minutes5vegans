@@ -65,6 +65,9 @@ class TweetRegexService {
                 $body[] = $this->compileAndGenerate($compiler, $strings);
             }
 
+            $body[] = '#vegan';
+            $body[] = '#5m5v';
+
             $results[] = [
                 'icon' => $icon,
                 'title' => $title,

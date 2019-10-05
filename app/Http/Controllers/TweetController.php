@@ -8,18 +8,13 @@ use Illuminate\Http\Request;
 class TweetController extends Controller
 {
     /**
-     * Return a tweet.
+     * Return all tweets.
      * @param $tweetRegexService
      * @return string
      */
-    public function tweet(TweetRegexService $tweetRegexService)
-    {
-        return $tweetRegexService->generate_message(__('tweet.tweet'));
-    }
-
-
     public function tweets(TweetRegexService $tweetRegexService)
     {
         return $tweetRegexService->generate_tweets(__('tweets'));
     }
+
 }

@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="col-12 col-md-4 col-lg-6 col-xl-5 d-none d-md-block w-100">
-            <img src="{{ asset('images/landing/banner-food.png')  }}" alt="food">
+            <img class="w-100" src="{{ asset('images/landing/banner-food.png')  }}" alt="food">
           </div>
         </div>
       </div>
@@ -211,7 +211,7 @@
               </div>
               <div class="row">
                 <div class="col-12">
-                  <form>
+                  <form action="https://youaretheirvoice.us20.list-manage.com/subscribe/post?u=0baba35be8f6397f7ac1066f1&amp;id=5fd11d4221" target="_blank">
                     <div class="form-row">
                       <div class="form-group-md">
                         <input class="form-control-md" type="text" id="newsletter_name" name="newsletter_name" />
