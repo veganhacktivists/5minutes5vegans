@@ -13,7 +13,7 @@ class Verbiage extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'icon', 'message', 'title'
+        'user_id', 'icon', 'body', 'title'
     ];
 
     /**

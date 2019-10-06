@@ -1,12 +1,28 @@
 <template>
     <div>
+
+
+        <div class="float-right" v-if="customVerbiages.length">
+            <div
+                role="button"
+                v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
+                v-on:click="custom = false"
+                class="d-inline-block py-1 px-2 verbiage-switch"
+            >Default</div><div
+                v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
+                v-on:click="custom = true"
+                class="d-inline-block py-1 px-2 verbiage-switch"
+            >Custom</div>
+        </div>
+
+        <h3 id="easy-to-copy-resources" class="pb-1">EASY TO COPY RESOURCES</h3>
+
         <div class="row px-3" v-if="defaultVerbiages">
             <div
                 v-if="!custom"
                 v-for="verbiage in defaultVerbiages"
                 v-on:click="selectVerbiage(verbiage)"
-                v-bind:class="{ 'verbiage-container': !editing }"
-                class="col-sm-3 px-1"
+                class="verbiage-container col-sm-3 px-1"
             >
                 <div class="verbiage-link">
                     <i :class="verbiage.icon" class="fa-fw"></i>
@@ -14,7 +30,12 @@
                 </div>
             </div>
 
-            <div v-if="custom" v-for="verbiage in customVerbiages" class="text-white col-3">
+            <div
+                v-if="custom"
+                v-for="verbiage in customVerbiages"
+                v-on:click="selectVerbiage(verbiage)"
+                class="verbiage-container col-sm-3 px-1"
+            >
                 <div class="form-row" v-if="selected == verbiage && editing">
                     <!--
                     <button
@@ -28,6 +49,7 @@
                         <span class="caret"></span>
                     </button>
                     -->
+                    <!--
                     <input
                         v-bind:disabled="busy"
                         class="form-control"
@@ -35,6 +57,7 @@
                         v-model="selected.icon"
                         v-iconpicker
                     />
+                    -->
                     <input
                         v-bind:disabled="busy"
                         class="form-control"
@@ -44,11 +67,10 @@
                 </div>
                 <div
                     v-else
-                    v-on:click="selectVerbiage(verbiage)"
-                    v-bind:class="{ 'verbiage-link': !editing }"
+                    class="verbiage-link"
                 >
-                    <i :class="verbiage.icon"></i>
-                    {{ verbiage.title }}
+                    <i :class="verbiage.icon" class="fa-fw"></i>
+                    <p>{{ verbiage.title }}</p>
                 </div>
             </div>
         </div>
@@ -57,19 +79,6 @@
             Loading supportive messages...
         </div>
 
-        <div class="pt-2 row text-center text-white" v-if="customVerbiages.length">
-            <div
-                role="button"
-                v-bind:class="{ 'bg-primary': !custom, 'bg-secondary': custom }"
-                v-on:click="custom = false"
-                class="col-6"
-            >Default messages</div>
-            <div
-                v-bind:class="{ 'bg-primary': custom, 'bg-secondary': !custom }"
-                v-on:click="custom = true"
-                class="col-6"
-            >Custom messages</div>
-        </div>
         <div class="p-2 row">
             <textarea
                 v-model="selected.body"
@@ -132,7 +141,7 @@ export default {
     data: function() {
         return {
             defaultVerbiages: false,
-            customVerbiages: false,
+            customVerbiages: window.customVerbiages,
             custom: false,
             editing: false,
             creating: false,
