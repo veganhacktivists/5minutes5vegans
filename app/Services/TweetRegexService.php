@@ -65,6 +65,9 @@ class TweetRegexService {
                 $body[] = $this->compileAndGenerate($compiler, $strings);
             }
 
+            $body[] = '#vegan';
+            $body[] = '#5m5v';
+
             $results[] = [
                 'icon' => $icon,
                 'title' => $title,
@@ -72,7 +75,7 @@ class TweetRegexService {
             ];
         }
 
-        return json_encode($results);
+        return $results;
     }
 
     private function compileAndGenerate($compiler, $strings) {

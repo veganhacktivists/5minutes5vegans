@@ -8,7 +8,6 @@ use App\Verbiage;
 
 class FeedController extends Controller
 {
-    use KnowsVerbiages;
 
     public function index() {
 
@@ -17,10 +16,7 @@ class FeedController extends Controller
         else
             $verbiages = [];
 
-        return view('feed', [
-            'defaultVerbiages' => $this->getVerbiages(),
-            'customVerbiages' => $verbiages
-        ]);
+        return view('feed');
 
     }
 

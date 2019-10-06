@@ -18,6 +18,7 @@ $font-family-serif: "Lora";
   border-bottom-right-radius: 15%;
   height: 100%;
   width: 80%;
+  border: 1px #00816A solid;
   .heading {
     color: $heading-text-color;
   }
@@ -25,6 +26,7 @@ $font-family-serif: "Lora";
 
 .font-serif {
   font-family: $font-family-serif;
+  font-weight: lighter;
 }
 
 .subheading{
@@ -42,6 +44,7 @@ $font-family-serif: "Lora";
 .hero {
   background-attachment: fixed;
   transition: transform 0.5s ease-in-out;
+  padding: 5rem 0;
 }
 
 .hero::after {
@@ -83,14 +86,16 @@ $font-family-serif: "Lora";
 
 .action-band {
   border: 1px solid $heading-text-color;
+  background-color: $heading-text-color;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 2rem 0;
   max-height: 5rem;
-  
-  .step-block {
-    padding-left: 5rem;
-  }
+  font-size: 120%;
+}
+
+.language-selector-block {
+  top: -0.7rem;
 }
 
 .challenge-button {
@@ -102,9 +107,9 @@ $font-family-serif: "Lora";
 
 @include media-breakpoint-up(lg) {
   .challenge-button {
-    max-height: 90px;
-    max-width: 90px;
-    top: -4.6rem;
+    max-height: 120px;
+    max-width: 120px;
+    top: -6rem;
     right: -1rem;
   }
 }
@@ -113,11 +118,15 @@ $font-family-serif: "Lora";
   .challenge-button {
     max-height: 150px;
     max-width: 150px;
-    top: -6rem;
-    right: -1rem;
+    top: -6.5rem;
+    right: 2rem;
   }
 }
 
+.page-footer {
+  font-size: 120%;
+  background: #333;
+}
 
 // not sure why container is in front of row and col
 .z-fix {
