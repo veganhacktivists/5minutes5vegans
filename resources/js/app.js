@@ -112,10 +112,10 @@ function initializeFullpage(){
     });
 }
 
-new Vue({
-    el: 'verbiages',
-    data: {
-        defaultVerbiages: @json( $defaultVerbiages ),
-        customVerbiages: @json( $customVerbiages ),
-    }
-});
+// new Vue({
+//     el: 'verbiages',
+//     data: {
+//         defaultVerbiages: @json( $defaultVerbiages ),
+//         customVerbiages: @json( $customVerbiages ),
+//     }
+// });

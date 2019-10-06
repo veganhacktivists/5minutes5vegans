@@ -7,18 +7,15 @@
     </div>
     <div class="col text-center timer-section">
         <div class="timer-display">
-            <div class="minutes">5</div>
+            <div class="minutes">05</div>
             <div class="seconds">00</div>
         </div>
     </div>
     <div class="col text-right">
-      <div id="donate-button">
-        <div id="donate-corner-left"></div>
-        <div id="donate-corner-border-left"></div>
-        <div id="donate-corner-right"></div>
-        <div id="donate-corner-border-right"></div>
-        Donate <i class="fa fa-heart"></i>
-      </div>
+        <a href="/login" class="mr-3">Login</a>
+        <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
+            Donate <i class="fa fa-hand-holding-heart"></i>
+        </a>
     </div>
 </div>
 <div id="minutes-left" class="text-center mb-5">
