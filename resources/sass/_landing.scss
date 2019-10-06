@@ -1,9 +1,5 @@
 $font-family-serif: "Lora";
 
-.landing {
-  background-color: #d3ccbf;
-}
-
 .btn-link, .lnk {
   color: $button-cta-color;
   &:hover {
@@ -13,7 +9,7 @@ $font-family-serif: "Lora";
 }
 
 .container-newsletter {
-  background-color: #bdddb1;
+  background-color: rgba(189, 221, 177, 0.7);
   padding: 3rem;
   border-bottom-right-radius: 15%;
   height: 100%;
@@ -42,9 +38,7 @@ $font-family-serif: "Lora";
 }
 
 .hero {
-  background-attachment: fixed;
   transition: transform 0.5s ease-in-out;
-  padding: 5rem 0;
 }
 
 .hero::after {
@@ -65,7 +59,7 @@ $font-family-serif: "Lora";
   border-color: $button-cta-color;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  
+
   &:hover {
     background-color: darken($button-cta-color, 10%);
     border-color: darken($button-cta-color, 10%);
@@ -128,7 +122,37 @@ $font-family-serif: "Lora";
   background: #333;
 }
 
+.page-footer a {
+    color: $pink;
+}
+
 // not sure why container is in front of row and col
 .z-fix {
   z-index: 2;
+}
+
+#main {
+  background-image: url(images/landing/background-cows.jpg);
+  background-position: top;
+}
+
+#home {
+  background-image: url(images/landing/banner-top.png);
+  background-position: bottom;
+  padding-top: 5rem;
+  margin-bottom: -4rem;
+  padding-bottom: 4rem;
+  z-index: 1;
+}
+
+#howdoesitwork {
+    padding-bottom: 5rem;
+}
+
+#process {
+  z-index: 1;
+  background-image: url(images/landing/banner-activism.png);
+  background-position: top;
+  margin-top: -5rem;
+  padding-top: 5rem;
 }

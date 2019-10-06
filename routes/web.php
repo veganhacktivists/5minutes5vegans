@@ -21,7 +21,7 @@ Route::group( [
 
         Auth::routes();
 
-        Route::get('/', 'Controller@index');
+        Route::get('/', 'Controller@index')->name('landing');
         Route::get('/feed', 'FeedController@index')->name('feed');
 
         Route::get('/tweet', 'TweetController@tweet');

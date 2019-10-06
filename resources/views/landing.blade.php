@@ -26,7 +26,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-lg-between" id="navbarNav">
-          <a class="navbar-brand mt-3" href="#">
+          <a class="navbar-brand mt-3" href="{{ route('feed') }}">
             <img class="logo" src="{{ asset('images/logo.svg') }}" alt="logo">
           </a>
           <ul class="navbar-nav">
@@ -50,10 +50,9 @@
       </nav>
     </div>
   </header>
-  <main id="main">
+  <main id="main" class="cover">
     <!-- Banner Section -->
-    <section id="home" class="d-flex align-items-center position-relative cover hero"
-      style="background-image:url({{ asset('images/landing/banner-top.jpg') }});">
+    <section id="home" class="d-flex align-items-center position-relative cover hero">
       <div class="container z-fix">
         <div class="row">
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -71,8 +70,7 @@
       </div>
     </section>
     <!-- How does it work Section -->
-    <section id="howdoesitwork" class="d-flex align-items-center position-relative cover hero pt-0"
-      style="background-image:url({{ asset('images/landing/background-cows.jpg') }});">
+    <section id="howdoesitwork" class="d-flex align-items-center position-relative cover hero pt-0">
       <div class="container-fluid">
         <div class="container">
           <div class="row py-5">
@@ -141,7 +139,7 @@
       </div>
     </section>
     <!-- Else Section -->
-    <section id="process" class="process">
+    <section id="process" class="process cover">
       <div class="container">
         <div class="row py-5">
           <div class="col-lg-6 col-sm-12 pb-4">
@@ -232,7 +230,7 @@
       </div>
     </section>
   </main>
-  <footer class="py-5 page-footer text-white">
+  <footer class="py-2 page-footer text-white">
     <div class="container-fluid container-fluid-max">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
@@ -240,8 +238,8 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-center">
           <div>
-            <small class=" font-serif">Website hosted and designed by vegan hacktivists with love
-              <i class="far fa-heart"></i></small>
+            Website hosted and designed by {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists') }} with love
+              <i class="far fa-heart"></i>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-right">

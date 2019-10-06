@@ -3,7 +3,9 @@
 </div> -->
 <div class="row no-gutters">
     <div class="col text-left">
-        <img class="logo" src="{{ asset('images/logo.svg') }}"/>
+        <a href="{{ route('landing') }}">
+            <img class="logo" src="{{ asset('images/logo.svg') }}"/>
+        </a>
     </div>
     <div class="col text-center timer-section">
         <div class="timer-display">
