@@ -211,22 +211,17 @@
               </div>
               <div class="row">
                 <div class="col-12">
-                  <form action="https://youaretheirvoice.us20.list-manage.com/subscribe/post?u=0baba35be8f6397f7ac1066f1&amp;id=5fd11d4221" target="_blank">
+                  <form action="https://youaretheirvoice.us20.list-manage.com/subscribe/post?u=0baba35be8f6397f7ac1066f1&id=5fd11d4221" method="post" target="_blank">
                     <div class="form-row">
                       <div class="form-group-md">
-                        <input class="form-control-md" type="text" id="newsletter_name" name="newsletter_name" />
-                        <label class="text-uppercase" for="newsletter_name">Your name</label>
-                        <div class="line"></div>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group-md">
-                        <input class="form-control-md" type="email" id="newsletter_email" name="newsletter_email" />
+                        <input class="form-control-md" type="email" id="newsletter_email" name="EMAIL" />
                         <label class="text-uppercase" for="newsletter_email">Your email</label>
                         <div class="line"></div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-cta btn-primary float-right">Subscribe</button>
+                    <!-- anti-bot measure, should be left empty for the form to validate -->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0baba35be8f6397f7ac1066f1_5fd11d4221" tabindex="-1" value=""></div>
+                    <button type="submit" name="subscribe" class="btn btn-cta btn-primary float-right">Subscribe</button>
                   </form>
                 </div>
               </div>
