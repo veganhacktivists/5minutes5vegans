@@ -12,7 +12,7 @@ class VerbiageController extends Controller
     const verbiageRules = [
         'title' => 'required',
         'icon' => 'required|regex:/^fa[a-z]? fa(-[a-z]+)+$/',
-        'message' => 'required',
+        'body' => 'required',
     ];
 
     public function store( Request $request ) {

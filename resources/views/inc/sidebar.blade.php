@@ -35,7 +35,11 @@
     MINUTES LEFT
 </div>
 
-<h3 id="easy-to-copy-resources" class="pb-1">EASY TO COPY RESOURCES</h3>
+<script>
+    var customVerbiages = @json($verbiages);
+</script>
+
+<verbiages></verbiages>
 
 <!-- <h3 class="">
     <div class="p-3 text-center">{!! __('sidebar.header') !!}</div>
@@ -48,12 +52,6 @@
         </small>
     </div>
 </h3> -->
-
-@if(route::is('feed'))
-    @include('inc.verbiage')
-@else
-    HIiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-@endif
 
 <div class="footer mt-4">
         <img src="https://i.imgur.com/xSHDo4E.png" height="100">

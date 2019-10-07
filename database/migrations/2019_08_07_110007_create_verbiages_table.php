@@ -19,7 +19,7 @@ class CreateVerbiagesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('icon');
             $table->string('title');
-            $table->text('message');
+            $table->text('body');
             $table->timestamps();
         });
     }

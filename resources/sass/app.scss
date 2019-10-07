@@ -167,6 +167,18 @@ html {
     padding-bottom: 5px;
 }
 
+.verbiage-switch {
+    color: #19443A;
+    font-size: 17px;
+}
+
+.verbiage-active {
+    background-color: #41B9AA;
+}
+
+.verbiage-inactive {
+    background-color: #D4E9D0;
+}
 
 .verbiage-link {
     /*padding-top: 100%;*/
@@ -433,7 +445,7 @@ html {
 }
 
 @include media-breakpoint-up(lg) {
-    .flag-selected {    
+    .flag-selected {
         left: 11px;
     }
   }
