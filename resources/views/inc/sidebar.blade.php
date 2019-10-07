@@ -56,6 +56,6 @@
 <div class="footer mt-4">
         <img src="https://i.imgur.com/xSHDo4E.png" height="100">
         <div class="text-center font-serif mt-4 px-4">Website hosted and designed by {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists') }} with love
-              <i class="far fa-heart"></i>div>
+              <i class="far fa-heart"></i><div>
       </div>
 </div>
