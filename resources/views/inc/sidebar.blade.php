@@ -8,7 +8,7 @@
     <div class="col text-right">
         @guest
             {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
-        @endquest
+        @endguest
         <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
             Donate <i class="fa fa-hand-holding-heart"></i>
         </a>
