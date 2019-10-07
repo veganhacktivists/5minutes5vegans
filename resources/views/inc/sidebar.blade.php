@@ -6,6 +6,9 @@
         <a href="{{ route('feed') }}"><img class="logo" src="{{ asset('images/logo.svg') }}"/></a>
     </div>
     <div class="col text-right">
+        @auth
+            {{ link_to_route('logout', 'Logout', null, array('class' => 'mr-3')) }}
+        @endauth
         @guest
             {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
         @endguest
@@ -26,6 +29,9 @@
         </div>
     </div>
     <div class="col text-right">
+        @auth
+            {{ link_to_route('logout', 'Logout', null, array('class' => 'mr-3')) }}
+        @endauth
         @guest
             {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
         @endguest
