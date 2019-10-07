@@ -1,0 +1,158 @@
+$font-family-serif: "Lora";
+
+.btn-link, .lnk {
+  color: $button-cta-color;
+  &:hover {
+    text-decoration: none;
+    color: darken($button-cta-color, 10%);
+  }
+}
+
+.container-newsletter {
+  background-color: rgba(189, 221, 177, 0.7);
+  padding: 3rem;
+  border-bottom-right-radius: 15%;
+  height: 100%;
+  width: 80%;
+  border: 1px #00816A solid;
+  .heading {
+    color: $heading-text-color;
+  }
+}
+
+.font-serif {
+  font-family: $font-family-serif;
+  font-weight: lighter;
+}
+
+.subheading{
+  color: $sub-heading-text-color;
+}
+
+.cover {
+  background: no-repeat center/cover;
+}
+
+.scroll .hero {
+  transform: scale(0.98);
+}
+
+.hero {
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hero .container-fluid {
+  z-index: 10;
+}
+
+.btn-cta {
+  background-color: $button-cta-color;
+  border-color: $button-cta-color;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  &:hover {
+    background-color: darken($button-cta-color, 10%);
+    border-color: darken($button-cta-color, 10%);
+  }
+}
+
+.number-block {
+  float: left;
+  color: $heading-text-color;
+  &::after {
+    content: ' —';
+  }
+}
+
+.step-block {
+  padding-left: 4rem;
+}
+
+.action-band {
+  border: 1px solid $heading-text-color;
+  background-color: $heading-text-color;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 2rem 0;
+  max-height: 5rem;
+  font-size: 120%;
+}
+
+.language-selector-block {
+  top: -0.7rem;
+}
+
+.challenge-button {
+  position: relative;
+  max-height: 45px;
+  right: 9rem;
+  top: -3rem;
+}
+
+@include media-breakpoint-up(lg) {
+  .challenge-button {
+    max-height: 120px;
+    max-width: 120px;
+    top: -6rem;
+    right: -1rem;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .challenge-button {
+    max-height: 150px;
+    max-width: 150px;
+    top: -6.5rem;
+    right: 2rem;
+  }
+}
+
+.page-footer {
+  font-size: 120%;
+  background: #333;
+}
+
+.page-footer a {
+    color: $pink;
+}
+
+// not sure why container is in front of row and col
+.z-fix {
+  z-index: 2;
+}
+
+#main {
+  background-image: url(images/landing/background-cows.jpg);
+  background-position: top;
+}
+
+#home {
+  background-image: url(images/landing/banner-top.png);
+  background-position: bottom;
+  padding-top: 5rem;
+  margin-bottom: -4rem;
+  padding-bottom: 4rem;
+  z-index: 1;
+}
+
+#howdoesitwork {
+    padding-bottom: 5rem;
+}
+
+#process {
+  z-index: 1;
+  background-image: url(images/landing/banner-activism.png);
+  background-position: top;
+  margin-top: -5rem;
+  padding-top: 5rem;
+}

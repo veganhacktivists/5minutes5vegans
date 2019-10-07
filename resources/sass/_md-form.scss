@@ -1,0 +1,138 @@
+/**
+Inspired by https://codepen.io/deeej/pen/VBeWWz
+*/
+
+$colour-primary: $md-form-line-color;
+$colour-secondary: lighten($md-form-line-color, 20%);
+$colour-grey: #555555;
+$grid-gutter-width: 30px;
+$input-padding-horizontal: $grid-gutter-width / 3;
+$input-padding-vertical: $grid-gutter-width / 3;
+
+// Linear Gradient Mixin
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+  background-color: $from;
+  background: linear-gradient(to right, $from 0%, $to $stop);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+
+// Basic form styling
+
+.form-row {
+  margin-left: -$grid-gutter-width / 2;
+  margin-right: -$grid-gutter-width / 2;
+  .form-group-md {
+    padding: $grid-gutter-width / 2 $grid-gutter-width / 2 0;
+    align-self: flex-end;
+    width: 100%;
+  }
+}
+
+.form-group-md {
+  position: relative;
+  padding-top: $grid-gutter-width / 2;
+  margin-bottom: $grid-gutter-width;
+}
+
+.form-control-md {
+  border: 0;
+  border-radius: 0;
+  padding: $grid-gutter-width / 3 $input-padding-horizontal;  
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+  font-size: 0.9rem;
+  
+  &:not(textarea) {
+    height: 44px;
+  }
+  
+  + label {
+    position: absolute;
+    z-index: 1;
+    top: $input-padding-vertical + $grid-gutter-width / 2;
+    margin: 0;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+    left: $input-padding-horizontal;
+    right: $input-padding-horizontal;
+  }
+  
+  &:focus {
+    box-shadow: none;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  &:focus {
+    + label {
+      color: $colour-primary;
+    }
+  }
+  
+  &:focus, &.has-value {
+    
+    + label {
+      font-size: 0.75rem;
+      top: 0;
+    }
+    
+  }
+  
+}
+
+// Position labels for when javascript is disabled
+.no-js {
+  .form-control-md + label {
+    font-size: 0.75rem;
+    top: 0;
+  }
+}
+
+.form-row {
+  .form-control-md {
+    + label {
+      left: $grid-gutter-width / 2 + $input-padding-horizontal;
+      right: $grid-gutter-width / 2 + $input-padding-horizontal;
+    }
+  }
+  .line {
+    left: $grid-gutter-width / 2;
+    right: $grid-gutter-width / 2;
+  }
+}
+
+.line {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  @include horizontal-gradient($colour-primary, $colour-secondary);
+  &:after {
+    content: "";
+    height: 2px;
+    position: absolute;
+    display: block;
+    background: $colour-primary;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+    transform-origin: 0 0;
+  }
+}
+
+.form-control-md:focus {
+  ~ .line {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+// Remove Bootstrap 4 height from select
+select.form-control-md:not([size]):not([multiple]) {
+  height: 44px;
+}
