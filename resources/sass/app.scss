@@ -31,47 +31,29 @@ html {
     width: 200px;
 }
 
-#donate-corner-border-left {
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 20%;
-    padding-top: 20%;
-    border-top-left-radius: 100%;
-    border-top: 2px solid #41B9AA;
-    border-left: 2px solid #41B9AA;
+#feed-nav-1 {
+    display: none;
 }
 
-#donate-corner-left {
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 20%;
-    padding-top: 20%;
-    background-color: #E3F3E5;
-}
+@media (max-width: 1596px) {
 
-#donate-corner-border-right {
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 20%;
-    padding-bottom: 20%;
-    border-bottom-right-radius: 100%;
-    border-bottom: 2px solid #41B9AA;
-    border-right: 2px solid #41B9AA;
-}
+    #feed-nav-1 {
+        display: flex;
+    }
 
-#donate-corner-right {
-    position: absolute;
-    bottom: -2px;
-    right: -2px;
-    width: 20%;
-    padding-top: 20%;
-    background-color: #E3F3E5;
+    #feed-nav-2 {
+        .col:first-child {
+            display: none;
+        }
+        .col:last-child {
+            display: none;
+        }
+    }
+
 }
 
 #donate-button {
+    display: inline-block;
     border: 2px solid #41B9AA;
     position: relative;
     width: 150px;
@@ -82,6 +64,20 @@ html {
     margin-left: auto;
     font-weight: bold;
     color: $dark-text;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#donate-button:hover {
+    transition: all .15s ease-in-out;
+    background-color: #41B9AA;
+    color: white;
+    text-decoration: none;
+
+    i {
+        color: white;
+        transition: all .15s ease-in-out;
+    }
 }
 
 #donate-button i {
@@ -167,6 +163,7 @@ html {
 }
 
 .verbiage-container {
+    width: 50%;
     padding-bottom: 5px;
 }
 
@@ -228,9 +225,114 @@ html {
     font-size: 17px;
 }
 
+
+@media only screen and (min-width: 768px) {
+
+    @media (max-width: 969px) {
+        .verbiage-link {
+            height: 73px;
+        }
+
+        .verbiage-link i {
+            display: block;
+            margin: auto;
+        }
+
+        .verbiage-link p {
+            padding: 0px;
+            display: block;
+            text-align: center;
+            padding-top: 5px;
+        }
+    }
+
+    @media (min-width: 1333px) {
+        .verbiage-container {
+            width: 33.33%;
+        }
+    }
+
+    @media (min-width: 1777px) {
+        .verbiage-container {
+            width: 25%;
+        }
+    }
+
+}
+@media only screen and (max-width: 767px) {
+
+    @media (min-width: 666px) {
+        .verbiage-container {
+            width: 33.33%;
+        }
+    }
+    @media (max-width: 464px) {
+        .verbiage-container {
+            width: 100%;
+        }
+        .verbiage-link {
+            height: 73px;
+        }
+
+        .verbiage-link i {
+            display: block;
+            margin: auto;
+        }
+
+        .verbiage-link p {
+            padding: 0px;
+            display: block;
+            text-align: center;
+            padding-top: 5px;
+        }
+    }
+}
+
+
 #feed {
 	position: relative;
 	background-color: #E3F3E5;
+}
+
+#feed a {
+    color: $dark-text;
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    @media (max-width: 1112px) {
+        .logo {
+            width: 160px;
+        }
+        #feed a {
+            color: #19443A;
+            font-size: 15px;
+        }
+        #donate-button {
+            display: inline-block;
+            border: 2px solid #41B9AA;
+            position: relative;
+            width: 110px;
+            height: 49px;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .logo {
+        width: 160px;
+    }
+    #feed a {
+        color: #19443A;
+        font-size: 15px;
+    }
+    #donate-button {
+        display: inline-block;
+        border: 2px solid #41B9AA;
+        position: relative;
+        width: 110px;
+        height: 49px;
+    }
 }
 
 #leftside, #rightside {
@@ -247,6 +349,36 @@ html {
   background-size: cover;
 }
 
+#feed {
+    .footer {
+        display: flex;
+
+        .font-serif {
+            flex-grow: 2;
+            font-size: 20px;
+            color: $dark-text;
+        }
+    }
+}
+
+#rightside {
+    .flag-list {
+        display: flex;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        margin-top: -74px;
+        justify-content: center;
+        li {
+            margin-top: 5px;
+            .flag-container {
+                padding: 0.5rem;
+                display: inline-block;
+            }
+        }
+    }
+}
+
 #rightside-inner {
 
 	background-color: white;
@@ -258,7 +390,7 @@ html {
 }
 
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 768px) {
 
   #rightside {
     min-height: 100vh;
