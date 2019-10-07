@@ -6,7 +6,9 @@
         <a href="{{ route('feed') }}"><img class="logo" src="{{ asset('images/logo.svg') }}"/></a>
     </div>
     <div class="col text-right">
-        {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
+        @guest
+            {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
+        @endquest
         <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
             Donate <i class="fa fa-hand-holding-heart"></i>
         </a>
@@ -24,7 +26,9 @@
         </div>
     </div>
     <div class="col text-right">
-        {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
+        @guest
+            {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
+        @endguest
         <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
             Donate <i class="fa fa-hand-holding-heart"></i>
         </a>
