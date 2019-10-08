@@ -28,94 +28,99 @@
             <!-- Content -->
             <div class="row mt-5 mx-auto login-panes">
                 <div class="col login-pane login-pane-left">
-                    <div id="register-pane">
-                        <div class="d-flex">
-                            <h1 class="mr-auto">{{ __('Register') }}</h1>
-                            <button id="login-btn" class="btn btn-link font-weight-bold my-auto">Or login&nbsp;<i class="fas fa-caret-right"></i></button>
+                    @if (app('request')->input('login') && app('request')->input('login') == '1')
+                        <div id="login-pane" class="d-none">
+                            @include('auth/login')
+                            @yield('login-pane')
                         </div>
-                        <p class="mt-3">
-                            When you register a free account, you will be able to edit
-                            and add quick to copy answers to the most common questions
-                            people curious about veganism have.
-                        </p>
-                        {{ Form::open( [ 'route' => 'register' ] ) }}
-                            {{ Form::text('name', false, [
-                                'class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''),
-                                'required' => true,
-                                'autofocus' => true,
-                                'placeholder' => 'YOUR NAME',
-                            ]) }}
-
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-
-                            {{ Form::email('email', false, [
-                                'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
-                                'required' => true,
-                                'placeholder' => 'YOUR EMAIL',
-                            ]) }}
-
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
-
-                            {{ Form::password('password', [
-                                'class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''),
-                                'required' => true,
-                                'placeholder' => 'PASSWORD',
-                            ]) }}
-
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-
-                            {{ Form::password('password_confirmation', [
-                                'class' => 'form-control' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
-                                'required' => true,
-                                'placeholder' => 'CONFIRM PASSWORD',
-                            ]) }}
-
-                            @error('password_confirmation')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-
-                            <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }} mt-3">
-                                <label class="text-md-right">Confirm you are not a robot</label>
-                                <div>
-                                    {!! app('captcha')->display() !!}
-
-                                    @error('g-recaptcha-response'))
-                                        <span class="help-block">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
+                    @else
+                        <div id="register-pane">
+                            <div class="d-flex">
+                                <h1 class="mr-auto">{{ __('Register') }}</h1>
+                                <a href="{{ route('register', ['login' => '1']) }}">
+                                    <button id="login-btn" class="btn btn-link font-weight-bold my-auto">Or login&nbsp;<i class="fas fa-caret-right"></i></button>
+                                </a>
                             </div>
+                            <p class="mt-3">
+                                When you register a free account, you will be able to edit
+                                and add quick to copy answers to the most common questions
+                                people curious about veganism have.
+                            </p>
+                            {{ Form::open( [ 'route' => 'register' ] ) }}
+                                {{ Form::text('name', false, [
+                                    'class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''),
+                                    'required' => true,
+                                    'autofocus' => true,
+                                    'placeholder' => 'YOUR NAME',
+                                ]) }}
 
-                            <div class="form-inline">
-                                <div class="form-check">
-                                    {{ Form::checkbox('newsletter-check', null, false, [
-                                        "class" => "form-check-input",
-                                    ]) }}
-                                    <label class="form-check-label small" for="newsletter-check">I'd like to receive newsletter</label>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                                {{ Form::email('email', false, [
+                                    'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
+                                    'required' => true,
+                                    'placeholder' => 'YOUR EMAIL',
+                                ]) }}
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+
+                                {{ Form::password('password', [
+                                    'class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''),
+                                    'required' => true,
+                                    'placeholder' => 'PASSWORD',
+                                ]) }}
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                                {{ Form::password('password_confirmation', [
+                                    'class' => 'form-control' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
+                                    'required' => true,
+                                    'placeholder' => 'CONFIRM PASSWORD',
+                                ]) }}
+
+                                @error('password_confirmation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                                <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }} mt-3">
+                                    <label class="text-md-right">Confirm you are not a robot</label>
+                                    <div>
+                                        {!! app('captcha')->display() !!}
+
+                                        @error('g-recaptcha-response'))
+                                            <span class="help-block">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                                {{ Form::submit(__('Create Account'), ['class' => 'btn btn-sm btn-primary swirvy-box ml-auto']) }}
-                            </div>
-                        {{ Form::close() }}
-                    </div>
-                    <div id="login-pane" class="d-none">
-                        @include('auth/login')
-                        @yield('login-pane')
-                    </div>
+
+                                <div class="form-inline">
+                                    <div class="form-check">
+                                        {{ Form::checkbox('newsletter-check', null, false, [
+                                            "class" => "form-check-input",
+                                        ]) }}
+                                        <label class="form-check-label small" for="newsletter-check">I'd like to receive newsletter</label>
+                                    </div>
+                                    {{ Form::submit(__('Create Account'), ['class' => 'btn btn-sm btn-primary swirvy-box ml-auto']) }}
+                                </div>
+                            {{ Form::close() }}
+                        </div>
+                    @endif
                 </div>
                 <div class="col login-pane login-pane-right">
                     <h3>Start without account</h3>
@@ -159,24 +164,4 @@
             </div>
         </footer>
     </div>
-
-    {{-- <script>
-        const $signupSection = document.getElementById('register-pane')
-        const $loginSection = document.getElementById('login-pane')
-        const $loginButton = document.getElementById('login-btn')
-
-        showLoginSection = function () {
-            $loginSection.classList.add('d-block')
-            $loginSection.classList.remove('d-none')
-
-            $signupSection.classList.add('d-none')
-            $signupSection.classList.remove('d-block')
-        }
-
-        $loginButton.addEventListener("click", showLoginSection)
-
-        if (new URL(window.location).searchParams.get('login') === '1') {
-            showLoginSection()
-        }
-    </script> --}}
 @endsection

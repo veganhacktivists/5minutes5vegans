@@ -1,19 +1,26 @@
 $(() => {
-    const $signupSection = $('#register-pane')
+    const $registerSection = $('#register-pane')
     const $loginSection = $('#login-pane')
-    const $loginButton = $('#login-btn')
 
     showLoginSection = () => {
         $loginSection.addClass('d-block')
         $loginSection.removeClass('d-none')
 
-        $signupSection.addClass('d-none')
-        $signupSection.removeClass('d-block')
+        $registerSection.addClass('d-none')
+        $registerSection.removeClass('d-block')
     }
 
-    $loginButton.on("click", showLoginSection)
+    showRegisterSection = () => {
+        $loginSection.removeClass('d-block')
+        $loginSection.addClass('d-none')
+
+        $registerSection.removeClass('d-none')
+        $registerSection.addClass('d-block')
+    }
 
     if (new URL(window.location).searchParams.get('login') === '1') {
         showLoginSection()
+    } else {
+        showRegisterSection()
     }
 });
