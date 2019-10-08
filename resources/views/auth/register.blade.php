@@ -138,7 +138,9 @@
                         <h5 class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
                         <div class="d-flex align-middle">
                             <span class="mr-auto my-5 font-weight-bold text-white">And take up the challenge!</span>
-                            <button class="btn start-btn px-0" type="submit"><div><div><i class="fas fa-caret-right"></i></div></div></button>
+                            <a href="{{ route('feed') }}">
+                                <div class="btn start-btn px-0"><div><div><i class="fas fa-caret-right"></i></div></div></button>
+                            </a>
                         </div>
                     {{ Form::close() }}
                 </div>
