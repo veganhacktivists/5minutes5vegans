@@ -10,7 +10,11 @@
 @endsection
 
 @section('page_content')
-<div class="container-fluid" style="background-image: url({{ asset('images/login_bg.png') }})">
+<section id="login-bg" style="background-image: url({{ asset('images/login_bg.png') }});">
+</section>
+<section id="login-bg-overlay" style="background-image: url({{ asset("images/login_bg_overlay.png") }});">
+</section>
+<div class="container-fluid">
         <div class="container py-5">
             <!-- Header -->
             <div class="row">
@@ -27,7 +31,7 @@
             </div>
             <!-- Content -->
             <div class="row mt-5 mx-auto login-panes">
-                <div class="col login-pane login-pane-left">
+                <div class="col login-pane-left">
                     @if (Route::getCurrentRoute()->getName() == 'login')
                         <div id="login-pane">
                             @yield('login-pane')
@@ -38,21 +42,21 @@
                         </div>
                     @endif
                 </div>
-                <div class="col login-pane login-pane-right">
+                <div class="col login-pane-right">
                     <h3>Start without account</h3>
                     <h5 class="my-5 font-weight-bold"><div class="horz-line"></div>PICK YOUR LANGUAGE.</h5>
                         <div class="d-flex mb-5 lang-flags">
                             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 @php
-                                    $checked = (LaravelLocalization::getCurrentLocale() == $localeCode) ? true : false;
+                                    $active = (LaravelLocalization::getCurrentLocale() == $localeCode) ? true : false;
                                     $flag = strtolower(getCountry( $properties ));
                                 @endphp
-                                    <button type="button" class="btn">
                                         <a hreflang="{{ $localeCode }}"
                                           href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                            <img src="{{ asset('images/landing/'.$flag).'.png' }}">
+                                            <button type="button" class="btn {{ $active ? "login-flag-active" : "" }}">
+                                                <img src="{{ asset('images/landing/'.$flag).'.png' }}">
+                                            </button>
                                         </a>
-                                    </button>
                             @endforeach
                         </div>
                         <h5 class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
