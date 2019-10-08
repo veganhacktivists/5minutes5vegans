@@ -67,11 +67,54 @@
             <div>
                 {!! app('captcha')->display() !!}
 
+<<<<<<< HEAD
+                                <div class="form-inline">
+                                    <div class="form-check">
+                                        {{ Form::checkbox('newsletter-check', null, false, [
+                                            "class" => "form-check-input",
+                                        ]) }}
+                                        <label class="form-check-label small" for="newsletter-check">I'd like to receive newsletter</label>
+                                    </div>
+                                    {{ Form::submit(__('Create Account'), ['class' => 'btn btn-sm btn-primary swirvy-box ml-auto']) }}
+                                </div>
+                            {{ Form::close() }}
+                        </div>
+                    @endif
+                </div>
+                <div class="col login-pane login-pane-right">
+                    <h3>Start without account</h3>
+                    <h5 class="my-5 font-weight-bold"><div class="horz-line"></div>PICK YOUR LANGUAGE.</h5>
+                    {{ Form::open([ 'route' => 'login' ]) }}
+                        <div class="d-flex mb-5 lang-flags">
+                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                @php
+                                    $checked = (LaravelLocalization::getCurrentLocale() == $localeCode) ? true : false;
+                                    $flag = strtolower(getCountry( $properties ));
+                                @endphp
+                                <label>
+                                    {{ Form::radio("flag-selection", null, $checked) }}
+                                    <button type="button" class="btn">
+                                        <img src="{{ asset('images/landing/'.$flag).'.png' }}">
+                                    </button>
+                                </label>
+                            @endforeach
+                        </div>
+                        <h5 class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
+                        <div class="d-flex align-middle">
+                            <span class="mr-auto my-5 font-weight-bold text-white">And take up the challenge!</span>
+                            <a href="{{ route('feed') }}">
+                                <div class="btn start-btn px-0"><div><div><i class="fas fa-caret-right"></i></div></div></button>
+                            </a>
+                        </div>
+                    {{ Form::close() }}
+                </div>
+=======
                 @error('g-recaptcha-response'))
                     <span class="help-block">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
+>>>>>>> Separated login and register forms
             </div>
         </div>
 
