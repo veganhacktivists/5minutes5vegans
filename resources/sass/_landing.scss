@@ -5,6 +5,8 @@ p {
 }
 	
 .btn-link, .lnk {
+  font-size: 20px;
+  letter-spacing: 1px;
   color: $button-cta-color;
   &:hover {
     text-decoration: none;
@@ -63,6 +65,7 @@ p {
   border-color: $button-cta-color;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-size: 18px;
 
   &:hover {
     background-color: darken($button-cta-color, 10%);
