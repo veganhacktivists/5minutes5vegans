@@ -7,7 +7,7 @@ return [
         'title' => 'General info',
         'body' =>[
             [
-                'You should do it! Most vegans say the only regret they have is that they didn\'t do it earlier.'
+                'You should do it! Most vegans say the only regret they have is that they didn\'t do it earlier\.'
             ], [
                 'Here\'s some resources: ' . preg_quote('http://reddit.com/r/Vegan') . ' (community) ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=41') . ' (Movie) ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' (Myths) 🐷 Message me if you need help!'
             ]
@@ -82,11 +82,11 @@ return [
         'title' => 'I Love Cheese',
         'body' =>[
             [
-                'Vegan cheese has come a LONG way in just the past few years! '
+                'Vegan cheese has come a LONG way in just the past few years!'
             ], [
-                'My favorite is "Follow Your Heart" cheese, and Daiya is great for melted cheese.'
+                'My favorite is "Follow Your Heart" cheese, and Daiya is great for melted cheese\.'
             ], [
-                'Use this link ' . preg_quote('https://tinyurl.com/vegancheesenow') . ' to find even more brands near you! Message me if you need help finding more.'
+                'Use this link ' . preg_quote('https://tinyurl.com/vegancheesenow') . ' to find even more brands near you! Message me if you need help finding more\.'
             ]
         ]
     ],
@@ -98,7 +98,7 @@ return [
             [
                 'There\'s usually a lot of Vegan pizza options (and other restaurants) on ' . preg_quote('http://HappyCow.net') . '!'
             ], [
-                'There\'s also "Daiya" Pizza: ' . preg_quote('https://daiyafoods.com/our-foods/pizza/') . ' and even more places listed here: ' . preg_quote('https://tinyurl.com/vegpizzanow') . ' Message me if you need help finding more.'
+                'There\'s also "Daiya" Pizza: ' . preg_quote('https://daiyafoods.com/our-foods/pizza/') . ' and even more places listed here: ' . preg_quote('https://tinyurl.com/vegpizzanow') . ' Message me if you need help finding more\.'
             ]
         ]
     ],
@@ -108,9 +108,9 @@ return [
         'title' => 'I Love Eggs',
         'body' =>[
             [
-                'There\'s a lot of really good Vegan egg recipes (like this one, but add spinach): ' . preg_quote('https://tinyurl.com/eggtofu') . ''
+                'There\'s a lot of really good Vegan egg recipes (like this one, but add spinach): ' . preg_quote('https://tinyurl.com/eggtofu')
             ], [
-                'You can buy Vegan eggs here too: ' . preg_quote('https://tinyurl.com/buyveganegg') . ' And even more info here: ' . preg_quote('http://bit.ly/2rxeYl0') . ' and especially here: ' . preg_quote('https://tinyurl.com/vivaeggs') . ''
+                'You can buy Vegan eggs here too: ' . preg_quote('https://tinyurl.com/buyveganegg') . ' And even more info here: ' . preg_quote('http://bit.ly/2rxeYl0') . ' and especially here: ' . preg_quote('https://tinyurl.com/vivaeggs')
             ]
         ]
     ],
@@ -120,11 +120,11 @@ return [
         'title' => 'I Love Ice Cream',
         'body' =>[
             [
-                'Check out Ben & Jerry\'s Non\-Dairy Icecream here: ' . preg_quote('https://www.benjerry.com/flavors/non-dairy') . ''
+                'Check out Ben & Jerry\'s Non\-Dairy Icecream here: ' . preg_quote('https://www.benjerry.com/flavors/non-dairy')
             ], [
                 'They have a lot of different flavors and there\'s a lot of other soy/almond/coconut based icecream brands too!'
             ], [
-                '(See:|Check out) ' . preg_quote('https://www.vegan.com/ice-cream/') . ''
+                '(See:|Check out) ' . preg_quote('https://www.vegan.com/ice-cream/')
             ]
         ]
     ],
@@ -150,7 +150,7 @@ return [
             ], [
                 'There\'s also tasty plant milks now like: Soy, Almond, Oat, Coconut, Rice & Cashew milk!'
             ], [
-                'These milks don\'t get gross or bad, they\'re healthier, and no refrigeration is needed before opening.'
+                'These milks don\'t get gross or bad, they\'re healthier, and no refrigeration is needed before opening\.'
             ]
         ]
     ],
@@ -172,9 +172,9 @@ return [
         'title' => 'Dominion Movie',
         'body' =>[
             [
-                'I highly recommend this Youtube video: ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=43') . ''
+                'I highly recommend this Youtube video: ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=43')
             ], [
-                'If you have the time, the first 15 minutes of the video is pretty life\-changing.'
+                'If you have the time, the first 15 minutes of the video is pretty life\-changing\.'
             ], [
                 'Message me back if you need any help going Vegan and I\'d be happy to help or answer any questions you may have!'
             ]
@@ -188,11 +188,11 @@ return [
             [
                 'It\'s awesome that you\'re interested in being Vegan! 🐮'
             ], [
-                'If it\'s too overwhelming and you don\'t know what to do, try taking baby steps.'
+                'If it\'s too overwhelming and you don\'t know what to do, try taking baby steps\.'
             ], [
-                'First just start buying soy/almond/oat milks and get used to that.'
+                'First just start buying soy/almond/oat milks and get used to that\.'
             ], [
-                'Then do butter, meats, etc. More info: ' . preg_quote('http://earthlinged.com/ebook')
+                'Then do butter, meats, etc\. More info: ' . preg_quote('http://earthlinged.com/ebook')
             ]
         ]
     ],
@@ -204,7 +204,7 @@ return [
             [
                 'Vegetarian is awesome!'
             ], [
-                'But I\'d really recommend you check this video out: ' . preg_quote('https://www.youtube.com/watch?v=uWna6-niYEg') . ''
+                'But I\'d really recommend you check this video out: ' . preg_quote('https://www.youtube.com/watch?v=uWna6-niYEg')
             ], [
                 'Here\'s some common arguments debunked: ' . preg_quote('http://bit.ly/ebookearthlingedsurge') . ' and here\'s the 1 month vegan challenge: ' . preg_quote('https://www.challenge22.com/')
             ]
@@ -230,9 +230,9 @@ return [
         'title' => 'Protein Issue',
         'body' =>[
             [
-                'Almost all foods, vegetables, fruits, seeds, all have protein, which we don\'t need a lot of.'
+                'Almost all foods, vegetables, fruits, seeds, all have protein, which we don\'t need a lot of\.'
             ], [
-                'Here\'s a link that goes over the protein/meat myth: ' . preg_quote('https://www.vivahealth.org.uk/resources/protein-myth-fact-sheet') . ' and video: ' . preg_quote('https://www.youtube.com/watch?v=1elt5YCRLbk') . ''
+                'Here\'s a link that goes over the protein/meat myth: ' . preg_quote('https://www.vivahealth.org.uk/resources/protein-myth-fact-sheet') . ' and video: ' . preg_quote('https://www.youtube.com/watch?v=1elt5YCRLbk')
             ]
         ]
     ],
@@ -244,7 +244,7 @@ return [
             [
                 'The worlds strongest man is a Vegan and there\'s so many more world records in fitness/strength held by Vegans!'
             ], [
-                'Working out on a plant\-based diet is better for your training.'
+                'Working out on a plant\-based diet is better for your training\.'
             ], [
                 'Videos: ' . preg_quote('https://www.youtube.com/results?search_query=vegan+fitness') . ' and Community: ' . preg_quote('https://www.reddit.com/r/veganfitness/')
             ]
@@ -258,7 +258,7 @@ return [
             [
                 'If you need people to talk to, or just get support/help, check out ' . preg_quote('http://reddit.com/r/Vegan') . '!'
             ], [
-                'It\'s a community of around 300,000 Vegans that know the struggle and have the experience, ask them anything.'
+                'It\'s a community of around 300,000 Vegans that know the struggle and have the experience, ask them anything\.'
             ], [
                 'There\'s also /r/VeganFitness, /r/VeganRecipes, and more!'
             ]
@@ -270,7 +270,7 @@ return [
         'title' => 'Eating Out',
         'body' =>[
             [
-                'Eating out is sometimes hard when you don\'t know where to go or what to eat but it does get much easier as time goes on & pretty soon you\'ll be an expert on what to get.'
+                'Eating out is sometimes hard when you don\'t know where to go or what to eat but it does get much easier as time goes on & pretty soon you\'ll be an expert on what to get\.'
             ], [
                 'Until then check this site out: ' . preg_quote('http://happycow.net') . ' for Vegan food around your area! 🐮'
             ]
@@ -282,7 +282,7 @@ return [
         'title' => 'Environment',
         'body' =>[
             [
-                'There\'s really daunting statistics on what Meat and Dairy industry (Animal Agriculture) is doing to the Environment, all backed up with sources & studies: ' . preg_quote('https://youaretheirvoice.com/pages/the-daunting-facts') . ' Example: Animal agriculture is responsible for up to 91% of Amazon destruction.'
+                'There\'s really daunting statistics on what Meat and Dairy industry (Animal Agriculture) is doing to the Environment, all backed up with sources & studies: ' . preg_quote('https://youaretheirvoice.com/pages/the-daunting-facts') . ' Example: Animal agriculture is responsible for up to 91% of Amazon destruction\.'
             ]
         ]
     ],
@@ -292,7 +292,7 @@ return [
         'title' => 'Everyone Agrees',
         'body' =>[
             [
-                'In today\'s age it\'s widely accepted that Veganism is healthier than a meat\-eating diet.'
+                'In today\'s age it\'s widely accepted that Veganism is healthier than a meat\-eating diet\.'
             ], [
                 'Here\'s a page that pulls sources directly from the world\'s largest Health, Nutrition and Dietary organizations (so from non\-biased organizations): ' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
             ]
@@ -304,9 +304,9 @@ return [
         'title' => 'Is It Healthy',
         'body' =>[
             [
-                'In today\'s age it\'s widely accepted that Meat & Dairy is extremely unhealthy compared to a Vegan diet.'
+                'In today\'s age it\'s widely accepted that Meat & Dairy is extremely unhealthy compared to a Vegan diet\.'
             ], [
-                'Meat is carcinogenic, the cause of the majority diseases, cancer, heart disease & diabetes, and obesity.'
+                'Meat is carcinogenic, the cause of the majority diseases, cancer, heart disease & diabetes, and obesity\.'
             ], [
                 'Here\'s a page with info & sources: ' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
             ]
@@ -318,7 +318,7 @@ return [
         'title' => 'Lazy to Cook',
         'body' =>[
             [
-                'A lot of Vegans don\'t cook either, just buy the Vegan options at the store or at restaurants instead of the animal options.'
+                'A lot of Vegans don\'t cook either, just buy the Vegan options at the store or at restaurants instead of the animal options\.'
             ], [
                 'You don\'t need to learn to cook to eat healthy as a Vegan!'
             ], [
@@ -332,7 +332,7 @@ return [
         'title' => 'Food Is boring',
         'body' =>[
             [
-                'Pretty much anything made with meat/dairy can be replicated and be just as awesome, you just have to learn where to buy it or cook it.'
+                'Pretty much anything made with meat/dairy can be replicated and be just as awesome, you just have to learn where to buy it or cook it\.'
             ], [
                 'Here\'s some recipes: ' . preg_quote('https://veganuary.com/recipes') . ' (or google your favorite food + "Vegan").'
             ], [
@@ -346,7 +346,7 @@ return [
         'title' => '30+ Arguments',
         'body' =>[
             [
-                'That\'s a common myth! Check this out: ' . preg_quote('http://earthlinged.com/ebook') . '; it basically goes over the 30 most common myths about Veganism.'
+                'That\'s a common myth! Check this out: ' . preg_quote('http://earthlinged.com/ebook') . '; it basically goes over the 30 most common myths about Veganism\.'
             ], [
                 'Video format here: ' . preg_quote('https://tinyurl.com/y862x5sg')
             ], [
