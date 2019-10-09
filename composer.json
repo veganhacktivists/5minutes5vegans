@@ -13,6 +13,7 @@
         "anhskohbo/no-captcha": "^3.0",
         "caouecs/laravel-lang": "~4.0",
         "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "^6.3",
         "hoa/regex": "1.17.01.13",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
@@ -39,7 +40,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Lib\\": "lib/"
         },
         "classmap": [
             "database/seeds",

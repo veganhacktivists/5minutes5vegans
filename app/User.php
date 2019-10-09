@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Mailchimp;
 
 class User extends Authenticatable
 {
@@ -41,4 +42,13 @@ class User extends Authenticatable
         return $this->hasMany('App\Verbiage');
     }
 
+    public function isSubscribedToNewsletter()
+    {
+        return Mailchimp::isSubscribedToNewsletter($this->email);
+    }
+
+    public function subscribeToNewsletter()
+    {
+        Mailchimp::addToNewsletter($this->email);
+    }
 }
