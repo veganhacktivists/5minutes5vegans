@@ -79,8 +79,8 @@ $font-family-serif: "Lora";
 }
 
 .action-band {
-  border: 1px solid $heading-text-color;
-  background-color: $heading-text-color;
+  border: 1px solid #00806e;
+  background-image: linear-gradient(to right, #00816a,#bed5b6);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 2rem 0;
