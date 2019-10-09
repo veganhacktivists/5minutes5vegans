@@ -78,7 +78,7 @@
               <div class="number-block">01</div>
               <div class="step-block">
                 <h3 class="subheading text-uppercase">How does it work?</h3>
-                <p>Our vegan robots are constantly scanning twitter and re-tweeting comments of people interested in going vegan! Use this website to find and support those people where possible in just 5 minutes.</p>
+                <p>Our vegan robots are constantly scanning Twitter<sup>®</sup> and re-tweeting comments of people interested in going vegan! Use this website to find and support those people where possible in just 5 minutes.</p>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
