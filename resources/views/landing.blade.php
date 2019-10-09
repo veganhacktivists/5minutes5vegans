@@ -165,8 +165,8 @@
                   <div class="number-block">02</div>
                   <div class="step-block">
                     <h3 class="subheading text-uppercase">Check out other projects!</h3>
-                    <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan,
-                      completely free projects worth supporting.</p>
+                    <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan projects and organizations worth supporting,
+                      completely free and with no ads.</p>
                     <p class="font-weight-bold">
                       {{ link_to('https://veganhacktivists.org', 'View Vegan Hacktivists Website', array('class' => 'lnk')) }}
                     </p>
@@ -178,7 +178,7 @@
                   <div class="number-block">03</div>
                   <div class="step-block">
                     <h3 class="subheading text-uppercase">Please support this website!</h3>
-                    <p>This project was built to be completely free and ad-less. Please support us and our activism on Patreon - we could really use the help!</p>
+                    <p>This project was built to be completely free and ad-less. Please support us and our activism on Patreon - we could really use help!</p>
                     <p class="font-weight-bold">
                       {{ link_to('https://www.patreon.com/veganhacktivists', 'Make a donation via Patreon', array('class' => 'lnk')) }}
                     </p>
