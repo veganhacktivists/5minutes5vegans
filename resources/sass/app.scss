@@ -499,19 +499,21 @@ html {
 
 #login-bg-overlay {
     position: fixed;
-    height: 80%;
+    height: 100%;
     width: calc(100% + 2.5px);
     left: -2.5px;
     top: 40%;
     z-index:-1;
+    transform: scaleX(-1);
 
     @media (min-width: 1200px) {
-        background-size: 100%;
+        background-size: 100% 60%;
     }
 }
 
 .login-container {
     font-family: "Roboto Condensed";
+    padding-bottom: 80px;
 }
 
 .swirvy-box {
