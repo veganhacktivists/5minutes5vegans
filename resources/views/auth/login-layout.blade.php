@@ -6,7 +6,6 @@
     <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
     <script src="{{ asset('js/manifest.js') }}"></script>
     <script src="{{ asset('js/vendor.js') }}"></script>
-    <script src="{{ asset('js/login-landing.js') }}" defer></script>
 @endsection
 
 @section('page_content')
