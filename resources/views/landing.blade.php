@@ -73,7 +73,7 @@
     <section id="howdoesitwork" class="d-flex align-items-center position-relative cover hero pt-0">
       <div class="container-fluid">
         <div class="container">
-          <div class="row py-5">
+          <div class="row py-5" style="padding-top: 5rem !important;">
             <div class="col-12 col-sm-6 col-lg-4">
               <div class="number-block">01</div>
               <div class="step-block">
