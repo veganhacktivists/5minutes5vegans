@@ -129,7 +129,7 @@
                 <p>Let's go!</p>
                 <a href="{{ route('feed') }}">
                   <img class="challenge-button img-fluid float-right"
-                    src="{{ asset('images/landing/take the challenge.svg') }}" alt="take the challenge" />
+                    src="{{ asset('https://i.imgur.com/yl7N5VJ.png') }}" alt="Launch 5 Minutes 5 Vegans!" />
                 </a>
               </div>
             </div>
