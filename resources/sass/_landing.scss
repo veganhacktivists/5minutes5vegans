@@ -1,6 +1,11 @@
 $font-family-serif: "Lora";
 
+p {
+  font-size: 17px !important;
+}
+	
 .btn-link, .lnk {
+  font-size: 20px;
   color: $button-cta-color;
   &:hover {
     text-decoration: none;
@@ -59,6 +64,8 @@ $font-family-serif: "Lora";
   border-color: $button-cta-color;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-size: 18px;
+  letter-spacing: 1px;
 
   &:hover {
     background-color: darken($button-cta-color, 10%);
@@ -86,6 +93,10 @@ $font-family-serif: "Lora";
   padding: 2rem 0;
   max-height: 5rem;
   font-size: 120%;
+
+  .row {
+      margin-top: -5px;
+  }
 }
 
 .language-selector-block {
