@@ -70,16 +70,24 @@
             </div>
         </div>
         <!-- Footer -->
-        <footer class="d-flex flex-row justify-content-between align-items-center py-3">
-            <div>
-                <a href="https://www.patreon.com/veganhacktivists/"><img src="{{ asset('images/patreon-button.png') }}"></a>
-            </div>
-            <div class="text-secondary">
-                Website hosted and designed by <a href="https://veganhacktivists.org/">vegan hactivists</a> with love&nbsp;<i class="fas fa-heart text-danger"></i>
-            </div>
-            <div>
-                <a href="https://veganhacktivists.org/"><img class="float-right" src="https://i.imgur.com/xSHDo4E.png"></a>
+
+    </div>
+    <footer class="py-2 page-footer text-white">
+            <div class="container-fluid container-fluid-max">
+                <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    Follow us on <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram') }}
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 text-center">
+                    <div>
+                    Website hosted and designed by {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists') }} with love
+                        <i class="far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 text-right">
+                    {{ link_to('https://www.patreon.com/veganhacktivists', 'Support us on Patreon') }}
+                </div>
+                </div>
             </div>
         </footer>
-    </div>
 @endsection

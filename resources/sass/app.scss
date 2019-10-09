@@ -500,7 +500,8 @@ html {
 #login-bg-overlay {
     position: fixed;
     height: 80%;
-    width: 100%;
+    width: calc(100% + 2.5px);
+    left: -2.5px;
     top: 40%;
     z-index:-1;
 
@@ -655,9 +656,4 @@ html {
             }
         }
     }
-}
-
-footer img {
-    max-height: 45px;
-    max-width: 75px;
 }
