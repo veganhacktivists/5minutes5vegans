@@ -1,5 +1,9 @@
 $font-family-serif: "Lora";
 
+p {
+  font-size: 17px !important;
+}
+	
 .btn-link, .lnk {
   color: $button-cta-color;
   &:hover {
