@@ -7,10 +7,10 @@
     </div>
     <div class="col text-right">
         @auth
-            {{ link_to_route('logout', 'Logout', null, array('class' => 'mr-3')) }}
+            {{ link_to_route('logout', 'Logout', null, ['class' => 'mr-3', 'onclick' => 'event.preventDefault(); $("#logout-form").submit();']) }}
         @endauth
         @guest
-            {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
+            {{ link_to_route('register', 'Register', null, ['class' => 'mr-3']) }}
         @endguest
         <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
             Donate <i class="fa fa-hand-holding-heart"></i>
@@ -30,16 +30,18 @@
     </div>
     <div class="col text-right">
         @auth
-            {{ link_to_route('logout', 'Logout', null, array('class' => 'mr-3')) }}
+            {{ link_to_route('logout', 'Logout', null, ['class' => 'mr-3', 'onclick' => 'event.preventDefault(); $("#logout-form").submit();']) }}
         @endauth
         @guest
-            {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
+            {{ link_to_route('register', 'Register', null, ['class' => 'mr-3']) }}
         @endguest
         <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
             Donate <i class="fa fa-hand-holding-heart"></i>
         </a>
     </div>
 </div>
+
+{{ Form::open(['route' => 'logout', 'id' => 'logout-form']) }}{{ Form::close() }}
 
 <div id="minutes-left" class="text-center mb-4">
     MINUTES LEFT
