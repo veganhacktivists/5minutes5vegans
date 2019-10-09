@@ -78,23 +78,21 @@
               <div class="number-block">01</div>
               <div class="step-block">
                 <h3 class="subheading text-uppercase">How does it work?</h3>
-                <p>Our vegan robots are constantly scanning social media and re-tweeting comments of people interested in going vegan! Use this website to find those people and help support them where possible.</p>
+                <p>Our vegan robots are constantly scanning twitter and re-tweeting comments of people interested in going vegan! Use this website to find and support those people where possible in just 5 minutes.</p>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
               <div class="number-block">02</div>
               <div class="step-block">
                 <h3 class="subheading text-uppercase">What do I need?</h3>
-                <p>You should have Twitter<sup>®</sup> profile. We've prepared helpful, easy to copy resources about
-                  ethical, health and environmental aspects of veganism so you don't need to remember details.</p>
+                <p>You should have your own Twitter<sup>®</sup> profile. We've prepared helpful text and links for common tweets that our bots find so you can just copy, paste, and move on to the next person that needs help!</p>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
               <div class="number-block">03</div>
               <div class="step-block">
-                <h3 class="subheading text-uppercase">Why should I login?</h3>
-                <p>When you register a free account, you will be able to edit and add quick to copy answers to the most
-                  common questions people curious about veganism have.</p>
+                <h3 class="subheading text-uppercase">Why should I register?</h3>
+                <p>It's 100% free and you get the ability to create your own custom quick-to-copy responses in addition to using the ones we provide. This allows you to add a more personal touch to your tweets!</p>
               </div>
             </div>
           </div>
@@ -153,11 +151,11 @@
                 <div class="col-12">
                   <div class="number-block">01</div>
                   <div class="step-block">
-                    <h3 class="subheading text-uppercase">Be the voice of the animals</h3>
+                    <h3 class="subheading text-uppercase">Be a voice for the animals!</h3>
                     <p>Whether you have a lot of time or litte, whether you're new or experienced, there's an
-                      organization that's looking for help to spread compassionate vegan message.</p>
+                      organization that's looking for help from someone like you to spread compassionate vegan message.</p>
                     <p class="font-weight-bold">
-                      {{ link_to('https://youaretheirvoice.com/', 'View Vegan Activism Website', array('class' => 'lnk')) }}
+                      {{ link_to('https://veganactivism.org', 'View Vegan Activism Organizations', array('class' => 'lnk')) }}
                     </p>
                   </div>
                 </div>
@@ -166,7 +164,7 @@
                 <div class="col-12">
                   <div class="number-block">02</div>
                   <div class="step-block">
-                    <h3 class="subheading text-uppercase">Check our other projects</h3>
+                    <h3 class="subheading text-uppercase">Check out other projects!</h3>
                     <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan,
                       completely free projects worth supporting.</p>
                     <p class="font-weight-bold">
@@ -179,11 +177,10 @@
                 <div class="col-12">
                   <div class="number-block">03</div>
                   <div class="step-block">
-                    <h3 class="subheading text-uppercase">Donate <i class="fas fa-hand-holding-heart"></i></h3>
-                    <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan,
-                      completely free projects worth supporting.</p>
+                    <h3 class="subheading text-uppercase">Please support this website!</h3>
+                    <p>This project was built to be completely free and ad-less. Please support us and our activism on Patreon - we could really use the help!</p>
                     <p class="font-weight-bold">
-                      {{ link_to('https://www.patreon.com/veganhacktivists', 'View our Patreon Profile', array('class' => 'lnk')) }}
+                      {{ link_to('https://www.patreon.com/veganhacktivists', 'Make a donation via Patreon', array('class' => 'lnk')) }}
                     </p>
                   </div>
                 </div>
@@ -201,9 +198,10 @@
                 <div class="col-12">
                   <div style="margin-left: -5.5rem;" class="number-block"><i style="font-size: 150%;" class="far fa-envelope"></i></div>
                   <div>
-                    <h3 class="text-uppercase subheading">Subscribe to our news</h3>
-                    <p>Taking utmost care of keeping your email address secure, we'll deliver news, updates and more
-                      vegan activism related info in no more than two emails a month.</p>
+                    <h3 class="text-uppercase subheading">Vegan Hacktivists</h3>
+					<a href="https://veganhacktivists.org/" target="_blank"><img src="https://i.imgur.com/xSHDo4E.png" style="width: 150px;padding-top: 10px;padding-bottom: 15px;"></a>
+					<br>
+                    <p>We'll deliver news, updates and more vegan activism related info in no more than two emails a month! We take your privacy very seriously and never share your email.</p>
                   </div>
                 </div>
               </div>
@@ -219,7 +217,7 @@
                     </div>
                     <!-- anti-bot measure, should be left empty for the form to validate -->
                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0baba35be8f6397f7ac1066f1_5fd11d4221" tabindex="-1" value=""></div>
-                    <button type="submit" name="subscribe" class="btn btn-cta btn-primary float-right">Subscribe</button>
+                    <button type="submit" name="subscribe" class="btn btn-cta btn-primary float-right">Subscribe to Newsletter!</button>
                   </form>
                 </div>
               </div>
@@ -230,11 +228,11 @@
       </div>
     </section>
   </main>
-  <footer class="py-2 page-footer text-white">
+  <footer class="py-2 page-footer text-white" style="margin-top: 7px;margin-bottom: 7px;">
     <div class="container-fluid container-fluid-max">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
-            Follow us on <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram') }}
+            Follow us on {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram') }}
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-center">
           <div>
@@ -243,7 +241,7 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-right">
-            {{ link_to('https://www.patreon.com/veganhacktivists', 'Support us on Patreon') }}
+            Support us on {{ link_to('https://www.patreon.com/veganhacktivists', 'Patreon') }}
         </div>
       </div>
     </div>
