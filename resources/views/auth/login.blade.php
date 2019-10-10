@@ -31,6 +31,6 @@
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
-        {{ Form::submit(__('Log In'), ['class' => 'btn btn-sm btn-primary swirvy-box mt-5 float-right']) }}
+        {{ Form::submit(__('Log me in!'), ['class' => 'btn btn-large btn-primary swirvy-box mt-5 float-right']) }}
     {{ Form::close() }}
 @endsection
