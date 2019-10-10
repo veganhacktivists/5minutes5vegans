@@ -9,7 +9,7 @@
     </div>
     {{ Form::open( [ 'route' => 'login' ] ) }}
         {{ Form::email('email', false, [
-            'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
+            'class' => 'form-control mb-2' . ($errors->has('email') ? ' is-invalid' : ''),
             'required' => true,
             'placeholder' => 'EMAIL',
         ]) }}

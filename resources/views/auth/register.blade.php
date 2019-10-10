@@ -14,7 +14,7 @@
     </p>
     {{ Form::open( [ 'route' => 'register' ] ) }}
         {{ Form::text('name', false, [
-            'class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''),
+            'class' => 'form-control mb-1' . ($errors->has('name') ? ' is-invalid' : ''),
             'required' => true,
             'autofocus' => true,
             'placeholder' => 'YOUR NAME',
@@ -27,7 +27,7 @@
         @enderror
 
         {{ Form::email('email', false, [
-            'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
+            'class' => 'form-control mb-1' . ($errors->has('email') ? ' is-invalid' : ''),
             'required' => true,
             'placeholder' => 'YOUR EMAIL',
         ]) }}
@@ -39,7 +39,7 @@
         @endif
 
         {{ Form::password('password', [
-            'class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''),
+            'class' => 'form-control mb-1' . ($errors->has('password') ? ' is-invalid' : ''),
             'required' => true,
             'placeholder' => 'PASSWORD',
         ]) }}
@@ -51,7 +51,7 @@
         @enderror
 
         {{ Form::password('password_confirmation', [
-            'class' => 'form-control' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
+            'class' => 'form-control mb-1' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
             'required' => true,
             'placeholder' => 'CONFIRM PASSWORD',
         ]) }}
