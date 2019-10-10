@@ -3,7 +3,7 @@ $font-family-serif: "Lora";
 p {
   font-size: 17px !important;
 }
-	
+
 .btn-link, .lnk {
   font-size: 20px;
   color: $button-cta-color;
@@ -131,6 +131,10 @@ p {
 .page-footer {
   font-size: 120%;
   background: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .page-footer a {
@@ -166,4 +170,5 @@ p {
   background-position: top;
   margin-top: -5rem;
   padding-top: 5rem;
+  padding-bottom: 100px;
 }
