@@ -61,7 +61,7 @@
                 </div>
                 <h5 class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
                 <div class="d-flex align-middle">
-                  <span class="mr-auto my-5 font-weight-bold text-white" style="font-size: 17px;font-weight: normal;">And take up the challenge!</span>
+                  <span class="mr-auto my-5 font-weight-bold text-white" style="font-size: 17px;font-weight: normal !important;">And take up the challenge!</span>
                     <a href="{{ route('feed') }}">
                         <button id="play-submit-btn" class="btn start-btn px-0"><div><div><i class="fas fa-caret-right"></i></div></div></button>
                     </a>
