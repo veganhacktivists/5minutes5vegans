@@ -232,16 +232,16 @@
     <div class="container-fluid container-fluid-max">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
-            Follow us on {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram') }}
+            Follow us on {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram', ['target' => '_blank']) }}
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-center">
           <div>
-            Website hosted and designed by {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists') }} with love
+            Website hosted and designed by {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) }} with love
               <i class="far fa-heart"></i>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-right">
-            Support us on {{ link_to('https://www.patreon.com/veganhacktivists', 'Patreon') }}
+            Support us on {{ link_to('https://www.patreon.com/veganhacktivists', 'Patreon', ['target' => '_blank']) }}
         </div>
       </div>
     </div>
