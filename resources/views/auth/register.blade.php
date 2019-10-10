@@ -80,9 +80,9 @@
                 {{ Form::checkbox('newsletter-check', null, false, [
                     "class" => "form-check-input",
                 ]) }}
-                <label class="form-check-label small" for="newsletter-check">I'd like to receive newsletter</label>
+                <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">I'd like to receive newsletter</label>
             </div>
-            {{ Form::submit(__('Create Account'), ['class' => 'btn btn-sm btn-primary swirvy-box ml-auto']) }}
+            {{ Form::submit(__('Create Account'), ['class' => 'btn btn-large btn-primary swirvy-box ml-auto']) }}
         </div>
     {{ Form::close() }}
 @endsection
