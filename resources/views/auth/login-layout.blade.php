@@ -42,8 +42,8 @@
                 @endif
             </div>
             <div class="col login-pane-right">
-                <h3>Start without account</h3>
-                <h5 class="my-5 font-weight-bold"><div class="horz-line"></div>PICK YOUR LANGUAGE.</h5>
+                <h3 style="font-size: 24px;">..or start without an account!</h3>
+                <h5 style="letter-spacing: 1px;" class="my-5 font-weight-bold"><div class="horz-line"></div>PICK YOUR LANGUAGE.</h5>
                 <div class="d-flex mb-5 lang-flags">
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         @php
@@ -59,7 +59,7 @@
                             </a>
                     @endforeach
                 </div>
-                <h5 class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
+                <h5 style="letter-spacing: 1px;" class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
                 <div class="d-flex align-middle">
                   <span class="mr-auto my-5 font-weight-bold text-white" style="font-size: 17px;font-weight: normal !important;">And take up the challenge!</span>
                     <a href="{{ route('feed') }}">
