@@ -131,10 +131,13 @@ p {
 .page-footer {
   font-size: 120%;
   background: #333;
-  position: fixed;
-  bottom: 0;
   width: 100%;
   z-index: 100;
+}
+
+.login-footer.page-footer {
+    position: absolute;
+    bottom: 0px;
 }
 
 .page-footer a {

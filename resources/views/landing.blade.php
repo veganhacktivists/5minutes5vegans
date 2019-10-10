@@ -228,7 +228,7 @@
       </div>
     </section>
   </main>
-  <footer class="py-2 page-footer text-white" style="margin-top: 7px;margin-bottom: 7px;">
+  <footer class="py-3 page-footer text-white">
     <div class="container-fluid container-fluid-max">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
