@@ -534,7 +534,6 @@ html {
 
 .login-pane {
     padding: 10% 5% 5% 5%;
-    opacity: 0.8;
 
     h1, h2, h3, h4, h5 {
         font-family: "Lora";
@@ -546,7 +545,7 @@ html {
 
     border-radius: 90px 0 0 0;
     float: left;
-    background-color:#61df95;
+    background-color: #61df95ed;
     margin-top: 50px;
 
     input:not([type = submit]) {
@@ -561,7 +560,7 @@ html {
 
     border-radius: 0 0 90px 0;
     float: right;
-    background-color:#1d4737;
+    background-color:#1d4737f2;
     margin-bottom: 50px;
 
     h3 {
@@ -628,7 +627,7 @@ html {
 }
 
 .login-flag-active {
-    border-bottom: 2px solid $cyan;
+    border-bottom: 5px solid #209774;
 }
 
 .start-btn {

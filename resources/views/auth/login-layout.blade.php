@@ -11,8 +11,6 @@
 @section('page_content')
 <section id="login-bg" style="background-image: url({{ asset('images/login_bg.png') }});">
 </section>
-<section id="login-bg-overlay" style="background-image: url({{ asset("images/login_bg_overlay.png") }});">
-</section>
 <div class="container-fluid">
         <div class="container py-5">
             <!-- Header -->
@@ -22,7 +20,7 @@
                 </div>
                 <div class="col-sm text-right">
                     <a class="text-black btn font-bold btn-sm bg-transparent py-2 px-3 swirvy-box"
-                       style="border-color: #4dc0b5;"
+                       style="border-color: #4dc0b5;font-size: 20px;"
                        href="/">
                         How does it work?
                     </a>
@@ -60,7 +58,7 @@
                         </div>
                         <h5 class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
                         <div class="d-flex align-middle">
-                            <span class="mr-auto my-5 font-weight-bold text-white">And take up the challenge!</span>
+                            <span class="mr-auto my-5 font-weight-bold text-white" style="font-size: 17px;font-weight: normal;">And take up the challenge!</span>
                             <a href="{{ route('feed') }}">
                                 <button id="play-submit-btn" class="btn start-btn px-0"><div><div><i class="fas fa-caret-right"></i></div></div></button>
                             </a>
