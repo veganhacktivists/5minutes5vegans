@@ -87,6 +87,13 @@
                 v-bind:readonly="!editing"
                 v-bind:disabled="busy"
             ></textarea>
+            <button
+                data-toggle="tooltip"
+                class="btn btn-link"
+                v-clipboard="() => selected.body"
+                v-clipboard:success="clipboardSuccessHandler"
+                v-clipboard:error="clipboardErrorHandler"
+            ><i class="fa-fw fas fa-copy"></i></button>
 
             <div v-if="customVerbiages" class="col-auto d-flex flex-column justify-content-between">
                 <button
@@ -228,6 +235,18 @@ export default {
         failedRequest: function(r) {
             alert(r.body.message)
             console.error(r)
+        },
+
+        clipboardSuccessHandler ({ value, event }) {
+            $(event.target).tooltip({
+                title: "Copied!",
+            })
+            $(event.target).tooltip('toggle')
+            setTimeout(() => $(event.target).tooltip('dispose'), 2000)
+        },
+
+        clipboardErrorHandler ({ value, event }) {
+            console.error("Unable to copy to clipboard.")
         },
     },
 
