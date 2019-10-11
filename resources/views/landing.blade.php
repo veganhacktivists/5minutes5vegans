@@ -155,7 +155,7 @@
                     <p>Whether you have a lot of time or litte, whether you're new or experienced, there's an
                       organization that's looking for help from someone like you to spread compassionate vegan message.</p>
                     <p class="font-weight-bold">
-                      {{ link_to('https://veganactivism.org', 'View Vegan Activism Organizations', array('class' => 'lnk')) }}
+                      {{ link_to('https://veganactivism.org', 'View Vegan Activism Organizations', ['class' => 'lnk', 'target' => '_blank']) }}
                     </p>
                   </div>
                 </div>
@@ -168,7 +168,7 @@
                     <p>We are a group of passionate vegan activists that volunteer our time and skills towards vegan projects and organizations worth supporting,
                       completely free and with no ads.</p>
                     <p class="font-weight-bold">
-                      {{ link_to('https://veganhacktivists.org', 'View Vegan Hacktivists Website', array('class' => 'lnk')) }}
+                      {{ link_to('https://veganhacktivists.org', 'View Vegan Hacktivists Website', ['class' => 'lnk', 'target' => '_blank']) }}
                     </p>
                   </div>
                 </div>
@@ -180,7 +180,7 @@
                     <h3 class="subheading text-uppercase">Please support this website!</h3>
                     <p>This project was built to be completely free and ad-less. Please support us and our activism on Patreon - we could really use help!</p>
                     <p class="font-weight-bold">
-                      {{ link_to('https://www.patreon.com/veganhacktivists', 'Make a donation via Patreon', array('class' => 'lnk')) }}
+                      {{ link_to('https://www.patreon.com/veganhacktivists', 'Make a donation via Patreon', ['class' => 'lnk', 'target' => '_blank']) }}
                     </p>
                   </div>
                 </div>
