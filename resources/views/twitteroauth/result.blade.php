@@ -1,8 +1,6 @@
-@extends('layout')
+@extends('twitteroauth.layout')
 
-@section( 'page_content' )
-
-<h1>Twitter OAuth Token Generation</h1>
+@section('display')
 
 <div class="alert alert-success">
     <strong>Success!</strong> You have succesfully generated OAuth keys to authorise {{ $screen_name }} to use your app.<br/>
