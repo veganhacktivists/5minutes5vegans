@@ -80,20 +80,23 @@
         </div>
 
         <div class="p-2 row">
-            <textarea
-                v-model="selected.body"
-                class="col w-100 p-3"
-                rows="4"
-                v-bind:readonly="!editing"
-                v-bind:disabled="busy"
-            ></textarea>
-            <button
-                data-toggle="tooltip"
-                class="btn btn-link"
-                v-clipboard="() => selected.body"
-                v-clipboard:success="clipboardSuccessHandler"
-                v-clipboard:error="clipboardErrorHandler"
-            ><i class="fa-fw fas fa-copy"></i></button>
+            <div class="col verbiage-msg">
+                <textarea
+                    v-model="selected.body"
+                    class="w-100 p-3"
+                    rows="4"
+                    v-bind:readonly="!editing"
+                    v-bind:disabled="busy"
+                ></textarea>
+                <button
+                    data-toggle="tooltip"
+                    class="btn btn-link"
+                    v-if="!editing"
+                    v-clipboard="() => selected.body"
+                    v-clipboard:success="clipboardSuccessHandler"
+                    v-clipboard:error="clipboardErrorHandler"
+                ><i class="fa-fw fas fa-copy"></i></button>
+            </div>
 
             <div v-if="customVerbiages" class="col-auto d-flex flex-column justify-content-between">
                 <button
