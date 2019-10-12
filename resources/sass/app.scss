@@ -288,6 +288,19 @@ html {
     }
 }
 
+.verbiage-msg {
+    position: relative;
+
+    textarea {
+        position: relative;
+    }
+
+    button {
+        position: absolute;
+        top: calc(100% - 50px);
+        left: calc(100% - 60px);
+    }
+}
 
 #feed {
 	position: relative;
