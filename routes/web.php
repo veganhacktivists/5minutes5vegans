@@ -27,9 +27,6 @@ Route::group( [
         Route::get('/tweet', 'TweetController@tweet');
         Route::get('/tweets', 'TweetController@tweets');
 
-        Route::get('/login', function () {
-            return redirect()->route('register', ['login' => true]);
-        })->name('login');
     });
 
 Route::middleware( [ 'auth', 'ownsVerbiage' ] )->group(function () {

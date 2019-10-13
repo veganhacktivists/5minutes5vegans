@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito|Lora');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Lora');
 
 // Variables
 @import 'variables';
@@ -288,6 +288,19 @@ html {
     }
 }
 
+.verbiage-msg {
+    position: relative;
+
+    textarea {
+        position: relative;
+    }
+
+    button {
+        position: absolute;
+        top: calc(100% - 50px);
+        left: calc(100% - 60px);
+    }
+}
 
 #feed {
 	position: relative;
@@ -358,7 +371,7 @@ html {
             font-size: 20px;
             color: $dark-text;
         }
-        
+
         a {
             color: $pink;
         }
@@ -487,8 +500,33 @@ html {
     }
 }
 
+#login-bg {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-y: -630px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index:-2;
+}
+
+#login-bg-overlay {
+    position: fixed;
+    height: 100%;
+    width: calc(100% + 2.5px);
+    left: -2.5px;
+    top: 40%;
+    z-index:-1;
+    transform: scaleX(-1);
+
+    @media (min-width: 1200px) {
+        background-size: 100% 60%;
+    }
+}
+
 .login-container {
     font-family: "Roboto Condensed";
+    padding-bottom: 80px;
 }
 
 .swirvy-box {
@@ -511,38 +549,41 @@ html {
 
 .login-pane {
     padding: 10% 5% 5% 5%;
-    opacity: 0.8;
 
     h1, h2, h3, h4, h5 {
         font-family: "Lora";
     }
+}
 
-    &.login-pane-left {
-        border-radius: 90px 0 0 0;
-        float: left;
-        background-color:#61df95;
-        margin-top: 50px;
+.login-pane-left {
+    @extend .login-pane;
 
-        input:not([type = submit]) {
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid $teal;
-        }
+    border-radius: 90px 0 0 0;
+    float: left;
+    background-color: #61df95ed;
+    margin-top: 50px;
+
+    input:not([type = submit]) {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $teal;
+    }
+}
+
+.login-pane-right {
+    @extend .login-pane;
+
+    border-radius: 0 0 90px 0;
+    float: right;
+    background-color:#1d4737f2;
+    margin-bottom: 50px;
+
+    h3 {
+        color: #61df95;
     }
 
-    &.login-pane-right {
-        border-radius: 0 0 90px 0;
-        float: right;
-        background-color:#1d4737;
-        margin-bottom: 50px;
-
-        h3 {
-            color: #61df95;
-        }
-
-        h5 {
-            color: white;
-        }
+    h5 {
+        color: white;
     }
 }
 
@@ -582,7 +623,7 @@ html {
         align-items: center;
     }
 
-    button {
+    a, button {
         height: 100%;
         width: 100%;
     }
@@ -598,6 +639,10 @@ html {
         box-shadow: none;
         border-bottom: 2px solid $teal;
     }
+}
+
+.login-flag-active {
+    border-bottom: 5px solid #209774;
 }
 
 .start-btn {
@@ -625,9 +670,4 @@ html {
             }
         }
     }
-}
-
-footer img {
-    max-height: 45px;
-    max-width: 75px;
 }

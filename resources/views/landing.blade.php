@@ -71,7 +71,7 @@
     <section id="howdoesitwork" class="d-flex align-items-center position-relative cover hero pt-0">
       <div class="container-fluid">
         <div class="container">
-          <div class="row py-5">
+          <div class="row py-5" style="padding-top: 5rem !important;">
             <div class="col-12 col-sm-6 col-lg-4">
               <div class="number-block">01</div>
               <div class="step-block">
@@ -125,7 +125,7 @@
                 <p>@lang('landing.go')</p>
                 <a href="{{ route('feed') }}">
                   <img class="challenge-button img-fluid float-right"
-                    src="{{ asset('images/landing/take the challenge.svg') }}" alt="take the challenge" />
+                    src="{{ asset('https://i.imgur.com/yl7N5VJ.png') }}" alt="Launch 5 Minutes 5 Vegans!" />
                 </a>
               </div>
             </div>
@@ -222,20 +222,20 @@
       </div>
     </section>
   </main>
-  <footer class="py-2 page-footer text-white">
+  <footer class="py-3 page-footer text-white">
     <div class="container-fluid container-fluid-max">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
-            @lang('Follow us on') <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram') }}
+            @lang('Follow us on') <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram', ['target' => '_blank']) }}
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-center">
           <div>
-            @lang('Website hosted and designed by') {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists') }} @lang('with love')
+            @lang('Website hosted and designed by') {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) }} @lang('with love')
               <i class="far fa-heart"></i>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-right">
-            {{ link_to('https://www.patreon.com/veganhacktivists', __('Support us on Patreon')) }}
+            {{ link_to('https://www.patreon.com/veganhacktivists', __('Support us on Patreon'), ['target' => '_blank']) }}
         </div>
       </div>
     </div>

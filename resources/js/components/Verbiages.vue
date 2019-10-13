@@ -1,14 +1,13 @@
 <template>
     <div>
-
-
         <div class="float-right" v-if="customVerbiages.length">
             <div
                 role="button"
                 v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
                 v-on:click="custom = false"
                 class="d-inline-block py-1 px-2 verbiage-switch"
-            >Default</div><div
+            >Default</div>
+            <div
                 v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
                 v-on:click="custom = true"
                 class="d-inline-block py-1 px-2 verbiage-switch"
@@ -21,6 +20,7 @@
             <div
                 v-if="!custom"
                 v-for="verbiage in defaultVerbiages"
+                v-bind:key="verbiage.id"
                 v-on:click="selectVerbiage(verbiage)"
                 class="verbiage-container col-sm-3 px-1"
             >
@@ -32,32 +32,28 @@
 
             <div
                 v-if="custom"
-                v-for="verbiage in customVerbiages"
+                v-for="(verbiage, index) in customVerbiages"
+                v-bind:key="index"
                 v-on:click="selectVerbiage(verbiage)"
                 class="verbiage-container col-sm-3 px-1"
             >
-                <div class="form-row" v-if="selected == verbiage && editing">
-                    <!--
-                    <button
-                        v-iconpicker
-                        data-selected="leaf"
-                        type="button"
-                        class="btn btn-default dropdown-toggle"
-                        data-toggle="dropdown"
-                    >
-                        <i class="fa fa-fw"></i>
-                        <span class="caret"></span>
-                    </button>
-                    -->
-                    <!--
-                    <input
-                        v-bind:disabled="busy"
-                        class="form-control"
-                        type="text"
-                        v-model="selected.icon"
-                        v-iconpicker
-                    />
-                    -->
+                <div v-if="selected == verbiage && editing" class="form-row">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary iconpicker-component">
+                            <i class="fas fa-leaf"></i>
+                        </button>
+                        <button
+                            type="button"
+                            class="icp icp-dd btn btn-primary dropdown-toggle"
+                            data-selected="fas fa-leaf"
+                            data-toggle="dropdown"
+                            v-iconpicker="selected.icon"
+                        >
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu"></div>
+                    </div>
                     <input
                         v-bind:disabled="busy"
                         class="form-control"
@@ -65,28 +61,33 @@
                         v-model="selected.title"
                     />
                 </div>
-                <div
-                    v-else
-                    class="verbiage-link"
-                >
-                    <i :class="verbiage.icon" class="fa-fw"></i>
+                <div v-else class="verbiage-link">
+                    <i :class="verbiage.icon"></i>
                     <p>{{ verbiage.title }}</p>
                 </div>
             </div>
         </div>
 
-        <div v-else>
-            Loading supportive messages...
-        </div>
+        <div v-else>Loading supportive messages...</div>
 
         <div class="p-2 row">
-            <textarea
-                v-model="selected.body"
-                class="col w-100 p-3"
-                rows="4"
-                v-bind:readonly="!editing"
-                v-bind:disabled="busy"
-            ></textarea>
+            <div class="col verbiage-msg">
+                <textarea
+                    v-model="selected.body"
+                    class="w-100 p-3"
+                    rows="4"
+                    v-bind:readonly="!editing"
+                    v-bind:disabled="busy"
+                ></textarea>
+                <button
+                    data-toggle="tooltip"
+                    class="btn btn-link"
+                    v-if="!editing"
+                    v-clipboard="() => selected.body"
+                    v-clipboard:success="clipboardSuccessHandler"
+                    v-clipboard:error="clipboardErrorHandler"
+                ><i class="fa-fw fas fa-copy"></i></button>
+            </div>
 
             <div v-if="customVerbiages" class="col-auto d-flex flex-column justify-content-between">
                 <button
@@ -137,6 +138,14 @@ Vue.http.interceptors.push(function(req) {
     }
 })
 
+function setVueModel(obj, str, val) {
+    str = str.split('.')
+    while (str.length > 1) {
+        obj = obj[str.shift()]
+    }
+    return (obj[str.shift()] = val)
+}
+
 export default {
     data: function() {
         return {
@@ -151,13 +160,14 @@ export default {
     },
 
     created: function() {
-        this.$http
-            .get('tweets')
-            .then((r) => {
+        this.$http.get('tweets').then(
+            (r) => {
                 this.defaultVerbiages = r.body
-            }, () => {
+            },
+            () => {
                 this.created()
-            })
+            },
+        )
     },
 
     methods: {
@@ -229,12 +239,30 @@ export default {
             alert(r.body.message)
             console.error(r)
         },
+
+        clipboardSuccessHandler ({ value, event }) {
+            $(event.target).tooltip({
+                title: "Copied!",
+            })
+            $(event.target).tooltip('toggle')
+            setTimeout(() => $(event.target).tooltip('dispose'), 2000)
+        },
+
+        clipboardErrorHandler ({ value, event }) {
+            console.error("Unable to copy to clipboard.")
+        },
     },
 
     directives: {
         iconpicker: {
-            inserted: function(el) {
-                $(el).iconpicker()
+            inserted: function(el, binding, vnode) {
+                $(el)
+                    .iconpicker()
+                    .on('iconpickerSelected', function(event) {
+                        const value = event.iconpickerValue
+
+                        setVueModel(vnode.context, binding.expression, value)
+                    })
             },
         },
     },

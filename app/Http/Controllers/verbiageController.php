@@ -11,7 +11,7 @@ class VerbiageController extends Controller
 
     const verbiageRules = [
         'title' => 'required',
-        'icon' => 'required|regex:/^fa[a-z]? fa(-[a-z]+)+$/',
+        'icon' => 'required|regex:/^fa[a-z]? fa(-[a-z0-9]+)+$/',
         'body' => 'required',
     ];
 

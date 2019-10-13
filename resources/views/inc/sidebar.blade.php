@@ -41,6 +41,8 @@
     </div>
 </div>
 
+{{ Form::open(['route' => 'logout', 'id' => 'logout-form']) }}{{ Form::close() }}
+
 <div id="minutes-left" class="text-center mb-4">
     @lang('sidebar.minutes-left')
 </div>

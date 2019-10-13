@@ -8,6 +8,7 @@ require('./bootstrap');
 window.Vue = require('vue')
 require('vue-resource')
 require('fontawesome-iconpicker');
+import Clipboard from 'v-clipboard'
 
 /*********
  * TIMER *
@@ -50,6 +51,8 @@ function updateTimer() {
     setTimer(('0'+ time.getMinutes()).substr(-2), ('0'+ time.getSeconds()).substr(-2))
 
 }
+
+Vue.use(Clipboard)
 
 Vue.component('verbiages', require('./components/Verbiages.vue').default)
 

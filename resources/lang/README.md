@@ -26,7 +26,7 @@ Add your new translation at the end of the list and don't forget to add a comma 
 ## Tweet translations
 These translations have to be dynamic to bypass the Twitter spam filter when people keep copy-pasting them. To that end we use regular expressions (regex) to construct these translations. Regex is normally used for pattern matching, but we use it for text generation through patterns instead, this may be a bit confusing. The gist is that our project takes the regex pattern and generates a text at random that could be matched by it.
 For those unfamiliar with regex, these are the few things you should know to be able to do most translations:
- * A lot of non-alphanumeric characters have a meaning in regex, prefix them with a backslash (\\) to negate their meaning. The most common and overlooked one is the period. `That is a good idea\.`
+ * A lot of non-alphanumeric characters have a meaning in regex, prefix them with a backslash (\\) to negate their meaning. The most common and overlooked ones are the period and the dash. `To co\-operate is a good idea\.`
  * Parentheses mark parts of the text as a group.
  * Suffixing an element with a question mark makes it optional. `Nice colou?r, you (guys )? are doing great!`
  * Pipes (|) can be used to seperate different items within a group to choose from. `That's a great (dish|recipe|meal)!`
