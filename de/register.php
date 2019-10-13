@@ -13,5 +13,6 @@ return [
     'robot' => 'Bitte bestätige, dass du kein Roboter bist',
     'newsletter' => 'Ich würde gerne den Newsletter erhalten',
     'user' => "Wir können keinen Benutzer mit dieser E-Mail-Adresse finden.",
+    'login' => "Oder einloggen",
 
 ];
