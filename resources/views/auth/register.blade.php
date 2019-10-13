@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Register')
+@section('title', __('Register'))
 
 @section('scripts')
     <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
@@ -21,7 +21,7 @@
                     <a class="text-black btn font-bold btn-sm bg-transparent py-2 px-3 swirvy-box"
                        style="border-color: #4dc0b5;"
                        href="/">
-                        How does it work?
+                       @lang('register.how')
                     </a>
                 </div>
             </div>
@@ -34,16 +34,14 @@
                             <button id="login-btn" class="btn btn-link font-weight-bold my-auto">Or login&nbsp;<i class="fas fa-caret-right"></i></button>
                         </div>
                         <p class="mt-3">
-                            When you register a free account, you will be able to edit
-                            and add quick to copy answers to the most common questions
-                            people curious about veganism have.
+                            @lang('register.intro')
                         </p>
                         {{ Form::open( [ 'route' => 'register' ] ) }}
                             {{ Form::text('name', false, [
                                 'class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : ''),
                                 'required' => true,
                                 'autofocus' => true,
-                                'placeholder' => 'YOUR NAME',
+                                'placeholder' => __('YOUR NAME'),
                             ]) }}
 
                             @error('name')
@@ -55,7 +53,7 @@
                             {{ Form::email('email', false, [
                                 'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
                                 'required' => true,
-                                'placeholder' => 'YOUR EMAIL',
+                                'placeholder' => __('YOUR EMAIL'),
                             ]) }}
 
                             @if ($errors->has('email'))
@@ -67,7 +65,7 @@
                             {{ Form::password('password', [
                                 'class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''),
                                 'required' => true,
-                                'placeholder' => 'PASSWORD',
+                                'placeholder' => __('PASSWORD'),
                             ]) }}
 
                             @error('password')
@@ -79,7 +77,7 @@
                             {{ Form::password('password_confirmation', [
                                 'class' => 'form-control' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
                                 'required' => true,
-                                'placeholder' => 'CONFIRM PASSWORD',
+                                'placeholder' => __('CONFIRM PASSWORD'),
                             ]) }}
 
                             @error('password_confirmation')
@@ -89,7 +87,7 @@
                             @enderror
 
                             <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }} mt-3">
-                                <label class="text-md-right">Confirm you are not a robot</label>
+                                <label class="text-md-right">@lang('register.robot')</label>
                                 <div>
                                     {!! app('captcha')->display() !!}
 
@@ -106,7 +104,7 @@
                                     {{ Form::checkbox('newsletter-check', null, false, [
                                         "class" => "form-check-input",
                                     ]) }}
-                                    <label class="form-check-label small" for="newsletter-check">I'd like to receive newsletter</label>
+                                    <label class="form-check-label small" for="newsletter-check">@lang('register.newsletter')</label>
                                 </div>
                                 {{ Form::submit(__('Create Account'), ['class' => 'btn btn-sm btn-primary swirvy-box ml-auto']) }}
                             </div>
@@ -119,7 +117,7 @@
                 </div>
                 <div class="col login-pane login-pane-right">
                     <h3>Start without account</h3>
-                    <h5 class="my-5 font-weight-bold"><div class="horz-line"></div>PICK YOUR LANGUAGE.</h5>
+                    <h5 class="my-5 font-weight-bold"><div class="horz-line"></div>@lang('PICK YOUR LANGUAGE')</h5>
                     {{ Form::open([ 'route' => 'login' ]) }}
                         <div class="d-flex mb-5 lang-flags">
                             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -135,9 +133,9 @@
                                 </label>
                             @endforeach
                         </div>
-                        <h5 class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
+                        <h5 class="mt-5 font-weight-bold"><div class="horz-line"></div>@lang('GET READY...')</h5>
                         <div class="d-flex align-middle">
-                            <span class="mr-auto my-5 font-weight-bold text-white">And take up the challenge!</span>
+                            <span class="mr-auto my-5 font-weight-bold text-white">@lang('And take up the challenge!')</span>
                             <button class="btn start-btn px-0" type="submit"><div><div><i class="fas fa-caret-right"></i></div></div></button>
                         </div>
                     {{ Form::close() }}
@@ -150,7 +148,7 @@
                 <a href="https://www.patreon.com/veganhacktivists/"><img src="{{ asset('images/patreon-button.png') }}"></a>
             </div>
             <div class="text-secondary">
-                Website hosted and designed by <a href="https://veganhacktivists.org/">vegan hactivists</a> with love&nbsp;<i class="fas fa-heart text-danger"></i>
+                @lang('Website hosted and designed by') <a href="https://veganhacktivists.org/">vegan hactivists</a> @lang('with love')&nbsp;<i class="fas fa-heart text-danger"></i>
             </div>
             <div>
                 <a href="https://veganhacktivists.org/"><img class="float-right" src="https://i.imgur.com/xSHDo4E.png"></a>

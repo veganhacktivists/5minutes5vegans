@@ -7,13 +7,13 @@
     </div>
     <div class="col text-right">
         @auth
-            {{ link_to_route('logout', 'Logout', null, array('class' => 'mr-3')) }}
+            {{ link_to_route('logout', __('Logout'), null, array('class' => 'mr-3')) }}
         @endauth
         @guest
-            {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
+            {{ link_to_route('register', __('Register'), null, array('class' => 'mr-3')) }}
         @endguest
         <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
-            Donate <i class="fa fa-hand-holding-heart"></i>
+            @lang('Donate') <i class="fa fa-hand-holding-heart"></i>
         </a>
     </div>
 </div>
@@ -30,19 +30,19 @@
     </div>
     <div class="col text-right">
         @auth
-            {{ link_to_route('logout', 'Logout', null, array('class' => 'mr-3')) }}
+            {{ link_to_route('logout', __('Logout'), null, array('class' => 'mr-3')) }}
         @endauth
         @guest
-            {{ link_to_route('register', 'Register', null, array('class' => 'mr-3')) }}
+            {{ link_to_route('register', __('Register'), null, array('class' => 'mr-3')) }}
         @endguest
         <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
-            Donate <i class="fa fa-hand-holding-heart"></i>
+            @lang('Donate') <i class="fa fa-hand-holding-heart"></i>
         </a>
     </div>
 </div>
 
 <div id="minutes-left" class="text-center mb-4">
-    MINUTES LEFT
+    @lang('sidebar.minutes-left')
 </div>
 
 <script>
@@ -65,7 +65,7 @@
 
 <div class="footer mt-4">
         <img src="https://i.imgur.com/xSHDo4E.png" height="100">
-        <div class="text-center font-serif mt-4 px-4">Website hosted and designed by {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists') }} with love
+        <div class="text-center font-serif mt-4 px-4">@lang('Website hosted and designed by') {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists') }} @lang('with love')
               <i class="far fa-heart"></i>
       </div>
 </div>

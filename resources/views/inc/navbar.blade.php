@@ -23,7 +23,7 @@
     </div>
     <div class="col-auto">
         <a class="text-white btn rounded-pill font-bold btn-sm bg-pink" href="https://www.patreon.com/veganhacktivists" target="_blank">
-            <i class="mr-1 d-md-none d-xl-inline-block fas fa-hand-holding-heart"></i>Donate
+            <i class="mr-1 d-md-none d-xl-inline-block fas fa-hand-holding-heart"></i>@lang('Donate')
         </a>
     </div>
     <div class="col-auto">

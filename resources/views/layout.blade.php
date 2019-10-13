@@ -6,7 +6,7 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>5 Minutes 5 Vegans</title>
+        <title>@lang('5 Minutes 5 Vegans')</title>
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="{{ asset('js/app.js') }}"></script>
