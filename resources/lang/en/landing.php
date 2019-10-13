@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'hero' => "Take the challenge to help as many people become <span>vegan</span> as possible in merely 5 minutes!",
+    'get-started' => "Get started below",
+    'how' => "How does it work?",
+    'how-explanation' => "Our vegan robots are constantly scanning social media and re-tweeting comments of people interested in going vegan! Use this website to find those people and help support them where possible.",
+    'what' => "What do I need?",
+    'what-explanation' => "You should have Twitter<sup>®</sup> profile. We've prepared helpful, easy to copy resources about ethical, health and environmental aspects of veganism so you don't need to remember details.",
+    'why' => "Why should I register?",
+    'why-explanation' => "It's 100% free and you get the ability to create your own custom quick-to-copy responses in addition to using the ones we provide. This allows you to add a more personal touch to your tweets!",
+    'pick' => "Pick a language and click play!",
+    'go' => "Let's go!",
+    'else' => "What else can I do?",
+    'voice' => "Be the voice of the animals",
+    'voice-text' => "Whether you have a lot of time or litte, whether you're new or experienced, there's an organization that's looking for help to spread compassionate vegan message.",
+    'activism-link-title' => "View Vegan Activism Website",
+    'projects' => " Check our other projects",
+    'projects-text' => "We are a group of passionate vegan activists that volunteer our time and skills towards vegan, completely free projects worth supporting.",
+    'projects-link-title' => "View Vegan Hacktivists Website",
+    'donate-text' => "This project was built to be completely free and ad-less. Please support us and our activism on Patreon - we could really use help!",
+    'donate-link-title' => "Make a donation via Patreon",
+    'subscribe' => "Subscribe to Newsletter",
+    'subscribe-text' => "We'll deliver news, updates and more vegan activism related info in no more than two emails a month! We take your privacy very seriously and never share your email.",
+];

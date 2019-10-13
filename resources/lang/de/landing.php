@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'hero' => "Stell' dich der Herausforderung und hilf so vielen Menschen wie möglich in nur 5 Minuten oder weniger, <span>vegan</span> zu werden!",
+    'get-started' => "Leg' unten los!",
+    'how' => "Wie funktioniert es?",
+    'how-explanation' => "Unsere veganen Roboter scannen kontinuierlich die sozialen Medien und re-tweeten Beiträge von Menschen, die sich für vegane Ernährung interessieren! Mit Hilfe dieser Website kannst du diese Menschen finden und ihnen helfen und sie unterstützen.",
+    'what' => "Was brauche ich?",
+    'what-explanation' => "Du benötigst einen Twitter<sup>®</sup>-Account. Wir haben hilfreiche, einfach zu kopierende Texte zu den Themen Ethik, Gesundheit und ökologischen Aspekten des Veganismus vorbereitet, so dass du dich nicht an die Details erinnern musst.",
+    'why' => "Wieso sollte ich mich anmelden?",
+    'why-explanation' => "Wenn du einen kostenlosen Account erstellst, kannst du ganz einfach vorhandene Texte für dich bearbeiten und neue hinzufügen, so dass du schnell Antworten für Menschen, die sich für Veganismus interessieren, parat hast.",
+    'pick' => "Wähle deine Sprache und klick auf Play!",
+    'go' => "Los geht's!",
+    'else' => "Was kann ich sonst noch tun?",
+    'voice' => "Sei die Stimme der Tiere",
+    'voice-text' => "Ob du nun viel oder wenig Zeit hast. Ob du ganz frisch dabei oder schon ein alter Hase bist. Es gibt immer Organisationen und Verbände, die Hilfe beim Verbreiten von veganen Inhalten benötigen.",
+    'activism-link-title' => "besuche die Vegan Activism Website",
+    'projects' => "Check unsere anderen Projekte",
+    'projects-text' => "Wir sind eine Gruppe von passionierten veganen Aktivisten, die unsere Freizeit und Fähigkeiten komplett kostenlos für vegane Projekte, die es wert sind unterstützt zu werden, zur Verfügung stellen.",
+    'projects-link-title' => "besuche die Vegan Hacktivists Website",
+    'donate-text' => "Dieses Projekt wurde komplett kosten- und werbefrei erstellt. Bitte unterstütze uns und unsere Aktivitäten auf Patreon - wir können Hilfe gut gebrauchen!",
+    'donate-link-title' => "besuch unser Patreon Profil",
+    'subscribe' => "für Newsletter anmelden",
+    'subscribe-text' => "Wir werden dir Nachrichten, Neuigkeiten und mehr Informationen zu veganem Aktivismus in nicht mehr als zwei E-Mails pro Monat zusenden! Wir nehmen deine Privatsphäre sehr ernst und würden deine Adresse niemals mit Dritten teilen.",
+];
