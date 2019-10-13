@@ -24,7 +24,7 @@
                 <a class="text-black btn font-bold btn-sm bg-transparent py-2 px-3 swirvy-box"
                     style="border-color: #4dc0b5;font-size: 20px;"
                     href="/">
-                    How does it work?
+                    @lang('How does it work?')
                 </a>
             </div>
         </div>
@@ -42,8 +42,8 @@
                 @endif
             </div>
             <div class="col login-pane-right">
-                <h3 style="font-size: 24px;">..or start without an account!</h3>
-                <h5 style="letter-spacing: 1px;" class="my-5 font-weight-bold"><div class="horz-line"></div>PICK YOUR LANGUAGE.</h5>
+                <h3 style="font-size: 24px;">@lang('login.without-account')</h3>
+                <h5 style="letter-spacing: 1px;" class="my-5 font-weight-bold"><div class="horz-line"></div>@lang('PICK YOUR LANGUAGE').</h5>
                 <div class="d-flex mb-5 lang-flags">
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         @php
@@ -59,9 +59,9 @@
                             </a>
                     @endforeach
                 </div>
-                <h5 style="letter-spacing: 1px;" class="mt-5 font-weight-bold"><div class="horz-line"></div>GET READY...</h5>
+                <h5 style="letter-spacing: 1px;" class="mt-5 font-weight-bold"><div class="horz-line"></div>@lang('GET READY...')</h5>
                 <div class="d-flex align-middle">
-                  <span class="mr-auto my-5 font-weight-bold text-white" style="font-size: 17px;font-weight: normal !important;">And take up the challenge!</span>
+                  <span class="mr-auto my-5 font-weight-bold text-white" style="font-size: 17px;font-weight: normal !important;">@lang('And take up the challenge!')</span>
                     <a href="{{ route('feed') }}">
                         <button id="play-submit-btn" class="btn start-btn px-0"><div><div><i class="fas fa-caret-right"></i></div></div></button>
                     </a>
@@ -75,16 +75,16 @@
     <div class="container-fluid container-fluid-max">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
-                Follow us on <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram', ['target' => '_blank']) }}
+                @lang('Follow us on') <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram', ['target' => '_blank']) }}
             </div>
             <div class="col-12 col-md-6 col-lg-4 text-center">
                 <div>
-                    Website hosted and designed by {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) }} with love
+                    @lang('Website hosted and designed by') {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) }} @lang('with love')
                     <i class="far fa-heart"></i>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 text-right">
-                {{ link_to('https://www.patreon.com/veganhacktivists', 'Support us on Patreon', ['target' => '_blank']) }}
+                @lang('Support us on') {{ link_to('https://www.patreon.com/veganhacktivists', 'Patreon', ['target' => '_blank']) }}
             </div>
         </div>
     </div>

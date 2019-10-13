@@ -152,7 +152,7 @@
                     <h3 class="subheading text-uppercase">@lang('landing.voice')</h3>
                     <p>@lang('landing.voice-text')</p>
                     <p class="font-weight-bold">
-                      {{ link_to('https://youaretheirvoice.com/', __('landing.activism-link-title'), array('class' => 'lnk')) }}
+                      {{ link_to('https://youaretheirvoice.com/', __('landing.activism-link-title'), ['class' => 'lnk', 'target' => '_blank']) }}
                     </p>
                   </div>
                 </div>
@@ -164,7 +164,7 @@
                     <h3 class="subheading text-uppercase">@lang('landing.projects')</h3>
                     <p>@lang('landing.projects-text')</p>
                     <p class="font-weight-bold">
-                      {{ link_to('https://veganhacktivists.org', __('landing.projects-link-title'), array('class' => 'lnk')) }}
+                      {{ link_to('https://veganhacktivists.org', __('landing.projects-link-title'), ['class' => 'lnk', 'target' => '_blank']) }}
                     </p>
                   </div>
                 </div>
@@ -173,10 +173,10 @@
                 <div class="col-12">
                   <div class="number-block">03</div>
                   <div class="step-block">
-                    <h3 class="subheading text-uppercase">@lang('Donate') <i class="fas fa-hand-holding-heart"></i></h3>
+                    <h3 class="subheading text-uppercase">@lang('landing.donate') <i class="fas fa-hand-holding-heart"></i></h3>
                     <p>@lang('landing.donate-text')</p>
                     <p class="font-weight-bold">
-                      {{ link_to('https://www.patreon.com/veganhacktivists', __('landing.donate-link-title'), array('class' => 'lnk')) }}
+                      {{ link_to('https://www.patreon.com/veganhacktivists', __('landing.donate-link-title'), ['class' => 'lnk', 'target' => '_blank']) }}
                     </p>
                   </div>
                 </div>
@@ -194,7 +194,8 @@
                 <div class="col-12">
                   <div style="margin-left: -5.5rem;" class="number-block"><i style="font-size: 150%;" class="far fa-envelope"></i></div>
                   <div>
-                    <h3 class="text-uppercase subheading">@lang('landing.subscribe')</h3>
+                    <h3 class="text-uppercase subheading">Vegan Hacktivists</h3>
+                    <a href="https://veganhacktivists.org/" target="_blank"><img src="https://i.imgur.com/xSHDo4E.png" style="width: 150px;padding-top: 10px;padding-bottom: 15px;"></a>
                     <p>@lang('landing.subscribe-text')</p>
                   </div>
                 </div>
@@ -205,13 +206,13 @@
                     <div class="form-row">
                       <div class="form-group-md">
                         <input class="form-control-md" type="email" id="newsletter_email" name="EMAIL" />
-                        <label class="text-uppercase" for="newsletter_email">@lang('YOUR EMAIL')</label>
+                        <label class="text-uppercase" for="newsletter_email">@lang('Your Email')</label>
                         <div class="line"></div>
                       </div>
                     </div>
                     <!-- anti-bot measure, should be left empty for the form to validate -->
                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0baba35be8f6397f7ac1066f1_5fd11d4221" tabindex="-1" value=""></div>
-                    <button type="submit" name="subscribe" class="btn btn-cta btn-primary float-right">@lang('Subscribe')</button>
+                    <button type="submit" name="subscribe" class="btn btn-cta btn-primary float-right">@lang('landing.subscribe')</button>
                   </form>
                 </div>
               </div>
@@ -226,16 +227,16 @@
     <div class="container-fluid container-fluid-max">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-4">
-            @lang('Follow us on') <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram', ['target' => '_blank']) }}
+            @lang('Follow us on') <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram', ['class' => 'lnk', 'target' => '_blank']) }}
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-center">
           <div>
-            @lang('Website hosted and designed by') {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) }} @lang('with love')
+            @lang('Website hosted and designed by') {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['class' => 'lnk', 'target' => '_blank']) }} @lang('with love')
               <i class="far fa-heart"></i>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-right">
-           @lang('Support us on') {{ link_to('https://www.patreon.com/veganhacktivists', 'Patreon', ['target' => '_blank']) }}
+           @lang('Support us on') {{ link_to('https://www.patreon.com/veganhacktivists', 'Patreon', ['class' => 'lnk', 'target' => '_blank']) }}
         </div>
       </div>
     </div>

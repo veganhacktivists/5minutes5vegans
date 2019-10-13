@@ -4,14 +4,14 @@
     <div class="d-flex mb-4">
         <h1 class="mr-auto">{{ __('Login') }}</h1>
         <a href="{{ route('register') }}">
-            <button class="btn btn-link font-weight-bold my-auto">Or Register&nbsp;<i class="fas fa-caret-right"></i></button>
+            <button class="btn btn-link font-weight-bold my-auto">@lang('login.register')&nbsp;<i class="fas fa-caret-right"></i></button>
         </a>
     </div>
     {{ Form::open( [ 'route' => 'login' ] ) }}
         {{ Form::email('email', false, [
-            'class' => 'form-control mb-2' . ($errors->has('email') ? ' is-invalid' : ''),
+            'class' => 'text-uppercase form-control mb-2' . ($errors->has('email') ? ' is-invalid' : ''),
             'required' => true,
-            'placeholder' => 'EMAIL',
+            'placeholder' => __('E-Mail Address'),
         ]) }}
 
         @if ($errors->has('email'))
@@ -21,9 +21,9 @@
         @endif
 
         {{ Form::password('password', [
-            'class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''),
+            'class' => 'form-control text-uppercase' . ($errors->has('password') ? ' is-invalid' : ''),
             'required' => true,
-            'placeholder' => 'PASSWORD',
+            'placeholder' => __('Password'),
         ]) }}
 
         @error('password')
@@ -31,6 +31,6 @@
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
-        {{ Form::submit(__('Log me in!'), ['class' => 'btn btn-large btn-primary swirvy-box mt-5 float-right']) }}
+        {{ Form::submit(__('login.login'), ['class' => 'btn btn-large btn-primary swirvy-box mt-5 float-right']) }}
     {{ Form::close() }}
 @endsection
