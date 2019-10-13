@@ -235,7 +235,7 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-right">
-            {{ link_to('https://www.patreon.com/veganhacktivists', __('Support us on Patreon'), ['target' => '_blank']) }}
+           @lang('Support us on') {{ link_to('https://www.patreon.com/veganhacktivists', 'Patreon', ['target' => '_blank']) }}
         </div>
       </div>
     </div>

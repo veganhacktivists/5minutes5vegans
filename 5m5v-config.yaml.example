@@ -1,0 +1,7 @@
+consumer_key: Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0A
+consumer_secret: Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa
+users:
+    - access_token: 0000000000000000000-Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0
+      access_token_secret: Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0Aa0
+      filters:
+          - english
