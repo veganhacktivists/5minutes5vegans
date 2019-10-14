@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'credits' => 'Website hosted and designed by :link with love ',
     'hero' => 'Take the challenge to help as many people become <span>vegan</span> as possible in merely 5 minutes!',
     'get-started' => 'Get started below',
     'how' => 'How does it work?',
