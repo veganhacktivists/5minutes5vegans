@@ -4,11 +4,11 @@
     <div class="d-flex">
         <h1 class="mr-auto">{{ __('Register') }}</h1>
         <a href="{{ route('login') }}">
-            <button class="btn btn-link font-weight-bold my-auto">@lang('register.login')&nbsp;<i class="fas fa-caret-right"></i></button>
+            <button class="btn btn-link font-weight-bold my-auto">@lang('loginregister.or-login')&nbsp;<i class="fas fa-caret-right"></i></button>
         </a>
     </div>
     <p class="mt-3">
-        @lang('register.intro')
+        @lang('loginregister.intro')
     </p>
     {{ Form::open( [ 'route' => 'register' ] ) }}
         {{ Form::text('name', false, [
@@ -61,7 +61,7 @@
         @enderror
 
         <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }} mt-3">
-            <label class="text-md-right">@lang('register.robot')</label>
+            <label class="text-md-right">@lang('loginregister.robot')</label>
             <div>
                 {!! app('captcha')->display() !!}
 
@@ -77,8 +77,9 @@
             <div class="form-check">
                 {{ Form::checkbox('newsletter-check', null, false, [
                     "class" => "form-check-input",
+                    "id" => "newsletter-check",
                 ]) }}
-                <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">@lang('register.newsletter')</label>
+                <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">@lang('loginregister.newsletter')</label>
             </div>
             {{ Form::submit(__('Create Account'), ['class' => 'btn btn-large btn-primary swirvy-box ml-auto']) }}
         </div>

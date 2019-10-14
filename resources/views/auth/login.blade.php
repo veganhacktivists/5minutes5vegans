@@ -4,7 +4,7 @@
     <div class="d-flex mb-4">
         <h1 class="mr-auto">{{ __('Login') }}</h1>
         <a href="{{ route('register') }}">
-            <button class="btn btn-link font-weight-bold my-auto">@lang('signin.register')&nbsp;<i class="fas fa-caret-right"></i></button>
+            <button class="btn btn-link font-weight-bold my-auto">@lang('loginregister.or-register')&nbsp;<i class="fas fa-caret-right"></i></button>
         </a>
     </div>
     {{ Form::open( [ 'route' => 'login' ] ) }}
@@ -31,6 +31,6 @@
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
-        {{ Form::submit(__('signin.login'), ['class' => 'btn btn-large btn-primary swirvy-box mt-5 float-right']) }}
+        {{ Form::submit(__('loginregister.login'), ['class' => 'btn btn-large btn-primary swirvy-box mt-5 float-right']) }}
     {{ Form::close() }}
 @endsection

@@ -53,21 +53,9 @@
 
 <verbiages></verbiages>
 
-<!-- <h3 class="">
-    <div class="p-3 text-center">{!! __('sidebar.header') !!}</div>
-    <div class="timer-complete text-center text-success">
-        <small>{!! __('sidebar.success') !!}
-            <br/>
-            <button class="mt-2 timer-restart btn btn-success">
-                <i class="fas fa-redo"></i> {{ __('sidebar.repeat') }}
-            </button>
-        </small>
-    </div>
-</h3> -->
-
 <div class="footer mt-4">
         <img src="https://i.imgur.com/xSHDo4E.png" height="100">
-        <div class="text-center font-serif mt-4 px-4">@lang('Website hosted and designed by') {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists') }} @lang('with love')
+        <div class="text-center font-serif mt-4 px-4">@lang('landing.credits', [ 'link' => link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) ])
               <i class="far fa-heart"></i>
       </div>
 </div>

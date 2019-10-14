@@ -42,7 +42,7 @@
                 @endif
             </div>
             <div class="col login-pane-right">
-                <h3 style="font-size: 24px;">@lang('login.without-account')</h3>
+                <h3 style="font-size: 24px;">@lang('loginregister.without-account')</h3>
                 <h5 style="letter-spacing: 1px;" class="my-5 font-weight-bold"><div class="horz-line"></div>@lang('PICK YOUR LANGUAGE').</h5>
                 <div class="d-flex mb-5 lang-flags">
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
@@ -80,7 +80,6 @@
             <div class="col-12 col-md-6 col-lg-4 text-center">
                 <div>
                     @lang('landing.credits', [ 'link' => link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) ])
-                    @lang('Website hosted and designed by') {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) }} @lang('with love')
                     <i class="far fa-heart"></i>
                 </div>
             </div>
