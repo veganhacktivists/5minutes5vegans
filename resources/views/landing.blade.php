@@ -231,6 +231,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4 text-center">
           <div>
+            @lang('landing.credits', [ 'link' => link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) ])
             @lang('Website hosted and designed by') {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['class' => 'lnk', 'target' => '_blank']) }} @lang('with love')
               <i class="far fa-heart"></i>
           </div>
