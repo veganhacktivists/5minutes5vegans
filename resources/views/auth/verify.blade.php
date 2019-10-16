@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Verify Your Email Address')
+@section('title', __('Verify Your Email Address'))
 
 @section('main')
 <div class="container">

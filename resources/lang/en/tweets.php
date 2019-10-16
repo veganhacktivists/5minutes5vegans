@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     [
         'icon' => 'fas fa-info-circle',
         'title' => 'General info',

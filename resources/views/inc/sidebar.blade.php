@@ -7,13 +7,13 @@
     </div>
     <div class="col text-right">
         @auth
-            {{ link_to_route('logout', 'Logout', null, ['class' => 'mr-3', 'onclick' => 'event.preventDefault(); $("#logout-form").submit();']) }}
+            {{ link_to_route('logout', __('Logout'), null, array('class' => 'mr-3')) }}
         @endauth
         @guest
-            {{ link_to_route('register', 'Register', null, ['class' => 'mr-3']) }}
+            {{ link_to_route('register', __('Register'), null, array('class' => 'mr-3')) }}
         @endguest
         <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
-            Donate <i class="fa fa-hand-holding-heart"></i>
+            @lang('Donate') <i class="fa fa-hand-holding-heart"></i>
         </a>
     </div>
 </div>
@@ -30,13 +30,13 @@
     </div>
     <div class="col text-right">
         @auth
-            {{ link_to_route('logout', 'Logout', null, ['class' => 'mr-3', 'onclick' => 'event.preventDefault(); $("#logout-form").submit();']) }}
+            {{ link_to_route('logout', __('Logout'), null, array('class' => 'mr-3')) }}
         @endauth
         @guest
-            {{ link_to_route('register', 'Register', null, ['class' => 'mr-3']) }}
+            {{ link_to_route('register', __('Register'), null, array('class' => 'mr-3')) }}
         @endguest
         <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
-            Donate <i class="fa fa-hand-holding-heart"></i>
+            @lang('Donate') <i class="fa fa-hand-holding-heart"></i>
         </a>
     </div>
 </div>
@@ -44,7 +44,7 @@
 {{ Form::open(['route' => 'logout', 'id' => 'logout-form']) }}{{ Form::close() }}
 
 <div id="minutes-left" class="text-center mb-4">
-    MINUTES LEFT
+    @lang('sidebar.minutes-left')
 </div>
 
 <script>
@@ -53,21 +53,9 @@
 
 <verbiages></verbiages>
 
-<!-- <h3 class="">
-    <div class="p-3 text-center">{!! __('sidebar.header') !!}</div>
-    <div class="timer-complete text-center text-success">
-        <small>{!! __('sidebar.success') !!}
-            <br/>
-            <button class="mt-2 timer-restart btn btn-success">
-                <i class="fas fa-redo"></i> {{ __('sidebar.repeat') }}
-            </button>
-        </small>
-    </div>
-</h3> -->
-
 <div class="footer mt-4">
         <img src="https://i.imgur.com/xSHDo4E.png" height="100">
-        <div class="text-center font-serif mt-4 px-4">Website hosted and designed by {{ link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) }} with love
+        <div class="text-center font-serif mt-4 px-4">@lang('landing.credits', [ 'link' => link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) ])
               <i class="far fa-heart"></i>
       </div>
 </div>

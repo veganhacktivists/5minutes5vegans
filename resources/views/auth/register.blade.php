@@ -4,20 +4,18 @@
     <div class="d-flex">
         <h1 class="mr-auto">{{ __('Register') }}</h1>
         <a href="{{ route('login') }}">
-            <button class="btn btn-link font-weight-bold my-auto">Or login&nbsp;<i class="fas fa-caret-right"></i></button>
+            <button class="btn btn-link font-weight-bold my-auto">@lang('loginregister.or-login')&nbsp;<i class="fas fa-caret-right"></i></button>
         </a>
     </div>
     <p class="mt-3">
-        When you register a free account, you will be able to edit
-        and add quick to copy answers to the most common questions
-        people curious about veganism have.
+        @lang('loginregister.intro')
     </p>
     {{ Form::open( [ 'route' => 'register' ] ) }}
         {{ Form::text('name', false, [
-            'class' => 'form-control mb-1' . ($errors->has('name') ? ' is-invalid' : ''),
+            'class' => 'form-control text-uppercase mb-1' . ($errors->has('name') ? ' is-invalid' : ''),
             'required' => true,
             'autofocus' => true,
-            'placeholder' => 'YOUR NAME',
+            'placeholder' => __('Your Name'),
         ]) }}
 
         @error('name')
@@ -27,9 +25,9 @@
         @enderror
 
         {{ Form::email('email', false, [
-            'class' => 'form-control mb-1' . ($errors->has('email') ? ' is-invalid' : ''),
+            'class' => 'form-control text-uppercase mb-1' . ($errors->has('email') ? ' is-invalid' : ''),
             'required' => true,
-            'placeholder' => 'YOUR EMAIL',
+            'placeholder' => __('Your Email'),
         ]) }}
 
         @if ($errors->has('email'))
@@ -39,9 +37,9 @@
         @endif
 
         {{ Form::password('password', [
-            'class' => 'form-control mb-1' . ($errors->has('password') ? ' is-invalid' : ''),
+            'class' => 'form-control text-uppercase mb-1' . ($errors->has('password') ? ' is-invalid' : ''),
             'required' => true,
-            'placeholder' => 'PASSWORD',
+            'placeholder' => __('Password'),
         ]) }}
 
         @error('password')
@@ -51,9 +49,9 @@
         @enderror
 
         {{ Form::password('password_confirmation', [
-            'class' => 'form-control mb-1' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
+            'class' => 'form-control text-uppercase mb-1' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
             'required' => true,
-            'placeholder' => 'CONFIRM PASSWORD',
+            'placeholder' => __('Confirm Password'),
         ]) }}
 
         @error('password_confirmation')
@@ -63,7 +61,7 @@
         @enderror
 
         <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }} mt-3">
-            <label class="text-md-right">Confirm you are not a robot</label>
+            <label class="text-md-right">@lang('loginregister.robot')</label>
             <div>
                 {!! app('captcha')->display() !!}
 
@@ -79,8 +77,9 @@
             <div class="form-check">
                 {{ Form::checkbox('newsletter-check', null, false, [
                     "class" => "form-check-input",
+                    "id" => "newsletter-check",
                 ]) }}
-                <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">I'd like to receive newsletter</label>
+                <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">@lang('loginregister.newsletter')</label>
             </div>
             {{ Form::submit(__('Create Account'), ['class' => 'btn btn-large btn-primary swirvy-box ml-auto']) }}
         </div>

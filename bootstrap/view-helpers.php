@@ -11,3 +11,7 @@
     function getCurrentCountryName() {
         return LaravelLocalization::getCurrentLocaleName();
     }
+
+    function getCurrentNativeCountryName() {
+        return LaravelLocalization::getCurrentLocale();
+    }
