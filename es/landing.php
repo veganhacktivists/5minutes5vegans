@@ -21,6 +21,6 @@ return [
     'donate' => "¡Por favor, apoya este sitio!",
     'donate-text' => "Este proyecto fue creado para ser completamente gratuito y libre de anuncios. Por favor, apóyanos y a nuestro activismo en Patreon - ¡nos vendría realmente bien toda ayuda!",
     'donate-link-title' => "Hacer una donacion por Patreon",
-    'subscribe' => "¡Suscríbete a nuestro boletín informativo!",
+    'subscribe' => "¡Suscríbete a nuestro<br/>boletín informativo!",
     'subscribe-text' => "¡Te enviaremos noticias, actualizaciones y más info relacionada con activismo vegano en no más de uno o dos correos al mes! Nos tomamos muy en serio tu privacidad y jamás compartiremos tu correo.",
 ];
