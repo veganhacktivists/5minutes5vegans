@@ -2,7 +2,7 @@
 
 return [
     'credits' => 'Website hosted and designed by :link with love ',
-    'hero' => 'Take the challenge to help as many people become <span>vegan</span> as possible in merely 5 minutes!',
+    'hero' => 'In just 5 minutes or less you can help 5 or more people become Vegan right now - it\'s fast, simple, and free!',
     'get-started' => 'Get started below',
     'how' => 'How does it work?',
     'how-explanation' => 'Our vegan robots are constantly scanning Twitter® and re-tweeting comments of people interested in going vegan! Use this website to find and support those people where possible in just 5 minutes.',
