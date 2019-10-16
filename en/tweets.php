@@ -15,7 +15,7 @@ return [
 
     [
         'icon' => 'fas fa-leaf',
-        'title' => 'Challenge 22+',
+        'title' => 'Vegan Challenge+',
         'body' =>[
             [
                 'Hey!',
@@ -27,28 +27,25 @@ return [
                 'We\'re (always)? here to help!',
                 'It\'s (definitely|absolutely)? easier than you might think!'
             ], [
-                'You (should|could|might want to) (check|try checking) out the Vegan 22\+ Day Challenge!',
-                'The Vegan 22\+ Day Challenge (might|could) be (just)? what you\'re looking for\.',
-                'There\'s a resource called the Vegan 22\+ Day Challenge (that\'s available|that you could try)?\.'
+                'You (should|could|might want to) (check|try checking) out the Vegan Bootcamp Challenge!',
+                'The Vegan Bootcamp Challenge (might|could) be (just)? what you\'re looking for\.',
+                'There\'s a resource called the Vegan Bootcamp Challenge (that\'s available|that you could try)?\.'
             ], [
-                'They give you (a|your own) free (personal)? mentor (on Facebook)? to help you go vegan for a month\.',
-                'You can access a free (personal)? mentor (online|on Facebook)? to help you go vegan for a month\.',
-                'They can help you go vegan for a month with your own free personal mentor (through Facebook)?\.',
-                'They connect you with a free (personal)? mentor (on Facebook)? to help you go vegan for a month\.',
-                'You can get a free (personal)? mentor (over Facebook)? to help you go vegan for a month\.',
-                'They\'ll connect you (over Facebook)? to a free (personal)? mentor to help you go vegan for a month\.'
+                'You can do a 30 days or less vegan challenge and they help you figure out how to do it like a pro!',
+                'The site is a 30 days or less vegan challenge where you can learn how to easily be vegan!',
+                'You complete 30 challenges on the website as it helps you slowly become vegan, it\'s easy!'
             ], [
-                'The link is ' . preg_quote('https://www.challenge22.com/challenge22') . ';',
-                'The URL is ' . preg_quote('https://www.challenge22.com/challenge22') . ';',
-                'The site is at ' . preg_quote('https://www.challenge22.com/challenge22') . ';',
-                'The website is ' . preg_quote('https://www.challenge22.com/challenge22') . ';',
+                'The link is ' . preg_quote('https://veganbootcamp.org') . ';',
+                'The URL is ' . preg_quote('https://veganbootcamp.org') . ';',
+                'The site is at ' . preg_quote('https://veganbootcamp.org') . ';',
+                'The website is ' . preg_quote('https://veganbootcamp.org') . ';',
             ], [
                 'Good luck, (you|you\'ve) got this!',
                 'You can (totally|definitely|absolutely)? do it!',
                 'We\'re (all)? rooting for you!',
                 'Hang in there!',
                 'Stay strong!',
-                'Come on! You can (totally|definitely|absolutely)? do it!',
+                'You can (totally|definitely|absolutely)? do it!',
                 'Keep (on)? fighting!',
                 '(Don\'t|Never) give up!',
                 'Keep (on)? pushing!',
