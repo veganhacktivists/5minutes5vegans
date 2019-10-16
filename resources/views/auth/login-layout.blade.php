@@ -24,7 +24,7 @@
                 <a class="text-black btn font-bold btn-sm bg-transparent py-2 px-3 swirvy-box"
                     style="border-color: #4dc0b5;font-size: 20px;"
                     href="/">
-                    @lang('How does it work?')
+                    @lang('loginregister.how')
                 </a>
             </div>
         </div>
