@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'credits' => 'Página web hospedada y diseñada por :link con cariño ',
     'hero' => "¡Realiza el desafío de ayudar a la mayor cantidad de personas posible a hacerse <span>veganas</span> en tan solo 5 minutos!",
     'get-started' => "Ponte manos a la obra abajo",
     'how' => "¿Cómo funciona",
