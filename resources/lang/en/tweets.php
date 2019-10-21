@@ -19,9 +19,7 @@ return [
         'body' =>[
             [
                 'Hey!',
-                'Hi!',
-                'Hello!',
-                'Happy to hear!'
+                'Hi!'
             ], [
                 'You can (definitely|absolutely)? do it!',
                 'We\'re (always)? here to help!',
@@ -44,12 +42,8 @@ return [
                 'You can (totally|definitely|absolutely)? do it!',
                 'We\'re (all)? rooting for you!',
                 'Hang in there!',
-                'Stay strong!',
                 'You can (totally|definitely|absolutely)? do it!',
-                'Keep (on)? fighting!',
-                '(Don\'t|Never) give up!',
-                'Keep (on)? pushing!',
-                'Believe in yourself!'
+                'You got it!'
             ], [
                 'Message me (back)? if you need (any (more)?|extra) help!',
                 'Reply (back)? to me if you need (any (more)?|extra) help!',
