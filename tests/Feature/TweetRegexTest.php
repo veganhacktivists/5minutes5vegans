@@ -12,24 +12,6 @@ use Hoa\Compiler\Llk\Llk;
 
 class TweetRegexTest extends TestCase
 {
-    /**
-     * Tests that a message can be generated.
-     *
-     * @return void
-     */
-    public function testGenerateMessage()
-    {
-        foreach (LaravelLocalization::getSupportedLocales() as $locale => $value) {
-            \App::setLocale($locale);
-            $controller = new TweetController();
-            $service = new TweetRegexService();
-            $response = $controller->tweet($service);
-
-            // Need to make sure string is returned but string always varies.
-            // The challenge22 URL should always be there though.
-            $this->assertContains('challenge22', $response);
-        }
-    }
 
     /**
      * Tests that all tweet resource files are valid.
@@ -42,10 +24,13 @@ class TweetRegexTest extends TestCase
         $compiler = Llk::load($grammar);
         foreach (LaravelLocalization::getSupportedLocales()  as $locale => $value) {
             \App::setLocale($locale);
-            $stringArrays = __('tweet.tweet');
-            foreach ($stringArrays as $stringArray) {
-                foreach ($stringArray as $regex) {
-                    $compiler->parse($regex);
+            $tweets = __('tweets');
+            foreach($tweets as $tweet) {
+                $stringArrays = $tweet['body'];
+                foreach ($stringArrays as $stringArray) {
+                    foreach ($stringArray as $regex) {
+                        $compiler->parse($regex);
+                    }
                 }
             }
         }
