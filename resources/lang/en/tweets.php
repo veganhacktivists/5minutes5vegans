@@ -15,7 +15,7 @@ return [
 
     [
         'icon' => 'fas fa-leaf',
-        'title' => 'Vegan Challenge+',
+        'title' => 'Vegan Challenge',
         'body' =>[
             [
                 'Hey!',
