@@ -27,9 +27,9 @@ return [
                 'Wir sind (immer)? hier um zu helfen!',
                 'Es ist (vielleicht|auf jeden Fall)? einfacher als du denkst!'
             ], [
-                'Du (solltest|könntest|willst vielleicht) die Vegan 22\+-Tage-Challenge ausprobieren!',
-                'Die Vegan 22\+-Tage-Challenge (könnte|ist vielleicht) (genau)? das sein, (was|wonach) du suchst\.',
-                'Es gibt da etwas, was sich die Vegan 22\+-Tage-Challenge nennt\.'
+                'Du (solltest|könntest|willst vielleicht) die Vegan 22\+\-Tage\-Challenge ausprobieren!',
+                'Die Vegan 22\+\-Tage\-Challenge (könnte|ist vielleicht) (genau)? das sein, (was|wonach) du suchst\.',
+                'Es gibt da etwas, was sich die Vegan 22\+\-Tage\-Challenge nennt\.'
             ], [
                 'Dort hast du (einen|deinen eigenen) kostenlosen (persönlichen)? Mentor (bei Facebook)?, der dir hilft für einen Monat vegan zu leben\.',
                 'Du hast Zugriff auf einen (persönlichen)? Mentor (online|bei Facebook)?, der dir hilft für einen Monat vegan zu leben\.',
@@ -83,7 +83,7 @@ return [
             [
                 'Veganer Käse hat es in den letzten Jahren weit gebracht!'
             ], [
-                'Mein Favorit ist "Simply V"-Käse\.'
+                'Mein Favorit ist "Simply V"\-Käse\.'
             ], [
                 'Unter folgendem Link ' . preg_quote('https://www.peta.de/veganer-kaese') . ' findest du noch mehr vegane Käsesorten! Schreib mir, wenn du Hilfe brauchst\.'
             ]
@@ -95,7 +95,7 @@ return [
         'title' => 'Ich liebe Pizza',
         'body' =>[
             [
-                'Normalerweise findest du viele vegane Pizza-Angebote (und andere Speisen) auf ' . preg_quote('http://HappyCow.net') . '!'
+                'Normalerweise findest du viele vegane Pizza\-Angebote (und andere Speisen) auf ' . preg_quote('http://HappyCow.net') . '!'
             ], [
                 'There\'s also "Daiya" Pizza: ' . preg_quote('https://daiyafoods.com/our-foods/pizza/') . ' and even more places listed here: ' . preg_quote('https://tinyurl.com/vegpizzanow') . ' Message me if you need help finding more\.'
             ]
@@ -123,7 +123,7 @@ return [
             ], [
                 'They have a lot of different flavors and there\'s a lot of other soy/almond/coconut based icecream brands too!'
             ], [
-                '(See:|Check out) ' . preg_quote('https://www.vegan.com/ice-cream/')
+                '(See:|Check out) ' . preg_quote('https://www.vegan.com/ice\-cream/')
             ]
         ]
     ],
