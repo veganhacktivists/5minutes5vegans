@@ -21,13 +21,13 @@ return [
                 'Hey!',
                 'Hi!'
             ], [
-                'You can (definitely|absolutely)? do it!',
-                'We\'re (always)? here to help!',
-                'It\'s (definitely|absolutely)? easier than you might think!'
+                'You can (definitely |absolutely )?do it!',
+                'We\'re (always )?here to help!',
+                'It\'s (definitely |absolutely )?easier than you might think!'
             ], [
                 'You (should|could|might want to) (check|try checking) out the Vegan Bootcamp Challenge!',
-                'The Vegan Bootcamp Challenge (might|could) be (just)? what you\'re looking for\.',
-                'There\'s a resource called the Vegan Bootcamp Challenge (that\'s available|that you could try)?\.'
+                'The Vegan Bootcamp Challenge (might|could) be (just )?what you\'re looking for\.',
+                'There\'s a resource called the Vegan Bootcamp Challenge( that\'s available| that you could try)?\.'
             ], [
                 'You can do a 30 days or less vegan challenge and they help you figure out how to do it like a pro!',
                 'The site is a 30 days or less vegan challenge where you can learn how to easily be vegan!',
@@ -39,18 +39,18 @@ return [
                 'The website is ' . preg_quote('https://veganbootcamp.org') . ';',
             ], [
                 'Good luck, (you|you\'ve) got this!',
-                'You can (totally|definitely|absolutely)? do it!',
-                'We\'re (all)? rooting for you!',
+                'You can (totally |definitely |absolutely )?do it!',
+                'We\'re (all )?rooting for you!',
                 'Hang in there!',
-                'You can (totally|definitely|absolutely)? do it!',
+                'You can (totally |definitely |absolutely )?do it!',
                 'You got it!'
             ], [
-                'Message me (back)? if you need (any (more)?|extra) help!',
-                'Reply (back)? to me if you need (any (more)?|extra) help!',
-                '(Feel free to|Go ahead and) (reach out|get in contact) if you need (any (more)?|extra) help!',
-                'Reach out if you need (any (more)?|extra) help!',
-                'If you (ever)? need (any (more)?|extra) help feel free to (reach out|get in contact)!',
-                'If you (ever)? need (any (more)?|extra) help just (send|shoot) me a (message|DM)!'
+                'Message me (back )?if you need (any( more)?|extra) help!',
+                'Reply (back )?to me if you need (any( more)?|extra) help!',
+                '(Feel free to|Go ahead and) (reach out|get in contact) if you need (any( more)?|extra) help!',
+                'Reach out if you need (any( more)?|extra) help!',
+                'If you (ever )?need (any( more)?|extra) help feel free to (reach out|get in contact)!',
+                'If you (ever )?need (any( more)?|extra) help just (send|shoot) me a (message|DM)!'
             ]
         ]
     ],
