@@ -14,7 +14,7 @@
 
 
 <div class="container-fluid login-container">
-    <div class="container py-5">
+    <div class="container py-5 px-0">
         <!-- Header -->
         <div class="row">
             <div class="col-sm">
@@ -71,7 +71,7 @@
     </div>
 </div>
 <!-- Footer -->
-<footer class="login-footer py-2 page-footer text-white">
+<footer class="login-footer py-2 text-white">
     <div class="container-fluid container-fluid-max">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">

@@ -128,22 +128,6 @@ p {
   }
 }
 
-.page-footer {
-  font-size: 120%;
-  background: #333;
-  width: 100%;
-  z-index: 100;
-}
-
-.login-footer.page-footer {
-    position: absolute;
-    bottom: 0px;
-}
-
-.page-footer a {
-    color: $pink;
-}
-
 // not sure why container is in front of row and col
 .z-fix {
   z-index: 2;
