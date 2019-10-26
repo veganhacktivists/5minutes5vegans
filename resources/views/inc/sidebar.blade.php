@@ -7,7 +7,7 @@
     </div>
     <div class="col text-right">
         @auth
-            {{ link_to_route('logout', __('Logout'), null, array('class' => 'mr-3')) }}
+            {{ link_to_route('logout', __('Logout'), null, ['class' => 'mr-3', 'onclick' => 'event.preventDefault(); $("#logout-form").submit();']) }}
         @endauth
         @guest
             {{ link_to_route('register', __('Register'), null, array('class' => 'mr-3')) }}
@@ -30,7 +30,7 @@
     </div>
     <div class="col text-right">
         @auth
-            {{ link_to_route('logout', __('Logout'), null, array('class' => 'mr-3')) }}
+            {{ link_to_route('logout', __('Logout'), null, ['class' => 'mr-3', 'onclick' => 'event.preventDefault(); $("#logout-form").submit();']) }}
         @endauth
         @guest
             {{ link_to_route('register', __('Register'), null, array('class' => 'mr-3')) }}
