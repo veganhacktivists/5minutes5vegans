@@ -31,6 +31,11 @@
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
+
         {{ Form::submit(__('loginregister.login'), ['class' => 'btn btn-large btn-primary swirvy-box mt-5 float-right']) }}
     {{ Form::close() }}
+
+    <div class="d-flex w-100">
+        {!! link_to_route('password.reset', 'Forgot password?', ['token' => null], ['class' => 'small ml-auto mt-3']) !!}
+    </div>
 @endsection

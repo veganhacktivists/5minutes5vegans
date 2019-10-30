@@ -1,80 +1,66 @@
-@extends('layout')
+@extends('auth.passwords.reset-layout')
 
-@section('title', 'Reset Password')
+@section('card_body')
+{{ Form::open( [ 'route' => 'password.update' ] ) }}
 
-@section('main')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <input type="hidden" name="token" value="{{ $token }}">
 
-                <div class="card-body">
-                    {{ Form::open( [ 'route' => 'password.update' ] ) }}
+    <div class="form-group row">
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+        <div class="col-md-8 offset-md-2">
+            {{ Form::email('email', false, [
+                'class' => 'form-control text-white' . ($errors->has('email') ? ' is-invalid' : ''),
+                'required' => true,
+                'autofocus' => true,
+                'placeholder' => 'YOUR EMAIL ADDRESS',
+            ]) }}
 
-                        <div class="form-group row">
-                            {{ Form::label('email', __('E-Mail Address'), [ 'class' => 'col-md-4 col-form-label text-md-right' ]) }}
-
-                            <div class="col-md-6">
-                                {{ Form::email('email', false, [
-                                    'class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''),
-                                    'required' => true,
-                                    'autofocus' => true,
-                                ]) }}
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            {{ Form::label('password', __('Password'), [ 'class' => 'col-md-4 col-form-label text-md-right' ]) }}
-
-                            <div class="col-md-6">
-                                {{ Form::password('password', [
-                                    'class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''),
-                                    'required' => true,
-                                ]) }}
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            {{ Form::label('password_confirmation', __('Confirm Password'), [ 'class' => 'col-md-4 col-form-label text-md-right' ]) }}
-
-                            <div class="col-md-6">
-                                {{ Form::password('password_confirmation', [
-                                    'class' => 'form-control' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
-                                    'required' => true,
-                                ]) }}
-
-                                @error('password_confirmation')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                {{ Form::submit(__('Reset Password'), ['class' => 'btn btn-primary']) }}
-                            </div>
-                        </div>
-                    {{ Form::close() }}
-                </div>
-            </div>
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
         </div>
     </div>
-</div>
+
+    <div class="form-group row">
+
+        <div class="col-md-8 offset-md-2">
+            {{ Form::password('password', [
+                'class' => 'form-control text-white' . ($errors->has('password') ? ' is-invalid' : ''),
+                'required' => true,
+                'placeholder' => 'NEW PASSWORD'
+            ]) }}
+
+            @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+    </div>
+
+    <div class="form-group row">
+
+        <div class="col-md-8 offset-md-2">
+            {{ Form::password('password_confirmation', [
+                'class' => 'form-control text-white' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
+                'required' => true,
+                'placeholder' => 'CONFIRM PASSWORD',
+            ]) }}
+
+            @error('password_confirmation')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+    </div>
+
+    <div class="form-group row mb-0">
+        <div class="col-md-5 ml-auto">
+            {{ Form::submit(__('Reset Password'), ['class' => 'btn btn-primary swirvy-box']) }}
+        </div>
+    </div>
+{{ Form::close() }}
 @endsection

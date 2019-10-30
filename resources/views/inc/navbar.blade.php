@@ -1,4 +1,4 @@
-<div class="navbar text-light border-bottom border-success row">
+<nav class="navbar text-light border-bottom border-success">
     <div class="col">
         <div class="dropdown">
             <button type="button" class="text-white btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" id="localeChooser">
@@ -7,16 +7,16 @@
             </button>
 
             <div class="dropdown-menu" aria-labelledby="localeChooser">
-              @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                   <a class="dropdown-item"
-                      rel="alternate"
-                      hreflang="{{ $localeCode }}"
-                      href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
-                   >
-                       <img src="https://www.countryflags.io/{{ getCountry( $properties ) }}/flat/32.png"/>
-                       <div class="d-inline p-2">{{ $properties['native'] }}</div>
-                   </a>
-               @endforeach
+            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                <a class="dropdown-item"
+                    rel="alternate"
+                    hreflang="{{ $localeCode }}"
+                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                >
+                    <img src="https://www.countryflags.io/{{ getCountry( $properties ) }}/flat/32.png"/>
+                    <div class="d-inline p-2">{{ $properties['native'] }}</div>
+                </a>
+            @endforeach
 
             </div>
         </div>
@@ -37,4 +37,4 @@
         {{ Form::close() }}
         @endauth
     </div>
-</div>
+</nav>
