@@ -151,8 +151,8 @@
                   <div class="step-block">
                     <h3 class="subheading text-uppercase">@lang('landing.voice')</h3>
                     <p>@lang('landing.voice-text')</p>
-                    <p style="color:#fff;">
-                      {{ link_to('https://youaretheirvoice.com/', __('landing.activism-link-title'), ['class' => 'lnk', 'target' => '_blank']) }}
+                    <p>
+                      {{ link_to('https://youaretheirvoice.com/', __('landing.activism-link-title'), ['class' => 'lnk text-white', 'target' => '_blank']) }}
                     </p>
                   </div>
                 </div>
@@ -163,8 +163,8 @@
                   <div class="step-block">
                     <h3 class="subheading text-uppercase">@lang('landing.projects')</h3>
                     <p>@lang('landing.projects-text')</p>
-                    <p style="color:#fff;">
-                      {{ link_to('https://veganhacktivists.org', __('landing.projects-link-title'), ['class' => 'lnk', 'target' => '_blank']) }}
+                    <p>
+                      {{ link_to('https://veganhacktivists.org', __('landing.projects-link-title'), ['class' => 'lnk text-white', 'target' => '_blank']) }}
                     </p>
                   </div>
                 </div>
@@ -175,8 +175,8 @@
                   <div class="step-block">
                     <h3 class="subheading text-uppercase">@lang('landing.donate') <i class="fas fa-hand-holding-heart"></i></h3>
                     <p>@lang('landing.donate-text')</p>
-                    <p style="color:#fff;">
-                      {{ link_to('https://www.patreon.com/veganhacktivists', __('landing.donate-link-title'), ['class' => 'lnk', 'target' => '_blank']) }}
+                    <p>
+                      {{ link_to('https://www.patreon.com/veganhacktivists', __('landing.donate-link-title'), ['class' => 'lnk text-white', 'target' => '_blank']) }}
                     </p>
                   </div>
                 </div>
