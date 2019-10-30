@@ -125,7 +125,7 @@
                 <p>@lang('landing.go')</p>
                 <a href="{{ route('feed') }}">
                   <img class="challenge-button img-fluid float-right"
-                    src="{{ asset('https://i.imgur.com/yl7N5VJ.png') }}" alt="Launch 5 Minutes 5 Vegans!" />
+                    src="{{ asset('https://i.imgur.com/4HG7bH9.png') }}" alt="Launch 5 Minutes 5 Vegans!" />
                 </a>
               </div>
             </div>
