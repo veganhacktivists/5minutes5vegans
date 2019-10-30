@@ -58,7 +58,8 @@
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
             <h1 class="heading font-serif mb-5 mt-5">@lang('landing.hero')</h1>
             <div class="mt-3">
-              <a class="btn btn-primary btn-cta bg-red text-white mr-2 p-3 font-weight-bold" href="#howdoesitwork" role="button">@lang('landing.get-started')</a>
+              <a class="btn btn-primary btn-cta bg-red text-white mr-2 p-3 font-weight-bold" style="background-color: #d42b2b;border-color: #ec361f;" hreflang="{{ $localeCode }}"
+                        href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}#howdoesitwork" role="button">@lang('landing.get-started')</a>
             </div>
           </div>
           <div class="col-12 col-md-4 col-lg-6 col-xl-5 d-none d-md-block w-100">

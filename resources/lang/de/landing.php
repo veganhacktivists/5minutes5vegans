@@ -3,7 +3,7 @@
 return [
     'credits' => 'Website gehosted und designed von :link mit Liebe',
     'hero' => 'Stell\' dich der Herausforderung und hilf so vielen Menschen wie möglich in nur 5 Minuten oder weniger, <span>vegan</span> zu werden!',
-    'get-started' => 'Leg\' unten los!',
+    'get-started' => 'Hier klicken zum starten!',
     'how' => 'Wie funktioniert es?',
     'how-explanation' => 'Unsere veganen Roboter scannen kontinuierlich Twitter® und re-tweeten Beiträge von Menschen, die sich für vegane Ernährung interessieren! Mit Hilfe dieser Website kannst du diese Menschen finden und ihnen helfen und sie unterstützen.',
     'what' => 'Was brauche ich?',

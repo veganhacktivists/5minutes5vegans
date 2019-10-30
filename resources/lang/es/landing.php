@@ -3,7 +3,7 @@
 return [
     'credits' => 'Página web hospedada y diseñada por :link con cariño ',
     'hero' => "¡Realiza el desafío de ayudar a la mayor cantidad de personas posible a hacerse <span>veganas</span> en tan solo 5 minutos!",
-    'get-started' => "Ponte manos a la obra abajo",
+    'get-started' => "Haga clic para comenzar!",
     'how' => "¿Cómo funciona",
     'how-explanation' => "¡Nuestros robots veganos están constantemente escaneando Twitter® y re-tweeteando comentarios de gente interesada en hacerse vegana! Usa esta web para encontrar y apoyar a estas personas donde sea posible en tan solo 5 minutos.",
     'what' => "¿Qué necesito?",
