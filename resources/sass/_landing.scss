@@ -60,6 +60,7 @@ p {
 }
 
 .btn-cta {
+  @extend .text-white;
   background-color: $button-cta-color;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;

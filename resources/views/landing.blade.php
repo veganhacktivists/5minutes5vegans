@@ -44,7 +44,7 @@
           </ul>
           <div class="text-white">
             {{ link_to_route('login', __('Login'), null, array('class' => 'mr-2 btn btn-link')) }}
-            {{ link_to_route('register', __('Open free account'), null, array('class' => 'btn btn-cta btn-primary')) }}
+            {{ link_to_route('register', __('Open free account'), null, array('class' => 'btn btn-cta')) }}
           </div>
         </div>
       </nav>
@@ -58,7 +58,7 @@
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
             <h1 class="heading font-serif mb-5 mt-5">@lang('landing.hero')</h1>
             <div class="mt-3">
-              {{ link_to_route('feed', __('landing.get-started'), null, [ 'class' => 'btn btn-cta bg-danger text-white mr-2 p-3 font-weight-bold', 'role' => 'button' ]) }}
+              {{ link_to_route('feed', __('landing.get-started'), null, [ 'class' => 'btn btn-cta bg-danger mr-2 p-3 font-weight-bold', 'role' => 'button' ]) }}
             </div>
           </div>
           <div class="col-12 col-md-4 col-lg-6 col-xl-5 d-none d-md-block w-100">
@@ -212,7 +212,7 @@
                     </div>
                     <!-- anti-bot measure, should be left empty for the form to validate -->
                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0baba35be8f6397f7ac1066f1_5fd11d4221" tabindex="-1" value=""></div>
-                    <button type="submit" name="subscribe" class="btn btn-cta text-white float-right">@lang('landing.subscribe')</button>
+                    <button type="submit" name="subscribe" class="btn btn-cta float-right">@lang('landing.subscribe')</button>
                   </form>
                 </div>
               </div>
