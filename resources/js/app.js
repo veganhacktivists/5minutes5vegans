@@ -5,10 +5,11 @@
  */
 
 require('./bootstrap');
-window.Vue = require('vue')
-require('vue-resource')
+window.Vue = require('vue');
+require('vue-resource');
 require('fontawesome-iconpicker');
-import Clipboard from 'v-clipboard'
+import Swiper from 'swiper';
+import Clipboard from 'v-clipboard';
 
 /*********
  * TIMER *
@@ -103,3 +104,36 @@ function initializeMdForm () {
         }
     });
 }
+
+/******************************
+ * SwiperJS for the feed page *
+ ******************************/
+$(() => {
+    window.mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 2,
+        spaceBetween: 0,
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 0
+            }
+        },
+        watchOverflow: true
+    });
+
+    // Start on the twitter slide in mobile view
+    window.mySwiper.slideTo(2, false,false);
+});

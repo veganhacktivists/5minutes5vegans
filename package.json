@@ -27,6 +27,7 @@
         "jquery": "^3.4.1",
         "popper": "^1.0.1",
         "popper.js": "^1.15.0",
+        "swiper": "^5.2.0",
         "v-clipboard": "^2.2.2",
         "vue": "^2.6.10",
         "vue-resource": "^1.5.1",

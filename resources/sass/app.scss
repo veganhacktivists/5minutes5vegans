@@ -9,6 +9,7 @@
 
 @import '~fontawesome-iconpicker/dist/css/fontawesome-iconpicker.css';
 @import './landing';
+@import './feed';
 @import './login';
 
 @import './md-form';
@@ -361,6 +362,7 @@ html {
 #rightside {
   background-image: url('/images/background.svg');
   background-size: cover;
+  width: 100%;
 }
 
 #feed {
