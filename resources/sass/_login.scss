@@ -176,3 +176,18 @@
     position: fixed;
     bottom: 0;
 }
+
+.reset-box {
+    @extend .swirvy-box;
+
+    background-color: #1d4737f2 !important;
+    border-radius: 90px 0 90px 0;
+    padding: 80px 5% 5% 5%;
+    border: 2px solid #4dc0b5;
+
+    input:not([type = submit]) {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid $teal;
+    }
+}
