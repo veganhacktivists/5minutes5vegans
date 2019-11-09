@@ -3,6 +3,9 @@
 @section('page_content')
 
 <div id="feed">
+    <div id="feed-nav-1">
+        @include('inc.feed-nav')
+    </div>
     <!-- Slider main container -->
     <div class="swiper-container">
         <!-- Additional required wrapper -->
