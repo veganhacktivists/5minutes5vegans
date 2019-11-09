@@ -20,17 +20,20 @@ $teal: #4dc0b5;
 $cyan: #6cb2eb;
 
 // Size
-@mixin for-phone-only {
-    @media (max-width: 599px) { @content; }
+@mixin for-sm-tablet-portrait-up {
+    @media only screen and (min-width: 464px) { @content; }
 }
 @mixin for-tablet-portrait-up {
-    @media (min-width: 600px) { @content; }
+    @media only screen and (min-width: 768px) { @content; }
 }
 @mixin for-tablet-landscape-up {
-    @media (min-width: 900px) { @content; }
+    @media only screen and (min-width: 992px) { @content; }
 }
 @mixin for-desktop-up {
-    @media (min-width: 1200px) { @content; }
+    @media only screen and (min-width: 1200px) { @content; }
+}
+@mixin for-lg-desktop-up {
+    @media only screen and (min-width: 1596px) { @content; }
 }
 
 // Challenge Page

@@ -122,11 +122,11 @@ $(() => {
         slidesPerView: 2,
         spaceBetween: 0,
         breakpoints: {
-            320: {
+            0: {
                 slidesPerView: 1,
                 spaceBetween: 10
             },
-            480: {
+            767: {
                 slidesPerView: 2,
                 spaceBetween: 0
             }

@@ -22,7 +22,7 @@
                             <a class="flag-container" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                 <img src="{{ asset('images/landing/'.strtolower(getCountry( $properties ))) }}.png"/ class="rounded-circle flag">
                                 @if(LaravelLocalization::getCurrentLocale() == $localeCode)
-                                <img class="flag-selected" src="{{ asset('images/landing/active language.png') }}" />
+                                <img class="flag-selected-hor" src="{{ asset('images/landing/active language.png') }}" />
                                 @endif
                             </a>
                             </li>
