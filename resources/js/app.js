@@ -113,7 +113,10 @@ $(() => {
         direction: 'horizontal',
         pagination: {
             el: '.swiper-pagination',
-            type: 'bullets',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="swirvy-box ' + className + '">' + ((index === 0) ? "Resources" : "Feed") + '</span>';
+            },
         },
         navigation: {
             nextEl: '.swiper-button-next',

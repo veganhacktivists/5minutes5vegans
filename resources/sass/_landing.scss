@@ -91,8 +91,11 @@ p {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 2rem 0;
-  max-height: 5rem;
   font-size: 120%;
+
+  @include for-tablet-landscape-up {
+    max-height: 5rem;
+  }
 
   .row {
       margin-top: -5px;
@@ -106,8 +109,14 @@ p {
 .challenge-button {
   position: relative;
   max-height: 45px;
-  right: 9rem;
+  //right: 9rem;
   top: -3rem;
+}
+
+@include media-breakpoint-up(sm) {
+    .challenge-button {
+        right: 9rem;
+    }
 }
 
 @include media-breakpoint-up(lg) {
