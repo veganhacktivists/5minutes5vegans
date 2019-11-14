@@ -94,43 +94,6 @@
               </div>
             </div>
           </div>
-        <div class="col-12 action-band text-white">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-lg-4 step-block">@lang('landing.pick')</div>
-              <div class="col-12 col-lg-4 step-block language-selector-block">
-                {{ LaravelLocalization::getCurrentLocaleNative() }}
-                <div class="lang-selector-container">
-                  <img class="lang-selector-img" src="{{ mb_strtolower(asset('images/landing/'.getCurrentCountry()), 'UTF-8') }}.png" /> <i
-                    class="fas fa-chevron-down"></i>
-                </div>
-                <div tabindex="-1" class="lang-selector-dropdown">
-                  <div class="d-flex flex-column align-content-start">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    @if(LaravelLocalization::getCurrentLocale() != $localeCode)
-                    <div>
-                      <a hreflang="{{ $localeCode }}"
-                        href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}#howdoesitwork">
-                        <span class="mr-3">{{ $properties['native'] }}</span> <img
-                          src="{{ mb_strtolower(asset('images/landing/'.getCountry( $properties )), 'UTF-8') }}.png"/
-                          class="rounded-circle flag">
-                      </a>
-                    </div>
-                    @endif
-                    @endforeach
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-lg-4 step-block">
-                <p>@lang('landing.go')</p>
-                <a href="{{ route('feed') }}">
-                  <img class="challenge-button img-fluid float-right"
-                    src="{{ asset('https://i.imgur.com/a7V0lsx.png') }}" alt="Launch 5 Minutes 5 Vegans!" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       </div>
     </section>
