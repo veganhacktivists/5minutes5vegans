@@ -17,8 +17,8 @@
 
     </head>
 
-    <body>
-        
+    <body class="d-flex flex-column">
+
         @yield('page_content')
 
     </body>

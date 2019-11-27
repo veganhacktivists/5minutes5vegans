@@ -1,21 +1,20 @@
 <template>
     <div>
-        <div class="float-right" v-if="customVerbiages.length">
-            <div
-                role="button"
-                v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
-                v-on:click="custom = false"
-                class="d-inline-block py-1 px-2 verbiage-switch"
-            >Default</div>
-            <div
-                v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
-                v-on:click="custom = true"
-                class="d-inline-block py-1 px-2 verbiage-switch"
-            >Custom</div>
+        <div class="d-flex justify-content-end">
+            <div v-if="customVerbiages.length">
+                <div
+                    role="button"
+                    v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
+                    v-on:click="custom = false"
+                    class="d-inline-block py-1 px-2 verbiage-switch"
+                >Default</div>
+                <div
+                    v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
+                    v-on:click="custom = true"
+                    class="d-inline-block py-1 px-2 verbiage-switch"
+                >Custom</div>
+            </div>
         </div>
-
-        <h3 id="easy-to-copy-resources" class="pb-1">EASY TO COPY RESOURCES</h3>
-
         <div class="row px-3" v-if="defaultVerbiages">
             <div
                 v-if="!custom"

@@ -9,118 +9,61 @@
 
 @import '~fontawesome-iconpicker/dist/css/fontawesome-iconpicker.css';
 @import './landing';
+@import './feed';
 @import './login';
 
 @import './md-form';
+
+html, body {
+    height: 100%;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
 .card {
-
     @extend .text-light;
-    background-color: $modal-bg;
 
+    background-color: $modal-bg;
 }
 
 .bg-pink {
     background-color: #ff0097;
 }
 
-.logo {
-    width: 200px;
-}
+$swirve: 12px;
+$x-swirve: 17px;
+$xx-swirve: 22px;
 
-#feed-nav-1 {
-    display: none;
-}
+.swirvy-box-left {
+    border-radius: 0;
+    border-top-left-radius: $swirve !important;
 
-@media (max-width: 1596px) {
-
-    #feed-nav-1 {
-        display: flex;
+    @include for-tablet-portrait-up {
+        border-top-left-radius: $x-swirve !important;
     }
 
-    #feed-nav-2 {
-        .col:first-child {
-            display: none;
-        }
-        .col:last-child {
-            display: none;
-        }
-    }
-
-}
-
-#donate-button {
-    display: inline-block;
-    border: 2px solid #41B9AA;
-    position: relative;
-    width: 150px;
-    height: 100%;
-    font-size: 20px;
-    text-align: center;
-    padding: 11px;
-    margin-left: auto;
-    font-weight: bold;
-    color: $dark-text;
-    border-top-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-}
-
-#donate-button:hover {
-    transition: all .15s ease-in-out;
-    background-color: #41B9AA;
-    color: white;
-    text-decoration: none;
-
-    i {
-        color: white;
-        transition: all .15s ease-in-out;
+    @include for-desktop-up {
+        border-top-left-radius: $xx-swirve !important;
     }
 }
 
-#donate-button i {
-	color: #F07365;
+.swirvy-box-right {
+    border-radius: 0;
+    border-bottom-right-radius: $swirve !important;
+
+    @include for-tablet-portrait-up {
+        border-bottom-right-radius: $x-swirve !important;
+    }
+
+    @include for-desktop-up {
+        border-bottom-right-radius: $xx-swirve !important;
+    }
 }
 
-.timer-display {
-    font-size: 30px;
-    color: $dark-text;
-    height: 100%;
-}
-
-.timer-complete {
-    display: none;
-}
-
-.timer-display > div {
-    display: inline-block;
-    background-color: #C8E0C1;
-    width: 50px;
-    border-top-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    padding: 5px 0px;
-}
-
-.timer-display .minutes {
-	font-weight: bold;
-}
-
-.timer-display .seconds {
-	margin-left: -4px;
-}
-
-#minutes-left {
-    letter-spacing: 1px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: -2px;
-}
-
-#easy-to-copy-resources {
-    color: $dark-text;
+.swirvy-box {
+    @extend .swirvy-box-left, .swirvy-box-right;
 }
 
 .col-xs-5ths,
@@ -139,365 +82,86 @@ html {
     float: left;
 }
 
-@media (min-width: 768px) {
-    .col-sm-5ths {
+.col-sm-5ths {
+    @include for-tablet-portrait-up {
 	    flex: 0 0 20%;
 	    max-width: 20%;
         float: left;
     }
 }
 
-@media (min-width: 992px) {
-    .col-md-5ths {
+.col-md-5ths {
+    @include for-tablet-landscape-up {
 	    flex: 0 0 20%;
 	    max-width: 20%;
         float: left;
     }
 }
 
-@media (min-width: 1200px) {
-    .col-lg-5ths {
+.col-lg-5ths {
+    @include for-desktop-up {
 	    flex: 0 0 20%;
 	    max-width: 20%;
         float: left;
     }
-}
-
-.verbiage-container {
-    width: 50%;
-    padding-bottom: 5px;
-}
-
-.verbiage-switch {
-    color: #19443A;
-    font-size: 17px;
-}
-
-.verbiage-active {
-    background-color: #41B9AA;
-}
-
-.verbiage-inactive {
-    background-color: #D4E9D0;
-}
-
-.verbiage-link {
-    /*padding-top: 100%;*/
-	/*position: relative;*/
-    background-color: #E7F9EC;
-    border-top: 2px solid #D4E9D0;
-    padding: 5px 10px;
-}
-
-.verbiage-inner {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    text-align: center;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    background-color: #E7F9EC;
-    border-top: 2px solid #D4E9D0;
-}
-
-.verbiage-link:hover {
-    @extend .text-success;
-    cursor: pointer;
-}
-
-.verbiage-index {
-	font-size: 12px;
-}
-
-.verbiage-link i {
-    /*font-size: 50px;*/
-    /*padding-bottom: 10px;*/
-    font-size: 25px;
-    padding-top: 4px;
-}
-
-.verbiage-link p {
-	color: $dark-text;
-    display: inline;
-    padding-left: 7px;
-    font-size: 17px;
-}
-
-
-@media only screen and (min-width: 768px) {
-
-    @media (max-width: 969px) {
-        .verbiage-link {
-            height: 73px;
-        }
-
-        .verbiage-link i {
-            display: block;
-            margin: auto;
-        }
-
-        .verbiage-link p {
-            padding: 0px;
-            display: block;
-            text-align: center;
-            padding-top: 5px;
-        }
-    }
-
-    @media (min-width: 1333px) {
-        .verbiage-container {
-            width: 33.33%;
-        }
-    }
-
-    @media (min-width: 1777px) {
-        .verbiage-container {
-            width: 25%;
-        }
-    }
-
-}
-@media only screen and (max-width: 767px) {
-
-    @media (min-width: 666px) {
-        .verbiage-container {
-            width: 33.33%;
-        }
-    }
-    @media (max-width: 464px) {
-        .verbiage-container {
-            width: 100%;
-        }
-        .verbiage-link {
-            height: 73px;
-        }
-
-        .verbiage-link i {
-            display: block;
-            margin: auto;
-        }
-
-        .verbiage-link p {
-            padding: 0px;
-            display: block;
-            text-align: center;
-            padding-top: 5px;
-        }
-    }
-}
-
-.verbiage-msg {
-    position: relative;
-
-    textarea {
-        position: relative;
-    }
-
-    button {
-        position: absolute;
-        top: calc(100% - 50px);
-        left: calc(100% - 60px);
-    }
-}
-
-#feed {
-	position: relative;
-	background-color: #E3F3E5;
-}
-
-#feed a {
-    color: $dark-text;
-    font-size: 20px;
-}
-
-@media only screen and (min-width: 768px) {
-    @media (max-width: 1112px) {
-        .logo {
-            width: 160px;
-        }
-        #feed a {
-            color: #19443A;
-            font-size: 15px;
-        }
-        #donate-button {
-            display: inline-block;
-            border: 2px solid #41B9AA;
-            position: relative;
-            width: 110px;
-            height: 49px;
-        }
-    }
-}
-
-@media (max-width: 550px) {
-    .logo {
-        width: 160px;
-    }
-    #feed a {
-        color: #19443A;
-        font-size: 15px;
-    }
-    #donate-button {
-        display: inline-block;
-        border: 2px solid #41B9AA;
-        position: relative;
-        width: 110px;
-        height: 49px;
-    }
-}
-
-#leftside, #rightside {
-	padding: 30px;
-}
-
-#leftside {
-	color: #41B9AA;
-    min-height: 100vh;
-}
-
-#rightside {
-  background-image: url('/images/background.svg');
-  background-size: cover;
-}
-
-#feed {
-    .footer {
-        display: flex;
-
-        .font-serif {
-            flex-grow: 2;
-            font-size: 20px;
-            color: $dark-text;
-        }
-
-        a {
-            color: $pink;
-        }
-    }
-}
-
-#rightside {
-    .flag-list {
-        display: flex;
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-        margin-top: -74px;
-        justify-content: center;
-        li {
-            margin-top: 5px;
-            .flag-container {
-                padding: 0.5rem;
-                display: inline-block;
-            }
-        }
-    }
-}
-
-#rightside-inner {
-
-	background-color: white;
-	width: 100%;
-	height: 100%;
-	border-top-left-radius: 150px;
-	border-bottom-right-radius: 150px;
-	padding: 75px 50px;
-}
-
-
-@media only screen and (min-width: 768px) {
-
-  #rightside {
-    min-height: 100vh;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-  }
-
-
-}
-
-#Twitter {
-
-	width: 100%;
-	height: 100%;
-    overflow-y: scroll;
-}
-
-/* total width */
-#Twitter::-webkit-scrollbar {
-    background-color:#fff;
-    width:16px
-}
-
-/* background of the scrollbar except button or resizer */
-#Twitter::-webkit-scrollbar-track {
-    background-color:#fff
-}
-
-/* scrollbar itself */
-#Twitter::-webkit-scrollbar-thumb {
-    background-color:#303030;
-    border-radius:16px;
-    border:4px solid #fff
 }
 
 .fade.in {
     opacity: 1;
 }
 
-.flag-container, .flag {
-    position: relative;
-    top: 0;
-    left: 0;
+.flag-list {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    justify-content: center;
 }
 
-.flag-selected {
-    left: 4px;
-    position: absolute;
-    top: 5px;
+.flag-item {
+    list-style: none;
+
+    @include for-sm-tablet-portrait-up {
+        margin: 0.75rem 0;
+    }
+
+    @include for-tablet-landscape-up {
+        margin: 0.5rem 1rem;
+    }
+
+    div {
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid rgb(255, 0, 0, 0);
+        border-radius: 50%;
+        height: 26px;
+        width: 26px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+
+        @include for-tablet-portrait-up {
+            height: 35px;
+            width: 35px;
+        }
+
+        a img{
+            height: 36px;
+            position: relative;
+            top: 6.8px;
+            left: -4.5px;
+
+            @include for-tablet-portrait-up {
+                height: 50px;
+                top: 9.5px;
+                left: -6.5px;
+            }
+        }
+    }
 }
 
-@include media-breakpoint-up(lg) {
-    .flag-selected {
-        left: 11px;
-    }
-  }
-
-
-
-.lang-selector-container {
-    display: inline-block;
-    cursor: pointer;
-    img {
-        position: relative;
-        top: 8px;
-    }
-}
-
-.lang-selector-dropdown {
-    display: none;
-    position: absolute;
-    left: 2rem;
-    background: $modal-bg;
-    padding: 10px 25px;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    a {
-        color: #fff;
-    }
-    span {
-        position: relative;
-        top: 1rem;
-    }
-    img {
-        position: relative;
-        top: 8px;
-        float: right;
+.flag-item-selected {
+    div {
+        background-color: white;
+        border: 1px solid red;
     }
 }
 
@@ -506,8 +170,8 @@ html {
     background: #333;
     width: 100%;
     z-index: 100;
-  }
 
-  .page-footer a {
-      color: $pink;
-  }
+    a {
+        color: $pink;
+    }
+}

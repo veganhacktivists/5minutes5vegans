@@ -4,15 +4,6 @@ p {
   font-size: 17px !important;
 }
 
-.btn-link, .lnk {
-  font-size: 20px;
-  color: $button-cta-color;
-  &:hover {
-    text-decoration: none;
-    color: darken($button-cta-color, 10%);
-  }
-}
-
 .container-newsletter {
   background-color: rgba(189, 221, 177, 0.7);
   padding: 3rem;
@@ -59,13 +50,76 @@ p {
   z-index: 10;
 }
 
+.landing {
+    header {
+        transition: 500ms;
+    }
+
+    .nav-link {
+        padding-top: 0;
+
+        @include for-sm-tablet-portrait-up {
+            padding-top: 0.5rem;
+        }
+    }
+
+    .logo {
+        width: 192px;
+        transition: 500ms;
+
+        @include for-desktop-up {
+            width: 230px;
+        }
+    }
+}
+
+.header-scroll {
+    background-color: rgba(113, 119, 104, 0.88);
+}
+
+.logo-scroll {
+    // width: 122px !important;
+    // margin-top: 0 !important;
+    display: none !important;
+}
+
+#landing-logo-mobile {
+    margin-right: 50%;
+    display: block;
+    margin-top: 0.5rem;
+
+    @include for-sm-tablet-portrait-up {
+        margin-top: 0;
+    }
+
+    @include for-tablet-portrait-up {
+        display: none;
+
+    }
+}
+
+#landing-logo {
+    display: none;
+
+    @include for-tablet-portrait-up {
+        display: block;
+    }
+}
+
 .btn-cta {
   @extend .text-white;
   background-color: $button-cta-color;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  font-size: 18px;
-  letter-spacing: 1px;
+  font-size: 12px;
+  border-radius: 0;
+
+  @include for-sm-tablet-portrait-up {
+    font-size: 16px;
+  }
+
+  @include for-desktop-up {
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+  }
 
   &:hover {
     background-color: darken($button-cta-color, 10%);
@@ -85,14 +139,18 @@ p {
   padding-left: 4rem;
 }
 
+/* Commented-out due to commits 3e26cd1 and 54e0a13
 .action-band {
   border: 1px solid #00806e;
   background-image: linear-gradient(to right, #00816a,#bed5b6);
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 2rem 0;
-  max-height: 5rem;
   font-size: 120%;
+
+  @include for-tablet-landscape-up {
+    max-height: 5rem;
+  }
 
   .row {
       margin-top: -5px;
@@ -106,8 +164,14 @@ p {
 .challenge-button {
   position: relative;
   max-height: 45px;
-  right: 9rem;
+  //right: 9rem;
   top: -3rem;
+}
+
+@include media-breakpoint-up(sm) {
+    .challenge-button {
+        right: 9rem;
+    }
 }
 
 @include media-breakpoint-up(lg) {
@@ -127,6 +191,7 @@ p {
     right: 2rem;
   }
 }
+*/
 
 // not sure why container is in front of row and col
 .z-fix {
@@ -141,13 +206,10 @@ p {
 #home {
   background-image: url(images/landing/banner-top.png);
   background-position: bottom;
-  padding-top: 5rem;
+  padding-top: 6rem;
   margin-bottom: -4rem;
   padding-bottom: 4rem;
   z-index: 1;
-}
-
-#howdoesitwork {
 }
 
 #process {

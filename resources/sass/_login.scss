@@ -17,30 +17,33 @@
     z-index:-1;
     transform: scaleX(-1);
 
-    @media (min-width: 1200px) {
+    @include for-desktop-up {
         background-size: 100% 60%;
     }
 }
 
-.login-container {
-    font-family: "Roboto Condensed";
-    padding-bottom: 80px;
-}
+#login-main {
+    @include for-tablet-portrait-up {
+        margin-bottom: 4rem !important;
+    }
 
-.swirvy-box {
-    border-radius: 17px 0 17px 0;
+    @include for-tablet-landscape-up {
+        max-width: 1024px;
+    }
 }
 
 .login-panes {
-    @media (min-width: 768px) {
+    @include for-tablet-portrait-up {
         width: 100%;
+        margin-bottom: 4rem !important;
     }
 
-    @media (min-width: 992px) {
-        width: 90%;
+    @include for-tablet-landscape-up {
+        width: 85%;
+        margin-bottom: 3rem !important;
     }
 
-    @media (min-width: 1200px) {
+    @include for-desktop-up {
         width: 75%;
     }
 }
@@ -56,10 +59,13 @@
 .login-pane-left {
     @extend .login-pane;
 
-    border-radius: 90px 0 0 0;
     float: left;
     background-color: #61df95ed;
-    margin-top: 50px;
+    border-radius: 90px 0 0 0;
+
+    @include for-tablet-portrait-up {
+        margin-top: 50px;
+    }
 
     input:not([type = submit]) {
         background: transparent;
@@ -71,10 +77,13 @@
 .login-pane-right {
     @extend .login-pane;
 
-    border-radius: 0 0 90px 0;
     float: right;
     background-color:#1d4737f2;
-    margin-bottom: 50px;
+
+    @include for-tablet-portrait-up {
+        border-radius: 0 0 90px 0;
+        margin-bottom: 50px;
+    }
 
     h3 {
         color: #61df95;
@@ -173,8 +182,10 @@
 .login-footer {
     @extend .page-footer;
 
-    position: fixed;
-    bottom: 0;
+    @include for-tablet-portrait-up {
+        position: fixed;
+        bottom: 0;
+    }
 }
 
 .reset-box {

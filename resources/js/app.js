@@ -5,10 +5,11 @@
  */
 
 require('./bootstrap');
-window.Vue = require('vue')
-require('vue-resource')
+window.Vue = require('vue');
+require('vue-resource');
 require('fontawesome-iconpicker');
-import Clipboard from 'v-clipboard'
+import Swiper from 'swiper';
+import Clipboard from 'v-clipboard';
 
 /*********
  * TIMER *
@@ -68,28 +69,11 @@ if (token) {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 
 $(() => {
-    bindLanguageSelector();
     initializeMdForm();
-    new Vue({ el: 'verbiages' });
+    if ($('verbiages').length) {
+        new Vue({ el: 'verbiages' });
+    }
 });
-
-/*********************
- * Language Selector *
- *********************/
-
-function bindLanguageSelector(){
-    const $languageDropdown = $('.lang-selector-dropdown');
-
-    //  without the timeout it can happen that the dropdown closes before the anchor can be clicked
-    $languageDropdown.on('blur', () =>
-        setTimeout(() => $languageDropdown.hide(), 100)
-    );
-
-    $('.lang-selector-container').click(e => {
-        e.preventDefault();
-        $languageDropdown.show().focus();
-    });
-}
 
 /******************
  * MD Form Helper *
@@ -103,3 +87,53 @@ function initializeMdForm () {
         }
     });
 }
+
+/******************************
+ * SwiperJS for the feed page *
+ ******************************/
+$(() => {
+    if (!$('.swiper-container').length) {
+        return;
+    }
+    window.mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="swirvy-box ' + className + '">' + ((index === 0) ? "Resources" : "Feed") + '</span>';
+            },
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 2,
+        spaceBetween: 0,
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            767: {
+                slidesPerView: 2,
+                spaceBetween: 0
+            }
+        },
+        watchOverflow: true
+    });
+
+    // Start on the twitter slide in mobile view
+    window.mySwiper.slideTo(2, false,false);
+});
+
+// Scroll animation for landing page
+$(window).scroll(function() {
+    if ($(window).scrollTop() > 15) {
+        $('.landing header').addClass('header-scroll');
+        $('#landing-logo-mobile').addClass('logo-scroll');
+    } else {
+        $('.landing header').removeClass('header-scroll');
+        $('#landing-logo-mobile').removeClass('logo-scroll');
+    }
+});
