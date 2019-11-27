@@ -21,6 +21,6 @@ $factory->define(Verbiage::class, function (Faker $faker) {
         'title' => ucfirst($faker->word),
         'user_id' => App\User::inRandomOrder()->first()->id,
         'icon' => 'fas fa-leaf',
-        'message' => $faker->paragraph,
+        'body' => $faker->paragraph,
     ];
 });

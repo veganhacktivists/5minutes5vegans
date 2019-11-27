@@ -63,6 +63,14 @@ $feed-teal: #41b9aa;
     }
 }
 
+#feed-nav-1 .logo, #feed-nav-2 .logo {
+    width: 182px;
+
+    @include for-desktop-up {
+        width: 200px;
+    }
+}
+
 .timer-section-middle {
     display: none;
 
@@ -104,6 +112,8 @@ $feed-teal: #41b9aa;
 }
 
 #donate-button {
+    @extend .swirvy-box;
+
     display: inline-block;
     border: 2px solid $feed-teal;
     position: relative;
@@ -115,8 +125,8 @@ $feed-teal: #41b9aa;
     margin-left: auto;
     font-weight: bold;
     color: $dark-text;
-    border-top-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    // border-top-left-radius: 30px;
+    // border-bottom-right-radius: 30px;
 
     @include for-desktop-up {
         width: 150px;
@@ -363,27 +373,6 @@ $feed-teal: #41b9aa;
     @include for-desktop-up {
         padding: 30px;
     }
-
-    .flag-list {
-        display: flex;
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-        margin-top: -74px;
-        justify-content: center;
-        li {
-            margin-top: 5px;
-            .flag-container {
-                padding: 0.5rem;
-                padding-bottom: 0;
-                display: inline-block;
-
-                @include for-tablet-portrait-up {
-                    padding-bottom: 0.5rem;
-                }
-            }
-        }
-    }
 }
 
 #rightside-inner {
@@ -396,6 +385,15 @@ $feed-teal: #41b9aa;
 
     @include for-tablet-landscape-up {
         padding: 75px 50px;
+    }
+
+    .flag-list {
+        margin-top: -70px;
+    }
+
+    .flag-item {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
     }
 }
 

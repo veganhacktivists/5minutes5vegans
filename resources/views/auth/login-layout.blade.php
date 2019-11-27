@@ -15,8 +15,8 @@
 <header>
     <nav class="container pt-5">
         <div class="row">
-            <div class="col-sm">
-                <a href="{{ route('feed') }}"><img class="w-25" src="{{ asset('images/logo.svg') }}"/></a>
+            <div class="col-4 col-md-3 col-lg-2">
+                @include('inc.logo')
             </div>
             <div class="col-sm text-right">
                 <a class="text-black btn font-bold btn-sm bg-transparent py-2 px-3 swirvy-box"

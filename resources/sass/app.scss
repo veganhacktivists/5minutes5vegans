@@ -32,12 +32,38 @@ html {
     background-color: #ff0097;
 }
 
-.logo {
-    width: 160px;
+$swirve: 12px;
+$x-swirve: 17px;
+$xx-swirve: 22px;
+
+.swirvy-box-left {
+    border-radius: 0;
+    border-top-left-radius: $swirve !important;
+
+    @include for-tablet-portrait-up {
+        border-top-left-radius: $x-swirve !important;
+    }
 
     @include for-desktop-up {
-        width: 200px;
+        border-top-left-radius: $xx-swirve !important;
     }
+}
+
+.swirvy-box-right {
+    border-radius: 0;
+    border-bottom-right-radius: $swirve !important;
+
+    @include for-tablet-portrait-up {
+        border-bottom-right-radius: $x-swirve !important;
+    }
+
+    @include for-desktop-up {
+        border-bottom-right-radius: $xx-swirve !important;
+    }
+}
+
+.swirvy-box {
+    @extend .swirvy-box-left, .swirvy-box-right;
 }
 
 .col-xs-5ths,
@@ -84,61 +110,54 @@ html {
     opacity: 1;
 }
 
-.flag-container, .flag {
-    position: relative;
-    top: 0;
-    left: 0;
+.flag-list {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    justify-content: center;
 }
 
-.flag-selected {
-    position: absolute;
-    top: 4px;
-}
+.flag-item {
+    list-style: none;
 
-.flag-selected-vert {
-    @extend .flag-selected;
+    @include for-tablet-landscape-up {
+        margin: 1rem;
+    }
 
-    left: 4px;
+    div {
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid rgb(255, 0, 0, 0);
+        border-radius: 50%;
+        height: 26px;
+        width: 26px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
 
-    @include for-sm-tablet-portrait-up {
-        left: 12px;
+        @include for-tablet-portrait-up {
+            height: 35px;
+            width: 35px;
+        }
+
+        a img{
+            height: 36px;
+            position: relative;
+            top: 6.8px;
+            left: -4.5px;
+
+            @include for-tablet-portrait-up {
+                height: 50px;
+                top: 9.5px;
+                left: -6.5px;
+            }
+        }
     }
 }
 
-.flag-selected-hor {
-    @extend .flag-selected;
-
-    left: 12px;
-}
-
-.lang-selector-container {
-    display: inline-block;
-    cursor: pointer;
-    img {
-        position: relative;
-        top: 8px;
-    }
-}
-
-.lang-selector-dropdown {
-    display: none;
-    position: absolute;
-    left: 2rem;
-    background: $modal-bg;
-    padding: 10px 25px;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    a {
-        color: #fff;
-    }
-    span {
-        position: relative;
-        top: 1rem;
-    }
-    img {
-        position: relative;
-        top: 8px;
-        float: right;
+.flag-item-selected {
+    div {
+        background-color: white;
+        border: 1px solid red;
     }
 }
 
@@ -147,8 +166,8 @@ html {
     background: #333;
     width: 100%;
     z-index: 100;
-}
 
-a {
-    color: $pink;
+    a {
+        color: $pink;
+    }
 }

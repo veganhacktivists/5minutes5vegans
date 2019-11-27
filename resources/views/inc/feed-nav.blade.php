@@ -1,6 +1,8 @@
-<div class="row no-gutters">
-    <div class="col text-left">
-        <a href="{{ route('feed') }}"><img class="logo" src="{{ asset('images/logo.svg') }}"/></a>
+<nav class="row no-gutters justify-content-between">
+    <div class="col">
+        <div class="logo">
+            @include('inc.logo')
+        </div>
     </div>
     <div class="col text-center timer-section-middle">
         <div class="timer-display">
@@ -13,7 +15,7 @@
             @lang('Donate') <i class="fa fa-hand-holding-heart"></i>
         </a>
     </div>
-</div>
+</nav>
 <div class="timer-section-middle">
     <div id="minutes-left" class="text-center">
         @lang('sidebar.minutes-left')
