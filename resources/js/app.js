@@ -131,9 +131,9 @@ $(() => {
 $(window).scroll(function() {
     if ($(window).scrollTop() > 15) {
         $('.landing header').addClass('header-scroll');
-        $('.landing .logo').addClass('logo-scroll');
+        $('#landing-logo-mobile').addClass('logo-scroll');
     } else {
         $('.landing header').removeClass('header-scroll');
-        $('.landing .logo').removeClass('logo-scroll');
+        $('#landing-logo-mobile').removeClass('logo-scroll');
     }
 });

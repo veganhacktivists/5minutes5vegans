@@ -78,14 +78,15 @@ p {
 }
 
 .logo-scroll {
-    width: 122px !important;
-    margin-top: 0 !important;
+    // width: 122px !important;
+    // margin-top: 0 !important;
+    display: none !important;
 }
 
 #landing-logo-mobile {
     margin-right: 50%;
     display: block;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 
     @include for-sm-tablet-portrait-up {
         margin-top: 0;
@@ -205,7 +206,7 @@ p {
 #home {
   background-image: url(images/landing/banner-top.png);
   background-position: bottom;
-  padding-top: 5rem;
+  padding-top: 6rem;
   margin-bottom: -4rem;
   padding-bottom: 4rem;
   z-index: 1;
