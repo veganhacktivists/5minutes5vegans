@@ -58,21 +58,21 @@
         <div class="container">
           <div class="row py-5" style="padding-top: 5rem !important;">
             <div class="col-12 col-sm-6 col-lg-4">
-              <div class="number-block">01</div>
+              <h1 class="number-block">01</h1>
               <div class="step-block">
                 <h3 class="subheading text-uppercase">@lang('landing.how')</h3>
                 <p>@lang('landing.how-explanation')</p>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
-              <div class="number-block">02</div>
+              <h1 class="number-block">02</h1>
               <div class="step-block">
                 <h3 class="subheading text-uppercase">@lang('landing.what')</h3>
                 <p>@lang('landing.what-explanation')</p>
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
-              <div class="number-block">03</div>
+              <h1 class="number-block">03</h1>
               <div class="step-block">
                 <h3 class="subheading text-uppercase">@lang('landing.why')</h3>
                 <p>@lang('landing.why-explanation')</p>
