@@ -1,6 +1,6 @@
 <div class="container-fluid container-fluid-max">
     <div class="row">
-    <div class="col-12 col-md-6 col-lg-4">
+    <div class="col-12 col-md-6 col-lg-4 text-center">
         @lang('Follow us on') <i class="fab fa-instagram"></i> {{ link_to('https://www.instagram.com/veganhacktivists', 'Instagram', ['class' => 'lnk', 'target' => '_blank']) }}
     </div>
     <div class="col-12 col-md-6 col-lg-4 text-center">
@@ -9,7 +9,7 @@
         <i class="far fa-heart"></i>
         </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-4 text-right">
+    <div class="col-12 col-md-6 col-lg-4 text-center">
         @lang('Support us on') {{ link_to('https://www.patreon.com/veganhacktivists', 'Patreon', ['class' => 'lnk', 'target' => '_blank']) }}
     </div>
     </div>
