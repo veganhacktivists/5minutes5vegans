@@ -193,17 +193,16 @@ p {
   z-index: 2;
 }
 
-#main {
+#main { 
   background-image: url(images/landing/background-cows.jpg);
   background-position: top;
+  flex: 1;
 }
 
 #home {
   background-image: url(images/landing/banner-top.png);
   background-position: bottom;
-  padding-top: 6rem;
   margin-bottom: -4rem;
-  padding-bottom: 4rem;
   z-index: 1;
 }
 

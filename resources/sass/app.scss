@@ -14,12 +14,15 @@
 
 @import './md-form';
 
-html, body {
-    height: 100%;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 html {
     scroll-behavior: smooth;
+    height: 100vh;
 }
 
 .card {
@@ -174,4 +177,5 @@ $xx-swirve: 22px;
     a {
         color: $pink;
     }
+    height: 5vh;
 }

@@ -35,7 +35,7 @@
   <main id="main" class="cover">
     <!-- Banner Section -->
     <section id="home" class="d-flex align-items-center position-relative cover hero">
-      <div class="container z-fix">
+      <div class="container z-fix mt-5">
         <div class="row">
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
             <h1 class="heading font-serif mb-5 mt-5">@lang('landing.hero')</h1>
