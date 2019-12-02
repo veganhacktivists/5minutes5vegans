@@ -109,12 +109,9 @@ p {
 .btn-cta {
   @extend .text-white;
   background-color: $button-cta-color;
-  font-size: 12px;
+  font-size: 21px;
   border-radius: 0;
 
-  @include for-sm-tablet-portrait-up {
-    font-size: 16px;
-  }
 
   @include for-desktop-up {
     font-size: 18px;
@@ -130,9 +127,7 @@ p {
 .number-block {
   float: left;
   color: $heading-text-color;
-  &::after {
-    content: ' —';
-  }
+  font-weight: bold;
 }
 
 .step-block {
