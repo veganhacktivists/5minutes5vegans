@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'loading' => 'Cargando el contenido de Twitter...<br/> Si este mensaje no desaparece, asegúrate de que tienes los scripts activados y prueba a refrescar la página.<br/>',
+
     [
         'icon' => 'fas fa-info-circle',
         'title' => 'Información general',
@@ -134,7 +134,7 @@ return [
         'title' => 'Amo el pollo',
         'body' =>[
             [
-                'Heura tiene un pollo increíble: ' . preg_quote('https://tinyurl.com/HeuraMapa'') . '
+                'Heura tiene un pollo increíble: ' . preg_quote('https://tinyurl.com/HeuraMapa')
             ], [
                 '🐣 HappyCow para comer fuera: ' . preg_quote('https://www.happycow.net') . '! échales un ojo, seguro que encuentras sitios interesantes cerca que pueden sorprenderte! 😉 Si tienes cualquier duda dímelo! 😊 '
             ]
@@ -218,7 +218,7 @@ return [
             [
                 'En realidad, ser vegan es muy barato! Sólo es caro si compras muchos productos “especiales”'
             ], [
-                'Patatas, arroz, tofu, legumbres, verdura, fruta, pasta, avena, son todas muy baratas!         
+                'Patatas, arroz, tofu, legumbres, verdura, fruta, pasta, avena, son todas muy baratas!'
    ], [
                 'Gran vídeo (con subtítulos) sobre ello: ' . preg_quote('https://www.youtube.com/watch?v=Vs_nXVmyP1E')
             ]
