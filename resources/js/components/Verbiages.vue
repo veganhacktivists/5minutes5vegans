@@ -69,7 +69,7 @@
 
         <div v-else>Loading supportive messages...</div>
 
-        <div class="p-2 row">
+        <div class="p-2 row verbiage-msg-container">
             <div class="col verbiage-msg">
                 <textarea
                     v-model="selected.body"
@@ -189,6 +189,20 @@ export default {
 
         selectVerbiage: function(verbiage) {
             if (!this.editing) this.selected = verbiage
+
+            this.toggleVerbiageMsg(true)
+        },
+
+        toggleVerbiageMsg: function(toState) {
+            var x = window.matchMedia("(min-width: 768px)");
+            if (x.matches)
+                return;
+
+            if (toState === true) {
+                $('.verbiage-msg').detach().prependTo('.swiper-pagination')
+            } else if (toState === false) {
+                $('.verbiage-msg').detach().prependTo('.verbiage-msg-container')
+            }
         },
 
         createVerbiage: function() {
@@ -245,10 +259,14 @@ export default {
             })
             $(event.target).tooltip('toggle')
             setTimeout(() => $(event.target).tooltip('dispose'), 2000)
+
+            this.toggleVerbiageMsg(false)
         },
 
         clipboardErrorHandler ({ value, event }) {
             console.error("Unable to copy to clipboard.")
+
+            this.toggleVerbiageMsg(false)
         },
     },
 
