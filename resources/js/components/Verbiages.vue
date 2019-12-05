@@ -69,8 +69,8 @@
 
         <div v-else>Loading supportive messages...</div>
 
-        <div class="p-2 row verbiage-msg-container">
-            <div class="col verbiage-msg">
+        <div class="p-2 row verbiage-msg-container" ref="verbiageMsgContainer">
+            <div class="col verbiage-msg" ref="verbiageMsg">
                 <textarea
                     v-model="selected.body"
                     class="w-100 p-3"
@@ -80,12 +80,17 @@
                 ></textarea>
                 <button
                     data-toggle="tooltip"
-                    class="btn btn-link"
+                    class="btn btn-link copy-btn"
                     v-if="!editing"
                     v-clipboard="() => selected.body"
                     v-clipboard:success="clipboardSuccessHandler"
                     v-clipboard:error="clipboardErrorHandler"
                 ><i class="fa-fw fas fa-copy"></i></button>
+                <button
+                    class="btn btn-link close-btn"
+                    v-if="!editing && verbiageMsgToggled"
+                    v-on:click="toggleVerbiageMsg(false)"
+                ><i class="fa-fw fas fa-times"></i></button>
             </div>
 
             <div v-if="customVerbiages" class="col-auto d-flex flex-column justify-content-between">
@@ -155,6 +160,7 @@ export default {
             creating: false,
             busy: false,
             selected: { body: defaultMessage },
+            verbiageMsgToggled: false,
         }
     },
 
@@ -198,10 +204,17 @@ export default {
             if (x.matches)
                 return;
 
-            if (toState === true) {
-                $('.verbiage-msg').detach().prependTo('.swiper-pagination')
-            } else if (toState === false) {
-                $('.verbiage-msg').detach().prependTo('.verbiage-msg-container')
+            this.verbiageMsgToggled = toState || !this.verbiageMsgToggled
+            if (this.verbiageMsgToggled === true) {
+                $(this.$refs.verbiageMsg).detach().appendTo('.swiper-pagination')
+            } else if (this.verbiageMsgToggled === false) {
+                $(this.$refs.verbiageMsg).detach().prependTo(this.$refs.verbiageMsgContainer)
+            }
+        },
+
+        hideVerbiageMsg: function(event) {
+            if (this.verbiageMsgToggled) {
+                this.toggleVerbiageMsg(false)
             }
         },
 
@@ -260,13 +273,13 @@ export default {
             $(event.target).tooltip('toggle')
             setTimeout(() => $(event.target).tooltip('dispose'), 2000)
 
-            this.toggleVerbiageMsg(false)
+            this.hideVerbiageMsg()
         },
 
         clipboardErrorHandler ({ value, event }) {
             console.error("Unable to copy to clipboard.")
 
-            this.toggleVerbiageMsg(false)
+            this.hideVerbiageMsg()
         },
     },
 
