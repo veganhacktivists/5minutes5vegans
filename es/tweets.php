@@ -32,7 +32,7 @@ return [
                 'Hay un proyecto llamado Desafío 22\+ (muy interesante|que podrías probar)?\.'
             ], [
                 'Te dan (un|tu propio) mentor (personal)? voluntario (en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
-                'Tienes acceso a un mentor( personal)? ( online| en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
+                'Tienes acceso a un mentor (personal)? (online| en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
                 'Pueden ayudarte a ser vegan@ durante un mes con un mentor personal voluntario (por Facebook)?\.',
                 'Contactan contigo con un mentor (personal)? (en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
                 'Puedes tener un mentor (personal)? voluntario (por Facebook)? para ayudarte a ser vegan@ durante un mes\.',
