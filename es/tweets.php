@@ -9,7 +9,7 @@ return [
             [
                 '¡Bien hecho! La mayoría de los veganos lamentamos no haber empezado antes\.'
             ], [
-                'Aquí tienes algunos recursos: ' . preg_quote('http://reddit.com/r/Vegan') . ' \(comunidad\) ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=41') . ' (Documental) ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' \(Mitos\) 🐷 Envíame un MP si necesitas ayuda!'
+                'Aquí tienes algunos recursos: ' . preg_quote('http://reddit.com/r/Vegan') . ' \(comunidad\) ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(Documental\) ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' \(Mitos\) 🐷 Envíame un MP si necesitas ayuda!'
             ]
         ]
     ],
@@ -32,7 +32,7 @@ return [
                 'Hay un proyecto llamado Desafío 22\+ (muy interesante|que podrías probar)?\.'
             ], [
                 'Te dan (un|tu propio) mentor (personal )?voluntario (en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
-                'Tienes acceso a un mentor (personal )?(online| en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
+                'Tienes acceso a un mentor (personal )?(online | en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
                 'Pueden ayudarte a ser vegan@ durante un mes con un mentor personal voluntario( por Facebook)?\.',
                 'Contactan contigo con un mentor (personal )?(en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
                 'Puedes tener un mentor (personal )?voluntario (por Facebook )?para ayudarte a ser vegan@ durante un mes\.',
@@ -70,7 +70,7 @@ return [
             [
                 'Cada vez hay más carnes veganas desde estos últimos años!'
             ], [
-                'Beyond Meat es excelente: ' . preg_quote('https://www.beyondmeat.com/') . ', y Heura también tienen muchos productos: ' . preg_quote('https://tinyurl.com/HeuraMapa') . ' Echa un vistazo en tu supermercado para ver qué productos hay disponibles, podrías sorprenderte!'
+                'Beyond Meat es excelente: ' . preg_quote('https://www.beyondmeat.com/') . ' y Heura también tienen muchos productos: ' . preg_quote('https://tinyurl.com/HeuraMapa') . ' Echa un vistazo en tu supermercado para ver qué productos hay disponibles, podrías sorprenderte!'
             ]
         ]
     ],
@@ -84,7 +84,7 @@ return [
             ], [
                 'Mi favorito es Violife, que tienen hasta para fundir, pero hay muchos más!'
             ], [
-                'Si no, puedes comprarlos en ' . preg_quote('https://www.veggieroom.es/es/tipo/quesos-y-natas-vegetales') . '  o en ' . preg_quote('https://www.vegaffinity.com/tienda-vegana/44-comprar-quesos-veganos') . '¡Si tienes alguna duda aquí estoy! 😊'
+                'Si no, puedes comprarlos en ' . preg_quote('https://www.veggieroom.es/es/tipo/quesos-y-natas-vegetales') . ' o en ' . preg_quote('https://www.vegaffinity.com/tienda-vegana/44-comprar-quesos-veganos') . ' ¡Si tienes alguna duda aquí estoy! 😊'
             ]
         ]
     ],
@@ -106,7 +106,7 @@ return [
         'title' => 'Amo el huevo',
         'body' =>[
             [
-                'Hay muy buenas recetas con huevo veganizadas (como esta, pero con espinaca): ' . preg_quote('https://danzadefogones.com/revuelto-vegano-tofu/')
+                'Hay muy buenas recetas con huevo veganizadas \(como esta, pero con espinaca\): ' . preg_quote('https://danzadefogones.com/revuelto-vegano-tofu/')
             ], [
                 '🐣 También puedes encontrar sustitutivos en
 : ' . preg_quote('https://soycomocomo.es/especialista/biogra/huevo-vegano') . ' o comprarlos directamente como los “huevos” veganos No Egg (de Orgran)\.'
@@ -145,7 +145,7 @@ return [
         'title' => 'Leches vegetales',
         'body' =>[
             [
-                'Mira este vídeo de sólo 5 min. \(puedes activar subtítulos\) ' . preg_quote('https://youtu.be/UcN7SGGoCNI')
+                'Mira este vídeo de sólo 5 min\. \(puedes activar subtítulos\) ' . preg_quote('https://youtu.be/UcN7SGGoCNI')
             ], [
                 'Existen muchas leches vegetales deliciosas de: soja, almendras, avena, coco, arroz, etc!'
             ], [
@@ -159,7 +159,7 @@ return [
         'title' => 'Documentales',
         'body' =>[
             [
-                'Aquí tienes un poco de motivación! Cowspiracy (Medio ambiente): ' . preg_quote('https://tinyurl.com/cownetflix') . ' The Game Changers \(Salud\): ' . preg_quote('https://tinyurl.com/changersnetflix') . ' Dominion \(Animales\): ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=40')
+                'Aquí tienes un poco de motivación! Cowspiracy \(Medio ambiente\): ' . preg_quote('https://tinyurl.com/cownetflix') . ' The Game Changers \(Salud\): ' . preg_quote('https://tinyurl.com/changersnetflix') . ' Dominion \(Animales\): ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=40')
             ], [
                 'Avísame si ves alguno!! 🌱'
             ]
@@ -173,7 +173,7 @@ return [
             [
                 'Te recomiendo que veas este vídeo de YouTube: ' . preg_quote('https://youtu.be/J_G3ZhimsMw?t=40')
             ], [
-                'Si tienes tiempo, los últimos 15 minutos te pueden cambiar la vida.'
+                'Si tienes tiempo, los últimos 15 minutos te pueden cambiar la vida\.'
             ], [
                 'Mándame un mensaje si quieres ayuda para hacerte vegano y te responderé lo que quieras gustosamente!'
             ]
@@ -187,7 +187,7 @@ return [
             [
                 'Es fantástico que tengas interés en el veganismo! 🐮'
             ], [
-                'Si crees que es muy difícil y no sabes cómo hacerlo, prueba a ir poco a poco\.'
+                'Si crees que es muy difícil y no sabes cómo hacerlo, prueba poco a poco\.'
             ], [
                 'Empieza por probar y acostumbrarte a beber leches vegetales.'
             ], [
@@ -293,7 +293,7 @@ return [
             [
                 'Hoy en día existe consenso en que el veganismo es más sano que una dieta con carnes\.'
             ], [
-                'Esta página muestra las fuentes directamente de las organizaciones más importantes de salud, dietética y nutrición \(que son objetivas\):' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Esta página muestra las fuentes directamente de las organizaciones más importantes de salud, dietética y nutrición \(que son objetivas\): ' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
             ]
         ]
     ],
@@ -333,7 +333,7 @@ return [
             [
                 'Se puede hacer una versión vegana de casi toda la comida que conoces, sólo tienes que saber cocinarla o dónde comprarla\.'
             ], [
-                'Algunas recetas: ' . preg_quote('https://veganuary.com/es/recipes') . ' (o busca tu plato favorito + "Vegan").'
+                'Algunas recetas: ' . preg_quote('https://veganuary.com/es/recipes') . ' \(o busca tu plato favorito \+ "Vegan"\)\.'
             ], [
                 'Para comer fuera: ' . preg_quote('https://happycow.net')
             ]
@@ -345,7 +345,7 @@ return [
         'title' => '30+ razones',
         'body' =>[
             [
-                '¡Ese es un mito muy común! 😅 Mira: ' . preg_quote('https://yourveganfallacyis.com/es') . '; básicamente desmiente los mitos más comunes sobre el veganismo\,'
+                '¡Ese es un mito muy común! 😅 Mira: ' . preg_quote('https://yourveganfallacyis.com/es') . '; básicamente desmiente los mitos más comunes sobre el veganismo\.'
             ], [
                 'En vídeos \(con subtítulos\) para los 30 mitos más comunes: ' . preg_quote('https://earthlinged.org/30excuses/')
             ], [
