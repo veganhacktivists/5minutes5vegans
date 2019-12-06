@@ -23,20 +23,20 @@ return [
                 '¡Hola!',
                 '¡Qué bien leerlo!'
             ], [
-                'Puedes hacerlo (definitivamente|absolutamente)? hazlo!',
-                'Aquí estamos (siempre)? aquí para ayudar!',
-                'Es (definitivamente|absolutamente)? muchísimo más fácil de lo que puedas pensar!'
+                'Puedes hacerlo (definitivamente |absolutamente )?hazlo!',
+                'Aquí estamos (siempre )?aquí para ayudar!',
+                'Es (definitivamente|absolutamente )?muchísimo más fácil de lo que puedas pensar!'
             ], [
                 'Deberías probar el Desafío 22\+!',
                 'El Desafío 22\+ puede ser justo lo que estás buscando\.',
                 'Hay un proyecto llamado Desafío 22\+ (muy interesante|que podrías probar)?\.'
             ], [
-                'Te dan (un|tu propio) mentor (personal)? voluntario (en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
-                'Tienes acceso a un mentor (personal)? (online| en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
-                'Pueden ayudarte a ser vegan@ durante un mes con un mentor personal voluntario (por Facebook)?\.',
-                'Contactan contigo con un mentor (personal)? (en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
-                'Puedes tener un mentor (personal)? voluntario (por Facebook)? para ayudarte a ser vegan@ durante un mes\.',
-                'Pueden contactarte (por Facebook)? con un mentor (personal)? voluntario para ayudarte a ser vegan@ durante un mes\.'
+                'Te dan (un|tu propio) mentor (personal )?voluntario (en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
+                'Tienes acceso a un mentor (personal )?(online| en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
+                'Pueden ayudarte a ser vegan@ durante un mes con un mentor personal voluntario( por Facebook)?\.',
+                'Contactan contigo con un mentor (personal )?(en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
+                'Puedes tener un mentor (personal )?voluntario (por Facebook )?para ayudarte a ser vegan@ durante un mes\.',
+                'Pueden contactarte (por Facebook )?con un mentor (personal )?voluntario para ayudarte a ser vegan@ durante un mes\.'
             ], [
                 'El link es ' . preg_quote('https://www.challenge22.com/es') . ';',
                 'La URL es ' . preg_quote('https://www.challenge22.com/es') . ';',
@@ -44,21 +44,21 @@ return [
                 'La web es ' . preg_quote('https://www.challenge22.com/es') . ';',
             ], [
                 '¡Buena suerte, puedes con ello!',
-                'Tú puedes con ello (perfectamente)?!',
-                'Estamos (todos)? contigo!',
+                'Tú puedes con ello( perfectamente)?!',
+                'Estamos (todos )?contigo!',
 //                 'Hang in there!',
                 'Mantente fuerte!',
-                '¡Vamos! (Tú)? puedes con ello (perfectamente)?!',
+                '¡Vamos! (Tú )?puedes con ello( perfectamente)?!',
                 'Sigue luchándolo!',
                 '(No|Nunca) te rindas!',
                 '¡A darlo todo!',
                 'Confía en ti!'
             ], [
-                '¡Contáctame si necesitas (más)? ayuda!',
-                '¡Respóndeme si necesitas (más)? ayuda!',
-                '(Eres libre de|Siempre puedes) contactarme si necesitas (más)? ayuda!',
-                'Si necesitas (más)? ayuda dímelo!',
-                'Si (alguna vez)? necesitas (más)? ayuda mándame un (mensaje|MP)!'
+                '¡Contáctame si necesitas (más )?ayuda!',
+                '¡Respóndeme si necesitas (más )?ayuda!',
+                '(Eres libre de|Siempre puedes) contactarme si necesitas (más )?ayuda!',
+                'Si necesitas (más )?ayuda dímelo!',
+                'Si (alguna vez )?necesitas (más )?ayuda mándame un (mensaje|MP)!'
             ]
         ]
     ],
