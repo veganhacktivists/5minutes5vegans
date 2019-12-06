@@ -9,7 +9,7 @@ return [
             [
                 '¡Bien hecho! La mayoría de los veganos lamentamos no haber empezado antes\.'
             ], [
-                'Aquí tienes algunos recursos: ' . preg_quote('http://reddit.com/r/Vegan') . ' (comunidad) ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=41') . ' (Documental) ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' (Mitos) 🐷 Envíame un MP si necesitas ayuda!'
+                'Aquí tienes algunos recursos: ' . preg_quote('http://reddit.com/r/Vegan') . ' \(comunidad\) ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=41') . ' (Documental) ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' \(Mitos\) 🐷 Envíame un MP si necesitas ayuda!'
             ]
         ]
     ],
@@ -23,20 +23,20 @@ return [
                 '¡Hola!',
                 '¡Qué bien leerlo!'
             ], [
-                'Puedes hacerlo (definitivamente|absolutamente)? hazlo!',
-                'Aquí estamos (siempre)? aquí para ayudar!',
-                'Es (definitivamente|absolutamente)? muchísimo más fácil de lo que puedas pensar!'
+                'Puedes hacerlo (definitivamente |absolutamente )?hazlo!',
+                'Aquí estamos (siempre )?aquí para ayudar!',
+                'Es (definitivamente|absolutamente )?muchísimo más fácil de lo que puedas pensar!'
             ], [
                 'Deberías probar el Desafío 22\+!',
                 'El Desafío 22\+ puede ser justo lo que estás buscando\.',
                 'Hay un proyecto llamado Desafío 22\+ (muy interesante|que podrías probar)?\.'
             ], [
-                'Te dan (un|tu propio) mentor (personal)? voluntario (en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
-                'Tienes acceso a un mentor (personal)? (online|en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
-                'Pueden ayudarte a ser vegan@ durante un mes con un mentor personal voluntario (por Facebook)?\.',
-                'Contactan contigo con un mentor (personal)? (en Facebook)? para ayudarte a ser vegan@ durante un mes\.',
-                'Puedes tener un mentor (personal)? voluntario (por Facebook)? para ayudarte a ser vegan@ durante un mes\.',
-                'Pueden contactarte (por Facebook)? con un mentor (personal)? voluntario para ayudarte a ser vegan@ durante un mes\.'
+                'Te dan (un|tu propio) mentor (personal )?voluntario (en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
+                'Tienes acceso a un mentor (personal )?(online| en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
+                'Pueden ayudarte a ser vegan@ durante un mes con un mentor personal voluntario( por Facebook)?\.',
+                'Contactan contigo con un mentor (personal )?(en Facebook )?para ayudarte a ser vegan@ durante un mes\.',
+                'Puedes tener un mentor (personal )?voluntario (por Facebook )?para ayudarte a ser vegan@ durante un mes\.',
+                'Pueden contactarte (por Facebook )?con un mentor (personal )?voluntario para ayudarte a ser vegan@ durante un mes\.'
             ], [
                 'El link es ' . preg_quote('https://www.challenge22.com/es') . ';',
                 'La URL es ' . preg_quote('https://www.challenge22.com/es') . ';',
@@ -44,21 +44,21 @@ return [
                 'La web es ' . preg_quote('https://www.challenge22.com/es') . ';',
             ], [
                 '¡Buena suerte, puedes con ello!',
-                'Tú puedes con ello (perfectamente)?!',
-                'Estamos (todos)? contigo!',
+                'Tú puedes con ello( perfectamente)?!',
+                'Estamos (todos )?contigo!',
 //                 'Hang in there!',
                 'Mantente fuerte!',
-                '¡Vamos! (Tú)? puedes con ello (perfectamente)?!',
+                '¡Vamos! (Tú )?puedes con ello( perfectamente)?!',
                 'Sigue luchándolo!',
                 '(No|Nunca) te rindas!',
                 '¡A darlo todo!',
                 'Confía en ti!'
             ], [
-                '¡Contáctame si necesitas (más)? ayuda!',
-                '¡Respóndeme si necesitas (más)? ayuda!',
-                '(Eres libre de|Siempre puedes) contactarme si necesitas (más)? ayuda!',
-                'Si necesitas (más)? ayuda dímelo!',
-                'Si (alguna vez)? necesitas (más)? ayuda mándame un (mensaje|MP)!'
+                '¡Contáctame si necesitas (más )?ayuda!',
+                '¡Respóndeme si necesitas (más )?ayuda!',
+                '(Eres libre de|Siempre puedes) contactarme si necesitas (más )?ayuda!',
+                'Si necesitas (más )?ayuda dímelo!',
+                'Si (alguna vez )?necesitas (más )?ayuda mándame un (mensaje|MP)!'
             ]
         ]
     ],
@@ -70,7 +70,7 @@ return [
             [
                 'Cada vez hay más carnes veganas desde estos últimos años!'
             ], [
-                'Beyond Meat es excelente: ' . preg_quote('https://www.beyondmeat.com/') . ', y Heura también tienen muchos productos: ' . preg_quote('https://tinyurl.com/HeuraMapa') . '  Echa un vistazo en tu supermercado para ver qué productos hay disponibles, podrías sorprenderte!'
+                'Beyond Meat es excelente: ' . preg_quote('https://www.beyondmeat.com/') . ', y Heura también tienen muchos productos: ' . preg_quote('https://tinyurl.com/HeuraMapa') . ' Echa un vistazo en tu supermercado para ver qué productos hay disponibles, podrías sorprenderte!'
             ]
         ]
     ],
@@ -94,7 +94,7 @@ return [
         'title' => 'Amo la Pizza',
         'body' =>[
             [
-                'Puedes encontrar productos veganos como pizzas (y restaurantes) en ' . preg_quote('http://HappyCow.net') . '!'
+                'Puedes encontrar productos veganos como pizzas \(y restaurantes\) en ' . preg_quote('http://HappyCow.net') . '!'
             ], [
                 'Hay muchas marcas de pizzas veganas, como las de Mercadona o Lidl: ' . preg_quote('https://ideavegana.com/pizza-vegana-mercadona/') . ' por supuesto, siempre están las caseras. Si quieres más info dímelo y te ayudo\.'
             ]
@@ -123,8 +123,7 @@ return [
             ], [
                 'Tienen muchos sabores y también hay otras marcas con helados de soja/almendras/coco/etc!'
             ], [
-                '(Mira:|Échale un ojo a) ' . preg_quote('https://ideavegana.com/?s=helado 
-')
+                '(Mira:|Échale un ojo a) ' . preg_quote('https://ideavegana.com/?s=helado')
             ]
         ]
     ],
@@ -146,7 +145,7 @@ return [
         'title' => 'Leches vegetales',
         'body' =>[
             [
-                'Mira este vídeo de sólo 5 min. (puedes activar subtítulos) ' . preg_quote('https://youtu.be/UcN7SGGoCNI')
+                'Mira este vídeo de sólo 5 min. \(puedes activar subtítulos\) ' . preg_quote('https://youtu.be/UcN7SGGoCNI')
             ], [
                 'Existen muchas leches vegetales deliciosas de: soja, almendras, avena, coco, arroz, etc!'
             ], [
@@ -160,7 +159,7 @@ return [
         'title' => 'Documentales',
         'body' =>[
             [
-                'Aquí tienes un poco de motivación! Cowspiracy (Medio ambiente): ' . preg_quote('https://tinyurl.com/cownetflix') . ' The Game Changers (Salud): ' . preg_quote('https://tinyurl.com/changersnetflix') . ' Dominion (Animales): ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=40')
+                'Aquí tienes un poco de motivación! Cowspiracy (Medio ambiente): ' . preg_quote('https://tinyurl.com/cownetflix') . ' The Game Changers \(Salud\): ' . preg_quote('https://tinyurl.com/changersnetflix') . ' Dominion \(Animales\): ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=40')
             ], [
                 'Avísame si ves alguno!! 🌱'
             ]
@@ -192,7 +191,7 @@ return [
             ], [
                 'Empieza por probar y acostumbrarte a beber leches vegetales.'
             ], [
-                'Luego mantequilla, carnes, etc\. Más info (activa subtítulos): ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G')
+                'Luego mantequilla, carnes, etc\. Más info \(activa subtítulos\): ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G')
             ]
         ]
     ],
@@ -204,9 +203,9 @@ return [
             [
                 'El vegetarianismo es genial 😊'
             ], [
-                'pero te recomendaría ver este vídeo (con subtítulos): ' . preg_quote('https://www.youtube.com/watch?v=uWna6-niYEg')
+                'pero te recomendaría ver este vídeo \(con subtítulos\): ' . preg_quote('https://www.youtube.com/watch?v=uWna6-niYEg')
             ], [
-                'Algunos argumentos desmentidos (con subs): ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' y el desafío de 1 mes de veganismo: ' . preg_quote('https://www.challenge22.com/es')
+                'Algunos argumentos desmentidos \(con subs\): ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' y el desafío de 1 mes de veganismo: ' . preg_quote('https://www.challenge22.com/es')
             ]
         ]
     ],
@@ -220,7 +219,7 @@ return [
             ], [
                 'Patatas, arroz, tofu, legumbres, verdura, fruta, pasta, avena, son todas muy baratas!'
    ], [
-                'Gran vídeo (con subtítulos) sobre ello: ' . preg_quote('https://www.youtube.com/watch?v=Vs_nXVmyP1E')
+                'Gran vídeo \(con subtítulos\) sobre ello: ' . preg_quote('https://www.youtube.com/watch?v=Vs_nXVmyP1E')
             ]
         ]
     ],
@@ -294,7 +293,7 @@ return [
             [
                 'Hoy en día existe consenso en que el veganismo es más sano que una dieta con carnes\.'
             ], [
-                'Esta página muestra las fuentes directamente de las organizaciones más importantes de salud, dietética y nutrición (que son objetivas):' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Esta página muestra las fuentes directamente de las organizaciones más importantes de salud, dietética y nutrición \(que son objetivas\):' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
             ]
         ]
     ],
@@ -348,7 +347,7 @@ return [
             [
                 '¡Ese es un mito muy común! 😅 Mira: ' . preg_quote('https://yourveganfallacyis.com/es') . '; básicamente desmiente los mitos más comunes sobre el veganismo\,'
             ], [
-                'En vídeos (con subtítulos) para los 30 mitos más comunes: ' . preg_quote('https://earthlinged.org/30excuses/')
+                'En vídeos \(con subtítulos\) para los 30 mitos más comunes: ' . preg_quote('https://earthlinged.org/30excuses/')
             ], [
                 'Mándame un MP si necesitas ayuda o tienes preguntas!'
             ]
