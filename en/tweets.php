@@ -8,7 +8,7 @@ return [
             [
                 'You should do it! Most vegans say the only regret they have is that they didn\'t do it earlier\.'
             ], [
-                'Here\'s some resources: ' . preg_quote('http://reddit.com/r/Vegan') . ' (community) ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=41') . ' (Movie) ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' (Myths) 🐷 Message me if you need help!'
+                'Here\'s some resources: ' . preg_quote('http://reddit.com/r/Vegan') . ' \(community\) ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(Movie\) ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' \(Myths\) 🐷 Message me if you need help!'
             ]
         ]
     ],
@@ -150,7 +150,7 @@ return [
         'title' => 'Documentaries',
         'body' =>[
             [
-                'Here are some movies for motivation! Cowspiracy (Environment): ' . preg_quote('https://tinyurl.com/cownetflix') . ' Forks Over Knifes (Health): ' . preg_quote('https://tinyurl.com/forksnetflix') . ' Dominion (Animals): ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=43')
+                'Here are some movies for motivation! Cowspiracy \(Environment\): ' . preg_quote('https://tinyurl.com/cownetflix') . ' The Game Changers \(Health\): ' . preg_quote('https://tinyurl.com/NetflixGChangers') . ' Dominion \(Animals\): ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=43')
             ], [
                 'Let me know if you watch any of them! 🌱'
             ]
@@ -272,7 +272,7 @@ return [
         'title' => 'Environment',
         'body' =>[
             [
-                'There\'s really daunting statistics on what Meat and Dairy industry (Animal Agriculture) is doing to the Environment, all backed up with sources & studies: ' . preg_quote('https://youaretheirvoice.com/pages/the-daunting-facts') . ' Example: Animal agriculture is responsible for up to 91% of Amazon destruction\.'
+                'There\'s really daunting statistics on what Meat and Dairy industry \(Animal Agriculture\) is doing to the Environment, all backed up with sources & studies: ' . preg_quote('https://youaretheirvoice.com/pages/the-daunting-facts') . ' Example: Animal agriculture is responsible for up to 91% of Amazon destruction\.'
             ]
         ]
     ],
@@ -284,7 +284,7 @@ return [
             [
                 'In today\'s age it\'s widely accepted that Veganism is healthier than a meat\-eating diet\.'
             ], [
-                'Here\'s a page that pulls sources directly from the world\'s largest Health, Nutrition and Dietary organizations (so from non\-biased organizations): ' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Here\'s a page that pulls sources directly from the world\'s largest Health, Nutrition and Dietary organizations \(so from non\-biased organizations\): ' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
             ]
         ]
     ],
