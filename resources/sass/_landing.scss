@@ -27,6 +27,7 @@ p {
 
 .cover {
   background: no-repeat center/cover;
+  min-height: calc(100% - 60px); 
 }
 
 .scroll .hero {
