@@ -420,3 +420,30 @@ $feed-teal: #41b9aa;
     border-radius:16px;
     border:4px solid #fff
 }
+
+.cc-count {
+    display: block;
+    float: right;
+    transition: color .2s ease-in-out;
+}
+  
+.cc-count.cc-is-fine {
+    color: #6C757D !important;
+}
+  
+.cc-count.cc-is-warning {
+    color: #FFC107 !important;
+}
+  
+.cc-count.cc-is-danger {
+    color: #DC3545 !important;
+}
+  
+.cc-count.cc-is-expended {
+    color: #FFFFFF !important;
+    background-color: #DC3545 !important;
+    border-radius: 2px;
+    padding: 2px;
+    line-height: 1;
+    margin-top: 4px;
+}
