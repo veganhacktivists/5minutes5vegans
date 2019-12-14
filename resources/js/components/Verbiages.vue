@@ -75,7 +75,6 @@
                     v-model="selected.body"
                     class="w-100 p-3"
                     rows="4"
-                    v-bind:readonly="!editing"
                     v-bind:disabled="busy"
                 ></textarea>
                 <button
