@@ -76,7 +76,7 @@
                     class="w-100 p-3"
                     rows="4"
                     v-bind:disabled="busy"
-                    v-on:keyup="countdown"
+                    v-on:keyup="characterCountdown"
                     :placeholder="[[defaultMessage]]"
                 ></textarea>
                 <button
@@ -89,7 +89,7 @@
                 ><i class="fa-fw fas fa-copy"></i></button>
                 <small 
                 class="cc-count"
-                :class="stateClass"
+                :class="characterCountState"
                 >{{remainingCount}}</small>
             </div>
 
@@ -135,8 +135,8 @@
 
 // Constant list of character count threshould and their respective class names
 // Note: Make sure to keep these items from the lower threshold to the higher
-const states = [
-    { name: 'cc-is-expended', threshold: 0 },
+const CHARACTER_COUNT_STATES = [
+    { name: 'cc-is-expended', threshold: -1 },
     { name: 'cc-is-danger', threshold: 15 },
     { name: 'cc-is-warning', threshold: 30 },
     { name: 'cc-is-fine', threshold: 280 }
@@ -170,7 +170,7 @@ export default {
             maxCount: 280, // The maximum characters allowed by Twitter 
             remainingCount: 280,
             defaultMessage: "Click any of the subjects above to get a clear-cut message to swiftly copy and send.",
-            stateClass: "cc-is-fine",
+            characterCountState: "cc-is-fine",
         }
     },
 
@@ -206,7 +206,7 @@ export default {
         selectVerbiage: function(verbiage) {
             if (!this.editing) this.selected = verbiage
             // Trigger character count calculation when choosing a predefined answer
-            this.countdown()
+            this.characterCountdown()
         },
 
         createVerbiage: function() {
@@ -269,11 +269,11 @@ export default {
             console.error("Unable to copy to clipboard.")
         },
 
-        countdown: function() {
+        characterCountdown: function() {
             this.remainingCount = this.maxCount - this.selected.body.length;
 
-            var thresholds = states.filter(f => f.threshold >= this.remainingCount);
-            this.stateClass = thresholds.length > 0 ? thresholds[0].name : this.stateClass;
+            var thresholds = CHARACTER_COUNT_STATES.filter(f => f.threshold >= this.remainingCount);
+            this.characterCountState = thresholds.length > 0 ? thresholds[0].name : this.characterCountState;
         },
     },
 
