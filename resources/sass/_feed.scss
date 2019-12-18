@@ -294,14 +294,21 @@ $feed-teal: #41b9aa;
 
 .verbiage-msg {
     position: relative;
+    margin-top: 1rem;
 
     textarea {
         position: relative;
     }
 
-    button {
+    .copy-btn {
         position: absolute;
         top: calc(100% - 50px);
+        left: calc(100% - 60px);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 0.4rem;
         left: calc(100% - 60px);
     }
 }

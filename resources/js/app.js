@@ -120,7 +120,8 @@ $(() => {
                 spaceBetween: 0
             }
         },
-        watchOverflow: true
+        watchOverflow: true,
+        allowTouchMove: false
     });
 
     // Start on the twitter slide in mobile view
