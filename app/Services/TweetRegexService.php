@@ -54,24 +54,31 @@ class TweetRegexService {
         $grammar = new Read('hoa://Library/Regex/Grammar.pp');
         $compiler = Llk::load($grammar);
         $results = [];
+        $re = '/\bvegan\b/i'; // Regex pattern to match for the word "vegan" insensitive case
 
         foreach ($tweets as $tweet) {
             $icon = $tweet['icon'];
             $title = $tweet['title'];
             $bodyParts = $tweet['body'];
             $body = [];
-
+            $found_vegan = 0; // This item will hold the number of occurences of the world "vegan"
+            
             foreach ($bodyParts as $strings) {
                 $body[] = $this->compileAndGenerate($compiler, $strings);
             }
 
-            $body[] = '#vegan';
-            $body[] = '#5m5v';
+            $body = join(' ', $body); // join the different body-parts together into a single string
+            $new_body = preg_replace($re, "#$0", $body, 1, $found_vegan);
+
+            // Check if error occured or no matches were found for "vegan"
+            if (PREG_NO_ERROR !== preg_last_error() || $found_vegan < 1) {
+                $new_body = $body . " #vegan";
+            }
 
             $results[] = [
                 'icon' => $icon,
                 'title' => $title,
-                'body' => join(' ', $body)
+                'body' => $new_body
             ];
         }
 
