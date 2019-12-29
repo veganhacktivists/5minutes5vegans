@@ -71,7 +71,7 @@ class TweetRegexService {
             $new_body = preg_replace($re, "#$0", $body, 1, $found_vegan);
 
             // Check if error occured or no matches were found for "vegan"
-            if (PREG_NO_ERROR !== preg_last_error() || $found_vegan < 1) {
+            if (PREG_NO_ERROR !== preg_last_error() || $found_vegan == 0) {
                 $new_body = $body . " #vegan";
             }
 
