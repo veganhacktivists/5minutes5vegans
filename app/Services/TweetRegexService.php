@@ -54,7 +54,7 @@ class TweetRegexService {
         $grammar = new Read('hoa://Library/Regex/Grammar.pp');
         $compiler = Llk::load($grammar);
         $results = [];
-        $re = '/\bvegan\b/i'; // Regex pattern to match for the word "vegan" insensitive case
+        $re = '/(?<= |^)vegan[^\w\d\s]*(?=[ ]|$)/i'; // Regex pattern to match for the word "vegan" insensitive case
 
         foreach ($tweets as $tweet) {
             $icon = $tweet['icon'];
