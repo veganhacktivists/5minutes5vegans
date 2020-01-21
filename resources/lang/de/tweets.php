@@ -333,7 +333,7 @@ return [
             [
                 'Pretty much anything made with meat/dairy can be replicated and be just as awesome, you just have to learn where to buy it or cook it\.'
             ], [
-                'Here\'s some recipes: ' . preg_quote('https://veganuary.com/recipes') . ' (or google your favorite food + "Vegan").'
+                preg_quote('Here\'s some recipes: https://veganuary.com/recipes, (or google your favorite food + "Vegan").')
             ], [
                 'This for eating out: ' . preg_quote('https://happycow.net')
             ]

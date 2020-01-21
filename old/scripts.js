@@ -66,7 +66,7 @@ $(document).ready(function(){
       $('#txtarea').val('A lot of Vegans don\'t cook either, just buy the Vegan options at the store or at restaurants instead of the animal options. You don\'t need to learn to cook to eat healthy as a Vegan! Eating out is also really easy with http://happycow.net 🐮 Message me for help! #vegan #5m5v');
   });
   $("#boring").click(function(){
-      $('#txtarea').val('Pretty much anything made with meat/dairy can be replicated and be just as awesome, you just have to learn where to buy it or cook it. Here\'s some recipes: https://veganuary.com/recipes (or google your favorite food + "Vegan"). This for eating out: https://happycow.net #vegan #5m5v');
+      $('#txtarea').val('Pretty much anything made with meat/dairy can be replicated and be just as awesome, you just have to learn where to buy it or cook it. Here\'s some recipes: https://veganuary.com/recipes, (or google your favorite food + "Vegan"). This for eating out: https://happycow.net #vegan #5m5v');
   });
   $("#common").click(function(){
       $('#txtarea').val('That\'s a common myth! Check this out: http://earthlinged.com/ebook; it basically goes over the 30 most common myths about Veganism. Video format here: https://tinyurl.com/y862x5sg Message me back if you need any help or have any questions! #vegan #5m5v');
