@@ -27,7 +27,7 @@ p {
 
 .cover {
   background: no-repeat center/cover;
-  min-height: calc(100% - 60px); 
+  min-height: calc(100% - 60px);
 }
 
 .scroll .hero {
@@ -57,10 +57,18 @@ p {
     }
 
     .nav-link {
-        padding-top: 0;
+        padding: 0;
+
+        .btn {
+            font-size: 14px;
+        }
 
         @include for-sm-tablet-portrait-up {
-            padding-top: 0.5rem;
+            padding: 0.5rem;
+
+            .btn {
+                font-size: 21px;
+            }
         }
     }
 
@@ -112,7 +120,6 @@ p {
   background-color: $button-cta-color;
   font-size: 21px;
   border-radius: 0;
-
 
   @include for-desktop-up {
     font-size: 18px;

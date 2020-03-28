@@ -135,8 +135,11 @@ $xx-swirve: 22px;
         border-radius: 50%;
         height: 26px;
         width: 26px;
-        margin-left: 0.5rem;
         margin-right: 0.5rem;
+
+        @include for-sm-tablet-portrait-up {
+            margin-left: 0.5rem;
+        }
 
         @include for-tablet-portrait-up {
             height: 35px;
