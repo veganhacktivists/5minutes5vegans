@@ -13,6 +13,7 @@
 
 Route::get('/twitteroauth', 'OauthController@index')->name('twitteroauth');
 Route::post('/twitteroauth', 'OauthController@verify')->name('twitteroauth.verify');
+// Route::post('/tinyurl', 'TweetController@tinyurl');
 
 Route::group( [
         'prefix' => LaravelLocalization::setLocale(),

@@ -1,5 +1,7 @@
 <?php
 
+require_once(app_path('generate_and_cache_tinyurl.php'));
+
 return [
 
     [
@@ -9,7 +11,7 @@ return [
             [
                 '¡Bien hecho! La mayoría de los veganos lamentamos no haber empezado antes\.'
             ], [
-                'Aquí tienes algunos recursos: ' . preg_quote('http://reddit.com/r/Vegan') . ' \(comunidad\) ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(Documental\) ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' \(Mitos\) 🐷 Envíame un MP si necesitas ayuda!'
+                'Aquí tienes algunos recursos: ' . generate_and_cache_tinyurl('http://reddit.com/r/Vegan') . ' \(comunidad\) ' . generate_and_cache_tinyurl('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(Documental\) ' . generate_and_cache_tinyurl('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' \(Mitos\) 🐷 Envíame un MP si necesitas ayuda!'
             ]
         ]
     ],
@@ -38,10 +40,10 @@ return [
                 'Puedes tener un mentor (personal )?voluntario (por Facebook )?para ayudarte a ser vegan@ durante un mes\.',
                 'Pueden contactarte (por Facebook )?con un mentor (personal )?voluntario para ayudarte a ser vegan@ durante un mes\.'
             ], [
-                'El link es ' . preg_quote('https://www.challenge22.com/es') . ';',
-                'La URL es ' . preg_quote('https://www.challenge22.com/es') . ';',
-                'El enlace es ' . preg_quote('https://www.challenge22.com/es') . ';',
-                'La web es ' . preg_quote('https://www.challenge22.com/es') . ';',
+                'El link es ' . generate_and_cache_tinyurl('https://www.challenge22.com/es') . ';',
+                'La URL es ' . generate_and_cache_tinyurl('https://www.challenge22.com/es') . ';',
+                'El enlace es ' . generate_and_cache_tinyurl('https://www.challenge22.com/es') . ';',
+                'La web es ' . generate_and_cache_tinyurl('https://www.challenge22.com/es') . ';',
             ], [
                 '¡Buena suerte, puedes con ello!',
                 'Tú puedes con ello( perfectamente)?!',
@@ -70,7 +72,7 @@ return [
             [
                 'Cada vez hay más carnes veganas desde estos últimos años!'
             ], [
-                'Beyond Meat es excelente: ' . preg_quote('https://www.beyondmeat.com/') . ' y Heura también tienen muchos productos: ' . preg_quote('https://tinyurl.com/HeuraMapa') . ' Echa un vistazo en tu supermercado para ver qué productos hay disponibles, podrías sorprenderte!'
+                'Beyond Meat es excelente: ' . generate_and_cache_tinyurl('https://www.beyondmeat.com/') . ' y Heura también tienen muchos productos: ' . generate_and_cache_tinyurl('https://www.heurafoods.com/donde-encontrar-comprar-heura') . ' Echa un vistazo en tu supermercado para ver qué productos hay disponibles, podrías sorprenderte!'
             ]
         ]
     ],
@@ -84,7 +86,7 @@ return [
             ], [
                 'Mi favorito es Violife, que tienen hasta para fundir, pero hay muchos más!'
             ], [
-                'Si no, puedes comprarlos en ' . preg_quote('https://www.veggieroom.es/es/tipo/quesos-y-natas-vegetales') . ' o en ' . preg_quote('https://www.vegaffinity.com/tienda-vegana/44-comprar-quesos-veganos') . ' ¡Si tienes alguna duda aquí estoy! 😊'
+                'Si no, puedes comprarlos en ' . generate_and_cache_tinyurl('https://www.veggieroom.es/es/tipo/quesos-y-natas-vegetales') . ' o en ' . generate_and_cache_tinyurl('https://www.vegaffinity.com/tienda-vegana/44-comprar-quesos-veganos') . ' ¡Si tienes alguna duda aquí estoy! 😊'
             ]
         ]
     ],
@@ -94,9 +96,9 @@ return [
         'title' => 'Amo la Pizza',
         'body' =>[
             [
-                'Puedes encontrar productos veganos como pizzas \(y restaurantes\) en ' . preg_quote('http://HappyCow.net') . '!'
+                'Puedes encontrar productos veganos como pizzas \(y restaurantes\) en ' . generate_and_cache_tinyurl('http://HappyCow.net') . '!'
             ], [
-                'Hay muchas marcas de pizzas veganas, como las de Mercadona o Lidl: ' . preg_quote('https://ideavegana.com/pizza-vegana-mercadona/') . ' por supuesto, siempre están las caseras. Si quieres más info dímelo y te ayudo\.'
+                'Hay muchas marcas de pizzas veganas, como las de Mercadona o Lidl: ' . generate_and_cache_tinyurl('https://ideavegana.com/pizza-vegana-mercadona/') . ' por supuesto, siempre están las caseras. Si quieres más info dímelo y te ayudo\.'
             ]
         ]
     ],
@@ -106,10 +108,10 @@ return [
         'title' => 'Amo el huevo',
         'body' =>[
             [
-                'Hay muy buenas recetas con huevo veganizadas \(como esta, pero con espinaca\): ' . preg_quote('https://danzadefogones.com/revuelto-vegano-tofu/')
+                'Hay muy buenas recetas con huevo veganizadas \(como esta, pero con espinaca\): ' . generate_and_cache_tinyurl('https://danzadefogones.com/revuelto-vegano-tofu/')
             ], [
                 '🐣 También puedes encontrar sustitutivos en
-: ' . preg_quote('https://soycomocomo.es/especialista/biogra/huevo-vegano') . ' o comprarlos directamente como los “huevos” veganos No Egg (de Orgran)\.'
+: ' . generate_and_cache_tinyurl('https://soycomocomo.es/especialista/biogra/huevo-vegano') . ' o comprarlos directamente como los “huevos” veganos No Egg (de Orgran)\.'
             ]
         ]
     ],
@@ -119,11 +121,11 @@ return [
         'title' => 'Amo el helado',
         'body' =>[
             [
-                'Prueba los helados veganos de Ben&Jerry\'s: ' . preg_quote('https://www.ben-jerrys.es/sabores/vegano')
+                'Prueba los helados veganos de Ben&Jerry\'s: ' . generate_and_cache_tinyurl('https://www.ben-jerrys.es/sabores/vegano')
             ], [
                 'Tienen muchos sabores y también hay otras marcas con helados de soja/almendras/coco/etc!'
             ], [
-                '(Mira:|Échale un ojo a) ' . preg_quote('https://ideavegana.com/?s=helado')
+                '(Mira:|Échale un ojo a) ' . generate_and_cache_tinyurl('https://ideavegana.com/?s=helado')
             ]
         ]
     ],
@@ -133,9 +135,9 @@ return [
         'title' => 'Amo el pollo',
         'body' =>[
             [
-                'Heura tiene un pollo increíble: ' . preg_quote('https://tinyurl.com/HeuraMapa')
+                'Heura tiene un pollo increíble: ' . generate_and_cache_tinyurl('https://www.heurafoods.com/donde-encontrar-comprar-heura')
             ], [
-                '🐣 HappyCow para comer fuera: ' . preg_quote('https://www.happycow.net') . '! échales un ojo, seguro que encuentras sitios interesantes cerca que pueden sorprenderte! 😉 Si tienes cualquier duda dímelo! 😊 '
+                '🐣 HappyCow para comer fuera: ' . generate_and_cache_tinyurl('https://www.happycow.net') . '! échales un ojo, seguro que encuentras sitios interesantes cerca que pueden sorprenderte! 😉 Si tienes cualquier duda dímelo! 😊 '
             ]
         ]
     ],
@@ -145,7 +147,7 @@ return [
         'title' => 'Leches vegetales',
         'body' =>[
             [
-                'Mira este vídeo de sólo 5 min\. \(puedes activar subtítulos\) ' . preg_quote('https://youtu.be/UcN7SGGoCNI')
+                'Mira este vídeo de sólo 5 min\. \(puedes activar subtítulos\) ' . generate_and_cache_tinyurl('https://youtu.be/UcN7SGGoCNI')
             ], [
                 'Existen muchas leches vegetales deliciosas de: soja, almendras, avena, coco, arroz, etc!'
             ], [
@@ -159,7 +161,7 @@ return [
         'title' => 'Documentales',
         'body' =>[
             [
-                'Aquí tienes un poco de motivación! Cowspiracy \(Medio ambiente\): ' . preg_quote('https://tinyurl.com/cownetflix') . ' The Game Changers \(Salud\): ' . preg_quote('https://tinyurl.com/changersnetflix') . ' Dominion \(Animales\): ' . preg_quote('https://youtu.be/ny6aqdFy9SI?t=40')
+                'Aquí tienes un poco de motivación! Cowspiracy \(Medio ambiente\): ' . generate_and_cache_tinyurl('https://www.netflix.com/title/80033772') . ' The Game Changers \(Salud\): ' . generate_and_cache_tinyurl('https://www.netflix.com/title/81157840') . ' Dominion \(Animales\): ' . generate_and_cache_tinyurl('https://youtu.be/ny6aqdFy9SI?t=40')
             ], [
                 'Avísame si ves alguno!! 🌱'
             ]
@@ -171,7 +173,7 @@ return [
         'title' => 'Película Dominion',
         'body' =>[
             [
-                'Te recomiendo que veas este vídeo de YouTube: ' . preg_quote('https://youtu.be/J_G3ZhimsMw?t=40')
+                'Te recomiendo que veas este vídeo de YouTube: ' . generate_and_cache_tinyurl('https://youtu.be/J_G3ZhimsMw?t=40')
             ], [
                 'Si tienes tiempo, los últimos 15 minutos te pueden cambiar la vida\.'
             ], [
@@ -191,7 +193,7 @@ return [
             ], [
                 'Empieza por probar y acostumbrarte a beber leches vegetales.'
             ], [
-                'Luego mantequilla, carnes, etc\. Más info \(activa subtítulos\): ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G')
+                'Luego mantequilla, carnes, etc\. Más info \(activa subtítulos\): ' . generate_and_cache_tinyurl('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G')
             ]
         ]
     ],
@@ -203,9 +205,9 @@ return [
             [
                 'El vegetarianismo es genial 😊'
             ], [
-                'pero te recomendaría ver este vídeo \(con subtítulos\): ' . preg_quote('https://www.youtube.com/watch?v=uWna6-niYEg')
+                'pero te recomendaría ver este vídeo \(con subtítulos\): ' . generate_and_cache_tinyurl('https://www.youtube.com/watch?v=uWna6-niYEg')
             ], [
-                'Algunos argumentos desmentidos \(con subs\): ' . preg_quote('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' y el desafío de 1 mes de veganismo: ' . preg_quote('https://www.challenge22.com/es')
+                'Algunos argumentos desmentidos \(con subs\): ' . generate_and_cache_tinyurl('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' y el desafío de 1 mes de veganismo: ' . generate_and_cache_tinyurl('https://www.challenge22.com/es')
             ]
         ]
     ],
@@ -219,7 +221,7 @@ return [
             ], [
                 'Patatas, arroz, tofu, legumbres, verdura, fruta, pasta, avena, son todas muy baratas!'
    ], [
-                'Gran vídeo \(con subtítulos\) sobre ello: ' . preg_quote('https://www.youtube.com/watch?v=Vs_nXVmyP1E')
+                'Gran vídeo \(con subtítulos\) sobre ello: ' . generate_and_cache_tinyurl('https://www.youtube.com/watch?v=Vs_nXVmyP1E')
             ]
         ]
     ],
@@ -231,7 +233,7 @@ return [
             [
                 'Todo tipo de comida: verduras, frutas, semillas, etc tiene proteínas, de las que no necesitamos tantas\.'
             ], [
-                'Este enlace trata el tema: ' . preg_quote('https://vegetarianismo.net/nutricion/proteinas.htm') . ' más en: ' . preg_quote('https://yourveganfallacyis.com/es/veganos-no-pueden-obtener-suficiente-proteina/fuentes'). ' y ' . preg_quote('https://www.vivahealth.org.uk/resources/protein-myth-fact-sheet').  ' si tienes dudas o quieres más infornación aquí estoy 😊'
+                'Este enlace trata el tema: ' . generate_and_cache_tinyurl('https://vegetarianismo.net/nutricion/proteinas.htm') . ' más en: ' . generate_and_cache_tinyurl('https://yourveganfallacyis.com/es/veganos-no-pueden-obtener-suficiente-proteina/fuentes'). ' y ' . generate_and_cache_tinyurl('https://www.vivahealth.org.uk/resources/protein-myth-fact-sheet').  ' si tienes dudas o quieres más infornación aquí estoy 😊'
             ]
         ]
     ],
@@ -245,7 +247,7 @@ return [
             ], [
                 'Una buena dieta vegetal es la mejor para tu entrenamiento!'
             ], [
-                'Vídeos: ' . preg_quote('https://www.youtube.com/results?search_query=vegan+fitness') . ' y comunidad (en inglés): ' . preg_quote('https://www.reddit.com/r/veganfitness/')
+                'Vídeos: ' . generate_and_cache_tinyurl('https://www.youtube.com/results?search_query=vegan+fitness') . ' y comunidad (en inglés): ' . generate_and_cache_tinyurl('https://www.reddit.com/r/veganfitness/')
             ]
         ]
     ],
@@ -255,7 +257,7 @@ return [
         'title' => 'Comunidad',
         'body' =>[
             [
-                'Si quieres hablar con gente o simplemente ayuda, échale un ojo a: ' . preg_quote('http://reddit.com/r/Vegan') . '!'
+                'Si quieres hablar con gente o simplemente ayuda, échale un ojo a: ' . generate_and_cache_tinyurl('http://reddit.com/r/Vegan') . '!'
             ], [
                 'Es una comunidad de más de 300,000 veganos con experiencia, pregúntales lo que quieras\.'
             ], [
@@ -271,7 +273,7 @@ return [
             [
                 'Comer fuera puede ser difícil si no sabes dónde ir o qué pedir, pero se hace mucho más fácil cuando lo hayas hecho varias veces\.'
             ], [
-                'Hasta entonces, te puedes ayudar de: ' . preg_quote('http://happycow.net') . ' para encontrar opciones veganas! 🐮'
+                'Hasta entonces, te puedes ayudar de: ' . generate_and_cache_tinyurl('http://happycow.net') . ' para encontrar opciones veganas! 🐮'
             ]
         ]
     ],
@@ -281,7 +283,7 @@ return [
         'title' => 'Medio ambiente',
         'body' =>[
             [
-                'Hay estadísticas basadas en artículos y estudios realmente agobiantes sobre lo que las industrias cárnica y láctea están haciéndole al medio ambiente: ' . preg_quote('https://youaretheirvoice.com/pages/the-daunting-facts') . ' Ej: la ganadería es responsable de hasta un 91% de la destrucción del Amazonas\.'
+                'Hay estadísticas basadas en artículos y estudios realmente agobiantes sobre lo que las industrias cárnica y láctea están haciéndole al medio ambiente: ' . generate_and_cache_tinyurl('https://youaretheirvoice.com/pages/the-daunting-facts') . ' Ej: la ganadería es responsable de hasta un 91% de la destrucción del Amazonas\.'
             ]
         ]
     ],
@@ -293,7 +295,7 @@ return [
             [
                 'Hoy en día existe consenso en que el veganismo es más sano que una dieta con carnes\.'
             ], [
-                'Esta página muestra las fuentes directamente de las organizaciones más importantes de salud, dietética y nutrición \(que son objetivas\): ' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Esta página muestra las fuentes directamente de las organizaciones más importantes de salud, dietética y nutrición \(que son objetivas\): ' . generate_and_cache_tinyurl('https://youaretheirvoice.com/pages/the-clear-consensus')
             ]
         ]
     ],
@@ -307,7 +309,7 @@ return [
             ], [
                 'Las carnes rojas y procesadas causan enfermedades como: cáncer, problemas de corazón, diabetes y obesidad\.'
             ], [
-                'Esta web tiene info y estudios: ' . preg_quote('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Esta web tiene info y estudios: ' . generate_and_cache_tinyurl('https://youaretheirvoice.com/pages/the-clear-consensus')
             ]
         ]
     ],
@@ -321,7 +323,7 @@ return [
             ], [
                 'No es necesario aprender a cocinar para tener una dieta saludable vegana\.'
             ], [
-                'Comer fuera es muy fácil con ' . preg_quote('http://happycow.net') . ' 🐮 MP si quieres ayuda!'
+                'Comer fuera es muy fácil con ' . generate_and_cache_tinyurl('http://happycow.net') . ' 🐮 MP si quieres ayuda!'
             ]
         ]
     ],
@@ -333,9 +335,9 @@ return [
             [
                 'Se puede hacer una versión vegana de casi toda la comida que conoces, sólo tienes que saber cocinarla o dónde comprarla\.'
             ], [
-                'Algunas recetas: ' . preg_quote('https://veganuary.com/es/recipes') . ' \(o busca tu plato favorito \+ "Vegan"\)\.'
+                'Algunas recetas: ' . generate_and_cache_tinyurl('https://veganuary.com/es/recipes') . ' \(o busca tu plato favorito \+ "Vegan"\)\.'
             ], [
-                'Para comer fuera: ' . preg_quote('https://happycow.net')
+                'Para comer fuera: ' . generate_and_cache_tinyurl('https://happycow.net')
             ]
         ]
     ],
@@ -345,9 +347,9 @@ return [
         'title' => '30+ razones',
         'body' =>[
             [
-                '¡Ese es un mito muy común! 😅 Mira: ' . preg_quote('https://yourveganfallacyis.com/es') . '; básicamente desmiente los mitos más comunes sobre el veganismo\.'
+                '¡Ese es un mito muy común! 😅 Mira: ' . generate_and_cache_tinyurl('https://yourveganfallacyis.com/es') . '; básicamente desmiente los mitos más comunes sobre el veganismo\.'
             ], [
-                'En vídeos \(con subtítulos\) para los 30 mitos más comunes: ' . preg_quote('https://earthlinged.org/30excuses/')
+                'En vídeos \(con subtítulos\) para los 30 mitos más comunes: ' . generate_and_cache_tinyurl('https://earthlinged.org/30excuses/')
             ], [
                 'Mándame un MP si necesitas ayuda o tienes preguntas!'
             ]
