@@ -408,6 +408,7 @@ $feed-teal: #41b9aa;
 	width: 100%;
 	height: 100%;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* total width */
@@ -433,19 +434,19 @@ $feed-teal: #41b9aa;
     float: right;
     transition: color .2s ease-in-out;
 }
-  
+
 .cc-count.cc-is-fine {
     color: #6C757D !important;
 }
-  
+
 .cc-count.cc-is-warning {
     color: #FFC107 !important;
 }
-  
+
 .cc-count.cc-is-danger {
     color: #eb6e3d !important;
 }
-  
+
 .cc-count.cc-is-expended {
     color: #FFFFFF !important;
     background-color: #DC3545 !important;
