@@ -86,16 +86,17 @@
                     v-clipboard="() => selected.body"
                     v-clipboard:success="clipboardSuccessHandler"
                     v-clipboard:error="clipboardErrorHandler"
-                ><i class="fa-fw fas fa-copy"></i></button>
-                <small 
-                class="cc-count"
-                :class="characterCountState"
-                >{{remainingCount}}</small>
+                >
+                    <i class="fa-fw fas fa-copy"></i>
+                </button>
+                <small class="cc-count" :class="characterCountState">{{remainingCount}}</small>
                 <button
                     class="btn btn-link close-btn"
                     v-if="!editing && verbiageMsgToggled"
                     v-on:click="toggleVerbiageMsg(false)"
-                ><i class="fa-fw fas fa-times"></i></button>
+                >
+                    <i class="fa-fw fas fa-times"></i>
+                </button>
             </div>
 
             <div v-if="customVerbiages" class="col-auto d-flex flex-column justify-content-between">
@@ -137,15 +138,14 @@
 </template>
 
 <script>
-
 // Constant list of character count threshould and their respective class names
 // Note: Make sure to keep these items from the lower threshold to the higher
 const CHARACTER_COUNT_STATES = [
     { name: 'cc-is-expended', threshold: -1 },
     { name: 'cc-is-danger', threshold: 15 },
     { name: 'cc-is-warning', threshold: 30 },
-    { name: 'cc-is-fine', threshold: 280 }
-];
+    { name: 'cc-is-fine', threshold: 280 },
+]
 
 Vue.http.interceptors.push(function(req) {
     this.busy = true
@@ -171,11 +171,12 @@ export default {
             editing: false,
             creating: false,
             busy: false,
-            selected: { },
-            maxCount: 280, // The maximum characters allowed by Twitter 
+            selected: {},
+            maxCount: 280, // The maximum characters allowed by Twitter
             remainingCount: 280,
-            defaultMessage: "Click any of the subjects above to get a clear-cut message to swiftly copy and send.",
-            characterCountState: "cc-is-fine",
+            defaultMessage:
+                'Click any of the subjects above to get a clear-cut message to swiftly copy and send.',
+            characterCountState: 'cc-is-fine',
             verbiageMsgToggled: false,
         }
     },
@@ -211,22 +212,25 @@ export default {
 
         selectVerbiage: function(verbiage) {
             if (!this.editing) this.selected = verbiage
+
             // Trigger character count calculation when choosing a predefined answer
             this.characterCountdown()
-
             this.toggleVerbiageMsg(true)
         },
 
         toggleVerbiageMsg: function(toState) {
-            var x = window.matchMedia("(min-width: 768px)");
-            if (x.matches)
-                return;
+            var x = window.matchMedia('(min-width: 768px)')
+            if (x.matches) return
 
             this.verbiageMsgToggled = toState || !this.verbiageMsgToggled
             if (this.verbiageMsgToggled === true) {
-                $(this.$refs.verbiageMsg).detach().appendTo('.swiper-pagination')
+                $(this.$refs.verbiageMsg)
+                    .detach()
+                    .appendTo('.swiper-pagination')
             } else if (this.verbiageMsgToggled === false) {
-                $(this.$refs.verbiageMsg).detach().prependTo(this.$refs.verbiageMsgContainer)
+                $(this.$refs.verbiageMsg)
+                    .detach()
+                    .prependTo(this.$refs.verbiageMsgContainer)
             }
         },
 
@@ -284,9 +288,9 @@ export default {
             console.error(r)
         },
 
-        clipboardSuccessHandler ({ value, event }) {
+        clipboardSuccessHandler({ value, event }) {
             $(event.target).tooltip({
-                title: "Copied!",
+                title: 'Copied!',
             })
             $(event.target).tooltip('toggle')
             setTimeout(() => $(event.target).tooltip('dispose'), 2000)
@@ -294,17 +298,22 @@ export default {
             this.hideVerbiageMsg()
         },
 
-        clipboardErrorHandler ({ value, event }) {
-            console.error("Unable to copy to clipboard.")
+        clipboardErrorHandler({ value, event }) {
+            console.error('Unable to copy to clipboard.')
 
             this.hideVerbiageMsg()
         },
 
         characterCountdown: function() {
-            this.remainingCount = this.maxCount - this.selected.body.length;
+            this.remainingCount = this.maxCount - this.selected.body.length
 
-            var thresholds = CHARACTER_COUNT_STATES.filter(f => f.threshold >= this.remainingCount);
-            this.characterCountState = thresholds.length > 0 ? thresholds[0].name : this.characterCountState;
+            var thresholds = CHARACTER_COUNT_STATES.filter(
+                (f) => f.threshold >= this.remainingCount,
+            )
+            this.characterCountState =
+                thresholds.length > 0
+                    ? thresholds[0].name
+                    : this.characterCountState
         },
     },
 
