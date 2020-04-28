@@ -11,7 +11,7 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide">
+            <div class="swiper-slide scrollable">
                 <div id="leftside">
                     @include('inc.sidebar')
                 </div>

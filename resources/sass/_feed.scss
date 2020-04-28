@@ -10,8 +10,8 @@ $feed-teal: #41b9aa;
     flex: 1 1 auto;
 }
 
-.swiper-slide {
-    /* overflow-y: scroll; */
+.swiper-slide.scrollable {
+    overflow-y: scroll;
 }
 
 .swiper-pagination {
