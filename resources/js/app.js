@@ -101,7 +101,7 @@ $(() => {
             el: '.swiper-pagination',
             clickable: true,
             renderBullet: function (index, className) {
-                return '<span class="swirvy-box ' + className + '">' + ((index === 0) ? "Resources" : "Feed") + '</span>';
+                return '<span class="swirvy-box ' + className + '">' + ((index === 0) ? "Feed" : "Resources") + '</span>';
             },
         },
         navigation: {
