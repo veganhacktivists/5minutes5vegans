@@ -13,14 +13,14 @@
             <!-- Slides -->
             <div class="swiper-slide scrollable">
                 <div id="leftside">
-                    @include('inc.flag-list')
-                    @include('inc.twitter')
+                    @include('inc.sidebar')
                 </div>
             </div>
             <div class="swiper-slide">
                 <div id="rightside">
                     <div id="rightside-inner">
-                        @include('inc.sidebar')
+                        @include('inc.flag-list')
+                        @include('inc.twitter')
                     </div>
                 </div>
             </div>
