@@ -329,6 +329,10 @@ $feed-teal: #41b9aa;
         }
     }
 
+    .twitter-timeline, .twitter-timeline p {
+        font-size: 20px !important;
+    }
+
     .footer {
         display: flex;
         padding-bottom: 4rem;
