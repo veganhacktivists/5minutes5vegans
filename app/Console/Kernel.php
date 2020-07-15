@@ -23,7 +23,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(GenerateTweetsCommand::class)->everyMinute();
+        $schedule->command(GenerateTweetsCommand::class)->everyMinute()->emailOutputOnFailure('admin@veganhacktivists.org');;
     }
 
     /**
