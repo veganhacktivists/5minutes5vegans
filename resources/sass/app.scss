@@ -64,6 +64,7 @@ $xx-swirve: 22px;
 
 .swirvy-box {
     @extend .swirvy-box-left, .swirvy-box-right;
+    outline: none;
 }
 
 .col-xs-5ths,
