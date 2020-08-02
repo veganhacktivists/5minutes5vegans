@@ -80,7 +80,7 @@
                     v-on:keyup="characterCountdown"
                     :placeholder="[[defaultMessage]]"
                 ></textarea>
-				<p style="font-color:#007539;">Want to write and copy your own resources? <a href="" style="font-size: 16px;"><u>Register</u></a> or <a href="" style="font-size: 16px;"><u>Login</u></a>!
+				<p style="color:#19443a;">Want to write and copy your own resources? <a href="" style="font-size: 16px;"><u>Register</u></a> or <a href="" style="font-size: 16px;"><u>Login</u></a>!
 				<small class="cc-count" :class="characterCountState">{{remainingCount}}</small></p>
                 <button
                     data-toggle="tooltip"
