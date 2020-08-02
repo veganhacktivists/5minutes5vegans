@@ -75,10 +75,12 @@
                     v-model="selected.body"
                     class="w-100 p-3"
                     rows="4"
+					style="font-size: 18px;"
                     v-bind:disabled="busy"
                     v-on:keyup="characterCountdown"
                     :placeholder="[[defaultMessage]]"
                 ></textarea>
+				<p style="font-color:#1c522apx;">Want to write and copy your own resources? <a href="" style="font-size: 16px;"><u>Register</u></a> or <a href="" style="font-size: 16px;"><u>Login</u></a>!</p>
                 <button
                     data-toggle="tooltip"
                     class="btn btn-link copy-btn"
