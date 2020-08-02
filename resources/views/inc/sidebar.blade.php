@@ -5,6 +5,7 @@
     @include('inc.feed-nav')
 </div>
 
+<!--
 <div class="d-flex justify-content-between">
     <h3 id="easy-to-copy-resources" class="pb-1">@lang('EASY TO COPY RESOURCES')</h3>
     <div id="auth-links-inline">
@@ -18,6 +19,7 @@
         @endguest
     </div>
 </div>
+-->
 
 <script>
     var customVerbiages = @json($verbiages);
