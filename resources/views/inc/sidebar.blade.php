@@ -27,12 +27,12 @@
 
 <verbiages></verbiages>
 
-<div class="footer mt-4" style="
+<div class="footer" style="
     border-radius: 10px;
     border: solid 3px #33363b;
     padding: 10px;
 ">
         
-        <div class="text-center font-serif mt-4 px-4">Website hosted and designed by <a href="https://veganhacktivists.org/" target="_blank">Vegan Hacktivists</a> with love               <i class="far fa-heart"></i>
+        <div class="font-serif">Website hosted and designed by <a href="https://veganhacktivists.org/" target="_blank">Vegan Hacktivists</a> with love               <i class="far fa-heart"></i>
       </div>
 </div>
