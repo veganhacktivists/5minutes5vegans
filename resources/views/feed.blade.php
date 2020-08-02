@@ -15,6 +15,10 @@
                 <div id="leftside">
                     @include('inc.sidebar')
                 </div>
+				<div class="footer" style="border-radius: 10px;border: solid 2px #33363b;padding: 10px;">    
+<div class="font-serif" style="background-color: #33363b;padding-left: 10px;font-family: Open Sans,Montserrat,Helvetica,Arial,sans-serif;">A project by the <a href="https://veganhacktivists.org/" target="_blank">Vegan Hacktivists</a>&nbsp;&nbsp;<i class="far fa-heart"></i>
+</div>
+</div>
             </div>
             <div class="swiper-slide">
                 <div id="rightside">
