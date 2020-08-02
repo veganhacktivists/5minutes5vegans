@@ -80,7 +80,8 @@
                     v-on:keyup="characterCountdown"
                     :placeholder="[[defaultMessage]]"
                 ></textarea>
-				<p style="font-color:#007539;">Want to write and copy your own resources? <a href="" style="font-size: 16px;"><u>Register</u></a> or <a href="" style="font-size: 16px;"><u>Login</u></a>!</p>
+				<p style="font-color:#007539;">Want to write and copy your own resources? <a href="" style="font-size: 16px;"><u>Register</u></a> or <a href="" style="font-size: 16px;"><u>Login</u></a>!
+				<small class="cc-count" :class="characterCountState">{{remainingCount}}</small></p>
                 <button
                     data-toggle="tooltip"
                     class="btn btn-link copy-btn"
@@ -91,7 +92,6 @@
                 >
                     <i class="fa-fw fas fa-copy"></i>
                 </button>
-                <small class="cc-count" :class="characterCountState">{{remainingCount}}</small>
                 <button
                     class="btn btn-link close-btn"
                     v-if="!editing && verbiageMsgToggled"
