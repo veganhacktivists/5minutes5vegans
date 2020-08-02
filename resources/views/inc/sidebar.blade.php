@@ -33,6 +33,6 @@
     padding: 10px;
 ">
         
-        <div class="font-serif" style="padding-left: 10px;font-family: Open Sans,Montserrat,Helvetica,Arial,sans-serif;">Website hosted and designed by <a href="https://veganhacktivists.org/" target="_blank">Vegan Hacktivists</a> with love               <i class="far fa-heart"></i>
+        <div class="font-serif" style="padding-left: 10px;font-family: Open Sans,Montserrat,Helvetica,Arial,sans-serif;">A project by the <a href="https://veganhacktivists.org/" target="_blank">Vegan Hacktivists</a>&nbsp;&nbsp;<i class="far fa-heart"></i>
       </div>
 </div>
