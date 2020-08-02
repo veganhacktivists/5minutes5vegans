@@ -12,13 +12,14 @@
         <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide scrollable">
-                <div id="leftside">
-                    @include('inc.sidebar')
-                </div>
-				<div class="footer" style="background-color: #33363b;border: solid 2px #33363b;padding: 10px;">    
+							<div class="footer" style="background-color: #33363b;border: solid 2px #33363b;padding: 10px;">    
 <div class="font-serif" style="padding-left: 10px;font-family: Open Sans,Montserrat,Helvetica,Arial,sans-serif;">A project by the <a href="https://veganhacktivists.org/" target="_blank">Vegan Hacktivists</a>&nbsp;&nbsp;<i class="far fa-heart"></i>
 </div>
 </div>
+                <div id="leftside">
+                    @include('inc.sidebar')
+                </div>
+
             </div>
             <div class="swiper-slide">
                 <div id="rightside">
