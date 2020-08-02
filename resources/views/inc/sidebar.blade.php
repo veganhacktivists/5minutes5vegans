@@ -29,7 +29,7 @@
 
 <div class="footer" style="
     border-radius: 10px;
-    border: solid 3px #33363b;
+    border: solid 2px #33363b;
     padding: 10px;
 ">
         
