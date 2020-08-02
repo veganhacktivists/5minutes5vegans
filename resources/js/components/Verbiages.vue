@@ -80,7 +80,7 @@
                     v-on:keyup="characterCountdown"
                     :placeholder="[[defaultMessage]]"
                 ></textarea>
-				<p style="font-color:#1c522apx;">Want to write and copy your own resources? <a href="" style="font-size: 16px;"><u>Register</u></a> or <a href="" style="font-size: 16px;"><u>Login</u></a>!</p>
+				<p style="font-color:#007539;">Want to write and copy your own resources? <a href="" style="font-size: 16px;"><u>Register</u></a> or <a href="" style="font-size: 16px;"><u>Login</u></a>!</p>
                 <button
                     data-toggle="tooltip"
                     class="btn btn-link copy-btn"
