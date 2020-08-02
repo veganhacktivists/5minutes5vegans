@@ -21,18 +21,7 @@
         @lang('sidebar.minutes-left')
     </div>
 </div>
-<div id="auth-links-beneath" class="row">
-    <div class="col text-center">
-        @auth
-            {{ link_to_route('logout', __('Logout'), null, ['class' => 'auth-link', 'onclick' => 'event.preventDefault(); $("#logout-form").submit();']) }}
-        @endauth
-        @guest
-            {{ link_to_route('register', __('register'), null, array('class' => 'auth-link')) }}
-            or
-            {{ link_to_route('login', __('login'), null, array('class' => 'auth-link')) }}
-        @endguest
-    </div>
-</div>
+
 
 <div class="col text-center timer-section-beneath">
     <div class="timer-display">
