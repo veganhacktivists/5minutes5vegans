@@ -60,6 +60,7 @@ $feed-teal: #41b9aa;
 
     @include for-tablet-portrait-up {
         display: block;
+		padding-bottom: 20px;
     }
 }
 
