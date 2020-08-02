@@ -330,7 +330,7 @@ return [
 
     [
         'icon' => 'fas fa-meh-blank',
-        'title' => 'La comida vegana aburre',
+        'title' => 'Aburrida',
         'body' =>[
             [
                 'Se puede hacer una versión vegana de casi toda la comida que conoces, sólo tienes que saber cocinarla o dónde comprarla\.'
