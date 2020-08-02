@@ -27,9 +27,12 @@
 
 <verbiages></verbiages>
 
-<div class="footer mt-4">
-        <img src="https://i.imgur.com/xSHDo4E.png" height="100">
-        <div class="text-center font-serif mt-4 px-4">@lang('landing.credits', [ 'link' => link_to('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) ])
-              <i class="far fa-heart"></i>
+<div class="footer mt-4" style="
+    border-radius: 10px;
+    border: solid 3px #33363b;
+    padding: 10px;
+">
+        
+        <div class="text-center font-serif mt-4 px-4">Website hosted and designed by <a href="https://veganhacktivists.org/" target="_blank">Vegan Hacktivists</a> with love               <i class="far fa-heart"></i>
       </div>
 </div>
