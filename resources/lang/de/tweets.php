@@ -5,7 +5,7 @@ require_once(app_path('generate_and_cache_tinyurl.php'));
 return [
     [
         'icon' => 'fas fa-info-circle',
-        'title' => 'Allgemeine Informationen',
+        'title' => 'Allgemeine',
         'body' =>[
             [
                 'Du solltest es tun! Die meisten Veganer sagen, dass das einzige, was sie bereuen ist, dass sie nicht schon füher angefangen haben\.'

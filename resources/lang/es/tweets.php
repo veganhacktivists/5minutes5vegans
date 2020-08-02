@@ -6,7 +6,7 @@ return [
 
     [
         'icon' => 'fas fa-info-circle',
-        'title' => 'Información general',
+        'title' => 'Información',
         'body' =>[
             [
                 '¡Bien hecho! La mayoría de los veganos lamentamos no haber empezado antes\.'
@@ -290,7 +290,7 @@ return [
 
     [
         'icon' => 'fas fa-flask',
-        'title' => 'Consenso científico',
+        'title' => 'Consenso',
         'body' =>[
             [
                 'Hoy en día existe consenso en que el veganismo es más sano que una dieta con carnes\.'
@@ -316,7 +316,7 @@ return [
 
     [
         'icon' => 'fas fa-leaf',
-        'title' => 'Qué pereza cocinar',
+        'title' => 'Cocinando',
         'body' =>[
             [
                 'Muchos veganos, en vez de cocinar, compran procesados veganos o comen en restaurantes\.'
