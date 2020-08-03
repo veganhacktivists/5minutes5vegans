@@ -258,7 +258,7 @@ export default {
             this.editing = true
             this.custom = true
             this.selected = {
-                title: 'New message',
+                title: 'Enter title',
                 icon: 'fas fa-leaf',
                 body: this.selected.body,
             }
