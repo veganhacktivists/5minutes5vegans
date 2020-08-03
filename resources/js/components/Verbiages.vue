@@ -18,6 +18,11 @@
 				<a href="#"><div
                     v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
                     class="d-inline-block py-1 px-2 verbiage-switch"
+					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: #bcdcf0;"
+                >Edit Profile</div></a>
+				<a href="#"><div
+                    v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
+                    class="d-inline-block py-1 px-2 verbiage-switch"
 					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: #e9d0d0;"
                 >Logout</div></a>
             </div>
