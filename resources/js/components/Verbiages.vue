@@ -2,19 +2,19 @@
     <div>
         <div class="d-flex justify-content-end" style="margin: 6px;background-color: #e7f9ec;border: 2px solid #c1e1ce;margin-bottom: 15px;">
             <div v-if="customVerbiages.length" style="margin: 10px;">
-                <div
+                <a href="#"><div
                     role="button"
                     v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
                     v-on:click="custom = false"
                     class="d-inline-block py-1 px-2 verbiage-switch"
 					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                >Default</div>
-                <div
+                >Default</div></a>
+                <a href="#"><div
                     v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
                     v-on:click="custom = true"
                     class="d-inline-block py-1 px-2 verbiage-switch"
 					style="padding: 5px 20px 5px 20px !important;"
-                >Customized</div>
+                >Customized</div></a>
             </div>
         </div>
         <div class="row px-3" v-if="defaultVerbiages">
