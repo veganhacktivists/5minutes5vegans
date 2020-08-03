@@ -67,7 +67,7 @@
                         v-model="selected.title"
                     />
                 </div>
-                <div v-else class="verbiage-link" style"white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                <div v-else class="verbiage-link" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
                     <i :class="verbiage.icon"></i>
                     <p>{{ verbiage.title }}</p>
                 </div>
