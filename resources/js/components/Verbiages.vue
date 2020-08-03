@@ -18,7 +18,7 @@
 				<a href="#"><div
                     v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
                     class="d-inline-block py-1 px-2 verbiage-switch"
-					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: rgb(151 216 180)"
+					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: rgb(151 216 180);"
                 >Edit Profile</div></a>
 				<a href="#"><div
                     v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
