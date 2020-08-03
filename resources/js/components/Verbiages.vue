@@ -107,6 +107,7 @@
                     class="btn btn-primary"
                     v-on:click="createVerbiage"
                     v-bind:disabled="busy"
+					style="margin-bottom: 15px;margin-top: 15px;"
                 >New</button>
                 <button
                     v-if="editing"
@@ -120,6 +121,7 @@
                     v-on:click="startEditing"
                     class="btn btn-primary"
                     v-bind:disabled="busy"
+					style="margin-bottom: 15px;"
                 >Edit</button>
                 <button
                     v-if="(selected.id && editing) || creating"
