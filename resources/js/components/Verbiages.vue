@@ -101,7 +101,7 @@
                 </button>
             </div>
 
-            <div v-if="customVerbiages" class="col-auto d-flex flex-column justify-content-between">
+            <div v-if="customVerbiages" class="col-auto d-flex flex-column">
                 <button
                     v-if="!editing"
                     class="btn btn-primary"
