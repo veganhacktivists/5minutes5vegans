@@ -114,6 +114,7 @@
                     class="btn btn-success"
                     v-on:click="saveVerbiage"
                     v-bind:disabled="busy"
+					style="margin-bottom: 15px;"
                 >Save</button>
 
                 <button
@@ -128,6 +129,7 @@
                     class="btn btn-warning"
                     v-on:click="endEditing"
                     v-bind:disabled="busy"
+					style="margin-bottom: 15px;"
                 >Cancel</button>
 
                 <button
