@@ -116,7 +116,7 @@
                     class="btn btn-success"
                     v-on:click="saveVerbiage"
                     v-bind:disabled="busy"
-					style="margin-bottom: 15px;"
+					style="margin-bottom: 15px;margin-top: 15px;"
                 >Save</button>
 
                 <button
