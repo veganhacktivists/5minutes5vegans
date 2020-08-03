@@ -30,7 +30,7 @@
                 v-on:click="selectVerbiage(verbiage)"
                 class="verbiage-container col-sm-3 px-1"
             >
-                <div class="verbiage-link">
+                <div class="verbiage-link" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
                     <i :class="verbiage.icon" class="fa-fw"></i>
                     <p>{{ verbiage.title }}</p>
                 </div>
