@@ -136,7 +136,7 @@
                     class="btn btn-warning"
                     v-on:click="endEditing"
                     v-bind:disabled="busy"
-					style="margin-bottom: 15px;"
+					style="margin-bottom: 15px;color: #fff;background-color: #ff8989;border-color: #ff8989;"
                 >Cancel</button>
 
                 <button
