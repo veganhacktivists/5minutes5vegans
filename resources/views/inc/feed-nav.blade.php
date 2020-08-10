@@ -27,6 +27,7 @@
     <div class="timer-display">
         <div class="minutes">05</div>
         <div class="seconds">00</div>
+        <a id="resetLink" href="#"><span><i class="fas fa-undo fa-sm" style="color:red"></i></span></a>
     </div>
     <div id="minutes-left" class="text-center">
         @lang('sidebar.minutes-left')
