@@ -138,3 +138,12 @@ $(window).scroll(function() {
         $('#landing-logo-mobile').removeClass('logo-scroll');
     }
 });
+
+
+/**********************((((((********
+ * Script to set focus on page load *
+ ************************************/
+function FocusOnInput()
+{
+     document.getElementById("languageFlags").focus();
+}
