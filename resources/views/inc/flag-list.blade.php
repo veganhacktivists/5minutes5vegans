@@ -1,4 +1,4 @@
-<ul class="flag-list">
+<ul class="flag-list" id="languageFlags">
     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
     <li class="flag-item {{ (LaravelLocalization::getCurrentLocale() == $localeCode) ? 'flag-item-selected' : '' }}">
     <div class="d-flex ">

@@ -17,7 +17,7 @@
 
     </head>
 
-    <body class="d-flex flex-column">
+    <body class="d-flex flex-column" onload="FocusOnInput()">
 
         @yield('page_content')
 
