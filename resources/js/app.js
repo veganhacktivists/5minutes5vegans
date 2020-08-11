@@ -140,10 +140,29 @@ $(window).scroll(function() {
 });
 
 
-/**********************((((((********
+/************************************
  * Script to set focus on page load *
- ************************************/
-function FocusOnInput()
+ ************************************
+window.onload = function()
 {
      document.getElementById("languageFlags").focus();
+}
+/*
+
+/************************************
+ * Script to reset the timer *
+ ************************************/
+window.onload = function()
+{
+    // set the focus to the language bar 
+    document.getElementById("languageFlags").focus();
+
+    // reset the timer by clicking the icon
+    var a = document.getElementById("resetLink");
+
+     a.onclick = function() {
+         
+        startTimer();
+        return false;
+    }
 }
