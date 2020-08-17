@@ -15,7 +15,7 @@
                     class="d-inline-block py-1 px-2 verbiage-switch"
 					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
                 >Customized</div></a>
-				<a href="#"><div
+				<!--<a href="#"><div
                     v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
                     class="d-inline-block py-1 px-2 verbiage-switch"
 					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: rgb(151 216 180);"
@@ -23,8 +23,8 @@
 				<a href="#"><div
                     v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
                     class="d-inline-block py-1 px-2 verbiage-switch"
-					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: #e9d0d0;"
-                >Logout</div></a>
+					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: #e9d0d0;"                    
+                >Logout</div></a>-->
             </div>
         </div>
         <div class="row px-3" v-if="defaultVerbiages">
@@ -92,9 +92,7 @@
                     v-on:keyup="characterCountdown"
                     :placeholder="[[defaultMessage]]"
                 ></textarea>
-                <p v-if="isGuest" style="color:#19443a;">Want to write and copy your own resources? <a href="/register" style="font-size: 16px;color:#EC361F;"><u>Register</u></a> or <a href="/login" style="font-size: 16px;color:#EC361F;"><u>Log in</u></a>!
 				<small class="cc-count" :class="characterCountState">{{remainingCount}}</small></p>
-                <p v-else>You are logged in</p>
                 <button
                     data-toggle="tooltip"
                     class="btn btn-link copy-btn"
