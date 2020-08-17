@@ -25,4 +25,4 @@
     var customVerbiages = @json($verbiages);
 </script>
 
-<verbiages></verbiages>
+<verbiages :is-guest="{{ json_encode(auth()->guest()) }}"></verbiages>
