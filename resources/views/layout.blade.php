@@ -30,7 +30,12 @@
     <body class="d-flex flex-column">
 
         @yield('page_content')
+        
+        @include('inc.footer')
 
     </body>
+
+    
+
 </html>
 
