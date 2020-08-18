@@ -1,4 +1,3 @@
-<footer class="footer mt-auto py-3">
 <div class="container-fluid container-fluid-max">
     <div class="row">
     <div class="col-12 col-md-6 col-lg-4 text-center">
@@ -15,4 +14,3 @@
     </div>
     </div>
 </div>
-</footer>
