@@ -9,7 +9,7 @@ use App\Verbiage;
 class FeedController extends Controller
 {
 
-    public function index() {
+    public function __invoke() {
 
         if(Auth::check())
             $verbiages = Auth::user()->verbiages;
