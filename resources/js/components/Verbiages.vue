@@ -198,7 +198,9 @@ export default {
             editing: false,
             creating: false,
             busy: false,
-            selected: {},
+            selected: {
+                body: ''
+            },
             maxCount: 280, // The maximum characters allowed by Twitter
             remainingCount: 280,
             defaultMessage:
@@ -227,7 +229,7 @@ export default {
 
         endEditing: function() {
             if (this.creating) {
-                this.selected = { body: defaultMessage }
+                this.selected = { body: this.defaultMessage }
                 this.customVerbiages.pop()
                 this.creating = false
 
