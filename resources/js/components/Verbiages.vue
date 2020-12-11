@@ -33,9 +33,14 @@
                 v-for="verbiage in defaultVerbiages"
                 v-bind:key="verbiage.id"
                 v-on:click="selectVerbiage(verbiage)"
+                v-bind:class="{ active: selected.id == verbiage.id }"
                 class="verbiage-container col-sm-3 px-1"
             >
-                <div class="verbiage-link" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                <div
+                    v-bind:class="{ active: selected.id == verbiage.id }"
+                    class="verbiage-link"
+                    style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
+                >
                     <i :class="verbiage.icon" class="fa-fw"></i>
                     <p>{{ verbiage.title }}</p>
                 </div>
@@ -72,7 +77,12 @@
                         v-model="selected.title"
                     />
                 </div>
-                <div v-else class="verbiage-link" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                <div
+                    v-else
+                    v-bind:class="{ active: selected.id == verbiage.id }"
+                    class="verbiage-link"
+                    style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
+                >
                     <i :class="verbiage.icon"></i>
                     <p>{{ verbiage.title }}</p>
                 </div>
