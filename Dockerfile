@@ -21,5 +21,3 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN a2enmod rewrite
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
-
-# RUN echo "Listen :8080 >> /etc/apache2/apache2.conf"
