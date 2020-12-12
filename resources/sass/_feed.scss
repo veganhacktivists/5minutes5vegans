@@ -247,6 +247,16 @@ $feed-teal: #41b9aa;
         cursor: pointer;
     }
 
+    &:hover,
+    &:focus,
+    &.active {
+        color: #ec361f !important;
+        border-top-color: #ec361f;
+        p {
+            color: inherit;
+        }
+    }
+
     i {
         /*font-size: 50px;*/
         /*padding-bottom: 10px;*/
