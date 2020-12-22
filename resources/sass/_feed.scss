@@ -367,7 +367,7 @@ $feed-teal: #41b9aa;
 
 #leftside {
 	color: $feed-teal;
-    min-height: 100vh;
+    min-height: calc(100vh - 56px);
     padding: 30px;
     padding-top: 0;
 
