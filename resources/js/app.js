@@ -152,17 +152,16 @@ window.onload = function()
 /************************************
  * Script to reset the timer *
  ************************************/
-window.onload = function()
-{
+window.onload = function () {
     // set the focus to the language bar 
     document.getElementById("languageFlags").focus();
 
     // reset the timer by clicking the icon
-    var a = document.getElementById("resetLink");
-
-     a.onclick = function() {
-         
-        startTimer();
-        return false;
-    }
+    var as = document.querySelectorAll("#resetLink");
+    as.forEach(function (a) {
+        a.onclick = function () {
+            startTimer();
+            return false;
+        }
+    });
 }
