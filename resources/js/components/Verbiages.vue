@@ -33,11 +33,10 @@
                 v-for="verbiage in defaultVerbiages"
                 v-bind:key="verbiage.id"
                 v-on:click="selectVerbiage(verbiage)"
-                v-bind:class="{ active: selected.id == verbiage.id }"
                 class="verbiage-container col-sm-3 px-1"
             >
                 <div
-                    v-bind:class="{ active: selected.id == verbiage.id }"
+                    v-bind:class="{ active: selected.title == verbiage.title }"
                     class="verbiage-link"
                     style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                 >
