@@ -8,6 +8,7 @@
         <div class="timer-display">
             <div class="minutes">05</div>
             <div class="seconds">00</div>
+            <a id="resetLink" href="#"><span><i class="fas fa-undo fa-sm" style="color:red"></i></span></a>
         </div>
     </div>
     <div class="col text-right">
@@ -17,18 +18,6 @@
     </div>
 </nav>
 <div class="timer-section-middle">
-    <div id="minutes-left" class="text-center">
-        @lang('sidebar.minutes-left')
-    </div>
-</div>
-
-
-<div class="col text-center timer-section-beneath">
-    <div class="timer-display">
-        <div class="minutes">05</div>
-        <div class="seconds">00</div>
-        <a id="resetLink" href="#"><span><i class="fas fa-undo fa-sm" style="color:red"></i></span></a>
-    </div>
     <div id="minutes-left" class="text-center">
         @lang('sidebar.minutes-left')
     </div>

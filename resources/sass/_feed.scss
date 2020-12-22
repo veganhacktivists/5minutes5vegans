@@ -75,20 +75,8 @@ $feed-teal: #41b9aa;
 .timer-section-middle {
     display: none;
 
-    @include for-lg-desktop-up {
+    @include for-desktop-up {
         display: block;
-    }
-}
-
-.timer-section-beneath {
-    display:none;
-
-    @include for-tablet-landscape-up {
-        display: block;
-    }
-
-    @include for-lg-desktop-up {
-        display: none;
     }
 }
 
