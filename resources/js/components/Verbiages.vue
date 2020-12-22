@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="verbiage-menu">
-            <div v-if="customVerbiages.length" style="margin: 10px;" class="d-flex">
-                <div class="flex-grow-1 d-flex align-items-center greeting" v-id="currentUser">Welcome, {{ currentUser.name }}!</div>
+            <div v-if="currentUser" style="margin: 10px;" class="d-flex">
+                <div class="flex-grow-1 d-flex align-items-center greeting">Welcome, {{ currentUser.name }}!</div>
                 <a href="#"><div
                     role="button"
                     v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
@@ -21,11 +21,23 @@
                     class="d-inline-block py-1 px-2 verbiage-switch"
 					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: rgb(151 216 180);"
                 >Edit Profile</div></a>
-				<a href="#"><div
+				<a v-bind:href="routes.login"><div
                     v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
                     class="d-inline-block py-1 px-2 verbiage-switch"
 					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: #e9d0d0;"                    
                 >Logout</div></a>-->
+            </div>
+            <div v-else style="margin: 10px;" class="d-flex">
+                <div class="flex-grow-1 d-flex align-items-center greeting">Welcome, guest!</div>
+                <a href="#"><div
+                    role="button"
+                    class="d-inline-block py-1 px-2 verbiage-switch verbiage-active"
+					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                >Default</div></a>
+                <a v-bind:href="routes.login"><div
+                    class="d-inline-block py-1 px-2 verbiage-switch verbiage-inactive"
+					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                >Customized</div></a>
             </div>
         </div>
         <div class="row px-3" v-if="defaultVerbiages">
@@ -195,6 +207,7 @@ export default {
             defaultVerbiages: false,
             currentUser: window.currentUser,
             customVerbiages: window.customVerbiages,
+            routes: window.routes,
             custom: false,
             editing: false,
             creating: false,
