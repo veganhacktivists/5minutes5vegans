@@ -23,6 +23,9 @@
 
 <script>
     var customVerbiages = @json($verbiages);
+    @auth
+        var currentUser = @json(['name' => Auth::user()->name]);
+    @endauth
 </script>
 
 <verbiages></verbiages>

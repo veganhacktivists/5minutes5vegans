@@ -192,6 +192,18 @@ $feed-teal: #41b9aa;
     }
 }
 
+.verbiage-menu {
+    margin: 6px;
+    background-color: #e7f9ec;
+    border: 2px solid #c1e1ce;
+    margin-bottom: 15px;
+
+    .greeting {
+        color: #19443a;
+        font-size: 22px;
+    }
+}
+
 .verbiage-container {
     width: 100%;
     padding-bottom: 5px;

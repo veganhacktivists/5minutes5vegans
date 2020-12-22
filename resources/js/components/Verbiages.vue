@@ -1,7 +1,8 @@
 <template>
     <div>
-        <div class="d-flex justify-content-end" style="margin: 6px;background-color: #e7f9ec;border: 2px solid #c1e1ce;margin-bottom: 15px;">
-            <div v-if="customVerbiages.length" style="margin: 10px;">
+        <div class="verbiage-menu">
+            <div v-if="customVerbiages.length" style="margin: 10px;" class="d-flex">
+                <div class="flex-grow-1 d-flex align-items-center greeting" v-id="currentUser">Welcome, {{ currentUser.name }}!</div>
                 <a href="#"><div
                     role="button"
                     v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
@@ -192,6 +193,7 @@ export default {
     data: function() {
         return {
             defaultVerbiages: false,
+            currentUser: window.currentUser,
             customVerbiages: window.customVerbiages,
             custom: false,
             editing: false,
