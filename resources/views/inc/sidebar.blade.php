@@ -23,6 +23,7 @@
 
 <script>
     var customVerbiages = @json($verbiages);
+    var routes = @json(['login' => route('login'), 'logout' => route('logout')]);
     @auth
         var currentUser = @json(['name' => Auth::user()->name]);
     @endauth
