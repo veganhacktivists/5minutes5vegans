@@ -24,7 +24,7 @@
 				<a v-bind:href="routes.login"><div
                     v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
                     class="d-inline-block py-1 px-2 verbiage-switch"
-					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: #e9d0d0;"                    
+					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: #e9d0d0;"
                 >Logout</div></a>-->
             </div>
             <div v-else style="margin: 10px;" class="d-flex">
@@ -65,32 +65,8 @@
                 v-on:click="selectVerbiage(verbiage)"
                 class="verbiage-container col-sm-3 px-1"
             >
-                <div v-if="selected == verbiage && editing" class="form-row">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary iconpicker-component">
-                            <i class="fas fa-leaf"></i>
-                        </button>
-                        <button
-                            type="button"
-                            class="icp icp-dd btn btn-primary dropdown-toggle"
-                            data-selected="fas fa-leaf"
-                            data-toggle="dropdown"
-                            v-iconpicker="selected.icon"
-                        >
-                            <span class="caret"></span>
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <div class="dropdown-menu"></div>
-                    </div>
-                    <input
-                        v-bind:disabled="busy"
-                        class="form-control"
-                        type="text"
-                        v-model="selected.title"
-                    />
-                </div>
                 <div
-                    v-else
+                    v-if="selected != verbiage || !editing"
                     v-bind:class="{ active: selected.id == verbiage.id }"
                     class="verbiage-link"
                     style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
@@ -103,7 +79,33 @@
 
         <div v-else>Loading supportive messages...</div>
 
-        <div class="p-2 row verbiage-msg-container" ref="verbiageMsgContainer">
+        <div class="p-2 verbiage-msg-container" ref="verbiageMsgContainer">
+            <div v-if="creating || editing">
+                <div class="btn-group mt-3 mb-n2">
+                    <button type="button" class="btn btn-primary iconpicker-component">
+                        <i class="fas fa-leaf"></i>
+                    </button>
+                    <button
+                        type="button"
+                        class="icp icp-dd btn btn-primary dropdown-toggle"
+                        data-selected="fas fa-leaf"
+                        data-toggle="dropdown"
+                        v-iconpicker="selected.icon"
+                    >
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu"></div>
+                    <input
+                        v-bind:disabled="busy"
+                        class="form-control ml-2"
+                        type="text"
+                        style="width:220px;"
+                        v-model="selected.title"
+                    />
+                </div>
+            </div>
+        <div class="row">
             <div class="col verbiage-msg" ref="verbiageMsg">
                 <textarea
                     v-model="selected.body"
@@ -114,7 +116,7 @@
                     v-on:keyup="characterCountdown"
                     :placeholder="[[defaultMessage]]"
                 ></textarea>
-				<small class="cc-count" :class="characterCountState">{{remainingCount}}</small></p>
+				<small class="cc-count" :class="characterCountState">{{remainingCount}}</small>
                 <button
                     data-toggle="tooltip"
                     class="btn btn-link copy-btn"
@@ -172,6 +174,7 @@
                     v-bind:disabled="busy"
                 >Delete</button>
             </div>
+        </div>
         </div>
     </div>
 </template>
