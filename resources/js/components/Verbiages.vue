@@ -24,6 +24,7 @@
                 <a v-bind:href="routes.logout"
                    class="d-inline-block py-1 px-2 verbiage-switch"
                    style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                   onclick="event.preventDefault(); $('#logout-form').submit();"
                    >Logout</a>
             </div>
 
