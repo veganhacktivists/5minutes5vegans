@@ -40,9 +40,18 @@
                    style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
                    >Default</div></a>
                 <a v-bind:href="routes.login"><div
-                    class="d-inline-block py-1 px-2 verbiage-switch verbiage-inactive"
-					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                >Customized</div></a>
+                   class="d-inline-block py-1 px-2 verbiage-switch verbiage-inactive"
+                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                   >Customized</div></a>
+                <a v-bind:href="routes.login"><div
+                   class="d-inline-block py-1 px-2 verbiage-switch"
+                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                   >Login</div></a>
+                <a v-bind:href="routes.register"><div
+                   role="button"
+                   class="d-inline-block py-1 px-2 verbiage-switch"
+                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                   >Register</div></a>
             </div>
         </div>
 
