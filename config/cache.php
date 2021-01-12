@@ -84,6 +84,10 @@ return [
             'table' => env('DYNAMODB_CACHE_TABLE', 'cache'),
         ],
 
+        'none' => [
+            'driver' => 'null',
+        ],
+
     ],
 
     /*
