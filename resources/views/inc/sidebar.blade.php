@@ -18,4 +18,4 @@
     @endauth
 </script>
 
-<verbiages></verbiages>
+<App></App>

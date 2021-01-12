@@ -1,61 +1,5 @@
 <template>
     <div>
-        <div class="verbiage-menu">
-            <div v-if="currentUser" style="margin: 10px;" class="d-flex">
-                <div class="flex-grow-1 d-flex align-items-center greeting">
-                    <p class="m-0">
-                        Welcome, {{ currentUser.name }}!
-                    </p>
-                </div>
-
-                <a href="#"><div
-                   role="button"
-                   v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
-                   v-on:click="custom = false"
-                   class="d-inline-block py-1 px-2 verbiage-switch"
-                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                   >Default</div></a>
-                <a href="#"><div
-                   v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
-                   v-on:click="custom = true"
-                   class="d-inline-block py-1 px-2 verbiage-switch"
-                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                   >Customized</div></a>
-                <a v-bind:href="routes.logout"
-                   class="d-inline-block py-1 px-2 verbiage-switch"
-                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                   onclick="event.preventDefault(); $('#logout-form').submit();"
-                   >Logout</a>
-            </div>
-
-            <div v-else style="margin: 10px;" class="d-flex">
-                <div class="flex-grow-1 d-flex align-items-center greeting">
-                    <p class="mb-0">
-                        Welcome, guest!
-                    </p>
-                </div>
-
-                <a href="#"><div
-                   role="button"
-                   class="d-inline-block py-1 px-2 verbiage-switch verbiage-active"
-                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                   >Default</div></a>
-                <a v-bind:href="routes.login"><div
-                   class="d-inline-block py-1 px-2 verbiage-switch verbiage-inactive"
-                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                   >Customized</div></a>
-                <a v-bind:href="routes.login"><div
-                   class="d-inline-block py-1 px-2 verbiage-switch"
-                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                   >Login</div></a>
-                <a v-bind:href="routes.register"><div
-                   role="button"
-                   class="d-inline-block py-1 px-2 verbiage-switch"
-                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                   >Register</div></a>
-            </div>
-        </div>
-
         <div class="row px-3" v-if="defaultVerbiages">
             <div
                 v-if="!custom"
@@ -95,7 +39,7 @@
 
         <div v-else>Loading supportive messages...</div>
 
-        <div class="p-2 verbiage-msg-container" ref="verbiageMsgContainer">
+        <div class="verbiage-msg-container" ref="verbiageMsgContainer">
             <div v-if="creating || editing">
                 <div class="btn-group mt-3 mb-n2">
                     <button type="button" class="btn btn-primary iconpicker-component">
@@ -222,13 +166,13 @@ function setVueModel(obj, str, val) {
 }
 
 export default {
+    props: ['custom'],
+
     data: function() {
         return {
             defaultVerbiages: false,
             currentUser: window.currentUser,
             customVerbiages: window.customVerbiages,
-            routes: window.routes,
-            custom: false,
             editing: false,
             creating: false,
             busy: false,

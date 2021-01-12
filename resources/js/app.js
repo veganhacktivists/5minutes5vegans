@@ -52,7 +52,9 @@ function updateTimer() {
 
 Vue.use(Clipboard)
 
-Vue.component('verbiages', require('./components/Verbiages.vue').default)
+Vue.component('App', require('./components/App.vue').default)
+Vue.component('Menu', require('./components/Menu.vue').default)
+Vue.component('Verbiages', require('./components/Verbiages.vue').default)
 
 // Register CSRF token for use with vue-resource
 let token = document.head.querySelector('meta[name="csrf-token"]')
@@ -69,8 +71,8 @@ if (token) {
 
 $(() => {
     initializeMdForm()
-    if ($('verbiages').length) {
-        new Vue({ el: 'verbiages' })
+    if ($('app').length) {
+        new Vue({ el: 'App' })
     }
 })
 
