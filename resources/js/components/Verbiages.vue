@@ -3,7 +3,7 @@
         <div class="verbiage-menu">
             <div v-if="currentUser" style="margin: 10px;" class="d-flex">
                 <div class="flex-grow-1 d-flex align-items-center greeting">
-                    <p>
+                    <p class="m-0">
                         Welcome, {{ currentUser.name }}!
                     </p>
                 </div>
