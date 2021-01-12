@@ -2,44 +2,50 @@
     <div>
         <div class="verbiage-menu">
             <div v-if="currentUser" style="margin: 10px;" class="d-flex">
-                <div class="flex-grow-1 d-flex align-items-center greeting">Welcome, {{ currentUser.name }}!</div>
+                <div class="flex-grow-1 d-flex align-items-center greeting">
+                    <p>
+                        Welcome, {{ currentUser.name }}!
+                    </p>
+                </div>
+
                 <a href="#"><div
-                    role="button"
-                    v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
-                    v-on:click="custom = false"
-                    class="d-inline-block py-1 px-2 verbiage-switch"
-					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                >Default</div></a>
+                   role="button"
+                   v-bind:class="{ 'verbiage-active': !custom, 'verbiage-inactive': custom }"
+                   v-on:click="custom = false"
+                   class="d-inline-block py-1 px-2 verbiage-switch"
+                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                   >Default</div></a>
                 <a href="#"><div
-                    v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
-                    v-on:click="custom = true"
-                    class="d-inline-block py-1 px-2 verbiage-switch"
-					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                >Customized</div></a>
-				<!--<a href="#"><div
-                    v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
-                    class="d-inline-block py-1 px-2 verbiage-switch"
-					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: rgb(151 216 180);"
-                >Edit Profile</div></a>
-				<a v-bind:href="routes.login"><div
-                    v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
-                    class="d-inline-block py-1 px-2 verbiage-switch"
-					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;background-color: #e9d0d0;"
-                >Logout</div></a>-->
+                   v-bind:class="{ 'verbiage-active': custom, 'verbiage-inactive': !custom }"
+                   v-on:click="custom = true"
+                   class="d-inline-block py-1 px-2 verbiage-switch"
+                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                   >Customized</div></a>
+                <a v-bind:href="routes.logout"
+                   class="d-inline-block py-1 px-2 verbiage-switch"
+                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                   >Logout</a>
             </div>
+
             <div v-else style="margin: 10px;" class="d-flex">
-                <div class="flex-grow-1 d-flex align-items-center greeting">Welcome, guest!</div>
+                <div class="flex-grow-1 d-flex align-items-center greeting">
+                    <p class="mb-0">
+                        Welcome, guest!
+                    </p>
+                </div>
+
                 <a href="#"><div
-                    role="button"
-                    class="d-inline-block py-1 px-2 verbiage-switch verbiage-active"
-					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
-                >Default</div></a>
+                   role="button"
+                   class="d-inline-block py-1 px-2 verbiage-switch verbiage-active"
+                   style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
+                   >Default</div></a>
                 <a v-bind:href="routes.login"><div
                     class="d-inline-block py-1 px-2 verbiage-switch verbiage-inactive"
 					style="margin-right: 10px;padding: 5px 20px 5px 20px !important;"
                 >Customized</div></a>
             </div>
         </div>
+
         <div class="row px-3" v-if="defaultVerbiages">
             <div
                 v-if="!custom"
@@ -47,12 +53,12 @@
                 v-bind:key="verbiage.id"
                 v-on:click="selectVerbiage(verbiage)"
                 class="verbiage-container col-sm-3 px-1"
-            >
+                >
                 <div
                     v-bind:class="{ active: selected.title == verbiage.title }"
                     class="verbiage-link"
                     style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
-                >
+                    >
                     <i :class="verbiage.icon" class="fa-fw"></i>
                     <p>{{ verbiage.title }}</p>
                 </div>
@@ -64,13 +70,13 @@
                 v-bind:key="index"
                 v-on:click="selectVerbiage(verbiage)"
                 class="verbiage-container col-sm-3 px-1"
-            >
+                >
                 <div
                     v-if="selected != verbiage || !editing"
                     v-bind:class="{ active: selected.id == verbiage.id }"
                     class="verbiage-link"
                     style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
-                >
+                    >
                     <i :class="verbiage.icon"></i>
                     <p>{{ verbiage.title }}</p>
                 </div>
@@ -91,7 +97,7 @@
                         data-selected="fas fa-leaf"
                         data-toggle="dropdown"
                         v-iconpicker="selected.icon"
-                    >
+                        >
                         <span class="caret"></span>
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
@@ -102,79 +108,80 @@
                         type="text"
                         style="width:220px;"
                         v-model="selected.title"
-                    />
+                        />
                 </div>
             </div>
-        <div class="row">
-            <div class="col verbiage-msg" ref="verbiageMsg">
-                <textarea
-                    v-model="selected.body"
-                    class="w-100 p-3"
-                    rows="4"
-					style="font-size: 18px;"
-                    v-bind:disabled="busy"
-                    v-on:keyup="characterCountdown"
-                    :placeholder="[[defaultMessage]]"
-                ></textarea>
-				<small class="cc-count" :class="characterCountState">{{remainingCount}}</small>
-                <button
-                    data-toggle="tooltip"
-                    class="btn btn-link copy-btn"
-                    v-if="!editing"
-                    v-clipboard="() => selected.body"
-                    v-clipboard:success="clipboardSuccessHandler"
-                    v-clipboard:error="clipboardErrorHandler"
-                >
-                    <i class="fa-fw fas fa-copy"></i>
-                </button>
-                <button
-                    class="btn btn-link close-btn"
-                    v-if="!editing && verbiageMsgToggled"
-                    v-on:click="toggleVerbiageMsg(false)"
-                >
-                    <i class="fa-fw fas fa-times"></i>
-                </button>
+
+            <div class="row">
+                <div class="col verbiage-msg" ref="verbiageMsg">
+                    <textarea
+                        v-model="selected.body"
+                        class="w-100 p-3"
+                        rows="4"
+                        style="font-size: 18px;"
+                        v-bind:disabled="busy"
+                        v-on:keyup="characterCountdown"
+                        :placeholder="[[defaultMessage]]"
+                        ></textarea>
+                    <small class="cc-count" :class="characterCountState">{{remainingCount}}</small>
+                    <button
+                        data-toggle="tooltip"
+                        class="btn btn-link copy-btn"
+                        v-if="!editing"
+                        v-clipboard="() => selected.body"
+                        v-clipboard:success="clipboardSuccessHandler"
+                        v-clipboard:error="clipboardErrorHandler"
+                        >
+                        <i class="fa-fw fas fa-copy"></i>
+                    </button>
+                    <button
+                        class="btn btn-link close-btn"
+                        v-if="!editing && verbiageMsgToggled"
+                        v-on:click="toggleVerbiageMsg(false)"
+                        >
+                        <i class="fa-fw fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div v-if="customVerbiages" class="col-auto d-flex flex-column">
+                    <button
+                        v-if="!editing"
+                        class="btn btn-primary"
+                        v-on:click="createVerbiage"
+                        v-bind:disabled="busy"
+                        style="margin-bottom: 15px;margin-top: 15px;"
+                        >New</button>
+                    <button
+                        v-if="editing"
+                        class="btn btn-success"
+                        v-on:click="saveVerbiage"
+                        v-bind:disabled="busy"
+                        style="margin-bottom: 15px;margin-top: 15px;"
+                        >Save</button>
+
+                    <button
+                        v-if="selected.id && !editing"
+                        v-on:click="startEditing"
+                        class="btn btn-primary"
+                        v-bind:disabled="busy"
+                        style="margin-bottom: 15px;"
+                        >Edit</button>
+                    <button
+                        v-if="(selected.id && editing) || creating"
+                        class="btn btn-warning"
+                        v-on:click="endEditing"
+                        v-bind:disabled="busy"
+                        style="margin-bottom: 15px;color: #fff;background-color: #ff8989;border-color: #ff8989;"
+                        >Cancel</button>
+
+                    <button
+                        v-if="selected.id && !creating"
+                        class="btn btn-danger"
+                        v-on:click="deleteVerbiage"
+                        v-bind:disabled="busy"
+                        >Delete</button>
+                </div>
             </div>
-
-            <div v-if="customVerbiages" class="col-auto d-flex flex-column">
-                <button
-                    v-if="!editing"
-                    class="btn btn-primary"
-                    v-on:click="createVerbiage"
-                    v-bind:disabled="busy"
-					style="margin-bottom: 15px;margin-top: 15px;"
-                >New</button>
-                <button
-                    v-if="editing"
-                    class="btn btn-success"
-                    v-on:click="saveVerbiage"
-                    v-bind:disabled="busy"
-					style="margin-bottom: 15px;margin-top: 15px;"
-                >Save</button>
-
-                <button
-                    v-if="selected.id && !editing"
-                    v-on:click="startEditing"
-                    class="btn btn-primary"
-                    v-bind:disabled="busy"
-					style="margin-bottom: 15px;"
-                >Edit</button>
-                <button
-                    v-if="(selected.id && editing) || creating"
-                    class="btn btn-warning"
-                    v-on:click="endEditing"
-                    v-bind:disabled="busy"
-					style="margin-bottom: 15px;color: #fff;background-color: #ff8989;border-color: #ff8989;"
-                >Cancel</button>
-
-                <button
-                    v-if="selected.id && !creating"
-                    class="btn btn-danger"
-                    v-on:click="deleteVerbiage"
-                    v-bind:disabled="busy"
-                >Delete</button>
-            </div>
-        </div>
         </div>
     </div>
 </template>
@@ -220,8 +227,7 @@ export default {
             },
             maxCount: 280, // The maximum characters allowed by Twitter
             remainingCount: 280,
-            defaultMessage:
-                'Click any of the subjects above to get a clear-cut message to swiftly copy and send.',
+            defaultMessage: 'Click any of the subjects above to get a clear-cut message to swiftly copy and send.',
             characterCountState: 'cc-is-fine',
             verbiageMsgToggled: false,
         }
@@ -358,8 +364,8 @@ export default {
             )
             this.characterCountState =
                 thresholds.length > 0
-                    ? thresholds[0].name
-                    : this.characterCountState
+                ? thresholds[0].name
+                : this.characterCountState
         },
     },
 

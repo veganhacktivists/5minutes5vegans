@@ -1,6 +1,3 @@
-<!-- <div class="text-center">
-    <a href="{{ route('feed') }}"><img class="w-50 logo" src="{{ asset('images/logo.png') }}"/></a>
-</div> -->
 <div id="feed-nav-2">
     @include('inc.feed-nav')
 </div>
@@ -30,17 +27,3 @@
 </script>
 
 <verbiages></verbiages>
-
-@guest
-<p style="color:#19443a;">
-    Want to write and copy your own resources? 
-    {{ link_to_route('register', __('Register'), null, array('style' => 'font-size: 16px;color:#EC361F;')) }} or 
-    {{ link_to_route('login', __('Login'), null, array('style' => 'font-size: 16px;color:#EC361F;')) }}!
-</p>
-@endguest
-@auth
-<p style="color:#19443a;">
-    Welcome, {{ Auth::user()->name }}!  You can click here to
-    {{ link_to_route('logout', __('log out'), null, ['style' => 'font-size: 16px;color:#EC361F;', 'onclick' => 'event.preventDefault(); $("#logout-form").submit();']) }}.
-</p>
-@endauth
