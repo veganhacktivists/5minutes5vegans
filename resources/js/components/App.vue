@@ -2,7 +2,7 @@
    <div>
       <Menu
          @navigate="page = $event"
-         @switchVerbiage="custom = $event"
+         @toggleVerbiage="custom = $event"
          :custom="custom"
          />
 
@@ -13,10 +13,12 @@
 
 <script>
 export default {
-   data: () => ({
-      custom: false,
-      page: 'verbiages',
-      routes: window.routes,
-   })
+   data () {
+      return {
+         custom: false,
+         page: 'verbiages',
+         routes: window.routes,
+      }
+   }
 }
 </script>

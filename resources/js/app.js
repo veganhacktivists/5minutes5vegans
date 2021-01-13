@@ -55,6 +55,7 @@ Vue.use(Clipboard)
 Vue.component('App', require('./components/App.vue').default)
 Vue.component('Menu', require('./components/Menu.vue').default)
 Vue.component('Verbiages', require('./components/Verbiages.vue').default)
+Vue.component('UserEdit', require('./components/UserEdit.vue').default)
 
 // Register CSRF token for use with vue-resource
 let token = document.head.querySelector('meta[name="csrf-token"]')
@@ -102,13 +103,11 @@ $(() => {
             el: '.swiper-pagination',
             clickable: true,
             renderBullet: function(index, className) {
-                return (
-                    '<span class="swirvy-box ' +
-                    className +
-                    '">' +
-                    (index === 0 ? 'Resources' : 'Feed') +
-                    '</span>'
-                )
+                return `
+                <span class="swirvy-box ${classname}">${
+                    index === 0 ? 'resources' : 'feed'
+                }</span>
+                `
             },
         },
         navigation: {

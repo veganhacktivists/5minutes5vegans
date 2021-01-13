@@ -10,15 +10,20 @@
          <a href="#"
             role="button"
             :class="{ 'active': !custom }"
-            @click="$emit('navigate', 'verbiages'), $emit('switchVerbiage', false)"
+            @click.prevent="$emit('navigate', 'verbiages'), $emit('toggleVerbiage', false)"
             class="verbiage-switch"
             >Default</a>
          <a href="#"
             role="button"
             :class="{ 'active': custom }"
-            @click="$emit('navigate', 'verbiages'), $emit('switchVerbiage', true)"
+            @click.prevent="$emit('navigate', 'verbiages'), $emit('toggleVerbiage', true)"
             class="verbiage-switch"
             >Customized</a>
+         <a href="#"
+            @click.prevent="$emit('navigate', 'userEdit')"
+            role="button"
+            style="background-color: #BCDCF0"
+            >Edit Profile</a>
          <a href="#"
             onclick="event.preventDefault(); $('#logout-form').submit();"
             role="button"
@@ -56,11 +61,13 @@
 
 <script>
 export default {
-   data: () => ({
-      currentUser: window.currentUser,
-      routes: window.routes
-   }),
+   props: ['custom'],
 
-   props: ['custom']
+   data () {
+      return {
+         currentUser: window.currentUser,
+         routes: window.routes
+      }
+   },
 }
 </script>
