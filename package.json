@@ -24,7 +24,7 @@
         "bootstrap": "^4.3.1",
         "fontawesome-iconpicker": "^3.2.0",
         "intercooler": "^1.2.2",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "popper": "^1.0.1",
         "popper.js": "^1.15.0",
         "swiper": "^5.2.0",
