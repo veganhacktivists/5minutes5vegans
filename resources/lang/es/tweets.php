@@ -233,7 +233,7 @@ return [
             [
                 'Todo tipo de comida: verduras, frutas, semillas, etc tiene proteínas, de las que no necesitamos tantas\.'
             ], [
-                'Este enlace trata el tema: ' . generate_and_cache_tinyurl('https://vegetarianismo.net/nutricion/proteinas.htm') . ' más en: ' . generate_and_cache_tinyurl('https://yourveganfallacyis.com/es/veganos-no-pueden-obtener-suficiente-proteina/fuentes'). ' y ' . generate_and_cache_tinyurl('https://www.vivahealth.org.uk/resources/protein-myth-fact-sheet').  ' si tienes dudas o quieres más infornación aquí estoy 😊'
+                'Este enlace trata el tema: ' . generate_and_cache_tinyurl('https://vegetarianismo.net/nutricion/proteinas.htm') . ' más en: ' . generate_and_cache_tinyurl('https://yourveganfallacyis.com/es/veganos-no-pueden-obtener-suficiente-proteina/fuentes'). ' y ' . generate_and_cache_tinyurl('https://viva.org.uk/materials/protein-myth-fact-sheet/').  ' si tienes dudas o quieres más infornación aquí estoy 😊'
             ]
         ]
     ],

@@ -42,7 +42,7 @@ $(document).ready(function(){
       $('#txtarea').val('Actually that\'s what I thought at first too haha! Here\'s that argument and other common arguments debunked: http://bit.ly/ebookearthlingedsurge and there\'s also a playlist on youtube on it: https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G #vegan #5m5v');
   });
   $("#protein").click(function(){
-      $('#txtarea').val('Almost all foods, vegetables, fruits, seeds, all have protein, which we don\'t need a lot of. Here\'s a link that goes over the protein/meat myth: https://www.vivahealth.org.uk/resources/protein-myth-fact-sheet and video: https://www.youtube.com/watch?v=1elt5YCRLbk #vegan #5m5v');
+      $('#txtarea').val('Almost all foods, vegetables, fruits, seeds, all have protein, which we don\'t need a lot of. Here\'s a link that goes over the protein/meat myth: https://viva.org.uk/materials/protein-myth-fact-sheet/ and video: https://www.youtube.com/watch?v=1elt5YCRLbk #vegan #5m5v');
   });
   $("#fitness").click(function(){
       $('#txtarea').val('The worlds strongest man is a Vegan and there\'s so many more world records in fitness/strength held by Vegans! Working out on a plant-based diet is better for your training. Videos: https://www.youtube.com/results?search_query=vegan+fitness and Community: https://www.reddit.com/r/veganfitness/ #vegan #5m5v');
