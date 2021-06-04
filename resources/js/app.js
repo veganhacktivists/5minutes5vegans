@@ -8,7 +8,7 @@ require('./bootstrap')
 window.Vue = require('vue')
 require('vue-resource')
 require('fontawesome-iconpicker')
-import Swiper from 'swiper'
+import Swiper from 'swiper/bundle'
 import Clipboard from 'v-clipboard'
 
 /*********
@@ -104,7 +104,7 @@ $(() => {
             clickable: true,
             renderBullet: function(index, className) {
                 return `
-                <span class="swirvy-box ${classname}">${
+                <span class="swirvy-box ${className}">${
                     index === 0 ? 'resources' : 'feed'
                 }</span>
                 `
