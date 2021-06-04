@@ -224,7 +224,7 @@ return [
             [
                 'Almost all foods, vegetables, fruits, seeds, all have protein, which we don\'t need a lot of\.'
             ], [
-                'Here\'s a link that goes over the protein/meat myth: ' . generate_and_cache_tinyurl('https://www.vivahealth.org.uk/resources/protein-myth-fact-sheet') . ' and video: ' . generate_and_cache_tinyurl('https://www.youtube.com/watch?v=1elt5YCRLbk')
+                'Here\'s a link that goes over the protein/meat myth: ' . generate_and_cache_tinyurl('https://viva.org.uk/materials/protein-myth-fact-sheet/') . ' and video: ' . generate_and_cache_tinyurl('https://www.youtube.com/watch?v=1elt5YCRLbk')
             ]
         ]
     ],
