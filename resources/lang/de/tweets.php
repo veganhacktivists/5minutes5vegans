@@ -283,7 +283,7 @@ return [
         'title' => 'Environment',
         'body' =>[
             [
-                'There\'s really daunting statistics on what Meat and Dairy industry (Animal Agriculture) is doing to the Environment, all backed up with sources & studies: ' . generate_and_cache_tinyurl('https://youaretheirvoice.com/pages/the-daunting-facts') . ' Example: Animal agriculture is responsible for up to 91% of Amazon destruction\.'
+                'There\'s really daunting statistics on what Meat and Dairy industry (Animal Agriculture) is doing to the Environment, all backed up with sources & studies: ' . generate_and_cache_tinyurl('https://speciesjustice.org/environment') . ' Example: Animal agriculture is responsible for up to 91% of Amazon destruction\.'
             ]
         ]
     ],

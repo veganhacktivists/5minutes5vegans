@@ -54,7 +54,7 @@ $(document).ready(function(){
       $('#txtarea').val('Eating out is sometimes hard when you don\'t know where to go or what to eat but it does get much easier as time goes on & pretty soon you\'ll be an expert on what to get. Until then check this site out: http://happycow.net for Vegan food around your area! 🐮 #vegan #5m5v');
   });
   $("#environment").click(function(){
-      $('#txtarea').val('There\'s really daunting statistics on what Meat and Dairy industry (Animal Agriculture) is doing to the Environment, all backed up with sources & studies: https://youaretheirvoice.com/pages/the-daunting-facts Example: Animal agriculture is responsible for up to 91% of Amazon destruction. #vegan #5m5v');
+      $('#txtarea').val('There\'s really daunting statistics on what Meat and Dairy industry (Animal Agriculture) is doing to the Environment, all backed up with sources & studies: https://speciesjustice.org/environment Example: Animal agriculture is responsible for up to 91% of Amazon destruction. #vegan #5m5v');
   });
   $("#agrees").click(function(){
       $('#txtarea').val('In today\'s age it\'s widely accepted that Veganism is healthier than a meat-eating diet. Here\'s a page that pulls sources directly from the world\'s largest Health, Nutrition and Dietary organizations (so from non-biased organizations): https://youaretheirvoice.com/pages/the-clear-consensus #vegan #5m5v');

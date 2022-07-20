@@ -283,7 +283,7 @@ return [
         'title' => 'Medio ambiente',
         'body' =>[
             [
-                'Hay estadísticas basadas en artículos y estudios realmente agobiantes sobre lo que las industrias cárnica y láctea están haciéndole al medio ambiente: ' . generate_and_cache_tinyurl('https://youaretheirvoice.com/pages/the-daunting-facts') . ' Ej: la ganadería es responsable de hasta un 91% de la destrucción del Amazonas\.'
+                'Hay estadísticas basadas en artículos y estudios realmente agobiantes sobre lo que las industrias cárnica y láctea están haciéndole al medio ambiente: ' . generate_and_cache_tinyurl('https://speciesjustice.org/environment') . ' Ej: la ganadería es responsable de hasta un 91% de la destrucción del Amazonas\.'
             ]
         ]
     ],
