@@ -179,3 +179,10 @@ $xx-swirve: 22px;
         color: $pink;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .iframecontent {
+        display: flex;
+        align-items: center;
+    }
+}
