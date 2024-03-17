@@ -1,12 +1,13 @@
 <div id="Twitter" class="iframecontent">
     <a
-        href="https://twitter.com/5m5v_{{ App::getLocale() }}"
         class="twitter-timeline"
+        data-handle="5m5v_{{ App::getLocale() }}"
         data-lang="{{ App::getLocale() }}"
         data-theme="light"
+        data-height="850"
         data-link-color="#19CF86">
     </a>
-    <div class="twitter-timeline" id="timeline-loading">
+    <div id="timeline-loading">
         <strong>@lang('twitter.loading')</strong>
         <div class="mt-3">
             <p>
@@ -21,8 +22,7 @@
         </div>
     </div>
     <script
-        async
-        src="https://platform.twitter.com/widgets.js"
+        src="https://www.athabasca.dev/content/scripts/widget.js"
         charset="utf-8"
         onload="document.getElementById('timeline-loading').remove()">
     </script>
