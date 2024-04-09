@@ -22,5 +22,3 @@
         @lang('sidebar.minutes-left')
     </div>
 </div>
-
-{{ Form::open(['route' => 'logout', 'id' => 'logout-form']) }}{{ Form::close() }}

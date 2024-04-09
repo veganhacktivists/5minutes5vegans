@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -10,27 +10,29 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "axios": "^0.21",
-        "cross-env": "^5.1",
-        "laravel-mix": "^4.0.7",
+        "axios": "^1.6.8",
+        "cross-env": "^7.0.3",
+        "laravel-mix": "^6.0.49",
         "lodash": "^4.17.21",
-        "resolve-url-loader": "^2.3.1",
-        "sass": "^1.15.2",
-        "sass-loader": "^7.1.0",
-        "vue-template-compiler": "^2.6.10"
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.74.1",
+        "sass-loader": "^14.1.1",
+        "vue-template-compiler": "^2.7.16"
     },
     "dependencies": {
-        "5m5v-bot": "^1.1.0",
-        "bootstrap": "^4.3.1",
+        "5m5v-bot": "^1.5.1",
+        "@popperjs/core": "^2.11.8",
+        "bootstrap": "^4.6.2",
         "fontawesome-iconpicker": "^3.2.0",
-        "intercooler": "^1.2.2",
-        "jquery": "^3.5.0",
+        "intercooler": "^1.2.3",
+        "jquery": "^3.7.1",
         "popper": "^1.0.1",
-        "popper.js": "^1.15.0",
-        "swiper": "^6.5.1",
-        "v-clipboard": "^2.2.2",
-        "vue": "^2.6.10",
-        "vue-resource": "^1.5.1",
-        "webpack": "^4.39.0"
+        "popper.js": "^1.16.1",
+        "swiper": "^11.1.0",
+        "v-clipboard": "3.0.0-next.1",
+        "vue": "^2.7.16",
+        "vue-loader": "^15.10.0",
+        "vue-resource": "^1.5.3",
+        "webpack": "^5.91.0"
     }
 }

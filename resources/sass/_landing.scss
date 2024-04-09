@@ -202,12 +202,12 @@ p {
 }
 
 #main {
-  background-image: url(images/landing/background-cows.jpg);
+  background-image: url(/images/landing/background-cows.jpg);
   background-position: top;
 }
 
 #home {
-  background-image: url(images/landing/banner-top.png);
+  background-image: url(/images/landing/banner-top.png);
   background-position: bottom;
   padding-top: 6rem;
   margin-bottom: -4rem;
@@ -217,7 +217,7 @@ p {
 
 #process {
   z-index: 1;
-  background-image: url(images/landing/banner-activism.png);
+  background-image: url(/images/landing/banner-activism.png);
   background-position: top;
   margin-top: -5rem;
   padding-top: 5rem;
