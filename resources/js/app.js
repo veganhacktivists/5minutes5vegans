@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap')
-window.Vue = require('vue')
+window.Vue = require('vue').default
 require('vue-resource')
 require('fontawesome-iconpicker')
 import Swiper from 'swiper/bundle'
