@@ -1,15 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Mailchimp;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -39,7 +41,7 @@ class User extends Authenticatable
     ];
 
     public function verbiages() {
-        return $this->hasMany('App\Verbiage');
+        return $this->hasMany('App\Models\Verbiage');
     }
 
     public function isSubscribedToNewsletter()
