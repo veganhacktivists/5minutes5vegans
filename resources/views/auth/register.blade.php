@@ -20,7 +20,7 @@
             </span>
         @enderror
 
-        <input type="email" name="email" class="form-control text-uppercase mb-1{{ $errors->has('email') ? ' is-invalid' : '' }}" required placeholder="{{ __('Your Email') }}" value="{{ old('email') }}"/>
+        <input type="email" name="email" class="form-control text-uppercase mb-1 @error('password') is-invalid @enderror" required placeholder="{{ __('Your Email') }}" value="{{ old('email') }}"/>
 
         @if ($errors->has('email'))
             <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
             </span>
         @endif
 
-        <input type="password" name="password" class="form-control text-uppercase mb-1{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ __('Password') }}" value="{{ old('password') }}"/>
+        <input type="password" name="password" class="form-control text-uppercase mb-1 @error('password') is-invalid @enderror" required placeholder="{{ __('Password') }}" value="{{ old('password') }}"/>
 
         @error('password')
             <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
             </span>
         @enderror
 
-        <input type="password" name="password_confirmation" class="form-control text-uppercase mb-1{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" required placeholder="{{ __('Confirm Password') }}" value="{{ old('password_confirmation') }}"/>
+        <input type="password" name="password_confirmation" class="form-control text-uppercase mb-1 @error('password_confirmation') is-invalid @enderror" required placeholder="{{ __('Confirm Password') }}" value="{{ old('password_confirmation') }}"/>
 
         @error('password_confirmation')
             <span class="invalid-feedback" role="alert">

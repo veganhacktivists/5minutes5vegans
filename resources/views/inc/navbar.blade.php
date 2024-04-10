@@ -28,7 +28,9 @@
     </div>
     <div class="col-auto">
         @guest
-            {{ link_to_route( 'register', __('Register') ) }} {{__('or')}} {{ link_to_route( 'login', __('Login') ) }}
+            <a href="{{ route('register') }}">@lang('Register')</a>
+            @lang('or')
+            <a href="{{ route('login') }}">@lang('Login')</a>
         @endguest
 
         @auth

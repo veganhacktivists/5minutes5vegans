@@ -1,19 +1,14 @@
 @extends('auth.passwords.reset-layout')
 
 @section('card_body')
-{{ Form::open( [ 'route' => 'password.update' ] ) }}
-
+<form method="post" action="{{ route('password.update') }}">
+    @csrf
     <input type="hidden" name="token" value="{{ $token }}">
 
     <div class="form-group row">
 
         <div class="col-md-8 offset-md-2">
-            {{ Form::email('email', false, [
-                'class' => 'form-control text-white' . ($errors->has('email') ? ' is-invalid' : ''),
-                'required' => true,
-                'autofocus' => true,
-                'placeholder' => 'YOUR EMAIL ADDRESS',
-            ]) }}
+            <input type="email" class="form-control text-white @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus placeholder="YOUR EMAIL ADDRESS" />
 
             @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -26,11 +21,7 @@
     <div class="form-group row">
 
         <div class="col-md-8 offset-md-2">
-            {{ Form::password('password', [
-                'class' => 'form-control text-white' . ($errors->has('password') ? ' is-invalid' : ''),
-                'required' => true,
-                'placeholder' => 'NEW PASSWORD'
-            ]) }}
+            <input type="password" class="form-control text-white @error('password') is-invalid @enderror" name="password" value="{{ old('password')  }}" required placeholder="NEW PASSWORD" />
 
             @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -43,11 +34,7 @@
     <div class="form-group row">
 
         <div class="col-md-8 offset-md-2">
-            {{ Form::password('password_confirmation', [
-                'class' => 'form-control text-white' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
-                'required' => true,
-                'placeholder' => 'CONFIRM PASSWORD',
-            ]) }}
+            <input type="password" class="form-control text-white @error('password_confirmation') is-invalid @enderror" name="password_confirmation" value="{{ old('password_confirmation') }}" required placeholder="CONFIRM PASSWORD" />
 
             @error('password_confirmation')
                 <span class="invalid-feedback" role="alert">
@@ -59,8 +46,10 @@
 
     <div class="form-group row mb-0">
         <div class="col-md-5 ml-auto">
-            {{ Form::submit(__('Reset Password'), ['class' => 'btn btn-primary swirvy-box']) }}
+            <button type="submit" class="btn btn-primary swirvy-box">
+                {{ __('Reset Password') }}
+            </button>
         </div>
     </div>
-{{ Form::close() }}
+</form>
 @endsection
