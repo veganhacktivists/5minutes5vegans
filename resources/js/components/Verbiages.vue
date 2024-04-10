@@ -160,7 +160,9 @@ function setVueModel(obj, str, val) {
 }
 
 export default {
-    props: ['custom'],
+    props: {
+        custom: Boolean
+    },
 
     data: function() {
         return {
@@ -244,7 +246,7 @@ export default {
         createVerbiage: function() {
             this.creating = true
             this.editing = true
-            this.custom = true
+            this.$emit('update:custom', true)
             this.selected = {
                 title: 'Enter title',
                 icon: 'fas fa-leaf',
