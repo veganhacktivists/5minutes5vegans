@@ -10,13 +10,9 @@
     <p class="mt-3">
         @lang('loginregister.intro')
     </p>
-    {{ Form::open( [ 'route' => 'register' ] ) }}
-        {{ Form::text('name', false, [
-            'class' => 'form-control text-uppercase mb-1' . ($errors->has('name') ? ' is-invalid' : ''),
-            'required' => true,
-            'autofocus' => true,
-            'placeholder' => __('Your Name'),
-        ]) }}
+    <form method="post" action="{{ route('register') }}">
+        @csrf
+        <input type="text" name="name" class="form-control text-uppercase mb-1{{ $errors->has('name') ? ' is-invalid' : '' }}" required placeholder="{{ __('Your Name') }}" value="{{ old('name') }}"/>
 
         @error('name')
             <span class="invalid-feedback" role="alert">
@@ -24,11 +20,7 @@
             </span>
         @enderror
 
-        {{ Form::email('email', false, [
-            'class' => 'form-control text-uppercase mb-1' . ($errors->has('email') ? ' is-invalid' : ''),
-            'required' => true,
-            'placeholder' => __('Your Email'),
-        ]) }}
+        <input type="email" name="email" class="form-control text-uppercase mb-1{{ $errors->has('email') ? ' is-invalid' : '' }}" required placeholder="{{ __('Your Email') }}" value="{{ old('email') }}"/>
 
         @if ($errors->has('email'))
             <span class="invalid-feedback" role="alert">
@@ -36,11 +28,7 @@
             </span>
         @endif
 
-        {{ Form::password('password', [
-            'class' => 'form-control text-uppercase mb-1' . ($errors->has('password') ? ' is-invalid' : ''),
-            'required' => true,
-            'placeholder' => __('Password'),
-        ]) }}
+        <input type="password" name="password" class="form-control text-uppercase mb-1{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ __('Password') }}" value="{{ old('password') }}"/>
 
         @error('password')
             <span class="invalid-feedback" role="alert">
@@ -48,11 +36,7 @@
             </span>
         @enderror
 
-        {{ Form::password('password_confirmation', [
-            'class' => 'form-control text-uppercase mb-1' . ($errors->has('password_confirmation') ? ' is-invalid' : ''),
-            'required' => true,
-            'placeholder' => __('Confirm Password'),
-        ]) }}
+        <input type="password" name="password_confirmation" class="form-control text-uppercase mb-1{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" required placeholder="{{ __('Confirm Password') }}" value="{{ old('password_confirmation') }}"/>
 
         @error('password_confirmation')
             <span class="invalid-feedback" role="alert">
@@ -75,14 +59,11 @@
 
         <div class="form-inline">
             <div class="form-check">
-                {{ Form::checkbox('newsletter-check', null, false, [
-                    "class" => "form-check-input",
-                    "id" => "newsletter-check",
-                ]) }}
+                <input type="checkbox" name="newsletter-check" class="form-check-input" id="newsletter-check" value="{{ old('newsletter-check') }}"/>
                 <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">@lang('loginregister.newsletter')</label>
             </div>
-            {{ Form::submit(__('Create Account'), ['class' => 'btn btn-large btn-primary swirvy-box ml-auto']) }}
+            <button type="submit" class="btn btn-primary swirvy-box ml-auto">@lang('Create Account ')</button>
         </div>
-    {{ Form::close() }}
+    </form>
 @endsection
 
