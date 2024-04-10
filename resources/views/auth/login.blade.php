@@ -29,6 +29,6 @@
     </form>
 
     <div class="d-flex w-100">
-        <a href="{{ route('password.reset', ['token' => ' ']) }}" class="small ml-auto mt-3">Forgot password?</a>
+        <a href="{{ route('password.update') }}" class="small ml-auto mt-3">Forgot password?</a>
     </div>
 @endsection
