@@ -170,6 +170,7 @@ export default {
             creating: false,
             busy: false,
             selected: {
+                icon: 'fas fa-leaf',
                 body: ''
             },
             maxCount: 280, // The maximum characters allowed by Twitter
@@ -317,17 +318,13 @@ export default {
     },
 
     directives: {
-        iconpicker: {
-            inserted: function(el, binding, vnode) {
-                $(el)
-                    .iconpicker()
-                    .on('iconpickerSelected', function(event) {
-                        const value = event.iconpickerValue
-
-                        setVueModel(vnode.context, binding.expression, value)
-                    })
-            },
-        },
+        iconpicker: (el, binding, vnode) => {
+            $(el)
+                .iconpicker()
+                .on('iconpickerSelected', function(event) {
+                    binding.instance.selected.icon = event.iconpickerValue
+                })
+        }
     },
 }
 </script>
