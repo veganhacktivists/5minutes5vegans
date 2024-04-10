@@ -8,7 +8,7 @@ require('./bootstrap')
 require('fontawesome-iconpicker')
 window.axios = require('axios')
 import Swiper from 'swiper/bundle'
-// import Clipboard from 'v-clipboard'
+import Clipboard from 'v-clipboard'
 import { createApp } from 'vue'
 import App from './components/App.vue'
 
@@ -74,7 +74,7 @@ if (token) {
 $(() => {
     initializeMdForm()
     if ($('app').length) {
-        createApp(App).mount('app')
+        createApp(App).use(Clipboard).mount('app')
     }
 })
 

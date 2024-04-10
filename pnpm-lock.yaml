@@ -23,9 +23,6 @@ dependencies:
   jquery:
     specifier: ^3.7.1
     version: 3.7.1
-  popper.js:
-    specifier: ^1.16.1
-    version: 1.16.1
   swiper:
     specifier: ^11.1.0
     version: 11.1.0

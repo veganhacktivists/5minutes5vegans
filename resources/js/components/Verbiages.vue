@@ -81,6 +81,7 @@
                     <button
                         data-toggle="tooltip"
                         class="btn btn-link copy-btn"
+                        id="copy-btn"
                         v-if="!editing"
                         v-clipboard="() => selected.body"
                         v-clipboard:success="clipboardSuccessHandler"
@@ -288,12 +289,12 @@ export default {
             console.error(r)
         },
 
-        clipboardSuccessHandler({ value, event }) {
-            $(event.target).tooltip({
+        clipboardSuccessHandler() {
+            $('#copy-btn').tooltip({
                 title: 'Copied!',
             })
-            $(event.target).tooltip('toggle')
-            setTimeout(() => $(event.target).tooltip('dispose'), 2000)
+            $('#copy-btn').tooltip('toggle')
+            setTimeout(() => $('#copy-btn').tooltip('dispose'), 2000)
 
             this.hideVerbiageMsg()
         },
