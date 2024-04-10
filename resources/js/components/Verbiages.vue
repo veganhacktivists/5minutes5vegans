@@ -150,13 +150,6 @@ const CHARACTER_COUNT_STATES = [
     { name: 'cc-is-fine', threshold: 280 },
 ]
 
-Vue.http.interceptors.push(function(req) {
-    this.busy = true
-    return function(res) {
-        this.busy = false
-    }
-})
-
 function setVueModel(obj, str, val) {
     str = str.split('.')
     while (str.length > 1) {
@@ -188,9 +181,9 @@ export default {
     },
 
     created: function() {
-        this.$http.get('tweets').then(
+        axios.get('tweets').then(
             (r) => {
-                this.defaultVerbiages = r.body
+                this.defaultVerbiages = r.data
             },
             () => {
                 this.created()
@@ -260,13 +253,13 @@ export default {
 
         saveVerbiage: function() {
             if (this.creating)
-                this.$http.post('/verbiage/', this.selected).then((r) => {
-                    this.selected.id = r.body.id
+                axios.post('/verbiage/', this.selected).then((r) => {
+                    this.selected.id = r.data.id
                     this.creating = false
                     this.editing = false
                 }, this.failedRequest)
             else
-                this.$http
+                axios
                     .put('/verbiage/' + this.selected.id, this.selected)
                     .then((r) => {
                         this.editing = false
@@ -283,7 +276,7 @@ export default {
 
             const index = this.customVerbiages.indexOf(this.selected)
 
-            this.$http.delete('/verbiage/' + this.selected.id).then((r) => {
+            axios.delete('/verbiage/' + this.selected.id).then((r) => {
                 this.customVerbiages.splice(index, 1)
                 if (!this.customVerbiages.length) this.custom = false
             }, this.failedRequest)
