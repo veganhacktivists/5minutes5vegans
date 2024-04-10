@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="col-12 col-md-6 col-lg-4 text-center">
-        @lang('Support us on') {{ url('https://www.patreon.com/veganhacktivists', 'Patreon', ['class' => 'lnk', 'target' => '_blank']) }}
+        @lang('Support us on') <a href="https://veganhacktivists.org/support" target="_blank" class="lnk">veganhacktivists.org</a>
     </div>
     </div>
 </div>
