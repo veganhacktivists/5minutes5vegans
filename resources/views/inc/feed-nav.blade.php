@@ -22,3 +22,6 @@
         @lang('sidebar.minutes-left')
     </div>
 </div>
+<form id="logout-form" method="post" action="{{ route('logout') }}">
+    @csrf
+</form>
