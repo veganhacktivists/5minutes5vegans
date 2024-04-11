@@ -42,20 +42,9 @@
         <div class="verbiage-msg-container" ref="verbiageMsgContainer">
             <div v-if="creating || editing">
                 <div class="btn-group mt-3 mb-n2">
-                    <button type="button" class="btn btn-primary iconpicker-component">
-                        <i class="fas fa-leaf"></i>
+                    <button id="icon-select" type="button" class="btn btn-primary" v-iconpicker="selected.icon">
+                        <i :class="selected.icon"></i>
                     </button>
-                    <button
-                        type="button"
-                        class="icp icp-dd btn btn-primary dropdown-toggle"
-                        data-selected="fas fa-leaf"
-                        data-toggle="dropdown"
-                        v-iconpicker="selected.icon"
-                        >
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu"></div>
                     <input
                         v-bind:disabled="busy"
                         class="form-control ml-2"
@@ -142,6 +131,7 @@
 </template>
 
 <script>
+    import IconPicker from 'vanilla-icon-picker';
 // Constant list of character count threshould and their respective class names
 // Note: Make sure to keep these items from the lower threshold to the higher
 const CHARACTER_COUNT_STATES = [
@@ -321,13 +311,18 @@ export default {
     },
 
     directives: {
-        iconpicker: (el, binding, vnode) => {
-            $(el)
-                .iconpicker()
-                .on('iconpickerSelected', function(event) {
-                    binding.instance.selected.icon = event.iconpickerValue
-                })
-        }
-    },
-}
+        iconpicker: {
+            mounted: (el, binding, vnode) => {
+                const iconPicker = new IconPicker(el, {
+                    iconSource: [
+                         'FontAwesome Brands 6',
+                         'FontAwesome Solid 6',
+                        ]
+                });
+                iconPicker.on('select', (icon) => {
+                    binding.instance.selected.icon = icon.value;
+                });
+            },
+        },
+    }}
 </script>

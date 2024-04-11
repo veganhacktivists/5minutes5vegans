@@ -5,7 +5,6 @@
  */
 
 require('./bootstrap')
-require('fontawesome-iconpicker')
 window.axios = require('axios')
 import Swiper from 'swiper/bundle'
 import Clipboard from 'v-clipboard'
