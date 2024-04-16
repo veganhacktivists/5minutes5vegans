@@ -51,10 +51,9 @@ export default {
             })
          }
 
-         this.$http.
-            put(form.action, formData).
-            then(response => alert('All good! 👍')).
-            catch(this.failedRequest)
+          axios.put(form.action, formData)
+            .then(response => alert('All good! 👍'))
+            .catch(this.failedRequest)
       },
 
       failedRequest (response) {

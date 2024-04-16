@@ -20,7 +20,6 @@
         "vue-template-compiler": "^2.7.16"
     },
     "dependencies": {
-        "5m5v-bot": "^1.5.1",
         "@popperjs/core": "^2.11.8",
         "bootstrap": "^4.6.2",
         "intercooler": "^1.2.3",
