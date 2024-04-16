@@ -62,7 +62,7 @@
                 <input type="checkbox" name="newsletter-check" class="form-check-input" id="newsletter-check" value="{{ old('newsletter-check') }}"/>
                 <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">@lang('loginregister.newsletter')</label>
             </div>
-            <button type="submit" class="btn btn-primary swirvy-box ml-auto">@lang('Create Account ')</button>
+            <button type="submit" class="btn btn-primary swirvy-box ml-auto">@lang('Create Account')</button>
         </div>
     </form>
 @endsection
