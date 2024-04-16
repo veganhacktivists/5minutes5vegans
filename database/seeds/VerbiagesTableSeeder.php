@@ -1,6 +1,6 @@
 <?php
 
-use App\Verbiage;
+use App\Models\Verbiage;
 use Illuminate\Database\Seeder;
 
 class VerbiagesTableSeeder extends Seeder
@@ -10,6 +10,6 @@ class VerbiagesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Verbiage::class, 200)->create();
+        Verbiage::factory(200)->create();
     }
 }

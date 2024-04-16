@@ -1,9 +1,10 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Verbiage;
-use Illuminate\Support\Str;
-use Faker\Generator as Faker;
+namespace Database\Factories;
+
+use App\Models\User;
+use App\Models\Verbiage;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,17 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Verbiage::class, function (Faker $faker) {
-    return [
-        'title' => ucfirst($faker->word),
-        'user_id' => App\User::inRandomOrder()->first()->id,
-        'icon' => 'fas fa-leaf',
-        'body' => $faker->paragraph,
-    ];
-});
+class VerbiageFactory extends Factory
+{
+    protected $model = Verbiage::class;
+
+    public function definition()
+    {
+        return [
+            'title' => ucfirst($this->faker->word),
+            'user_id' => User::inRandomOrder()->first()->id,
+            'icon' => 'fas fa-leaf',
+            'body' => $this->faker->paragraph,
+        ];
+    }
+}

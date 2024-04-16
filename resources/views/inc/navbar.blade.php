@@ -22,19 +22,22 @@
         </div>
     </div>
     <div class="col-auto">
-        <a class="text-white btn rounded-pill font-bold btn-sm bg-pink" href="https://www.patreon.com/veganhacktivists" target="_blank">
+        <a class="text-white btn rounded-pill font-bold btn-sm bg-pink" href="https://veganhacktivists.org/support" target="_blank">
             <i class="mr-1 d-md-none d-xl-inline-block fas fa-hand-holding-heart" style="color:#EC361F"></i>@lang('Donate')&nbsp;&nbsp;
         </a>
     </div>
     <div class="col-auto">
         @guest
-            {{ link_to_route( 'register', __('Register') ) }} {{__('or')}} {{ link_to_route( 'login', __('Login') ) }}
+            <a href="{{ route('register') }}">@lang('Register')</a>
+            @lang('or')
+            <a href="{{ route('login') }}">@lang('Login')</a>
         @endguest
 
         @auth
-        {{ Form::open([ 'route' => 'logout']) }}
-            <button type="submit" class="btn btn-primary">{{__('Logout')}}</button>
-        {{ Form::close() }}
+        <form method="post" action="{{ route('logout') }}">
+            @csrf
+            <button type="submit" class="btn btn-primary">@lang('Logout')</button>
+        </form>
         @endauth
     </div>
 </nav>

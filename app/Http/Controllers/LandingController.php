@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Traits\KnowsVerbiages;
-use App\Verbiage;
+use App\Models\Verbiage;
 
 class LandingController extends Controller
 {

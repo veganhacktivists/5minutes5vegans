@@ -24,7 +24,7 @@ header('Location: https://5minutes5vegans.org/mobile');
 <link rel="manifest" href="https://5minutes5vegans.org/manifest.json">
 <link rel="apple-touch-icon" href="/images/icons-512.png">
 <meta name="apple-mobile-web-app-title" content="5M5V">
-<meta name="keywords" content="Vegan, Activism, Activist, Animal Rights, Animal Rights Activist, Vegan Activist, Vegan Activism, You Are Their Voice, YouAreTheirVoice, List, Guide, Get Active, How To, Resources, Speciesism, 5 Minutes 5 Vegans, 5m5v, Compassion, Animals, Animal Liberation, Plant Based">	
+<meta name="keywords" content="Vegan, Activism, Activist, Animal Rights, Animal Rights Activist, Vegan Activist, Vegan Activism, You Are Their Voice, YouAreTheirVoice, List, Guide, Get Active, How To, Resources, Speciesism, 5 Minutes 5 Vegans, 5m5v, Compassion, Animals, Animal Liberation, Plant Based">
 <meta name="description" content="In just 5 minutes you can help 5 or more people become Vegan right now — our vegan robots are constantly scanning social media, they retweet people we think are looking for help with going Vegan!">
 <meta name="author" content="You Are Their Voice - https://youaretheirvoice.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,14 +54,14 @@ header('Location: https://5minutes5vegans.org/mobile');
 <div class="howdoesitwork" style="background-color: #dd3147;">
 <div id="flip"><center><h2 style="color:#fff;background-color:#3b5998;"><a href="#">How does it work? <img id="arrow1" src="https://5minutes5vegans.org/images/arrow.png" alt="Collapse Arrow" style="width:40px;float: right;padding-top: 12px;padding-right: 10px;"></h2></a></center></div>
 <div id="howdoesitwork">
-<p style="background-color: #dd3147;padding: 0px 20px 5px 20px;margin-top: 14px;">Our vegan robots are constantly scanning social media, they retweet people we think are looking for help with going Vegan. Below are a bunch of quick-copy resources you can reply with quickly if you'd like. Simply scroll through the lists on the right and talk to the ones that could use a little help!</p>	
+<p style="background-color: #dd3147;padding: 0px 20px 5px 20px;margin-top: 14px;">Our vegan robots are constantly scanning social media, they retweet people we think are looking for help with going Vegan. Below are a bunch of quick-copy resources you can reply with quickly if you'd like. Simply scroll through the lists on the right and talk to the ones that could use a little help!</p>
 </center>
 </div>
-</div> 
+</div>
 
 <div id="flip2"><center><h2 style="color:#fff;background-color:#33a024;"><a href="#">Easy to copy resources! <img id="arrow2" src="https://5minutes5vegans.org/images/arrow.png" alt="Collapse Arrow" style="width:40px;float: right;padding-top: 12px;padding-right: 10px;"></h2></a></center></div>
 
-<div id="easycopyresources"> 
+<div id="easycopyresources">
 <div class="tab">
   <input type="button" class="topics" value="🤗 General Info" id="general">
   <input type="button" class="topics" value="👊 Challenge 22+" id="22">
@@ -163,7 +163,7 @@ header('Location: https://5minutes5vegans.org/mobile');
 <center><img src="https://5minutes5vegans.org/images/yatv-logo.png" alt="You Are Their Voice Logo" style="width: 350px;"></center>
 <br>
 </div>
-<h2 style="color:#fff;background-color:#e6461a;">Support our Activism on Patreon! <img id="arrow" src="https://5minutes5vegans.org/images/arrow.png" alt="Collapse Arrow" style="width:40px;float: right;padding-top: 12px;padding-right: 10px;"></h2>
+<h2 style="color:#fff;background-color:#e6461a;">Support our Activism! <img id="arrow" src="https://5minutes5vegans.org/images/arrow.png" alt="Collapse Arrow" style="width:40px;float: right;padding-top: 12px;padding-right: 10px;"></h2>
 
 <table style="width:100%; background-color:#ffc83d;">
 <tr>

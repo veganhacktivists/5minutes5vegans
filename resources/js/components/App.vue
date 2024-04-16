@@ -12,7 +12,15 @@
 </template>
 
 <script>
+import Menu from './Menu.vue'
+import Verbiages from './Verbiages.vue'
+import UserEdit from './UserEdit.vue'
 export default {
+   components: {
+     Menu,
+     Verbiages,
+     UserEdit
+   },
    data () {
       return {
          custom: false,

@@ -5,11 +5,11 @@
  */
 
 require('./bootstrap')
-window.Vue = require('vue')
-require('vue-resource')
-require('fontawesome-iconpicker')
+window.axios = require('axios')
 import Swiper from 'swiper/bundle'
 import Clipboard from 'v-clipboard'
+import { createApp } from 'vue'
+import App from './components/App.vue'
 
 /*********
  * TIMER *
@@ -50,21 +50,21 @@ function updateTimer() {
     )
 }
 
-Vue.use(Clipboard)
-
-Vue.component('App', require('./components/App.vue').default)
-Vue.component('Menu', require('./components/Menu.vue').default)
-Vue.component('Verbiages', require('./components/Verbiages.vue').default)
-Vue.component('UserEdit', require('./components/UserEdit.vue').default)
+// Vue.use(Clipboard)
+//
+// Vue.component('App', require('./components/App.vue').default)
+// Vue.component('Menu', require('./components/Menu.vue').default)
+// Vue.component('Verbiages', require('./components/Verbiages.vue').default)
+// Vue.component('UserEdit', require('./components/UserEdit.vue').default)
 
 // Register CSRF token for use with vue-resource
 let token = document.head.querySelector('meta[name="csrf-token"]')
 
 if (token) {
-    Vue.http.interceptors.push((request, next) => {
-        request.headers.set('X-CSRF-TOKEN', token.content)
-        next()
-    })
+    window.axios.defaults.headers.common = {
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRF-TOKEN': token.content,
+    }
 } else
     console.error(
         'CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token',
@@ -73,7 +73,7 @@ if (token) {
 $(() => {
     initializeMdForm()
     if ($('app').length) {
-        new Vue({ el: 'App' })
+        createApp(App).use(Clipboard).mount('app')
     }
 })
 

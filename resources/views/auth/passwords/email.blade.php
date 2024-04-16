@@ -7,16 +7,12 @@
     </div>
 @endif
 
-{{ Form::open( [ 'route' => 'password.email' ] ) }}
+<form method="post" action="{{ route('password.email') }}">
+@csrf
 
     <div class="form-group row">
         <div class="col-md-8 offset-md-2">
-            {{ Form::email('email', false, [
-                'class' => 'form-control text-white' . ($errors->has('email') ? ' is-invalid' : ''),
-                'required' => true,
-                'autofocus' => true,
-                'placeholder' => __('YOUR EMAIL ADDRESS'),
-            ]) }}
+            <input type="email" class="form-control text-white @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus placeholder="{{ __('YOUR EMAIL ADDRESS') }}" />
 
             @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -28,8 +24,10 @@
 
     <div class="form-group row mb-0">
         <div class="col-md-4 offset-md-6">
-            {{ Form::submit(__('Send Password Reset Link'), ['class' => 'btn btn-primary swirvy-box']) }}
+            <button type="submit" class="btn btn-primary swirvy-box">
+                {{ __('Send Password Reset Link') }}
+            </button>
         </div>
     </div>
-{{ Form::close() }}
+</form>
 @endsection
