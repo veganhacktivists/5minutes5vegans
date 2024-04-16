@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="col text-right">
-        <a href="https://www.patreon.com/veganhacktivists" id="donate-button">
+        <a href="https://veganhacktivists.org/support" id="donate-button">
             @lang('Donate') <i class="fa fa-hand-holding-heart"></i>
         </a>
     </div>
@@ -22,5 +22,6 @@
         @lang('sidebar.minutes-left')
     </div>
 </div>
-
-{{ Form::open(['route' => 'logout', 'id' => 'logout-form']) }}{{ Form::close() }}
+<form id="logout-form" method="post" action="{{ route('logout') }}">
+    @csrf
+</form>

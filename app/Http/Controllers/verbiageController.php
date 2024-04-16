@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Verbiage;
+use App\Models\Verbiage;
 
 class VerbiageController extends Controller
 {

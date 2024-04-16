@@ -42,20 +42,9 @@
         <div class="verbiage-msg-container" ref="verbiageMsgContainer">
             <div v-if="creating || editing">
                 <div class="btn-group mt-3 mb-n2">
-                    <button type="button" class="btn btn-primary iconpicker-component">
-                        <i class="fas fa-leaf"></i>
+                    <button id="icon-select" type="button" class="btn btn-primary" v-iconpicker="selected.icon">
+                        <i :class="selected.icon"></i>
                     </button>
-                    <button
-                        type="button"
-                        class="icp icp-dd btn btn-primary dropdown-toggle"
-                        data-selected="fas fa-leaf"
-                        data-toggle="dropdown"
-                        v-iconpicker="selected.icon"
-                        >
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu"></div>
                     <input
                         v-bind:disabled="busy"
                         class="form-control ml-2"
@@ -81,6 +70,7 @@
                     <button
                         data-toggle="tooltip"
                         class="btn btn-link copy-btn"
+                        id="copy-btn"
                         v-if="!editing"
                         v-clipboard="() => selected.body"
                         v-clipboard:success="clipboardSuccessHandler"
@@ -141,6 +131,7 @@
 </template>
 
 <script>
+    import IconPicker from 'vanilla-icon-picker';
 // Constant list of character count threshould and their respective class names
 // Note: Make sure to keep these items from the lower threshold to the higher
 const CHARACTER_COUNT_STATES = [
@@ -149,13 +140,6 @@ const CHARACTER_COUNT_STATES = [
     { name: 'cc-is-warning', threshold: 30 },
     { name: 'cc-is-fine', threshold: 280 },
 ]
-
-Vue.http.interceptors.push(function(req) {
-    this.busy = true
-    return function(res) {
-        this.busy = false
-    }
-})
 
 function setVueModel(obj, str, val) {
     str = str.split('.')
@@ -166,7 +150,9 @@ function setVueModel(obj, str, val) {
 }
 
 export default {
-    props: ['custom'],
+    props: {
+        custom: Boolean
+    },
 
     data: function() {
         return {
@@ -177,6 +163,7 @@ export default {
             creating: false,
             busy: false,
             selected: {
+                icon: 'fas fa-leaf',
                 body: ''
             },
             maxCount: 280, // The maximum characters allowed by Twitter
@@ -188,9 +175,9 @@ export default {
     },
 
     created: function() {
-        this.$http.get('tweets').then(
+        axios.get('tweets').then(
             (r) => {
-                this.defaultVerbiages = r.body
+                this.defaultVerbiages = r.data
             },
             () => {
                 this.created()
@@ -249,7 +236,7 @@ export default {
         createVerbiage: function() {
             this.creating = true
             this.editing = true
-            this.custom = true
+            this.$emit('update:custom', true)
             this.selected = {
                 title: 'Enter title',
                 icon: 'fas fa-leaf',
@@ -260,13 +247,13 @@ export default {
 
         saveVerbiage: function() {
             if (this.creating)
-                this.$http.post('/verbiage/', this.selected).then((r) => {
-                    this.selected.id = r.body.id
+                axios.post('/verbiage/', this.selected).then((r) => {
+                    this.selected.id = r.data.id
                     this.creating = false
                     this.editing = false
                 }, this.failedRequest)
             else
-                this.$http
+                axios
                     .put('/verbiage/' + this.selected.id, this.selected)
                     .then((r) => {
                         this.editing = false
@@ -283,7 +270,7 @@ export default {
 
             const index = this.customVerbiages.indexOf(this.selected)
 
-            this.$http.delete('/verbiage/' + this.selected.id).then((r) => {
+            axios.delete('/verbiage/' + this.selected.id).then((r) => {
                 this.customVerbiages.splice(index, 1)
                 if (!this.customVerbiages.length) this.custom = false
             }, this.failedRequest)
@@ -294,12 +281,12 @@ export default {
             console.error(r)
         },
 
-        clipboardSuccessHandler({ value, event }) {
-            $(event.target).tooltip({
+        clipboardSuccessHandler() {
+            $('#copy-btn').tooltip({
                 title: 'Copied!',
             })
-            $(event.target).tooltip('toggle')
-            setTimeout(() => $(event.target).tooltip('dispose'), 2000)
+            $('#copy-btn').tooltip('toggle')
+            setTimeout(() => $('#copy-btn').tooltip('dispose'), 2000)
 
             this.hideVerbiageMsg()
         },
@@ -325,16 +312,17 @@ export default {
 
     directives: {
         iconpicker: {
-            inserted: function(el, binding, vnode) {
-                $(el)
-                    .iconpicker()
-                    .on('iconpickerSelected', function(event) {
-                        const value = event.iconpickerValue
-
-                        setVueModel(vnode.context, binding.expression, value)
-                    })
+            mounted: (el, binding, vnode) => {
+                const iconPicker = new IconPicker(el, {
+                    iconSource: [
+                         'FontAwesome Brands 6',
+                         'FontAwesome Solid 6',
+                        ]
+                });
+                iconPicker.on('select', (icon) => {
+                    binding.instance.selected.icon = icon.value;
+                });
             },
         },
-    },
-}
+    }}
 </script>

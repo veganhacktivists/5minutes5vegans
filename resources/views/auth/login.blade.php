@@ -7,12 +7,9 @@
             <button class="btn btn-link font-weight-bold my-auto">@lang('loginregister.or-register')&nbsp;<i class="fas fa-caret-right"></i></button>
         </a>
     </div>
-    {{ Form::open( [ 'route' => 'login' ] ) }}
-        {{ Form::email('email', false, [
-            'class' => 'text-uppercase form-control mb-2' . ($errors->has('email') ? ' is-invalid' : ''),
-            'required' => true,
-            'placeholder' => __('E-Mail Address'),
-        ]) }}
+    <form method="post" action="{{ route('login') }}">
+        @csrf
+        <input type="email" class="text-uppercase form-control mb-2 @error('email') is-invalid @enderror" required placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}"></input>
 
         @if ($errors->has('email'))
             <span class="invalid-feedback" role="alert">
@@ -20,11 +17,7 @@
             </span>
         @endif
 
-        {{ Form::password('password', [
-            'class' => 'form-control text-uppercase' . ($errors->has('password') ? ' is-invalid' : ''),
-            'required' => true,
-            'placeholder' => __('Password'),
-        ]) }}
+        <input type="password" class="form-control text-uppercase @error('password') is-invalid @enderror" required placeholder="{{ __('Password') }}" name="password" value="{{ old('password') }}" />
 
         @error('password')
             <span class="invalid-feedback" role="alert">
@@ -32,10 +25,10 @@
             </span>
         @enderror
 
-        {{ Form::submit(__('loginregister.login'), ['class' => 'btn btn-large btn-primary swirvy-box mt-5 float-right']) }}
-    {{ Form::close() }}
+        <button type="submit" class="btn btn-large btn-primary swirvy-box mt-5 float-right">@lang('loginregister.login')</button>
+    </form>
 
     <div class="d-flex w-100">
-        {{ link_to_route('password.reset', 'Forgot password?', ['token' => null], ['class' => 'small ml-auto mt-3']) }}
+        <a href="{{ route('password.update') }}" class="small ml-auto mt-3">Forgot password?</a>
     </div>
 @endsection
