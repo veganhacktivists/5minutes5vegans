@@ -9,7 +9,7 @@ const users = [
     { username: '5m5v_de', id: '1169896309144207360', lastSentTweetId: null },
 ];
 
-const pollingIntervalMs = 10 * 1000;//2 * 60 * 1000;
+const pollingIntervalMs = 2 * 60 * 1000;
 
 let rettiwt = await login();
 
