@@ -5,10 +5,10 @@ import 'dotenv/config';
 import 'axios';
 
 const users = [
-    { username: '5Minutes5Vegans', id: '1781249168641576961', lastSentTweetId: null },
-    { username: '5Min5Veganes', id: '1781252596528791552', lastSentTweetId: null },
-    { username: '5Min5Veganos', id: '1781255939871342593', lastSentTweetId: null },
-    { username: '5m5v_de', id: '1169896309144207360', lastSentTweetId: null },
+    { lang: 'en', id: '1781249168641576961', lastSentTweetId: null },
+    { lang: 'fr', id: '1781252596528791552', lastSentTweetId: null },
+    { lang: 'es', id: '1781255939871342593', lastSentTweetId: null },
+    { lang: 'de', id: '1169896309144207360', lastSentTweetId: null },
 ];
 
 const pollingIntervalMs = 2 * 60 * 1000;
@@ -22,7 +22,7 @@ while (true) {
         for (const user of users) {
             await new Promise((resolve) => setTimeout(resolve, pollingIntervalMs));
 
-            console.log(`Fetching timeline of ${user.username}...`);
+            console.log(`Fetching ${user.lang.toUpperCase()} timeline...`);
 
             const newTweets = await fetchUserTimelineUntil(user.id, user.lastSentTweetId);
 
@@ -31,9 +31,9 @@ while (true) {
             }
 
             try {
-                console.log(`Sending ${user.username}'s ${newTweets.length} new tweets...`);
+                console.log(`Sending ${newTweets.length} new tweets...`);
 
-                await axios.post(`${process.env.APP_URL}/tweets`, { user, newTweets });
+                await axios.post(`${process.env.APP_URL}/tweets`, { lang: user.lang, newTweets });
 
                 console.log('Sent!');
 
