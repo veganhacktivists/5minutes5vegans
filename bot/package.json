@@ -5,7 +5,7 @@
     "dependencies": {
         "axios": "^1.6.8",
         "dotenv": "^16.4.5",
-        "rettiwt-api": "2.7.0"
+        "rettiwt-api": "^2.7.0"
     },
     "type": "module"
 }
