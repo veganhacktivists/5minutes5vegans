@@ -5,7 +5,9 @@ import 'dotenv/config';
 import 'axios';
 
 const users = [
-    { username: '5m5v_fr', id: '1169895168259964933', lastSentTweetId: null },
+    { username: '5Minutes5Vegans', id: '1781249168641576961', lastSentTweetId: null },
+    { username: '5Min5Veganes', id: '1781252596528791552', lastSentTweetId: null },
+    { username: '5Min5Veganos', id: '1781255939871342593', lastSentTweetId: null },
     { username: '5m5v_de', id: '1169896309144207360', lastSentTweetId: null },
 ];
 
