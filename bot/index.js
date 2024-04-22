@@ -81,8 +81,17 @@ async function fetchUserTimelineUntil(userId, untilTweetId) {
 
         tweets.push({
             id: tweet.retweetedTweet.id,
+            date: tweet.retweetedTweet.createdAt,
             text: tweet.retweetedTweet.fullText,
-            from: tweet.retweetedTweet.tweetBy.fullName,
+            fromUserName: tweet.retweetedTweet.tweetBy.fullName,
+            fromFullName: tweet.retweetedTweet.tweetBy.fullName,
+            fromProfileImage: tweet.retweetedTweet.tweetBy.profileImage,
+            viewCount: tweet.retweetedTweet.viewCount,
+            likeCount: tweet.retweetedTweet.likeCount,
+            replyCount: tweet.retweetedTweet.replyCount,
+            retweetCount: tweet.retweetedTweet.retweetCount,
+            quoteCount: tweet.retweetedTweet.quoteCount,
+            media: (tweet.retweetedTweet.media ?? []).map(media => ({ ...media })),
         });
     }
 
