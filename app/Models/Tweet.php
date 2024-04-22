@@ -9,12 +9,28 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property string $id
  * @property string $lang
- * @property string $from
+ * @property \DateTime $date
  * @property string $text
+ * @property string $media_type
+ * @property string $media_url
+ * @property string $from_user_name
+ * @property string $from_full_name
+ * @property string $from_profile_image
+ * @property int $view_count
+ * @property int $like_count
+ * @property int $reply_count
+ * @property int $retweet_count
+ * @property int $quote_count
+ * @property \DateTime $created_at
+ * @property \DateTime $updated_at
  */
 class Tweet extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'date' => 'datetime',
+    ];
 
     public function scopeTimeline(Builder $query, string $lang): void
     {

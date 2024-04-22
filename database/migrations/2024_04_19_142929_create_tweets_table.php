@@ -11,8 +11,18 @@ return new class extends Migration
         Schema::create('tweets', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->string('lang');
-            $table->string('from');
-            $table->string('text');
+            $table->dateTime('date');
+            $table->string('text', 500);
+            $table->string('media_type')->nullable();
+            $table->string('media_url')->nullable();
+            $table->string('from_user_name');
+            $table->string('from_full_name');
+            $table->string('from_profile_image');
+            $table->integer('view_count')->default(0);
+            $table->integer('like_count')->default(0);
+            $table->integer('reply_count')->default(0);
+            $table->integer('retweet_count')->default(0);
+            $table->integer('quote_count')->default(0);
             $table->timestamps();
         });
     }
