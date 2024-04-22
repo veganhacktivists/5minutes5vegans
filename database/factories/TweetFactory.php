@@ -12,19 +12,22 @@ class TweetFactory extends Factory
     public function definition(): array
     {
         return [
-            'id'   => $this->faker->regexify('\d{19}'),
-            'lang' => $this->faker->randomElement(array_keys(config('laravellocalization.supportedLocales'))),
-            'date' => $this->faker->dateTimeThisMonth(),
-            'text' => $this->faker->sentence,
-            'media_type' => $this->faker->randomElement(['photo', 'video', 'animated_gif', null]),
-            'from_user_name' => $this->faker->userName,
-            'from_full_name' => $this->faker->name,
+            'id'                 => $this->faker->regexify('\d{19}'),
+            'lang'               => $this->faker->randomElement(array_keys(config('laravellocalization.supportedLocales'))),
+            'date'               => $this->faker->dateTimeThisMonth(),
+            'text'               => $this->faker->sentence,
+            'media'              => array_map(fn ($value) => [
+                'type' => $this->faker->randomElement(['photo', 'video', 'animated_gif']),
+                'url'  => $this->faker->imageUrl(),
+            ], array_fill(0, $this->faker->numberBetween(0, 4), [])),
+            'from_user_name'     => $this->faker->userName,
+            'from_full_name'     => $this->faker->name,
             'from_profile_image' => $this->faker->imageUrl(),
-            'view_count' => $this->faker->numberBetween(0, 1000),
-            'like_count' => $this->faker->numberBetween(0, 100),
-            'reply_count' => $this->faker->numberBetween(0, 10),
-            'retweet_count' => $this->faker->numberBetween(0, 10),
-            'quote_count' => $this->faker->numberBetween(0, 5),
+            'view_count'         => $this->faker->numberBetween(0, 1000),
+            'like_count'         => $this->faker->numberBetween(0, 100),
+            'reply_count'        => $this->faker->numberBetween(0, 10),
+            'retweet_count'      => $this->faker->numberBetween(0, 10),
+            'quote_count'        => $this->faker->numberBetween(0, 5),
         ];
     }
 

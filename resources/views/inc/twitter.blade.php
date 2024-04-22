@@ -13,9 +13,9 @@
 
             <div class="tweet-text">
                 <p>{{ $tweet->text }}</p>
-                @if ($tweet->media_type)
-                    <p><img src="{{ $tweet->media_url }}" alt=""></p>
-                @endif
+                @foreach ($tweet->media as $media)
+                    <p><img src="{{ $media['url'] }}" alt=""></p>
+                @endforeach
             </div>
 
             <div class="tweet-footer">

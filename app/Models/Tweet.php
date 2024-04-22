@@ -11,8 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $lang
  * @property \DateTime $date
  * @property string $text
- * @property string $media_type
- * @property string $media_url
+ * @property array[] $media
  * @property string $from_user_name
  * @property string $from_full_name
  * @property string $from_profile_image
@@ -30,6 +29,7 @@ class Tweet extends Model
 
     protected $casts = [
         'date' => 'datetime',
+        'media' => 'array',
     ];
 
     public function scopeTimeline(Builder $query, string $lang): void

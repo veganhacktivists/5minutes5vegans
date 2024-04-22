@@ -13,8 +13,7 @@ return new class extends Migration
             $table->string('lang');
             $table->dateTime('date');
             $table->string('text', 500);
-            $table->string('media_type')->nullable();
-            $table->string('media_url')->nullable();
+            $table->json('media')->default('[]');
             $table->string('from_user_name');
             $table->string('from_full_name');
             $table->string('from_profile_image');
