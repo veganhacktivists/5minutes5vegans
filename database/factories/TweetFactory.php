@@ -16,7 +16,7 @@ class TweetFactory extends Factory
             'lang'               => $this->faker->randomElement(array_keys(config('laravellocalization.supportedLocales'))),
             'date'               => $this->faker->dateTimeThisMonth(),
             'text'               => $this->faker->sentence,
-            'media'              => array_map(fn ($value) => [
+            'media'              => array_map(fn () => [
                 'type' => $this->faker->randomElement(['photo', 'video', 'animated_gif']),
                 'url'  => $this->faker->imageUrl(),
             ], array_fill(0, $this->faker->numberBetween(0, 4), [])),
