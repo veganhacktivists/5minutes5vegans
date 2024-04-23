@@ -32,6 +32,21 @@ class Tweet extends Model
         'media' => 'array',
     ];
 
+    public static $rules = [
+        'id' => 'required|string',
+        'date' => 'required|date',
+        'text' => 'required|string',
+        'media' => 'array',
+        'from_user_name' => 'required|string',
+        'from_full_name' => 'required|string',
+        'from_profile_image' => 'required|string',
+        'view_count' => 'required|integer',
+        'like_count' => 'required|integer',
+        'reply_count' => 'required|integer',
+        'retweet_count' => 'required|integer',
+        'quote_count' => 'required|integer',
+    ];
+
     public function scopeTimeline(Builder $query, string $lang): void
     {
         $query->where('lang', $lang)->orderByDesc('id');

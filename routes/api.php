@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\TweetApiController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,3 +15,4 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('tweets', 'Api\TweetApiController@store')->name('tweets.store');
