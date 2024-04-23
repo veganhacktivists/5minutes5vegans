@@ -37,6 +37,8 @@ class Tweet extends Model
         'date' => 'required|date',
         'text' => 'required|string',
         'media' => 'array',
+        'media.*.type' => 'required|string|in:photo,video,animated_gif',
+        'media.*.url' => 'required|string',
         'from_user_name' => 'required|string',
         'from_full_name' => 'required|string',
         'from_profile_image' => 'required|string',
