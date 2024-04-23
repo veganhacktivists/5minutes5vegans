@@ -2,7 +2,7 @@
 
 import { Rettiwt } from 'rettiwt-api';
 import 'dotenv/config';
-import 'axios';
+import axios from 'axios';
 
 const users = [
     { lang: 'en', id: '1781249168641576961', lastSentTweetId: null },
