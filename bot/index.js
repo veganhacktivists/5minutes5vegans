@@ -86,11 +86,11 @@ async function fetchUserTimelineUntil(userId, untilTweetId) {
             from_user_name: tweet.retweetedTweet.tweetBy.fullName,
             from_full_name: tweet.retweetedTweet.tweetBy.fullName,
             from_profile_image: tweet.retweetedTweet.tweetBy.profileImage,
-            view_count: tweet.retweetedTweet.viewCount,
-            like_count: tweet.retweetedTweet.likeCount,
-            reply_count: tweet.retweetedTweet.replyCount,
-            retweet_count: tweet.retweetedTweet.retweetCount,
-            quote_count: tweet.retweetedTweet.quoteCount,
+            view_count: ~~tweet.retweetedTweet.viewCount,
+            like_count: ~~tweet.retweetedTweet.likeCount,
+            reply_count: ~~tweet.retweetedTweet.replyCount,
+            retweet_count: ~~tweet.retweetedTweet.retweetCount,
+            quote_count: ~~tweet.retweetedTweet.quoteCount,
             media: (tweet.retweetedTweet.media ?? []).map(media => ({ ...media })),
         });
     }
