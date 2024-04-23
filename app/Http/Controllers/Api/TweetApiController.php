@@ -16,7 +16,7 @@ class TweetApiController extends Controller
         $validator = Validator::make($request->all(), [
             'lang' => 'required|string|max:2|in:en,fr,es,de',
             'tweets' => 'required|array',
-            ValidationRules::merge('tweets', Tweet::$rules, true)
+            ...ValidationRules::merge('tweets', Tweet::$rules, true)
         ]);
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422);
