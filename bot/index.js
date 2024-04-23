@@ -16,13 +16,13 @@ const pollingIntervalMs = 2 * 60 * 1000;
 let rettiwt = await login();
 
 while (true) {
-    console.log('Fetching timelines...');
+    logInfo('Fetching timelines...');
 
     try {
         for (const user of users) {
             await new Promise((resolve) => setTimeout(resolve, pollingIntervalMs));
 
-            console.log(`Fetching ${user.lang.toUpperCase()} timeline...`);
+            logInfo(`Fetching ${user.lang.toUpperCase()} timeline...`);
 
             const newTweets = await fetchUserTimelineUntil(user.id, user.lastSentTweetId);
 
@@ -31,19 +31,19 @@ while (true) {
             }
 
             try {
-                console.log(`Sending ${newTweets.length} new tweets...`);
+                logInfo(`Sending ${newTweets.length} new tweets...`);
 
                 await axios.post(`${process.env.APP_URL}/tweets`, { lang: user.lang, newTweets });
 
-                console.log('Sent!');
+                logInfo('Sent!');
 
                 user.lastSentTweetId = newTweets[0].id;
             } catch (error) {
-                console.error(`Error while sending ${user}'s new tweets: ${error.message}`);
+                logError(`Error while sending new tweets: ${error.message}`);
             }
         }
     } catch (error) {
-        console.error(`Error while retrieving timelines: ${error.message}`);
+        logError(`Error while retrieving timelines: ${error.message}`);
 
         if (error.constructor.name === 'RettiwtError' && error.code === 32) {
             rettiwt = await login();
@@ -52,7 +52,7 @@ while (true) {
 }
 
 async function login() {
-    console.log('Logging in...');
+    logInfo('Logging in...');
 
     const apiKey = await new Rettiwt().auth.login(
         process.env.BOT_EMAIL,
@@ -60,7 +60,7 @@ async function login() {
         process.env.BOT_PASSWORD,
     );
 
-    console.log('Logged in!');
+    logInfo('Logged in!');
 
     return new Rettiwt({ apiKey });
 }
@@ -98,3 +98,10 @@ async function fetchUserTimelineUntil(userId, untilTweetId) {
     return tweets;
 }
 
+function logInfo(...args) {
+    console.info(new Date().toISOString(), ...args);
+}
+
+function logError(...args) {
+    console.error(new Date().toISOString(), ...args);
+}
