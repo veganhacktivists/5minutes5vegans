@@ -24,20 +24,20 @@ while (true) {
 
             logInfo(`Fetching ${user.lang.toUpperCase()} timeline...`);
 
-            const newTweets = await fetchUserTimelineUntil(user.id, user.lastSentTweetId);
+            const tweets = await fetchUserTimelineUntil(user.id, user.lastSentTweetId);
 
-            if (newTweets.length === 0) {
+            if (tweets.length === 0) {
                 continue;
             }
 
             try {
-                logInfo(`Sending ${newTweets.length} new tweets...`);
+                logInfo(`Sending ${tweets.length} new tweets...`);
 
-                await axios.post(`${process.env.APP_URL}/tweets`, { lang: user.lang, newTweets });
+                await axios.post(`${process.env.APP_URL}/tweets`, { lang: user.lang, tweets });
 
                 logInfo('Sent!');
 
-                user.lastSentTweetId = newTweets[0].id;
+                user.lastSentTweetId = tweets[0].id;
             } catch (error) {
                 logError(`Error while sending new tweets: ${error.message}`);
             }
