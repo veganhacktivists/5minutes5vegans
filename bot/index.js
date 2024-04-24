@@ -52,17 +52,25 @@ while (true) {
 }
 
 async function login() {
-    logInfo('Logging in...');
+    while (true) {
+        try {
+            logInfo('Logging in...');
 
-    const apiKey = await new Rettiwt().auth.login(
-        process.env.BOT_EMAIL,
-        process.env.BOT_USERNAME,
-        process.env.BOT_PASSWORD,
-    );
+            const apiKey = await new Rettiwt().auth.login(
+                process.env.BOT_EMAIL,
+                process.env.BOT_USERNAME,
+                process.env.BOT_PASSWORD,
+            );
 
-    logInfo('Logged in!');
+            logInfo('Logged in!');
 
-    return new Rettiwt({ apiKey });
+            return new Rettiwt({ apiKey });
+        } catch (e) {
+            logError(`Unable to log in: ${e.message}`);
+
+            await new Promise((resolve) => setTimeout(resolve, 20 * 1000));
+        }
+    }
 }
 
 async function fetchUserTimelineUntil(userId, untilTweetId) {
