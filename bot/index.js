@@ -5,14 +5,13 @@ import 'dotenv/config';
 import axios from 'axios';
 
 const users = [
-    { lang: 'en', id: '1169896309144207360', lastSentTweetId: null },
-    // { lang: 'en', id: '1781249168641576961', lastSentTweetId: null },
-    // { lang: 'fr', id: '1781252596528791552', lastSentTweetId: null },
-    // { lang: 'es', id: '1781255939871342593', lastSentTweetId: null },
-    // { lang: 'de', id: '1169896309144207360', lastSentTweetId: null },
+    { lang: 'en', id: '1781249168641576961', lastSentTweetId: null },
+    { lang: 'fr', id: '1781252596528791552', lastSentTweetId: null },
+    { lang: 'es', id: '1781255939871342593', lastSentTweetId: null },
+    { lang: 'de', id: '1169896309144207360', lastSentTweetId: null },
 ];
 
-const pollingIntervalMs = 10 * 1000;
+const pollingIntervalMs = 2 * 60 * 1000;
 
 let rettiwt = await login();
 
