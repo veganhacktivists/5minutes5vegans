@@ -33,7 +33,14 @@ while (true) {
             try {
                 logInfo(`Sending ${tweets.length} new tweets...`);
 
-                await axios.post(`${process.env.APP_URL}/api/tweets`, { lang: user.lang, tweets });
+                await axios.post(`${process.env.APP_URL}/api/tweets`, {
+                    lang: user.lang,
+                    tweets,
+                }, {
+                    headers: {
+                        'X-API-KEY': process.env.API_KEY,
+                    },
+                });
 
                 logInfo('Sent!');
 
