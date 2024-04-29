@@ -27,7 +27,7 @@
                     <div id="rightside">
                         <div id="rightside-inner" class="">
                             @include('inc.flag-list')
-                            @include('inc.twitter', ['tweets' => $tweets])
+                            @include('inc.twitter')
                         </div>
                     </div>
                 </div>

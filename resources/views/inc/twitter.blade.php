@@ -1,27 +1,29 @@
-<div class="timeline">
-    @foreach ($tweets as $tweet)
-        <a class="tweet" href="https://twitter.com/_/status/{{ $tweet->id }}" target="_blank">
-            <div class="tweet-header">
-                <img src="{{ $tweet->from_profile_image }}" alt="" width="50" height="50">
-                <span>
-                    <span class="tweet-full-name">{{ $tweet->from_full_name }}</span>
-                    <span class="tweet-user-name">{{ "@{$tweet->from_user_name}" }}</span>
-                </span>
-                <span>·</span>
-                <span>{{ $tweet->date->format('d F') }}</span>
-            </div>
-
-            <div class="tweet-text">
-                <p>{{ $tweet->text }}</p>
-                @foreach ($tweet->media as $media)
-                    <p><img src="{{ $media['url'] }}" alt=""></p>
-                @endforeach
-            </div>
-
-            <div class="tweet-footer">
-                <span>💬 {{ $tweet->reply_count }}</span>
-                <span>🤍 {{ $tweet->retweet_count }}</span>
-            </div>
-        </a>
-    @endforeach
+<div id="Twitter" class="iframecontent">
+    <a
+        href="https://twitter.com/5m5v_{{ App::getLocale() }}"
+        class="twitter-timeline"
+        data-lang="{{ App::getLocale() }}"
+        data-theme="light"
+        data-link-color="#19CF86">
+    </a>
+    <div class="twitter-timeline" id="timeline-loading">
+        <strong>@lang('twitter.loading')</strong>
+        <div class="mt-3">
+            <p>
+                <strong>@lang('twitter.note_label')</strong>
+                @lang('twitter.note_body')
+            </p>
+        </div>
+        <div class="mt-3">
+            @lang('twitter.try_again', [
+                'twitter_link' => "https://twitter.com/5m5v_{{ App::getLocale() }}"
+            ])
+        </div>
+    </div>
+    <script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"
+        onload="document.getElementById('timeline-loading').remove()">
+    </script>
 </div>
