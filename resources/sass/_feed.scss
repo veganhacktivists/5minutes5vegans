@@ -454,19 +454,12 @@ $feed-teal: #41b9aa;
 }
 
 .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     height: 100%;
     overflow: auto;
-    margin-right: 50px;
-
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        background-color: #fbfbfb;
-        padding: 20px;
-        margin-right: 20px;
-        border-radius: 12px;
-    }
+    padding-right: 20px;
 
     .card {
         background-color: #FFF;
