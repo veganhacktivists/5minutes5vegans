@@ -21,7 +21,17 @@
 
             @foreach ($tweet->media as $media)
                 <div>
-                    <img class="image" src="{{ $media['url'] }}" alt="">
+                    @switch ($media['type'])
+                        @case('photo')
+                            <img class="image" src="{{ $media['url'] }}" alt="">
+                            @break
+                        @case('video')
+                        @case('animated_gif')
+                            <video class="video" controls>
+                                <source src="{{ $media['url'] }}" type="video/mp4">
+                            </video>
+                            @break
+                    @endswitch
                 </div>
             @endforeach
 
