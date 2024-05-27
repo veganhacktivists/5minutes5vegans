@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tweet;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use App\Traits\KnowsVerbiages;
-use App\Models\Verbiage;
+use Illuminate\View\View;
 
 class FeedController extends Controller
 {
+    public function __invoke(): View
+    {
+        $verbiages = Auth::check() ? Auth::user()->verbiages : false;
 
-    public function __invoke() {
+        $tweets = Tweet::timeline(App::getLocale())->get();
 
-        if(Auth::check())
-            $verbiages = Auth::user()->verbiages;
-        else
-            $verbiages = false;
-
-        return view('feed', [ 'verbiages' => $verbiages ] );
-
+        return view('feed', [
+            'verbiages' => $verbiages,
+            'tweets'    => $tweets,
+        ]);
     }
-
 }
