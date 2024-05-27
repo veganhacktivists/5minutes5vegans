@@ -1,5 +1,5 @@
 <div class="timeline">
-    @foreach ($tweets as $tweet)
+    @forelse ($tweets as $tweet)
         <a class="card" href="https://x.com/{{ $tweet->from_user_name }}/status/{{ $tweet->id }}" target="_blank">
             <div class="header">
                 <div class="avatar">
@@ -51,5 +51,7 @@
                 </div>
             </div>
         </a>
-    @endforeach
+    @empty
+        <div class="empty">No tweets in this language yet, please come back later!</div>
+    @endforelse
 </div>
