@@ -124,6 +124,8 @@ $(() => {
             767: {
                 slidesPerView: 2,
                 spaceBetween: 0,
+                preventClicks: false,
+                preventClicksPropagation: false,
             },
         },
         watchOverflow: true,
