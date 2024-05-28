@@ -17,7 +17,7 @@
                 <img src="{{ asset('images/twitter/logo.svg') }}" alt="Twitter" width="24" height="24">
             </div>
 
-            <p class="body">{{ $tweet->text }}</p>
+            <p class="body">{{ strip_tags(html_entity_decode($tweet->text)) }}</p>
 
             @foreach ($tweet->media as $media)
                 <div>
