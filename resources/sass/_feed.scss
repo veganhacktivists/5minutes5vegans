@@ -523,13 +523,20 @@ $feed-teal: #41b9aa;
         overflow: hidden;
     }
 
-    .image {
+    .image, .video {
         border-radius: 12px;
         width: 100%;
-        height: auto;
         max-width: 600px;
+    }
+
+    .image {
         max-height: 400px;
         object-fit: cover;
+        height: auto;
+    }
+
+    .video {
+        height: 100%;
     }
 
     .timestamp {
@@ -564,5 +571,12 @@ $feed-teal: #41b9aa;
     .stat-count {
         font-size: 16px;
         color: #000;
+    }
+
+    .empty {
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
     }
 }
