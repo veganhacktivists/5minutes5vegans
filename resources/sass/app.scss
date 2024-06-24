@@ -1,4 +1,7 @@
 // Fonts
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed|Lora');
 
 // Variables
@@ -18,7 +21,8 @@
 
 @import './md-form';
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -94,24 +98,24 @@ $xx-swirve: 22px;
 
 .col-sm-5ths {
     @include for-tablet-portrait-up {
-	    flex: 0 0 20%;
-	    max-width: 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
         float: left;
     }
 }
 
 .col-md-5ths {
     @include for-tablet-landscape-up {
-	    flex: 0 0 20%;
-	    max-width: 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
         float: left;
     }
 }
 
 .col-lg-5ths {
     @include for-desktop-up {
-	    flex: 0 0 20%;
-	    max-width: 20%;
+        flex: 0 0 20%;
+        max-width: 20%;
         float: left;
     }
 }
@@ -156,7 +160,7 @@ $xx-swirve: 22px;
             width: 35px;
         }
 
-        a img{
+        a img {
             height: 36px;
             position: relative;
             top: 6.8px;
