@@ -6,7 +6,7 @@
     $routes = [
         'login' => route('login'),
         'logout' => route('logout'),
-        'register' => route('register')
+        'register' => route('register'),
     ];
 
     $user = Auth::user();
@@ -16,11 +16,11 @@
     var customVerbiages = @json($verbiages);
     var routes = @json($routes);
     @auth
-        var currentUser = @json([
-                'name' => $user->name,
-                'email' => $user->email,
-            ]);
-        routes['user.update'] = @json(route('user.update', Auth::user()));
+    var currentUser = @json([
+        'name' => $user->name,
+        'email' => $user->email,
+    ]);
+    routes['user.update'] = @json(route('user.update', Auth::user()));
     @endauth
 </script>
 
