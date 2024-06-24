@@ -152,7 +152,7 @@ $(window).scroll(function () {
  ************************************/
 window.onload = function () {
     // set the focus to the language bar
-    document.getElementById('languageFlags').focus();
+    document.getElementById('languageFlags')?.focus();
 
     // reset the timer by clicking the icon
     var as = document.querySelectorAll('#resetLink');
