@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS_ID') }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', '{{ env('GOOGLE_ANALYTICS_ID') }}');
-</script>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS_ID') }}">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+        gtag('config', '{{ env('GOOGLE_ANALYTICS_ID') }}');
+    </script>
 
-        <title>@lang('5 Minutes 5 Vegans')</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-        <script src="{{ mix('js/app.js') }}"></script>
-        @yield('scripts')
-        @cookieconsentscripts
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        @yield('css')
+    <title>@lang('5 Minutes 5 Vegans')</title>
 
-    </head>
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <script src="{{ mix('js/app.js') }}"></script>
+    @yield('scripts')
+    @cookieconsentscripts
 
-    <body class="d-flex flex-column">
+    <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    @yield('css')
 
-        @yield('page_content')
-        @cookieconsentview
+</head>
 
-    </body>
+<body class="d-flex flex-column">
+
+    @yield('page_content')
+    @cookieconsentview
+
+</body>
+
 </html>
-
