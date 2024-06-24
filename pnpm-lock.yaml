@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/lora':
+        specifier: ^5.0.18
+        version: 5.0.18
+      '@fontsource-variable/roboto-condensed':
+        specifier: ^5.0.3
+        version: 5.0.3
       '@fortawesome/fontawesome-free':
         specifier: ^6.5.2
         version: 6.5.2
@@ -683,6 +689,12 @@ packages:
   '@discoveryjs/json-ext@0.5.7':
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
+
+  '@fontsource-variable/lora@5.0.18':
+    resolution: {integrity: sha512-Q1FCENeJuPH2TNUM4FuGnfrxpiWqdKpJgcQc0SDfI3+xjZ+T4Ot05CqI8oGVrEZHQUzs3P0RnlgsQjxsPGzk8A==}
+
+  '@fontsource-variable/roboto-condensed@5.0.3':
+    resolution: {integrity: sha512-0GjOjaNXe+dv1pUqciPlTFZi1Z96nIz8RSRn4qn35cMROcdSnuYa2+BTngr1w0oX53HSVCxWL7AAYg7tD2Wfxw==}
 
   '@fortawesome/fontawesome-free@6.5.2':
     resolution: {integrity: sha512-hRILoInAx8GNT5IMkrtIt9blOdrqHOnPBH+k70aWUAqPZPgopb9G5EQJFpaBx/S8zp2fC+mPW349Bziuk1o28Q==}
@@ -4280,6 +4292,10 @@ snapshots:
     optional: true
 
   '@discoveryjs/json-ext@0.5.7': {}
+
+  '@fontsource-variable/lora@5.0.18': {}
+
+  '@fontsource-variable/roboto-condensed@5.0.3': {}
 
   '@fortawesome/fontawesome-free@6.5.2': {}
 
