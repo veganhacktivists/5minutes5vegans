@@ -5,6 +5,7 @@
         "prod": "mix --production"
     },
     "devDependencies": {
+        "@shufo/prettier-plugin-blade": "^1.14.1",
         "cross-env": "^7.0.3",
         "laravel-mix": "^6.0.49",
         "lodash": "^4.17.21",

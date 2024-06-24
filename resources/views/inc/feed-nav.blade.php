@@ -8,7 +8,8 @@
         <div class="timer-display">
             <div class="minutes">05</div>
             <div class="seconds">00</div>
-            <a id="resetLink" href="#"><span><i class="fas fa-undo fa-sm" style="color:red"></i></span></a>
+            <a id="resetLink" href="#"><span><i class="fas fa-undo fa-sm"
+                        style="color:red"></i></span></a>
         </div>
     </div>
     <div class="col text-right">

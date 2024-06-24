@@ -1,8 +1,18 @@
 {
+    "plugins": ["@shufo/prettier-plugin-blade"],
     "printWidth": 80,
     "tabWidth": 4,
     "semi": true,
     "singleQuote": true,
     "trailingComma": "all",
-    "arrowParens": "always"
+    "arrowParens": "always",
+    "overrides": [
+        {
+            "files": ["*.blade.php"],
+            "options": {
+                "parser": "blade",
+                "tabWidth": 4
+            }
+        }
+    ]
 }

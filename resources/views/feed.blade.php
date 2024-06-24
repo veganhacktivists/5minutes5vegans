@@ -15,10 +15,16 @@
                         @include('inc.sidebar')
                     </div>
 
-                    <div class="footer" style="background-color: #183732;border: solid 2px #183732;padding: 10px;">
-                        <div class="font-serif" style="color:#fff !important;padding-left: 10px;font-family: Open Sans,Montserrat,Helvetica,Arial,sans-serif;">
-                            Project by the <a href="https://veganhacktivists.org/" target="_blank" style="color:rgb(255 91 103);">Vegan Hacktivists</a>&nbsp;<i class="far fa-heart"></i>
-                            <a href="https://www.instagram.com/veganhacktivists" target="_blank"><i class="fab fa-instagram" style="float:right;font-size:30px;color:white;"></i></a>
+                    <div class="footer"
+                        style="background-color: #183732;border: solid 2px #183732;padding: 10px;">
+                        <div class="font-serif"
+                            style="color:#fff !important;padding-left: 10px;font-family: Open Sans,Montserrat,Helvetica,Arial,sans-serif;">
+                            Project by the <a href="https://veganhacktivists.org/"
+                                target="_blank" style="color:rgb(255 91 103);">Vegan
+                                Hacktivists</a>&nbsp;<i class="far fa-heart"></i>
+                            <a href="https://www.instagram.com/veganhacktivists"
+                                target="_blank"><i class="fab fa-instagram"
+                                    style="float:right;font-size:30px;color:white;"></i></a>
                         </div>
                     </div>
                 </div>
@@ -27,7 +33,9 @@
                     <div id="rightside">
                         <div id="rightside-inner" class="">
                             @include('inc.flag-list')
-                            @include('inc.twitter', ['tweets' => $tweets])
+                            @include('inc.twitter', [
+                                'tweets' => $tweets,
+                            ])
                         </div>
                     </div>
                 </div>
