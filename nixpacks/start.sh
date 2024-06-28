@@ -15,6 +15,9 @@ php artisan optimize
 # Clear Laravel routes
 php artisan route:clear
 
+# Generate tweets (verbiages)
+php artisan tweets:generate
+
 # Transform the nginx configuration
 node /assets/scripts/prestart.mjs ./nixpacks/nginx.template.conf /etc/nginx.conf
 
