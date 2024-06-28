@@ -9,6 +9,9 @@ php artisan view:cache
 # Cache Laravel config
 php artisan config:cache
 
+# Clear Laravel routes
+php artisan route:clear
+
 # Optimize Laravel
 php artisan optimize
 
