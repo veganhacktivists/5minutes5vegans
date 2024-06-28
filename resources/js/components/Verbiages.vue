@@ -175,7 +175,7 @@ export default {
     },
 
     created: function() {
-        axios.get('https://5minutes5vegans.org/tweets/').then(
+        axios.get('/en/tweets').then(
             (r) => {
                 this.defaultVerbiages = r.data
             },
