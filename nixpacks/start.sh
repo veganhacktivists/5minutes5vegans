@@ -15,7 +15,7 @@ php artisan optimize
 # Clear Laravel routes
 php artisan route:clear
 
-# Generate tweets (verbiages)
+# Cache verbiages
 php artisan tweets:generate
 
 # Transform the nginx configuration
