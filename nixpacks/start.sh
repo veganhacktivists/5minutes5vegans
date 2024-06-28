@@ -9,11 +9,11 @@ php artisan view:cache
 # Cache Laravel config
 php artisan config:cache
 
-# Clear Laravel routes
-php artisan route:clear
-
 # Optimize Laravel
 php artisan optimize
+
+# Clear Laravel routes
+php artisan route:clear
 
 # Transform the nginx configuration
 node /assets/scripts/prestart.mjs ./nixpacks/nginx.template.conf /etc/nginx.conf
