@@ -1,22 +1,24 @@
 [phases.setup]
 nixPkgs = [
-  "...",
-  "python311Packages.supervisor"
+    "...",
+    "python311Packages.supervisor"
 ]
 
 [phases.install]
 cmds = [
-  'corepack enable',
-  '...',
+    'corepack enable',
+    '...',
 ]
 
 [phases.build]
 cmds = [
-  "mkdir -p /etc/supervisor/conf.d/",
-  "cp /app/nixpacks/laravel-worker.conf /etc/supervisor/conf.d/laravel-worker.conf",
-  "cp /app/nixpacks/supervisord.conf /etc/supervisord.conf",
-  "..."
+    "mkdir -p /etc/supervisor/conf.d/",
+    "cp /app/nixpacks/laravel-worker.conf /etc/supervisor/conf.d/laravel-worker.conf",
+    "cp /app/nixpacks/supervisord.conf /etc/supervisord.conf",
+    "cp /app/nixpacks/start.sh /assets/start.sh",
+    "chmod +x /assets/start.sh",
+    "..."
 ]
 
 [start]
-cmd = "/app/nixpacks/start.sh"
+cmd = '/assets/start.sh'
