@@ -8,6 +8,7 @@ $feed-teal: #41b9aa;
 .swiper-container {
     width: 100%;
     flex: 1 1 auto;
+    overflow-y: scroll;
 }
 
 .swiper-slide.scrollable {
@@ -410,7 +411,7 @@ $feed-teal: #41b9aa;
     height: 100%;
     border-top-left-radius: 150px;
     border-bottom-right-radius: 150px;
-    padding: 75px 30px;
+    padding: 75px 30px 100px;
 
     @include for-tablet-landscape-up {
         padding: 75px 50px;
