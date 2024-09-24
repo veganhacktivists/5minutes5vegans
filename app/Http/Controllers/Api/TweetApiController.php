@@ -7,6 +7,7 @@ use App\Models\Tweet;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Lib\ValidationRules;
 
 class TweetApiController extends Controller
@@ -31,6 +32,9 @@ class TweetApiController extends Controller
             if (Tweet::where('id', $tweet['id'])->exists()) {
                 continue;
             }
+
+            // Limit to table column's max length minus 3 (for "..." at the end)
+            $tweet['text'] = Str::limit($tweet['text'], 497);
 
             Tweet::create([
                 'lang' => $validated['lang'],
