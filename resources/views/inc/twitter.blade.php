@@ -36,20 +36,6 @@
             @endforeach
 
             <p class="timestamp">{{ $tweet->date->format('h:i A · M d, Y') }}</p>
-
-            <div class="divider"></div>
-
-            <div class="stats">
-                <div class="stat">
-                    <img src="{{ asset('images/twitter/like-icon.svg') }}" alt="❤️" width="24" height="24">
-                    <span class="stat-count">{{ $tweet->like_count }}</span>
-                </div>
-
-                <div class="stat">
-                    <img src="{{ asset('images/twitter/reply-icon.svg') }}" alt="💬" width="24" height="24">
-                    <span class="stat-count">{{ $tweet->reply_count }}</span>
-                </div>
-            </div>
         </a>
     @empty
         <div class="empty">No tweets in this language yet, please come back later!</div>
