@@ -13,7 +13,7 @@
         "anhskohbo/no-captcha": "^3.0",
         "guzzlehttp/guzzle": "^7.2",
         "hoa/regex": "1.17.01.13",
-        "laravel/framework": "^11.0",
+        "laravel/framework": "^12.0",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.5",
         "mcamara/laravel-localization": "^2.0",
