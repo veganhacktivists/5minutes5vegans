@@ -1,5 +1,6 @@
 [phases.setup]
 nixPkgs = [
+    "...",
     "nodejs",
     "python311Packages.supervisor",
     # Fix for coollabsio/coolify/issues/4202 (LICENSE file collision)
