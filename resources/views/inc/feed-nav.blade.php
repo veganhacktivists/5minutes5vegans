@@ -1,4 +1,4 @@
-<nav class="row no-gutters justify-content-between">
+<nav class="row g-0 justify-content-between">
     <div class="col">
         <div class="logo">
             @include('inc.logo')
@@ -11,7 +11,7 @@
             <a id="resetLink" href="#"><span><i class="fas fa-undo fa-sm" style="color:red"></i></span></a>
         </div>
     </div>
-    <div class="col text-right">
+    <div class="col d-flex justify-content-end">
         <a href="https://veganhacktivists.org/support" id="donate-button">
             @lang('Donate') <i class="fa fa-hand-holding-heart"></i>
         </a>

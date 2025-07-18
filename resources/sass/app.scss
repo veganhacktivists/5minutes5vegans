@@ -5,9 +5,9 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
 
-@import '~swiper/swiper-bundle.css';
+@import 'swiper/swiper-bundle.css';
 
 @import 'vanilla-icon-picker/dist/themes/default.min.css';
 @import 'vanilla-icon-picker/dist/themes/bootstrap-5.min.css';
@@ -116,7 +116,7 @@ $xx-swirve: 22px;
     }
 }
 
-.fade.in {
+.fade.show {
     opacity: 1;
 }
 
@@ -176,6 +176,25 @@ $xx-swirve: 22px;
         background-color: white;
         border: 1px solid red;
     }
+}
+
+// Button text colors
+.btn-primary {
+    color: white !important;
+}
+
+// Remove underlines from links and buttons
+a, .btn-link {
+    text-decoration: none !important;
+}
+
+a:hover, .btn-link:hover {
+    text-decoration: underline !important;
+}
+
+// Ensure checkbox has white background when unchecked
+.form-check-input:not(:checked) {
+    background-color: white !important;
 }
 
 .page-footer {

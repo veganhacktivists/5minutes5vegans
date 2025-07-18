@@ -1,8 +1,8 @@
 <nav class="navbar text-light border-bottom border-success">
     <div class="col">
         <div class="dropdown">
-            <button type="button" class="text-white btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" id="localeChooser">
-                <span class="mr-2">{{ __('navbar.picker') }}</span>
+            <button type="button" class="text-white btn btn-sm btn-default dropdown-toggle" data-bs-toggle="dropdown" id="localeChooser">
+                <span class="me-2">{{ __('navbar.picker') }}</span>
                 <img src="https://www.countryflags.io/{{ getCurrentCountry() }}/flat/32.png" class="flag" />
             </button>
 
@@ -23,7 +23,7 @@
     </div>
     <div class="col-auto">
         <a class="text-white btn rounded-pill font-bold btn-sm bg-pink" href="https://veganhacktivists.org/support" target="_blank">
-            <i class="mr-1 d-md-none d-xl-inline-block fas fa-hand-holding-heart" style="color:#EC361F"></i>@lang('Donate')&nbsp;&nbsp;
+            <i class="me-1 d-md-none d-xl-inline-block fas fa-hand-holding-heart" style="color:#EC361F"></i>@lang('Donate')&nbsp;&nbsp;
         </a>
     </div>
     <div class="col-auto">

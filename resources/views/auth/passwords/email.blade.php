@@ -10,7 +10,7 @@
 <form method="post" action="{{ route('password.email') }}">
 @csrf
 
-    <div class="form-group row">
+    <div class="mb-3 row">
         <div class="col-md-8 offset-md-2">
             <input type="email" class="form-control text-white @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus placeholder="{{ __('YOUR EMAIL ADDRESS') }}" />
 

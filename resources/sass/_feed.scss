@@ -194,16 +194,7 @@ $feed-teal: #41b9aa;
 }
 
 .verbiage-container {
-    width: 100%;
     padding-bottom: 5px;
-
-    @include for-sm-tablet-portrait-up {
-        width: 50%;
-    }
-
-    @include for-tablet-portrait-up {
-        width: 100%;
-    }
 }
 
 .verbiage-switch {
@@ -359,7 +350,7 @@ $feed-teal: #41b9aa;
             @extend .d-inline-block;
             @extend .py-1;
             @extend .px-3;
-            @extend .mr-1;
+            @extend .me-1;
 
             font-size: 17px;
         }
@@ -455,22 +446,20 @@ $feed-teal: #41b9aa;
 }
 
 .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     height: 100%;
     overflow: auto;
     padding-right: 20px;
 
     .card {
-        background-color: #FFF;
+        background-color: #FFF !important;
         border: 1px solid #E5E7EB;
         padding: 16px;
         border-radius: 12px;
         width: 100%;
+        color: #000 !important;
 
         &:hover {
-            background-color: #F9FAFB;
+            background-color: #F9FAFB !important;
             text-decoration: none;
         }
     }

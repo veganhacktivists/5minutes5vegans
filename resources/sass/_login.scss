@@ -67,7 +67,7 @@
         margin-top: 50px;
     }
 
-    input:not([type = submit]) {
+    input:not([type = submit]):not([type = checkbox]) {
         background: transparent;
         border: none;
         border-bottom: 1px solid $teal;
@@ -196,7 +196,7 @@
     padding: 80px 5% 5% 5%;
     border: 2px solid #4dc0b5;
 
-    input:not([type = submit]) {
+    input:not([type = submit]):not([type = checkbox]) {
         background: transparent;
         border: none;
         border-bottom: 1px solid $teal;

@@ -6,7 +6,7 @@
                 v-for="verbiage in defaultVerbiages"
                 v-bind:key="verbiage.id"
                 v-on:click="selectVerbiage(verbiage)"
-                class="verbiage-container col-sm-3 px-1"
+                class="verbiage-container col-12 col-sm-6 col-md-3 col-lg-5ths px-1"
                 >
                 <div
                     v-bind:class="{ active: selected.title == verbiage.title }"
@@ -23,7 +23,7 @@
                 v-for="(verbiage, index) in customVerbiages"
                 v-bind:key="index"
                 v-on:click="selectVerbiage(verbiage)"
-                class="verbiage-container col-sm-3 px-1"
+                class="verbiage-container col-12 col-sm-6 col-md-3 col-lg-5ths px-1"
                 >
                 <div
                     v-if="selected != verbiage || !editing"
@@ -47,7 +47,7 @@
                     </button>
                     <input
                         v-bind:disabled="busy"
-                        class="form-control ml-2"
+                        class="form-control ms-2"
                         type="text"
                         style="width:220px;"
                         v-model="selected.title"
@@ -68,7 +68,7 @@
                         ></textarea>
                     <small class="cc-count" :class="characterCountState">{{remainingCount}}</small>
                     <button
-                        data-toggle="tooltip"
+                        data-bs-toggle="tooltip"
                         class="btn btn-link copy-btn"
                         id="copy-btn"
                         v-if="!editing"

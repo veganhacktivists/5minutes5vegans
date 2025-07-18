@@ -2,7 +2,7 @@
 
 @section('register-pane')
     <div class="d-flex">
-        <h1 class="mr-auto">{{ __('Register') }}</h1>
+        <h1 class="me-auto">{{ __('Register') }}</h1>
         <a href="{{ route('login') }}">
             <button class="btn btn-link font-weight-bold my-auto">@lang('loginregister.or-login')&nbsp;<i class="fas fa-caret-right"></i></button>
         </a>
@@ -44,7 +44,7 @@
             </span>
         @enderror
 
-        <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }} mt-3">
+        <div class="mb-3{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }} mt-3">
             <label class="text-md-right">@lang('loginregister.robot')</label>
             <div>
                 {!! app('captcha')->display() !!}
@@ -57,12 +57,12 @@
             </div>
         </div>
 
-        <div class="form-inline">
-            <div class="form-check">
-                <input type="checkbox" name="newsletter-check" class="form-check-input" id="newsletter-check" value="{{ old('newsletter-check') }}"/>
-                <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">@lang('loginregister.newsletter')</label>
-            </div>
-            <button type="submit" class="btn btn-primary swirvy-box ml-auto">@lang('Create Account')</button>
+        <div class="form-check mb-3">
+            <input type="checkbox" name="newsletter-check" class="form-check-input" id="newsletter-check" value="{{ old('newsletter-check') }}"/>
+            <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">@lang('loginregister.newsletter')</label>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary swirvy-box">@lang('Create Account')</button>
         </div>
     </form>
 @endsection

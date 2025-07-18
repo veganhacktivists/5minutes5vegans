@@ -4,8 +4,10 @@
  * application frontend using useful Laravel and JavaScript libraries.
  */
 
-require('./bootstrap')
-window.axios = require('axios')
+import './bootstrap';
+import axios from 'axios';
+
+window.axios = axios;
 import Swiper from 'swiper/bundle'
 import Clipboard from 'v-clipboard'
 import { createApp } from 'vue'
@@ -152,7 +154,10 @@ $(window).scroll(function() {
  ************************************/
 window.onload = function() {
     // set the focus to the language bar
-    document.getElementById('languageFlags').focus()
+    const languageFlags = document.getElementById('languageFlags');
+    if (languageFlags) {
+        languageFlags.focus();
+    }
 
     // reset the timer by clicking the icon
     var as = document.querySelectorAll('#resetLink')

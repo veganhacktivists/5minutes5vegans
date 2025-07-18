@@ -17,8 +17,8 @@
 
          <input class="form-control text-uppercase mb-1" placeholder="Confirm Password" name="password_confirmation" type="password" value="">
 
-         <div class="form-inline">
-            <input class="btn btn-large btn-primary swirvy-box ml-auto" type="submit" value="Save Profile">
+         <div class="d-flex">
+            <input class="btn btn-large btn-primary swirvy-box ms-auto" type="submit" value="Save Profile">
          </div>
       </form>
    </div>

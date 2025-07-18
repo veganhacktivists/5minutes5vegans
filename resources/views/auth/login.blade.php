@@ -2,7 +2,7 @@
 
 @section('login-pane')
     <div class="d-flex mb-4">
-        <h1 class="mr-auto">{{ __('Login') }}</h1>
+        <h1 class="me-auto">{{ __('Login') }}</h1>
         <a href="{{ route('register') }}">
             <button class="btn btn-link font-weight-bold my-auto">@lang('loginregister.or-register')&nbsp;<i class="fas fa-caret-right"></i></button>
         </a>
@@ -25,10 +25,12 @@
             </span>
         @enderror
 
-        <button type="submit" class="btn btn-large btn-primary swirvy-box mt-5 float-right">@lang('loginregister.login')</button>
+        <div class="d-flex justify-content-end mt-5">
+            <button type="submit" class="btn btn-large btn-primary swirvy-box">@lang('loginregister.login')</button>
+        </div>
     </form>
 
-    <div class="d-flex w-100">
-        <a href="{{ route('password.update') }}" class="small ml-auto mt-3">Forgot password?</a>
+    <div class="d-flex justify-content-end mt-3">
+        <a href="{{ route('password.update') }}" class="small">Forgot password?</a>
     </div>
 @endsection
