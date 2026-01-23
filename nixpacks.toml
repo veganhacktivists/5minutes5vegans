@@ -2,7 +2,7 @@
 nixpkgsArchive = 'be5afa0fcb31f0a96bf9ecba05a516c66fcd8114'
 nixPkgs = [
     "...",
-    "nodejs",
+    "nodejs_22",
     "python311Packages.supervisor",
     # Fix for coollabsio/coolify/issues/4202 (LICENSE file collision)
     "(lib.recursiveUpdate php83Packages.composer { meta.priority = php83Packages.composer.meta.priority or 0 -1; })"
