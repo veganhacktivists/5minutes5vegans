@@ -27,6 +27,6 @@ Route::group( [
 });
 
 Route::middleware( [ 'auth', 'ownsVerbiage' ] )->group(function () {
-    Route::resource( 'verbiage', 'verbiageController' )->only( 'store', 'update', 'destroy' );
+    Route::resource( 'verbiage', 'VerbiageController' )->only( 'store', 'update', 'destroy' );
     Route::resource('user', 'UserController')->only('update');
 });
