@@ -347,9 +347,9 @@ return [
         'title' => '30+ Arguments',
         'body' =>[
             [
-                'That\'s a common myth! Check this out: ' . generate_and_cache_tinyurl('http://earthlinged.com/ebook') . '; it basically goes over the 30 most common myths about Veganism\.'
+                'That\'s a common myth! Check this out: ' . generate_and_cache_tinyurl('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . '; it basically goes over the 30 most common myths about Veganism\.'
             ], [
-                'Video format here: ' . generate_and_cache_tinyurl('https://earthlinged.org/30excuses/')
+                'Video format here: ' . generate_and_cache_tinyurl('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2')
             ], [
                 'Message me back if you need any help or have any questions!'
             ]

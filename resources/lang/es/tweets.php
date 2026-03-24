@@ -347,9 +347,9 @@ return [
         'title' => '30+ razones',
         'body' =>[
             [
-                '¡Ese es un mito muy común! 😅 Mira: ' . generate_and_cache_tinyurl('https://yourveganfallacyis.com/es') . '; básicamente desmiente los mitos más comunes sobre el veganismo\.'
+                '¡Ese es un mito muy común! 😅 Mira: ' . generate_and_cache_tinyurl('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . '; básicamente desmiente los mitos más comunes sobre el veganismo\.'
             ], [
-                'En vídeos \(con subtítulos\) para los 30 mitos más comunes: ' . generate_and_cache_tinyurl('https://earthlinged.org/30excuses/')
+                'En vídeos \(con subtítulos\) para los 30 mitos más comunes: ' . generate_and_cache_tinyurl('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2')
             ], [
                 'Mándame un MP si necesitas ayuda o tienes preguntas!'
             ]
