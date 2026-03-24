@@ -1,25 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 
-function generate_and_cache_tinyurl($url) {
-    $key = 'tinyurl-' . $url;
-    $cachedUrl = Cache::get($key);
+function generate_and_cache_tinyurl($url)
+{
+    return Cache::remember('tinyurl-' . $url, 60 * 60 * 12, function () use ($url) {
+        $response = Http::withToken(config('services.tinyurl.token'))
+            ->post('https://api.tinyurl.com/create', [
+                'url'    => $url,
+                'domain' => 'tinyurl.com',
+            ]);
 
-    if ($cachedUrl) {
-        return $cachedUrl;
-    }
+        if ($response->failed()) {
+            Log::error('TinyURL API error', [
+                'status'   => $response->status(),
+                'response' => $response->body(),
+            ]);
 
-    try {
-        $tinyUrl = file_get_contents('http://tinyurl.com/api-create.php?url=' . $url);
-        Cache::put($key, preg_quote($tinyUrl), 60 * 60 * 12); // changes every 12 hours
+            return $url;
+        }
 
-        // give tinyurl api some slack. To increase if some url can't be generated properly
-        sleep(1);
-    } catch (Exception $e) {
-        echo $e->getMessage();
-        $tinyUrl = $url;
-    }
-
-    return preg_quote($tinyUrl);
+        return $response->json('data.tiny_url', $url);
+    });
 }

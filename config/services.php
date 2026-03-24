@@ -44,4 +44,8 @@ return [
         ],
     ],
 
+    'tinyurl' => [
+        'token' => env('TINYURL_TOKEN'),
+    ],
+
 ];
