@@ -21,6 +21,6 @@ function generate_and_cache_tinyurl($url)
             return $url;
         }
 
-        return $response->json('data.tiny_url', $url);
+        return preg_quote($response->json('data.tiny_url', $url), '/');
     });
 }
