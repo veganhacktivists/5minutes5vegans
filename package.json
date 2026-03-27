@@ -26,6 +26,7 @@
     "pnpm": {
         "overrides": {
             "immutable": "^5.1.5",
+            "picomatch": "^4.0.4",
             "rollup": "^4.59.0"
         }
     },
