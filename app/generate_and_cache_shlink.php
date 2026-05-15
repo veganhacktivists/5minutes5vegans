@@ -9,6 +9,7 @@ function generate_and_cache_shlink($url)
         $response = Http::withHeader('X-Api-Key', config('services.shlink.api_key'))
             ->post('https://go.veganhacktivists.org/rest/v3/short-urls', [
                 'longUrl' => $url,
+                'findIfExists' => true,
             ]);
 
         if ($response->failed()) {
