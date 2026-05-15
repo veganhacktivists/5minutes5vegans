@@ -48,7 +48,7 @@ class GenerateTweetsCommand extends Command
             $key = "tweets$language";
             \Log::info('Generating tweets', ['lang' => $language]);
             try {
-                $localizedTweets = __('tweets'); // takes some time, in order to generate tinyUrls.
+                $localizedTweets = __('tweets'); // takes some time, in order to generate short URLs.
                 echo "tweets localized ($language) \n";
 
                 $tweets = $tweetRegexService->generate_tweets($localizedTweets);

@@ -44,8 +44,8 @@ return [
         ],
     ],
 
-    'tinyurl' => [
-        'token' => env('TINYURL_API_TOKEN'),
+    'shlink' => [
+        'api_key' => env('SHLINK_API_KEY'),
     ],
 
 ];

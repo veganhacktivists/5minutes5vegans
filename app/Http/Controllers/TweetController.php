@@ -26,22 +26,4 @@ class TweetController extends Controller
             ->json($tweets)
             ->header('Cache-Control', 'public, max-age=60');
     }
-
-    public function tinyurl(Request $request) {
-        $urls = $request->input('urls', []);
-        $tinyUrls = [];
-
-        for ($i = 0; $i < count($urls); $i++) {
-            $url = $urls[$i];
-
-            try {
-                $tinyUrl = file_get_contents('http://tinyurl.com/api-create.php?url=' . $url);
-                $tinyUrls[] = $tinyUrl;
-            } catch (Exception $e) {
-                $tinyUrls[] = $url;
-            }
-        }
-
-        return response()->json($tinyUrls);
-    }
 }
