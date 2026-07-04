@@ -15,8 +15,15 @@ class CheckApiKey
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $expected = config('services.api_key');
         $apiKey = $request->all()['api-key'] ?? $request->header('X-API-KEY');
-        if ($apiKey !== env('API_KEY')) return response('Unauthorized', 401);
+
+        // Reject when no key is configured (e.g. API_KEY empty or absent under
+        // config:cache) so a null/empty supplied key can never authenticate.
+        if (empty($expected) || !is_string($apiKey) || !hash_equals($expected, $apiKey)) {
+            return response('Unauthorized', 401);
+        }
+
         return $next($request);
     }
 }
