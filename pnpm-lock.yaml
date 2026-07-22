@@ -39,7 +39,7 @@ importers:
         version: 3.0.0-next.1
       vanilla-icon-picker:
         specifier: ^1.4.1
-        version: 1.4.1
+        version: 1.4.2
       vue:
         specifier: ^3.5.17
         version: 3.5.17
@@ -794,8 +794,8 @@ packages:
   v-clipboard@3.0.0-next.1:
     resolution: {integrity: sha512-UvCnzetQMlVfk9yoiyew8ldGiCzeER5aYdmXXtZp8LC6rt2QXQS0AayEDn1K7rlXpd3M8d+JeYNUV+ZNgtaS4A==}
 
-  vanilla-icon-picker@1.4.1:
-    resolution: {integrity: sha512-FSKRYvWU3sky7JDkHRKebN5JLEEfFQsH6Iz1y4ghXEsrlQ27hx2A1u+SD2SdoY5274618iZaTAoAPZBuyfl/qA==}
+  vanilla-icon-picker@1.4.2:
+    resolution: {integrity: sha512-P9xx77uhSrClqah+O0l3EtjlZdJ0oQhBnFiCXPF5HtZ1RLpL69c9kfi3hpbNhVTgOhA+MyVOObGxAg6xZnVmTA==}
 
   vite-plugin-full-reload@1.2.0:
     resolution: {integrity: sha512-kz18NW79x0IHbxRSHm0jttP4zoO9P9gXh+n6UTwlNKnviTTEpOlum6oS9SmecrTtSr+muHEn5TUuC75UovQzcA==}
@@ -1498,7 +1498,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  vanilla-icon-picker@1.4.1: {}
+  vanilla-icon-picker@1.4.2: {}
 
   vite-plugin-full-reload@1.2.0:
     dependencies:
