@@ -3247,25 +3247,25 @@
         },
         {
             "name": "mcamara/laravel-localization",
-            "version": "v2.3.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mcamara/laravel-localization.git",
-                "reference": "af91f489f518fb1907944de8622a19266159d28f"
+                "reference": "b4b530b8d892cc8787b94059085a53b37224009b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/af91f489f518fb1907944de8622a19266159d28f",
-                "reference": "af91f489f518fb1907944de8622a19266159d28f",
+                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/b4b530b8d892cc8787b94059085a53b37224009b",
+                "reference": "b4b530b8d892cc8787b94059085a53b37224009b",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^10.0|^11.0|^12.0",
+                "laravel/framework": "^11.0|^12.0|^13.0",
                 "php": "^8.2"
             },
             "require-dev": {
-                "orchestra/testbench-browser-kit": "^8.5|^9.0|^10.0",
-                "phpunit/phpunit": "^10.1|^11.0"
+                "orchestra/testbench": "^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^10.1|^11.0|^12.5.12"
             },
             "suggest": {
                 "ext-intl": "*"
@@ -3307,7 +3307,7 @@
             ],
             "support": {
                 "issues": "https://github.com/mcamara/laravel-localization/issues",
-                "source": "https://github.com/mcamara/laravel-localization/tree/v2.3.0"
+                "source": "https://github.com/mcamara/laravel-localization/tree/v2.4.0"
             },
             "funding": [
                 {
@@ -3319,7 +3319,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-26T06:38:01+00:00"
+            "time": "2026-03-17T19:24:07+00:00"
         },
         {
             "name": "monolog/monolog",
