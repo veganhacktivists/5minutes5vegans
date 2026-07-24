@@ -33,7 +33,7 @@ importers:
         version: 3.7.1
       swiper:
         specifier: ^12.1.2
-        version: 12.1.2
+        version: 12.2.0
       v-clipboard:
         specifier: 3.0.0-next.1
         version: 3.0.0-next.1
@@ -753,8 +753,8 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  swiper@12.1.2:
-    resolution: {integrity: sha512-4gILrI3vXZqoZh71I1PALqukCFgk+gpOwe1tOvz5uE9kHtl2gTDzmYflYCwWvR4LOvCrJi6UEEU+gnuW5BtkgQ==}
+  swiper@12.2.0:
+    resolution: {integrity: sha512-K8uXsBZU6ME97Ia3xbBge8IRCnR1lOmIILzvY/jGVic7dSTQ530s3uO8RvXbPUtkkXLWIwmZLRPbtDxRWVAFdg==}
     engines: {node: '>= 4.7.0'}
 
   terser@5.43.1:
@@ -1426,7 +1426,7 @@ snapshots:
   source-map@0.6.1:
     optional: true
 
-  swiper@12.1.2: {}
+  swiper@12.2.0: {}
 
   terser@5.43.1:
     dependencies:
