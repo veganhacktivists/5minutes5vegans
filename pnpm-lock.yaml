@@ -49,7 +49,7 @@ importers:
         version: 6.0.8(vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1))(vue@3.5.17)
       laravel-vite-plugin:
         specifier: ^2.0.0
-        version: 2.0.0(vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1))
+        version: 2.1.0(vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1))
       lodash:
         specifier: ^4.18.1
         version: 4.18.1
@@ -668,8 +668,8 @@ packages:
   jquery@3.7.1:
     resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
 
-  laravel-vite-plugin@2.0.0:
-    resolution: {integrity: sha512-pnaKHInJgiWpG/g+LmaISHl7D/1s5wnOXnrGiBdt4NOs+tYZRw0v/ZANELGX2/dGgHyEzO+iZ6x4idpoK04z/Q==}
+  laravel-vite-plugin@2.1.0:
+    resolution: {integrity: sha512-z+ck2BSV6KWtYcoIzk9Y5+p4NEjqM+Y4i8/H+VZRLq0OgNjW2DqyADquwYu5j8qRvaXwzNmfCWl1KrMlV1zpsg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -711,10 +711,6 @@ packages:
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
-
-  picomatch@4.0.4:
-    resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
-    engines: {node: '>=12'}
 
   picomatch@4.0.5:
     resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
@@ -1331,7 +1327,7 @@ snapshots:
 
   jquery@3.7.1: {}
 
-  laravel-vite-plugin@2.0.0(vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1)):
+  laravel-vite-plugin@2.1.0(vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1)):
     dependencies:
       picocolors: 1.1.1
       vite: 7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1)
@@ -1361,8 +1357,6 @@ snapshots:
     optional: true
 
   picocolors@1.1.1: {}
-
-  picomatch@4.0.4: {}
 
   picomatch@4.0.5: {}
 
@@ -1461,7 +1455,7 @@ snapshots:
   vite-plugin-full-reload@1.2.0:
     dependencies:
       picocolors: 1.1.1
-      picomatch: 4.0.4
+      picomatch: 4.0.5
 
   vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1):
     dependencies:
