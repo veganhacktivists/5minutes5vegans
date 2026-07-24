@@ -48,4 +48,8 @@ return [
         'api_key' => env('SHLINK_API_KEY'),
     ],
 
+    // API key guarding the tweet-ingest endpoint (POST /api/tweets).
+    // Read via config() so it survives `php artisan config:cache`.
+    'api_key' => env('API_KEY'),
+
 ];
