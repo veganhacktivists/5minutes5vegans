@@ -46,19 +46,19 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^6.0.0
-        version: 6.0.8(vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1))(vue@3.5.17)
+        version: 6.0.8(vite@7.3.6(@types/node@24.0.14)(sass@1.101.7)(terser@5.43.1))(vue@3.5.17)
       laravel-vite-plugin:
         specifier: ^2.0.0
-        version: 2.1.0(vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1))
+        version: 2.1.0(vite@7.3.6(@types/node@24.0.14)(sass@1.101.7)(terser@5.43.1))
       lodash:
         specifier: ^4.18.1
         version: 4.18.1
       sass:
         specifier: ^1.89.2
-        version: 1.101.6
+        version: 1.101.7
       vite:
         specifier: ^7.3.5
-        version: 7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1)
+        version: 7.3.6(@types/node@24.0.14)(sass@1.101.7)(terser@5.43.1)
 
 packages:
 
@@ -737,8 +737,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  sass@1.101.6:
-    resolution: {integrity: sha512-j8qYug9WuX19eU5sxJWQlbR8RYhKgXiOYgGjkJRkcW35c3neWtxPdcUW0saN6Od2L0aqEp0AmH9R/QeAxrffMQ==}
+  sass@1.101.7:
+    resolution: {integrity: sha512-cDeUYU0dhwKVbpYg/ppsjyuoddxYhWlJOkRoI7+/iZsaSp7iowWDfm+tL2HcUafedWBDvbf/+hx0QRgKG4JSHA==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -1088,10 +1088,10 @@ snapshots:
       undici-types: 7.8.0
     optional: true
 
-  '@vitejs/plugin-vue@6.0.8(vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1))(vue@3.5.17)':
+  '@vitejs/plugin-vue@6.0.8(vite@7.3.6(@types/node@24.0.14)(sass@1.101.7)(terser@5.43.1))(vue@3.5.17)':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1)
+      vite: 7.3.6(@types/node@24.0.14)(sass@1.101.7)(terser@5.43.1)
       vue: 3.5.17
 
   '@vue/compiler-core@3.5.17':
@@ -1327,10 +1327,10 @@ snapshots:
 
   jquery@3.7.1: {}
 
-  laravel-vite-plugin@2.1.0(vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1)):
+  laravel-vite-plugin@2.1.0(vite@7.3.6(@types/node@24.0.14)(sass@1.101.7)(terser@5.43.1)):
     dependencies:
       picocolors: 1.1.1
-      vite: 7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1)
+      vite: 7.3.6(@types/node@24.0.14)(sass@1.101.7)(terser@5.43.1)
       vite-plugin-full-reload: 1.2.0
 
   lodash@4.18.1: {}
@@ -1407,7 +1407,7 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.62.2
       fsevents: 2.3.3
 
-  sass@1.101.6:
+  sass@1.101.7:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.9
@@ -1457,7 +1457,7 @@ snapshots:
       picocolors: 1.1.1
       picomatch: 4.0.5
 
-  vite@7.3.6(@types/node@24.0.14)(sass@1.101.6)(terser@5.43.1):
+  vite@7.3.6(@types/node@24.0.14)(sass@1.101.7)(terser@5.43.1):
     dependencies:
       esbuild: 0.28.1
       fdir: 6.5.0(picomatch@4.0.5)
@@ -1468,7 +1468,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.0.14
       fsevents: 2.3.3
-      sass: 1.101.6
+      sass: 1.101.7
       terser: 5.43.1
 
   vue@3.5.17:
