@@ -6,15 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 use App\Models\User;
 
 class UserController extends Controller
 {
     public function update(Request $request, User $user) {
+        abort_unless((int) $user->id === (int) Auth::id(), 403);
+
         $userData = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'password' => ['string', 'min:8', 'confirmed'],
         ]);
 

@@ -24,6 +24,8 @@ class VerbiageController extends Controller
 
     public function update( Request $request, Verbiage $verbiage ) {
 
+        abort_unless( (int) $verbiage->user_id === (int) Auth::id(), 403 );
+
         $data = $request->validate($this::verbiageRules);
         $verbiage->update( $data );
 
@@ -31,6 +33,8 @@ class VerbiageController extends Controller
     }
 
     public function destroy( Verbiage $verbiage ) {
+
+        abort_unless( (int) $verbiage->user_id === (int) Auth::id(), 403 );
 
         $verbiage->delete();
 
