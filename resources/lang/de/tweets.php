@@ -111,7 +111,7 @@ return [
             [
                 'There\'s a lot of really good Vegan egg recipes (like this one, but add spinach): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
             ], [
-                'You can buy Vegan eggs here too: ' . generate_and_cache_shlink('https://followyourheart.com/products/veganegg/') . ' And even more info here: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' and especially here: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
+                'You can buy Vegan eggs here too: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' And even more info here: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' and especially here: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
             ]
         ]
     ],
