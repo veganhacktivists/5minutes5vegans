@@ -2,9 +2,6 @@
 // @import '~swiper/components/navigation/navigation';
 // @import '~swiper/components/pagination/pagination';
 
-$feed-honeydew: #e3f3e5;
-$feed-teal: #41b9aa;
-
 .swiper-container {
     width: 100%;
     flex: 1 1 auto;
@@ -144,7 +141,7 @@ $feed-teal: #41b9aa;
     }
 
     i {
-        color: #EC361F;
+        color: $feed-red;
         padding-left: 5px;
     }
 }
@@ -155,7 +152,7 @@ $feed-teal: #41b9aa;
 
     & > div {
         display: inline-block;
-        background-color: #C8E0C1;
+        background-color: $feed-sage;
         width: 50px;
         border-top-left-radius: 7px;
         border-bottom-right-radius: 7px;
@@ -220,9 +217,9 @@ $feed-teal: #41b9aa;
 }
 
 .verbiage-switch {
-    color: #19443A;
+    color: $dark-text;
     font-size: 17px;
-    background-color: #D4E9D0;
+    background-color: $feed-mint-dark;
 }
 
 .active {
@@ -234,9 +231,9 @@ $feed-teal: #41b9aa;
     /*position: relative;*/
     width: 100%;
     color: inherit;
-    background-color: #E7F9EC;
+    background-color: $feed-mint;
     border: 0;
-    border-top: 2px solid #b7dbc7;
+    border-top: 2px solid $feed-border;
     padding: 5px 10px;
     height: 100%;
 
@@ -248,8 +245,8 @@ $feed-teal: #41b9aa;
     &:hover,
     &:focus,
     &.active {
-        color: #ec361f !important;
-        border-top-color: #ec361f;
+        color: $feed-red !important;
+        border-top-color: $feed-red;
         span {
             color: inherit;
         }
@@ -286,8 +283,8 @@ $feed-teal: #41b9aa;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    background-color: #E7F9EC;
-    border-top: 2px solid #D4E9D0;
+    background-color: $feed-mint;
+    border-top: 2px solid $feed-mint-dark;
 }
 
 .verbiage-index {
@@ -361,8 +358,8 @@ $feed-teal: #41b9aa;
     }
 
     .verbiage-menu {
-        background-color: #e7f9ec;
-        border: 2px solid #c1e1ce;
+        background-color: $feed-mint;
+        border: 2px solid $feed-border-light;
         margin-bottom: 15px;
 
         a {
@@ -380,7 +377,7 @@ $feed-teal: #41b9aa;
         }
 
         .greeting {
-            color: #19443a;
+            color: $dark-text;
             font-size: 22px;
             flex-basis: 100%;
 
@@ -454,20 +451,20 @@ $feed-teal: #41b9aa;
 }
 
 .cc-count.cc-is-fine {
-    color: #6C757D !important;
+    color: $count-fine !important;
 }
 
 .cc-count.cc-is-warning {
-    color: #FFC107 !important;
+    color: $count-warning !important;
 }
 
 .cc-count.cc-is-danger {
-    color: #eb6e3d !important;
+    color: $count-danger !important;
 }
 
 .cc-count.cc-is-expended {
-    color: #FFFFFF !important;
-    background-color: #DC3545 !important;
+    color: $feed-card-bg !important;
+    background-color: $count-over !important;
     border-radius: 2px;
     padding: 2px;
     line-height: 1;
@@ -480,15 +477,15 @@ $feed-teal: #41b9aa;
     padding-right: 20px;
 
     .card {
-        background-color: #FFF !important;
-        border: 1px solid #E5E7EB;
+        background-color: $feed-card-bg !important;
+        border: 1px solid $feed-card-border;
         padding: 16px;
         border-radius: 12px;
         width: 100%;
-        color: #000 !important;
+        color: $feed-card-text !important;
 
         &:hover {
-            background-color: #F9FAFB !important;
+            background-color: $feed-card-hover !important;
             text-decoration: none;
         }
     }
@@ -516,13 +513,13 @@ $feed-teal: #41b9aa;
     }
 
     .fullname {
-        color: #000;
+        color: $feed-card-text;
         font-weight: bold;
     }
 
     .username {
         font-size: 0.8em;
-        color: #666;
+        color: $feed-card-muted;
     }
 
     .icon {
@@ -531,7 +528,7 @@ $feed-teal: #41b9aa;
     }
 
     .body {
-        color: #000;
+        color: $feed-card-text;
         font-size: 18px;
         line-height: 1.5;
         margin-top: 12px;
@@ -559,14 +556,14 @@ $feed-teal: #41b9aa;
     }
 
     .timestamp {
-        color: #666;
+        color: $feed-card-muted;
         font-size: 14px;
         margin-top: 8px;
         margin-bottom: 0;
     }
 
     .divider {
-        border-bottom: 1px solid #E5E7EB;
+        border-bottom: 1px solid $feed-card-border;
         margin-top: 8px;
     }
 
@@ -590,7 +587,7 @@ $feed-teal: #41b9aa;
 
     .stat-count {
         font-size: 16px;
-        color: #000;
+        color: $feed-card-text;
     }
 
     .empty {
