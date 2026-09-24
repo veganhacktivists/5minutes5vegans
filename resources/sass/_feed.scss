@@ -78,10 +78,14 @@ $feed-teal: #41b9aa;
 }
 
 .timer-section-middle {
-    display: none;
+    order: 3;
+    flex: 0 0 100%;
+    margin-top: 10px;
 
     @include for-desktop-up {
-        display: block;
+        order: 0;
+        flex: 1 0 0%;
+        margin-top: 0;
     }
 }
 
@@ -169,6 +173,20 @@ $feed-teal: #41b9aa;
 
 .timer-complete {
     display: none;
+    color: $dark-text;
+    font-size: 22px;
+    font-weight: bold;
+
+    .timer-restart {
+        @extend .swirvy-box;
+
+        margin-top: 4px;
+        padding: 4px 14px;
+        font-size: 16px;
+        color: $dark-text;
+        background: transparent;
+        border: 2px solid $feed-teal;
+    }
 }
 
 #minutes-left {

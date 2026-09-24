@@ -29,6 +29,7 @@ function setTimer(minutes, seconds) {
 }
 
 function startTimer() {
+    clearInterval(timerInterval)
     startTime = Date.now()
     timerInterval = setInterval(updateTimer, 1000)
     setTimer('05', '00')
