@@ -242,24 +242,16 @@ $feed-teal: #41b9aa;
         padding-top: 5px;
         display: block;
         margin: auto;
-
-        @include for-sm-tablet-portrait-up {
-            padding-top: 4px;
-            display: inline-block;
-            margin: auto;
-        }
     }
 
     p {
         color: $dark-text;
         display: block;
         text-align: center;
-        padding-left: 7px;
-
-        @include for-sm-tablet-portrait-up {
-            display: inline;
-            text-align: left;
-        }
+        line-height: 1.2;
+        margin: 5px 0;
+        hyphens: auto;
+        overflow-wrap: break-word;
     }
 }
 

@@ -11,7 +11,6 @@
                 <div
                     v-bind:class="{ active: selected.title == verbiage.title }"
                     class="verbiage-link"
-                    style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
                     <i :class="verbiage.icon" class="fa-fw"></i>
                     <p>{{ verbiage.title }}</p>
@@ -29,7 +28,6 @@
                     v-if="selected != verbiage || !editing"
                     v-bind:class="{ active: selected.id == verbiage.id }"
                     class="verbiage-link"
-                    style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
                     <i :class="verbiage.icon"></i>
                     <p>{{ verbiage.title }}</p>
