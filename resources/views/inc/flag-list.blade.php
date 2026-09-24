@@ -1,4 +1,4 @@
-<nav class="lang-switch swirvy-box" id="languageFlags" aria-label="Language">
+<nav class="lang-switch" id="languageFlags" aria-label="Language">
     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
         <a hreflang="{{ $localeCode }}"
             href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"

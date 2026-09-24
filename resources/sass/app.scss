@@ -153,24 +153,23 @@ a:hover, .btn-link:hover {
 
 .lang-switch {
     display: flex;
-    width: fit-content;
-    border: 2px solid $feed-teal;
-    overflow: hidden;
-    background-color: $white;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
 
     a {
+        @extend .swirvy-box;
+
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        padding: 5px 12px;
+        padding: 4px 10px;
         font-size: 15px;
         font-weight: bold;
         color: $dark-text;
         text-decoration: none;
-
-        + a {
-            border-left: 2px solid $feed-teal;
-        }
+        background-color: $white;
+        border: 2px solid $feed-teal;
 
         &:hover {
             background-color: $feed-mint;
