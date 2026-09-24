@@ -157,6 +157,8 @@ export default {
         custom: Boolean
     },
 
+    emits: ['update:custom'],
+
     data: function() {
         return {
             defaultVerbiages: false,
@@ -211,8 +213,8 @@ export default {
                 this.customVerbiages.pop()
                 this.creating = false
 
-                if (!this.customVerbiages.length) this.custom = false
-            } else this.selected = this.backup
+                if (!this.customVerbiages.length) this.$emit('update:custom', false)
+            } else Object.assign(this.selected, this.backup)
 
             this.editing = false
         },
@@ -280,11 +282,16 @@ export default {
             )
                 return
 
-            const index = this.customVerbiages.indexOf(this.selected)
+            const id = this.selected.id
 
-            axios.delete('/verbiage/' + this.selected.id).then((r) => {
-                this.customVerbiages.splice(index, 1)
-                if (!this.customVerbiages.length) this.custom = false
+            axios.delete('/verbiage/' + id).then((r) => {
+                const index = this.customVerbiages.findIndex((verbiage) => verbiage.id === id)
+                if (index !== -1) this.customVerbiages.splice(index, 1)
+
+                this.editing = false
+                this.selected = { icon: 'fas fa-leaf', body: '' }
+                this.characterCountdown()
+                if (!this.customVerbiages.length) this.$emit('update:custom', false)
             }, this.failedRequest)
         },
 
