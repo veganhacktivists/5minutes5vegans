@@ -114,5 +114,6 @@
     "Messages": "Mensagens",
     "Feed": "Feed",
     "New Password": "Nova senha",
-    "The messages didn't load. Refresh the page to try again.": "As mensagens não carregaram. Atualize a página para tentar de novo."
+    "The messages didn't load. Refresh the page to try again.": "As mensagens não carregaram. Atualize a página para tentar de novo.",
+    "Current password (needed to change your email or password)": "Senha atual (necessária para alterar o e-mail ou a senha)"
 }

@@ -19,6 +19,7 @@ class AccessControlTest extends TestCase
         $response = $this->actingAs($user)->putJson(route('user.update', $user), [
             'name'  => 'New Name',
             'email' => 'new-email@example.com',
+            'current_password' => 'password',
         ]);
 
         $response->assertOk()->assertJson(['success' => true]);

@@ -6,7 +6,7 @@
          :custom="custom"
          />
 
-      <Verbiages v-if="page === 'verbiages'" :custom="custom" />
+      <Verbiages v-if="page === 'verbiages'" v-model:custom="custom" />
       <UserEdit v-if="page === 'userEdit'" />
    </div>
 </template>
