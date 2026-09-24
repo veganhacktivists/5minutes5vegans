@@ -22,6 +22,10 @@ class TweetController extends Controller
 
         $tweets = Cache::get($key);
 
+        if (empty($tweets)) {
+            return response()->json([], 503)->header('Retry-After', 60);
+        }
+
         return response()
             ->json($tweets)
             ->header('Cache-Control', 'public, max-age=60');

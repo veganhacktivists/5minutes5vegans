@@ -81,5 +81,6 @@
   "No tweets in this language yet. Check back later.": "Noch keine Tweets in dieser Sprache. Schau später wieder vorbei.",
   "Messages": "Nachrichten",
   "Feed": "Feed",
-  "New Password": "Neues Passwort"
+  "New Password": "Neues Passwort",
+  "The messages didn't load. Refresh the page to try again.": "Die Nachrichten konnten nicht geladen werden. Lade die Seite neu, um es noch einmal zu versuchen."
 }

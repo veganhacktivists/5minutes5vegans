@@ -37,6 +37,7 @@
             </div>
         </div>
 
+        <div v-else-if="loadFailed">{{ lang.loadFailed }}</div>
         <div v-else>{{ lang.loading }}</div>
 
         <div class="verbiage-msg-container" ref="verbiageMsgContainer">
@@ -159,6 +160,7 @@ export default {
     data: function() {
         return {
             defaultVerbiages: false,
+            loadFailed: false,
             currentUser: window.currentUser,
             customVerbiages: window.customVerbiages,
             editing: false,
@@ -178,17 +180,26 @@ export default {
     },
 
     created: function() {
-        axios.get(window.routes.tweets).then(
-            (r) => {
-                this.defaultVerbiages = r.data
-            },
-            () => {
-                this.created()
-            },
-        )
+        this.loadDefaultVerbiages()
     },
 
     methods: {
+        loadDefaultVerbiages: function(attempt = 1) {
+            axios.get(window.routes.tweets).then(
+                (r) => {
+                    this.defaultVerbiages = r.data
+                },
+                () => {
+                    if (attempt >= 3) {
+                        this.loadFailed = true
+                        return
+                    }
+
+                    setTimeout(() => this.loadDefaultVerbiages(attempt + 1), 2000 * attempt)
+                },
+            )
+        },
+
         startEditing: function() {
             this.editing = true
             this.backup = { ...this.selected }

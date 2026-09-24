@@ -20,6 +20,7 @@
         'register' => __('Register'),
         'placeholder' => __('Pick a topic above to get a message you can copy.'),
         'loading' => __('Loading messages…'),
+        'loadFailed' => __("The messages didn't load. Refresh the page to try again."),
         'new' => __('New'),
         'save' => __('Save'),
         'edit' => __('Edit'),
