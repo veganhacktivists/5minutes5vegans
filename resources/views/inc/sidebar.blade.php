@@ -6,7 +6,8 @@
     $routes = [
         'login' => route('login'),
         'logout' => route('logout'),
-        'register' => route('register')
+        'register' => route('register'),
+        'tweets' => route('tweets')
     ];
 
     $user = Auth::user();

@@ -175,7 +175,7 @@ export default {
     },
 
     created: function() {
-        axios.get('/en/tweets').then(
+        axios.get(window.routes.tweets).then(
             (r) => {
                 this.defaultVerbiages = r.data
             },
