@@ -13,9 +13,11 @@
 
          <input class="form-control mb-1" required="" :placeholder="lang.yourEmail" name="email" type="email" :value="currentUser.email">
 
-         <input class="form-control mb-1" :placeholder="lang.password" name="password" type="password" value="">
+         <input class="form-control mb-1" :placeholder="lang.currentPassword" name="current_password" type="password" autocomplete="current-password" value="">
 
-         <input class="form-control mb-1" :placeholder="lang.confirmPassword" name="password_confirmation" type="password" value="">
+         <input class="form-control mb-1" :placeholder="lang.password" name="password" type="password" autocomplete="new-password" value="">
+
+         <input class="form-control mb-1" :placeholder="lang.confirmPassword" name="password_confirmation" type="password" autocomplete="new-password" value="">
 
          <div class="d-flex">
             <input class="btn btn-large btn-primary swirvy-box ms-auto" type="submit" :value="lang.saveProfile">
@@ -42,6 +44,7 @@ export default {
          const formData = {
             name: form.name.value,
             email: form.email.value,
+            current_password: form.current_password.value,
          }
 
          const password = form.password.value
@@ -53,7 +56,12 @@ export default {
          }
 
           axios.put(form.action, formData)
-            .then(response => alert(this.lang.profileSaved))
+            .then(response => {
+               form.current_password.value = ''
+               form.password.value = ''
+               form.password_confirmation.value = ''
+               alert(this.lang.profileSaved)
+            })
             .catch(this.failedRequest)
       },
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 use App\Models\User;
@@ -21,8 +22,14 @@ class UserController extends Controller
             'password' => ['string', 'min:8', 'confirmed'],
         ]);
 
-        if (isset($userData['password']))
+        if (isset($userData['password']) || $userData['email'] !== $user->email) {
+            $request->validate(['current_password' => ['required', 'current_password']]);
+        }
+
+        if (isset($userData['password'])) {
             $userData['password'] = Hash::make($userData['password']);
+            $user->setRememberToken(Str::random(60));
+        }
 
         $success = $user->update($userData);
         return response()->json([ 'success' => $success ]);

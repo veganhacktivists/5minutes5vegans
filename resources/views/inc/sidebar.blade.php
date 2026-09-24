@@ -37,6 +37,7 @@
         'yourEmail' => __('Your Email'),
         'password' => __('Password'),
         'confirmPassword' => __('Confirm Password'),
+        'currentPassword' => __('Current password (needed to change your email or password)'),
         'saveProfile' => __('Save Profile'),
         'messages' => __('Messages'),
         'feed' => __('Feed'),
@@ -54,7 +55,7 @@
                 'name' => $user->name,
                 'email' => $user->email,
             ]);
-        routes['user.update'] = @json(route('user.update', Auth::user()));
+        routes['user.update'] = @json(route('user.update', Auth::user(), false));
     @endauth
 </script>
 
