@@ -210,6 +210,15 @@
     }
 }
 
+// Labels wrap between words, never inside one. The type scales with the tile
+// so the longest word in any title ("Environnement") always fits.
+.verbiage-grid {
+    display: grid;
+    // At most five a row, as before; fewer when a column would drop below 96px
+    grid-template-columns: repeat(auto-fill, minmax(max(96px, calc((100% - 4 * 8px) / 5)), 1fr));
+    column-gap: 8px;
+}
+
 .verbiage-container {
     padding-bottom: 4px;
 }
@@ -232,8 +241,9 @@
     background-color: $feed-mint;
     border: 0;
     border-top: 2px solid $feed-border;
-    padding: 4px 8px;
+    padding: 4px 6px;
     height: 100%;
+    container-type: inline-size;
 
     &:hover {
         @extend .text-success;
@@ -266,7 +276,8 @@
         text-align: center;
         line-height: 1.15;
         margin: 4px 0 2px;
-        hyphens: auto;
+        font-size: min(14.4px, 14.5cqi);
+        text-wrap: balance;
         overflow-wrap: break-word;
     }
 }

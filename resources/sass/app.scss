@@ -153,6 +153,7 @@ a:hover, .btn-link:hover {
 }
 
 .lang-switch {
+    container-type: inline-size;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -180,6 +181,18 @@ a:hover, .btn-link:hover {
             color: $white;
             background-color: $button-cta-color;
         }
+    }
+}
+
+// Seven chips with codes need about 540px. Below that, show the flags
+// alone so the row stays on one line; each link keeps its title and label.
+@container (max-width: 544px) {
+    .lang-switch a {
+        padding: 4px 6px;
+    }
+
+    .lang-code {
+        display: none;
     }
 }
 

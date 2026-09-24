@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="row px-3" v-if="defaultVerbiages">
+        <div class="verbiage-grid px-2" v-if="defaultVerbiages">
             <div
                 v-if="!custom"
                 v-for="verbiage in defaultVerbiages"
                 v-bind:key="verbiage.id"
                 v-on:click="selectVerbiage(verbiage)"
-                class="verbiage-container col-6 col-md-4 col-lg-3 col-lg-5ths px-1"
+                class="verbiage-container"
                 >
                 <button
                     type="button"
@@ -23,7 +23,7 @@
                 v-for="(verbiage, index) in customVerbiages"
                 v-bind:key="index"
                 v-on:click="selectVerbiage(verbiage)"
-                class="verbiage-container col-6 col-md-4 col-lg-3 col-lg-5ths px-1"
+                class="verbiage-container"
                 >
                 <button
                     type="button"
