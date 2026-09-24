@@ -38,6 +38,32 @@ $cyan: #6cb2eb;
     @media only screen and (min-width: 1596px) { @content; }
 }
 
+// "Project by Vegan Hacktivists" credit
+@mixin vh-credit {
+    .vh-link {
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 400;
+        font-size: inherit;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        .vh-vegan {
+            font-weight: 700;
+        }
+    }
+
+    .vh-logo {
+        vertical-align: middle;
+        margin: 0 6px 2px 2px;
+    }
+}
+
 // Challenge Page
 $dark-text: #19443A;
 

@@ -347,32 +347,7 @@
             padding-bottom: 0;
         }
 
-        .vh-link {
-            font-family: 'Rajdhani', sans-serif;
-            font-weight: 400;
-            font-size: inherit;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: $white;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-
-            .vh-vegan {
-                font-weight: 700;
-            }
-        }
-
-        .font-serif > a:last-child {
-            margin-left: auto;
-        }
-
-        .vh-logo {
-            vertical-align: middle;
-            margin: 0 6px 2px 2px;
-        }
+        @include vh-credit;
 
         .font-serif {
             display: flex;

@@ -153,6 +153,12 @@
 
 .login-footer {
     @extend .page-footer;
+    @include vh-credit;
+
+    .vh-credit {
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 500;
+    }
 }
 
 .reset-pane {
