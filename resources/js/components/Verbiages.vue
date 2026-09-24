@@ -6,16 +6,16 @@
                 v-for="verbiage in defaultVerbiages"
                 v-bind:key="verbiage.id"
                 v-on:click="selectVerbiage(verbiage)"
-                class="verbiage-container col-12 col-sm-6 col-md-3 col-lg-5ths px-1"
+                class="verbiage-container col-6 col-md-4 col-lg-3 col-lg-5ths px-1"
                 >
-                <div
+                <button
+                    type="button"
                     v-bind:class="{ active: selected.title == verbiage.title }"
                     class="verbiage-link"
-                    style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
                     <i :class="verbiage.icon" class="fa-fw"></i>
-                    <p>{{ verbiage.title }}</p>
-                </div>
+                    <span>{{ verbiage.title }}</span>
+                </button>
             </div>
 
             <div
@@ -23,21 +23,22 @@
                 v-for="(verbiage, index) in customVerbiages"
                 v-bind:key="index"
                 v-on:click="selectVerbiage(verbiage)"
-                class="verbiage-container col-12 col-sm-6 col-md-3 col-lg-5ths px-1"
+                class="verbiage-container col-6 col-md-4 col-lg-3 col-lg-5ths px-1"
                 >
-                <div
+                <button
+                    type="button"
                     v-if="selected != verbiage || !editing"
                     v-bind:class="{ active: selected.id == verbiage.id }"
                     class="verbiage-link"
-                    style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
                     >
                     <i :class="verbiage.icon"></i>
-                    <p>{{ verbiage.title }}</p>
-                </div>
+                    <span>{{ verbiage.title }}</span>
+                </button>
             </div>
         </div>
 
-        <div v-else>Loading supportive messages...</div>
+        <div v-else-if="loadFailed">{{ lang.loadFailed }}</div>
+        <div v-else>{{ lang.loading }}</div>
 
         <div class="verbiage-msg-container" ref="verbiageMsgContainer">
             <div v-if="creating || editing">
@@ -47,7 +48,7 @@
                     </button>
                     <input
                         v-bind:disabled="busy"
-                        class="form-control ms-2"
+                        class="form-control ms-2 bg-white"
                         type="text"
                         style="width:220px;"
                         v-model="selected.title"
@@ -61,7 +62,7 @@
                         v-model="selected.body"
                         class="w-100 p-3"
                         rows="4"
-                        style="font-size: 18px;"
+                        style="font-size: 16px;"
                         v-bind:disabled="busy"
                         v-on:keyup="characterCountdown"
                         :placeholder="[[defaultMessage]]"
@@ -71,6 +72,7 @@
                         data-bs-toggle="tooltip"
                         class="btn btn-link copy-btn"
                         id="copy-btn"
+                        :aria-label="lang.copy"
                         v-if="!editing"
                         v-clipboard="() => selected.body"
                         v-clipboard:success="clipboardSuccessHandler"
@@ -80,6 +82,7 @@
                     </button>
                     <button
                         class="btn btn-link close-btn"
+                        :aria-label="lang.close"
                         v-if="!editing && verbiageMsgToggled"
                         v-on:click="toggleVerbiageMsg(false)"
                         >
@@ -94,14 +97,14 @@
                         v-on:click="createVerbiage"
                         v-bind:disabled="busy"
                         style="margin-bottom: 15px;margin-top: 15px;"
-                        >New</button>
+                        >{{ lang.new }}</button>
                     <button
                         v-if="editing"
-                        class="btn btn-success"
+                        class="btn btn-primary"
                         v-on:click="saveVerbiage"
                         v-bind:disabled="busy"
                         style="margin-bottom: 15px;margin-top: 15px;"
-                        >Save</button>
+                        >{{ lang.save }}</button>
 
                     <button
                         v-if="selected.id && !editing"
@@ -109,21 +112,21 @@
                         class="btn btn-primary"
                         v-bind:disabled="busy"
                         style="margin-bottom: 15px;"
-                        >Edit</button>
+                        >{{ lang.edit }}</button>
                     <button
                         v-if="(selected.id && editing) || creating"
-                        class="btn btn-warning"
+                        class="btn btn-outline-primary"
                         v-on:click="endEditing"
                         v-bind:disabled="busy"
-                        style="margin-bottom: 15px;color: #fff;background-color: #ff8989;border-color: #ff8989;"
-                        >Cancel</button>
+                        style="margin-bottom: 15px;"
+                        >{{ lang.cancel }}</button>
 
                     <button
                         v-if="selected.id && !creating"
                         class="btn btn-danger"
                         v-on:click="deleteVerbiage"
                         v-bind:disabled="busy"
-                        >Delete</button>
+                        >{{ lang.delete }}</button>
                 </div>
             </div>
         </div>
@@ -157,6 +160,7 @@ export default {
     data: function() {
         return {
             defaultVerbiages: false,
+            loadFailed: false,
             currentUser: window.currentUser,
             customVerbiages: window.customVerbiages,
             editing: false,
@@ -168,24 +172,34 @@ export default {
             },
             maxCount: 280, // The maximum characters allowed by Twitter
             remainingCount: 280,
-            defaultMessage: 'Click any of the subjects above to get a clear-cut message to swiftly copy and send.',
+            defaultMessage: window.lang.placeholder,
+            lang: window.lang,
             characterCountState: 'cc-is-fine',
             verbiageMsgToggled: false,
         }
     },
 
     created: function() {
-        axios.get('/en/tweets').then(
-            (r) => {
-                this.defaultVerbiages = r.data
-            },
-            () => {
-                this.created()
-            },
-        )
+        this.loadDefaultVerbiages()
     },
 
     methods: {
+        loadDefaultVerbiages: function(attempt = 1) {
+            axios.get(window.routes.tweets).then(
+                (r) => {
+                    this.defaultVerbiages = r.data
+                },
+                () => {
+                    if (attempt >= 3) {
+                        this.loadFailed = true
+                        return
+                    }
+
+                    setTimeout(() => this.loadDefaultVerbiages(attempt + 1), 2000 * attempt)
+                },
+            )
+        },
+
         startEditing: function() {
             this.editing = true
             this.backup = { ...this.selected }
@@ -238,7 +252,7 @@ export default {
             this.editing = true
             this.$emit('update:custom', true)
             this.selected = {
-                title: 'Enter title',
+                title: this.lang.enterTitle,
                 icon: 'fas fa-leaf',
                 body: this.selected.body,
             }
@@ -262,9 +276,7 @@ export default {
 
         deleteVerbiage: function() {
             if (
-                !confirm(
-                    `Are you sure you want to delete '${this.selected.title}'?`,
-                )
+                !confirm(this.lang.confirmDelete.replace(':title', this.selected.title))
             )
                 return
 
@@ -277,13 +289,13 @@ export default {
         },
 
         failedRequest: function(r) {
-            alert(r.body.message)
+            alert(r.response?.data?.message || this.lang.error)
             console.error(r)
         },
 
         clipboardSuccessHandler() {
             $('#copy-btn').tooltip({
-                title: 'Copied!',
+                title: this.lang.copied,
             })
             $('#copy-btn').tooltip('toggle')
             setTimeout(() => $('#copy-btn').tooltip('dispose'), 2000)

@@ -11,7 +11,7 @@ return [
             [
                 '¡Bien hecho! La mayoría de los veganos lamentamos no haber empezado antes\.'
             ], [
-                'Aquí tienes algunos recursos: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' \(comunidad\) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(Documental\) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' \(Mitos\) 🐷 Envíame un MP si necesitas ayuda!'
+                'Aquí tienes algunos recursos: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' \(comunidad\) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(Documental\) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2') . ' \(Mitos\) 🐷 Envíame un MP si necesitas ayuda!'
             ]
         ]
     ],
@@ -193,7 +193,7 @@ return [
             ], [
                 'Empieza por probar y acostumbrarte a beber leches vegetales.'
             ], [
-                'Luego mantequilla, carnes, etc\. Más info \(activa subtítulos\): ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G')
+                'Luego mantequilla, carnes, etc\. Más info \(activa subtítulos\): ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2')
             ]
         ]
     ],
@@ -207,7 +207,7 @@ return [
             ], [
                 'pero te recomendaría ver este vídeo \(con subtítulos\): ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg')
             ], [
-                'Algunos argumentos desmentidos \(con subs\): ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' y el desafío de 1 mes de veganismo: ' . generate_and_cache_shlink('https://www.challenge22.com/es')
+                'Algunos argumentos desmentidos \(con subs\): ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2') . ' y el desafío de 1 mes de veganismo: ' . generate_and_cache_shlink('https://www.challenge22.com/es')
             ]
         ]
     ],

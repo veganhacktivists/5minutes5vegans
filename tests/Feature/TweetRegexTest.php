@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\TweetController;
 use App\Services\TweetRegexService;
 use Hoa\File\Read;
@@ -20,6 +21,10 @@ class TweetRegexTest extends TestCase
      */
     public function testTweetResources()
     {
+        Http::fake([
+            'go.veganhacktivists.org/*' => Http::response(['shortUrl' => 'https://go.veganhacktivists.org/test']),
+        ]);
+
         $grammar  = new Read('hoa://Library/Regex/Grammar.pp');
         $compiler = Llk::load($grammar);
         foreach (LaravelLocalization::getSupportedLocales()  as $locale => $value) {

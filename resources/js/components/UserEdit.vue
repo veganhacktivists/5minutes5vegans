@@ -9,16 +9,16 @@
          >
          <input name="_method" type="hidden" value="PUT">
 
-         <input class="form-control text-uppercase mb-1" required="" autofocus="" placeholder="Your Name" name="name" type="text" :value="currentUser.name">
+         <input class="form-control mb-1" required="" autofocus="" :placeholder="lang.yourName" name="name" type="text" :value="currentUser.name">
 
-         <input class="form-control text-uppercase mb-1" required="" placeholder="Your Email" name="email" type="email" :value="currentUser.email">
+         <input class="form-control mb-1" required="" :placeholder="lang.yourEmail" name="email" type="email" :value="currentUser.email">
 
-         <input class="form-control text-uppercase mb-1" placeholder="Password" name="password" type="password" value="">
+         <input class="form-control mb-1" :placeholder="lang.password" name="password" type="password" value="">
 
-         <input class="form-control text-uppercase mb-1" placeholder="Confirm Password" name="password_confirmation" type="password" value="">
+         <input class="form-control mb-1" :placeholder="lang.confirmPassword" name="password_confirmation" type="password" value="">
 
          <div class="d-flex">
-            <input class="btn btn-large btn-primary swirvy-box ms-auto" type="submit" value="Save Profile">
+            <input class="btn btn-large btn-primary swirvy-box ms-auto" type="submit" :value="lang.saveProfile">
          </div>
       </form>
    </div>
@@ -30,6 +30,7 @@ export default {
       return {
          currentUser: window.currentUser,
          routes: window.routes,
+         lang: window.lang,
       }
    },
 
@@ -52,17 +53,13 @@ export default {
          }
 
           axios.put(form.action, formData)
-            .then(response => alert('All good! 👍'))
+            .then(response => alert(this.lang.profileSaved))
             .catch(this.failedRequest)
       },
 
-      failedRequest (response) {
-         alert(
-            '❌ Something went wrong :('+
-            "\n\n"+
-            response.body.message
-         )
-         console.error(response)
+      failedRequest (error) {
+         alert(error.response?.data?.message || this.lang.error)
+         console.error(error)
       },
 
    }

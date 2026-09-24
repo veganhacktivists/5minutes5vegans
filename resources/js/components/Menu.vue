@@ -1,60 +1,44 @@
 <template>
-   <div class="verbiage-menu">
-      <div v-if="currentUser" style="margin: 10px;" class="d-flex">
-         <div class="flex-grow-1 d-flex align-items-center greeting">
-            <p class="m-0">
-            Welcome, {{ currentUser.name }}!
-            </p>
-         </div>
-
-         <a href="#"
-            role="button"
-            :class="{ 'active': !custom }"
-            @click.prevent="$emit('navigate', 'verbiages'), $emit('toggleVerbiage', false)"
-            class="verbiage-switch"
-            >Default</a>
-         <a href="#"
-            role="button"
-            :class="{ 'active': custom }"
-            @click.prevent="$emit('navigate', 'verbiages'), $emit('toggleVerbiage', true)"
-            class="verbiage-switch"
-            >Customized</a>
-         <a href="#"
-            @click.prevent="$emit('navigate', 'userEdit')"
-            role="button"
-            style="background-color: #BCDCF0"
-            >Edit Profile</a>
-         <a href="#"
-            onclick="event.preventDefault(); $('#logout-form').submit();"
-            role="button"
-            style="background-color: #E9D0D0"
-            >Logout</a>
+   <div class="verbiage-menu d-flex flex-wrap align-items-center justify-content-between">
+      <div class="verbiage-toggle swirvy-box" role="group">
+         <template v-if="currentUser">
+            <a href="#"
+               role="button"
+               :class="{ 'active': !custom }"
+               :aria-pressed="!custom"
+               @click.prevent="$emit('navigate', 'verbiages'), $emit('toggleVerbiage', false)"
+               >{{ lang.default }}</a>
+            <a href="#"
+               role="button"
+               :class="{ 'active': custom }"
+               :aria-pressed="custom"
+               @click.prevent="$emit('navigate', 'verbiages'), $emit('toggleVerbiage', true)"
+               >{{ lang.customized }}</a>
+         </template>
+         <template v-else>
+            <a href="#"
+               role="button"
+               class="active"
+               aria-pressed="true"
+               @click.prevent
+               >{{ lang.default }}</a>
+            <a :href="routes.login"
+               :title="lang.loginToCustomize"
+               ><i class="fas fa-lock"></i> {{ lang.customized }}</a>
+         </template>
       </div>
 
-      <div v-else style="margin: 10px;" class="d-flex">
-         <div class="flex-grow-1 d-flex align-items-center greeting">
-            <p class="mb-0">
-            Welcome, guest!
-            </p>
-         </div>
-
-         <a href="#"
-            role="button"
-            class="verbiage-switch verbiage-active"
-            >Default</a>
-         <a :href="routes.login"
-            role="button"
-            class="verbiage-switch verbiage-inactive"
-            >Customized</a>
-         <a :href="routes.login"
-            role="button"
-            class="verbiage-switch"
-            style="background-color: #E9D0D0"
-            >Login</a>
-         <a :href="routes.register"
-            role="button"
-            style="background-color: #BCDCF0"
-            >Register</a>
+      <div class="account-links">
+         <template v-if="currentUser">
+            <a href="#" @click.prevent="$emit('navigate', 'userEdit')">{{ lang.editProfile }}</a>
+            ·
+            <a href="#" onclick="event.preventDefault(); $('#logout-form').submit();">{{ lang.logout }}</a>
+         </template>
+         <template v-else>
+            <a :href="routes.login">{{ lang.login }}</a>
+            ·
+            <a :href="routes.register">{{ lang.register }}</a>
+         </template>
       </div>
    </div>
 </template>
@@ -66,7 +50,8 @@ export default {
    data () {
       return {
          currentUser: window.currentUser,
-         routes: window.routes
+         routes: window.routes,
+         lang: window.lang,
       }
    },
 }

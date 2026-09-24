@@ -10,7 +10,7 @@ return [
             [
                 'Du solltest es tun! Die meisten Veganer sagen, dass das einzige, was sie bereuen ist, dass sie nicht schon füher angefangen haben\.'
             ], [
-                'Hier ein paar Infos: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' (community) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' (Movie) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' (Myths) 🐷 Schreib\' mir, wenn du Hilfe brauchst!'
+                'Hier ein paar Infos: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' \(Community\) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(Film\) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2') . ' \(Mythen\) 🐷 Schreib\' mir, wenn du Hilfe brauchst!'
             ]
         ]
     ],
@@ -99,155 +99,155 @@ return [
             [
                 'Normalerweise findest du viele vegane Pizza\-Angebote (und andere Speisen) auf ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
             ], [
-                'There\'s also "Daiya" Pizza: ' . generate_and_cache_shlink('https://daiyafoods.com/our-foods/pizza/') . ' and even more places listed here: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Message me if you need help finding more\.'
+                'Außerdem gibt es Pizza von "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' und noch mehr Orte findest du hier: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Schreib mir, wenn du Hilfe brauchst, noch mehr zu finden\.'
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-egg',
-        'title' => 'I Love Eggs',
+        'title' => 'Ich liebe Eier',
         'body' =>[
             [
-                'There\'s a lot of really good Vegan egg recipes (like this one, but add spinach): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
+                'Es gibt richtig gute vegane Rezepte als Ersatz für Eier \(zum Beispiel dieses hier, einfach noch Spinat dazugeben\): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
             ], [
-                'You can buy Vegan eggs here too: ' . generate_and_cache_shlink('https://followyourheart.com/products/veganegg/') . ' And even more info here: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' and especially here: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
+                'Vegane Eier kannst du auch kaufen: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Mehr Infos gibt es hier: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' und vor allem hier: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-ice-cream',
-        'title' => 'I Love Ice Cream',
+        'title' => 'Ich liebe Eis',
         'body' =>[
             [
-                'Check out Ben & Jerry\'s Non\-Dairy Icecream here: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy')
+                'Probier mal das milchfreie Eis von Ben & Jerry\'s: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy')
             ], [
-                'They have a lot of different flavors and there\'s a lot of other soy/almond/coconut based icecream brands too!'
+                'Es gibt viele verschiedene Sorten und dazu viele andere Eismarken auf Soja\-, Mandel\- oder Kokosbasis!'
             ], [
-                '(See:|Check out) ' . generate_and_cache_shlink('https://www.vegan.com/ice\-cream/')
+                '(Siehe:|Schau mal hier:) ' . generate_and_cache_shlink('https://www.vegan.com/ice-cream/')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-drumstick-bite',
-        'title' => 'I Love Chicken',
+        'title' => 'Ich liebe Hähnchen',
         'body' =>[
             [
-                'Gardein makes some incredible chicken: ' . generate_and_cache_shlink('https://www.gardein.com/') . ', look around at Whole Foods or other stores!'
+                'Gardein macht unglaublich gutes veganes Hähnchen: ' . generate_and_cache_shlink('https://www.gardein.com/') . ', schau dich im Bioladen oder in anderen Supermärkten um!'
             ], [
-                'HappyCow to eat out: ' . generate_and_cache_shlink('https://www.happycow.net') . '! Take a look around your grocery store to see what\'s available, you might be surprised!'
+                'HappyCow zum Auswärtsessen: ' . generate_and_cache_shlink('https://www.happycow.net') . '! Schau dich in deinem Supermarkt um, was es dort gibt, du könntest überrascht werden!'
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-glass-whiskey',
-        'title' => 'Plant Milks',
+        'title' => 'Pflanzenmilch',
         'body' =>[
             [
-                'Check out "Dairy is Scary", it\'s only 5 minutes long: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI')
+                'Schau dir "Dairy is Scary" an, das Video dauert nur 5 Minuten: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI')
             ], [
-                'There\'s also tasty plant milks now like: Soy, Almond, Oat, Coconut, Rice & Cashew milk!'
+                'Es gibt inzwischen auch leckere Pflanzenmilch, zum Beispiel aus Soja, Mandeln, Hafer, Kokos, Reis oder Cashews!'
             ], [
-                'These milks don\'t get gross or bad, they\'re healthier, and no refrigeration is needed before opening\.'
+                'Diese Milchsorten werden nicht eklig oder schlecht, sind gesünder und müssen vor dem Öffnen nicht gekühlt werden\.'
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-video',
-        'title' => 'Documentaries',
+        'title' => 'Dokumentationen',
         'body' =>[
             [
-                'Here are some movies for motivation! Cowspiracy (Environment): ' . generate_and_cache_shlink('https://www.netflix.com/title/80033772') . ' Forks Over Knifes (Health): ' . generate_and_cache_shlink('https://www.netflix.com/title/70185045') . ' Dominion (Animals): ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
+                'Hier ein paar Filme zur Motivation! Cowspiracy \(Umwelt\): ' . generate_and_cache_shlink('https://www.netflix.com/title/80033772') . ' Forks Over Knives \(Gesundheit\): ' . generate_and_cache_shlink('https://www.netflix.com/title/70185045') . ' Dominion \(Tiere\): ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
             ], [
-                'Let me know if you watch any of them! 🌱'
+                'Sag mir Bescheid, wenn du dir einen davon anschaust! 🌱'
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-sad-cry',
-        'title' => 'Dominion Movie',
+        'title' => 'Dominion (Film)',
         'body' =>[
             [
-                'I highly recommend this Youtube video: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
+                'Ich kann dir dieses YouTube\-Video sehr empfehlen: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
             ], [
-                'If you have the time, the first 15 minutes of the video is pretty life\-changing\.'
+                'Wenn du Zeit hast: Die ersten 15 Minuten des Videos können dein Leben verändern\.'
             ], [
-                'Message me back if you need any help going Vegan and I\'d be happy to help or answer any questions you may have!'
+                'Schreib mir, wenn du Hilfe dabei brauchst, vegan zu werden, ich helfe dir gern oder beantworte deine Fragen!'
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-baby',
-        'title' => 'Baby Steps',
+        'title' => 'Kleine Schritte',
         'body' =>[
             [
-                'It\'s awesome that you\'re interested in being Vegan! 🐮'
+                'Toll, dass du dich dafür interessierst, vegan zu leben! 🐮'
             ], [
-                'If it\'s too overwhelming and you don\'t know what to do, try taking baby steps\.'
+                'Wenn dir das zu viel auf einmal ist und du nicht weißt, wo du anfangen sollst, geh es in kleinen Schritten an\.'
             ], [
-                'First just start buying soy/almond/oat milks and get used to that\.'
+                'Fang einfach damit an, Soja\-, Mandel\- oder Hafermilch zu kaufen, und gewöhn dich daran\.'
             ], [
-                'Then do butter, meats, etc\. More info: ' . generate_and_cache_shlink('http://earthlinged.com/ebook')
+                'Danach kommen Butter, Fleisch usw\. Mehr Infos: ' . generate_and_cache_shlink('http://earthlinged.com/ebook')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-leaf',
-        'title' => 'Vegetarian',
+        'title' => 'Vegetarisch',
         'body' =>[
             [
-                'Vegetarian is awesome!'
+                'Vegetarisch ist super!'
             ], [
-                'But I\'d really recommend you check this video out: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg')
+                'Aber ich kann dir dieses Video wirklich empfehlen: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg')
             ], [
-                'Here\'s some common arguments debunked: ' . generate_and_cache_shlink('https://drive.google.com/file/d/1dMyS7mIrr4Fal8UKF900BbLMC11IwWRH/view') . ' and here\'s the 1 month vegan challenge: ' . generate_and_cache_shlink('https://www.challenge22.com/')
+                'Hier werden gängige Argumente widerlegt: ' . generate_and_cache_shlink('https://drive.google.com/file/d/1dMyS7mIrr4Fal8UKF900BbLMC11IwWRH/view') . ' und hier ist die vegane Challenge für einen Monat: ' . generate_and_cache_shlink('https://www.challenge22.com/')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-coins',
-        'title' => 'Too Expensive',
+        'title' => 'Zu teuer',
         'body' =>[
             [
-                'Vegan is actually really cheap, only expensive if you buy all the fancy "sold to vegans" stuff!'
+                'Vegan leben ist eigentlich richtig günstig, teuer wird es nur, wenn du all die schicken Produkte kaufst, die extra "für Veganer" verkauft werden!'
             ], [
-                'Potatoes, Rice, Tofu, Beans, Lentils, Veggies, Fruits, Pasta, Oats, are incredibly cheap, especially in bulk!'
+                'Kartoffeln, Reis, Tofu, Bohnen, Linsen, Gemüse, Obst, Nudeln und Haferflocken sind unglaublich günstig, vor allem in großen Mengen!'
             ], [
-                'This guy has a great video on it: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E')
+                'Dazu gibt es ein super Video: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-calculator',
-        'title' => 'Protein Issue',
+        'title' => 'Protein',
         'body' =>[
             [
-                'Almost all foods, vegetables, fruits, seeds, all have protein, which we don\'t need a lot of\.'
+                'Fast alle Lebensmittel, Gemüse, Obst und Samen enthalten Protein, und davon brauchen wir gar nicht so viel\.'
             ], [
-                'Here\'s a link that goes over the protein/meat myth: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/') . ' and video: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk')
+                'Hier ist ein Link, der mit dem Mythos über Protein und Fleisch aufräumt: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/') . ' und ein Video: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-dumbbell',
-        'title' => 'Fitness Info',
+        'title' => 'Fitness',
         'body' =>[
             [
-                'The worlds strongest man is a Vegan and there\'s so many more world records in fitness/strength held by Vegans!'
+                'Der stärkste Mann der Welt ist Veganer, und es gibt noch viel mehr Weltrekorde in Fitness und Kraftsport, die von Veganern gehalten werden!'
             ], [
-                'Working out on a plant\-based diet is better for your training\.'
+                'Mit einer pflanzlichen Ernährung zu trainieren ist besser für dein Training\.'
             ], [
-                'Videos: ' . generate_and_cache_shlink('https://www.youtube.com/results?search_query=vegan+fitness') . ' and Community: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/')
+                'Videos: ' . generate_and_cache_shlink('https://www.youtube.com/results?search_query=vegan+fitness') . ' und Community: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/')
             ]
         ]
     ],
@@ -257,101 +257,101 @@ return [
         'title' => 'Community',
         'body' =>[
             [
-                'If you need people to talk to, or just get support/help, check out ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . '!'
+                'Wenn du Leute zum Reden brauchst oder einfach Unterstützung oder Hilfe suchst, schau mal bei ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' vorbei!'
             ], [
-                'It\'s a community of around 300,000 Vegans that know the struggle and have the experience, ask them anything\.'
+                'Das ist eine Community von rund 300\.000 Veganern, die die Schwierigkeiten kennen und Erfahrung haben, frag sie einfach alles\.'
             ], [
-                'There\'s also /r/VeganFitness, /r/VeganRecipes, and more!'
+                'Es gibt auch /r/VeganFitness, /r/VeganRecipes und mehr!'
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-utensils',
-        'title' => 'Eating Out',
+        'title' => 'Auswärts essen',
         'body' =>[
             [
-                'Eating out is sometimes hard when you don\'t know where to go or what to eat but it does get much easier as time goes on & pretty soon you\'ll be an expert on what to get\.'
+                'Auswärts essen ist manchmal schwierig, wenn du nicht weißt, wo du hingehen oder was du essen sollst, aber mit der Zeit wird es viel einfacher und bald weißt du genau, was du bestellen kannst\.'
             ], [
-                'Until then check this site out: ' . generate_and_cache_shlink('http://happycow.net') . ' for Vegan food around your area! 🐮'
+                'Bis dahin schau dir diese Seite an: ' . generate_and_cache_shlink('http://happycow.net') . ', dort findest du veganes Essen in deiner Nähe! 🐮'
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-tree',
-        'title' => 'Environment',
+        'title' => 'Umwelt',
         'body' =>[
             [
-                'There\'s really daunting statistics on what Meat and Dairy industry (Animal Agriculture) is doing to the Environment, all backed up with sources & studies: ' . generate_and_cache_shlink('https://speciesjustice.org/environment') . ' Example: Animal agriculture is responsible for up to 91% of Amazon destruction\.'
+                'Es gibt wirklich erschreckende Zahlen dazu, was die Fleisch\- und Milchindustrie \(die Tierhaltung\) der Umwelt antut, alle mit Quellen und Studien belegt: ' . generate_and_cache_shlink('https://speciesjustice.org/environment') . ' Ein Beispiel: Die Tierhaltung ist für bis zu 91 % der Zerstörung des Amazonas verantwortlich\.'
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-flask',
-        'title' => 'Everyone Agrees',
+        'title' => 'Alle sind sich einig',
         'body' =>[
             [
-                'In today\'s age it\'s widely accepted that Veganism is healthier than a meat\-eating diet\.'
+                'Heute ist allgemein anerkannt, dass eine vegane Ernährung gesünder ist als eine Ernährung mit Fleisch\.'
             ], [
-                'Here\'s a page that pulls sources directly from the world\'s largest Health, Nutrition and Dietary organizations (so from non\-biased organizations): ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Hier ist eine Seite, die Quellen direkt von den weltweit größten Organisationen für Gesundheit, Ernährung und Diätetik zitiert \(also von unabhängigen Organisationen\): ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-heartbeat',
-        'title' => 'Is It Healthy',
+        'title' => 'Ist das gesund?',
         'body' =>[
             [
-                'In today\'s age it\'s widely accepted that Meat & Dairy is extremely unhealthy compared to a Vegan diet\.'
+                'Heute ist allgemein anerkannt, dass Fleisch und Milchprodukte im Vergleich zu einer veganen Ernährung extrem ungesund sind\.'
             ], [
-                'Meat is carcinogenic, the cause of the majority diseases, cancer, heart disease & diabetes, and obesity\.'
+                'Fleisch ist krebserregend und die Ursache für die meisten Krankheiten, Krebs, Herzkrankheiten, Diabetes und Übergewicht\.'
             ], [
-                'Here\'s a page with info & sources: ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Hier ist eine Seite mit Infos und Quellen: ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-leaf',
-        'title' => 'Lazy to Cook',
+        'title' => 'Keine Lust zu kochen',
         'body' =>[
             [
-                'A lot of Vegans don\'t cook either, just buy the Vegan options at the store or at restaurants instead of the animal options\.'
+                'Viele Veganer kochen auch nicht, sie kaufen einfach die veganen Produkte im Laden oder im Restaurant statt der tierischen\.'
             ], [
-                'You don\'t need to learn to cook to eat healthy as a Vegan!'
+                'Du musst nicht kochen lernen, um dich vegan und gesund zu ernähren!'
             ], [
-                'Eating out is also really easy with ' . generate_and_cache_shlink('http://happycow.net') . ' 🐮 Message me for help!'
+                'Auswärts essen ist mit ' . generate_and_cache_shlink('http://happycow.net') . ' auch ganz einfach 🐮 Schreib mir, wenn du Hilfe brauchst!'
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-meh-blank',
-        'title' => 'Food Is boring',
+        'title' => 'Essen ist langweilig',
         'body' =>[
             [
-                'Pretty much anything made with meat/dairy can be replicated and be just as awesome, you just have to learn where to buy it or cook it\.'
+                'So ziemlich alles, was mit Fleisch oder Milchprodukten gemacht wird, lässt sich nachmachen und schmeckt genauso gut, du musst nur wissen, wo du es kaufst oder wie du es kochst\.'
             ], [
-                'Here\'s some recipes: ' . generate_and_cache_shlink('https://veganuary.com/recipes') . ', \(or google your favorite food \+ "Vegan"\)\.'
+                'Hier ein paar Rezepte: ' . generate_and_cache_shlink('https://veganuary.com/recipes') . ', \(oder google dein Lieblingsessen \+ "vegan"\)\.'
             ], [
-                'This for eating out: ' . generate_and_cache_shlink('https://happycow.net')
+                'Und das hier zum Auswärtsessen: ' . generate_and_cache_shlink('https://happycow.net')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-fist-raised',
-        'title' => '30+ Arguments',
+        'title' => '30+ Argumente',
         'body' =>[
             [
-                'That\'s a common myth! Check this out: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . '; it basically goes over the 30 most common myths about Veganism\.'
+                'Das ist ein weit verbreiteter Mythos! Schau dir das an: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . '; darin geht es um die 30 häufigsten Mythen über Veganismus\.'
             ], [
-                'Video format here: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2')
+                'Als Video gibt es das hier: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2')
             ], [
-                'Message me back if you need any help or have any questions!'
+                'Schreib mir, wenn du Hilfe brauchst oder Fragen hast!'
             ]
         ]
     ],

@@ -12,7 +12,7 @@
     </p>
     <form method="post" action="{{ route('register') }}">
         @csrf
-        <input type="text" name="name" class="form-control text-uppercase mb-1{{ $errors->has('name') ? ' is-invalid' : '' }}" required placeholder="{{ __('Your Name') }}" value="{{ old('name') }}"/>
+        <input type="text" name="name" class="form-control mb-1{{ $errors->has('name') ? ' is-invalid' : '' }}" required placeholder="{{ __('Your Name') }}" value="{{ old('name') }}"/>
 
         @error('name')
             <span class="invalid-feedback" role="alert">
@@ -20,7 +20,7 @@
             </span>
         @enderror
 
-        <input type="email" name="email" class="form-control text-uppercase mb-1 @error('password') is-invalid @enderror" required placeholder="{{ __('Your Email') }}" value="{{ old('email') }}"/>
+        <input type="email" name="email" class="form-control mb-1 @error('email') is-invalid @enderror" required placeholder="{{ __('Your Email') }}" value="{{ old('email') }}"/>
 
         @if ($errors->has('email'))
             <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
             </span>
         @endif
 
-        <input type="password" name="password" class="form-control text-uppercase mb-1 @error('password') is-invalid @enderror" required placeholder="{{ __('Password') }}" value="{{ old('password') }}"/>
+        <input type="password" name="password" class="form-control mb-1 @error('password') is-invalid @enderror" required placeholder="{{ __('Password') }}"/>
 
         @error('password')
             <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
             </span>
         @enderror
 
-        <input type="password" name="password_confirmation" class="form-control text-uppercase mb-1 @error('password_confirmation') is-invalid @enderror" required placeholder="{{ __('Confirm Password') }}" value="{{ old('password_confirmation') }}"/>
+        <input type="password" name="password_confirmation" class="form-control mb-1 @error('password_confirmation') is-invalid @enderror" required placeholder="{{ __('Confirm Password') }}"/>
 
         @error('password_confirmation')
             <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
             <div>
                 {!! app('captcha')->display() !!}
 
-                @error('g-recaptcha-response'))
+                @error('g-recaptcha-response')
                     <span class="help-block">
                         <strong>{{ $message }}</strong>
                     </span>

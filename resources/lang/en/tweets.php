@@ -10,7 +10,7 @@ return [
             [
                 'You should do it! Most vegans say the only regret they have is that they didn\'t do it earlier\.'
             ], [
-                'Here\'s some resources: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' \(community\) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(Movie\) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' \(Myths\) 🐷 Message me if you need help!'
+                'Here\'s some resources: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' \(community\) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(Movie\) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2') . ' \(Myths\) 🐷 Message me if you need help!'
             ]
         ]
     ],
@@ -90,7 +90,7 @@ return [
             [
                 'There\'s usually a lot of Vegan pizza options (and other restaurants) on ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
             ], [
-                'There\'s also "Daiya" Pizza: ' . generate_and_cache_shlink('https://daiyafoods.com/our-foods/pizza/') . ' and even more places listed here: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Message me if you need help finding more\.'
+                'There\'s also "Daiya" Pizza: ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' and even more places listed here: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Message me if you need help finding more\.'
             ]
         ]
     ],
@@ -102,7 +102,7 @@ return [
             [
                 'There\'s a lot of really good Vegan egg recipes (like this one, but add spinach): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
             ], [
-                'You can buy Vegan eggs here too: ' . generate_and_cache_shlink('https://followyourheart.com/products/veganegg/') . ' And even more info here: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' and especially here: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
+                'You can buy Vegan eggs here too: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' And even more info here: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' and especially here: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
             ]
         ]
     ],

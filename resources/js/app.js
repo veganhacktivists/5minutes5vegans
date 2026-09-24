@@ -29,6 +29,7 @@ function setTimer(minutes, seconds) {
 }
 
 function startTimer() {
+    clearInterval(timerInterval)
     startTime = Date.now()
     timerInterval = setInterval(updateTimer, 1000)
     setTimer('05', '00')
@@ -107,14 +108,10 @@ $(() => {
             renderBullet: function(index, className) {
                 return `
                 <span class="swirvy-box ${className}">${
-                    index === 0 ? 'resources' : 'feed'
+                    index === 0 ? window.lang.messages : window.lang.feed
                 }</span>
                 `
             },
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
         },
         slidesPerView: 2,
         spaceBetween: 0,

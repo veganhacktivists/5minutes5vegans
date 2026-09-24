@@ -1,4 +1,4 @@
-<div class="timeline d-flex flex-column gap-3">
+<div class="timeline">
     @forelse ($tweets as $tweet)
         <a class="card" href="https://x.com/{{ $tweet->from_user_name }}/status/{{ $tweet->id }}" target="_blank">
             <div class="header">
@@ -14,7 +14,7 @@
                     </div>
                 </div>
 
-                <img src="{{ asset('images/twitter/logo.svg') }}" alt="Twitter" width="24" height="24">
+                <img src="{{ asset('images/twitter/logo.svg') }}" alt="X" width="20" height="20">
             </div>
 
             <p class="body">{{ strip_tags(html_entity_decode($tweet->text)) }}</p>
@@ -38,6 +38,6 @@
             <p class="timestamp">{{ $tweet->date->format('h:i A · M d, Y') }}</p>
         </a>
     @empty
-        <div class="empty">No tweets in this language yet, please come back later!</div>
+        <div class="empty">@lang('No tweets in this language yet. Check back later.')</div>
     @endforelse
 </div>

@@ -16,8 +16,8 @@
                     </div>
 
                     <div class="footer" style="background-color: #183732;border: solid 2px #183732;padding: 10px;">
-                        <div class="font-serif" style="color:#fff !important;padding-left: 10px;font-family: Open Sans,Montserrat,Helvetica,Arial,sans-serif;">
-                            Project by <a href="https://veganhacktivists.org/" target="_blank" style="color:rgb(255 91 103);">Vegan Hacktivists</a>&nbsp;<i class="far fa-heart"></i>
+                        <div class="font-serif" style="color:#fff !important;padding-left: 10px;">
+                            @lang('Project by') <a href="https://veganhacktivists.org/" target="_blank" class="vh-link"><img src="{{ asset('images/VHLogo_Small_150.png') }}" alt="" width="28" height="28" class="vh-logo"><span class="vh-vegan">Vegan</span> Hacktivists</a>
                             <a href="https://www.instagram.com/veganhacktivists" target="_blank"><i class="fab fa-instagram" style="float:right;font-size:30px;color:white;"></i></a>
                         </div>
                     </div>
@@ -35,10 +35,6 @@
 
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
         </div>
     </div>
 @endsection

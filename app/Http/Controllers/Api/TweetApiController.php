@@ -7,6 +7,7 @@ use App\Models\Tweet;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
 use Lib\ValidationRules;
 
@@ -15,7 +16,7 @@ class TweetApiController extends Controller
     public function store(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
-            'lang'   => 'required|string|max:2|in:en,fr,es,de',
+            'lang'   => ['required', 'string', Rule::in(array_keys(config('laravellocalization.supportedLocales')))],
             'tweets' => 'required|array',
             ...ValidationRules::merge('tweets', Tweet::$rules, true)
         ]);
