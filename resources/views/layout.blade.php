@@ -17,6 +17,14 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>@lang('5 Minutes 5 Vegans')</title>
+        <meta name="description" content="{{ strip_tags(__('landing.hero')) }}">
+
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ __('5 Minutes 5 Vegans') }}">
+        <meta property="og:description" content="{{ strip_tags(__('landing.hero')) }}">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:image" content="{{ asset('images/og-image.png') }}">
+        <meta name="twitter:card" content="summary_large_image">
 
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @yield('scripts')
