@@ -30,15 +30,16 @@ class Tweet extends Model
     ];
 
     public static $rules = [
-        'id' => 'required|string',
+        'id' => ['required', 'string', 'regex:/^\d{1,25}$/'],
         'date' => 'required|date',
-        'text' => 'required|string',
-        'media' => 'array',
+        'text' => 'required|string|max:25000',
+        'media' => 'array|max:4',
         'media.*.type' => 'required|string|in:photo,video,animated_gif',
-        'media.*.url' => 'required|string',
-        'from_user_name' => 'required|string',
-        'from_full_name' => 'required|string',
-        'from_profile_image' => 'required|string',
+        // The feed renders these URLs, so only accept X's own image and video hosts
+        'media.*.url' => 'required|string|max:255|starts_with:https://pbs.twimg.com/,https://video.twimg.com/',
+        'from_user_name' => ['required', 'string', 'regex:/^\w{1,50}$/'],
+        'from_full_name' => 'required|string|max:100',
+        'from_profile_image' => 'required|string|max:255|starts_with:https://pbs.twimg.com/,https://abs.twimg.com/',
     ];
 
     public function scopeTimeline(Builder $query, string $lang): void

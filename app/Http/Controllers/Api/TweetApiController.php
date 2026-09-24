@@ -17,7 +17,7 @@ class TweetApiController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'lang'   => ['required', 'string', Rule::in(array_keys(config('laravellocalization.supportedLocales')))],
-            'tweets' => 'required|array',
+            'tweets' => 'required|array|max:50',
             ...ValidationRules::merge('tweets', Tweet::$rules, true)
         ]);
 

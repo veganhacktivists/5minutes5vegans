@@ -17,7 +17,7 @@ class CheckApiKeyTest extends TestCase
             'text'               => 'Hello',
             'from_user_name'     => 'user',
             'from_full_name'     => 'A User',
-            'from_profile_image' => 'https://example.com/a.png',
+            'from_profile_image' => 'https://pbs.twimg.com/profile_images/1/a_normal.jpg',
         ]],
     ];
 
