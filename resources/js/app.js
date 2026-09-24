@@ -112,10 +112,6 @@ $(() => {
                 `
             },
         },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
         slidesPerView: 2,
         spaceBetween: 0,
         breakpoints: {

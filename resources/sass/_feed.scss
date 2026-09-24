@@ -6,8 +6,6 @@ $feed-honeydew: #e3f3e5;
 $feed-teal: #41b9aa;
 
 .swiper-container {
-    --swiper-navigation-color: #{$feed-teal};
-
     width: 100%;
     flex: 1 1 auto;
     overflow-y: scroll;
