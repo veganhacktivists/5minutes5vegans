@@ -345,8 +345,13 @@
         .vh-link {
             font-family: 'Rajdhani', sans-serif;
             font-weight: 700;
+            font-size: inherit;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        .font-serif > a:last-child {
+            margin-left: auto;
         }
 
         .vh-logo {
@@ -355,9 +360,19 @@
         }
 
         .font-serif {
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
             flex-grow: 2;
-            font-size: 20px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            white-space: nowrap;
             color: $dark-text;
+
+            @include for-desktop-up {
+                font-size: 22px;
+            }
         }
 
         a {
