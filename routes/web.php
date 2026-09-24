@@ -21,7 +21,6 @@ Route::group( [
 
     Route::get('/', 'FeedController')->name('feed');
 
-    Route::get('/tweet', 'TweetController@tweet');
     Route::get('/tweets', 'TweetController@tweets')->name('tweets');
 
 });
