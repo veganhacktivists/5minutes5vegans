@@ -5,6 +5,7 @@
                 <div class="avatar">
                     <img class="profile-pic"
                          alt=""
+                         loading="lazy"
                          src="{{ $tweet->from_profile_image }}"
                          onerror="this.onerror = null; this.src='https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png'">
 
@@ -23,11 +24,11 @@
                 <div>
                     @switch ($media['type'])
                         @case('photo')
-                            <img class="image" src="{{ $media['url'] }}" alt="">
+                            <img class="image" src="{{ $media['url'] }}" alt="" loading="lazy">
                             @break
                         @case('video')
                         @case('animated_gif')
-                            <video class="video" controls>
+                            <video class="video" controls preload="metadata">
                                 <source src="{{ $media['url'] }}" type="video/mp4">
                             </video>
                             @break
