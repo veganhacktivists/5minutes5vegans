@@ -11,7 +11,7 @@
 </section>
 
 <header>
-    <nav class="container pt-5">
+    <nav class="container pt-4">
         <div class="row">
             <div class="col-4 col-md-3 col-lg-2">
                 @include('inc.logo')
@@ -25,7 +25,7 @@
     </nav>
 </header>
 <main id="login-main" class="container p-0 px-0">
-    <div class="row mx-auto mt-5 login-panes">
+    <div class="row mx-auto mt-3 login-panes">
         <div class="col login-pane-left">
             @if (Route::getCurrentRoute()->getName() == 'login')
                 <div id="login-pane">
@@ -39,11 +39,11 @@
         </div>
         <div class="col login-pane-right">
             <h3 style="font-size: 24px;">@lang('loginregister.without-account')</h3>
-            <h5 style="letter-spacing: 1px;" class="my-5 font-weight-bold"><div class="horz-line"></div>@lang('PICK YOUR LANGUAGE')</h5>
+            <h5 style="letter-spacing: 1px;" class="my-4 font-weight-bold"><div class="horz-line"></div>@lang('PICK YOUR LANGUAGE')</h5>
             @include('inc.flag-list')
-            <h5 style="letter-spacing: 1px;" class="mt-5 font-weight-bold"><div class="horz-line"></div>@lang('GET READY...')</h5>
+            <h5 style="letter-spacing: 1px;" class="mt-4 font-weight-bold"><div class="horz-line"></div>@lang('GET READY...')</h5>
             <div class="d-flex align-middle">
-                <span class="me-auto my-5 font-weight-bold text-white" style="font-size: 17px;font-weight: normal !important;">@lang('And take up the challenge!')</span>
+                <span class="me-auto my-4 font-weight-bold text-white" style="font-size: 17px;font-weight: normal !important;">@lang('And take up the challenge!')</span>
                 <a href="{{ route('feed') }}">
                     <button id="play-submit-btn" class="btn start-btn px-0"><div><div><i class="fas fa-caret-right"></i></div></div></button>
                 </a>
