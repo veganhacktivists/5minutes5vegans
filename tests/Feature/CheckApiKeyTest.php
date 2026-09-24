@@ -59,4 +59,18 @@ class CheckApiKeyTest extends TestCase
 
         $this->assertDatabaseHas('tweets', ['id' => '1', 'lang' => 'en']);
     }
+
+    /** Any configured locale is accepted, and an unknown one is rejected. */
+    public function testAcceptsOnlyConfiguredLanguages()
+    {
+        config(['services.api_key' => 'correct-secret']);
+
+        $this->withHeaders(['X-API-KEY' => 'correct-secret'])
+            ->postJson(route('tweets.store'), ['lang' => 'pt'] + $this->payload)
+            ->assertOk();
+
+        $this->withHeaders(['X-API-KEY' => 'correct-secret'])
+            ->postJson(route('tweets.store'), ['lang' => 'xx'] + $this->payload)
+            ->assertStatus(422);
+    }
 }
