@@ -7,7 +7,7 @@
         'login' => route('login'),
         'logout' => route('logout'),
         'register' => route('register'),
-        'tweets' => route('tweets')
+        'tweets' => route('tweets', [], false)
     ];
 
     $lang = [
