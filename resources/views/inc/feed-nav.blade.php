@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="col d-flex justify-content-end">
-        <a href="https://veganhacktivists.org/support" id="donate-button">
+        <a href="https://veganhacktivists.org/donate" id="donate-button">
             @lang('Donate') <i class="fa fa-hand-holding-heart"></i>
         </a>
     </div>
