@@ -18,7 +18,7 @@ function generate_and_cache_shlink($url)
                 'response' => $response->body(),
             ]);
 
-            return $url;
+            return preg_quote($url, '/');
         }
 
         return preg_quote($response->json('shortUrl', $url), '/');
