@@ -334,6 +334,10 @@
         font-size: 17px;
     }
 
+    .timeline .card {
+        font-size: 15px;
+    }
+
     .footer {
         display: flex;
         padding-bottom: 4rem;
@@ -512,14 +516,25 @@
 }
 
 .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     height: 100%;
     overflow: auto;
-    padding-right: 20px;
+    padding-right: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: $feed-border transparent;
+
+    @include for-lg-desktop-up {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-content: start;
+    }
 
     .card {
         background-color: $feed-card-bg !important;
         border: 1px solid $feed-card-border;
-        padding: 16px;
+        padding: 12px 14px;
         border-radius: 12px;
         width: 100%;
         color: $feed-card-text !important;
@@ -541,8 +556,8 @@
     }
 
     .profile-pic {
-        height: 44px;
-        width: 44px;
+        height: 36px;
+        width: 36px;
         border-radius: 50%;
         margin-right: 8px;
     }
@@ -569,9 +584,9 @@
 
     .body {
         color: $feed-card-text;
-        font-size: 18px;
-        line-height: 1.5;
-        margin-top: 12px;
+        font-size: 16px;
+        line-height: 1.45;
+        margin: 8px 0 0;
     }
 
     .image-wrapper {
@@ -597,8 +612,8 @@
 
     .timestamp {
         color: $feed-card-muted;
-        font-size: 14px;
-        margin-top: 8px;
+        font-size: 13px;
+        margin-top: 6px;
         margin-bottom: 0;
     }
 

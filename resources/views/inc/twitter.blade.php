@@ -1,4 +1,4 @@
-<div class="timeline d-flex flex-column gap-3">
+<div class="timeline">
     @forelse ($tweets as $tweet)
         <a class="card" href="https://x.com/{{ $tweet->from_user_name }}/status/{{ $tweet->id }}" target="_blank">
             <div class="header">
