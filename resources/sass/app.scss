@@ -1,13 +1,10 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700|Rajdhani:400,500,600,700');
-
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-@import 'swiper/swiper-bundle.css';
+@import 'swiper/css/pagination';
 
 @import 'vanilla-icon-picker/dist/themes/default.min.css';
 @import 'vanilla-icon-picker/dist/themes/bootstrap-5.min.css';

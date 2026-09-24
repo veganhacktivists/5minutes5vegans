@@ -23,6 +23,9 @@
         <meta property="og:image" content="{{ asset('images/og-image.png') }}">
         <meta name="twitter:card" content="summary_large_image">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Rajdhani:400,500,600,700&display=swap">
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @yield('scripts')
 

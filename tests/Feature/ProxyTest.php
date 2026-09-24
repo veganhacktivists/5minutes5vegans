@@ -49,14 +49,21 @@ class ProxyTest extends TestCase
 
     public function testTheVisitorIpComesFromCloudflare()
     {
-        $request = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
-        $this->assertSame('203.0.113.7', $request->visitorIp());
+        // 172.70.1.1 is a Cloudflare edge address
+        $viaCloudflare = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_X_FORWARDED_FOR' => '203.0.113.7, 172.70.1.1', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
+        $this->assertSame('203.0.113.7', $viaCloudflare->visitorIp());
 
-        $withoutHeader = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1']);
-        $this->assertSame('10.0.0.1', $withoutHeader->visitorIp());
-
-        $junk = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_CF_CONNECTING_IP' => 'not-an-ip']);
+        $junk = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_X_FORWARDED_FOR' => '172.70.1.1', 'HTTP_CF_CONNECTING_IP' => 'not-an-ip']);
         $this->assertSame('10.0.0.1', $junk->visitorIp());
+    }
+
+    public function testAForgedHeaderFromOutsideCloudflareIsIgnored()
+    {
+        $direct = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_X_FORWARDED_FOR' => '198.51.100.9', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
+        $this->assertSame('10.0.0.1', $direct->visitorIp());
+
+        $noHops = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
+        $this->assertSame('10.0.0.1', $noHops->visitorIp());
     }
 
     public function testRegistrationLimitsAreKeptPerVisitor()
@@ -65,7 +72,7 @@ class ProxyTest extends TestCase
         config(['captcha.secret' => 'test-secret']);
         NoCaptcha::shouldReceive('verifyResponse')->andReturn(false);
 
-        $attempt = fn (string $ip) => $this->withHeader('CF-Connecting-IP', $ip)->post(route('register'), [
+        $attempt = fn (string $ip) => $this->withHeaders(['CF-Connecting-IP' => $ip, 'X-Forwarded-For' => "$ip, 172.70.1.1"])->post(route('register'), [
             'name' => 'Someone', 'email' => 'someone@example.com',
             'password' => 'a-long-password', 'password_confirmation' => 'a-long-password',
             'g-recaptcha-response' => 'token',
