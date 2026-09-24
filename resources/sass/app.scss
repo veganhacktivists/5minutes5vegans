@@ -158,9 +158,13 @@ a:hover, .btn-link:hover {
     bottom: 16px;
     left: 16px;
     z-index: 1040;
-    max-width: 520px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 16px 20px;
+    padding: 14px 20px;
     color: $dark-text;
     background-color: $feed-honeydew;
     border: 2px solid $feed-teal;
@@ -171,8 +175,11 @@ a:hover, .btn-link:hover {
         display: none;
     }
 
+    // Text and buttons share a row, and the buttons drop below only when
+    // there isn't room
     p {
-        margin-bottom: 12px;
+        flex: 1 1 320px;
+        margin: 0;
         font-size: 15px;
     }
 
@@ -183,7 +190,7 @@ a:hover, .btn-link:hover {
 
     .cookie-consent-buttons {
         display: flex;
-        flex-wrap: wrap;
+        flex: none;
         gap: 8px;
     }
 }
