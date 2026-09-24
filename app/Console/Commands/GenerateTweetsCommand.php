@@ -9,7 +9,9 @@ use Illuminate\Console\Command;
 
 class GenerateTweetsCommand extends Command
 {
-    private const NUM_SECONDS_TO_CACHE = 600; // 10 minutes
+    // Refreshed every minute. The long lifetime keeps the last good set on
+    // the site if a run fails.
+    private const NUM_SECONDS_TO_CACHE = 60 * 60 * 24;
 
     /**
      * The name and signature of the console command.
@@ -36,11 +38,12 @@ class GenerateTweetsCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return int
      */
     public function handle(TweetRegexService $tweetRegexService)
     {
         $languages = array_keys(config('laravellocalization.supportedLocales'));
+        $failed = [];
 
         foreach ($languages as $language) {
             App::setLocale($language);
@@ -56,13 +59,13 @@ class GenerateTweetsCommand extends Command
 
                 Cache::put($key, $tweets, self::NUM_SECONDS_TO_CACHE);
                 \Log::info('Finished Generating tweets', ['lang' => $language]);
-            } catch (\Exception $e) {
-                \Log::error('Could not generate tweets', [
-                    'lang' => $language,
-                    'error' => $e->getMessage(),
-                    'line number' => $e->getLine(),
-                ]);
+            } catch (\Throwable $e) {
+                $failed[] = $language;
+                report(new \RuntimeException("Could not generate tweets ($language)", 0, $e));
+                $this->error("Could not generate tweets ($language): {$e->getMessage()}");
             }
         }
+
+        return $failed ? self::FAILURE : self::SUCCESS;
     }
 }
