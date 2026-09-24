@@ -108,7 +108,7 @@ $(() => {
             renderBullet: function(index, className) {
                 return `
                 <span class="swirvy-box ${className}">${
-                    index === 0 ? 'resources' : 'feed'
+                    index === 0 ? window.lang.messages : window.lang.feed
                 }</span>
                 `
             },

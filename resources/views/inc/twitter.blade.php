@@ -38,6 +38,6 @@
             <p class="timestamp">{{ $tweet->date->format('h:i A · M d, Y') }}</p>
         </a>
     @empty
-        <div class="empty">No tweets in this language yet, please come back later!</div>
+        <div class="empty">@lang('No tweets in this language yet. Check back later.')</div>
     @endforelse
 </div>

@@ -31,6 +31,6 @@
     </form>
 
     <div class="d-flex justify-content-end mt-3">
-        <a href="{{ route('password.update') }}" class="small">Forgot password?</a>
+        <a href="{{ route('password.update') }}" class="small">@lang('Forgot password?')</a>
     </div>
 @endsection
