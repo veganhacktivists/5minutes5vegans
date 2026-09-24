@@ -47,7 +47,7 @@
                     </button>
                     <input
                         v-bind:disabled="busy"
-                        class="form-control ms-2"
+                        class="form-control ms-2 bg-white"
                         type="text"
                         style="width:220px;"
                         v-model="selected.title"
