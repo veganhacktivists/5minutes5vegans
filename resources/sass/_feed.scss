@@ -20,6 +20,10 @@ $feed-teal: #41b9aa;
     padding-bottom: 1rem;
     background-color: $feed-honeydew;
     bottom: 0 !important;
+
+    .verbiage-msg {
+        padding: 0 1rem;
+    }
 }
 
 .swiper-pagination-bullet {
@@ -278,6 +282,7 @@ $feed-teal: #41b9aa;
 
     textarea {
         position: relative;
+        padding-right: 3.5rem !important;
     }
 
     .copy-btn {
