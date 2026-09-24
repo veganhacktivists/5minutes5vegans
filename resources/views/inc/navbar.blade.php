@@ -3,7 +3,7 @@
         <div class="dropdown">
             <button type="button" class="text-white btn btn-sm btn-default dropdown-toggle" data-bs-toggle="dropdown" id="localeChooser">
                 <span class="me-2">{{ __('navbar.picker') }}</span>
-                <img src="https://www.countryflags.io/{{ getCurrentCountry() }}/flat/32.png" class="flag" />
+                <img src="{{ asset('images/landing/'.strtolower(getCurrentCountry()).'.png') }}" alt="{{ LaravelLocalization::getCurrentLocaleNative() }}" width="24" class="flag" />
             </button>
 
             <div class="dropdown-menu" aria-labelledby="localeChooser">
@@ -13,7 +13,7 @@
                     hreflang="{{ $localeCode }}"
                     href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
                 >
-                    <img src="https://www.countryflags.io/{{ getCountry( $properties ) }}/flat/32.png"/>
+                    <img src="{{ asset('images/landing/'.strtolower(getCountry( $properties )).'.png') }}" alt="" width="24" />
                     <div class="d-inline p-2">{{ $properties['native'] }}</div>
                 </a>
             @endforeach
