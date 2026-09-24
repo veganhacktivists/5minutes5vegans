@@ -8,7 +8,8 @@ import './bootstrap';
 import axios from 'axios';
 
 window.axios = axios;
-import Swiper from 'swiper/bundle'
+import Swiper from 'swiper'
+import { Pagination } from 'swiper/modules'
 import Clipboard from 'v-clipboard'
 import { createApp } from 'vue'
 import App from './components/App.vue'
@@ -101,6 +102,7 @@ $(() => {
         return
     }
     window.mySwiper = new Swiper('.swiper-container', {
+        modules: [Pagination],
         direction: 'horizontal',
         pagination: {
             el: '.swiper-pagination',
