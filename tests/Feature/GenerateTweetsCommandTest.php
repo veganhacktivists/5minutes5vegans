@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Services\TweetRegexService;
+use App\Services\TweetGenerator;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Facades\App;
@@ -25,8 +25,8 @@ class GenerateTweetsCommandTest extends TestCase
 
     private function generatorFailingFor(?string $failingLocale): void
     {
-        $this->mock(TweetRegexService::class, function ($mock) use ($failingLocale) {
-            $mock->shouldReceive('generate_tweets')->andReturnUsing(function () use ($failingLocale) {
+        $this->mock(TweetGenerator::class, function ($mock) use ($failingLocale) {
+            $mock->shouldReceive('generate')->andReturnUsing(function () use ($failingLocale) {
                 if (App::getLocale() === $failingLocale) {
                     throw new \RuntimeException('generator broke');
                 }
