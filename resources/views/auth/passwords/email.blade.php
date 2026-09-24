@@ -8,26 +8,20 @@
 @endif
 
 <form method="post" action="{{ route('password.email') }}">
-@csrf
+    @csrf
 
-    <div class="mb-3 row">
-        <div class="col-md-8 offset-md-2">
-            <input type="email" class="form-control text-white @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus placeholder="{{ __('YOUR EMAIL ADDRESS') }}" />
+    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autofocus placeholder="{{ __('Your Email') }}" />
 
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-    </div>
+    @error('email')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
 
-    <div class="form-group row mb-0">
-        <div class="col-md-4 offset-md-6">
-            <button type="submit" class="btn btn-primary swirvy-box">
-                {{ __('Send Password Reset Link') }}
-            </button>
-        </div>
+    <div class="d-flex justify-content-end mt-4">
+        <button type="submit" class="btn btn-primary swirvy-box">
+            {{ __('Send Password Reset Link') }}
+        </button>
     </div>
 </form>
 @endsection

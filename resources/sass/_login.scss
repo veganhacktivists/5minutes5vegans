@@ -63,25 +63,6 @@
     @include for-tablet-portrait-up {
         margin-top: 50px;
     }
-
-    input:not([type = submit]):not([type = checkbox]) {
-        background: transparent;
-        border: none;
-        border-bottom: 2px solid $feed-teal;
-        border-radius: 0;
-
-        &:focus {
-            border-bottom-color: $button-cta-color;
-            box-shadow: none;
-        }
-
-        &::placeholder {
-            color: rgba($dark-text, 0.7);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 13px;
-        }
-    }
 }
 
 .login-pane-right {
@@ -169,17 +150,37 @@
     @extend .page-footer;
 }
 
-.reset-box {
-    @extend .swirvy-box;
-
-    background-color: #1d4737f2 !important;
+.reset-pane {
+    padding: 60px 6% 40px;
+    color: $dark-text;
+    background-color: rgba($feed-honeydew, 0.96);
     border-radius: 90px 0 90px 0;
-    padding: 80px 5% 5% 5%;
-    border: 2px solid #4dc0b5;
 
-    input:not([type = submit]):not([type = checkbox]) {
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid $teal;
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn-link {
+        white-space: nowrap;
+    }
+}
+
+.login-pane-left input:not([type = submit]):not([type = checkbox]),
+.reset-pane input:not([type = submit]):not([type = checkbox]) {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid $feed-teal;
+    border-radius: 0;
+
+    &:focus {
+        border-bottom-color: $button-cta-color;
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        color: rgba($dark-text, 0.7);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 13px;
     }
 }
