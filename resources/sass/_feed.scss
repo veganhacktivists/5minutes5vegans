@@ -86,7 +86,7 @@
     flex: 0 0 100%;
     margin-top: 10px;
 
-    @include for-desktop-up {
+    @include for-tablet-landscape-up {
         order: 0;
         flex: 1 0 0%;
         margin-top: 0;
@@ -146,6 +146,7 @@
 .timer-display {
     font-size: 30px;
     color: $dark-text;
+    white-space: nowrap;
 
     & > div {
         display: inline-block;
