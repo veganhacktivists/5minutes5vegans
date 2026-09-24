@@ -75,7 +75,7 @@ return [
             ], [
                 'Il mio preferito è quello di "Follow Your Heart", e Daiya è ottimo per il formaggio fuso\.'
             ], [
-                'Con questo link ' . generate_and_cache_shlink('https://www.peta.org/living/food/everything-you-need-to-know-about-vegan-cheese/') . ' trovi ancora più marche vicino a te! Scrivimi se ti serve aiuto per trovarne altre\.'
+                'Con questo link ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/') . ' trovi ancora più marche vicino a te! Scrivimi se ti serve aiuto per trovarne altre\.'
             ]
         ]
     ],
@@ -87,7 +87,7 @@ return [
             [
                 'Di solito ci sono tante pizze vegane \(e altri ristoranti\) su ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
             ], [
-                'C\'è anche la pizza "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' e ancora più posti qui: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Scrivimi se ti serve aiuto per trovarne altri\.'
+                'C\'è anche la pizza "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' e ancora più posti qui: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/') . ' Scrivimi se ti serve aiuto per trovarne altri\.'
             ]
         ]
     ],
@@ -99,7 +99,7 @@ return [
             [
                 'Ci sono tantissime ricette vegane buonissime al posto delle uova \(come questa, ma aggiungi gli spinaci\): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
             ], [
-                'Puoi anche comprare uova vegane: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Altre informazioni qui: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' e soprattutto qui: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
+                'Puoi anche comprare uova vegane: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Altre informazioni qui: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' e soprattutto qui: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/')
             ]
         ]
     ],
@@ -113,7 +113,7 @@ return [
             ], [
                 'Hanno tantissimi gusti, e ci sono molte altre marche di gelato alla soia, alle mandorle o al cocco!'
             ], [
-                '(Guarda:|Dai un\'occhiata a) ' . generate_and_cache_shlink('https://www.vegan.com/ice-cream/')
+                '(Guarda:|Dai un\'occhiata a) ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/')
             ]
         ]
     ],
@@ -158,7 +158,7 @@ return [
 
     [
         'icon' => 'fas fa-sad-cry',
-        'title' => 'Il film Dominion',
+        'title' => 'Dominion',
         'body' =>[
             [
                 'Ti consiglio davvero questo video su YouTube: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
@@ -181,7 +181,7 @@ return [
             ], [
                 'Inizia comprando latte di soia, mandorla o avena e abituati\.'
             ], [
-                'Poi passa a burro, carne, ecc\. Altre informazioni: ' . generate_and_cache_shlink('http://earthlinged.com/ebook')
+                'Poi passa a burro, carne, ecc\. Altre informazioni: ' . generate_and_cache_shlink('https://veganbootcamp.org')
             ]
         ]
     ],
@@ -216,7 +216,7 @@ return [
 
     [
         'icon' => 'fas fa-calculator',
-        'title' => 'Le proteine',
+        'title' => 'Proteine',
         'body' =>[
             [
                 'Quasi tutti gli alimenti, verdura, frutta e semi contengono proteine, e non ce ne servono poi così tante\.'
@@ -278,26 +278,26 @@ return [
 
     [
         'icon' => 'fas fa-flask',
-        'title' => 'Tutti sono d\'accordo',
+        'title' => 'Gli esperti concordano',
         'body' =>[
             [
                 'Oggi è ampiamente riconosciuto che un\'alimentazione vegana è più sana di una con la carne\.'
             ], [
-                'Ecco una pagina che cita direttamente le più grandi organizzazioni mondiali di salute, nutrizione e dietetica \(quindi organizzazioni imparziali\): ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Ecco una pagina che cita direttamente le più grandi organizzazioni mondiali di salute, nutrizione e dietetica \(quindi organizzazioni imparziali\): ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-heartbeat',
-        'title' => 'È sano?',
+        'title' => 'Salute',
         'body' =>[
             [
                 'Oggi è ampiamente riconosciuto che carne e latticini sono estremamente dannosi per la salute rispetto a un\'alimentazione vegana\.'
             ], [
                 'La carne è cancerogena ed è la causa della maggior parte delle malattie: cancro, malattie cardiache, diabete e obesità\.'
             ], [
-                'Ecco una pagina con informazioni e fonti: ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Ecco una pagina con informazioni e fonti: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],

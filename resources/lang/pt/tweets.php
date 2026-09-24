@@ -75,7 +75,7 @@ return [
             ], [
                 'Meu favorito é o da "Follow Your Heart", e o da Daiya é ótimo para derreter\.'
             ], [
-                'Neste link ' . generate_and_cache_shlink('https://www.peta.org/living/food/everything-you-need-to-know-about-vegan-cheese/') . ' você encontra ainda mais marcas perto de você! Me chama se precisar de ajuda para achar mais\.'
+                'Neste link ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/') . ' você encontra ainda mais marcas perto de você! Me chama se precisar de ajuda para achar mais\.'
             ]
         ]
     ],
@@ -87,7 +87,7 @@ return [
             [
                 'Normalmente tem muitas opções de pizza vegana \(e outros restaurantes\) no ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
             ], [
-                'Também tem a pizza da "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' e ainda mais lugares aqui: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Me chama se precisar de ajuda para achar mais\.'
+                'Também tem a pizza da "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' e ainda mais lugares aqui: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/') . ' Me chama se precisar de ajuda para achar mais\.'
             ]
         ]
     ],
@@ -99,7 +99,7 @@ return [
             [
                 'Tem muitas receitas veganas deliciosas no lugar de ovos \(como esta, mas coloque espinafre\): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
             ], [
-                'Você também pode comprar ovos veganos: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Mais informações aqui: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' e principalmente aqui: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
+                'Você também pode comprar ovos veganos: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Mais informações aqui: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' e principalmente aqui: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/')
             ]
         ]
     ],
@@ -113,7 +113,7 @@ return [
             ], [
                 'Eles têm vários sabores, e existem muitas outras marcas de sorvete de soja, amêndoa ou coco!'
             ], [
-                '(Veja:|Dá uma olhada em) ' . generate_and_cache_shlink('https://www.vegan.com/ice-cream/')
+                '(Veja:|Dá uma olhada em) ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/')
             ]
         ]
     ],
@@ -158,7 +158,7 @@ return [
 
     [
         'icon' => 'fas fa-sad-cry',
-        'title' => 'O filme Dominion',
+        'title' => 'Dominion',
         'body' =>[
             [
                 'Recomendo muito este vídeo do YouTube: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
@@ -181,7 +181,7 @@ return [
             ], [
                 'Comece comprando leite de soja, amêndoa ou aveia e se acostume\.'
             ], [
-                'Depois manteiga, carne etc\. Mais informações: ' . generate_and_cache_shlink('http://earthlinged.com/ebook')
+                'Depois manteiga, carne etc\. Mais informações: ' . generate_and_cache_shlink('https://veganbootcamp.org')
             ]
         ]
     ],
@@ -278,26 +278,26 @@ return [
 
     [
         'icon' => 'fas fa-flask',
-        'title' => 'Todo mundo concorda',
+        'title' => 'Especialistas concordam',
         'body' =>[
             [
                 'Hoje é amplamente aceito que uma alimentação vegana é mais saudável do que uma com carne\.'
             ], [
-                'Aqui está uma página que cita diretamente as maiores organizações de saúde, nutrição e dietética do mundo \(ou seja, organizações imparciais\): ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Aqui está uma página que cita diretamente as maiores organizações de saúde, nutrição e dietética do mundo \(ou seja, organizações imparciais\): ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-heartbeat',
-        'title' => 'É saudável?',
+        'title' => 'Saúde',
         'body' =>[
             [
                 'Hoje é amplamente aceito que carne e laticínios são extremamente prejudiciais à saúde em comparação com uma alimentação vegana\.'
             ], [
                 'A carne é cancerígena e é a causa da maioria das doenças, como câncer, doenças cardíacas, diabetes e obesidade\.'
             ], [
-                'Aqui está uma página com informações e fontes: ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Aqui está uma página com informações e fontes: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],

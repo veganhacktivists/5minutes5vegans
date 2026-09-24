@@ -5,7 +5,7 @@ require_once(app_path('generate_and_cache_shlink.php'));
 return [
     [
         'icon' => 'fas fa-info-circle',
-        'title' => 'General info',
+        'title' => 'General Info',
         'body' =>[
             [
                 'You should do it! Most vegans say the only regret they have is that they didn\'t do it earlier\.'
@@ -78,7 +78,7 @@ return [
             ], [
                 'My favorite is "Follow Your Heart" cheese, and Daiya is great for melted cheese\.'
             ], [
-                'Use this link ' . generate_and_cache_shlink('https://www.peta.org/living/food/everything-you-need-to-know-about-vegan-cheese/') . ' to find even more brands near you! Message me if you need help finding more\.'
+                'Use this link ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/') . ' to find even more brands near you! Message me if you need help finding more\.'
             ]
         ]
     ],
@@ -88,9 +88,9 @@ return [
         'title' => 'I Love Pizza',
         'body' =>[
             [
-                'There\'s usually a lot of Vegan pizza options (and other restaurants) on ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
+                'There\'s usually a lot of Vegan pizza options \(and other restaurants\) on ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
             ], [
-                'There\'s also "Daiya" Pizza: ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' and even more places listed here: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Message me if you need help finding more\.'
+                'There\'s also "Daiya" Pizza: ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' and even more places listed here: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/') . ' Message me if you need help finding more\.'
             ]
         ]
     ],
@@ -100,9 +100,9 @@ return [
         'title' => 'I Love Eggs',
         'body' =>[
             [
-                'There\'s a lot of really good Vegan egg recipes (like this one, but add spinach): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
+                'There\'s a lot of really good Vegan egg recipes \(like this one, but add spinach\): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
             ], [
-                'You can buy Vegan eggs here too: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' And even more info here: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' and especially here: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
+                'You can buy Vegan eggs here too: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' And even more info here: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' and especially here: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/')
             ]
         ]
     ],
@@ -116,7 +116,7 @@ return [
             ], [
                 'They have a lot of different flavors and there\'s a lot of other soy/almond/coconut based icecream brands too!'
             ], [
-                '(See:|Check out) ' . generate_and_cache_shlink('https://www.vegan.com/ice-cream/')
+                '(See:|Check out) ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/')
             ]
         ]
     ],
@@ -161,7 +161,7 @@ return [
 
     [
         'icon' => 'fas fa-sad-cry',
-        'title' => 'Dominion Movie',
+        'title' => 'Dominion',
         'body' =>[
             [
                 'I highly recommend this Youtube video: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
@@ -184,7 +184,7 @@ return [
             ], [
                 'First just start buying soy/almond/oat milks and get used to that\.'
             ], [
-                'Then do butter, meats, etc\. More info: ' . generate_and_cache_shlink('http://earthlinged.com/ebook')
+                'Then do butter, meats, etc\. More info: ' . generate_and_cache_shlink('https://veganbootcamp.org')
             ]
         ]
     ],
@@ -219,7 +219,7 @@ return [
 
     [
         'icon' => 'fas fa-calculator',
-        'title' => 'Protein Issue',
+        'title' => 'Protein',
         'body' =>[
             [
                 'Almost all foods, vegetables, fruits, seeds, all have protein, which we don\'t need a lot of\.'
@@ -231,7 +231,7 @@ return [
 
     [
         'icon' => 'fas fa-dumbbell',
-        'title' => 'Fitness Info',
+        'title' => 'Fitness',
         'body' =>[
             [
                 'The worlds strongest man is a Vegan and there\'s so many more world records in fitness/strength held by Vegans!'
@@ -281,33 +281,33 @@ return [
 
     [
         'icon' => 'fas fa-flask',
-        'title' => 'Everyone Agrees',
+        'title' => 'Experts Agree',
         'body' =>[
             [
                 'In today\'s age it\'s widely accepted that Veganism is healthier than a meat\-eating diet\.'
             ], [
-                'Here\'s a page that pulls sources directly from the world\'s largest Health, Nutrition and Dietary organizations \(so from non\-biased organizations\): ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Here\'s a page that pulls sources directly from the world\'s largest Health, Nutrition and Dietary organizations \(so from non\-biased organizations\): ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-heartbeat',
-        'title' => 'Is It Healthy',
+        'title' => 'Health',
         'body' =>[
             [
                 'In today\'s age it\'s widely accepted that Meat & Dairy is extremely unhealthy compared to a Vegan diet\.'
             ], [
                 'Meat is carcinogenic, the cause of the majority diseases, cancer, heart disease & diabetes, and obesity\.'
             ], [
-                'Here\'s a page with info & sources: ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Here\'s a page with info & sources: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-leaf',
-        'title' => 'Lazy to Cook',
+        'title' => 'Too Lazy to Cook',
         'body' =>[
             [
                 'A lot of Vegans don\'t cook either, just buy the Vegan options at the store or at restaurants instead of the animal options\.'
@@ -321,7 +321,7 @@ return [
 
     [
         'icon' => 'fas fa-meh-blank',
-        'title' => 'Food Is boring',
+        'title' => 'Food Is Boring',
         'body' =>[
             [
                 'Pretty much anything made with meat/dairy can be replicated and be just as awesome, you just have to learn where to buy it or cook it\.'

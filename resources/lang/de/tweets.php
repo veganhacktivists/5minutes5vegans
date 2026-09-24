@@ -5,7 +5,7 @@ require_once(app_path('generate_and_cache_shlink.php'));
 return [
     [
         'icon' => 'fas fa-info-circle',
-        'title' => 'Allgemeine',
+        'title' => 'Allgemeines',
         'body' =>[
             [
                 'Du solltest es tun! Die meisten Veganer sagen, dass das einzige, was sie bereuen ist, dass sie nicht schon füher angefangen haben\.'
@@ -40,10 +40,10 @@ return [
                 'Du kannst einen kostenlosen (persönlichen)? Mentor (auf Facebook)? bekommen, der dir hilft einen Monat lang vegan zu leben\.',
                 'Sie verbinden dich (über Facebook)? mit einem kostenlosen (persönlichen)? Mentor, der dir hilft einen Monat lang vegan zu leben\.'
             ], [
-                'Der link ist ' . generate_and_cache_shlink('https://www.challenge22.com/challenge22') . ';',
-                'Die URL ist ' . generate_and_cache_shlink('https://www.challenge22.com/challenge22') . ';',
-                'Die Seite findest du unter ' . generate_and_cache_shlink('https://www.challenge22.com/challenge22') . ';',
-                'Die Website lautet ' . generate_and_cache_shlink('https://www.challenge22.com/challenge22') . ';',
+                'Der link ist ' . generate_and_cache_shlink('https://challenge22.com/') . ';',
+                'Die URL ist ' . generate_and_cache_shlink('https://challenge22.com/') . ';',
+                'Die Seite findest du unter ' . generate_and_cache_shlink('https://challenge22.com/') . ';',
+                'Die Website lautet ' . generate_and_cache_shlink('https://challenge22.com/') . ';',
             ], [
                 'Viel Glück, du schaffst (das|es)!',
                 'Du kannst es (auf jeden Fall|definitiv|absolut)? schaffen!',
@@ -87,7 +87,7 @@ return [
             ], [
                 'Mein Favorit ist "Simply V"\-Käse\.'
             ], [
-                'Unter folgendem Link ' . generate_and_cache_shlink('https://www.peta.de/veganer-kaese') . ' findest du noch mehr vegane Käsesorten! Schreib mir, wenn du Hilfe brauchst\.'
+                'Unter folgendem Link ' . generate_and_cache_shlink('https://www.peta.de/veganleben/veganer-kaese/') . ' findest du noch mehr vegane Käsesorten! Schreib mir, wenn du Hilfe brauchst\.'
             ]
         ]
     ],
@@ -97,9 +97,9 @@ return [
         'title' => 'Ich liebe Pizza',
         'body' =>[
             [
-                'Normalerweise findest du viele vegane Pizza\-Angebote (und andere Speisen) auf ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
+                'Normalerweise findest du viele vegane Pizza\-Angebote \(und andere Speisen\) auf ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
             ], [
-                'Außerdem gibt es Pizza von "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' und noch mehr Orte findest du hier: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Schreib mir, wenn du Hilfe brauchst, noch mehr zu finden\.'
+                'Außerdem gibt es Pizza von "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' und noch mehr Orte findest du hier: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/') . ' Schreib mir, wenn du Hilfe brauchst, noch mehr zu finden\.'
             ]
         ]
     ],
@@ -111,7 +111,7 @@ return [
             [
                 'Es gibt richtig gute vegane Rezepte als Ersatz für Eier \(zum Beispiel dieses hier, einfach noch Spinat dazugeben\): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
             ], [
-                'Vegane Eier kannst du auch kaufen: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Mehr Infos gibt es hier: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' und vor allem hier: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
+                'Vegane Eier kannst du auch kaufen: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Mehr Infos gibt es hier: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' und vor allem hier: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/')
             ]
         ]
     ],
@@ -125,7 +125,7 @@ return [
             ], [
                 'Es gibt viele verschiedene Sorten und dazu viele andere Eismarken auf Soja\-, Mandel\- oder Kokosbasis!'
             ], [
-                '(Siehe:|Schau mal hier:) ' . generate_and_cache_shlink('https://www.vegan.com/ice-cream/')
+                '(Siehe:|Schau mal hier:) ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/')
             ]
         ]
     ],
@@ -158,7 +158,7 @@ return [
 
     [
         'icon' => 'fas fa-video',
-        'title' => 'Dokumentationen',
+        'title' => 'Dokus',
         'body' =>[
             [
                 'Hier ein paar Filme zur Motivation! Cowspiracy \(Umwelt\): ' . generate_and_cache_shlink('https://www.netflix.com/title/80033772') . ' Forks Over Knives \(Gesundheit\): ' . generate_and_cache_shlink('https://www.netflix.com/title/70185045') . ' Dominion \(Tiere\): ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
@@ -170,7 +170,7 @@ return [
 
     [
         'icon' => 'fas fa-sad-cry',
-        'title' => 'Dominion (Film)',
+        'title' => 'Dominion',
         'body' =>[
             [
                 'Ich kann dir dieses YouTube\-Video sehr empfehlen: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
@@ -193,7 +193,7 @@ return [
             ], [
                 'Fang einfach damit an, Soja\-, Mandel\- oder Hafermilch zu kaufen, und gewöhn dich daran\.'
             ], [
-                'Danach kommen Butter, Fleisch usw\. Mehr Infos: ' . generate_and_cache_shlink('http://earthlinged.com/ebook')
+                'Danach kommen Butter, Fleisch usw\. Mehr Infos: ' . generate_and_cache_shlink('https://veganbootcamp.org')
             ]
         ]
     ],
@@ -290,26 +290,26 @@ return [
 
     [
         'icon' => 'fas fa-flask',
-        'title' => 'Alle sind sich einig',
+        'title' => 'Fachleute sind sich einig',
         'body' =>[
             [
                 'Heute ist allgemein anerkannt, dass eine vegane Ernährung gesünder ist als eine Ernährung mit Fleisch\.'
             ], [
-                'Hier ist eine Seite, die Quellen direkt von den weltweit größten Organisationen für Gesundheit, Ernährung und Diätetik zitiert \(also von unabhängigen Organisationen\): ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Hier ist eine Seite, die Quellen direkt von den weltweit größten Organisationen für Gesundheit, Ernährung und Diätetik zitiert \(also von unabhängigen Organisationen\): ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-heartbeat',
-        'title' => 'Ist das gesund?',
+        'title' => 'Gesundheit',
         'body' =>[
             [
                 'Heute ist allgemein anerkannt, dass Fleisch und Milchprodukte im Vergleich zu einer veganen Ernährung extrem ungesund sind\.'
             ], [
                 'Fleisch ist krebserregend und die Ursache für die meisten Krankheiten, Krebs, Herzkrankheiten, Diabetes und Übergewicht\.'
             ], [
-                'Hier ist eine Seite mit Infos und Quellen: ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Hier ist eine Seite mit Infos und Quellen: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
