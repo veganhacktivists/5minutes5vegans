@@ -360,6 +360,19 @@
 
         @include vh-credit;
 
+        .cookie-link {
+            margin-left: auto;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: $white;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
         .font-serif {
             display: flex;
             align-items: center;

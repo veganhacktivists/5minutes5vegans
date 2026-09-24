@@ -114,5 +114,10 @@
     "Feed": "Feed",
     "New Password": "Nieuw wachtwoord",
     "The messages didn't load. Refresh the page to try again.": "De berichten zijn niet geladen. Vernieuw de pagina om het opnieuw te proberen.",
-    "Current password (needed to change your email or password)": "Huidig wachtwoord (nodig om je e-mailadres of wachtwoord te wijzigen)"
+    "Current password (needed to change your email or password)": "Huidig wachtwoord (nodig om je e-mailadres of wachtwoord te wijzigen)",
+    "We'd like to use Google Analytics cookies to see how people use the site. Is that OK?": "We willen graag cookies van Google Analytics gebruiken om te zien hoe de site wordt gebruikt. Is dat oké?",
+    "Privacy policy": "Privacybeleid",
+    "Accept": "Accepteren",
+    "No thanks": "Nee, bedankt",
+    "Cookies": "Cookies"
 }
