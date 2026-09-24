@@ -144,6 +144,19 @@ const CHARACTER_COUNT_STATES = [
     { name: 'cc-is-fine', threshold: 280 },
 ]
 
+// Count the way X does: every link is 23 characters, emoji and most non-Latin
+// characters are 2, everything else is 1
+function xLength(text) {
+    const withoutLinks = text.replace(/https?:\/\/\S+/g, 'x'.repeat(23))
+    let length = 0
+    for (const { segment } of new Intl.Segmenter().segment(withoutLinks)) {
+        const cp = segment.codePointAt(0)
+        const single = cp <= 4351 || (cp >= 8192 && cp <= 8205) || (cp >= 8208 && cp <= 8223) || (cp >= 8242 && cp <= 8247)
+        length += single && !/\p{Extended_Pictographic}/u.test(segment) ? 1 : 2
+    }
+    return length
+}
+
 function setVueModel(obj, str, val) {
     str = str.split('.')
     while (str.length > 1) {
@@ -172,7 +185,7 @@ export default {
                 icon: 'fas fa-leaf',
                 body: ''
             },
-            maxCount: 280, // The maximum characters allowed by Twitter
+            maxCount: 280, // The most X allows in a post
             remainingCount: 280,
             defaultMessage: window.lang.placeholder,
             lang: window.lang,
@@ -317,7 +330,7 @@ export default {
         },
 
         characterCountdown: function() {
-            this.remainingCount = this.maxCount - this.selected.body.length
+            this.remainingCount = this.maxCount - xLength(this.selected.body)
 
             var thresholds = CHARACTER_COUNT_STATES.filter(
                 (f) => f.threshold >= this.remainingCount,
