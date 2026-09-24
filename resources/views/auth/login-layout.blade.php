@@ -3,7 +3,7 @@
 @section('title', 'Register')
 
 @section('scripts')
-    <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?hl={{ app()->getLocale() === 'pt' ? 'pt-BR' : app()->getLocale() }}" async defer></script>
 @endsection
 
 @section('page_content')
@@ -17,9 +17,9 @@
                 @include('inc.logo')
             </div>
             <div class="col-sm d-flex justify-content-end">
-                <a class="login-how" href="/">
+                <button type="button" class="login-how" data-bs-toggle="modal" data-bs-target="#how-it-works">
                     @lang('loginregister.how')
-                </a>
+                </button>
             </div>
         </div>
     </nav>
@@ -42,15 +42,15 @@
             <h5 style="letter-spacing: 1px;" class="my-4 font-weight-bold"><div class="horz-line"></div>@lang('PICK YOUR LANGUAGE')</h5>
             @include('inc.flag-list')
             <h5 style="letter-spacing: 1px;" class="mt-4 font-weight-bold"><div class="horz-line"></div>@lang('GET READY...')</h5>
-            <div class="d-flex align-middle">
-                <span class="me-auto my-4 font-weight-bold text-white" style="font-size: 17px;font-weight: normal !important;">@lang('And take up the challenge!')</span>
-                <a href="{{ route('feed') }}">
-                    <button id="play-submit-btn" class="btn start-btn px-0"><div><div><i class="fas fa-caret-right"></i></div></div></button>
-                </a>
+            <div class="d-flex flex-wrap align-items-center gap-3 my-4">
+                <span class="me-auto text-white" style="font-size: 17px;">@lang('And take up the challenge!')</span>
+                <a href="{{ route('feed') }}" class="btn swirvy-box start-cta">@lang('loginregister.start')</a>
             </div>
         </div>
     </div>
 </main>
+
+@include('inc.how-it-works')
 
 <footer class="footer mt-auto py-3 login-footer text-white">
     @include('inc.footer')

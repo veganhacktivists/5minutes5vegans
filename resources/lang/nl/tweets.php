@@ -75,7 +75,7 @@ return [
             ], [
                 'Mijn favoriet is de kaas van "Follow Your Heart", en Daiya is heerlijk als gesmolten kaas\.'
             ], [
-                'Via deze link ' . generate_and_cache_shlink('https://www.peta.org/living/food/everything-you-need-to-know-about-vegan-cheese/') . ' vind je nog meer merken bij jou in de buurt! Stuur me een bericht als je hulp nodig hebt om er meer te vinden\.'
+                'Via deze link ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/') . ' vind je nog meer merken bij jou in de buurt! Stuur me een bericht als je hulp nodig hebt om er meer te vinden\.'
             ]
         ]
     ],
@@ -87,7 +87,7 @@ return [
             [
                 'Op ' . generate_and_cache_shlink('http://HappyCow.net') . ' vind je meestal veel vegan pizza \(en andere restaurants\)!'
             ], [
-                'Er is ook pizza van "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' en nog meer plekken vind je hier: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Stuur me een bericht als je hulp nodig hebt om er meer te vinden\.'
+                'Er is ook pizza van "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' en nog meer plekken vind je hier: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/') . ' Stuur me een bericht als je hulp nodig hebt om er meer te vinden\.'
             ]
         ]
     ],
@@ -99,7 +99,7 @@ return [
             [
                 'Er zijn veel heerlijke vegan recepten in plaats van eieren \(zoals deze, maar doe er spinazie bij\): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
             ], [
-                'Je kunt ook vegan eieren kopen: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Meer info vind je hier: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' en vooral hier: ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
+                'Je kunt ook vegan eieren kopen: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Meer info vind je hier: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' en vooral hier: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/')
             ]
         ]
     ],
@@ -113,7 +113,7 @@ return [
             ], [
                 'Ze hebben veel verschillende smaken, en er zijn nog veel meer ijsmerken op basis van soja, amandel of kokos!'
             ], [
-                '(Zie:|Kijk eens naar) ' . generate_and_cache_shlink('https://www.vegan.com/ice-cream/')
+                '(Zie:|Kijk eens naar) ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/')
             ]
         ]
     ],
@@ -158,7 +158,7 @@ return [
 
     [
         'icon' => 'fas fa-sad-cry',
-        'title' => 'De film Dominion',
+        'title' => 'Dominion',
         'body' =>[
             [
                 'Ik raad je deze YouTube\-video echt aan: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
@@ -181,7 +181,7 @@ return [
             ], [
                 'Begin gewoon met soja\-, amandel\- of havermelk kopen en wen daaraan\.'
             ], [
-                'Daarna boter, vlees, enzovoort\. Meer info: ' . generate_and_cache_shlink('http://earthlinged.com/ebook')
+                'Daarna boter, vlees, enzovoort\. Meer info: ' . generate_and_cache_shlink('https://veganbootcamp.org')
             ]
         ]
     ],
@@ -278,26 +278,26 @@ return [
 
     [
         'icon' => 'fas fa-flask',
-        'title' => 'Iedereen is het eens',
+        'title' => 'Experts zijn het eens',
         'body' =>[
             [
                 'Tegenwoordig is algemeen aanvaard dat vegan eten gezonder is dan een eetpatroon met vlees\.'
             ], [
-                'Hier is een pagina die bronnen direct haalt bij de grootste organisaties ter wereld op het gebied van gezondheid, voeding en diëtetiek \(dus onafhankelijke organisaties\): ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Hier is een pagina die bronnen direct haalt bij de grootste organisaties ter wereld op het gebied van gezondheid, voeding en diëtetiek \(dus onafhankelijke organisaties\): ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-heartbeat',
-        'title' => 'Is het gezond?',
+        'title' => 'Gezondheid',
         'body' =>[
             [
                 'Tegenwoordig is algemeen aanvaard dat vlees en zuivel extreem ongezond zijn vergeleken met vegan eten\.'
             ], [
                 'Vlees is kankerverwekkend en de oorzaak van de meeste ziekten, zoals kanker, hartziekten, diabetes en overgewicht\.'
             ], [
-                'Hier is een pagina met info en bronnen: ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Hier is een pagina met info en bronnen: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],

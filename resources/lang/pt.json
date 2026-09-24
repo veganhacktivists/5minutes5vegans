@@ -67,7 +67,6 @@
     "Donate": "Doar",
     "E-Mail Address": "Endereço de e-mail",
     "Error": "Erro",
-    "Follow us on": "Siga-nos no",
     "GET READY...": "PREPARE-SE...",
     "Go Home": "Ir para o início",
     "hi": "oi",
@@ -115,5 +114,10 @@
     "Feed": "Feed",
     "New Password": "Nova senha",
     "The messages didn't load. Refresh the page to try again.": "As mensagens não carregaram. Atualize a página para tentar de novo.",
-    "Current password (needed to change your email or password)": "Senha atual (necessária para alterar o e-mail ou a senha)"
+    "Current password (needed to change your email or password)": "Senha atual (necessária para alterar o e-mail ou a senha)",
+    "We'd like to use Google Analytics cookies to see how people use the site. Is that OK?": "Queremos usar cookies do Google Analytics para ver como o site é usado. Tudo bem?",
+    "Privacy policy": "Política de privacidade",
+    "Accept": "Aceitar",
+    "No thanks": "Não, obrigado",
+    "Cookies": "Cookies"
 }

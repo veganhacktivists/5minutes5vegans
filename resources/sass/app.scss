@@ -116,11 +116,6 @@ $xx-swirve: 22px;
     }
 }
 
-.fade.show {
-    opacity: 1;
-}
-
-
 // Button text colors
 .btn-primary {
     color: white !important;
@@ -157,7 +152,44 @@ a:hover, .btn-link:hover {
     }
 }
 
+.cookie-consent {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    z-index: 1040;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    color: $dark-text;
+    background-color: $feed-honeydew;
+    border: 2px solid $feed-teal;
+    border-radius: 24px 0 24px 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+    &[hidden] {
+        display: none;
+    }
+
+    p {
+        margin-bottom: 12px;
+        font-size: 15px;
+    }
+
+    a {
+        color: $dark-text;
+        text-decoration: underline !important;
+    }
+
+    .cookie-consent-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
 .lang-switch {
+    container-type: inline-size;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -185,6 +217,18 @@ a:hover, .btn-link:hover {
             color: $white;
             background-color: $button-cta-color;
         }
+    }
+}
+
+// Seven chips with codes need about 540px. Below that, show the flags
+// alone so the row stays on one line; each link keeps its title and label.
+@container (max-width: 544px) {
+    .lang-switch a {
+        padding: 4px 6px;
+    }
+
+    .lang-code {
+        display: none;
     }
 }
 

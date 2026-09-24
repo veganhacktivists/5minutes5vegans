@@ -75,7 +75,7 @@ return [
             ], [
                 'Mon préféré, c\'est celui de "Follow Your Heart", et Daiya est top pour le fromage fondu\.'
             ], [
-                'Ce lien ' . generate_and_cache_shlink('https://www.peta.org/living/food/everything-you-need-to-know-about-vegan-cheese/') . ' t\'aidera à trouver encore plus de marques près de chez toi ! Écris\-moi si tu as besoin d\'aide pour en trouver d\'autres\.'
+                'Ce lien ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/') . ' t\'aidera à trouver encore plus de marques près de chez toi ! Écris\-moi si tu as besoin d\'aide pour en trouver d\'autres\.'
             ]
         ]
     ],
@@ -87,7 +87,7 @@ return [
             [
                 'Il y a souvent plein de pizzas vegan \(et d\'autres restaurants\) sur ' . generate_and_cache_shlink('http://HappyCow.net') . ' !'
             ], [
-                'Il y a aussi les pizzas "Daiya" : ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' et encore plus d\'adresses ici : ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Écris\-moi si tu as besoin d\'aide pour en trouver d\'autres\.'
+                'Il y a aussi les pizzas "Daiya" : ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' et encore plus d\'adresses ici : ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/') . ' Écris\-moi si tu as besoin d\'aide pour en trouver d\'autres\.'
             ]
         ]
     ],
@@ -99,7 +99,7 @@ return [
             [
                 'Il existe plein de super recettes d\'œufs vegan \(comme celle\-ci, mais ajoute des épinards\) : ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
             ], [
-                'Tu peux aussi acheter des œufs vegan : ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Plus d\'infos ici : ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' et surtout ici : ' . generate_and_cache_shlink('https://youaretheirvoice.com/resources/viva-eggs.pdf')
+                'Tu peux aussi acheter des œufs vegan : ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Plus d\'infos ici : ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' et surtout ici : ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/')
             ]
         ]
     ],
@@ -113,7 +113,7 @@ return [
             ], [
                 'Il y a plein de parfums différents, et beaucoup d\'autres marques de glaces au soja, à l\'amande ou à la noix de coco !'
             ], [
-                '(Voir :|Jette un œil à) ' . generate_and_cache_shlink('https://www.vegan.com/ice-cream/')
+                '(Voir :|Jette un œil à) ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/')
             ]
         ]
     ],
@@ -158,7 +158,7 @@ return [
 
     [
         'icon' => 'fas fa-sad-cry',
-        'title' => 'Le film Dominion',
+        'title' => 'Dominion',
         'body' =>[
             [
                 'Je te recommande vivement cette vidéo YouTube : ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
@@ -181,7 +181,7 @@ return [
             ], [
                 'Commence juste par acheter du lait de soja, d\'amande ou d\'avoine et habitue\-toi\.'
             ], [
-                'Ensuite le beurre, la viande, etc\. Plus d\'infos : ' . generate_and_cache_shlink('http://earthlinged.com/ebook')
+                'Ensuite le beurre, la viande, etc\. Plus d\'infos : ' . generate_and_cache_shlink('https://veganbootcamp.org')
             ]
         ]
     ],
@@ -216,7 +216,7 @@ return [
 
     [
         'icon' => 'fas fa-calculator',
-        'title' => 'Les protéines',
+        'title' => 'Protéines',
         'body' =>[
             [
                 'Presque tous les aliments, légumes, fruits et graines contiennent des protéines, et on n\'en a pas besoin de tant que ça\.'
@@ -278,26 +278,26 @@ return [
 
     [
         'icon' => 'fas fa-flask',
-        'title' => 'Tout le monde est d\'accord',
+        'title' => 'Les experts sont d\'accord',
         'body' =>[
             [
                 'Aujourd\'hui, il est largement admis qu\'une alimentation vegan est plus saine qu\'une alimentation avec de la viande\.'
             ], [
-                'Voici une page qui cite directement les plus grandes organisations mondiales de santé, de nutrition et de diététique \(donc des organisations neutres\) : ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Voici une page qui cite directement les plus grandes organisations mondiales de santé, de nutrition et de diététique \(donc des organisations neutres\) : ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
 
     [
         'icon' => 'fas fa-heartbeat',
-        'title' => 'Est-ce sain ?',
+        'title' => 'Santé',
         'body' =>[
             [
                 'Aujourd\'hui, il est largement admis que la viande et les produits laitiers sont extrêmement mauvais pour la santé comparés à une alimentation vegan\.'
             ], [
                 'La viande est cancérigène et en cause dans la majorité des maladies : cancer, maladies cardiaques, diabète et obésité\.'
             ], [
-                'Voici une page avec des infos et des sources : ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Voici une page avec des infos et des sources : ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],

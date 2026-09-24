@@ -7,7 +7,7 @@
             @if (LaravelLocalization::getCurrentLocale() == $localeCode) class="active" aria-current="page" @endif
         >
             <span class="lang-flag"><img src="{{ asset('images/landing/'.strtolower(getCountry($properties)).'@3x.png') }}" alt=""></span>
-            {{ strtoupper($localeCode) }}
+            <span class="lang-code">{{ strtoupper($localeCode) }}</span>
         </a>
     @endforeach
 </nav>

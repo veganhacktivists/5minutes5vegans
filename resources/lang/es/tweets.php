@@ -40,10 +40,10 @@ return [
                 'Puedes tener un mentor (personal )?voluntario (por Facebook )?para ayudarte a ser vegan@ durante un mes\.',
                 'Pueden contactarte (por Facebook )?con un mentor (personal )?voluntario para ayudarte a ser vegan@ durante un mes\.'
             ], [
-                'El link es ' . generate_and_cache_shlink('https://www.challenge22.com/es') . ';',
-                'La URL es ' . generate_and_cache_shlink('https://www.challenge22.com/es') . ';',
-                'El enlace es ' . generate_and_cache_shlink('https://www.challenge22.com/es') . ';',
-                'La web es ' . generate_and_cache_shlink('https://www.challenge22.com/es') . ';',
+                'El link es ' . generate_and_cache_shlink('https://desafio22.com/') . ';',
+                'La URL es ' . generate_and_cache_shlink('https://desafio22.com/') . ';',
+                'El enlace es ' . generate_and_cache_shlink('https://desafio22.com/') . ';',
+                'La web es ' . generate_and_cache_shlink('https://desafio22.com/') . ';',
             ], [
                 '¡Buena suerte, puedes con ello!',
                 'Tú puedes con ello( perfectamente)?!',
@@ -72,7 +72,7 @@ return [
             [
                 'Cada vez hay más carnes veganas desde estos últimos años!'
             ], [
-                'Beyond Meat es excelente: ' . generate_and_cache_shlink('https://www.beyondmeat.com/') . ' y Heura también tienen muchos productos: ' . generate_and_cache_shlink('https://www.heurafoods.com/donde-encontrar-comprar-heura') . ' Echa un vistazo en tu supermercado para ver qué productos hay disponibles, podrías sorprenderte!'
+                'Beyond Meat es excelente: ' . generate_and_cache_shlink('https://www.beyondmeat.com/') . ' y Heura también tienen muchos productos: ' . generate_and_cache_shlink('https://heurafoods.com/es/productos/') . ' Echa un vistazo en tu supermercado para ver qué productos hay disponibles, podrías sorprenderte!'
             ]
         ]
     ],
@@ -82,11 +82,11 @@ return [
         'title' => 'Amo el queso',
         'body' =>[
             [
-                'Los quesos veganos han evolucionado mucho estos últimos años, ¿los has probado?'
+                'Los quesos veganos han evolucionado mucho estos últimos años, ¿los has probado\?'
             ], [
                 'Mi favorito es Violife, que tienen hasta para fundir, pero hay muchos más!'
             ], [
-                'Si no, puedes comprarlos en ' . generate_and_cache_shlink('https://www.veggieroom.es/es/tipo/quesos-y-natas-vegetales') . ' o en ' . generate_and_cache_shlink('https://www.vegaffinity.com/tienda-vegana/44-comprar-quesos-veganos') . ' ¡Si tienes alguna duda aquí estoy! 😊'
+                'Si no, puedes comprarlos en ' . generate_and_cache_shlink('https://www.veggieroom.es/es/tipo/quesos-y-natas-vegetales') . ' ¡Si tienes alguna duda aquí estoy! 😊'
             ]
         ]
     ],
@@ -98,7 +98,7 @@ return [
             [
                 'Puedes encontrar productos veganos como pizzas \(y restaurantes\) en ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
             ], [
-                'Hay muchas marcas de pizzas veganas, como las de Mercadona o Lidl: ' . generate_and_cache_shlink('https://ideavegana.com/pizza-vegana-mercadona/') . ' por supuesto, siempre están las caseras. Si quieres más info dímelo y te ayudo\.'
+                'Hay muchas marcas de pizzas veganas, como las de Mercadona o Lidl: ' . generate_and_cache_shlink('https://ideavegana.com/pizza-vegana-mercadona/') . ' por supuesto, siempre están las caseras\. Si quieres más info dímelo y te ayudo\.'
             ]
         ]
     ],
@@ -110,8 +110,7 @@ return [
             [
                 'Hay muy buenas recetas con huevo veganizadas \(como esta, pero con espinaca\): ' . generate_and_cache_shlink('https://danzadefogones.com/revuelto-vegano-tofu/')
             ], [
-                '🐣 También puedes encontrar sustitutivos en
-: ' . generate_and_cache_shlink('https://soycomocomo.es/especialista/biogra/huevo-vegano') . ' o comprarlos directamente como los “huevos” veganos No Egg (de Orgran)\.'
+                '🐣 También puedes hacer un “huevo” de lino: ' . generate_and_cache_shlink('https://danzadefogones.com/huevo-lino-linaza/') . ' o comprar uno ya hecho, como los “huevos” veganos No Egg \(de Orgran\)\.'
             ]
         ]
     ],
@@ -121,7 +120,7 @@ return [
         'title' => 'Amo el helado',
         'body' =>[
             [
-                'Prueba los helados veganos de Ben&Jerry\'s: ' . generate_and_cache_shlink('https://www.ben-jerrys.es/sabores/vegano')
+                'Prueba los helados veganos de Ben&Jerry\'s: ' . generate_and_cache_shlink('https://www.ben-jerrys.es/sabores/helado-vegano')
             ], [
                 'Tienen muchos sabores y también hay otras marcas con helados de soja/almendras/coco/etc!'
             ], [
@@ -135,7 +134,7 @@ return [
         'title' => 'Amo el pollo',
         'body' =>[
             [
-                'Heura tiene un pollo increíble: ' . generate_and_cache_shlink('https://www.heurafoods.com/donde-encontrar-comprar-heura')
+                'Heura tiene un pollo increíble: ' . generate_and_cache_shlink('https://heurafoods.com/es/encuentranos/')
             ], [
                 '🐣 HappyCow para comer fuera: ' . generate_and_cache_shlink('https://www.happycow.net') . '! échales un ojo, seguro que encuentras sitios interesantes cerca que pueden sorprenderte! 😉 Si tienes cualquier duda dímelo! 😊 '
             ]
@@ -151,7 +150,7 @@ return [
             ], [
                 'Existen muchas leches vegetales deliciosas de: soja, almendras, avena, coco, arroz, etc!'
             ], [
-                'No se ponen malas, son más saludables y no necesitan refrigeración antes de abrirlas.'
+                'No se ponen malas, son más saludables y no necesitan refrigeración antes de abrirlas\.'
             ]
         ]
     ],
@@ -170,7 +169,7 @@ return [
 
     [
         'icon' => 'fas fa-sad-cry',
-        'title' => 'Película Dominion',
+        'title' => 'Dominion',
         'body' =>[
             [
                 'Te recomiendo que veas este vídeo de YouTube: ' . generate_and_cache_shlink('https://youtu.be/J_G3ZhimsMw?t=40')
@@ -191,7 +190,7 @@ return [
             ], [
                 'Si crees que es muy difícil y no sabes cómo hacerlo, prueba poco a poco\.'
             ], [
-                'Empieza por probar y acostumbrarte a beber leches vegetales.'
+                'Empieza por probar y acostumbrarte a beber leches vegetales\.'
             ], [
                 'Luego mantequilla, carnes, etc\. Más info \(activa subtítulos\): ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2')
             ]
@@ -207,7 +206,7 @@ return [
             ], [
                 'pero te recomendaría ver este vídeo \(con subtítulos\): ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg')
             ], [
-                'Algunos argumentos desmentidos \(con subs\): ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2') . ' y el desafío de 1 mes de veganismo: ' . generate_and_cache_shlink('https://www.challenge22.com/es')
+                'Algunos argumentos desmentidos \(con subs\): ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2') . ' y el desafío de 1 mes de veganismo: ' . generate_and_cache_shlink('https://desafio22.com/')
             ]
         ]
     ],
@@ -228,7 +227,7 @@ return [
 
     [
         'icon' => 'fas fa-calculator',
-        'title' => 'Las proteínas',
+        'title' => 'Proteínas',
         'body' =>[
             [
                 'Todo tipo de comida: verduras, frutas, semillas, etc tiene proteínas, de las que no necesitamos tantas\.'
@@ -247,7 +246,7 @@ return [
             ], [
                 'Una buena dieta vegetal es la mejor para tu entrenamiento!'
             ], [
-                'Vídeos: ' . generate_and_cache_shlink('https://www.youtube.com/results?search_query=vegan+fitness') . ' y comunidad (en inglés): ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/')
+                'Vídeos: ' . generate_and_cache_shlink('https://www.youtube.com/results?search_query=vegan+fitness') . ' y comunidad \(en inglés\): ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/')
             ]
         ]
     ],
@@ -295,7 +294,7 @@ return [
             [
                 'Hoy en día existe consenso en que el veganismo es más sano que una dieta con carnes\.'
             ], [
-                'Esta página muestra las fuentes directamente de las organizaciones más importantes de salud, dietética y nutrición \(que son objetivas\): ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Esta página muestra las fuentes directamente de las organizaciones más importantes de salud, dietética y nutrición \(que son objetivas\): ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
@@ -309,7 +308,7 @@ return [
             ], [
                 'Las carnes rojas y procesadas causan enfermedades como: cáncer, problemas de corazón, diabetes y obesidad\.'
             ], [
-                'Esta web tiene info y estudios: ' . generate_and_cache_shlink('https://youaretheirvoice.com/pages/the-clear-consensus')
+                'Esta web tiene info y estudios: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
             ]
         ]
     ],
@@ -335,7 +334,7 @@ return [
             [
                 'Se puede hacer una versión vegana de casi toda la comida que conoces, sólo tienes que saber cocinarla o dónde comprarla\.'
             ], [
-                'Algunas recetas: ' . generate_and_cache_shlink('https://veganuary.com/es/recipes') . ' \(o busca tu plato favorito \+ "Vegan"\)\.'
+                'Algunas recetas: ' . generate_and_cache_shlink('https://veganuary.com/es/recetas/') . ' \(o busca tu plato favorito \+ "Vegan"\)\.'
             ], [
                 'Para comer fuera: ' . generate_and_cache_shlink('https://happycow.net')
             ]

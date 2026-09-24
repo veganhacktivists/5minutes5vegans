@@ -59,10 +59,6 @@
     background-color: rgba($feed-honeydew, 0.96);
     border-radius: 90px 0 0 0;
 
-    @include for-tablet-portrait-up {
-        margin-top: 30px;
-    }
-
     #register-pane p {
         font-size: 14px;
         line-height: 1.4;
@@ -77,7 +73,6 @@
 
     @include for-tablet-portrait-up {
         border-radius: 0 0 90px 0;
-        margin-bottom: 30px;
     }
 
     h3 {
@@ -124,35 +119,66 @@
     top: 10px;
 }
 
-.start-btn {
-    div {
-        position: relative;
-        width: 90px;
-        height: 90px;
-        color: #209774;
-        background-color: #209774;
-        border-radius: 50%;
+.start-cta {
+    padding: 8px 24px;
+    font-size: 17px;
+    font-weight: bold;
+    color: $dark-text;
+    background-color: $feed-honeydew;
 
-        div {
-            margin-top: 16%;
-            margin-left: 16%;
-            position: absolute;
-            width: 68%;
-            height: 68%;
-            background-color: #e5e5e5;
-            border-radius: 50%;
+    &:hover,
+    &:focus-visible {
+        color: $dark-text;
+        background-color: $white;
+    }
+}
 
-            i {
-                font-size: xx-large;
-                margin-top: 22%;
-                margin-left: 5%;
-            }
+.how-modal {
+    color: $dark-text;
+    background-color: $feed-honeydew;
+    border: 0;
+    border-radius: 60px 0 60px 0;
+
+    .modal-header,
+    .modal-footer {
+        border: 0;
+        padding: 1.5rem 2rem 0.5rem;
+    }
+
+    .modal-footer {
+        padding-bottom: 1.75rem;
+    }
+
+    .modal-body {
+        padding: 0.5rem 2rem;
+    }
+
+    .modal-title {
+        font-size: 1.75rem;
+    }
+
+    .how-lead {
+        font-weight: bold;
+    }
+
+    .how-steps {
+        padding-left: 1.25rem;
+        margin-bottom: 0;
+
+        li + li {
+            margin-top: 0.6rem;
         }
     }
 }
 
 .login-footer {
     @extend .page-footer;
+    @include vh-credit;
+
+    .vh-credit {
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 500;
+    }
 }
 
 .reset-pane {

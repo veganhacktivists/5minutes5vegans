@@ -21,10 +21,11 @@ Route::group( [
 
     Route::get('/', 'FeedController')->name('feed');
 
-    Route::get('/tweet', 'TweetController@tweet');
     Route::get('/tweets', 'TweetController@tweets')->name('tweets');
 
 });
+
+Route::get('/sitemap.xml', 'SitemapController')->name('sitemap');
 
 Route::middleware( [ 'auth', 'ownsVerbiage' ] )->group(function () {
     Route::resource( 'verbiage', 'VerbiageController' )->only( 'store', 'update', 'destroy' );
