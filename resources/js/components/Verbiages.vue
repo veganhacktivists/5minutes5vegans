@@ -61,7 +61,7 @@
                         v-model="selected.body"
                         class="w-100 p-3"
                         rows="4"
-                        style="font-size: 18px;"
+                        style="font-size: 16px;"
                         v-bind:disabled="busy"
                         v-on:keyup="characterCountdown"
                         :placeholder="[[defaultMessage]]"

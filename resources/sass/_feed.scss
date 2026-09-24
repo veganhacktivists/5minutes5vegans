@@ -5,11 +5,17 @@
 .swiper-container {
     width: 100%;
     flex: 1 1 auto;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .swiper-slide.scrollable {
-    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: $feed-border transparent;
 }
 
 .swiper-pagination {
@@ -63,7 +69,7 @@
 
     @include for-tablet-portrait-up {
         display: block;
-        padding-bottom: 20px;
+        padding-bottom: 12px;
     }
 }
 
@@ -204,7 +210,7 @@
 }
 
 .verbiage-container {
-    padding-bottom: 5px;
+    padding-bottom: 4px;
 }
 
 .verbiage-switch {
@@ -225,7 +231,7 @@
     background-color: $feed-mint;
     border: 0;
     border-top: 2px solid $feed-border;
-    padding: 5px 10px;
+    padding: 4px 8px;
     height: 100%;
 
     &:hover {
@@ -246,9 +252,9 @@
     i {
         /*font-size: 50px;*/
         /*padding-bottom: 10px;*/
-        font-size: 25px;
+        font-size: 22px;
         padding: 0px;
-        padding-top: 5px;
+        padding-top: 3px;
         display: block;
         margin: auto;
     }
@@ -257,8 +263,8 @@
         color: $dark-text;
         display: block;
         text-align: center;
-        line-height: 1.2;
-        margin: 5px 0;
+        line-height: 1.15;
+        margin: 4px 0 2px;
         hyphens: auto;
         overflow-wrap: break-word;
     }
@@ -424,9 +430,10 @@
 
 #leftside {
     color: $feed-teal;
-    min-height: calc(100vh - 56px);
+    flex: 1 0 auto;
     padding: 30px;
     padding-top: 0;
+    padding-bottom: 16px;
 
     @include for-tablet-portrait-up {
         padding-top: 30px;
