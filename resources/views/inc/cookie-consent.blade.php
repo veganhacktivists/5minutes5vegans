@@ -1,6 +1,6 @@
 <div id="cookie-consent" class="cookie-consent" role="dialog" aria-live="polite" aria-label="{{ __('Cookies') }}" hidden>
     <p>
-        {{ __('We\'d like to use Google Analytics cookies to see how people use the site. Is that OK?') }}
+        {{ __('Can we use Google Analytics cookies? They show us how the site is used, so we can improve it.') }}
         <a href="https://veganhacktivists.org/privacy-policy" target="_blank">{{ __('Privacy policy') }}</a>
     </p>
     <div class="cookie-consent-buttons">
