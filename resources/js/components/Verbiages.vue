@@ -8,13 +8,14 @@
                 v-on:click="selectVerbiage(verbiage)"
                 class="verbiage-container col-12 col-sm-6 col-md-3 col-lg-5ths px-1"
                 >
-                <div
+                <button
+                    type="button"
                     v-bind:class="{ active: selected.title == verbiage.title }"
                     class="verbiage-link"
                     >
                     <i :class="verbiage.icon" class="fa-fw"></i>
-                    <p>{{ verbiage.title }}</p>
-                </div>
+                    <span>{{ verbiage.title }}</span>
+                </button>
             </div>
 
             <div
@@ -24,14 +25,15 @@
                 v-on:click="selectVerbiage(verbiage)"
                 class="verbiage-container col-12 col-sm-6 col-md-3 col-lg-5ths px-1"
                 >
-                <div
+                <button
+                    type="button"
                     v-if="selected != verbiage || !editing"
                     v-bind:class="{ active: selected.id == verbiage.id }"
                     class="verbiage-link"
                     >
                     <i :class="verbiage.icon"></i>
-                    <p>{{ verbiage.title }}</p>
-                </div>
+                    <span>{{ verbiage.title }}</span>
+                </button>
             </div>
         </div>
 

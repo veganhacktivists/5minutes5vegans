@@ -210,7 +210,10 @@ $feed-teal: #41b9aa;
 .verbiage-link {
     /*padding-top: 100%;*/
     /*position: relative;*/
+    width: 100%;
+    color: inherit;
     background-color: #E7F9EC;
+    border: 0;
     border-top: 2px solid #b7dbc7;
     padding: 5px 10px;
     height: 73px;
@@ -229,7 +232,7 @@ $feed-teal: #41b9aa;
     &.active {
         color: #ec361f !important;
         border-top-color: #ec361f;
-        p {
+        span {
             color: inherit;
         }
     }
@@ -244,7 +247,7 @@ $feed-teal: #41b9aa;
         margin: auto;
     }
 
-    p {
+    span {
         color: $dark-text;
         display: block;
         text-align: center;
