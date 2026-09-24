@@ -50,7 +50,7 @@
                 {!! app('captcha')->display() !!}
 
                 @error('g-recaptcha-response')
-                    <span class="help-block">
+                    <span class="invalid-feedback d-block" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
