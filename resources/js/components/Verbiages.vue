@@ -71,6 +71,7 @@
                         data-bs-toggle="tooltip"
                         class="btn btn-link copy-btn"
                         id="copy-btn"
+                        aria-label="Copy message"
                         v-if="!editing"
                         v-clipboard="() => selected.body"
                         v-clipboard:success="clipboardSuccessHandler"
@@ -80,6 +81,7 @@
                     </button>
                     <button
                         class="btn btn-link close-btn"
+                        aria-label="Close"
                         v-if="!editing && verbiageMsgToggled"
                         v-on:click="toggleVerbiageMsg(false)"
                         >

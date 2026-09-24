@@ -5,7 +5,7 @@
         <a hreflang="{{ $localeCode }}"
             href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
             class="align-self-center mx-auto">
-        <img src="{{ mb_strtolower(asset('images/landing/'.getCountry( $properties )), 'UTF-8') }}.png">
+        <img src="{{ mb_strtolower(asset('images/landing/'.getCountry( $properties )), 'UTF-8') }}.png" alt="{{ $properties['native'] }}">
         </a>
     </div>
     </li>
