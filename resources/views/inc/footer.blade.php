@@ -1,11 +1,11 @@
 <div class="container-fluid container-fluid-max">
     <div class="row">
     <div class="col-12 col-md-6 col-lg-4 text-center">
-        @lang('Follow us on') <i class="fab fa-instagram"></i> {{ url('https://www.instagram.com/veganhacktivists', 'Instagram', ['class' => 'lnk', 'target' => '_blank']) }}
+        @lang('Follow us on') <i class="fab fa-instagram"></i> <a href="https://www.instagram.com/veganhacktivists" class="lnk" target="_blank">Instagram</a>
     </div>
     <div class="col-12 col-md-6 col-lg-4 text-center">
         <div>
-        @lang('landing.credits', [ 'link' => url('https://veganhacktivists.org/', 'Vegan Hacktivists', ['target' => '_blank']) ])
+        @lang('landing.credits', [ 'link' => '<a href="https://veganhacktivists.org/" target="_blank">Vegan Hacktivists</a>' ])
         <i class="far fa-heart"></i>
         </div>
     </div>
