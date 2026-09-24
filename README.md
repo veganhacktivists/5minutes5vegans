@@ -12,7 +12,7 @@ in seconds! In just 5 minutes you can help 5 or more people become vegan.
 
 ## Setup
 
-Laravel 12 on PHP 8.3, run through [Laravel Sail](https://laravel.com/docs/12.x/sail),
+Laravel 12 on PHP 8.4, run through [Laravel Sail](https://laravel.com/docs/12.x/sail),
 which brings up the app, MariaDB and MailHog in Docker. The front end needs
 Node 22 and pnpm.
 
