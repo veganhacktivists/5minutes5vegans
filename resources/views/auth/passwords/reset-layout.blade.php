@@ -13,9 +13,9 @@
                 @include('inc.logo')
             </div>
             <div class="col-sm d-flex justify-content-end">
-                <a class="login-how" href="/">
+                <button type="button" class="login-how" data-bs-toggle="modal" data-bs-target="#how-it-works">
                     @lang('loginregister.how')
-                </a>
+                </button>
             </div>
         </div>
     </nav>
@@ -38,6 +38,8 @@
         </div>
     </div>
 </main>
+
+@include('inc.how-it-works')
 
 <footer class="footer mt-auto py-3 login-footer text-white">
     @include('inc.footer')
