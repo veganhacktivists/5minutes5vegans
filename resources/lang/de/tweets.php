@@ -10,7 +10,7 @@ return [
             [
                 'Du solltest es tun! Die meisten Veganer sagen, dass das einzige, was sie bereuen ist, dass sie nicht schon füher angefangen haben\.'
             ], [
-                'Hier ein paar Infos: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' (community) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' (Movie) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PL03LZR09P2gQJyBgHk_XE8gbj8j9uFs8G') . ' (Myths) 🐷 Schreib\' mir, wenn du Hilfe brauchst!'
+                'Hier ein paar Infos: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' (community) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' (Movie) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2') . ' (Myths) 🐷 Schreib\' mir, wenn du Hilfe brauchst!'
             ]
         ]
     ],
@@ -99,7 +99,7 @@ return [
             [
                 'Normalerweise findest du viele vegane Pizza\-Angebote (und andere Speisen) auf ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
             ], [
-                'There\'s also "Daiya" Pizza: ' . generate_and_cache_shlink('https://daiyafoods.com/our-foods/pizza/') . ' and even more places listed here: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Message me if you need help finding more\.'
+                'There\'s also "Daiya" Pizza: ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' and even more places listed here: ' . generate_and_cache_shlink('https://www.peta.org/living/food/pizza-places-vegan-options/') . ' Message me if you need help finding more\.'
             ]
         ]
     ],
