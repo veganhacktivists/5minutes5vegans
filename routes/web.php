@@ -10,8 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-// Route::post('/tinyurl', 'TweetController@tinyurl');
-
 Route::group( [
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
