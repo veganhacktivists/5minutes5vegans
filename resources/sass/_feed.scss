@@ -346,9 +346,19 @@ $feed-teal: #41b9aa;
             font-size: 17px;
         }
 
+        > div {
+            flex-wrap: wrap;
+            row-gap: 4px;
+        }
+
         .greeting {
             color: #19443a;
             font-size: 22px;
+            flex-basis: 100%;
+
+            @include for-desktop-up {
+                flex-basis: auto;
+            }
         }
     }
 
