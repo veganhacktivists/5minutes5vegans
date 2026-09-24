@@ -57,10 +57,6 @@
             </div>
         </div>
 
-        <div class="form-check mb-3">
-            <input type="checkbox" name="newsletter-check" class="form-check-input" id="newsletter-check" value="{{ old('newsletter-check') }}"/>
-            <label class="form-check-label small" for="newsletter-check" style="font-size: 15px;">@lang('loginregister.newsletter')</label>
-        </div>
         <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-primary swirvy-box">@lang('Create Account')</button>
         </div>

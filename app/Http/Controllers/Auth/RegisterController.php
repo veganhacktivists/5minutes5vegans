@@ -74,17 +74,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-        $user = User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-        if (isset($data['newsletter-check'])) {
-            $user->subscribeToNewsletter();
-        }
-
-        return $user;
     }
 }
