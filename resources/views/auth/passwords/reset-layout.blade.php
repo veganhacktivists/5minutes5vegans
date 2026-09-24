@@ -3,7 +3,7 @@
 @section('title', 'Reset Password')
 
 @section('page_content')
-<section id="login-bg" style="background-image: url({{ asset('images/login_bg.png') }});">
+<section id="login-bg" style="background-image: url({{ asset('images/login_bg.jpg') }});">
 </section>
 
 <header>
