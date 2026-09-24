@@ -32,6 +32,7 @@ class SessionCookieTest extends TestCase
 
     public function testTheCookieIsSameSiteLax()
     {
+        $this->withoutVite();
         $this->withoutMiddleware([LaravelLocalizationRedirectFilter::class, LocaleSessionRedirect::class]);
 
         $response = $this->get(route('login'))->assertOk();
