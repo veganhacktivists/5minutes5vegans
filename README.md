@@ -32,3 +32,35 @@ the tests with `./vendor/bin/sail artisan test`.
 Without PHP and Composer on your machine, run that first `composer install` in a
 container instead — see
 [Executing Composer Commands](https://laravel.com/docs/12.x/sail#executing-composer-commands).
+
+`migrate` leaves the tables empty. Seed sample data for a local feed:
+
+```
+./vendor/bin/sail artisan db:seed
+```
+
+That creates 30 users, 200 posts and 200 saved replies. The seeded users
+use the password `password`.
+
+The copy-paste replies are cached. Until `tweets:generate` has run, `/tweets`
+responds with 503:
+
+```
+./vendor/bin/sail artisan tweets:generate
+```
+
+That command asks Shlink at `https://go.veganhacktivists.org` for short links.
+Set `SHLINK_API_KEY` in `.env`. With no key, the call fails, the error is
+logged, and the long URL is used.
+
+Posts on the live site are sent by
+[5minutes5vegans-bot](https://github.com/veganhacktivists/5minutes5vegans-bot)
+to `POST /api/tweets`. The request has to include `API_KEY`, as the
+`X-API-KEY` header or an `api-key` field. The seed is enough for local posts.
+
+`tweets:generate` is scheduled every minute in `app/Console/Kernel.php`.
+`nixpacks/start.sh` runs it once when a container starts. This repo does not
+run `schedule:run`.
+
+Sail builds the PHP 8.4 image from `vendor/laravel/sail` (`docker-compose.yml`).
+The `Dockerfile` in the repo root is from 2020 and still uses PHP 7.4 with Apache.
