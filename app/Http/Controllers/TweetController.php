@@ -3,18 +3,13 @@
 namespace App\Http\Controllers;
 
 use App;
-use App\Services\TweetRegexService;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 
 class TweetController extends Controller
 {
     /**
-     * Return all tweets.
-     *
-     * @param $tweetRegexService
-     *
-     * @return string
+     * Return the generated replies for the current language.
      */
     public function tweets()
     {

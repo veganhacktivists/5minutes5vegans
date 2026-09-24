@@ -6,342 +6,529 @@ return [
     [
         'icon' => 'fas fa-info-circle',
         'title' => 'Informazioni generali',
-        'body' =>[
+        'body' => [
             [
-                'Dovresti farlo! La maggior parte delle persone vegane dice che l\'unico rimpianto è non averlo fatto prima\.'
-            ], [
-                'Ecco qualche risorsa: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' \(community\) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(film\) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2') . ' \(miti\) 🐷 Scrivimi se hai bisogno di aiuto!'
-            ]
-        ]
+                'Dovresti proprio provarci!',
+                'Che bella notizia!',
+                'Buttati, non ti pentirai!',
+            ],
+            [
+                'La maggior parte dei vegani dice che l\'unico rimpianto è non averlo fatto prima. Per le domande c\'è r/vegan: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/') . ' e questi brevi video sciolgono i dubbi più comuni: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'Un buon primo passo è la sfida gratuita di 31 giorni di Veganuary, che puoi iniziare quando vuoi. Ricevi ricette e un\'email al giorno: ' . generate_and_cache_shlink('https://veganuary.com/it/'),
+                'Challenge 22 è gratis e ti dà un mentore e dei dietisti per 22 giorni: ' . generate_and_cache_shlink('https://challenge22.com/') . ' Per capire perché è importante, guarda l\'inizio di Dominion: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+            ],
+            [
+                'Scrivimi se ti serve aiuto!',
+                'Se hai domande, chiedi pure!',
+                'Fammi un fischio se serve!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-leaf',
         'title' => 'Sfida vegana',
-        'body' =>[
+        'body' => [
             [
+                'Ehi!',
                 'Ciao!',
-                'Ehi!'
-            ], [
-                'Puoi (assolutamente |sicuramente )?farcela!',
-                'Siamo (sempre )?qui per aiutarti!',
-                'È (davvero |molto )?più facile di quanto pensi!'
-            ], [
-                '(Dovresti|Potresti) (dare un\'occhiata alla|provare la) Vegan Bootcamp Challenge!',
-                'La Vegan Bootcamp Challenge (potrebbe essere|è) (proprio )?quello che cerchi\.',
-                'C\'è una risorsa che si chiama Vegan Bootcamp Challenge( che potresti provare)?\.'
-            ], [
-                'È una sfida vegana di massimo 30 giorni che ti aiuta a farlo come un professionista!',
-                'Il sito propone una sfida vegana di massimo 30 giorni per imparare a diventare vegano in modo facile!',
-                'Sul sito completi 30 sfide che ti aiutano a diventare vegano un passo alla volta, è facile!'
-            ], [
-                'Il link è ' . generate_and_cache_shlink('https://veganbootcamp.org') . ';',
-                'L\'indirizzo è ' . generate_and_cache_shlink('https://veganbootcamp.org') . ';',
-                'Il sito è ' . generate_and_cache_shlink('https://veganbootcamp.org') . ';',
-                'Trovi il sito qui: ' . generate_and_cache_shlink('https://veganbootcamp.org') . ';',
-            ], [
-                'In bocca al lupo, ce la farai!',
-                'Puoi (davvero |assolutamente )?farcela!',
-                'Facciamo (tutti )?il tifo per te!',
-                'Tieni duro!',
-                'Ce la puoi fare!'
-            ], [
-                'Scrivimi se ti serve (aiuto|una mano)!',
-                'Rispondimi se ti serve (aiuto|una mano)!',
-                '(Non esitare a|Puoi) contattarmi se ti serve (aiuto|una mano)!',
-                'Se (mai )?ti serve (aiuto|una mano), mandami un (messaggio|DM)!'
-            ]
-        ]
+                'Che bello!',
+            ],
+            [
+                'Veganuary ha una sfida gratuita di 31 giorni che puoi iniziare quando vuoi, con ricette e un\'email al giorno: ' . generate_and_cache_shlink('https://veganuary.com/it/'),
+                'Challenge 22 è una sfida gratuita di 22 giorni, con un mentore tutto tuo e dei dietisti a disposizione: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Vegan Bootcamp è gratuito e lo segui al tuo ritmo, con brevi corsi su cibo, nutrizione e altro: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
+            ],
+            [
+                'Ce la farai!',
+                'Ce la puoi fare, davvero!',
+                'Facciamo il tifo per te!',
+                'Scrivimi se ti serve una mano!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-bacon',
         'title' => 'Amo la carne',
-        'body' =>[
+        'body' => [
             [
-                'La carne vegana ha fatto ENORMI progressi negli ultimi anni!'
-            ], [
-                'Beyond Meat è davvero buona: ' . generate_and_cache_shlink('https://www.beyondmeat.com/') . ', e anche Gardein ha tantissimi prodotti: ' . generate_and_cache_shlink('https://www.gardein.com/') . ' Fai un giro al supermercato e guarda cosa c\'è, potresti rimanere sorpreso!'
-            ]
-        ]
+                'La carne vegana ha fatto passi da gigante!',
+                'Buone notizie, non devi farne a meno!',
+                'Ti capisco, e ormai le alternative sono davvero buone!',
+            ],
+            [
+                'La maggior parte dei supermercati ora vende burger, salsicce, macinato e nuggets vegetali. Beyond Meat è un buon punto di partenza: ' . generate_and_cache_shlink('https://www.beyondmeat.com/'),
+                'Oggi puoi sostituire quasi tutto: burger, salsicce, pancetta, macinato. Prova qualche marca, anche quella del tuo supermercato, e vedi cosa ti piace.',
+                'Anche tanti ristoranti e catene ora hanno opzioni vegetali. HappyCow ti mostra i locali vegan-friendly vicino a te: ' . generate_and_cache_shlink('https://www.happycow.net'),
+            ],
+            [
+                'Scrivimi se vuoi qualche consiglio!',
+                'Ti dico volentieri i miei preferiti!',
+                'Divertiti a sperimentare!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-cheese',
         'title' => 'Amo il formaggio',
-        'body' =>[
+        'body' => [
             [
-                'Il formaggio vegano ha fatto ENORMI progressi negli ultimi anni!'
-            ], [
-                'Il mio preferito è quello di "Follow Your Heart", e Daiya è ottimo per il formaggio fuso\.'
-            ], [
-                'Con questo link ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/') . ' trovi ancora più marche vicino a te! Scrivimi se ti serve aiuto per trovarne altre\.'
-            ]
-        ]
+                'Il formaggio vegano ha fatto passi da gigante!',
+                'Il formaggio vegano è molto più buono di una volta!',
+                'Non immagini quanto sia buono oggi il formaggio vegano!',
+            ],
+            [
+                'Violife è ottimo per tutto e si scioglie bene: ' . generate_and_cache_shlink('https://violifefoods.com/') . ' Anche Follow Your Heart e Daiya sono buoni.',
+                'Ecco una guida ai formaggi vegani, da quelli a fette al brie: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/'),
+                'C\'è molta differenza tra le marche, quindi provane qualcuna. Violife è un buon inizio, e si scioglie su pizza e toast: ' . generate_and_cache_shlink('https://violifefoods.com/'),
+            ],
+            [
+                'Scrivimi se vuoi altre idee!',
+                'Ti aiuto volentieri a trovarne qualcuno!',
+                'Buon appetito! 🧀',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-pizza-slice',
         'title' => 'Amo la pizza',
-        'body' =>[
+        'body' => [
             [
-                'Di solito ci sono tante pizze vegane \(e altri ristoranti\) su ' . generate_and_cache_shlink('http://HappyCow.net') . '!'
-            ], [
-                'C\'è anche la pizza "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' e ancora più posti qui: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/') . ' Scrivimi se ti serve aiuto per trovarne altri\.'
-            ]
-        ]
+                'Buone notizie, con la pizza è facile!',
+                'Non devi rinunciare alla pizza!',
+                'La pizza è tra le cose più facili da rendere vegane!',
+            ],
+            [
+                'Tante catene ora fanno pizze con formaggio vegano o senza formaggio. HappyCow ti trova i locali vegan-friendly vicino a te: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'La maggior parte dei supermercati ora vende pizze vegane, ed ecco un elenco di catene con opzioni vegane: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/'),
+                'Daiya fa pizze vegane surgelate: ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' E tante pizzerie ti mettono il formaggio vegano se lo chiedi.',
+            ],
+            [
+                'Buon appetito! 🍕',
+                'Scrivimi se ti serve aiuto a trovarne una!',
+                'Buona pizza!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-egg',
         'title' => 'Amo le uova',
-        'body' =>[
+        'body' => [
             [
-                'Ci sono tantissime ricette vegane buonissime al posto delle uova \(come questa, ma aggiungi gli spinaci\): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
-            ], [
-                'Puoi anche comprare uova vegane: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Altre informazioni qui: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' e soprattutto qui: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/')
-            ]
-        ]
+                'Le uova sono più facili da sostituire di quanto pensi!',
+                'Ci sono ottime alternative alle uova!',
+                'Hai un sacco di opzioni!',
+            ],
+            [
+                'Il tofu strapazzato sostituisce benissimo le uova strapazzate, soprattutto con un po\' di spinaci: ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/'),
+                'JUST Egg è fatto con i fagioli mung e si strapazza proprio come l\'uovo: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs'),
+                'Ecco una guida utile se fai fatica a rinunciare alle uova: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' E qui vedi come vengono trattate le galline ovaiole: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/'),
+            ],
+            [
+                'Scrivimi se vuoi qualche ricetta!',
+                'Ti passo volentieri altre idee!',
+                'Divertiti a sperimentare!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-ice-cream',
         'title' => 'Amo il gelato',
-        'body' =>[
+        'body' => [
             [
-                'Prova il gelato senza latte di Ben & Jerry\'s: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy')
-            ], [
-                'Hanno tantissimi gusti, e ci sono molte altre marche di gelato alla soia, alle mandorle o al cocco!'
-            ], [
-                '(Guarda:|Dai un\'occhiata a) ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/')
-            ]
-        ]
+                'Il gelato vegano ormai è buonissimo!',
+                'Che fortuna, il gelato vegano si trova ovunque!',
+                'Non devi rinunciarci!',
+            ],
+            [
+                'Ben & Jerry\'s ha un\'intera linea senza latticini: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
+                'Ecco una guida ai migliori gelati vegani, sia confezionati che fatti in casa: ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/'),
+                'Nella maggior parte dei supermercati trovi gelati all\'avena, alla soia, alle mandorle e al cocco, e anche Ben & Jerry\'s ha una linea senza latticini: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
+            ],
+            [
+                'Buon gelato! 🍦',
+                'Fammi sapere qual è il tuo preferito!',
+                'Scrivimi se vuoi altre idee!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-drumstick-bite',
         'title' => 'Amo il pollo',
-        'body' =>[
+        'body' => [
             [
-                'Gardein fa un pollo vegetale incredibile: ' . generate_and_cache_shlink('https://www.gardein.com/') . ', guarda nei negozi bio o in altri supermercati!'
-            ], [
-                'HappyCow per mangiare fuori: ' . generate_and_cache_shlink('https://www.happycow.net') . '! Fai un giro al supermercato e guarda cosa c\'è, potresti rimanere sorpreso!'
-            ]
-        ]
+                'Il pollo vegano ormai è buonissimo!',
+                'Il pollo puoi continuare a mangiarlo, solo in versione vegetale!',
+                'Buone notizie, ci sono tantissime alternative!',
+            ],
+            [
+                'Cerca nuggets, straccetti e filetti vegetali nel banco frigo e tra i surgelati del supermercato. Ci sono tante marche da provare.',
+                'Tanti locali ora fanno burger e wrap con pollo vegano. Su HappyCow vedi cosa c\'è vicino a te: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'Il seitan e il pollo a base di soia sono ottimi nei wrap e nei saltati in padella. Ecco qualche ricetta facile: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+            ],
+            [
+                'Se vuoi, ti consiglio qualche marca!',
+                'Ti aiuto volentieri!',
+                'Buon appetito!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-glass-whiskey',
         'title' => 'Latti vegetali',
-        'body' =>[
+        'body' => [
             [
-                'Guarda "Dairy is Scary", dura solo 5 minuti: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI')
-            ], [
-                'Ora ci sono anche tanti latti vegetali buonissimi: soia, mandorla, avena, cocco, riso e anacardi!'
-            ], [
-                'Questi latti non vanno a male, sono più sani e non serve tenerli in frigo prima di aprirli\.'
-            ]
-        ]
+                'Passare ai latti vegetali è facile!',
+                'Ormai ci sono tantissimi latti vegetali!',
+                'Ottimo punto di partenza!',
+            ],
+            [
+                'Avena, soia, mandorla, cocco, anacardi, riso... Quelli di avena e soia sono ottimi nel tè e nel caffè. Provane qualcuno e vedi quale ti piace!',
+                'Se vuoi sapere perché c\'è chi lascia il latte di mucca, questo breve video merita: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
+                'Scegli latti arricchiti con calcio. Il latte di soia ha più o meno le stesse proteine del latte di mucca.',
+            ],
+            [
+                'Scrivimi se hai domande!',
+                'Divertiti a sperimentare!',
+                'Ti aiuto volentieri!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-video',
         'title' => 'Documentari',
-        'body' =>[
+        'body' => [
             [
-                'Ecco qualche film per motivarti! Cowspiracy \(ambiente\): ' . generate_and_cache_shlink('https://www.netflix.com/title/80033772') . ' The Game Changers \(salute\): ' . generate_and_cache_shlink('https://www.netflix.com/title/81157840') . ' Dominion \(animali\): ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
-            ], [
-                'Fammi sapere se ne guardi uno! 🌱'
-            ]
-        ]
+                'Ecco qualche documentario da vedere:',
+                'Qualche film che potrebbe aiutarti:',
+                'Un paio di film da non perdere:',
+            ],
+            [
+                'Dominion, su come vengono trattati gli animali allevati (gratis): ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' The Game Changers, sugli atleti che mangiano vegetale: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
+                'Dominion si guarda gratis ed è difficile da dimenticare: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' I video brevi di Earthling Ed sono perfetti per le domande più comuni: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'The Game Changers, sui grandi atleti che mangiano vegetale: ' . generate_and_cache_shlink('https://gamechangersmovie.com/') . ' E Dominion, gratis, sulla vita negli allevamenti: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+            ],
+            [
+                'Fammi sapere cosa ne pensi! 🌱',
+                'Fammi sapere se ne guardi qualcuno!',
+                'Se vuoi, ne parliamo!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-sad-cry',
         'title' => 'Dominion',
-        'body' =>[
+        'body' => [
             [
-                'Ti consiglio davvero questo video su YouTube: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
-            ], [
-                'Se hai tempo, i primi 15 minuti del video possono cambiarti la vita\.'
-            ], [
-                'Scrivimi se ti serve aiuto per diventare vegano, sarò felice di aiutarti o di rispondere alle tue domande!'
-            ]
-        ]
+                'Ti consiglio davvero Dominion.',
+                'Hai visto Dominion?',
+                'Se guardi una cosa sola, che sia Dominion.',
+            ],
+            [
+                'È un documentario gratuito su come vengono trattati davvero gli animali negli allevamenti: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Anche solo i primi 15 minuti meritano.',
+                'Mostra cosa succede negli allevamenti e nei macelli, e si può guardare gratis: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+                'È gratis e ha fatto cambiare idea a tante persone: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' È difficile da guardare, ma ne vale la pena.',
+            ],
+            [
+                'Scrivimi se vuoi parlarne!',
+                'Se hai domande, chiedi pure!',
+                'Se vuoi provare a mangiare vegano, ti do una mano!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-baby',
         'title' => 'Un passo alla volta',
-        'body' =>[
+        'body' => [
             [
-                'È fantastico che tu voglia diventare vegano! 🐮'
-            ], [
-                'Se ti sembra troppo tutto insieme e non sai da dove cominciare, fai un passo alla volta\.'
-            ], [
-                'Inizia comprando latte di soia, mandorla o avena e abituati\.'
-            ], [
-                'Poi passa a burro, carne, ecc\. Altre informazioni: ' . generate_and_cache_shlink('https://veganbootcamp.org')
-            ]
-        ]
+                'È bellissimo che tu ci stia pensando! 🐮',
+                'Fantastico!',
+                'Che bello che tu voglia provarci!',
+            ],
+            [
+                'Se ti sembra tanto, fai un passo alla volta. Inizia dal latte vegetale, poi passa al burro, poi alla carne. Vegan Bootcamp può guidarti: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
+                'Prova con un pasto vegano al giorno, e poi aumenta pian piano. Veganuary ha ricette facili per iniziare: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+                'Parti dalle sostituzioni che ti sembrano più facili, come il latte o i burger, e vai avanti da lì. Challenge 22 ti dà un mentore che ti aiuta: ' . generate_and_cache_shlink('https://challenge22.com/'),
+            ],
+            [
+                'Ce la farai!',
+                'Scrivimi se ti serve una mano!',
+                'Ogni passo conta!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-leaf',
         'title' => 'Vegetariano',
-        'body' =>[
+        'body' => [
             [
-                'Essere vegetariani è fantastico!'
-            ], [
-                'Però ti consiglio davvero di guardare questo video: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg')
-            ], [
-                'Ecco alcuni argomenti comuni smontati: ' . generate_and_cache_shlink('https://drive.google.com/file/d/1dMyS7mIrr4Fal8UKF900BbLMC11IwWRH/view') . ' ed ecco la sfida vegana di un mese: ' . generate_and_cache_shlink('https://www.challenge22.com/')
-            ]
-        ]
+                'Essere vegetariani è già un gran passo!',
+                'Fantastico, complimenti!',
+                'Ottimo inizio!',
+            ],
+            [
+                'Questo video spiega perché diventare vegani del tutto fa una differenza così grande: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg'),
+                'Purtroppo anche latticini e uova causano tanta sofferenza. Questo breve video lo spiega: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
+                'Se ti va di fare il passo successivo, Challenge 22 è gratis e ti dà un mentore: ' . generate_and_cache_shlink('https://challenge22.com/'),
+            ],
+            [
+                'Scrivimi se hai domande!',
+                'Se vuoi provarci, ti do una mano!',
+                'Ci sei quasi!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-coins',
         'title' => 'Troppo caro',
-        'body' =>[
+        'body' => [
             [
-                'Mangiare vegano costa pochissimo, diventa caro solo se compri tutti i prodotti di lusso "per vegani"!'
-            ], [
-                'Patate, riso, tofu, fagioli, lenticchie, verdura, frutta, pasta e fiocchi d\'avena costano pochissimo, soprattutto sfusi!'
-            ], [
-                'C\'è un ottimo video su questo: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E')
-            ]
-        ]
+                'In realtà può costare meno!',
+                'Mangiare vegano può costare davvero poco!',
+                'Su questo ho buone notizie!',
+            ],
+            [
+                'Fagioli, lenticchie, riso, pasta, avena, patate e verdure surgelate sono tra i cibi più economici che ci siano. A costare di più sono i prodotti di nicchia.',
+                'Secondo uno studio di Oxford, un\'alimentazione vegana potrebbe ridurre la spesa alimentare fino a un terzo in paesi come Regno Unito e USA: ' . generate_and_cache_shlink('https://www.ox.ac.uk/news/2021-11-11-sustainable-eating-cheaper-and-healthier-oxford-study'),
+                'Questo video lo spiega bene: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E') . ' Cucinando con fagioli, lenticchie e tofu spendi poco.',
+            ],
+            [
+                'Scrivimi se vuoi ricette economiche!',
+                'Ti passo volentieri qualche idea per pasti economici!',
+                'Spero ti sia utile!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-calculator',
         'title' => 'Proteine',
-        'body' =>[
+        'body' => [
             [
-                'Quasi tutti gli alimenti, verdura, frutta e semi contengono proteine, e non ce ne servono poi così tante\.'
-            ], [
-                'Ecco un link che smonta il mito delle proteine e della carne: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/') . ' e un video: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk')
-            ]
-        ]
+                'Prendere abbastanza proteine è più facile di quanto si pensi!',
+                'Bella domanda!',
+                'Questa me la chiedono spesso!',
+            ],
+            [
+                'Fagioli, lenticchie, tofu, tempeh, seitan, latte di soia, frutta secca e semi sono ricchi di proteine. Ecco una guida veloce: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
+                'Un\'alimentazione vegana varia ti dà proteine in abbondanza. Ecco una scheda sul mito delle proteine: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
+                'Questo video di un minuto riassume tutto: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk') . ' Tofu, lenticchie, fagioli e seitan sono tutte ottime fonti.',
+            ],
+            [
+                'Scrivimi se hai domande!',
+                'Ti do volentieri qualche idea per i pasti!',
+                'Spero ti sia utile!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-dumbbell',
         'title' => 'Sport e fitness',
-        'body' =>[
+        'body' => [
             [
-                'L\'uomo più forte del mondo è vegano, e tanti altri record mondiali di forza e fitness sono di persone vegane!'
-            ], [
-                'Allenarsi con un\'alimentazione vegetale fa bene ai tuoi allenamenti\.'
-            ], [
-                'Video: ' . generate_and_cache_shlink('https://www.youtube.com/results?search_query=vegan+fitness') . ' e community: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/')
-            ]
-        ]
+                'Puoi allenarti benissimo con un\'alimentazione vegana!',
+                'Tanti atleti sono vegani!',
+                'I muscoli si fanno anche con le piante!',
+            ],
+            [
+                'Parecchi atleti di alto livello mangiano vegetale, dagli strongman ai campioni di F1. The Game Changers ne parla: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
+                'r/veganfitness è pieno di gente che si allena sul serio mangiando vegetale, con piani alimentari e consigli: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/'),
+                'Con tofu, seitan, lenticchie, fagioli e latte di soia arrivi facilmente alla tua quota di proteine. Qui trovi un sacco di consigli per allenarti: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/'),
+            ],
+            [
+                'Scrivimi se hai domande!',
+                'Buon allenamento! 💪',
+                'Ti aiuto volentieri!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-comments',
         'title' => 'Community',
-        'body' =>[
+        'body' => [
             [
-                'Se hai bisogno di parlare con qualcuno, o solo di supporto e aiuto, dai un\'occhiata a ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . '!'
-            ], [
-                'È una community di circa 300\.000 persone vegane che conoscono le difficoltà e hanno esperienza, chiedi loro qualsiasi cosa\.'
-            ], [
-                'Ci sono anche /r/VeganFitness, /r/VeganRecipes e altre!'
-            ]
-        ]
+                'Siamo in tanti!',
+                'Aiuta tantissimo avere qualcuno con cui parlare!',
+                'Là fuori c\'è una grande community!',
+            ],
+            [
+                'r/vegan è un posto enorme e accogliente dove puoi chiedere di tutto: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/'),
+                'Prova r/vegan per supporto e domande: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/') . ' E r/veganrecipes per idee in cucina: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganrecipes/'),
+                'Challenge 22 ti affianca un mentore e un gruppo di persone che ci provano insieme a te: ' . generate_and_cache_shlink('https://challenge22.com/'),
+            ],
+            [
+                'Se ti serve qualcosa, scrivi anche a me!',
+                'Anch\'io ti aiuto volentieri!',
+                'Spero ti sia utile!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-utensils',
         'title' => 'Mangiare fuori',
-        'body' =>[
+        'body' => [
             [
-                'A volte mangiare fuori è difficile quando non sai dove andare o cosa ordinare, ma col tempo diventa molto più facile e presto saprai benissimo cosa prendere\.'
-            ], [
-                'Nel frattempo dai un\'occhiata a questo sito: ' . generate_and_cache_shlink('http://happycow.net') . ' per trovare cibo vegano vicino a te! 🐮'
-            ]
-        ]
+                'Mangiare fuori diventa presto facile!',
+                'È molto più facile di una volta!',
+                'Buone notizie, è sempre più facile!',
+            ],
+            [
+                'HappyCow ti mostra i locali vegani e vegan-friendly vicino a te: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'Ormai la maggior parte dei locali ha qualcosa di vegano, e tanti menù lo indicano. Per idee in zona, prova HappyCow: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'Guarda prima i menù online e non farti problemi a chiedere modifiche. HappyCow ti aiuta a trovare bei posti: ' . generate_and_cache_shlink('https://www.happycow.net'),
+            ],
+            [
+                'Buon appetito! 🐮',
+                'Scrivimi se ti serve una mano!',
+                'Buona mangiata!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-tree',
         'title' => 'Ambiente',
-        'body' =>[
+        'body' => [
             [
-                'Ci sono statistiche davvero spaventose su quello che l\'industria della carne e dei latticini \(l\'allevamento\) fa all\'ambiente, tutte supportate da fonti e studi: ' . generate_and_cache_shlink('https://speciesjustice.org/environment') . ' Per esempio: l\'allevamento è responsabile fino al 91% della distruzione dell\'Amazzonia\.'
-            ]
-        ]
+                'È una delle cose più importanti che puoi fare per il pianeta!',
+                'Ottima domanda!',
+                'Fa una differenza enorme!',
+            ],
+            [
+                'Secondo Our World in Data, se tutti mangiassimo vegetale ci servirebbe circa il 75% di terreni agricoli in meno: ' . generate_and_cache_shlink('https://ourworldindata.org/land-use-diets'),
+                'Secondo uno studio di Oxford, una dieta vegana ha circa il 30% dell\'impatto ambientale di una dieta ricca di carne: ' . generate_and_cache_shlink('https://www.medsci.ox.ac.uk/news/vegan-diet-has-just-30-of-the-environmental-impact-of-a-high-meat-diet-major-study-finds'),
+                'Carne e latticini hanno un impatto molto più alto dei cibi vegetali su emissioni, suolo e acqua. Ecco i dati: ' . generate_and_cache_shlink('https://ourworldindata.org/environmental-impacts-of-food'),
+            ],
+            [
+                'Scrivimi se vuoi saperne di più! 🌍',
+                'Ti passo volentieri altre info!',
+                'Spero ti sia utile!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-flask',
         'title' => 'Gli esperti concordano',
-        'body' =>[
+        'body' => [
             [
-                'Oggi è ampiamente riconosciuto che un\'alimentazione vegana è più sana di una con la carne\.'
-            ], [
-                'Ecco una pagina che cita direttamente le più grandi organizzazioni mondiali di salute, nutrizione e dietetica \(quindi organizzazioni imparziali\): ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
-            ]
-        ]
+                'Le grandi istituzioni sanitarie sono d\'accordo!',
+                'Buone notizie, gli esperti sono dalla tua parte!',
+                'Su questo c\'è ampio consenso!',
+            ],
+            [
+                'L\'associazione britannica dei dietisti dice che un\'alimentazione vegetale ben pianificata favorisce uno stile di vita sano a tutte le età: ' . generate_and_cache_shlink('https://www.bda.uk.com/resource/vegetarian-vegan-plant-based-diet.html'),
+                'Le associazioni di dietisti di USA, Regno Unito, Canada e Australia dicono che una dieta vegana ben pianificata è sana a tutte le età. Riassunto: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations'),
+                'Il servizio sanitario britannico (NHS) dice che, con una buona pianificazione, una dieta vegana ti dà tutti i nutrienti che ti servono: ' . generate_and_cache_shlink('https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/the-vegan-diet/'),
+            ],
+            [
+                'Scrivimi se hai domande!',
+                'Ti aiuto volentieri!',
+                'Spero ti sia utile!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-heartbeat',
         'title' => 'Salute',
-        'body' =>[
+        'body' => [
             [
-                'Oggi è ampiamente riconosciuto che carne e latticini sono estremamente dannosi per la salute rispetto a un\'alimentazione vegana\.'
-            ], [
-                'La carne è cancerogena ed è la causa della maggior parte delle malattie: cancro, malattie cardiache, diabete e obesità\.'
-            ], [
-                'Ecco una pagina con informazioni e fonti: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
-            ]
-        ]
+                'Ottima domanda!',
+                'Può fare davvero bene!',
+                'Buone notizie su questo!',
+            ],
+            [
+                'Un\'alimentazione vegana ben pianificata è legata a un minor rischio di malattie cardiache, diabete di tipo 2 e alcuni tumori. La sanità britannica ha una buona guida: ' . generate_and_cache_shlink('https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/the-vegan-diet/'),
+                'L\'OMS classifica la carne lavorata come causa di cancro, e la carne rossa come probabile causa: ' . generate_and_cache_shlink('https://www.who.int/news-room/questions-and-answers/item/cancer-carcinogenicity-of-the-consumption-of-red-meat-and-processed-meat'),
+                'L\'associazione britannica dei dietisti dice che un\'alimentazione vegetale ben pianificata favorisce uno stile di vita sano a tutte le età: ' . generate_and_cache_shlink('https://www.bda.uk.com/resource/vegetarian-vegan-plant-based-diet.html'),
+            ],
+            [
+                'Scrivimi se hai domande!',
+                'Ti aiuto volentieri a organizzare i pasti!',
+                'Spero ti sia utile!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-leaf',
-        'title' => 'Non ho voglia di cucinare',
-        'body' =>[
+        'title' => 'Che fatica cucinare',
+        'body' => [
             [
-                'Anche tante persone vegane non cucinano, comprano semplicemente le opzioni vegane al supermercato o al ristorante al posto di quelle animali\.'
-            ], [
-                'Non serve saper cucinare per mangiare sano da vegano!'
-            ], [
-                'Anche mangiare fuori è facilissimo con ' . generate_and_cache_shlink('http://happycow.net') . ' 🐮 Scrivimi se ti serve aiuto!'
-            ]
-        ]
+                'Non serve cucinare!',
+                'Nessun problema!',
+                'Buone notizie, non devi per forza cucinare!',
+            ],
+            [
+                'Ormai i supermercati sono pieni di piatti pronti, panini, pizze surgelate e snack vegani. Prendi la versione vegana di quello che compri di solito.',
+                'Un sacco di vegani cucinano pochissimo! Piatti pronti, wrap, fagioli in scatola, cereali con latte d\'avena... vale tutto.',
+                'Anche mangiare fuori è facile. HappyCow ti mostra i locali vegan-friendly vicino a te: ' . generate_and_cache_shlink('https://www.happycow.net'),
+            ],
+            [
+                'Scrivimi se vuoi qualche idea facile!',
+                'Ti passo volentieri i miei preferiti per pigri!',
+                'Spero ti sia utile!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-meh-blank',
-        'title' => 'Il cibo vegano è noioso',
-        'body' =>[
+        'title' => 'Cibo noioso',
+        'body' => [
             [
-                'Quasi tutto quello che si fa con carne o latticini si può rifare ed essere altrettanto buono, basta sapere dove comprarlo o come cucinarlo\.'
-            ], [
-                'Ecco qualche ricetta: ' . generate_and_cache_shlink('https://veganuary.com/recipes') . ', \(oppure cerca su Google il tuo piatto preferito \+ "vegano"\)\.'
-            ], [
-                'E questo per mangiare fuori: ' . generate_and_cache_shlink('https://happycow.net')
-            ]
-        ]
+                'Ma non deve esserlo per forza!',
+                'Il cibo vegano può essere fantastico!',
+                'Fidati, è tutt\'altro che noioso!',
+            ],
+            [
+                'Quasi ogni piatto si può fare vegano: curry, burger, pasta, torte. Ecco un sacco di ricette: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+                'Prova a cercare il tuo piatto preferito aggiungendo \'vegano\': c\'è una versione di quasi tutto. Per mangiare fuori: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'r/veganrecipes è pieno di idee: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganrecipes/') . ' E HappyCow ti trova ottimi posti dove mangiare: ' . generate_and_cache_shlink('https://www.happycow.net'),
+            ],
+            [
+                'Scrivimi se vuoi qualche consiglio!',
+                'Buon appetito! 😋',
+                'Buon divertimento ai fornelli!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-fist-raised',
         'title' => '30+ argomenti',
-        'body' =>[
+        'body' => [
             [
-                'È un mito molto comune! Guarda qui: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . '; parla dei 30 miti più comuni sul veganismo\.'
-            ], [
-                'In formato video qui: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2')
-            ], [
-                'Scrivimi se ti serve aiuto o se hai domande!'
-            ]
-        ]
+                'È un\'obiezione molto comune!',
+                'Bella domanda, me la fanno in tanti!',
+                'Questa la sento spesso!',
+            ],
+            [
+                'Questa guida gratuita risponde ai 30 argomenti più comuni contro la scelta vegana: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf'),
+                'Earthling Ed risponde a 30 scuse comuni in brevi video: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'Questa guida affronta i 30 miti più comuni: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . ' Oppure, se preferisci i video: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+            ],
+            [
+                'Scrivimi se vuoi parlarne!',
+                'Se hai domande, chiedi pure!',
+                'Spero ti sia utile!',
+            ],
+        ],
     ],
-
 ];

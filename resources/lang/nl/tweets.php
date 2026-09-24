@@ -6,342 +6,529 @@ return [
     [
         'icon' => 'fas fa-info-circle',
         'title' => 'Algemene info',
-        'body' =>[
+        'body' => [
             [
-                'Je moet het gewoon doen! De meeste veganisten zeggen dat ze alleen spijt hebben dat ze niet eerder zijn begonnen\.'
-            ], [
-                'Hier wat informatie: ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . ' \(community\) ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=41') . ' \(film\) ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2') . ' \(mythes\) 🐷 Stuur me een bericht als je hulp nodig hebt!'
-            ]
-        ]
+                'Ga ervoor!',
+                'Wat goed om te horen!',
+                'Doen! Je krijgt er geen spijt van!',
+            ],
+            [
+                'De meeste veganisten zeggen dat ze alleen spijt hebben dat ze niet eerder begonnen. Vragen? Ga naar r/vegan: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/') . ' Twijfels? Kijk deze korte video\'s: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'Een goede eerste stap is Veganuary: een gratis challenge van 31 dagen die je kunt beginnen wanneer je wilt. Je krijgt maaltijdplannen en dagelijkse mails: ' . generate_and_cache_shlink('https://veganuary.com/try-vegan/'),
+                'Challenge 22 is gratis en je krijgt 22 dagen lang een mentor en diëtisten: ' . generate_and_cache_shlink('https://challenge22.com/') . ' Waarom het belangrijk is, zie je in het begin van Dominion: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+            ],
+            [
+                'Hulp nodig? Stuur me een berichtje!',
+                'Ik beantwoord graag je vragen!',
+                'Laat het me weten als je vastloopt!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-leaf',
         'title' => 'Vegan challenge',
-        'body' =>[
+        'body' => [
             [
+                'Hé!',
                 'Hoi!',
-                'Hé!'
-            ], [
-                'Je kunt het( echt| zeker)?!',
-                'We zijn (altijd )?hier om je te helpen!',
-                'Het is (echt |veel )?makkelijker dan je denkt!'
-            ], [
-                'Je (zou|kunt) (eens kijken naar|het eens proberen met) de Vegan Bootcamp Challenge!',
-                'De Vegan Bootcamp Challenge (kan|is misschien) (precies )?wat je zoekt\.',
-                'Er is iets dat de Vegan Bootcamp Challenge heet( en dat je kunt proberen)?\.'
-            ], [
-                'Het is een vegan challenge van maximaal 30 dagen die je helpt om het als een pro te doen!',
-                'De site is een vegan challenge van maximaal 30 dagen waarmee je leert hoe makkelijk vegan leven is!',
-                'Op de site doe je 30 challenges die je stap voor stap helpen om vegan te worden, het is makkelijk!'
-            ], [
-                'De link is ' . generate_and_cache_shlink('https://veganbootcamp.org') . ';',
-                'Het adres is ' . generate_and_cache_shlink('https://veganbootcamp.org') . ';',
-                'Je vindt de site op ' . generate_and_cache_shlink('https://veganbootcamp.org') . ';',
-                'De website is ' . generate_and_cache_shlink('https://veganbootcamp.org') . ';',
-            ], [
-                'Succes, je kunt het!',
-                'Je kunt het( echt| zeker)?!',
-                'We duimen (allemaal )?voor je!',
-                'Hou vol!',
-                'Het gaat je lukken!'
-            ], [
-                'Stuur me een bericht als je (hulp|nog meer hulp) nodig hebt!',
-                'Reageer als je (hulp|nog meer hulp) nodig hebt!',
-                '(Aarzel niet om|Je kunt gerust) contact op te nemen als je (hulp|nog meer hulp) nodig hebt!',
-                'Als je (ooit )?(hulp|nog meer hulp) nodig hebt, stuur me dan een (bericht|DM)!'
-            ]
-        ]
+                'Wat tof!',
+            ],
+            [
+                'Veganuary heeft een gratis challenge van 31 dagen die je kunt beginnen wanneer je wilt, met maaltijdplannen en dagelijkse mails: ' . generate_and_cache_shlink('https://veganuary.com/try-vegan/'),
+                'Challenge 22 is een gratis challenge van 22 dagen, met je eigen mentor en diëtisten die voor je klaarstaan: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Vegan Bootcamp is gratis en je doet het in je eigen tempo, met korte cursussen over eten, voeding en meer: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
+            ],
+            [
+                'Je kunt het!',
+                'Het gaat je zeker lukken!',
+                'We duimen voor je!',
+                'Hulp nodig? Stuur me een berichtje!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-bacon',
         'title' => 'Ik hou van vlees',
-        'body' =>[
+        'body' => [
             [
-                'Vegan vlees is de laatste jaren ENORM verbeterd!'
-            ], [
-                'Beyond Meat is echt lekker: ' . generate_and_cache_shlink('https://www.beyondmeat.com/') . ', en Gardein heeft ook heel veel producten: ' . generate_and_cache_shlink('https://www.gardein.com/') . ' Kijk eens rond in je supermarkt wat er is, misschien valt het je mee!'
-            ]
-        ]
+                'Vegan vlees is de laatste jaren enorm verbeterd!',
+                'Goed nieuws: je hoeft het niet te missen!',
+                'Snap ik helemaal, en de vervangers zijn nu echt goed!',
+            ],
+            [
+                'De meeste supermarkten verkopen nu plantaardige burgers, worstjes, gehakt en nuggets. Beyond Meat is een goed begin: ' . generate_and_cache_shlink('https://www.beyondmeat.com/'),
+                'Je kunt nu bijna alles vervangen: burgers, worstjes, bacon, gehakt. Probeer een paar merken, ook het huismerk van je supermarkt, en kijk wat je lekker vindt.',
+                'Veel restaurants en ketens hebben nu ook plantaardige opties. Op HappyCow zie je veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
+            ],
+            [
+                'Stuur me een berichtje als je tips wilt!',
+                'Ik deel graag mijn favorieten!',
+                'Veel plezier met uitproberen!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-cheese',
         'title' => 'Ik hou van kaas',
-        'body' =>[
+        'body' => [
             [
-                'Vegan kaas is de laatste jaren ENORM verbeterd!'
-            ], [
-                'Mijn favoriet is de kaas van "Follow Your Heart", en Daiya is heerlijk als gesmolten kaas\.'
-            ], [
-                'Via deze link ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/') . ' vind je nog meer merken bij jou in de buurt! Stuur me een bericht als je hulp nodig hebt om er meer te vinden\.'
-            ]
-        ]
+                'Vegan kaas is de laatste jaren enorm verbeterd!',
+                'Vegan kaas is zoveel beter dan vroeger!',
+                'Je zou versteld staan hoe goed vegan kaas nu is!',
+            ],
+            [
+                'Violife is een echte allrounder en smelt mooi: ' . generate_and_cache_shlink('https://violifefoods.com/') . ' Follow Your Heart en Daiya zijn ook goed.',
+                'Hier is een overzicht van vegan kazen, van plakjes tot brie: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/'),
+                'Merken verschillen nogal, dus probeer er een paar. Begin bijvoorbeeld met Violife, dat smelt op pizza en in tosti\'s: ' . generate_and_cache_shlink('https://violifefoods.com/'),
+            ],
+            [
+                'Stuur me een berichtje als je meer ideeën wilt!',
+                'Ik help je graag iets lekkers te vinden!',
+                'Geniet ervan! 🧀',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-pizza-slice',
         'title' => 'Ik hou van pizza',
-        'body' =>[
+        'body' => [
             [
-                'Op ' . generate_and_cache_shlink('http://HappyCow.net') . ' vind je meestal veel vegan pizza \(en andere restaurants\)!'
-            ], [
-                'Er is ook pizza van "Daiya": ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' en nog meer plekken vind je hier: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/') . ' Stuur me een bericht als je hulp nodig hebt om er meer te vinden\.'
-            ]
-        ]
+                'Goed nieuws: pizza is makkelijk!',
+                'Je hoeft pizza niet op te geven!',
+                'Pizza is een van de makkelijkste dingen om vegan te eten!',
+            ],
+            [
+                'Veel ketens hebben nu pizza\'s met vegan kaas of zonder kaas. Op HappyCow vind je veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'De meeste supermarkten verkopen nu vegan pizza\'s, en hier is een lijst met ketens die vegan opties hebben: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/'),
+                'Daiya maakt vegan diepvriespizza\'s: ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' En veel pizzeria\'s gebruiken vegan kaas als je erom vraagt.',
+            ],
+            [
+                'Geniet ervan! 🍕',
+                'Hulp nodig bij het zoeken? Stuur me een berichtje!',
+                'Eet smakelijk!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-egg',
         'title' => 'Ik hou van eieren',
-        'body' =>[
+        'body' => [
             [
-                'Er zijn veel heerlijke vegan recepten in plaats van eieren \(zoals deze, maar doe er spinazie bij\): ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/')
-            ], [
-                'Je kunt ook vegan eieren kopen: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs') . ' Meer info vind je hier: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' en vooral hier: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/')
-            ]
-        ]
+                'Eieren zijn makkelijker te vervangen dan je denkt!',
+                'Er zijn echt goede vervangers voor eieren!',
+                'Je hebt keus genoeg!',
+            ],
+            [
+                'Tofu scramble is een heerlijk alternatief voor roerei, vooral met wat spinazie erdoor: ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/'),
+                'JUST Egg is gemaakt van mungbonen en je bakt er roerei van net als van echt ei: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs'),
+                'Hier is een handige gids als het je moeilijk valt om eieren op te geven: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' En zo worden legkippen behandeld: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/'),
+            ],
+            [
+                'Stuur me een berichtje als je recepten wilt!',
+                'Ik deel graag meer ideeën!',
+                'Veel plezier met uitproberen!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-ice-cream',
         'title' => 'Ik hou van ijs',
-        'body' =>[
+        'body' => [
             [
-                'Probeer het zuivelvrije ijs van Ben & Jerry\'s eens: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy')
-            ], [
-                'Ze hebben veel verschillende smaken, en er zijn nog veel meer ijsmerken op basis van soja, amandel of kokos!'
-            ], [
-                '(Zie:|Kijk eens naar) ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/')
-            ]
-        ]
+                'Vegan ijs is tegenwoordig zo lekker!',
+                'Je boft, vegan ijs is overal te krijgen!',
+                'Je hoeft niks te missen!',
+            ],
+            [
+                'Ben & Jerry\'s heeft een hele zuivelvrije lijn: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
+                'Hier is een gids met het beste vegan ijs, uit de winkel en zelfgemaakt: ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/'),
+                'De meeste supermarkten hebben ijs van haver, soja, amandel en kokos, en Ben & Jerry\'s heeft ook een zuivelvrije lijn: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
+            ],
+            [
+                'Geniet ervan! 🍦',
+                'Laat me weten wat je favoriet is!',
+                'Stuur me een berichtje als je meer ideeën wilt!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-drumstick-bite',
         'title' => 'Ik hou van kip',
-        'body' =>[
+        'body' => [
             [
-                'Gardein maakt ongelooflijk lekkere vegan kip: ' . generate_and_cache_shlink('https://www.gardein.com/') . ', kijk eens in de natuurwinkel of andere supermarkten!'
-            ], [
-                'HappyCow voor uit eten: ' . generate_and_cache_shlink('https://www.happycow.net') . '! Kijk eens rond in je supermarkt wat er is, misschien valt het je mee!'
-            ]
-        ]
+                'Vegan kip is echt lekker tegenwoordig!',
+                'Je kunt nog steeds kip eten, alleen dan plantaardig!',
+                'Goed nieuws: er zijn heel veel vervangers!',
+            ],
+            [
+                'Kijk in de supermarkt eens in de vriezer en het koelvak: daar liggen plantaardige nuggets, reepjes en filets. Er zijn veel merken om te proberen.',
+                'Veel zaken hebben nu vegan kipburgers en wraps. Op HappyCow zie je wat er bij jou in de buurt is: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'Seitan en sojakip zijn top in wraps en roerbakgerechten. Hier wat makkelijke recepten: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+            ],
+            [
+                'Stuur me een berichtje als je merktips wilt!',
+                'Ik help je graag!',
+                'Eet smakelijk!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-glass-whiskey',
         'title' => 'Plantaardige melk',
-        'body' =>[
+        'body' => [
             [
-                'Bekijk "Dairy is Scary", het duurt maar 5 minuten: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI')
-            ], [
-                'Er is nu ook lekkere plantaardige melk, zoals soja\-, amandel\-, haver\-, kokos\-, rijst\- en cashewmelk!'
-            ], [
-                'Deze melk wordt niet vies of zuur, is gezonder en hoeft voor het openen niet in de koelkast\.'
-            ]
-        ]
+                'Plantaardige melk is een makkelijke overstap!',
+                'Er zijn nu zoveel soorten plantaardige melk!',
+                'Perfect om mee te beginnen!',
+            ],
+            [
+                'Haver, soja, amandel, kokos, cashew, rijst... Haver- en sojamelk zijn top in thee en koffie. Probeer er een paar en kijk welke je lekker vindt!',
+                'Wil je weten waarom mensen overstappen? Deze korte video is het bekijken waard: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
+                'Kies er een met toegevoegd calcium. Sojamelk bevat ongeveer net zoveel eiwit als koemelk.',
+            ],
+            [
+                'Vragen? Stuur me een berichtje!',
+                'Veel plezier met uitproberen!',
+                'Ik help je graag!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-video',
         'title' => 'Documentaires',
-        'body' =>[
+        'body' => [
             [
-                'Hier zijn wat films voor motivatie! Cowspiracy \(milieu\): ' . generate_and_cache_shlink('https://www.netflix.com/title/80033772') . ' The Game Changers \(gezondheid\): ' . generate_and_cache_shlink('https://www.netflix.com/title/81157840') . ' Dominion \(dieren\): ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
-            ], [
-                'Laat me weten of je er een hebt gekeken! 🌱'
-            ]
-        ]
+                'Een paar documentaires die de moeite waard zijn:',
+                'Een paar films die kunnen helpen:',
+                'Twee echte aanraders:',
+            ],
+            [
+                'Dominion, over hoe boerderijdieren worden behandeld (gratis): ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' The Game Changers, over sporters die plantaardig eten: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
+                'Dominion kun je gratis kijken en vergeet je niet snel: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' De korte video\'s van Earthling Ed zijn top voor de standaardvragen: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'The Game Changers, over topsporters die plantaardig eten: ' . generate_and_cache_shlink('https://gamechangersmovie.com/') . ' En Dominion, gratis, over het leven op boerderijen: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+            ],
+            [
+                'Laat me weten wat je ervan vindt! 🌱',
+                'Laat het me weten als je er een kijkt!',
+                'Ik praat er graag met je over!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-sad-cry',
         'title' => 'Dominion',
-        'body' =>[
+        'body' => [
             [
-                'Ik raad je deze YouTube\-video echt aan: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43')
-            ], [
-                'Als je tijd hebt: de eerste 15 minuten van de video kunnen je leven veranderen\.'
-            ], [
-                'Stuur me een bericht als je hulp nodig hebt om vegan te worden, ik help je graag of beantwoord je vragen!'
-            ]
-        ]
+                'Ik raad je Dominion echt aan.',
+                'Heb je Dominion al gezien?',
+                'Als je maar één ding kijkt, kijk dan Dominion.',
+            ],
+            [
+                'Het is een gratis documentaire over hoe boerderijdieren echt worden behandeld: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Zelfs de eerste 15 minuten zijn al de moeite waard.',
+                'De film laat zien wat er op boerderijen en in slachthuizen gebeurt, en je kunt hem gratis kijken: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+                'Hij is gratis en heeft al veel mensen van gedachten doen veranderen: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Zwaar om te zien, maar het is het waard.',
+            ],
+            [
+                'Stuur me een berichtje als je erover wilt praten!',
+                'Ik beantwoord graag je vragen!',
+                'Ik ben er als je hulp wilt om vegan te worden!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-baby',
         'title' => 'Stap voor stap',
-        'body' =>[
+        'body' => [
             [
-                'Wat goed dat je interesse hebt in vegan leven! 🐮'
-            ], [
-                'Als het te veel in één keer is en je niet weet waar je moet beginnen, doe het dan stap voor stap\.'
-            ], [
-                'Begin gewoon met soja\-, amandel\- of havermelk kopen en wen daaraan\.'
-            ], [
-                'Daarna boter, vlees, enzovoort\. Meer info: ' . generate_and_cache_shlink('https://veganbootcamp.org')
-            ]
-        ]
+                'Wat goed dat je erover nadenkt! 🐮',
+                'Wat gaaf!',
+                'Leuk dat je het gaat proberen!',
+            ],
+            [
+                'Is het veel in één keer? Doe het dan stap voor stap. Begin met plantaardige melk, dan boter, dan vlees. Vegan Bootcamp kan je daarbij helpen: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
+                'Probeer eerst één vegan maaltijd per dag en bouw het daarna op. Veganuary heeft makkelijke recepten om mee te beginnen: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+                'Begin met de vervangers die jou het makkelijkst lijken, zoals melk of burgers, en ga dan verder. Bij Challenge 22 krijg je een mentor die je helpt: ' . generate_and_cache_shlink('https://challenge22.com/'),
+            ],
+            [
+                'Je kunt het!',
+                'Hulp nodig? Stuur me een berichtje!',
+                'Elke stap telt!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-leaf',
         'title' => 'Vegetarisch',
-        'body' =>[
+        'body' => [
             [
-                'Vegetarisch is super!'
-            ], [
-                'Maar ik raad je echt aan om deze video te bekijken: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg')
-            ], [
-                'Hier worden veelgehoorde argumenten weerlegd: ' . generate_and_cache_shlink('https://drive.google.com/file/d/1dMyS7mIrr4Fal8UKF900BbLMC11IwWRH/view') . ' en hier is de vegan challenge van een maand: ' . generate_and_cache_shlink('https://www.challenge22.com/')
-            ]
-        ]
+                'Vegetarisch is een mooie stap!',
+                'Super, goed bezig!',
+                'Mooi begin!',
+            ],
+            [
+                'Deze video legt uit waarom helemaal vegan worden zo\'n verschil maakt: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg'),
+                'Helaas veroorzaken zuivel en eieren ook veel leed. Deze korte video legt het uit: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
+                'Zin om de volgende stap te zetten? Challenge 22 is gratis en je krijgt een mentor: ' . generate_and_cache_shlink('https://challenge22.com/'),
+            ],
+            [
+                'Vragen? Stuur me een berichtje!',
+                'Ik help je graag als je het wilt proberen!',
+                'Je bent er bijna!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-coins',
         'title' => 'Te duur',
-        'body' =>[
+        'body' => [
             [
-                'Vegan is eigenlijk heel goedkoop, alleen duur als je alle chique producten "voor veganisten" koopt!'
-            ], [
-                'Aardappelen, rijst, tofu, bonen, linzen, groente, fruit, pasta en havermout zijn ontzettend goedkoop, vooral in grote hoeveelheden!'
-            ], [
-                'Hier is een goede video over: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E')
-            ]
-        ]
+                'Het kan juist goedkoper zijn!',
+                'Vegan eten kan heel goedkoop zijn!',
+                'Daar heb ik goed nieuws over!',
+            ],
+            [
+                'Bonen, linzen, rijst, pasta, havermout, aardappelen en diepvriesgroenten horen bij het goedkoopste eten dat er is. Het zijn de speciale producten die meer kosten.',
+                'Uit een studie van Oxford bleek dat een vegan eetpatroon je boodschappenrekening tot een derde kan verlagen in landen als het VK en de VS: ' . generate_and_cache_shlink('https://www.ox.ac.uk/news/2021-11-11-sustainable-eating-cheaper-and-healthier-oxford-study'),
+                'Deze video legt het goed uit: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E') . ' Koken met bonen, linzen en tofu houdt het goedkoop.',
+            ],
+            [
+                'Stuur me een berichtje als je goedkope recepten wilt!',
+                'Ik deel graag ideeën voor goedkope maaltijden!',
+                'Hopelijk heb je hier wat aan!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-calculator',
         'title' => 'Eiwitten',
-        'body' =>[
+        'body' => [
             [
-                'Bijna alle voeding, groente, fruit en zaden bevatten eiwitten, en we hebben er niet eens zoveel van nodig\.'
-            ], [
-                'Hier is een link over de mythe van eiwitten en vlees: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/') . ' en een video: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk')
-            ]
-        ]
+                'Aan eiwit kom je makkelijker dan mensen denken!',
+                'Goede vraag!',
+                'Die vraag komt vaak voorbij!',
+            ],
+            [
+                'Bonen, linzen, tofu, tempé, seitan, sojamelk, noten en zaden zitten allemaal vol eiwit. Hier een kort overzicht: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
+                'Met gevarieerd vegan eten krijg je ruim genoeg binnen. Hier een factsheet over de eiwitmythe: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
+                'Deze video van een minuut vat het samen: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk') . ' Tofu, linzen, bonen en seitan zijn allemaal uitstekende bronnen.',
+            ],
+            [
+                'Vragen? Stuur me een berichtje!',
+                'Ik help je graag met maaltijdideeën!',
+                'Hopelijk heb je hier wat aan!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-dumbbell',
         'title' => 'Sport en fitness',
-        'body' =>[
+        'body' => [
             [
-                'De sterkste man ter wereld is vegan, en veel meer wereldrecords in kracht en fitness staan op naam van veganisten!'
-            ], [
-                'Trainen met plantaardige voeding is beter voor je training\.'
-            ], [
-                'Video\'s: ' . generate_and_cache_shlink('https://www.youtube.com/results?search_query=vegan+fitness') . ' en community: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/')
-            ]
-        ]
+                'Je kunt zeker trainen met vegan eten!',
+                'Veel sporters zijn vegan!',
+                'Met planten bouw je ook spieren!',
+            ],
+            [
+                'Heel wat topsporters eten plantaardig, van strongmen tot F1-kampioenen. The Game Changers gaat erover: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
+                'r/veganfitness staat vol met mensen die keihard trainen op plantaardig eten, met maaltijdplannen en tips: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/'),
+                'Met tofu, seitan, linzen, bonen en sojamelk haal je makkelijk je eiwitten. Hier vind je heel veel trainingstips: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/'),
+            ],
+            [
+                'Vragen? Stuur me een berichtje!',
+                'Succes met trainen! 💪',
+                'Ik help je graag!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-comments',
         'title' => 'Community',
-        'body' =>[
+        'body' => [
             [
-                'Als je met mensen wilt praten, of gewoon steun of hulp zoekt, kijk dan eens op ' . generate_and_cache_shlink('http://reddit.com/r/Vegan') . '!'
-            ], [
-                'Het is een community van ongeveer 300\.000 veganisten die weten hoe het is en ervaring hebben, vraag ze gerust alles\.'
-            ], [
-                'Er zijn ook /r/VeganFitness, /r/VeganRecipes en meer!'
-            ]
-        ]
+                'Je staat er niet alleen voor!',
+                'Het helpt echt als je mensen hebt om mee te praten!',
+                'Er is echt een grote community!',
+            ],
+            [
+                'r/vegan is een enorme, vriendelijke community waar je alles kunt vragen: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/'),
+                'Probeer r/vegan voor steun en vragen: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/') . ' En r/veganrecipes voor receptideeën: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganrecipes/'),
+                'Bij Challenge 22 krijg je een mentor en een groep mensen die tegelijk met jou vegan proberen: ' . generate_and_cache_shlink('https://challenge22.com/'),
+            ],
+            [
+                'Stuur mij ook gerust een berichtje als je iets nodig hebt!',
+                'Ik help je ook graag!',
+                'Hopelijk heb je hier wat aan!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-utensils',
         'title' => 'Uit eten',
-        'body' =>[
+        'body' => [
             [
-                'Uit eten is soms lastig als je niet weet waar je heen moet of wat je moet eten, maar het wordt met de tijd veel makkelijker en al snel weet je precies wat je moet bestellen\.'
-            ], [
-                'Kijk tot die tijd eens op deze site: ' . generate_and_cache_shlink('http://happycow.net') . ' voor vegan eten bij jou in de buurt! 🐮'
-            ]
-        ]
+                'Uit eten wordt snel makkelijker!',
+                'Het is veel makkelijker dan vroeger!',
+                'Goed nieuws: het wordt steeds makkelijker!',
+            ],
+            [
+                'Op HappyCow zie je vegan en veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'De meeste zaken hebben nu wel iets vegan, en op veel menukaarten staat het aangegeven. Zoek je iets in de buurt? Probeer HappyCow: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'Check de menukaart eerst online, en vraag gerust of ze iets kunnen aanpassen. Met HappyCow vind je goede plekken: ' . generate_and_cache_shlink('https://www.happycow.net'),
+            ],
+            [
+                'Geniet ervan! 🐮',
+                'Hulp nodig? Stuur me een berichtje!',
+                'Eet smakelijk!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-tree',
         'title' => 'Milieu',
-        'body' =>[
+        'body' => [
             [
-                'Er zijn echt schrikbarende cijfers over wat de vlees\- en zuivelindustrie \(de veehouderij\) met het milieu doet, allemaal onderbouwd met bronnen en onderzoek: ' . generate_and_cache_shlink('https://speciesjustice.org/environment') . ' Een voorbeeld: de veehouderij is verantwoordelijk voor tot 91% van de vernietiging van het Amazonegebied\.'
-            ]
-        ]
+                'Het is een van de grootste dingen die je voor de planeet kunt doen!',
+                'Goede vraag!',
+                'Het maakt een enorm verschil!',
+            ],
+            [
+                'Als iedereen plantaardig zou eten, hadden we volgens Our World in Data zo\'n 75% minder landbouwgrond nodig: ' . generate_and_cache_shlink('https://ourworldindata.org/land-use-diets'),
+                'Volgens een studie van Oxford heeft een vegan eetpatroon ongeveer 30% van de milieu-impact van een eetpatroon met veel vlees: ' . generate_and_cache_shlink('https://www.medsci.ox.ac.uk/news/vegan-diet-has-just-30-of-the-environmental-impact-of-a-high-meat-diet-major-study-finds'),
+                'Vlees en zuivel hebben qua uitstoot, land- en watergebruik een veel grotere voetafdruk dan plantaardig eten. Hier de cijfers: ' . generate_and_cache_shlink('https://ourworldindata.org/environmental-impacts-of-food'),
+            ],
+            [
+                'Wil je meer weten? Stuur me een berichtje! 🌍',
+                'Ik vertel je graag meer!',
+                'Hopelijk heb je hier wat aan!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-flask',
         'title' => 'Experts zijn het eens',
-        'body' =>[
+        'body' => [
             [
-                'Tegenwoordig is algemeen aanvaard dat vegan eten gezonder is dan een eetpatroon met vlees\.'
-            ], [
-                'Hier is een pagina die bronnen direct haalt bij de grootste organisaties ter wereld op het gebied van gezondheid, voeding en diëtetiek \(dus onafhankelijke organisaties\): ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
-            ]
-        ]
+                'De grote gezondheidsorganisaties zijn het hierover eens!',
+                'Goed nieuws: de experts staan aan jouw kant!',
+                'Daar is weinig twijfel over!',
+            ],
+            [
+                'De Britse diëtistenvereniging (BDA) zegt dat een goed samengesteld plantaardig eetpatroon bijdraagt aan een gezond leven op elke leeftijd: ' . generate_and_cache_shlink('https://www.bda.uk.com/resource/vegetarian-vegan-plant-based-diet.html'),
+                'Diëtistenverenigingen in de VS, het VK, Canada en Australië zeggen dat een goed samengesteld vegan eetpatroon gezond is op elke leeftijd. Overzicht: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations'),
+                'De Britse NHS zegt dat je met goede planning alle voedingsstoffen die je nodig hebt uit vegan eten kunt halen: ' . generate_and_cache_shlink('https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/the-vegan-diet/'),
+            ],
+            [
+                'Vragen? Stuur me een berichtje!',
+                'Ik help je graag!',
+                'Hopelijk heb je hier wat aan!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-heartbeat',
         'title' => 'Gezondheid',
-        'body' =>[
+        'body' => [
             [
-                'Tegenwoordig is algemeen aanvaard dat vlees en zuivel extreem ongezond zijn vergeleken met vegan eten\.'
-            ], [
-                'Vlees is kankerverwekkend en de oorzaak van de meeste ziekten, zoals kanker, hartziekten, diabetes en overgewicht\.'
-            ], [
-                'Hier is een pagina met info en bronnen: ' . generate_and_cache_shlink('https://en.wikipedia.org/wiki/Vegan_nutrition#Positions_of_dietetic_and_government_associations')
-            ]
-        ]
+                'Goede vraag!',
+                'Het kan heel gezond zijn!',
+                'Goed nieuws op dat vlak!',
+            ],
+            [
+                'Een goed samengesteld vegan eetpatroon wordt gelinkt aan een lager risico op hartziekten, diabetes type 2 en sommige soorten kanker. De Britse NHS legt het goed uit: ' . generate_and_cache_shlink('https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/the-vegan-diet/'),
+                'De WHO deelt bewerkt vlees in als kankerverwekkend en rood vlees als waarschijnlijk kankerverwekkend: ' . generate_and_cache_shlink('https://www.who.int/news-room/questions-and-answers/item/cancer-carcinogenicity-of-the-consumption-of-red-meat-and-processed-meat'),
+                'De Britse diëtistenvereniging (BDA) zegt dat een goed samengesteld plantaardig eetpatroon bijdraagt aan een gezond leven op elke leeftijd: ' . generate_and_cache_shlink('https://www.bda.uk.com/resource/vegetarian-vegan-plant-based-diet.html'),
+            ],
+            [
+                'Vragen? Stuur me een berichtje!',
+                'Ik denk graag mee over je maaltijden!',
+                'Hopelijk heb je hier wat aan!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-leaf',
         'title' => 'Geen zin om te koken',
-        'body' =>[
+        'body' => [
             [
-                'Veel veganisten koken ook niet, ze kopen gewoon de vegan opties in de winkel of in restaurants in plaats van de dierlijke\.'
-            ], [
-                'Je hoeft niet te leren koken om gezond vegan te eten!'
-            ], [
-                'Uit eten is ook heel makkelijk met ' . generate_and_cache_shlink('http://happycow.net') . ' 🐮 Stuur me een bericht als je hulp nodig hebt!'
-            ]
-        ]
+                'Koken hoeft niet!',
+                'Helemaal prima!',
+                'Goed nieuws: je hoeft niet te koken!',
+            ],
+            [
+                'Supermarkten liggen nu vol met vegan kant-en-klaarmaaltijden, broodjes, diepvriespizza\'s en snacks. Pak gewoon de vegan versie van wat je normaal koopt.',
+                'Heel wat veganisten koken amper! Kant-en-klaarmaaltijden, wraps, brood met pindakaas, muesli met havermelk... het telt allemaal.',
+                'Uit eten is ook makkelijk. Op HappyCow zie je veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
+            ],
+            [
+                'Stuur me een berichtje als je makkelijke ideeën wilt!',
+                'Ik deel graag mijn luie favorieten!',
+                'Hopelijk heb je hier wat aan!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-meh-blank',
         'title' => 'Eten is saai',
-        'body' =>[
+        'body' => [
             [
-                'Bijna alles wat met vlees of zuivel wordt gemaakt, kun je namaken en is net zo lekker, je moet alleen weten waar je het koopt of hoe je het maakt\.'
-            ], [
-                'Hier wat recepten: ' . generate_and_cache_shlink('https://veganuary.com/recipes') . ', \(of google je favoriete gerecht \+ "vegan"\)\.'
-            ], [
-                'En dit voor uit eten: ' . generate_and_cache_shlink('https://happycow.net')
-            ]
-        ]
+                'Dat hoeft echt niet!',
+                'Vegan eten kan geweldig zijn!',
+                'Geloof me, het is allesbehalve saai!',
+            ],
+            [
+                'Bijna elk gerecht kun je vegan maken: curry\'s, burgers, pasta, taart. Hier vind je heel veel recepten: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+                'Zoek eens op je favoriete gerecht plus \'vegan\', er is van bijna alles een versie. Voor uit eten: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'r/veganrecipes staat vol ideeën: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganrecipes/') . ' En met HappyCow vind je toffe plekken om te eten: ' . generate_and_cache_shlink('https://www.happycow.net'),
+            ],
+            [
+                'Stuur me een berichtje als je tips wilt!',
+                'Geniet ervan! 😋',
+                'Veel kookplezier!',
+            ],
+        ],
     ],
 
     [
         'icon' => 'fas fa-fist-raised',
         'title' => '30+ argumenten',
-        'body' =>[
+        'body' => [
             [
-                'Dat is een veelvoorkomende mythe! Kijk hier eens: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . '; het gaat over de 30 meest voorkomende mythes over veganisme\.'
-            ], [
-                'Als video vind je het hier: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2')
-            ], [
-                'Stuur me een bericht als je hulp nodig hebt of vragen hebt!'
-            ]
-        ]
+                'Dat hoor je echt vaak!',
+                'Goede vraag, die komt vaak voorbij!',
+                'Die hoor ik heel vaak!',
+            ],
+            [
+                'Deze gratis gids beantwoordt de 30 meest gehoorde argumenten tegen vegan worden: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf'),
+                'Earthling Ed beantwoordt 30 veelgehoorde smoesjes in korte video\'s: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'Deze gids behandelt de 30 meest voorkomende mythes: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . ' Of als je liever video\'s kijkt: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+            ],
+            [
+                'Stuur me een berichtje als je erover wilt praten!',
+                'Ik beantwoord graag je vragen!',
+                'Hopelijk heb je hier wat aan!',
+            ],
+        ],
     ],
-
 ];
