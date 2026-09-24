@@ -13,7 +13,7 @@
         <div class="col-md-8">
             <div class="card reset-box">
                 <div class="card-header">
-                    <h2 style="font-family: 'Lora';">
+                    <h2>
                         {{ __('Reset Password') }}
                     </h2>
                 </div>

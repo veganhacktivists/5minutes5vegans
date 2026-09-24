@@ -479,52 +479,14 @@
     }
 
     .lang-switch {
-        display: flex;
-        width: fit-content;
         margin: -50px auto 20px;
-        border: 2px solid $feed-teal;
-        overflow: hidden;
-        background-color: $white;
 
         a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 5px 12px;
             font-size: 15px;
-            font-weight: bold;
-            color: $dark-text;
-            text-decoration: none;
-
-            + a {
-                border-left: 2px solid $feed-teal;
-            }
-
-            &:hover {
-                background-color: $feed-mint;
-            }
 
             &.active {
                 color: $white;
-                background-color: $button-cta-color;
             }
-        }
-    }
-
-    .lang-flag {
-        position: relative;
-        flex: none;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        overflow: hidden;
-
-        img {
-            position: absolute;
-            top: 0;
-            left: -5.3px;
-            width: 30.6px;
-            max-width: none;
         }
     }
 }

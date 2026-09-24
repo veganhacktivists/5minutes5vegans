@@ -50,17 +50,14 @@
 
 .login-pane {
     padding: 80px 5% 5% 5%;
-
-    h1, h2, h3, h4, h5 {
-        font-family: "Lora";
-    }
 }
 
 .login-pane-left {
     @extend .login-pane;
 
     float: left;
-    background-color: #61df95ed;
+    color: $dark-text;
+    background-color: rgba($feed-honeydew, 0.96);
     border-radius: 90px 0 0 0;
 
     @include for-tablet-portrait-up {
@@ -70,7 +67,20 @@
     input:not([type = submit]):not([type = checkbox]) {
         background: transparent;
         border: none;
-        border-bottom: 1px solid $teal;
+        border-bottom: 2px solid $feed-teal;
+        border-radius: 0;
+
+        &:focus {
+            border-bottom-color: $button-cta-color;
+            box-shadow: none;
+        }
+
+        &::placeholder {
+            color: rgba($dark-text, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 13px;
+        }
     }
 }
 
@@ -91,6 +101,31 @@
 
     h5 {
         color: white;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .lang-switch {
+        margin: 0 0 3rem;
+    }
+}
+
+.login-how {
+    @extend .swirvy-box;
+
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    font-size: 17px;
+    font-weight: bold;
+    color: $dark-text;
+    background-color: rgba($white, 0.85);
+    border: 2px solid $feed-teal;
+    text-decoration: none;
+
+    &:hover {
+        color: $white;
+        background-color: $feed-teal;
     }
 }
 
@@ -101,55 +136,6 @@
     height: 20px;
     border-bottom: 1px solid $teal;
     top: 10px;
-}
-
-.lang-flags {
-    @extend .swirvy-box;
-    border: solid #0f251d 1px;
-    height: 100px;
-
-
-    /* HIDE RADIO */
-    [type=radio] {
-        position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    /* IMAGE STYLES */
-    [type=radio] + img {
-        cursor: pointer;
-    }
-
-    label {
-        height: 100%;
-        $flag-box-width: calc(100% / 4);
-        width: $flag-box-width;
-        display: flex;
-        align-items: center;
-    }
-
-    a, button {
-        height: 100%;
-        width: 100%;
-    }
-
-    button img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin: auto;
-    }
-
-    .btn:focus {
-        box-shadow: none;
-        border-bottom: 2px solid $teal;
-    }
-}
-
-.login-flag-active {
-    border-bottom: 5px solid #209774;
 }
 
 .start-btn {
@@ -181,11 +167,6 @@
 
 .login-footer {
     @extend .page-footer;
-
-    @include for-tablet-portrait-up {
-        position: fixed;
-        bottom: 0;
-    }
 }
 
 .reset-box {
