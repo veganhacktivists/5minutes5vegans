@@ -9,7 +9,7 @@
     </div>
     <form method="post" action="{{ route('login') }}">
         @csrf
-        <input type="email" class="text-uppercase form-control mb-2 @error('email') is-invalid @enderror" required placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}"></input>
+        <input type="email" class="form-control mb-2 @error('email') is-invalid @enderror" required placeholder="{{ __('E-Mail Address') }}" name="email" value="{{ old('email') }}"></input>
 
         @if ($errors->has('email'))
             <span class="invalid-feedback" role="alert">
@@ -17,7 +17,7 @@
             </span>
         @endif
 
-        <input type="password" class="form-control text-uppercase @error('password') is-invalid @enderror" required placeholder="{{ __('Password') }}" name="password" value="{{ old('password') }}" />
+        <input type="password" class="form-control @error('password') is-invalid @enderror" required placeholder="{{ __('Password') }}" name="password" />
 
         @error('password')
             <span class="invalid-feedback" role="alert">
