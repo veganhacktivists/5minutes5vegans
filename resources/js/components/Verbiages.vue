@@ -99,7 +99,7 @@
                         >New</button>
                     <button
                         v-if="editing"
-                        class="btn btn-success"
+                        class="btn btn-primary"
                         v-on:click="saveVerbiage"
                         v-bind:disabled="busy"
                         style="margin-bottom: 15px;margin-top: 15px;"
@@ -114,10 +114,10 @@
                         >Edit</button>
                     <button
                         v-if="(selected.id && editing) || creating"
-                        class="btn btn-warning"
+                        class="btn btn-outline-primary"
                         v-on:click="endEditing"
                         v-bind:disabled="busy"
-                        style="margin-bottom: 15px;color: #fff;background-color: #ff8989;border-color: #ff8989;"
+                        style="margin-bottom: 15px;"
                         >Cancel</button>
 
                     <button

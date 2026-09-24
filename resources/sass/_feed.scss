@@ -38,8 +38,9 @@
 }
 
 .swiper-pagination-bullet-active {
-    color:white;
-    background: $feed-teal;
+    color: $white;
+    background: $button-cta-color;
+    border-color: $button-cta-color;
     opacity: 1;
 }
 
@@ -358,31 +359,47 @@
     }
 
     .verbiage-menu {
-        background-color: $feed-mint;
-        border: 2px solid $feed-border-light;
-        margin-bottom: 15px;
+        margin: 0 4px 15px;
+        gap: 8px 16px;
 
-        a {
-            @extend .d-inline-block;
-            @extend .py-1;
-            @extend .px-3;
-            @extend .me-1;
+        .verbiage-toggle {
+            display: inline-flex;
+            border: 2px solid $feed-teal;
+            overflow: hidden;
 
-            font-size: 17px;
+            a {
+                padding: 4px 16px;
+                font-size: 16px;
+                background-color: $feed-mint;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: $feed-mint-dark;
+                }
+
+                &.active {
+                    color: $white;
+                    background-color: $button-cta-color;
+                }
+
+                + a {
+                    border-left: 2px solid $feed-teal;
+                }
+
+                i {
+                    font-size: 12px;
+                    margin-right: 2px;
+                }
+            }
         }
 
-        > div {
-            flex-wrap: wrap;
-            row-gap: 4px;
-        }
-
-        .greeting {
+        .account-links {
             color: $dark-text;
-            font-size: 22px;
-            flex-basis: 100%;
+            font-size: 16px;
 
-            @include for-desktop-up {
-                flex-basis: auto;
+            a {
+                font-size: 16px;
+                text-decoration: underline;
             }
         }
     }
