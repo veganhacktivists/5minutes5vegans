@@ -6,6 +6,7 @@ use Anhskohbo\NoCaptcha\Facades\NoCaptcha;
 use App\Providers\AppServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Request;
+use Mcamara\LaravelLocalization\LaravelLocalization;
 use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter;
 use Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect;
 use Tests\TestCase;
@@ -27,6 +28,18 @@ class ProxyTest extends TestCase
         $this->app['env'] = 'production';
 
         $this->get('/robots.txt')->assertHeader('Strict-Transport-Security', 'max-age=31536000');
+    }
+
+    public function testProductionRedirectsTheRootToHttps()
+    {
+        $this->app['env'] = 'production';
+        // In a real request the package holds the same Request the middleware
+        // marks as HTTPS; in tests it would keep the one from boot
+        $this->app->forgetInstance(LaravelLocalization::class);
+
+        $location = $this->get('/')->assertRedirect()->headers->get('Location');
+
+        $this->assertStringStartsWith('https://', $location);
     }
 
     public function testLocalDoesNotSendHsts()
