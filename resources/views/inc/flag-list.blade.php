@@ -1,13 +1,13 @@
-<ul class="flag-list" id="languageFlags">
+<nav class="lang-switch swirvy-box" id="languageFlags" aria-label="Language">
     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-    <li class="flag-item {{ (LaravelLocalization::getCurrentLocale() == $localeCode) ? 'flag-item-selected' : '' }}">
-    <div class="d-flex ">
         <a hreflang="{{ $localeCode }}"
             href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
-            class="align-self-center mx-auto">
-        <img src="{{ mb_strtolower(asset('images/landing/'.getCountry( $properties )), 'UTF-8') }}.png" alt="{{ $properties['native'] }}">
+            title="{{ $properties['native'] }}"
+            aria-label="{{ $properties['native'] }}"
+            @if (LaravelLocalization::getCurrentLocale() == $localeCode) class="active" aria-current="page" @endif
+        >
+            <span class="lang-flag"><img src="{{ asset('images/landing/'.strtolower(getCountry($properties)).'@3x.png') }}" alt=""></span>
+            {{ strtoupper($localeCode) }}
         </a>
-    </div>
-    </li>
     @endforeach
-</ul>
+</nav>
