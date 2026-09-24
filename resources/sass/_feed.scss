@@ -216,11 +216,7 @@ $feed-teal: #41b9aa;
     border: 0;
     border-top: 2px solid #b7dbc7;
     padding: 5px 10px;
-    height: 73px;
-
-    @include for-sm-tablet-portrait-up {
-        height: 100%;
-    }
+    height: 100%;
 
     &:hover {
         @extend .text-success;

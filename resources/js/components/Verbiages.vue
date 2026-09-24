@@ -6,7 +6,7 @@
                 v-for="verbiage in defaultVerbiages"
                 v-bind:key="verbiage.id"
                 v-on:click="selectVerbiage(verbiage)"
-                class="verbiage-container col-12 col-sm-6 col-md-3 col-lg-5ths px-1"
+                class="verbiage-container col-6 col-md-3 col-lg-5ths px-1"
                 >
                 <button
                     type="button"
@@ -23,7 +23,7 @@
                 v-for="(verbiage, index) in customVerbiages"
                 v-bind:key="index"
                 v-on:click="selectVerbiage(verbiage)"
-                class="verbiage-container col-12 col-sm-6 col-md-3 col-lg-5ths px-1"
+                class="verbiage-container col-6 col-md-3 col-lg-5ths px-1"
                 >
                 <button
                     type="button"
