@@ -242,7 +242,7 @@
     &:hover,
     &:focus,
     &.active {
-        color: $feed-red !important;
+        color: $feed-red-dark !important;
         border-top-color: $feed-red;
         span {
             color: inherit;
