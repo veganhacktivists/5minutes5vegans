@@ -349,7 +349,7 @@
 
         .vh-link {
             font-family: 'Rajdhani', sans-serif;
-            font-weight: 700;
+            font-weight: 400;
             font-size: inherit;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -358,6 +358,10 @@
 
             &:hover {
                 text-decoration: underline;
+            }
+
+            .vh-vegan {
+                font-weight: 700;
             }
         }
 
