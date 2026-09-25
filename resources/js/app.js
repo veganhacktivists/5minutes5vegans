@@ -11,6 +11,7 @@ window.axios = axios;
 import Swiper from 'swiper'
 import { Pagination } from 'swiper/modules'
 import { createApp } from 'vue'
+import { track } from './track'
 import App from './components/App.vue'
 
 /*********
@@ -91,10 +92,11 @@ $(() => {
             el: '.swiper-pagination',
             clickable: true,
             renderBullet: function(index, className) {
+                // Buttons, so keyboards and screen readers can use the pager
                 return `
-                <span class="swirvy-box ${className}">${
+                <button type="button" class="swirvy-box ${className}">${
                     index === 0 ? window.lang.messages : window.lang.feed
-                }</span>
+                }</button>
                 `
             },
         },
@@ -114,6 +116,13 @@ $(() => {
         },
         watchOverflow: true,
         allowTouchMove: false,
+        on: {
+            paginationUpdate(swiper) {
+                swiper.pagination.bullets.forEach((bullet) => {
+                    bullet.setAttribute('aria-pressed', bullet.classList.contains('swiper-pagination-bullet-active'))
+                })
+            },
+        },
     })
 
     // Start on the twitter slide in mobile view
@@ -192,6 +201,7 @@ $(() => {
 
         card.classList.add('opened')
         rememberOpened(card.dataset.post)
+        track('Open post')
     }
     timeline.addEventListener('click', markOpened)
     timeline.addEventListener('auxclick', markOpened)

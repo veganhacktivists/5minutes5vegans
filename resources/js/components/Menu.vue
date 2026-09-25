@@ -29,7 +29,7 @@
       </div>
 
       <div class="account-links">
-         <a href="#" data-bs-toggle="modal" data-bs-target="#how-it-works" @click.prevent>{{ lang.howItWorks }}</a>
+         <a href="#" data-bs-toggle="modal" data-bs-target="#how-it-works" @click.prevent="track('How it works')">{{ lang.howItWorks }}</a>
          ·
          <template v-if="currentUser">
             <a href="#" @click.prevent="$emit('navigate', 'userEdit')">{{ lang.editProfile }}</a>
@@ -46,8 +46,14 @@
 </template>
 
 <script>
+import { track } from '../track'
+
 export default {
    props: ['custom'],
+
+   methods: {
+      track,
+   },
 
    data () {
       return {

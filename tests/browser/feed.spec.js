@@ -123,3 +123,34 @@ test('the login page loads', async ({ page }) => {
     await expect(page.locator('input[type=email]')).toBeVisible()
     await expect(page.locator('a[href="https://veganhacktivists.org/privacy-policy"]')).toBeAttached()
 })
+
+test('copying and rewording are counted in Umami, without anything about the visitor', async ({ page, isMobile }) => {
+    await page.addInitScript(() => {
+        window.umami = { track: (event, data) => (window.events ||= []).push([event, data]) }
+    })
+    await openMessages(page, isMobile)
+    await page.locator('.verbiage-link').nth(3).click()
+    const topic = (await page.locator('.verbiage-link').nth(3).innerText()).trim()
+
+    await page.locator('.reword-btn').click()
+    await page.locator('.copy-btn').click()
+
+    await expect.poll(() => page.evaluate(() => window.events)).toEqual([
+        ['Reword', { lang: 'en', topic }],
+        ['Copy reply', { lang: 'en', topic, kind: 'ready-made' }],
+    ])
+})
+
+test('on a phone, the pager works from the keyboard', async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'phones only')
+    await page.goto('/en')
+    const [messages, feed] = [page.locator('.swiper-pagination-bullet').first(), page.locator('.swiper-pagination-bullet').last()]
+    await expect(feed).toHaveAttribute('aria-pressed', 'true')
+
+    await messages.focus()
+    await page.keyboard.press('Enter')
+
+    await expect.poll(() => page.evaluate(() => window.mySwiper.activeIndex)).toBe(0)
+    await expect(messages).toHaveAttribute('aria-pressed', 'true')
+    await expect(feed).toHaveAttribute('aria-pressed', 'false')
+})
