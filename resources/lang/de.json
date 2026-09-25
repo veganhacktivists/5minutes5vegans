@@ -82,10 +82,5 @@
   "Feed": "Feed",
   "New Password": "Neues Passwort",
   "The messages didn't load. Refresh the page to try again.": "Die Nachrichten konnten nicht geladen werden. Lade die Seite neu, um es noch einmal zu versuchen.",
-  "Current password (needed to change your email or password)": "Aktuelles Passwort (nötig, um E-Mail oder Passwort zu ändern)",
-  "Can we use Google Analytics cookies? They show us how the site is used, so we can improve it.": "Dürfen wir Cookies von Google Analytics nutzen? Sie zeigen uns, wie die Seite genutzt wird, damit wir sie verbessern können.",
-  "Privacy policy": "Datenschutz",
-  "Accept": "Akzeptieren",
-  "No thanks": "Nein danke",
-  "Cookies": "Cookies"
+  "Current password (needed to change your email or password)": "Aktuelles Passwort (nötig, um E-Mail oder Passwort zu ändern)"
 }

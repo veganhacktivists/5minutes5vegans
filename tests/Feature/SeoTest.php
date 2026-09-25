@@ -50,15 +50,32 @@ class SeoTest extends TestCase
         $this->assertEmpty($this->get('/sitemap.xml')->headers->getCookies());
     }
 
-    public function testAnalyticsWaitsForConsent()
+    private function page(): string
     {
         $this->withoutVite();
         $this->withoutMiddleware([LaravelLocalizationRedirectFilter::class, LocaleSessionRedirect::class]);
 
-        $html = $this->get(route('login'))->assertOk()->getContent();
+        return $this->get(route('login'))->assertOk()->getContent();
+    }
 
-        $this->assertStringNotContainsString('<script async src="https://www.googletagmanager.com', $html);
-        $this->assertStringContainsString('id="cookie-consent"', $html);
+    public function testThereIsNoGoogleAnalytics()
+    {
+        $html = $this->page();
+
+        $this->assertStringNotContainsString('googletagmanager', $html);
+        $this->assertStringNotContainsString('gtag(', $html);
+    }
+
+    public function testUmamiLoadsOnlyOnceConfigured()
+    {
+        $this->assertStringNotContainsString('data-website-id', $this->page());
+
+        config(['services.umami.website_id' => 'abc-123']);
+        $html = $this->page();
+
+        $this->assertStringContainsString('src="https://analytics.veganhacktivists.org/script.js"', $html);
+        $this->assertStringContainsString('data-website-id="abc-123"', $html);
+        $this->assertStringContainsString('data-exclude-search="true"', $html);
     }
 
     public function testRobotsPointsAtTheSitemap()
