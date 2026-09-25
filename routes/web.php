@@ -26,6 +26,9 @@ Route::group( [
 // A static list for crawlers, so no session, cookies or CSRF
 Route::get('/sitemap.xml', 'SitemapController')->name('sitemap')->withoutMiddleware('web');
 
+// For uptime checks, likewise without a session
+Route::get('/up', 'HealthController')->name('health')->withoutMiddleware('web');
+
 Route::middleware( [ 'auth', 'ownsVerbiage' ] )->group(function () {
     Route::resource( 'verbiage', 'VerbiageController' )->only( 'store', 'update', 'destroy' );
     Route::resource('user', 'UserController')->only('update');
