@@ -49,16 +49,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        abort_unless(config('captcha.secret'), 503);
+
         $rules = [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'g-recaptcha-response' => ['required', 'captcha'],
         ];
-
-        // Without a secret every check would fail and nobody could register.
-        if (config('captcha.secret')) {
-            $rules['g-recaptcha-response'] = ['required', 'captcha'];
-        }
 
         return Validator::make($data, $rules, [
             'g-recaptcha-response.required' => __('loginregister.robot-failed'),

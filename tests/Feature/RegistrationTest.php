@@ -40,6 +40,16 @@ class RegistrationTest extends TestCase
         $this->assertSame(0, User::count());
     }
 
+    public function testRegistrationNeedsTheCaptchaWhenTheSecretIsMissing()
+    {
+        config(['captcha.secret' => null]);
+
+        $this->post(route('register'), $this->registration(['g-recaptcha-response' => '']))->assertStatus(503);
+        $this->post(route('register'), $this->registration())->assertStatus(503);
+
+        $this->assertSame(0, User::count());
+    }
+
     public function testAFailedCaptchaIsRejected()
     {
         NoCaptcha::shouldReceive('verifyResponse')->once()->andReturn(false);
