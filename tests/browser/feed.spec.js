@@ -69,9 +69,21 @@ test('Copy puts the reply on the clipboard', async ({ page, context, isMobile })
     expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(reply)
 })
 
+test('when the Clipboard API is refused, Copy falls back to the older way', async ({ page, isMobile }) => {
+    await page.addInitScript(() => {
+        navigator.clipboard.writeText = () => Promise.reject(new Error('Denied'))
+    })
+    await openMessages(page, isMobile)
+    await page.locator('.verbiage-link').nth(3).click()
+    await page.locator('.copy-btn').click()
+
+    await expect(page.locator('.copy-btn')).toContainText('Copied!')
+})
+
 test('if copying fails, the reply stays put with a note to copy it by hand', async ({ page, isMobile }) => {
     await page.addInitScript(() => {
         navigator.clipboard.writeText = () => Promise.reject(new Error('Denied'))
+        document.execCommand = () => false
     })
     await openMessages(page, isMobile)
     await page.locator('.verbiage-link').nth(3).click()

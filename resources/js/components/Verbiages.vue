@@ -184,12 +184,16 @@ function xLength(text) {
     return length
 }
 
-// The Clipboard API needs https or localhost. Elsewhere, and in browsers
-// without it, select the text in a hidden box and copy that.
+// The Clipboard API needs https or localhost, and some browsers refuse it
+// without a permission. Then select the text in a hidden box and copy that.
 async function copyText(text) {
     if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text)
-        return
+        try {
+            await navigator.clipboard.writeText(text)
+            return
+        } catch {
+            // Try the older way below
+        }
     }
 
     const area = document.createElement('textarea')
