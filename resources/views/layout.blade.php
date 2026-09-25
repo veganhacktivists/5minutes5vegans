@@ -9,11 +9,12 @@
         <title>@lang('5 Minutes 5 Vegans')</title>
         <meta name="description" content="{{ strip_tags(__('landing.hero')) }}">
 
+        {{-- Built from the URL without its query string, so the alternates match the canonical --}}
         <link rel="canonical" href="{{ url()->current() }}">
         @foreach (array_keys(LaravelLocalization::getSupportedLocales()) as $localeCode)
-            <link rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+            <link rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, url()->current(), [], true) }}">
         @endforeach
-        <link rel="alternate" hreflang="x-default" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
+        <link rel="alternate" hreflang="x-default" href="{{ LaravelLocalization::getLocalizedURL('en', url()->current(), [], true) }}">
 
         <meta property="og:type" content="website">
         <meta property="og:locale" content="{{ LaravelLocalization::getCurrentLocaleRegional() }}">
