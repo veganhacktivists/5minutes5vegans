@@ -12,7 +12,7 @@ class FeedTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testTheFeedShowsOnlyTheLatestHundredTweets()
+    public function testTheFeedShowsOnlyTheLatestFiftyTweets()
     {
         Tweet::factory()->count(105)
             ->state(new Sequence(fn (Sequence $sequence) => ['id' => (string) (1000 + $sequence->index), 'lang' => 'en']))
@@ -20,8 +20,8 @@ class FeedTest extends TestCase
 
         $tweets = (new FeedController)()->getData()['tweets'];
 
-        $this->assertCount(100, $tweets);
+        $this->assertCount(50, $tweets);
         $this->assertEquals(1104, $tweets->first()->id);
-        $this->assertEquals(1005, $tweets->last()->id);
+        $this->assertEquals(1055, $tweets->last()->id);
     }
 }

@@ -75,24 +75,10 @@ if (token) {
     )
 
 $(() => {
-    initializeMdForm()
     if ($('app').length) {
         createApp(App).use(Clipboard).mount('app')
     }
 })
-
-/******************
- * MD Form Helper *
- ******************/
-function initializeMdForm() {
-    $('.form-control-md').blur((event) => {
-        if ($(event.target).val()) {
-            $(event.target).addClass('has-value')
-        } else {
-            $(event.target).removeClass('has-value')
-        }
-    })
-}
 
 /******************************
  * SwiperJS for the feed page *
@@ -122,7 +108,7 @@ $(() => {
                 slidesPerView: 1,
                 spaceBetween: 10,
             },
-            767: {
+            768: {
                 slidesPerView: 2,
                 spaceBetween: 0,
                 preventClicks: false,
@@ -135,17 +121,6 @@ $(() => {
 
     // Start on the twitter slide in mobile view
     window.mySwiper.slideTo(2, false, false)
-})
-
-// Scroll animation for landing page
-$(window).scroll(function() {
-    if ($(window).scrollTop() > 15) {
-        $('.landing header').addClass('header-scroll')
-        $('#landing-logo-mobile').addClass('logo-scroll')
-    } else {
-        $('.landing header').removeClass('header-scroll')
-        $('#landing-logo-mobile').removeClass('logo-scroll')
-    }
 })
 
 /************************************
