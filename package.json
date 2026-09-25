@@ -15,7 +15,6 @@
         "@popperjs/core": "^2.11.8",
         "axios": "^1.18.0",
         "bootstrap": "^5.3.0",
-        "form-data": "^4.0.6",
         "jquery": "^3.7.1",
         "swiper": "^12.1.2",
         "v-clipboard": "3.0.0-next.1",

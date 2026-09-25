@@ -1,12 +1,18 @@
 @import 'swiper/css';
-// @import '~swiper/components/navigation/navigation';
-// @import '~swiper/components/pagination/pagination';
 
 .swiper-container {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     flex: 1 1 auto;
-    overflow-y: auto;
-    overflow-x: hidden;
+    min-height: 0;
+    overflow: hidden;
+
+    .swiper-wrapper {
+        flex: 1 1 0;
+        min-height: 0;
+        height: 0;
+    }
 }
 
 .swiper-slide.scrollable {
@@ -19,6 +25,8 @@
 }
 
 .swiper-pagination {
+    position: static;
+    flex-shrink: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: $feed-honeydew;
@@ -455,6 +463,9 @@
 }
 
 #rightside {
+    height: 100%;
+    overflow-y: auto;
+
     @include for-tablet-portrait-up {
         background-image: url('/images/background.svg');
         background-size: cover;
@@ -477,9 +488,12 @@
 }
 
 #rightside-inner {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     width: 100%;
     height: 100%;
+    min-height: 300px;
     border-top-left-radius: 150px;
     border-bottom-right-radius: 150px;
     padding: 75px 30px 100px;
@@ -489,6 +503,8 @@
     }
 
     .lang-switch {
+        width: 100%;
+        flex-shrink: 0;
         margin: -50px auto 20px;
 
         a {
@@ -533,6 +549,7 @@
     flex-direction: column;
     gap: 10px;
     height: 100%;
+    min-height: 0;
     overflow: auto;
     padding-right: 12px;
     scrollbar-width: thin;
@@ -545,6 +562,7 @@
     }
 
     .card {
+        flex-shrink: 0;
         background-color: $feed-card-bg !important;
         border: 1px solid $feed-card-border;
         padding: 12px 14px;

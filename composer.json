@@ -13,7 +13,6 @@
         "guzzlehttp/guzzle": "^7.2",
         "hoa/regex": "1.17.01.13",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.7",
         "laravel/ui": "^4.5",
         "mcamara/laravel-localization": "^2.0",
         "sentry/sentry-laravel": "^4.8"
@@ -22,6 +21,7 @@
         "fakerphp/faker": "^1.23",
         "laravel-lang/lang": "~15.1",
         "laravel/sail": "*",
+        "laravel/tinker": "^2.7",
         "mockery/mockery": "^1.6.11",
         "nunomaduro/collision": "^8.1",
         "phpunit/phpunit": "^12.5"
@@ -40,7 +40,6 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders",
             "Lib\\": "lib/"
         },
         "classmap": [
