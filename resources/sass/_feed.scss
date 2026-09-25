@@ -18,6 +18,7 @@
 .swiper-slide.scrollable {
     display: flex;
     flex-direction: column;
+    min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
@@ -360,6 +361,8 @@
 
     .footer {
         display: flex;
+        flex-shrink: 0;
+        margin-top: auto;
         padding-bottom: 4rem;
 
         @include for-tablet-portrait-up {
@@ -451,7 +454,7 @@
 
 #rightside {
     height: 100%;
-    overflow-y: auto;
+    overflow: hidden;
 
     @include for-tablet-portrait-up {
         background-image: url('/images/background.svg');
@@ -480,10 +483,16 @@
     background-color: white;
     width: 100%;
     height: 100%;
-    min-height: 300px;
-    border-top-left-radius: 150px;
-    border-bottom-right-radius: 150px;
-    padding: 75px 30px 100px;
+    min-height: 0;
+    border-radius: 0;
+    padding: 16px 12px;
+
+    @include for-tablet-portrait-up {
+        min-height: 300px;
+        border-top-left-radius: 150px;
+        border-bottom-right-radius: 150px;
+        padding: 75px 30px 100px;
+    }
 
     @include for-tablet-landscape-up {
         padding: 75px 50px;
@@ -492,7 +501,11 @@
     .lang-switch {
         width: 100%;
         flex-shrink: 0;
-        margin: -50px auto 20px;
+        margin: 0 auto 16px;
+
+        @include for-tablet-portrait-up {
+            margin: -50px auto 20px;
+        }
 
         a {
             font-size: 15px;
@@ -535,6 +548,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    flex: 1 1 auto;
     height: 100%;
     min-height: 0;
     overflow: auto;
