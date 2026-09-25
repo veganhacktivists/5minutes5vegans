@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Run Laravel migrations
 php artisan migrate --force
@@ -8,9 +9,6 @@ php artisan view:cache
 
 # Cache Laravel config
 php artisan config:cache
-
-# Clear cache
-php artisan cache:clear
 
 # Optimize Laravel
 php artisan optimize
