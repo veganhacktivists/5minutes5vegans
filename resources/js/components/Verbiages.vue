@@ -90,9 +90,7 @@
                             class="btn btn-primary copy-btn"
                             v-if="!editing"
                             v-bind:disabled="!selected.body"
-                            v-clipboard="() => selected.body"
-                            v-clipboard:success="clipboardSuccessHandler"
-                            v-clipboard:error="clipboardErrorHandler"
+                            v-on:click="copyMessage"
                             >
                             <i class="fa-fw fas" :class="copyState === 'copied' ? 'fa-check' : 'fa-copy'"></i>
                             {{ copyState === 'copied' ? lang.copied : lang.copy }}
@@ -184,6 +182,26 @@ function xLength(text) {
         length += single && !PICTOGRAPHIC.test(segment) ? 1 : 2
     }
     return length
+}
+
+// The Clipboard API needs https or localhost. Elsewhere, and in browsers
+// without it, select the text in a hidden box and copy that.
+async function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text)
+        return
+    }
+
+    const area = document.createElement('textarea')
+    area.value = text
+    area.setAttribute('readonly', '')
+    area.style.cssText = 'position: fixed; opacity: 0; pointer-events: none;'
+    document.body.appendChild(area)
+    area.select()
+    const copied = document.execCommand('copy')
+    area.remove()
+
+    if (!copied) throw new Error('The browser refused to copy')
 }
 
 function setVueModel(obj, str, val) {
@@ -376,6 +394,17 @@ export default {
             console.error(r)
         },
 
+        copyMessage: async function() {
+            try {
+                await copyText(this.selected.body)
+            } catch (error) {
+                this.clipboardErrorHandler(error)
+                return
+            }
+
+            this.clipboardSuccessHandler()
+        },
+
         clipboardSuccessHandler() {
             this.showCopyState('copied')
 
@@ -390,8 +419,8 @@ export default {
         },
 
         // The box stays open so the text can be selected and copied by hand
-        clipboardErrorHandler() {
-            console.error('Unable to copy to clipboard.')
+        clipboardErrorHandler(error) {
+            console.error('Unable to copy to clipboard.', error)
             this.showCopyState('failed')
         },
 

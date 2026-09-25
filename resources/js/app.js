@@ -10,7 +10,6 @@ import axios from 'axios';
 window.axios = axios;
 import Swiper from 'swiper'
 import { Pagination } from 'swiper/modules'
-import Clipboard from 'v-clipboard'
 import { createApp } from 'vue'
 import App from './components/App.vue'
 
@@ -54,8 +53,6 @@ function updateTimer() {
     )
 }
 
-// Vue.use(Clipboard)
-//
 // Vue.component('App', require('./components/App.vue').default)
 // Vue.component('Menu', require('./components/Menu.vue').default)
 // Vue.component('Verbiages', require('./components/Verbiages.vue').default)
@@ -76,7 +73,7 @@ if (token) {
 
 $(() => {
     if ($('app').length) {
-        createApp(App).use(Clipboard).mount('app')
+        createApp(App).mount('app')
     }
 })
 
