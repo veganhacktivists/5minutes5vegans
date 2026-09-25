@@ -56,8 +56,8 @@
   "Whoops, something went wrong on our servers.": "Ups, etwas ist schief gelaufen.",
   "Restart timer": "Timer neu starten",
   "Time's up!": "Die Zeit ist um!",
-  "Default": "Standard",
-  "Customized": "Eigene",
+  "Ready-made": "Vorlagen",
+  "Your own": "Eigene",
   "Log in to write your own messages": "Melde dich an, um eigene Nachrichten zu schreiben",
   "Edit Profile": "Profil bearbeiten",
   "Pick a topic above to get a message you can copy.": "Wähle oben ein Thema, um eine Nachricht zum Kopieren zu bekommen.",
@@ -83,5 +83,10 @@
   "New Password": "Neues Passwort",
   "The messages didn't load. Refresh the page to try again.": "Die Nachrichten konnten nicht geladen werden. Lade die Seite neu, um es noch einmal zu versuchen.",
   "Current password (needed to change your email or password)": "Aktuelles Passwort (nötig, um E-Mail oder Passwort zu ändern)",
-  "Privacy policy": "Datenschutz"
+  "Privacy policy": "Datenschutz",
+  "Opened": "Geöffnet",
+  "See English posts": "Englische Posts ansehen",
+  "Now open a post and paste this as your reply.": "Öffne jetzt einen Post und füge das als Antwort ein.",
+  "Couldn't copy. Select the text and copy it yourself.": "Kopieren hat nicht geklappt. Markiere den Text und kopiere ihn selbst.",
+  "characters left": "Zeichen übrig"
 }

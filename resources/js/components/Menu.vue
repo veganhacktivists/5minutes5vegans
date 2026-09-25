@@ -29,6 +29,8 @@
       </div>
 
       <div class="account-links">
+         <a href="#" data-bs-toggle="modal" data-bs-target="#how-it-works" @click.prevent>{{ lang.howItWorks }}</a>
+         ·
          <template v-if="currentUser">
             <a href="#" @click.prevent="$emit('navigate', 'userEdit')">{{ lang.editProfile }}</a>
             ·
