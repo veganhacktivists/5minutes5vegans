@@ -88,5 +88,6 @@
   "Now open a post and paste this as your reply.": "Ahora abre un post y pega esto como respuesta.",
   "Couldn't copy. Select the text and copy it yourself.": "No se pudo copiar. Selecciona el texto y cópialo tú.",
   "characters left": "caracteres restantes",
-  "Reword": "Reformular"
+  "Reword": "Reformular",
+  "You can save up to :count messages.": "Puedes guardar hasta :count mensajes."
 }
