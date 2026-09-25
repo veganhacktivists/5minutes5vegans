@@ -23,6 +23,7 @@ cmds = [
 cmds = [
     "mkdir -p /etc/supervisor/conf.d/",
     "cp /app/nixpacks/laravel-worker.conf /etc/supervisor/conf.d/laravel-worker.conf",
+    "cp /app/nixpacks/laravel-scheduler.conf /etc/supervisor/conf.d/laravel-scheduler.conf",
     "cp /app/nixpacks/supervisord.conf /etc/supervisord.conf",
     "cp /app/nixpacks/start.sh /assets/start.sh",
     "chmod +x /assets/start.sh",
