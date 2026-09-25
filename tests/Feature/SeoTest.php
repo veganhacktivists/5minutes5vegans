@@ -66,6 +66,17 @@ class SeoTest extends TestCase
         $this->assertStringNotContainsString('gtag(', $html);
     }
 
+    public function testThePageLoadsFontAwesomeSixWithoutTheFullStylesheet()
+    {
+        $html = $this->page();
+
+        $this->assertStringContainsString('font-awesome/6.7.2/css/fontawesome.min.css', $html);
+        $this->assertStringContainsString('font-awesome/6.7.2/css/solid.min.css', $html);
+        $this->assertStringContainsString('font-awesome/6.7.2/css/brands.min.css', $html);
+        $this->assertStringNotContainsString('use.fontawesome.com/releases/v5.8.1', $html);
+        $this->assertStringNotContainsString('/css/all.css', $html);
+    }
+
     public function testUmamiLoadsOnlyOnceConfigured()
     {
         $this->assertStringNotContainsString('data-website-id', $this->page());
