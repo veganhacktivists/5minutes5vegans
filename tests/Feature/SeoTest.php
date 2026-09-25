@@ -31,6 +31,25 @@ class SeoTest extends TestCase
         $this->assertStringContainsString('hreflang="x-default"', $html);
     }
 
+    public function testAlternatesLeaveOutTheQueryString()
+    {
+        $this->withoutVite();
+        $this->withoutMiddleware([LaravelLocalizationRedirectFilter::class, LocaleSessionRedirect::class]);
+
+        $html = $this->get(route('login').'?utm_source=newsletter')->assertOk()->getContent();
+
+        preg_match_all('/<link rel="alternate" hreflang="[^"]+" href="([^"]+)"/', $html, $matches);
+        $this->assertCount(count(config('laravellocalization.supportedLocales')) + 1, $matches[1]);
+        foreach ($matches[1] as $href) {
+            $this->assertStringNotContainsString('?', $href);
+        }
+    }
+
+    public function testTheSitemapSetsNoCookies()
+    {
+        $this->assertEmpty($this->get('/sitemap.xml')->headers->getCookies());
+    }
+
     public function testAnalyticsWaitsForConsent()
     {
         $this->withoutVite();
