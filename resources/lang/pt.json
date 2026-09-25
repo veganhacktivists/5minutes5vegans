@@ -122,5 +122,10 @@
     "Couldn't copy. Select the text and copy it yourself.": "Não deu para copiar. Selecione o texto e copie você mesmo.",
     "characters left": "caracteres restantes",
     "Reword": "Reformular",
-    "You can save up to :count messages.": "Você pode salvar até :count mensagens."
+    "You can save up to :count messages.": "Você pode salvar até :count mensagens.",
+    "Delete your account": "Excluir sua conta",
+    "This deletes your account and the messages you've saved. It can't be undone.": "Isso exclui sua conta e as mensagens que você salvou. Não dá para desfazer.",
+    "Delete my account": "Excluir minha conta",
+    "Delete your account and all your messages?": "Excluir sua conta e todas as suas mensagens?",
+    "Current password": "Senha atual"
 }

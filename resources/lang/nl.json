@@ -122,5 +122,10 @@
     "Couldn't copy. Select the text and copy it yourself.": "Kopiëren is niet gelukt. Selecteer de tekst en kopieer hem zelf.",
     "characters left": "tekens over",
     "Reword": "Herformuleren",
-    "You can save up to :count messages.": "Je kunt tot :count berichten opslaan."
+    "You can save up to :count messages.": "Je kunt tot :count berichten opslaan.",
+    "Delete your account": "Je account verwijderen",
+    "This deletes your account and the messages you've saved. It can't be undone.": "Hiermee verwijder je je account en de berichten die je hebt opgeslagen. Dit kan niet ongedaan worden gemaakt.",
+    "Delete my account": "Mijn account verwijderen",
+    "Delete your account and all your messages?": "Je account en al je berichten verwijderen?",
+    "Current password": "Huidig wachtwoord"
 }

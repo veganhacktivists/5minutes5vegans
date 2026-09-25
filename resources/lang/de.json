@@ -90,5 +90,10 @@
   "Couldn't copy. Select the text and copy it yourself.": "Kopieren hat nicht geklappt. Markiere den Text und kopiere ihn selbst.",
   "characters left": "Zeichen übrig",
   "Reword": "Umformulieren",
-  "You can save up to :count messages.": "Du kannst bis zu :count Nachrichten speichern."
+  "You can save up to :count messages.": "Du kannst bis zu :count Nachrichten speichern.",
+  "Delete your account": "Konto löschen",
+  "This deletes your account and the messages you've saved. It can't be undone.": "Damit löschst du dein Konto und die Nachrichten, die du gespeichert hast. Das lässt sich nicht rückgängig machen.",
+  "Delete my account": "Mein Konto löschen",
+  "Delete your account and all your messages?": "Dein Konto und alle deine Nachrichten löschen?",
+  "Current password": "Aktuelles Passwort"
 }

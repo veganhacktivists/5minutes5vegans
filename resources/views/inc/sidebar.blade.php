@@ -44,6 +44,11 @@
         'confirmPassword' => __('Confirm Password'),
         'currentPassword' => __('Current password (needed to change your email or password)'),
         'saveProfile' => __('Save Profile'),
+        'deleteAccount' => __('Delete your account'),
+        'deleteAccountInfo' => __("This deletes your account and the messages you've saved. It can't be undone."),
+        'deleteAccountButton' => __('Delete my account'),
+        'confirmDeleteAccount' => __('Delete your account and all your messages?'),
+        'currentPasswordOnly' => __('Current password'),
         'messages' => __('Messages'),
         'feed' => __('Feed'),
     ];
@@ -61,6 +66,7 @@
                 'email' => $user->email,
             ]);
         routes['user.update'] = @json(route('user.update', Auth::user(), false));
+        routes['user.destroy'] = @json(route('user.destroy', Auth::user(), false));
     @endauth
 </script>
 

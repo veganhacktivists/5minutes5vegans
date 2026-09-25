@@ -31,5 +31,5 @@ Route::get('/up', 'HealthController')->name('health')->withoutMiddleware('web');
 
 Route::middleware( [ 'auth', 'ownsVerbiage' ] )->group(function () {
     Route::resource( 'verbiage', 'VerbiageController' )->only( 'store', 'update', 'destroy' );
-    Route::resource('user', 'UserController')->only('update');
+    Route::resource('user', 'UserController')->only('update', 'destroy');
 });
