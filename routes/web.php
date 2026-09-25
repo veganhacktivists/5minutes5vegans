@@ -23,7 +23,8 @@ Route::group( [
 
 });
 
-Route::get('/sitemap.xml', 'SitemapController')->name('sitemap');
+// A static list for crawlers, so no session, cookies or CSRF
+Route::get('/sitemap.xml', 'SitemapController')->name('sitemap')->withoutMiddleware('web');
 
 Route::middleware( [ 'auth', 'ownsVerbiage' ] )->group(function () {
     Route::resource( 'verbiage', 'VerbiageController' )->only( 'store', 'update', 'destroy' );

@@ -9,11 +9,12 @@
         <title>@lang('5 Minutes 5 Vegans')</title>
         <meta name="description" content="{{ strip_tags(__('landing.hero')) }}">
 
+        {{-- Built from the URL without its query string, so the alternates match the canonical --}}
         <link rel="canonical" href="{{ url()->current() }}">
         @foreach (array_keys(LaravelLocalization::getSupportedLocales()) as $localeCode)
-            <link rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+            <link rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, url()->current(), [], true) }}">
         @endforeach
-        <link rel="alternate" hreflang="x-default" href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}">
+        <link rel="alternate" hreflang="x-default" href="{{ LaravelLocalization::getLocalizedURL('en', url()->current(), [], true) }}">
 
         <meta property="og:type" content="website">
         <meta property="og:locale" content="{{ LaravelLocalization::getCurrentLocaleRegional() }}">
@@ -27,9 +28,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Rajdhani:400,500,600,700&display=swap">
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        @include('inc.umami')
         @yield('scripts')
 
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
         @yield('css')
 
     </head>
@@ -38,7 +42,5 @@
 
         @yield('page_content')
 
-        @include('inc.cookie-consent')
     </body>
 </html>
-
