@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Stop at the first step that fails, so a failed migration can't leave the
+# app starting on a half-migrated database
+set -e
+
 # Run Laravel migrations
 php artisan migrate --force
 
@@ -18,8 +22,9 @@ php artisan optimize
 # Clear Laravel routes
 php artisan route:clear
 
-# Cache verbiages
-php artisan tweets:generate
+# Cache verbiages. It exits 1 if any language fails, which mustn't stop the
+# site starting: the scheduler tries again every minute.
+php artisan tweets:generate || echo "tweets:generate failed, the scheduler will retry"
 
 # Transform the nginx configuration
 node /assets/scripts/prestart.mjs ./nixpacks/nginx.template.conf /etc/nginx.conf
