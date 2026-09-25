@@ -121,6 +121,15 @@ $(() => {
 
     // Start on the twitter slide in mobile view
     window.mySwiper.slideTo(2, false, false)
+
+    // Swiper moves slides with transforms, so its container should never scroll.
+    // On phones the reply box moves into the pager when a topic is picked, and
+    // the browser then scrolled the container sideways, pushing the tiles and
+    // the reply box off-screen. Undo any such scroll straight away.
+    const container = window.mySwiper.el
+    container.addEventListener('scroll', () => {
+        if (container.scrollLeft) container.scrollLeft = 0
+    })
 })
 
 /************************************
