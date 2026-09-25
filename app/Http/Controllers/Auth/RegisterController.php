@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -22,6 +23,10 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
+    // Google's documented test secret. It accepts every token, so on the live
+    // site it means the real secret was never set.
+    private const GOOGLE_TEST_SECRET = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
 
     /**
      * Where to redirect users after registration.
@@ -58,6 +63,7 @@ class RegisterController extends Controller
         // Without a secret every check would fail and nobody could register.
         if (config('captcha.secret')) {
             $rules['g-recaptcha-response'] = ['required', 'captcha'];
+            $this->warnIfUsingTheTestSecret();
         }
 
         return Validator::make($data, $rules, [
@@ -79,5 +85,14 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    private function warnIfUsingTheTestSecret(): void
+    {
+        if (app()->environment('production')
+            && config('captcha.secret') === self::GOOGLE_TEST_SECRET
+            && Cache::add('captcha-test-secret-reported', true, now()->addDay())) {
+            report(new \RuntimeException("NOCAPTCHA_SECRET is Google's public test secret, which accepts every token. Set the real secret for the live site key."));
+        }
     }
 }

@@ -3,7 +3,9 @@
 namespace Tests\Feature;
 
 use Anhskohbo\NoCaptcha\Facades\NoCaptcha;
+use App\Http\Middleware\VerifyCsrfToken;
 use App\Models\User;
+use Illuminate\Support\Facades\Exceptions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter;
 use Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect;
@@ -69,5 +71,34 @@ class RegistrationTest extends TestCase
         }
 
         $this->post(route('register'), $this->registration())->assertStatus(429);
+    }
+
+    public function testGooglesTestSecretIsReportedInProduction()
+    {
+        Exceptions::fake();
+        // Outside the testing environment Laravel checks CSRF again
+        $this->withoutMiddleware(VerifyCsrfToken::class);
+        $this->app['env'] = 'production';
+        config(['captcha.secret' => '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe']);
+        NoCaptcha::shouldReceive('verifyResponse')->andReturn(true);
+
+        $this->post(route('register'), $this->registration())->assertRedirect();
+        $this->post(route('register'), $this->registration(['email' => 'second@example.com']))->assertRedirect();
+
+        Exceptions::assertReported(fn (\RuntimeException $e) => str_contains($e->getMessage(), "Google's public test secret"));
+        Exceptions::assertReportedCount(1);
+    }
+
+    public function testTheRealSecretIsNotReported()
+    {
+        Exceptions::fake();
+        $this->withoutMiddleware(VerifyCsrfToken::class);
+        $this->app['env'] = 'production';
+        NoCaptcha::shouldReceive('verifyResponse')->andReturn(true);
+
+        $this->post(route('register'), $this->registration())->assertRedirect();
+        $this->assertAuthenticated();
+
+        Exceptions::assertNothingReported();
     }
 }
