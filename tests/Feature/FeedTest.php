@@ -40,7 +40,7 @@ class FeedTest extends TestCase
         App::setLocale('it');
 
         $this->view('inc.twitter', ['tweets' => collect()])
-            ->assertSee('Non ci sono ancora tweet in questa lingua.')
+            ->assertSee('Nessun post recente in questa lingua.')
             ->assertSee('Vedi i post in inglese')
             ->assertSee('/en"', false);
     }
@@ -48,7 +48,17 @@ class FeedTest extends TestCase
     public function testAnEmptyEnglishFeedDoesNotLinkToItself()
     {
         $this->view('inc.twitter', ['tweets' => collect()])
-            ->assertSee('No tweets in this language yet.')
+            ->assertSee('No recent posts in this language.')
             ->assertDontSee('See English posts');
+    }
+
+    public function testPostsOlderThanSixtyDaysAreLeftOut()
+    {
+        Tweet::factory()->create(['id' => '2001', 'lang' => 'en', 'date' => now()->subDays(59)]);
+        Tweet::factory()->create(['id' => '2002', 'lang' => 'en', 'date' => now()->subDays(61)]);
+
+        $tweets = (new FeedController)()->getData()['tweets'];
+
+        $this->assertEquals(['2001'], $tweets->pluck('id')->all());
     }
 }

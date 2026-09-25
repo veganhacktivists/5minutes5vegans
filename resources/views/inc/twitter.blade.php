@@ -43,7 +43,7 @@
         </a>
     @empty
         <div class="empty">
-            <p>@lang('No tweets in this language yet. Check back later.')</p>
+            <p>@lang('No recent posts in this language. Check back later.')</p>
             @unless (App::isLocale('en'))
                 <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="btn btn-primary swirvy-box">@lang('See English posts')</a>
             @endunless

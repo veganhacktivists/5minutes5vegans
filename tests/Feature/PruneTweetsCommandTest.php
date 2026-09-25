@@ -37,4 +37,14 @@ class PruneTweetsCommandTest extends TestCase
         $this->assertNotNull($event);
         $this->assertSame('0 0 * * *', $event->expression);
     }
+
+    public function testPostsTooOldForTheFeedAreDeleted()
+    {
+        Tweet::factory()->create(['id' => '3001', 'lang' => 'de', 'date' => now()->subDays(59)]);
+        Tweet::factory()->create(['id' => '3002', 'lang' => 'de', 'date' => now()->subDays(61)]);
+
+        $this->artisan('tweets:prune')->assertSuccessful();
+
+        $this->assertEquals(['3001'], Tweet::pluck('id')->all());
+    }
 }

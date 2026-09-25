@@ -5,7 +5,7 @@ This is the repository containing the language files for the 5 Minutes 5 Vegans 
 You will find three types of files in here:
  * Keyworded translations (\<lang\>/\<section\>.php)
  * Phrase translations (\<lang\>.json)
- * Tweet translations (\<lang\>/tweets.php)
+ * Reply translations (\<lang\>/tweets.php)
 
 ## Technical details
 These language files are either JSON or PHP files, which means that they are subject to certain technical requirements to be parsed correctly. 
@@ -23,12 +23,11 @@ This contains the various phrases and sentences used throughout the project. Whe
 ```
 Add your new translation at the end of the list and don't forget to add a comma after the last item. Make sure that all the data is wrapped within { and } brackets.
 
-## Tweet translations
-These translations have to be dynamic to bypass the Twitter spam filter when people keep copy-pasting them. To that end we use regular expressions (regex) to construct these translations. Regex is normally used for pattern matching, but we use it for text generation through patterns instead, this may be a bit confusing. The gist is that our project takes the regex pattern and generates a text at random that could be matched by it.
-For those unfamiliar with regex, these are the few things you should know to be able to do most translations:
- * A lot of non-alphanumeric characters have a meaning in regex, prefix them with a backslash (\\) to negate their meaning. The most common and overlooked ones are the period and the dash. `To co\-operate is a good idea\.`
- * Parentheses mark parts of the text as a group.
- * Suffixing an element with a question mark makes it optional. `Nice colou?r, you (guys )? are doing great!`
- * Pipes (|) can be used to seperate different items within a group to choose from. `That's a great (dish|recipe|meal)!`
- 
- When you want to add an entirely new sentence as a possibility, you can add it to the list it fits in, rather than using massive groups.
+## Reply translations
+These are the ready-made replies behind each topic. Each topic has a title, an icon and a `body` made of parts, usually an opener, a main message and a sign-off. Each part is a list of options. The site builds every combination of one option from each part, and each time someone picks the topic it hands out a different one, so people copying replies don't all post the same words.
+
+ * Write plain text. There's no special syntax any more.
+ * Every option in a part should read well next to every option in the other parts.
+ * Links go through `generate_and_cache_shlink('https://...')`, which turns them into short links.
+ * Every combination has to fit on X. A test checks this, counting each link as 23 characters.
+ * The site adds the #vegan hashtag itself, so leave it out.
