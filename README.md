@@ -29,6 +29,16 @@ composer install
 The site is then at http://localhost and MailHog at http://localhost:8025. Run
 the tests with `./vendor/bin/sail artisan test`.
 
+The browser tests (Playwright, in `tests/browser`) open the feed at desktop and
+phone sizes. They need the front end built, some posts (`sail artisan db:seed
+--class=TweetsTableSeeder`) and the replies (`sail artisan tweets:generate`).
+Then, from your machine:
+
+```
+pnpm exec playwright install chromium
+BASE_URL=http://localhost pnpm test:browser
+```
+
 Without PHP and Composer on your machine, run that first `composer install` in a
 container instead — see
 [Executing Composer Commands](https://laravel.com/docs/12.x/sail#executing-composer-commands).
