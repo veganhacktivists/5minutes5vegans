@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
@@ -37,13 +35,5 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-
-    /**
-     * Throttle failed logins per visitor, not per proxy (see AppServiceProvider).
-     */
-    protected function throttleKey(Request $request)
-    {
-        return Str::transliterate(Str::lower($request->input($this->username())).'|'.$request->visitorIp());
     }
 }
