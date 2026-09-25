@@ -5,5 +5,5 @@
   left out of what it records.
 --}}
 @if ($umamiWebsiteId = config('services.umami.website_id'))
-    <script defer src="{{ config('services.umami.script_url') }}" data-website-id="{{ $umamiWebsiteId }}" data-exclude-search="true"></script>
+    <script nonce="{{ Vite::cspNonce() }}" defer src="{{ config('services.umami.script_url') }}" data-website-id="{{ $umamiWebsiteId }}" data-exclude-search="true"></script>
 @endif

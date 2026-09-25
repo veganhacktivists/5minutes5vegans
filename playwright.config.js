@@ -6,6 +6,10 @@ const baseURL = process.env.BASE_URL || 'http://127.0.0.1:8123'
 export default defineConfig({
     testDir: 'tests/browser',
     forbidOnly: !!process.env.CI,
+    // Some pages load reCAPTCHA and fonts from other hosts. One retry in CI
+    // stops a network blip failing the build, and Playwright still reports
+    // the test as flaky.
+    retries: process.env.CI ? 1 : 0,
     reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : 'list',
     use: {
         baseURL,

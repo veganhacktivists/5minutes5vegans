@@ -155,6 +155,7 @@
 
 <script>
     import IconPicker from 'vanilla-icon-picker';
+    import { track } from '../track';
 // Constant list of character count threshould and their respective class names
 // Note: Make sure to keep these items from the lower threshold to the higher
 const CHARACTER_COUNT_STATES = [
@@ -302,6 +303,7 @@ export default {
 
         reword: function() {
             this.selected.body = this.nextWording(this.selected)
+            track('Reword', { topic: this.selected.title })
             clearTimeout(this.copyTimer)
             this.copyState = null
             this.characterCountdown()
@@ -403,10 +405,15 @@ export default {
                 await copyText(this.selected.body)
             } catch (error) {
                 this.clipboardErrorHandler(error)
+                track('Copy failed')
                 return
             }
 
             this.clipboardSuccessHandler()
+            // Only ready-made topics are named. Your own messages' titles are yours.
+            track('Copy reply', this.selected.variants
+                ? { topic: this.selected.title, kind: 'ready-made' }
+                : { kind: 'own' })
         },
 
         clipboardSuccessHandler() {

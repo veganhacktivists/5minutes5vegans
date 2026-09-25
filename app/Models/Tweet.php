@@ -22,6 +22,9 @@ class Tweet extends Model
 {
     use HasFactory;
 
+    // Older posts are too late to reply to, so the feed leaves them out
+    public const FEED_DAYS = 60;
+
     protected $guarded = [];
 
     protected $casts = [
@@ -45,5 +48,10 @@ class Tweet extends Model
     public function scopeTimeline(Builder $query, string $lang): void
     {
         $query->where('lang', $lang)->orderByDesc('id');
+    }
+
+    public function scopeRecent(Builder $query): void
+    {
+        $query->where('date', '>=', now()->subDays(self::FEED_DAYS));
     }
 }

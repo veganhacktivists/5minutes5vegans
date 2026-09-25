@@ -6,8 +6,7 @@
                     <img class="profile-pic"
                          alt=""
                          loading="lazy"
-                         src="{{ $tweet->from_profile_image }}"
-                         onerror="this.onerror = null; this.src='https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png'">
+                         src="{{ $tweet->from_profile_image }}">
 
                     <div class="user-info">
                         <span class="fullname">{{ $tweet->from_full_name }}</span>
@@ -43,7 +42,7 @@
         </a>
     @empty
         <div class="empty">
-            <p>@lang('No tweets in this language yet. Check back later.')</p>
+            <p>@lang('No recent posts in this language. Check back later.')</p>
             @unless (App::isLocale('en'))
                 <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="btn btn-primary swirvy-box">@lang('See English posts')</a>
             @endunless

@@ -29,12 +29,12 @@
       </div>
 
       <div class="account-links">
-         <a href="#" data-bs-toggle="modal" data-bs-target="#how-it-works" @click.prevent>{{ lang.howItWorks }}</a>
+         <a href="#" data-bs-toggle="modal" data-bs-target="#how-it-works" @click.prevent="track('How it works')">{{ lang.howItWorks }}</a>
          ·
          <template v-if="currentUser">
             <a href="#" @click.prevent="$emit('navigate', 'userEdit')">{{ lang.editProfile }}</a>
             ·
-            <a href="#" onclick="event.preventDefault(); $('#logout-form').submit();">{{ lang.logout }}</a>
+            <a href="#" @click.prevent="logout">{{ lang.logout }}</a>
          </template>
          <template v-else>
             <a :href="routes.login">{{ lang.login }}</a>
@@ -46,8 +46,18 @@
 </template>
 
 <script>
+import { track } from '../track'
+
 export default {
    props: ['custom'],
+
+   methods: {
+      track,
+
+      logout () {
+         document.getElementById('logout-form').submit()
+      },
+   },
 
    data () {
       return {

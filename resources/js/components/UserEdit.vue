@@ -23,6 +23,15 @@
             <input class="btn btn-large btn-primary swirvy-box ms-auto" type="submit" :value="lang.saveProfile">
          </div>
       </form>
+
+      <form class="delete-account mt-4" @submit.prevent="deleteAccount" ref="deleteAccountForm">
+         <h2 class="h6">{{ lang.deleteAccount }}</h2>
+         <p class="small mb-2">{{ lang.deleteAccountInfo }}</p>
+         <input class="form-control mb-1" required :placeholder="lang.currentPasswordOnly" :aria-label="lang.currentPasswordOnly" name="current_password" type="password" autocomplete="current-password">
+         <div class="d-flex">
+            <button class="btn btn-outline-danger ms-auto" type="submit">{{ lang.deleteAccountButton }}</button>
+         </div>
+      </form>
    </div>
 </template>
 
@@ -61,6 +70,17 @@ export default {
                form.password.value = ''
                form.password_confirmation.value = ''
                alert(this.lang.profileSaved)
+            })
+            .catch(this.failedRequest)
+      },
+
+      deleteAccount () {
+         if (!confirm(this.lang.confirmDeleteAccount)) return
+
+         const password = this.$refs.deleteAccountForm.current_password.value
+         axios.delete(this.routes['user.destroy'], { data: { current_password: password } })
+            .then(response => {
+               window.location = response.data.redirect
             })
             .catch(this.failedRequest)
       },

@@ -71,7 +71,7 @@
   "Save Profile": "Enregistrer le profil",
   "Project by": "Un projet de",
   "Forgot password?": "Mot de passe oublié ?",
-  "No tweets in this language yet. Check back later.": "Pas encore de tweets dans cette langue. Reviens plus tard.",
+  "No recent posts in this language. Check back later.": "Pas de posts récents dans cette langue. Reviens plus tard.",
   "Messages": "Messages",
   "Feed": "Fil",
   "New Password": "Nouveau mot de passe",
@@ -89,5 +89,10 @@
   "Couldn't copy. Select the text and copy it yourself.": "Impossible de copier. Sélectionne le texte et copie-le toi-même.",
   "characters left": "caractères restants",
   "Reword": "Reformuler",
-  "You can save up to :count messages.": "Tu peux enregistrer jusqu'à :count messages."
+  "You can save up to :count messages.": "Tu peux enregistrer jusqu'à :count messages.",
+  "Delete your account": "Supprimer ton compte",
+  "This deletes your account and the messages you've saved. It can't be undone.": "Cela supprime ton compte et les messages que tu as enregistrés. C'est irréversible.",
+  "Delete my account": "Supprimer mon compte",
+  "Delete your account and all your messages?": "Supprimer ton compte et tous tes messages ?",
+  "Current password": "Mot de passe actuel"
 }

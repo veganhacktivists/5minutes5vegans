@@ -109,7 +109,7 @@
     "Save Profile": "Salvar perfil",
     "Project by": "Um projeto de",
     "Forgot password?": "Esqueceu a senha?",
-    "No tweets in this language yet. Check back later.": "Ainda não há tweets neste idioma. Volte mais tarde.",
+    "No recent posts in this language. Check back later.": "Nenhum post recente neste idioma. Volte mais tarde.",
     "Messages": "Mensagens",
     "Feed": "Feed",
     "New Password": "Nova senha",
@@ -122,5 +122,10 @@
     "Couldn't copy. Select the text and copy it yourself.": "Não deu para copiar. Selecione o texto e copie você mesmo.",
     "characters left": "caracteres restantes",
     "Reword": "Reformular",
-    "You can save up to :count messages.": "Você pode salvar até :count mensagens."
+    "You can save up to :count messages.": "Você pode salvar até :count mensagens.",
+    "Delete your account": "Excluir sua conta",
+    "This deletes your account and the messages you've saved. It can't be undone.": "Isso exclui sua conta e as mensagens que você salvou. Não dá para desfazer.",
+    "Delete my account": "Excluir minha conta",
+    "Delete your account and all your messages?": "Excluir sua conta e todas as suas mensagens?",
+    "Current password": "Senha atual"
 }
