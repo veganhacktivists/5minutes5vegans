@@ -18,7 +18,8 @@ export default defineConfig({
         { name: 'phone', use: { ...devices['Pixel 7'] } },
     ],
     webServer: process.env.BASE_URL ? undefined : {
-        command: 'php artisan serve --host=127.0.0.1 --port=8123',
+        // --no-reload keeps CI's database settings and lets the workers start
+        command: 'php artisan serve --no-reload --host=127.0.0.1 --port=8123',
         url: `${baseURL}/en`,
         env: { PHP_CLI_SERVER_WORKERS: '4' },
         reuseExistingServer: !process.env.CI,
