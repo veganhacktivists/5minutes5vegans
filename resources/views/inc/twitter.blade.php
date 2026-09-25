@@ -6,8 +6,7 @@
                     <img class="profile-pic"
                          alt=""
                          loading="lazy"
-                         src="{{ $tweet->from_profile_image }}"
-                         onerror="this.onerror = null; this.src='https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png'">
+                         src="{{ $tweet->from_profile_image }}">
 
                     <div class="user-info">
                         <span class="fullname">{{ $tweet->from_full_name }}</span>

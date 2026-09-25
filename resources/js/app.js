@@ -185,9 +185,30 @@ function showPostAges() {
     })
 }
 
+// A missing avatar falls back to X's default picture. This was an inline
+// onerror, which the Content-Security-Policy doesn't allow.
+const DEFAULT_AVATAR = 'https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png'
+
+function useDefaultAvatar(img) {
+    if (img.dataset.fallback) return
+    img.dataset.fallback = 'yes'
+    img.src = DEFAULT_AVATAR
+}
+
+document.addEventListener('error', (event) => {
+    if (event.target instanceof HTMLImageElement && event.target.classList.contains('profile-pic')) {
+        useDefaultAvatar(event.target)
+    }
+}, true)
+
 $(() => {
     const timeline = document.querySelector('.timeline')
     if (!timeline) return
+
+    // Avatars that failed before this script ran
+    timeline.querySelectorAll('img.profile-pic').forEach((img) => {
+        if (img.complete && !img.naturalWidth) useDefaultAvatar(img)
+    })
 
     const opened = new Set(openedPosts())
     timeline.querySelectorAll('.card[data-post]').forEach((card) => {

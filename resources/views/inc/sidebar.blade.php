@@ -51,7 +51,7 @@
     $user = Auth::user();
 @endphp
 
-<script>
+<script nonce="{{ Vite::cspNonce() }}">
     var customVerbiages = @json($verbiages);
     var routes = @json($routes);
     var lang = @json($lang);

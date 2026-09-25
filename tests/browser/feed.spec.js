@@ -2,12 +2,16 @@ import { test as base, expect } from '@playwright/test'
 
 const LANGUAGES = ['en', 'de', 'es', 'fr', 'it', 'nl', 'pt']
 
-// Any uncaught error, or a failed request to the site itself, fails the test.
-// Other hosts (X avatars, fonts) are left out, since CI can't vouch for them.
+// Any uncaught error, Content-Security-Policy violation or failed request to
+// the site itself fails the test. Other hosts' failures (X avatars, fonts) are
+// left out, since CI can't vouch for them.
 const test = base.extend({
     problems: [async ({ page, baseURL }, use) => {
         const problems = []
         page.on('pageerror', (error) => problems.push(error.message))
+        page.on('console', (message) => {
+            if (message.text().includes('Content Security Policy')) problems.push(message.text())
+        })
         page.on('response', (response) => {
             if (response.url().startsWith(baseURL) && response.status() >= 400) {
                 problems.push(`${response.status()} ${response.url()}`)
@@ -115,6 +119,12 @@ test('the feed shows posts with how old they are', async ({ page }) => {
 
     const time = page.locator('.timeline .card time').first()
     await expect(time).toHaveText(/ago|now|yesterday/)
+})
+
+test('the register page loads, reCAPTCHA included', async ({ page }) => {
+    await page.goto('/en/register')
+
+    await expect(page.locator('input[name=password_confirmation]')).toBeVisible()
 })
 
 test('the login page loads', async ({ page }) => {

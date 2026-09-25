@@ -34,7 +34,7 @@
          <template v-if="currentUser">
             <a href="#" @click.prevent="$emit('navigate', 'userEdit')">{{ lang.editProfile }}</a>
             ·
-            <a href="#" onclick="event.preventDefault(); $('#logout-form').submit();">{{ lang.logout }}</a>
+            <a href="#" @click.prevent="logout">{{ lang.logout }}</a>
          </template>
          <template v-else>
             <a :href="routes.login">{{ lang.login }}</a>
@@ -53,6 +53,10 @@ export default {
 
    methods: {
       track,
+
+      logout () {
+         document.getElementById('logout-form').submit()
+      },
    },
 
    data () {
