@@ -71,6 +71,16 @@ class GenerateTweetsCommandTest extends TestCase
         Exceptions::assertReportedCount(1);
     }
 
+    public function testRunsDontOverlap()
+    {
+        $this->app->make(Kernel::class);
+        $event = collect($this->app->make(Schedule::class)->events())
+            ->first(fn ($event) => str_contains($event->command, 'tweets:generate'));
+
+        $this->assertTrue($event->withoutOverlapping);
+        $this->assertSame(10, $event->expiresAt);
+    }
+
     public function testFailuresEmailAtMostEverySixHours()
     {
         $this->app->make(Kernel::class);
