@@ -28,6 +28,7 @@
         'cancel' => __('Cancel'),
         'delete' => __('Delete'),
         'copy' => __('Copy message'),
+        'reword' => __('Reword'),
         'close' => __('Close'),
         'copied' => __('Copied!'),
         'copyHint' => __('Now open a post and paste this as your reply.'),
