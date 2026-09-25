@@ -89,6 +89,15 @@ class SeoTest extends TestCase
         $this->assertStringContainsString('data-exclude-search="true"', $html);
     }
 
+    public function testThePrivacyPolicyIsLinkedWithoutTheCookieBanner()
+    {
+        $this->assertStringContainsString('href="https://veganhacktivists.org/privacy-policy"', $this->page());
+
+        $this->artisan('migrate');
+        $feed = $this->get(route('feed'))->assertOk()->getContent();
+        $this->assertStringContainsString('href="https://veganhacktivists.org/privacy-policy"', $feed);
+    }
+
     public function testRobotsPointsAtTheSitemap()
     {
         $this->assertStringContainsString('Sitemap: https://5minutes5vegans.org/sitemap.xml', file_get_contents(public_path('robots.txt')));

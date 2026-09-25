@@ -5,6 +5,7 @@
     </div>
     <div class="col-12 col-md-6 text-center">
         @lang('Support us on') <a href="https://veganhacktivists.org/donate" target="_blank" class="lnk">veganhacktivists.org</a>
+        · <a href="https://veganhacktivists.org/privacy-policy" target="_blank" class="lnk">@lang('Privacy policy')</a>
     </div>
     </div>
 </div>

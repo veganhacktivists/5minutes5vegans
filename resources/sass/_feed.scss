@@ -371,10 +371,26 @@
 
         @include vh-credit;
 
+        .privacy-link {
+            margin-left: auto;
+            font-family: 'PT Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: $white;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
         .font-serif {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             column-gap: 6px;
+            row-gap: 4px;
+            min-width: 0;
             flex-grow: 2;
             font-family: 'Rajdhani', sans-serif;
             font-weight: 500;
