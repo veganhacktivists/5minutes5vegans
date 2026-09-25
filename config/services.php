@@ -58,4 +58,6 @@ return [
     // Read via config() so it survives `php artisan config:cache`.
     'api_key' => env('API_KEY'),
 
+    'coolify_proxy_ips' => array_values(array_filter(array_map('trim', explode(',', env('COOLIFY_PROXY_IPS', ''))))),
+
 ];
