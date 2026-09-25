@@ -43,7 +43,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^6.0.0
-        version: 6.0.8(vite@7.3.6(@types/node@24.0.14)(sass@1.102.0)(terser@5.43.1))(vue@3.5.41)
+        version: 6.0.9(vite@7.3.6(@types/node@24.0.14)(sass@1.102.0)(terser@5.43.1))(vue@3.5.41)
       laravel-vite-plugin:
         specifier: ^2.0.0
         version: 2.1.0(vite@7.3.6(@types/node@24.0.14)(sass@1.102.0)(terser@5.43.1))
@@ -458,8 +458,8 @@ packages:
   '@types/node@24.0.14':
     resolution: {integrity: sha512-4zXMWD91vBLGRtHK3YbIoFMia+1nqEz72coM42C5ETjnNCa/heoj7NT1G67iAfOqMmcfhuCZ4uNpyz8EjlAejw==}
 
-  '@vitejs/plugin-vue@6.0.8':
-    resolution: {integrity: sha512-0ZjgOg7oO6farnNGup7yvoM/YXZV84OZxHAwtflItNa/6zzQyVb5LNxyea3FEKEX2XlagIKzrlH7wwxkKgtiew==}
+  '@vitejs/plugin-vue@6.0.9':
+    resolution: {integrity: sha512-rD/MORlhaZMlXWW0rEn4FB4wMinWC0z/D7Ye160S5+Rs1mC8ZDAdcDp4SjKfUhG5t8q1ktcPVw4xuTkPRlzrSA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -1059,7 +1059,7 @@ snapshots:
       undici-types: 7.8.0
     optional: true
 
-  '@vitejs/plugin-vue@6.0.8(vite@7.3.6(@types/node@24.0.14)(sass@1.102.0)(terser@5.43.1))(vue@3.5.41)':
+  '@vitejs/plugin-vue@6.0.9(vite@7.3.6(@types/node@24.0.14)(sass@1.102.0)(terser@5.43.1))(vue@3.5.41)':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       vite: 7.3.6(@types/node@24.0.14)(sass@1.102.0)(terser@5.43.1)
