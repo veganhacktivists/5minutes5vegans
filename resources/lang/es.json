@@ -48,8 +48,8 @@
   "Restart timer": "Reiniciar el temporizador",
   "Time's up!": "¡Se acabó el tiempo!",
   "Donate": "Donar",
-  "Default": "Predeterminados",
-  "Customized": "Personalizados",
+  "Ready-made": "Preparados",
+  "Your own": "Tuyos",
   "Log in to write your own messages": "Inicia sesión para escribir tus propios mensajes",
   "Edit Profile": "Editar perfil",
   "Pick a topic above to get a message you can copy.": "Elige un tema arriba para obtener un mensaje que puedas copiar.",
@@ -81,5 +81,13 @@
   "PICK YOUR LANGUAGE": "ELIGE TU IDIOMA",
   "GET READY...": "PREPÁRATE...",
   "And take up the challenge!": "¡Y acepta el reto!",
-  "Create Account": "Crear cuenta"
+  "Create Account": "Crear cuenta",
+  "Privacy policy": "Política de privacidad",
+  "Opened": "Abierto",
+  "See English posts": "Ver posts en inglés",
+  "Now open a post and paste this as your reply.": "Ahora abre un post y pega esto como respuesta.",
+  "Couldn't copy. Select the text and copy it yourself.": "No se pudo copiar. Selecciona el texto y cópialo tú.",
+  "characters left": "caracteres restantes",
+  "Reword": "Reformular",
+  "You can save up to :count messages.": "Puedes guardar hasta :count mensajes."
 }

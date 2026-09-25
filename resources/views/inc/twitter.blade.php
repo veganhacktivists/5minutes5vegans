@@ -1,6 +1,6 @@
 <div class="timeline">
     @forelse ($tweets as $tweet)
-        <a class="card" href="https://x.com/{{ $tweet->from_user_name }}/status/{{ $tweet->id }}" target="_blank">
+        <a class="card" data-post="{{ $tweet->id }}" href="https://x.com/{{ $tweet->from_user_name }}/status/{{ $tweet->id }}" target="_blank">
             <div class="header">
                 <div class="avatar">
                     <img class="profile-pic"
@@ -36,9 +36,17 @@
                 </div>
             @endforeach
 
-            <p class="timestamp">{{ $tweet->date->format('h:i A · M d, Y') }}</p>
+            <p class="timestamp">
+                <time datetime="{{ $tweet->date->toIso8601String() }}">{{ $tweet->date->format('h:i A · M d, Y') }}</time>
+                <span class="opened-label"><i class="fas fa-check"></i> @lang('Opened')</span>
+            </p>
         </a>
     @empty
-        <div class="empty">@lang('No tweets in this language yet. Check back later.')</div>
+        <div class="empty">
+            <p>@lang('No tweets in this language yet. Check back later.')</p>
+            @unless (App::isLocale('en'))
+                <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="btn btn-primary swirvy-box">@lang('See English posts')</a>
+            @endunless
+        </div>
     @endforelse
 </div>

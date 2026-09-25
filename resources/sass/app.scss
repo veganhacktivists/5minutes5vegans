@@ -68,6 +68,11 @@ $xx-swirve: 22px;
 .swirvy-box {
     @extend .swirvy-box-left, .swirvy-box-right;
     outline: none;
+
+    &:focus-visible {
+        outline: 3px solid $dark-text;
+        outline-offset: 2px;
+    }
 }
 
 .col-xs-5ths,

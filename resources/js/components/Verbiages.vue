@@ -11,6 +11,7 @@
                 <button
                     type="button"
                     v-bind:class="{ active: selected.title == verbiage.title }"
+                    v-bind:aria-pressed="selected.title == verbiage.title"
                     class="verbiage-link"
                     >
                     <i :class="verbiage.icon" class="fa-fw"></i>
@@ -29,6 +30,7 @@
                     type="button"
                     v-if="selected != verbiage || !editing"
                     v-bind:class="{ active: selected.id == verbiage.id }"
+                    v-bind:aria-pressed="selected.id == verbiage.id"
                     class="verbiage-link"
                     >
                     <i :class="verbiage.icon"></i>
@@ -50,6 +52,7 @@
                         v-bind:disabled="busy"
                         class="form-control ms-2 bg-white"
                         type="text"
+                        maxlength="50"
                         style="width:220px;"
                         v-model="selected.title"
                         />
@@ -67,19 +70,36 @@
                         v-on:keyup="characterCountdown"
                         :placeholder="[[defaultMessage]]"
                         ></textarea>
-                    <small class="cc-count" :class="characterCountState">{{remainingCount}}</small>
-                    <button
-                        data-bs-toggle="tooltip"
-                        class="btn btn-link copy-btn"
-                        id="copy-btn"
-                        :aria-label="lang.copy"
-                        v-if="!editing"
-                        v-clipboard="() => selected.body"
-                        v-clipboard:success="clipboardSuccessHandler"
-                        v-clipboard:error="clipboardErrorHandler"
-                        >
-                        <i class="fa-fw fas fa-copy"></i>
-                    </button>
+                    <div class="msg-actions">
+                        <small class="cc-count" :class="characterCountState">
+                            {{ remainingCount }}<span class="visually-hidden"> {{ lang.charactersLeft }}</span>
+                        </small>
+                        <button
+                            type="button"
+                            class="btn btn-outline-primary reword-btn"
+                            v-if="!editing && selected.variants && selected.variants.length > 1"
+                            v-bind:aria-label="lang.reword"
+                            v-bind:title="lang.reword"
+                            v-on:click="reword"
+                            >
+                            <i class="fa-fw fas fa-random"></i>
+                            <span class="btn-label">{{ lang.reword }}</span>
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary copy-btn"
+                            v-if="!editing"
+                            v-bind:disabled="!selected.body"
+                            v-on:click="copyMessage"
+                            >
+                            <i class="fa-fw fas" :class="copyState === 'copied' ? 'fa-check' : 'fa-copy'"></i>
+                            {{ copyState === 'copied' ? lang.copied : lang.copy }}
+                        </button>
+                    </div>
+                    <p class="copy-hint" :class="{ 'copy-failed': copyState === 'failed' }" aria-live="polite">
+                        <template v-if="copyState === 'copied'">{{ lang.copyHint }}</template>
+                        <template v-else-if="copyState === 'failed'">{{ lang.copyFailed }}</template>
+                    </p>
                     <button
                         class="btn btn-link close-btn"
                         :aria-label="lang.close"
@@ -145,16 +165,47 @@ const CHARACTER_COUNT_STATES = [
 ]
 
 // Count the way X does: every link is 23 characters, emoji and most non-Latin
-// characters are 2, everything else is 1
+// characters are 2, everything else is 1. Browsers without Intl.Segmenter count
+// code points instead, which only differs for emoji built from several parts.
+const segmenter = typeof Intl !== 'undefined' && Intl.Segmenter ? new Intl.Segmenter() : null
+const PICTOGRAPHIC = /\p{Extended_Pictographic}/u
+
 function xLength(text) {
     const withoutLinks = text.replace(/https?:\/\/\S+/g, 'x'.repeat(23))
+    const segments = segmenter
+        ? Array.from(segmenter.segment(withoutLinks), (part) => part.segment)
+        : Array.from(withoutLinks)
     let length = 0
-    for (const { segment } of new Intl.Segmenter().segment(withoutLinks)) {
+    for (const segment of segments) {
         const cp = segment.codePointAt(0)
         const single = cp <= 4351 || (cp >= 8192 && cp <= 8205) || (cp >= 8208 && cp <= 8223) || (cp >= 8242 && cp <= 8247)
-        length += single && !/\p{Extended_Pictographic}/u.test(segment) ? 1 : 2
+        length += single && !PICTOGRAPHIC.test(segment) ? 1 : 2
     }
     return length
+}
+
+// The Clipboard API needs https or localhost, and some browsers refuse it
+// without a permission. Then select the text in a hidden box and copy that.
+async function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+        try {
+            await navigator.clipboard.writeText(text)
+            return
+        } catch {
+            // Try the older way below
+        }
+    }
+
+    const area = document.createElement('textarea')
+    area.value = text
+    area.setAttribute('readonly', '')
+    area.style.cssText = 'position: fixed; opacity: 0; pointer-events: none;'
+    document.body.appendChild(area)
+    area.select()
+    const copied = document.execCommand('copy')
+    area.remove()
+
+    if (!copied) throw new Error('The browser refused to copy')
 }
 
 function setVueModel(obj, str, val) {
@@ -191,10 +242,12 @@ export default {
             lang: window.lang,
             characterCountState: 'cc-is-fine',
             verbiageMsgToggled: false,
+            copyState: null, // 'copied' or 'failed' for a few seconds after a copy
         }
     },
 
     created: function() {
+        this.decks = {} // for each ready-made topic, the wordings not yet handed out
         this.loadDefaultVerbiages()
     },
 
@@ -233,11 +286,43 @@ export default {
         },
 
         selectVerbiage: function(verbiage) {
-            if (!this.editing) this.selected = verbiage
+            if (!this.editing) {
+                // Every pick of a ready-made topic gets a fresh wording
+                if (verbiage.variants) verbiage.body = this.nextWording(verbiage)
+                this.selected = verbiage
+            }
+            clearTimeout(this.copyTimer)
+            clearTimeout(this.collapseTimer)
+            this.copyState = null
 
             // Trigger character count calculation when choosing a predefined answer
             this.characterCountdown()
             this.toggleVerbiageMsg(true)
+        },
+
+        reword: function() {
+            this.selected.body = this.nextWording(this.selected)
+            clearTimeout(this.copyTimer)
+            this.copyState = null
+            this.characterCountdown()
+        },
+
+        // Hand out a topic's wordings in random order, and all of them before
+        // any comes round again, so nobody posts the same reply twice in a row
+        nextWording: function(verbiage) {
+            const variants = verbiage.variants
+            let deck = this.decks[verbiage.title]
+
+            if (!deck || !deck.length) {
+                deck = variants.map((_, i) => i)
+                for (let i = deck.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1))
+                    ;[deck[i], deck[j]] = [deck[j], deck[i]]
+                }
+                this.decks[verbiage.title] = deck
+            }
+
+            return variants[deck.pop()]
         },
 
         toggleVerbiageMsg: function(toState) {
@@ -313,20 +398,40 @@ export default {
             console.error(r)
         },
 
-        clipboardSuccessHandler() {
-            $('#copy-btn').tooltip({
-                title: this.lang.copied,
-            })
-            $('#copy-btn').tooltip('toggle')
-            setTimeout(() => $('#copy-btn').tooltip('dispose'), 2000)
+        copyMessage: async function() {
+            try {
+                await copyText(this.selected.body)
+            } catch (error) {
+                this.clipboardErrorHandler(error)
+                return
+            }
 
-            this.hideVerbiageMsg()
+            this.clipboardSuccessHandler()
         },
 
-        clipboardErrorHandler({ value, event }) {
-            console.error('Unable to copy to clipboard.')
+        clipboardSuccessHandler() {
+            this.showCopyState('copied')
 
-            this.hideVerbiageMsg()
+            // On phones the box covers part of the feed. Once the copy has
+            // registered, tuck it away and go to the posts, the next step.
+            if (this.verbiageMsgToggled) {
+                this.collapseTimer = setTimeout(() => {
+                    this.hideVerbiageMsg()
+                    window.mySwiper?.slideTo(1)
+                }, 1200)
+            }
+        },
+
+        // The box stays open so the text can be selected and copied by hand
+        clipboardErrorHandler(error) {
+            console.error('Unable to copy to clipboard.', error)
+            this.showCopyState('failed')
+        },
+
+        showCopyState: function(state) {
+            clearTimeout(this.copyTimer)
+            this.copyState = state
+            this.copyTimer = setTimeout(() => (this.copyState = null), 4000)
         },
 
         characterCountdown: function() {

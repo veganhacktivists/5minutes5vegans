@@ -16,7 +16,9 @@ class CheckApiKey
     public function handle(Request $request, Closure $next): Response
     {
         $expected = config('services.api_key');
-        $apiKey = $request->all()['api-key'] ?? $request->header('X-API-KEY');
+        // Only the header. A key in the query string or body would end up in
+        // access logs, and the bot sends the header.
+        $apiKey = $request->header('X-API-KEY');
 
         // Reject when no key is configured (e.g. API_KEY empty or absent under
         // config:cache) so a null/empty supplied key can never authenticate.

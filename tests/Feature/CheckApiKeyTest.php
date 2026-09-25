@@ -60,6 +60,15 @@ class CheckApiKeyTest extends TestCase
         $this->assertDatabaseHas('tweets', ['id' => '1', 'lang' => 'en']);
     }
 
+    /** A key anywhere but the header is ignored, so it can't leak into access logs. */
+    public function testIgnoresAKeyOutsideTheHeader()
+    {
+        config(['services.api_key' => 'correct-secret']);
+
+        $this->postJson(route('tweets.store').'?api-key=correct-secret', $this->payload)->assertStatus(401);
+        $this->postJson(route('tweets.store'), ['api-key' => 'correct-secret'] + $this->payload)->assertStatus(401);
+    }
+
     /** Any configured locale is accepted, and an unknown one is rejected. */
     public function testAcceptsOnlyConfiguredLanguages()
     {

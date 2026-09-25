@@ -88,8 +88,8 @@
     "Whoops, something went wrong on our servers.": "Ops, algo deu errado em nossos servidores.",
     "Restart timer": "Reiniciar o cronômetro",
     "Time's up!": "O tempo acabou!",
-    "Default": "Padrão",
-    "Customized": "Personalizados",
+    "Ready-made": "Prontos",
+    "Your own": "Seus",
     "Log in to write your own messages": "Entre para escrever suas próprias mensagens",
     "Edit Profile": "Editar perfil",
     "Pick a topic above to get a message you can copy.": "Escolha um tema acima para receber uma mensagem que você pode copiar.",
@@ -114,5 +114,13 @@
     "Feed": "Feed",
     "New Password": "Nova senha",
     "The messages didn't load. Refresh the page to try again.": "As mensagens não carregaram. Atualize a página para tentar de novo.",
-    "Current password (needed to change your email or password)": "Senha atual (necessária para alterar o e-mail ou a senha)"
+    "Current password (needed to change your email or password)": "Senha atual (necessária para alterar o e-mail ou a senha)",
+    "Privacy policy": "Política de privacidade",
+    "Opened": "Aberto",
+    "See English posts": "Ver posts em inglês",
+    "Now open a post and paste this as your reply.": "Agora abra um post e cole isto como resposta.",
+    "Couldn't copy. Select the text and copy it yourself.": "Não deu para copiar. Selecione o texto e copie você mesmo.",
+    "characters left": "caracteres restantes",
+    "Reword": "Reformular",
+    "You can save up to :count messages.": "Você pode salvar até :count mensagens."
 }

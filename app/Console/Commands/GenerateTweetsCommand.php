@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App;
-use App\Services\TweetRegexService;
+use App\Services\TweetGenerator;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Console\Command;
 
@@ -40,7 +40,7 @@ class GenerateTweetsCommand extends Command
      *
      * @return int
      */
-    public function handle(TweetRegexService $tweetRegexService)
+    public function handle(TweetGenerator $generator)
     {
         $languages = array_keys(config('laravellocalization.supportedLocales'));
         $failed = [];
@@ -54,14 +54,19 @@ class GenerateTweetsCommand extends Command
                 $localizedTweets = __('tweets'); // takes some time, in order to generate short URLs.
                 echo "tweets localized ($language) \n";
 
-                $tweets = $tweetRegexService->generate_tweets($localizedTweets);
+                $tweets = $generator->generate($localizedTweets);
                 echo "tweets generated ($language) \n";
 
                 Cache::put($key, $tweets, self::NUM_SECONDS_TO_CACHE);
                 \Log::info('Finished Generating tweets', ['lang' => $language]);
             } catch (\Throwable $e) {
                 $failed[] = $language;
-                report(new \RuntimeException("Could not generate tweets ($language)", 0, $e));
+
+                // Once an hour per language, so an outage doesn't send Sentry an event a minute
+                if (Cache::add("tweets-generate-reported-$language", true, now()->addHour())) {
+                    report(new \RuntimeException("Could not generate tweets ($language)", 0, $e));
+                }
+
                 $this->error("Could not generate tweets ($language): {$e->getMessage()}");
             }
         }
