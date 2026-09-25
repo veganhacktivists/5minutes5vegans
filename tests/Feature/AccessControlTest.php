@@ -98,4 +98,31 @@ class AccessControlTest extends TestCase
         $response->assertOk()->assertJson(['success' => true]);
         $this->assertDatabaseMissing('verbiages', ['id' => $verbiage->id]);
     }
+
+    /** Titles and bodies have a maximum length, so nothing reaches the database's own limits. */
+    public function testVerbiagesHaveLengthLimits()
+    {
+        $user = User::factory()->create();
+        $valid = ['title' => str_repeat('t', 50), 'icon' => 'fas fa-leaf', 'body' => str_repeat('b', 1000)];
+
+        $this->actingAs($user)->postJson(route('verbiage.store'), $valid)->assertOk();
+        $this->actingAs($user)->postJson(route('verbiage.store'), ['title' => str_repeat('t', 51)] + $valid)
+            ->assertStatus(422)->assertJsonValidationErrors('title');
+        $this->actingAs($user)->postJson(route('verbiage.store'), ['body' => str_repeat('b', 1001)] + $valid)
+            ->assertStatus(422)->assertJsonValidationErrors('body');
+    }
+
+    /** One account can keep 50 messages. */
+    public function testAUserCanKeepFiftyVerbiages()
+    {
+        $user = User::factory()->create();
+        Verbiage::factory()->count(49)->create(['user_id' => $user->id]);
+        $new = ['title' => 'Mine', 'icon' => 'fas fa-leaf', 'body' => 'Hello'];
+
+        $this->actingAs($user)->postJson(route('verbiage.store'), $new)->assertOk();
+        $this->actingAs($user)->postJson(route('verbiage.store'), $new)
+            ->assertStatus(422)
+            ->assertJson(['message' => 'You can save up to 50 messages.']);
+        $this->assertSame(50, $user->verbiages()->count());
+    }
 }

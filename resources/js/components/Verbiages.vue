@@ -52,6 +52,7 @@
                         v-bind:disabled="busy"
                         class="form-control ms-2 bg-white"
                         type="text"
+                        maxlength="50"
                         style="width:220px;"
                         v-model="selected.title"
                         />
