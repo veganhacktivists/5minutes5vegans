@@ -75,6 +75,17 @@
                         </small>
                         <button
                             type="button"
+                            class="btn btn-outline-primary reword-btn"
+                            v-if="!editing && selected.variants && selected.variants.length > 1"
+                            v-bind:aria-label="lang.reword"
+                            v-bind:title="lang.reword"
+                            v-on:click="reword"
+                            >
+                            <i class="fa-fw fas fa-random"></i>
+                            <span class="btn-label">{{ lang.reword }}</span>
+                        </button>
+                        <button
+                            type="button"
                             class="btn btn-primary copy-btn"
                             v-if="!editing"
                             v-bind:disabled="!selected.body"
@@ -213,6 +224,7 @@ export default {
     },
 
     created: function() {
+        this.decks = {} // for each ready-made topic, the wordings not yet handed out
         this.loadDefaultVerbiages()
     },
 
@@ -251,7 +263,11 @@ export default {
         },
 
         selectVerbiage: function(verbiage) {
-            if (!this.editing) this.selected = verbiage
+            if (!this.editing) {
+                // Every pick of a ready-made topic gets a fresh wording
+                if (verbiage.variants) verbiage.body = this.nextWording(verbiage)
+                this.selected = verbiage
+            }
             clearTimeout(this.copyTimer)
             clearTimeout(this.collapseTimer)
             this.copyState = null
@@ -259,6 +275,31 @@ export default {
             // Trigger character count calculation when choosing a predefined answer
             this.characterCountdown()
             this.toggleVerbiageMsg(true)
+        },
+
+        reword: function() {
+            this.selected.body = this.nextWording(this.selected)
+            clearTimeout(this.copyTimer)
+            this.copyState = null
+            this.characterCountdown()
+        },
+
+        // Hand out a topic's wordings in random order, and all of them before
+        // any comes round again, so nobody posts the same reply twice in a row
+        nextWording: function(verbiage) {
+            const variants = verbiage.variants
+            let deck = this.decks[verbiage.title]
+
+            if (!deck || !deck.length) {
+                deck = variants.map((_, i) => i)
+                for (let i = deck.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1))
+                    ;[deck[i], deck[j]] = [deck[j], deck[i]]
+                }
+                this.decks[verbiage.title] = deck
+            }
+
+            return variants[deck.pop()]
         },
 
         toggleVerbiageMsg: function(toState) {

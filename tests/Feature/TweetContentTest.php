@@ -53,37 +53,20 @@ class TweetContentTest extends TestCase
         }
     }
 
-    public function testEveryPossibleReplyFitsOnX()
+    public function testEveryReplyThePageCanGetFitsOnX()
     {
         $generator = new TweetGenerator;
 
         foreach ($this->topicsByLocale() as $locale => $topics) {
-            foreach ($topics as $topic) {
-                foreach ($this->combinations($topic['body']) as $parts) {
-                    $reply = $generator->tag(implode(' ', $parts));
+            foreach ($generator->generate($topics) as $i => $topic) {
+                $this->assertCount(count($generator->combinations($topics[$i]['body'])), $topic['variants'], "$locale {$topic['title']}");
+                $this->assertContains($topic['body'], $topic['variants']);
 
+                foreach ($topic['variants'] as $reply) {
                     $this->assertLessThanOrEqual(self::X_LIMIT, $this->xLength($reply), "$locale {$topic['title']}: $reply");
                 }
             }
         }
-    }
-
-    /** Every way of picking one option from each part. */
-    private function combinations(array $parts): array
-    {
-        $combos = [[]];
-
-        foreach ($parts as $options) {
-            $next = [];
-            foreach ($combos as $combo) {
-                foreach ($options as $option) {
-                    $next[] = [...$combo, $option];
-                }
-            }
-            $combos = $next;
-        }
-
-        return $combos;
     }
 
     /** Length as X counts it: every link is 23, emoji are 2, most other characters 1. */

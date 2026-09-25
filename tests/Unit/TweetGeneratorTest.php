@@ -7,19 +7,25 @@ use PHPUnit\Framework\TestCase;
 
 class TweetGeneratorTest extends TestCase
 {
-    public function testItPicksOneOptionFromEachPart()
+    public function testItBuildsEveryWordingOfATopic()
     {
         $topics = [[
             'icon' => 'fas fa-leaf',
             'title' => 'Test',
-            'body' => [['Hi!'], ['Going vegan is easy.', 'Going vegan is fun.'], ['Good luck!']],
+            'body' => [['Hi!', 'Hey!'], ['Going vegan is easy.', 'Going vegan is fun.'], ['Good luck!']],
         ]];
 
         $reply = (new TweetGenerator)->generate($topics)[0];
 
         $this->assertSame('Test', $reply['title']);
         $this->assertSame('fas fa-leaf', $reply['icon']);
-        $this->assertContains($reply['body'], ['Hi! Going #vegan is easy. Good luck!', 'Hi! Going #vegan is fun. Good luck!']);
+        $this->assertSame([
+            'Hi! Going #vegan is easy. Good luck!',
+            'Hi! Going #vegan is fun. Good luck!',
+            'Hey! Going #vegan is easy. Good luck!',
+            'Hey! Going #vegan is fun. Good luck!',
+        ], $reply['variants']);
+        $this->assertContains($reply['body'], $reply['variants']);
     }
 
     public function testItTagsOnlyTheFirstStandaloneVegan()

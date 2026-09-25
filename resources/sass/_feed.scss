@@ -319,16 +319,27 @@
 
     .msg-actions {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: flex-end;
         gap: 12px;
         margin-top: 8px;
     }
 
-    .copy-btn {
+    .copy-btn,
+    .reword-btn {
         font-size: 16px;
         font-weight: bold;
         white-space: nowrap;
+    }
+
+    // Phones only have room for the icon
+    .reword-btn .btn-label {
+        display: none;
+
+        @include for-sm-tablet-portrait-up {
+            display: inline;
+        }
     }
 
     .copy-hint {
@@ -477,6 +488,7 @@
             a {
                 font-size: 16px;
                 text-decoration: underline;
+                white-space: nowrap;
             }
         }
     }
