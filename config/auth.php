@@ -97,6 +97,9 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+            // Seconds before another reset email can go to the same address.
+            // Laravel treats a missing value as no limit.
+            'throttle' => 60,
         ],
     ],
 
