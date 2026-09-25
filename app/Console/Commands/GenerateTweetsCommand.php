@@ -61,7 +61,12 @@ class GenerateTweetsCommand extends Command
                 \Log::info('Finished Generating tweets', ['lang' => $language]);
             } catch (\Throwable $e) {
                 $failed[] = $language;
-                report(new \RuntimeException("Could not generate tweets ($language)", 0, $e));
+
+                // Once an hour per language, so an outage doesn't send Sentry an event a minute
+                if (Cache::add("tweets-generate-reported-$language", true, now()->addHour())) {
+                    report(new \RuntimeException("Could not generate tweets ($language)", 0, $e));
+                }
+
                 $this->error("Could not generate tweets ($language): {$e->getMessage()}");
             }
         }
