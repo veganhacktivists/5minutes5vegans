@@ -31,15 +31,51 @@ class SeoTest extends TestCase
         $this->assertStringContainsString('hreflang="x-default"', $html);
     }
 
-    public function testAnalyticsWaitsForConsent()
+    public function testAlternatesLeaveOutTheQueryString()
     {
         $this->withoutVite();
         $this->withoutMiddleware([LaravelLocalizationRedirectFilter::class, LocaleSessionRedirect::class]);
 
-        $html = $this->get(route('login'))->assertOk()->getContent();
+        $html = $this->get(route('login').'?utm_source=newsletter')->assertOk()->getContent();
 
-        $this->assertStringNotContainsString('<script async src="https://www.googletagmanager.com', $html);
-        $this->assertStringContainsString('id="cookie-consent"', $html);
+        preg_match_all('/<link rel="alternate" hreflang="[^"]+" href="([^"]+)"/', $html, $matches);
+        $this->assertCount(count(config('laravellocalization.supportedLocales')) + 1, $matches[1]);
+        foreach ($matches[1] as $href) {
+            $this->assertStringNotContainsString('?', $href);
+        }
+    }
+
+    public function testTheSitemapSetsNoCookies()
+    {
+        $this->assertEmpty($this->get('/sitemap.xml')->headers->getCookies());
+    }
+
+    private function page(): string
+    {
+        $this->withoutVite();
+        $this->withoutMiddleware([LaravelLocalizationRedirectFilter::class, LocaleSessionRedirect::class]);
+
+        return $this->get(route('login'))->assertOk()->getContent();
+    }
+
+    public function testThereIsNoGoogleAnalytics()
+    {
+        $html = $this->page();
+
+        $this->assertStringNotContainsString('googletagmanager', $html);
+        $this->assertStringNotContainsString('gtag(', $html);
+    }
+
+    public function testUmamiLoadsOnlyOnceConfigured()
+    {
+        $this->assertStringNotContainsString('data-website-id', $this->page());
+
+        config(['services.umami.website_id' => 'abc-123']);
+        $html = $this->page();
+
+        $this->assertStringContainsString('src="https://analytics.veganhacktivists.org/script.js"', $html);
+        $this->assertStringContainsString('data-website-id="abc-123"', $html);
+        $this->assertStringContainsString('data-exclude-search="true"', $html);
     }
 
     public function testRobotsPointsAtTheSitemap()

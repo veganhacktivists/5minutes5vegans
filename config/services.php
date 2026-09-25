@@ -48,6 +48,12 @@ return [
         'api_key' => env('SHLINK_API_KEY'),
     ],
 
+    // Umami, self-hosted by Vegan Hacktivists. Nothing loads until a website id is set.
+    'umami' => [
+        'website_id' => env('UMAMI_WEBSITE_ID'),
+        'script_url' => env('UMAMI_SCRIPT_URL', 'https://analytics.veganhacktivists.org/script.js'),
+    ],
+
     // API key guarding the tweet-ingest endpoint (POST /api/tweets).
     // Read via config() so it survives `php artisan config:cache`.
     'api_key' => env('API_KEY'),
