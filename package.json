@@ -3,9 +3,11 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "test:browser": "playwright test"
     },
     "devDependencies": {
+        "@playwright/test": "^1.62.0",
         "@vitejs/plugin-vue": "^6.0.0",
         "laravel-vite-plugin": "^2.0.0",
         "sass": "^1.89.2",
