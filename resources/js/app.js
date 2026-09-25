@@ -132,6 +132,77 @@ $(() => {
     })
 })
 
+/*******************************************
+ * Post ages, and the posts already opened *
+ *******************************************/
+const OPENED_POSTS_KEY = 'opened-posts'
+const OPENED_POSTS_LIMIT = 200
+
+// Browsers can refuse storage (private windows, blocked site data), so every
+// read and write is allowed to fail
+function openedPosts() {
+    try {
+        return JSON.parse(localStorage.getItem(OPENED_POSTS_KEY)) || []
+    } catch {
+        return []
+    }
+}
+
+function rememberOpened(id) {
+    const opened = openedPosts().filter((other) => other !== id)
+    opened.push(id)
+    try {
+        localStorage.setItem(OPENED_POSTS_KEY, JSON.stringify(opened.slice(-OPENED_POSTS_LIMIT)))
+    } catch {}
+}
+
+// "12 minutes ago" in the page's language. The server's own text stays as the
+// fallback, and the full local time goes in the tooltip.
+function showPostAges() {
+    if (typeof Intl === 'undefined' || !Intl.RelativeTimeFormat) return
+
+    const lang = document.documentElement.lang
+    const relative = new Intl.RelativeTimeFormat(lang, { numeric: 'auto' })
+    const now = Date.now()
+
+    document.querySelectorAll('.timeline time[datetime]').forEach((time) => {
+        const date = new Date(time.getAttribute('datetime'))
+        const minutes = Math.round((now - date) / 60000)
+        if (Number.isNaN(minutes)) return
+
+        if (minutes < 1) time.textContent = relative.format(0, 'second')
+        else if (minutes < 60) time.textContent = relative.format(-minutes, 'minute')
+        else if (minutes < 60 * 24) time.textContent = relative.format(-Math.round(minutes / 60), 'hour')
+        else time.textContent = relative.format(-Math.round(minutes / (60 * 24)), 'day')
+
+        time.title = date.toLocaleString(lang, { dateStyle: 'medium', timeStyle: 'short' })
+    })
+}
+
+$(() => {
+    const timeline = document.querySelector('.timeline')
+    if (!timeline) return
+
+    const opened = new Set(openedPosts())
+    timeline.querySelectorAll('.card[data-post]').forEach((card) => {
+        card.classList.toggle('opened', opened.has(card.dataset.post))
+    })
+
+    // auxclick catches a middle click, which also opens the post
+    const markOpened = (event) => {
+        const card = event.target.closest('.card[data-post]')
+        if (!card || (event.type === 'auxclick' && event.button !== 1)) return
+
+        card.classList.add('opened')
+        rememberOpened(card.dataset.post)
+    }
+    timeline.addEventListener('click', markOpened)
+    timeline.addEventListener('auxclick', markOpened)
+
+    showPostAges()
+    setInterval(showPostAges, 60000)
+})
+
 /************************************
  * Script to reset the timer *
  ************************************/

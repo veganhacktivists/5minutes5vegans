@@ -11,6 +11,7 @@
                 <button
                     type="button"
                     v-bind:class="{ active: selected.title == verbiage.title }"
+                    v-bind:aria-pressed="selected.title == verbiage.title"
                     class="verbiage-link"
                     >
                     <i :class="verbiage.icon" class="fa-fw"></i>
@@ -29,6 +30,7 @@
                     type="button"
                     v-if="selected != verbiage || !editing"
                     v-bind:class="{ active: selected.id == verbiage.id }"
+                    v-bind:aria-pressed="selected.id == verbiage.id"
                     class="verbiage-link"
                     >
                     <i :class="verbiage.icon"></i>
@@ -67,19 +69,27 @@
                         v-on:keyup="characterCountdown"
                         :placeholder="[[defaultMessage]]"
                         ></textarea>
-                    <small class="cc-count" :class="characterCountState">{{remainingCount}}</small>
-                    <button
-                        data-bs-toggle="tooltip"
-                        class="btn btn-link copy-btn"
-                        id="copy-btn"
-                        :aria-label="lang.copy"
-                        v-if="!editing"
-                        v-clipboard="() => selected.body"
-                        v-clipboard:success="clipboardSuccessHandler"
-                        v-clipboard:error="clipboardErrorHandler"
-                        >
-                        <i class="fa-fw fas fa-copy"></i>
-                    </button>
+                    <div class="msg-actions">
+                        <small class="cc-count" :class="characterCountState">
+                            {{ remainingCount }}<span class="visually-hidden"> {{ lang.charactersLeft }}</span>
+                        </small>
+                        <button
+                            type="button"
+                            class="btn btn-primary copy-btn"
+                            v-if="!editing"
+                            v-bind:disabled="!selected.body"
+                            v-clipboard="() => selected.body"
+                            v-clipboard:success="clipboardSuccessHandler"
+                            v-clipboard:error="clipboardErrorHandler"
+                            >
+                            <i class="fa-fw fas" :class="copyState === 'copied' ? 'fa-check' : 'fa-copy'"></i>
+                            {{ copyState === 'copied' ? lang.copied : lang.copy }}
+                        </button>
+                    </div>
+                    <p class="copy-hint" :class="{ 'copy-failed': copyState === 'failed' }" aria-live="polite">
+                        <template v-if="copyState === 'copied'">{{ lang.copyHint }}</template>
+                        <template v-else-if="copyState === 'failed'">{{ lang.copyFailed }}</template>
+                    </p>
                     <button
                         class="btn btn-link close-btn"
                         :aria-label="lang.close"
@@ -198,6 +208,7 @@ export default {
             lang: window.lang,
             characterCountState: 'cc-is-fine',
             verbiageMsgToggled: false,
+            copyState: null, // 'copied' or 'failed' for a few seconds after a copy
         }
     },
 
@@ -241,6 +252,9 @@ export default {
 
         selectVerbiage: function(verbiage) {
             if (!this.editing) this.selected = verbiage
+            clearTimeout(this.copyTimer)
+            clearTimeout(this.collapseTimer)
+            this.copyState = null
 
             // Trigger character count calculation when choosing a predefined answer
             this.characterCountdown()
@@ -321,19 +335,28 @@ export default {
         },
 
         clipboardSuccessHandler() {
-            $('#copy-btn').tooltip({
-                title: this.lang.copied,
-            })
-            $('#copy-btn').tooltip('toggle')
-            setTimeout(() => $('#copy-btn').tooltip('dispose'), 2000)
+            this.showCopyState('copied')
 
-            this.hideVerbiageMsg()
+            // On phones the box covers part of the feed. Once the copy has
+            // registered, tuck it away and go to the posts, the next step.
+            if (this.verbiageMsgToggled) {
+                this.collapseTimer = setTimeout(() => {
+                    this.hideVerbiageMsg()
+                    window.mySwiper?.slideTo(1)
+                }, 1200)
+            }
         },
 
-        clipboardErrorHandler({ value, event }) {
+        // The box stays open so the text can be selected and copied by hand
+        clipboardErrorHandler() {
             console.error('Unable to copy to clipboard.')
+            this.showCopyState('failed')
+        },
 
-            this.hideVerbiageMsg()
+        showCopyState: function(state) {
+            clearTimeout(this.copyTimer)
+            this.copyState = state
+            this.copyTimer = setTimeout(() => (this.copyState = null), 4000)
         },
 
         characterCountdown: function() {

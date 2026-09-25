@@ -88,8 +88,8 @@
     "Whoops, something went wrong on our servers.": "Oeps, er ging iets mis op onze servers.",
     "Restart timer": "Timer opnieuw starten",
     "Time's up!": "De tijd is om!",
-    "Default": "Standaard",
-    "Customized": "Eigen",
+    "Ready-made": "Kant-en-klaar",
+    "Your own": "Eigen",
     "Log in to write your own messages": "Log in om je eigen berichten te schrijven",
     "Edit Profile": "Profiel bewerken",
     "Pick a topic above to get a message you can copy.": "Kies hierboven een onderwerp om een bericht te krijgen dat je kunt kopiëren.",
@@ -115,5 +115,10 @@
     "New Password": "Nieuw wachtwoord",
     "The messages didn't load. Refresh the page to try again.": "De berichten zijn niet geladen. Vernieuw de pagina om het opnieuw te proberen.",
     "Current password (needed to change your email or password)": "Huidig wachtwoord (nodig om je e-mailadres of wachtwoord te wijzigen)",
-    "Privacy policy": "Privacybeleid"
+    "Privacy policy": "Privacybeleid",
+    "Opened": "Geopend",
+    "See English posts": "Bekijk Engelse posts",
+    "Now open a post and paste this as your reply.": "Open nu een post en plak dit als je antwoord.",
+    "Couldn't copy. Select the text and copy it yourself.": "Kopiëren is niet gelukt. Selecteer de tekst en kopieer hem zelf.",
+    "characters left": "tekens over"
 }

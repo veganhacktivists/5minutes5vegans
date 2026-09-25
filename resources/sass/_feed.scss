@@ -314,14 +314,36 @@
     margin-top: 1rem;
 
     textarea {
-        position: relative;
-        padding-right: 3.5rem !important;
+        display: block;
+    }
+
+    .msg-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 8px;
     }
 
     .copy-btn {
-        position: absolute;
-        top: calc(100% - 88px);
-        left: calc(100% - 60px);
+        font-size: 16px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    .copy-hint {
+        margin: 0;
+        color: $dark-text;
+        font-size: 14px;
+        text-align: right;
+
+        &:not(:empty) {
+            margin-top: 6px;
+        }
+
+        &.copy-failed {
+            color: $feed-red-dark;
+        }
     }
 
     .close-btn {
@@ -329,6 +351,11 @@
         top: 0.4rem;
         left: calc(100% - 60px);
     }
+}
+
+// On phones the box sits under the pager with a close button in its corner
+.swiper-pagination .verbiage-msg textarea {
+    padding-right: 3.5rem !important;
 }
 
 #feed {
@@ -534,8 +561,6 @@
 }
 
 .cc-count {
-    display: block;
-    float: right;
     transition: color .2s ease-in-out;
 }
 
@@ -665,6 +690,21 @@
         margin-bottom: 0;
     }
 
+    .opened-label {
+        display: none;
+        margin-left: 8px;
+        color: $dark-text;
+        font-weight: bold;
+    }
+
+    .card.opened {
+        background-color: $feed-mint !important;
+
+        .opened-label {
+            display: inline;
+        }
+    }
+
     .divider {
         border-bottom: 1px solid $feed-card-border;
         margin-top: 8px;
@@ -698,5 +738,17 @@
         margin-left: auto;
         margin-right: auto;
         font-size: 20px;
+        text-align: center;
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            color: $white;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 24px;
+        }
     }
 }

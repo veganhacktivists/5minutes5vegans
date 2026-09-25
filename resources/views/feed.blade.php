@@ -37,4 +37,6 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
+
+    @include('inc.how-it-works', ['onFeed' => true])
 @endsection
