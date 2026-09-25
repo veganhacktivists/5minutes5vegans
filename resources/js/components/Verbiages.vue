@@ -145,14 +145,21 @@ const CHARACTER_COUNT_STATES = [
 ]
 
 // Count the way X does: every link is 23 characters, emoji and most non-Latin
-// characters are 2, everything else is 1
+// characters are 2, everything else is 1. Browsers without Intl.Segmenter count
+// code points instead, which only differs for emoji built from several parts.
+const segmenter = typeof Intl !== 'undefined' && Intl.Segmenter ? new Intl.Segmenter() : null
+const PICTOGRAPHIC = /\p{Extended_Pictographic}/u
+
 function xLength(text) {
     const withoutLinks = text.replace(/https?:\/\/\S+/g, 'x'.repeat(23))
+    const segments = segmenter
+        ? Array.from(segmenter.segment(withoutLinks), (part) => part.segment)
+        : Array.from(withoutLinks)
     let length = 0
-    for (const { segment } of new Intl.Segmenter().segment(withoutLinks)) {
+    for (const segment of segments) {
         const cp = segment.codePointAt(0)
         const single = cp <= 4351 || (cp >= 8192 && cp <= 8205) || (cp >= 8208 && cp <= 8223) || (cp >= 8242 && cp <= 8247)
-        length += single && !/\p{Extended_Pictographic}/u.test(segment) ? 1 : 2
+        length += single && !PICTOGRAPHIC.test(segment) ? 1 : 2
     }
     return length
 }
