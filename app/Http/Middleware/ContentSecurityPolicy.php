@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ContentSecurityPolicy
 {
-    // Report-Only while the live site is checked for violations. Browsers log
-    // them in the console and block nothing. Then this becomes
-    // Content-Security-Policy.
-    public const HEADER = 'Content-Security-Policy-Report-Only';
+    // Enforced. For a trial of a change to the policy, switch this to
+    // Content-Security-Policy-Report-Only, and browsers will log violations
+    // in the console without blocking anything.
+    public const HEADER = 'Content-Security-Policy';
 
     /**
      * Scripts run only with this request's nonce, or when loaded by a script
