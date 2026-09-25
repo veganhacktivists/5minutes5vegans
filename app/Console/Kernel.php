@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\GenerateTweetsCommand;
+use App\Console\Commands\PruneTweetsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Illuminate\Support\Facades\Cache;
@@ -25,6 +26,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command(PruneTweetsCommand::class)->daily();
+
         $output = storage_path('logs/tweets-generate.log');
 
         // The command runs every minute, so an outage would send an email a minute.
