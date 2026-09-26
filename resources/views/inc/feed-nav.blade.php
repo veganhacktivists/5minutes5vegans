@@ -1,8 +1,9 @@
 <nav class="row g-0 justify-content-between">
     <div class="col">
-        <div class="logo">
+        {{-- The feed's heading. The nav is on the page twice, once for phones and once in the sidebar, and only one shows at a time. --}}
+        <h1 class="logo">
             @include('inc.logo')
-        </div>
+        </h1>
     </div>
     <div class="col text-center timer-section-middle">
         <div class="timer-section">

@@ -95,6 +95,10 @@
 
 #feed-nav-1 .logo, #feed-nav-2 .logo {
     width: 182px;
+    // It's an h1 on the feed, so undo the heading styles
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
 
     @include for-desktop-up {
         width: 200px;
@@ -611,6 +615,46 @@
     padding: 2px;
     line-height: 1;
     margin-top: 4px;
+}
+
+.feed-intro {
+    flex-shrink: 0;
+    grid-column: 1 / -1;
+    background-color: $feed-mint;
+    border: 1px solid $feed-border;
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: $feed-card-text;
+    font-size: 15px;
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    .intro-dismissed & {
+        display: none;
+    }
+}
+
+.feed-intro-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    button {
+        padding: 4px 0;
+        border: 0;
+        background: none;
+        color: $label-green;
+        font-weight: bold;
+    }
+
+    .feed-intro-dismiss {
+        margin-left: auto;
+        padding: 4px 12px;
+        border: 1px solid $label-green;
+        border-radius: 8px;
+    }
 }
 
 .timeline {

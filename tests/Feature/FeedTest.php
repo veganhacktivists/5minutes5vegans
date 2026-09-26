@@ -62,4 +62,29 @@ class FeedTest extends TestCase
 
         $this->assertEquals(['2001'], $tweets->pluck('id')->all());
     }
+
+    public function testTheFeedSaysWhatItIsWhenThereArePosts()
+    {
+        $this->view('inc.twitter', ['tweets' => collect([Tweet::factory()->make(['id' => '3001', 'lang' => 'en'])])])
+            ->assertSee('These are posts from people on X who are thinking about going vegan.')
+            ->assertSee('How does it work?')
+            ->assertSee('Got it');
+    }
+
+    public function testAnEmptyFeedHasNoIntro()
+    {
+        $this->view('inc.twitter', ['tweets' => collect()])->assertDontSee('feed-intro');
+    }
+
+    public function testEveryLanguageHasTheIntro()
+    {
+        foreach (array_keys(config('laravellocalization.supportedLocales')) as $locale) {
+            $this->assertNotSame('landing.intro', __('landing.intro', [], $locale), $locale);
+
+            if ($locale !== 'en') {
+                $this->assertNotSame(__('landing.intro', [], 'en'), __('landing.intro', [], $locale), $locale);
+                $this->assertNotSame('Got it', __('Got it', [], $locale), $locale);
+            }
+        }
+    }
 }

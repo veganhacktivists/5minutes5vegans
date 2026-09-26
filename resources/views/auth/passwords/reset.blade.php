@@ -1,4 +1,5 @@
 @extends('auth.passwords.reset-layout')
+@php($pageName = __('Reset Password'))
 
 @section('card_body')
 <form method="post" action="{{ route('password.update') }}">
