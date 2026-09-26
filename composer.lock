@@ -2148,16 +2148,16 @@
         },
         {
             "name": "mcamara/laravel-localization",
-            "version": "v2.4.1",
+            "version": "v2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mcamara/laravel-localization.git",
-                "reference": "05590594d1e871d9f2ee6ce0527441ea09fb99a2"
+                "reference": "dbfa563ea0ceb6d072adc280a8830999ade9ed74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/05590594d1e871d9f2ee6ce0527441ea09fb99a2",
-                "reference": "05590594d1e871d9f2ee6ce0527441ea09fb99a2",
+                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/dbfa563ea0ceb6d072adc280a8830999ade9ed74",
+                "reference": "dbfa563ea0ceb6d072adc280a8830999ade9ed74",
                 "shasum": ""
             },
             "require": {
@@ -2208,7 +2208,7 @@
             ],
             "support": {
                 "issues": "https://github.com/mcamara/laravel-localization/issues",
-                "source": "https://github.com/mcamara/laravel-localization/tree/v2.4.1"
+                "source": "https://github.com/mcamara/laravel-localization/tree/v2.4.2"
             },
             "funding": [
                 {
@@ -2220,7 +2220,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-28T17:38:56+00:00"
+            "time": "2026-08-24T08:07:04+00:00"
         },
         {
             "name": "monolog/monolog",
