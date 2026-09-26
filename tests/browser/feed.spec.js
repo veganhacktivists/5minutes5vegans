@@ -237,3 +237,45 @@ test('the character counter counts the way X does', async ({ page, isMobile }) =
         expect(parseInt(await page.locator('.cc-count').innerText(), 10), `${text}: ${why}`).toBe(280 - length)
     }
 })
+
+// WCAG AA: small text needs 4.5:1 against what's behind it
+async function contrast(locator) {
+    return locator.evaluate((el) => {
+        const channels = (colour) => colour.match(/[\d.]+/g).slice(0, 3).map(Number)
+        const luminance = (colour) => {
+            const [r, g, b] = channels(colour).map((v) => {
+                v /= 255
+                return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4
+            })
+            return 0.2126 * r + 0.7152 * g + 0.0722 * b
+        }
+        let node = el
+        let background = 'rgb(255, 255, 255)'
+        while (node) {
+            const colour = getComputedStyle(node).backgroundColor
+            if (colour && !colour.startsWith('rgba(0, 0, 0, 0)') && colour !== 'transparent') {
+                background = colour
+                break
+            }
+            node = node.parentElement
+        }
+        const [light, dark] = [luminance(getComputedStyle(el).color), luminance(background)].sort((a, b) => b - a)
+        return (light + 0.05) / (dark + 0.05)
+    })
+}
+
+test('small text on the feed is readable', async ({ page }) => {
+    await page.goto('/en')
+
+    for (const selector of ['#minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time']) {
+        expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
+    }
+})
+
+test('the timer restart is big enough to tap', async ({ page }) => {
+    await page.goto('/en')
+
+    const box = await page.locator('#resetLink:visible').boundingBox()
+    expect(box.width).toBeGreaterThanOrEqual(24)
+    expect(box.height).toBeGreaterThanOrEqual(24)
+})

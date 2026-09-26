@@ -85,12 +85,14 @@ $feed-card-text: #000;
 $feed-card-muted: #666;
 
 // Character count
-$count-fine: #6C757D;
-$count-warning: #FFC107;
-$count-danger: #eb6e3d;
+$count-fine: #495057;
+$count-warning: #8a5a00;
+$count-danger: #b3261e;
 $count-over: #DC3545;
 
 // Form
 $button-cta-color: #00816A;
+// For small green text: at least 4.5:1 on the page's light greens and white
+$label-green: #007561;
 $primary: $button-cta-color;
 
