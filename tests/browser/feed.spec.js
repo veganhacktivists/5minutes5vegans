@@ -62,6 +62,21 @@ test('a topic gives a reply that fits on X, and Reword changes it', async ({ pag
     await expect(box).not.toHaveValue(first)
 })
 
+test('every ready-made topic has its icon, level with the others in its row', async ({ page, isMobile }) => {
+    await openMessages(page, isMobile)
+
+    const icons = await page.locator('.verbiage-link').evaluateAll((tiles) => tiles.map((tile) => {
+        const icon = tile.querySelector('.topic-icon svg')
+        return { row: Math.round(tile.getBoundingClientRect().top), top: icon && Math.round(icon.getBoundingClientRect().top) }
+    }))
+    expect(icons.length).toBeGreaterThan(0)
+    expect(icons.filter((icon) => icon.top === null)).toEqual([])
+
+    // However many lines a label takes, the icons in a row line up
+    const rows = Map.groupBy(icons, (icon) => icon.row)
+    for (const [row, tiles] of rows) expect(new Set(tiles.map((tile) => tile.top)).size, `row at ${row}px`).toBe(1)
+})
+
 test('Copy puts the reply on the clipboard', async ({ page, context, isMobile }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write'])
     await openMessages(page, isMobile)
