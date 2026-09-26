@@ -58,5 +58,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         RateLimiter::for('register', fn (Request $request) => Limit::perMinute(6)->by($request->visitorIp()));
+
+        // A plain throttle:6,1 would key on $request->ip(), which is the proxy
+        // for everyone, so the whole site would share one bucket
+        RateLimiter::for('password-email', fn (Request $request) => Limit::perMinute(6)->by($request->visitorIp()));
     }
 }

@@ -30,6 +30,6 @@ class ForgotPasswordController extends Controller
         $this->middleware('guest');
         // The broker limits each address. This limits each visitor, so nobody
         // can send reset emails to a long list of addresses.
-        $this->middleware('throttle:6,1')->only('sendResetLinkEmail');
+        $this->middleware('throttle:password-email')->only('sendResetLinkEmail');
     }
 }
