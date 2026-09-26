@@ -1,9 +1,3 @@
-/**
- * First, we will load all of this project's Javascript utilities and other
- * dependencies. Then, we will be ready to develop a robust and powerful
- * application frontend using useful Laravel and JavaScript libraries.
- */
-
 import './bootstrap';
 import axios from 'axios';
 
@@ -14,9 +8,7 @@ import { createApp } from 'vue'
 import { track } from './track'
 import App from './components/App.vue'
 
-/*********
- * TIMER *
- *********/
+// Timer
 
 var startTime, timerInterval
 $(() => {
@@ -73,9 +65,7 @@ $(() => {
     }
 })
 
-/******************************
- * SwiperJS for the feed page *
- ******************************/
+// The phone pager
 $(() => {
     if (!$('.swiper-container').length) {
         return
@@ -120,27 +110,21 @@ $(() => {
         },
     })
 
-    // Start on the twitter slide in mobile view
+    // Phones open on the feed
     window.mySwiper.slideTo(2, false, false)
 
-    // Swiper moves slides with transforms, so its container should never scroll.
-    // On phones the reply box moves into the pager when a topic is picked, and
-    // the browser then scrolled the container sideways, pushing the tiles and
-    // the reply box off-screen. Undo any such scroll straight away.
+    // Swiper moves slides with transforms, so its container should never scroll sideways
     const container = window.mySwiper.el
     container.addEventListener('scroll', () => {
         if (container.scrollLeft) container.scrollLeft = 0
     })
 })
 
-/*******************************************
- * Post ages, and the posts already opened *
- *******************************************/
+// Post ages, and the posts already opened
 const OPENED_POSTS_KEY = 'opened-posts'
 const OPENED_POSTS_LIMIT = 200
 
-// Browsers can refuse storage (private windows, blocked site data), so every
-// read and write is allowed to fail
+// Storage can be refused (private windows, blocked site data)
 function openedPosts() {
     try {
         return JSON.parse(localStorage.getItem(OPENED_POSTS_KEY)) || []
@@ -157,8 +141,7 @@ function rememberOpened(id) {
     } catch {}
 }
 
-// "12 minutes ago" in the page's language. The server's own text stays as the
-// fallback, and the full local time goes in the tooltip.
+// "12 minutes ago" in the page's language, with the full local time on hover
 function showPostAges() {
     if (typeof Intl === 'undefined' || !Intl.RelativeTimeFormat) return
 
@@ -180,8 +163,7 @@ function showPostAges() {
     })
 }
 
-// A missing avatar falls back to X's default picture. This was an inline
-// onerror, which the Content-Security-Policy doesn't allow.
+// Missing avatars fall back to X's default picture
 const DEFAULT_AVATAR = 'https://abs.twimg.com/sticky/default_profile_images/default_profile_200x200.png'
 
 function useDefaultAvatar(img) {
@@ -226,9 +208,7 @@ $(() => {
     setInterval(showPostAges, 60000)
 })
 
-/************************************
- * Script to reset the timer *
- ************************************/
+// Timer restart and focus
 window.onload = function() {
     // set the focus to the language bar
     const languageFlags = document.getElementById('languageFlags');

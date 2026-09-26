@@ -10,25 +10,9 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
     public function boot()
     {
-        // Cloudflare and Coolify's proxy terminate HTTPS, so without this Laravel
-        // builds http:// links (redirects, og:url, anything using url() or route())
+        // HTTPS ends at Cloudflare, so links would otherwise be http://
         if ($this->app->environment('production')) {
             URL::forceScheme('https');
         }

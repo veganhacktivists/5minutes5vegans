@@ -9,9 +9,8 @@ class TweetGenerator
     private const VEGAN_WORD = '/(?<= |^)(?:vegan|VEGAN|Vegan(?! \p{Lu}))[^\w\d\s]*(?=[ ]|$)/u';
 
     /**
-     * Build every wording of each topic, one option from each part, so the page
-     * can give a different one each time a topic is picked. The variety stops X
-     * flagging lots of identical copied replies as spam.
+     * Every wording of each topic, one option from each part. The page deals
+     * them out so copied replies vary, which keeps X from flagging them as spam.
      *
      * @param  array<int, array{icon: string, title: string, body: array<int, array<int, string>>}>  $topics
      * @return array<int, array{icon: string, title: string, variants: array<int, string>}>

@@ -1,29 +1,19 @@
 #!/bin/bash
-# Stop at the first failed step, so a failed migration can't start the app on
-# a half-migrated database. Reply generation below is the one exception.
+# Stop at the first failure, except reply generation below
 set -e
 
-# Run Laravel migrations
 php artisan migrate --force
 
-# Cache config, events and views. Not routes: they depend on the locale in
-# the URL, so a route cache would only hold one language's.
+# Not routes: they depend on the locale in the URL
 php artisan optimize --except=routes
 
-# Cache verbiages. It exits 1 if any one language fails. That mustn't keep the
-# whole site down: the cache still holds the last good replies unless this is
-# a fresh container, the page shows a "didn't load" message if not, and the
-# scheduler tries again within ten minutes.
+# Allowed to fail: the last good replies stay cached and the scheduler retries
 php artisan tweets:generate || echo "tweets:generate failed, the scheduler will retry"
 
-# Transform the nginx configuration
 node /assets/scripts/prestart.mjs ./nixpacks/nginx.template.conf /etc/nginx.conf
 
-# Start PHP-FPM
 php-fpm -y ./nixpacks/php-fpm.conf
 
-# Start Supervisor
 supervisord -c /etc/supervisord.conf
 
-# Start Nginx
 nginx -c /etc/nginx.conf

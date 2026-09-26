@@ -156,8 +156,7 @@
 <script>
     import IconPicker from 'vanilla-icon-picker';
     import { track } from '../track';
-// Constant list of character count threshould and their respective class names
-// Note: Make sure to keep these items from the lower threshold to the higher
+// Counter colours, lowest threshold first
 const CHARACTER_COUNT_STATES = [
     { name: 'cc-is-expended', threshold: -1 },
     { name: 'cc-is-danger', threshold: 15 },
@@ -165,9 +164,8 @@ const CHARACTER_COUNT_STATES = [
     { name: 'cc-is-fine', threshold: 280 },
 ]
 
-// Count the way X does: every link is 23 characters, emoji and most non-Latin
-// characters are 2, everything else is 1. Browsers without Intl.Segmenter count
-// code points instead, which only differs for emoji built from several parts.
+// Count the way X does: a link is 23, emoji and most non-Latin characters 2,
+// the rest 1. Without Intl.Segmenter, joined emoji count per part.
 const segmenter = typeof Intl !== 'undefined' && Intl.Segmenter ? new Intl.Segmenter() : null
 const PICTOGRAPHIC = /\p{Extended_Pictographic}/u
 
@@ -185,8 +183,8 @@ function xLength(text) {
     return length
 }
 
-// The Clipboard API needs https or localhost, and some browsers refuse it
-// without a permission. Then select the text in a hidden box and copy that.
+// The Clipboard API, falling back to copying from a hidden box where it's
+// missing or refused
 async function copyText(text) {
     if (navigator.clipboard && window.isSecureContext) {
         try {
@@ -253,8 +251,7 @@ export default {
         this.wideScreen.addEventListener('change', this.onScreenChange)
     },
 
-    // Take the box back before Vue removes the component (e.g. for Edit
-    // Profile), or it would be left behind in the dock
+    // Take the box back first, or it's left behind in the dock
     beforeUnmount: function() {
         this.wideScreen.removeEventListener('change', this.onScreenChange)
         this.toggleVerbiageMsg(false)
@@ -304,7 +301,6 @@ export default {
             clearTimeout(this.collapseTimer)
             this.copyState = null
 
-            // Trigger character count calculation when choosing a predefined answer
             this.characterCountdown()
             this.toggleVerbiageMsg(true)
         },
@@ -318,8 +314,7 @@ export default {
             this.characterCountdown()
         },
 
-        // Hand out a topic's wordings in random order, and all of them before
-        // any comes round again, so nobody posts the same reply twice in a row
+        // Deal out a topic's wordings in random order, all of them before any repeat
         nextWording: function(verbiage) {
             const variants = verbiage.variants
             let deck = this.decks[verbiage.title]
@@ -336,8 +331,7 @@ export default {
             return variants[deck.pop()]
         },
 
-        // On phones the open box moves to #reply-dock under the pager. Wider
-        // screens show it in place, so there it only ever moves back.
+        // Phones show the open box in #reply-dock under the pager
         toggleVerbiageMsg: function(open) {
             if (open && window.matchMedia('(min-width: 768px)').matches) return
             if (!open) clearTimeout(this.collapseTimer)
@@ -410,7 +404,7 @@ export default {
             }
 
             this.clipboardSuccessHandler()
-            // Only ready-made topics are named. Your own messages' titles are yours.
+            // Own messages' titles aren't sent
             track('Copy reply', this.selected.variants
                 ? { topic: this.selected.title, kind: 'ready-made' }
                 : { kind: 'own' })
@@ -419,8 +413,7 @@ export default {
         clipboardSuccessHandler() {
             this.showCopyState('copied')
 
-            // On phones the box covers part of the feed. Once the copy has
-            // registered, tuck it away and go to the posts, the next step.
+            // On phones, close the box and show the posts once the copy registers
             if (this.verbiageMsgToggled) {
                 this.collapseTimer = setTimeout(() => {
                     this.toggleVerbiageMsg(false)

@@ -5,11 +5,8 @@
         <div id="feed-nav-1">
             @include('inc.feed-nav')
         </div>
-        <!-- Slider main container -->
         <div class="swiper-container">
-            <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-                <!-- Slides -->
                 <div class="swiper-slide scrollable">
                     <div id="leftside">
                         @include('inc.sidebar')
@@ -33,12 +30,10 @@
                 </div>
             </div>
 
-            <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
         </div>
 
-        <!-- On phones the open reply box sits here, under the pager. Outside
-             .swiper-pagination, because Swiper rewrites that element. -->
+        {{-- Phones show the open reply box here. Not in .swiper-pagination: Swiper rewrites it. --}}
         <div id="reply-dock"></div>
     </div>
 

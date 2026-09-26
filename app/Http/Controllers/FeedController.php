@@ -9,7 +9,6 @@ use Illuminate\View\View;
 
 class FeedController extends Controller
 {
-    // The feed is for replying while posts are fresh, so older ones aren't rendered.
     private const FEED_SIZE = 50;
 
     public function __invoke(): View

@@ -13,13 +13,12 @@ function generate_and_cache_shlink($url)
         return $cached;
     }
 
-    // Without a key (locally, in CI) every call would be refused
+    // No key locally or in CI
     if (! config('services.shlink.api_key')) {
         return $url;
     }
 
-    // Every language's replies are built in one run, so a slow Shlink mustn't
-    // hold each link up for Laravel's default 30 seconds
+    // One run shortens every language's links, so don't wait long on each
     try {
         $response = Http::withHeader('X-Api-Key', config('services.shlink.api_key'))
             ->connectTimeout(3)
@@ -40,8 +39,7 @@ function generate_and_cache_shlink($url)
             'response' => $error,
         ]);
 
-        // Use the full link for now, and try Shlink again in ten minutes
-        // instead of keeping the full link for the next 12 hours
+        // Try again in ten minutes, not in 12 hours
         Cache::put($key, $url, 60 * 10);
 
         return $url;

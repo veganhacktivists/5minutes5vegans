@@ -8,12 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class EnforceHttps
 {
-    /**
-     * In production, Cloudflare upgrades visitors to HTTPS and the proxy then
-     * talks to the app over plain http. Treat each request as HTTPS so links
-     * and redirects built from it (like the language redirect on /) use https,
-     * and tell browsers to stay on HTTPS for the next year.
-     */
+    // Cloudflare terminates HTTPS, so mark requests secure for https links and redirects
     public function handle(Request $request, Closure $next): Response
     {
         if (! app()->environment('production')) {

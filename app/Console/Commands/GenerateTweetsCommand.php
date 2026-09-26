@@ -9,37 +9,18 @@ use Illuminate\Console\Command;
 
 class GenerateTweetsCommand extends Command
 {
-    // Refreshed every minute. The long lifetime keeps the last good set on
-    // the site if a run fails.
+    // Outlives many runs, so a failed run leaves the last good replies
     private const NUM_SECONDS_TO_CACHE = 60 * 60 * 24;
 
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'tweets:generate';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Generate tweets in every supported language';
 
-    /**
-     * Create a new command instance.
-     */
     public function __construct()
     {
         parent::__construct();
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
     public function handle(TweetGenerator $generator)
     {
         $languages = array_keys(config('laravellocalization.supportedLocales'));
@@ -57,13 +38,13 @@ class GenerateTweetsCommand extends Command
                 $tweets = $generator->generate($localizedTweets);
                 echo "tweets generated ($language) \n";
 
-                // Stored ready to send, so each request serves a string
+                // Stored as JSON, ready to send
                 Cache::put($key, json_encode($tweets, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR), self::NUM_SECONDS_TO_CACHE);
                 \Log::info('Finished Generating tweets', ['lang' => $language]);
             } catch (\Throwable $e) {
                 $failed[] = $language;
 
-                // Once an hour per language, so an outage doesn't send Sentry an event a minute
+                // At most once an hour per language
                 if (Cache::add("tweets-generate-reported-$language", true, now()->addHour())) {
                     report(new \RuntimeException("Could not generate tweets ($language)", 0, $e));
                 }

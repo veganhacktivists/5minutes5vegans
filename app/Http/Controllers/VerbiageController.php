@@ -15,7 +15,6 @@ class VerbiageController extends Controller
         'body' => 'required|string|max:1000',
     ];
 
-    // Plenty for anyone's own replies, and keeps one account from filling the table
     const MAX_PER_USER = 50;
 
     public function store( Request $request ) {

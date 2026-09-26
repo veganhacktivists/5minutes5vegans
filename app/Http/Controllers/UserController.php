@@ -40,8 +40,7 @@ class UserController extends Controller
 
         $request->validate(['current_password' => ['required', 'current_password']]);
 
-        // Everything the site holds about them: the account, their messages
-        // and any unused password reset link
+        // The account, its messages and any reset link
         DB::transaction(function () use ($user) {
             $user->verbiages()->delete();
             DB::table('password_resets')->where('email', $user->email)->delete();
