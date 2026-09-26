@@ -338,3 +338,12 @@ test('icons come from the site itself', async ({ page }) => {
     expect(await page.evaluate(() => [...document.fonts].some((font) => font.family.includes('Font Awesome 6 Free') && font.status === 'loaded'))).toBe(true)
     expect(elsewhere).toEqual([])
 })
+
+test('in dark mode, small text on the feed is still readable', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/en')
+
+    for (const selector of ['#minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how', '#donate-button:visible']) {
+        expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
+    }
+})

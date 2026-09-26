@@ -1,4 +1,5 @@
-// The site's colours by role
+// The site's colours by role. Light is Evergreen. Dark uses the Night Shift
+// palette and follows the device's setting.
 :root {
     --ground: #{$mint};
     --surface: #{$paper};
@@ -25,9 +26,50 @@
     --over-bg: #DC3545;
     --over-ink: #FFFFFF;
 
-    // Bootstrap's links follow the brand colour
+    // Bootstrap's links follow the brand colour in both modes
     --bs-link-color-rgb: var(--brand-rgb);
     --bs-link-hover-color-rgb: var(--brand-hover-rgb);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --ground: #161919;
+        --surface: #292929;
+        --opened: #1F2222;
+        --line: #3A3F3F;
+        --ink: #FFFFFF;
+        --ink-soft: #BCBCBC;
+        --card-ink: #FFFFFF;
+        --card-hover: #303333;
+        --brand: #64BC46;
+        --brand-rgb: 100, 188, 70;
+        --brand-hover: #58A345;
+        --brand-hover-rgb: 88, 163, 69;
+        --on-brand: #161919;
+        --accent: #FFC709;
+        --accent-strong: #FFC709;
+        --deep: #0E1010;
+        --panel: #161919;
+        --pane: #292929;
+        --swirl: none;
+        --count-fine: #BCBCBC;
+        --count-warning: #FFC709;
+        --count-danger: #FF7A66;
+        --over-bg: #FF7A66;
+        --over-ink: #161919;
+    }
+
+    // The photo behind the login and reset pages, dimmed so the panes and the
+    // light logo stand out
+    #login-bg {
+        filter: brightness(.45);
+    }
+
+    // X's logo is black
+    .x-logo {
+        filter: invert(1);
+    }
 }
 
 // Bootstrap builds its buttons from fixed colours, so point them at the roles

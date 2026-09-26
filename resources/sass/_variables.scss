@@ -17,8 +17,14 @@ $radius-panel: 24px;
 $body-bg: $forest;
 $modal-bg: $forest;
 
+// Dark mode follows the device's setting. Bootstrap swaps its own colours;
+// _theme.scss swaps the site's.
+$color-mode-type: media-query;
+$body-bg-dark: #0E1010;
+$body-color-dark: #FFFFFF;
+
 // Roles for the site's own styles. Each is a CSS variable set in _theme.scss,
-// so a theme can swap it. Bootstrap still gets the fixed colours above.
+// so dark mode can swap it. Bootstrap still gets the fixed colours above.
 $ground: var(--ground);
 $surface: var(--surface);
 $opened: var(--opened);
