@@ -279,3 +279,17 @@ test('the timer restart is big enough to tap', async ({ page }) => {
     expect(box.width).toBeGreaterThanOrEqual(24)
     expect(box.height).toBeGreaterThanOrEqual(24)
 })
+
+test('icons come from the site itself', async ({ page }) => {
+    const elsewhere = []
+    page.on('request', (request) => {
+        if (request.url().includes('cdnjs.cloudflare.com')) elsewhere.push(request.url())
+    })
+    await page.goto('/en')
+    await page.evaluate(() => document.fonts.ready)
+
+    const icon = page.locator('#resetLink:visible i')
+    expect(await icon.evaluate((el) => getComputedStyle(el, '::before').fontFamily)).toContain('Font Awesome 6 Free')
+    expect(await page.evaluate(() => [...document.fonts].some((font) => font.family.includes('Font Awesome 6 Free') && font.status === 'loaded'))).toBe(true)
+    expect(elsewhere).toEqual([])
+})
