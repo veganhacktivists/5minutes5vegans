@@ -186,3 +186,37 @@ test('a signed-in volunteer can pick an icon for their own message', async ({ pa
 
     await expect(page.locator('.icon-element').first()).toBeVisible()
 })
+
+test('on a phone, the inactive pager tab keeps its outline', async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'phones only')
+    await page.goto('/en')
+
+    const messages = page.locator('.swiper-pagination-bullet').first()
+    await expect(messages).not.toHaveClass(/swiper-pagination-bullet-active/)
+    expect(await messages.evaluate((el) => getComputedStyle(el).borderTopWidth)).toBe('2px')
+})
+
+test('on a phone, rewording straight after copying keeps the box open', async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'phones only')
+    await openMessages(page, isMobile)
+    await page.locator('.verbiage-link').nth(12).click()
+
+    await page.locator('.copy-btn').click()
+    await page.locator('.reword-btn').click()
+    await page.waitForTimeout(1600)
+
+    await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
+    expect(await page.evaluate(() => window.mySwiper.activeIndex)).toBe(0)
+})
+
+test('the reply box survives a phone turning into a wider screen', async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'phones only')
+    await openMessages(page, isMobile)
+    await page.locator('.verbiage-link').nth(12).click()
+    await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
+
+    await page.setViewportSize({ width: 1024, height: 800 })
+
+    await expect(page.locator('.verbiage-msg')).toHaveCount(1)
+    await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
+})
