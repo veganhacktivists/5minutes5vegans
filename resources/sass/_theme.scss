@@ -1,5 +1,5 @@
-// The site's colours by role. Light is Evergreen. Dark uses the Night Shift
-// palette and follows the device's setting.
+// The site's colours by role. Light is Evergreen. Dark follows the device's
+// setting and keeps Evergreen's teal and red, lifted for a dark ground.
 :root {
     --ground: #{$mint};
     --surface: #{$paper};
@@ -34,36 +34,43 @@
 @media (prefers-color-scheme: dark) {
     :root {
         color-scheme: dark;
-        --ground: #161919;
-        --surface: #292929;
-        --opened: #1F2222;
-        --line: #3A3F3F;
+        --ground: #17231F;
+        --surface: #243430;
+        --opened: #1D2A26;
+        --line: #3A4D47;
         --ink: #FFFFFF;
-        --ink-soft: #BCBCBC;
+        --ink-soft: #B8C7C1;
         --card-ink: #FFFFFF;
-        --card-hover: #303333;
-        --brand: #64BC46;
-        --brand-rgb: 100, 188, 70;
-        --brand-hover: #58A345;
-        --brand-hover-rgb: 88, 163, 69;
-        --on-brand: #161919;
-        --accent: #FFC709;
-        --accent-strong: #FFC709;
-        --deep: #0E1010;
-        --panel: #161919;
-        --pane: #292929;
+        --card-hover: #2B3C37;
+        --brand: #4CC3A0;
+        --brand-rgb: 76, 195, 160;
+        --brand-hover: #3FB896;
+        --brand-hover-rgb: 63, 184, 150;
+        --on-brand: #17231F;
+        --accent: #FF7A66;
+        --accent-strong: #FF7A66;
+        --deep: #111C19;
+        --panel: #17231F;
+        --pane: #243430;
         --swirl: none;
-        --count-fine: #BCBCBC;
-        --count-warning: #FFC709;
+        --count-fine: #B8C7C1;
+        --count-warning: #FFB35C;
         --count-danger: #FF7A66;
         --over-bg: #FF7A66;
-        --over-ink: #161919;
+        --over-ink: #17231F;
     }
 
-    // The photo behind the login and reset pages, dimmed so the panes and the
-    // light logo stand out
+    // The photo behind the login and reset pages, dimmed so the panes stand
+    // out. The wash is darkest at the top, behind the light logo.
     #login-bg {
-        filter: brightness(.45);
+        filter: brightness(.7);
+    }
+
+    #login-bg::after {
+        background-image: linear-gradient(
+            color-mix(in srgb, var(--deep) 75%, transparent),
+            color-mix(in srgb, var(--deep) 45%, transparent) 45%
+        );
     }
 
     // X's logo is black
