@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', __('Verify Your Email Address'))
+@php($pageName = __('Verify Your Email Address'))
 
 @section('main')
 <div class="container">

@@ -267,7 +267,7 @@ async function contrast(locator) {
 test('small text on the feed is readable', async ({ page }) => {
     await page.goto('/en')
 
-    for (const selector of ['#minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time']) {
+    for (const selector of ['#minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how']) {
         expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
     }
 })
@@ -278,4 +278,34 @@ test('the timer restart is big enough to tap', async ({ page }) => {
     const box = await page.locator('#resetLink:visible').boundingBox()
     expect(box.width).toBeGreaterThanOrEqual(24)
     expect(box.height).toBeGreaterThanOrEqual(24)
+})
+
+test('the feed shows one heading, the site name', async ({ page }) => {
+    await page.goto('/en')
+
+    const headings = page.locator('h1:visible')
+    await expect(headings).toHaveCount(1)
+    await expect(headings.locator('img')).toHaveAttribute('alt', '5 Minutes 5 Vegans')
+})
+
+test('first-time visitors see what the feed is for, until they dismiss it', async ({ page }) => {
+    await page.goto('/en')
+
+    const intro = page.locator('.feed-intro')
+    await expect(intro).toBeVisible()
+    await expect(intro).toContainText('thinking about going vegan')
+
+    await intro.getByRole('button', { name: 'How does it work?' }).click()
+    await expect(page.locator('#how-it-works')).toBeVisible()
+    await page.locator('#how-it-works .btn-close').click()
+    await expect(page.locator('#how-it-works')).toBeHidden()
+
+    await intro.getByRole('button', { name: 'Got it' }).click()
+    await expect(intro).toBeHidden()
+    await expect(page.locator('.timeline .card').first()).toBeFocused()
+
+    // Hidden from the first paint, not after the page has drawn it
+    await page.reload()
+    await expect(page.locator('html')).toHaveClass(/intro-dismissed/)
+    await expect(intro).toBeHidden()
 })

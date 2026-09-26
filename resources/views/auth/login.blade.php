@@ -1,4 +1,5 @@
 @extends('auth/login-layout')
+@php($pageName = __('Login'))
 
 @section('login-pane')
     <div class="d-flex mb-4">

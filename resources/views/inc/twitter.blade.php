@@ -1,4 +1,14 @@
 <div class="timeline">
+    @if ($tweets->isNotEmpty())
+        {{-- For first-time visitors and search engines. Got it hides it for good: the head adds .intro-dismissed before the page draws. --}}
+        <div class="feed-intro">
+            <p>@lang('landing.intro')</p>
+            <div class="feed-intro-actions">
+                <button type="button" class="feed-intro-how" data-bs-toggle="modal" data-bs-target="#how-it-works">@lang('loginregister.how')</button>
+                <button type="button" class="feed-intro-dismiss">@lang('Got it')</button>
+            </div>
+        </div>
+    @endif
     @forelse ($tweets as $tweet)
         <a class="card" data-post="{{ $tweet->id }}" href="https://x.com/{{ $tweet->from_user_name }}/status/{{ $tweet->id }}" target="_blank">
             <div class="header">
