@@ -117,4 +117,67 @@ class SeoTest extends TestCase
     {
         $this->assertStringContainsString('Sitemap: https://5minutes5vegans.org/sitemap.xml', file_get_contents(public_path('robots.txt')));
     }
+
+    private function feed(): string
+    {
+        $this->withoutVite();
+        $this->withoutMiddleware([LaravelLocalizationRedirectFilter::class, LocaleSessionRedirect::class]);
+        $this->artisan('migrate');
+
+        return $this->get(route('feed'))->assertOk()->getContent();
+    }
+
+    public function testOnlyTheFeedIsOfferedToSearchEngines()
+    {
+        $this->assertStringNotContainsString('name="robots"', $this->feed());
+
+        foreach (['login', 'register', 'password.request'] as $route) {
+            $html = $this->get(route($route))->assertOk()->getContent();
+            $this->assertStringContainsString('<meta name="robots" content="noindex">', $html, $route);
+        }
+    }
+
+    public function testEachPageHasItsOwnTitle()
+    {
+        $this->assertStringContainsString('<title>5 Minutes 5 Vegans | Help people on X go vegan</title>', $this->feed());
+
+        foreach (['login' => 'Login', 'register' => 'Register', 'password.request' => 'Reset Password'] as $route => $name) {
+            $html = $this->get(route($route))->assertOk()->getContent();
+            $this->assertStringContainsString("<title>$name | 5 Minutes 5 Vegans</title>", $html);
+            $this->assertStringContainsString("<meta property=\"og:title\" content=\"$name | 5 Minutes 5 Vegans\">", $html);
+        }
+    }
+
+    public function testTheFeedTellsSearchEnginesWhatTheSiteIs()
+    {
+        $feed = $this->feed();
+
+        $this->assertMatchesRegularExpression('#<script type="application/ld\+json" nonce="[^"]+">(.*?)</script>#s', $feed);
+        preg_match('#<script type="application/ld\+json"[^>]*>(.*?)</script>#s', $feed, $match);
+        $data = json_decode($match[1], true, flags: JSON_THROW_ON_ERROR);
+        $this->assertSame('WebSite', $data['@type']);
+        $this->assertSame('5 Minutes 5 Vegans', $data['name']);
+        $this->assertSame('en', $data['inLanguage']);
+        $this->assertSame('Vegan Hacktivists', $data['publisher']['name']);
+
+        $this->assertStringContainsString('<meta property="og:site_name" content="5 Minutes 5 Vegans">', $feed);
+        $this->assertStringContainsString('<meta property="og:locale:alternate" content="de_DE">', $feed);
+        $this->assertStringNotContainsString('<meta property="og:locale:alternate" content="en_GB">', $feed);
+    }
+
+    public function testEveryLanguageHasItsOwnSearchSnippet()
+    {
+        $english = __('landing.description', [], 'en');
+        $this->assertNotSame('landing.description', $english);
+
+        foreach (array_keys(config('laravellocalization.supportedLocales')) as $locale) {
+            $description = __('landing.description', [], $locale);
+            $this->assertLessThanOrEqual(160, mb_strlen($description), $locale);
+
+            if ($locale !== 'en') {
+                $this->assertNotSame($english, $description, $locale);
+                $this->assertNotSame('Help people on X go vegan', __('Help people on X go vegan', [], $locale), $locale);
+            }
+        }
+    }
 }

@@ -6,8 +6,17 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@lang('5 Minutes 5 Vegans')</title>
-        <meta name="description" content="{{ strip_tags(__('landing.hero')) }}">
+        @php
+            $siteName = __('5 Minutes 5 Vegans');
+            // Pages set $pageName; the feed is the only page search engines should list
+            $isFeed = request()->routeIs('feed');
+            $pageTitle = isset($pageName) ? "$pageName | $siteName" : ($isFeed ? $siteName.' | '.__('Help people on X go vegan') : $siteName);
+        @endphp
+        <title>{{ $pageTitle }}</title>
+        <meta name="description" content="{{ __('landing.description') }}">
+        @unless ($isFeed)
+            <meta name="robots" content="noindex">
+        @endunless
 
         {{-- Built from the URL without its query string, so the alternates match the canonical --}}
         <link rel="canonical" href="{{ url()->current() }}">
@@ -17,12 +26,31 @@
         <link rel="alternate" hreflang="x-default" href="{{ LaravelLocalization::getLocalizedURL('en', url()->current(), [], true) }}">
 
         <meta property="og:type" content="website">
+        <meta property="og:site_name" content="{{ $siteName }}">
         <meta property="og:locale" content="{{ LaravelLocalization::getCurrentLocaleRegional() }}">
-        <meta property="og:title" content="{{ __('5 Minutes 5 Vegans') }}">
-        <meta property="og:description" content="{{ strip_tags(__('landing.hero')) }}">
+        @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $locale)
+            @continue($localeCode === app()->getLocale())
+            <meta property="og:locale:alternate" content="{{ $locale['regional'] }}">
+        @endforeach
+        <meta property="og:title" content="{{ $pageTitle }}">
+        <meta property="og:description" content="{{ __('landing.description') }}">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:image" content="{{ asset('images/og-image.png') }}">
         <meta name="twitter:card" content="summary_large_image">
+        @if ($isFeed)
+            @php
+                $structuredData = json_encode([
+                    '@context' => 'https://schema.org',
+                    '@type' => 'WebSite',
+                    'name' => $siteName,
+                    'url' => url()->current(),
+                    'inLanguage' => app()->getLocale(),
+                    'description' => __('landing.description'),
+                    'publisher' => ['@type' => 'Organization', 'name' => 'Vegan Hacktivists', 'url' => 'https://veganhacktivists.org/'],
+                ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG);
+            @endphp
+            <script type="application/ld+json" nonce="{{ Vite::cspNonce() }}">{!! $structuredData !!}</script>
+        @endif
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
