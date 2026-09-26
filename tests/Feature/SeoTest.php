@@ -98,6 +98,19 @@ class SeoTest extends TestCase
         $this->assertStringContainsString('href="https://veganhacktivists.org/privacy-policy"', $feed);
     }
 
+    public function testUmamiStaysOffThePasswordResetPage()
+    {
+        $this->withoutVite();
+        $this->withoutMiddleware([LaravelLocalizationRedirectFilter::class, LocaleSessionRedirect::class]);
+        config(['services.umami.website_id' => 'abc-123']);
+
+        $html = $this->get(route('password.reset', ['token' => 'a-secret-token']))->assertOk()->getContent();
+
+        $this->assertStringContainsString('a-secret-token', $html);
+        $this->assertStringNotContainsString('data-website-id', $html);
+        $this->assertStringContainsString('data-website-id', $this->page());
+    }
+
     public function testRobotsPointsAtTheSitemap()
     {
         $this->assertStringContainsString('Sitemap: https://5minutes5vegans.org/sitemap.xml', file_get_contents(public_path('robots.txt')));
