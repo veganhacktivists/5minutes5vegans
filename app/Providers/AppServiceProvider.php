@@ -2,13 +2,11 @@
 
 namespace App\Providers;
 
-use App\Support\Cloudflare;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
-use Symfony\Component\HttpFoundation\IpUtils;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,32 +33,7 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        Request::macro('visitorIp', function () {
-            $cloudflare = $this->header('CF-Connecting-IP');
-            $peer = $this->server('REMOTE_ADDR');
-            $hops = array_map('trim', explode(',', (string) $this->header('X-Forwarded-For')));
-            $lastHop = end($hops);
-
-            $fromCloudflare = filter_var($peer, FILTER_VALIDATE_IP)
-                && IpUtils::checkIp($peer, Cloudflare::RANGES);
-            $fromCoolify = filter_var($peer, FILTER_VALIDATE_IP)
-                && config('services.coolify_proxy_ips')
-                && IpUtils::checkIp($peer, config('services.coolify_proxy_ips'));
-            $cloudflareHop = filter_var($lastHop, FILTER_VALIDATE_IP)
-                && IpUtils::checkIp($lastHop, Cloudflare::RANGES);
-
-            if (filter_var($cloudflare, FILTER_VALIDATE_IP)
-                && ($fromCloudflare || ($fromCoolify && $cloudflareHop))) {
-                return $cloudflare;
-            }
-
-            return $this->ip();
-        });
-
-        RateLimiter::for('register', fn (Request $request) => Limit::perMinute(6)->by($request->visitorIp()));
-
-        // A plain throttle:6,1 would key on $request->ip(), which is the proxy
-        // for everyone, so the whole site would share one bucket
-        RateLimiter::for('password-email', fn (Request $request) => Limit::perMinute(6)->by($request->visitorIp()));
+        RateLimiter::for('register', fn (Request $request) => Limit::perMinute(6)->by($request->ip()));
+        RateLimiter::for('password-email', fn (Request $request) => Limit::perMinute(6)->by($request->ip()));
     }
 }

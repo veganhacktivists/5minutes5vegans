@@ -6,6 +6,7 @@ use Anhskohbo\NoCaptcha\Facades\NoCaptcha;
 use App\Providers\AppServiceProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\LaravelLocalization;
 use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter;
 use Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect;
@@ -47,36 +48,48 @@ class ProxyTest extends TestCase
         $this->get('/robots.txt')->assertHeaderMissing('Strict-Transport-Security');
     }
 
-    public function testTheVisitorIpComesFromCloudflare()
+    /** What $request->ip() is, after the global TrustProxies middleware, for a request with these details. */
+    private function ipFor(string $peer, ?string $forwardedFor = null): string
     {
-        config(['services.coolify_proxy_ips' => ['10.0.0.1']]);
+        Route::get('/_test/ip', fn (Request $request) => $request->ip());
 
-        // 172.70.1.1 is a Cloudflare edge address
-        $viaCloudflare = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_X_FORWARDED_FOR' => '203.0.113.7, 172.70.1.1', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
-        $this->assertSame('203.0.113.7', $viaCloudflare->visitorIp());
-
-        $junk = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_X_FORWARDED_FOR' => '172.70.1.1', 'HTTP_CF_CONNECTING_IP' => 'not-an-ip']);
-        $this->assertSame('10.0.0.1', $junk->visitorIp());
-
-        $directCloudflare = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '172.70.1.1', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
-        $this->assertSame('203.0.113.7', $directCloudflare->visitorIp());
+        return $this->flushHeaders()
+            ->withServerVariables(['REMOTE_ADDR' => $peer])
+            ->withHeaders($forwardedFor === null ? [] : ['X-Forwarded-For' => $forwardedFor])
+            ->get('/_test/ip')
+            ->getContent();
     }
 
-    public function testAForgedHeaderFromOutsideCloudflareIsIgnored()
+    public function testTheVisitorIpComesThroughTheProxyAndCloudflare()
     {
         config(['services.coolify_proxy_ips' => ['10.0.0.1']]);
 
-        $direct = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_X_FORWARDED_FOR' => '198.51.100.9', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
-        $this->assertSame('10.0.0.1', $direct->visitorIp());
+        // 172.70.1.1 is a Cloudflare edge address, 10.0.0.1 the Coolify proxy
+        $this->assertSame('203.0.113.7', $this->ipFor('10.0.0.1', '203.0.113.7, 172.70.1.1'));
+        // Cloudflare appends the real sender after anything the visitor made up
+        $this->assertSame('203.0.113.7', $this->ipFor('10.0.0.1', '198.51.100.9, 203.0.113.7, 172.70.1.1'));
+        // Straight from Cloudflare, with no proxy in between
+        $this->assertSame('203.0.113.7', $this->ipFor('172.70.1.1', '203.0.113.7'));
+    }
 
-        $noHops = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.1', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
-        $this->assertSame('10.0.0.1', $noHops->visitorIp());
+    public function testAForgedHeaderIsIgnored()
+    {
+        config(['services.coolify_proxy_ips' => ['10.0.0.1']]);
 
-        $forgedCloudflareHop = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '10.0.0.2', 'HTTP_X_FORWARDED_FOR' => '198.51.100.9, 172.70.1.1', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
-        $this->assertSame('10.0.0.2', $forgedCloudflareHop->visitorIp());
+        // Sent to the proxy without going through Cloudflare: the proxy adds the real sender last
+        $this->assertSame('198.51.100.9', $this->ipFor('10.0.0.1', '203.0.113.7, 172.70.1.1, 198.51.100.9'));
+        // Not from the proxy at all
+        $this->assertSame('10.0.0.2', $this->ipFor('10.0.0.2', '198.51.100.9, 172.70.1.1'));
+        $this->assertSame('198.51.100.10', $this->ipFor('198.51.100.10', '198.51.100.9, 172.70.1.1'));
+        // No forwarding header
+        $this->assertSame('10.0.0.1', $this->ipFor('10.0.0.1'));
+    }
 
-        $publicPeer = Request::create('/', 'GET', server: ['REMOTE_ADDR' => '198.51.100.10', 'HTTP_X_FORWARDED_FOR' => '198.51.100.9, 172.70.1.1', 'HTTP_CF_CONNECTING_IP' => '203.0.113.7']);
-        $this->assertSame('198.51.100.10', $publicPeer->visitorIp());
+    public function testWithoutTheProxySettingNothingIsForwarded()
+    {
+        config(['services.coolify_proxy_ips' => []]);
+
+        $this->assertSame('10.0.0.1', $this->ipFor('10.0.0.1', '203.0.113.7, 172.70.1.1'));
     }
 
     public function testRegistrationLimitsAreKeptPerVisitor()
@@ -86,7 +99,7 @@ class ProxyTest extends TestCase
         config(['services.coolify_proxy_ips' => ['10.0.0.1']]);
         NoCaptcha::shouldReceive('verifyResponse')->andReturn(false);
 
-        $attempt = fn (string $ip) => $this->withServerVariables(['REMOTE_ADDR' => '10.0.0.1'])->withHeaders(['CF-Connecting-IP' => $ip, 'X-Forwarded-For' => "$ip, 172.70.1.1"])->post(route('register'), [
+        $attempt = fn (string $ip) => $this->withServerVariables(['REMOTE_ADDR' => '10.0.0.1'])->withHeaders(['X-Forwarded-For' => "$ip, 172.70.1.1"])->post(route('register'), [
             'name' => 'Someone', 'email' => 'someone@example.com',
             'password' => 'a-long-password', 'password_confirmation' => 'a-long-password',
             'g-recaptcha-response' => 'token',

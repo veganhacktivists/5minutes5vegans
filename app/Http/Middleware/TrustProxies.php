@@ -2,27 +2,24 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Http\Request;
+use App\Support\Cloudflare;
 use Illuminate\Http\Middleware\TrustProxies as Middleware;
+use Illuminate\Http\Request;
 
 class TrustProxies extends Middleware
 {
-    /**
-     * The trusted proxies for this application.
-     *
-     * @var array|string
-     */
-    protected $proxies;
+    // Only X-Forwarded-For. EnforceHttps handles https, and a trusted
+    // X-Forwarded-Proto of "http" from the proxy would override it.
+    protected $headers = Request::HEADER_X_FORWARDED_FOR;
 
     /**
-     * The headers that should be used to detect proxies.
-     *
-     * @var int
+     * Requests come from Coolify's proxy, which adds the Cloudflare edge it
+     * heard from to X-Forwarded-For. Trusting both means $request->ip() skips
+     * them and returns the visitor. A request that didn't come through
+     * Cloudflare gets its real sender, whatever headers it made up.
      */
-    protected $headers =
-    Request::HEADER_X_FORWARDED_FOR |
-    Request::HEADER_X_FORWARDED_HOST |
-    Request::HEADER_X_FORWARDED_PORT |
-    Request::HEADER_X_FORWARDED_PROTO |
-    Request::HEADER_X_FORWARDED_AWS_ELB;
+    protected function proxies()
+    {
+        return [...config('services.coolify_proxy_ips'), ...Cloudflare::RANGES];
+    }
 }

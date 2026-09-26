@@ -34,11 +34,11 @@ class PasswordResetTest extends TestCase
 
     public function testEachVisitorCanAskForSixResetsAMinute()
     {
-        // As in production: every request arrives from the proxy, and
-        // Cloudflare says who the visitor is
+        // As in production: every request arrives from the proxy, with the
+        // visitor and the Cloudflare edge in X-Forwarded-For
         config(['services.coolify_proxy_ips' => ['10.0.0.1']]);
         $ask = fn (string $visitor, int $i) => $this->withServerVariables(['REMOTE_ADDR' => '10.0.0.1'])
-            ->withHeaders(['CF-Connecting-IP' => $visitor, 'X-Forwarded-For' => "$visitor, 172.70.1.1"])
+            ->withHeaders(['X-Forwarded-For' => "$visitor, 172.70.1.1"])
             ->post(route('password.email'), ['email' => "someone$i@example.com"]);
 
         for ($i = 0; $i < 6; $i++) {
