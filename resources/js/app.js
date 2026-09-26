@@ -54,12 +54,7 @@ function updateTimer() {
     )
 }
 
-// Vue.component('App', require('./components/App.vue').default)
-// Vue.component('Menu', require('./components/Menu.vue').default)
-// Vue.component('Verbiages', require('./components/Verbiages.vue').default)
-// Vue.component('UserEdit', require('./components/UserEdit.vue').default)
-
-// Register CSRF token for use with vue-resource
+// Send Laravel's CSRF token with every axios request
 let token = document.head.querySelector('meta[name="csrf-token"]')
 
 if (token) {

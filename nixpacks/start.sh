@@ -6,17 +6,9 @@ set -e
 # Run Laravel migrations
 php artisan migrate --force
 
-# Cache Laravel views
-php artisan view:cache
-
-# Cache Laravel config
-php artisan config:cache
-
-# Optimize Laravel
-php artisan optimize
-
-# Clear Laravel routes
-php artisan route:clear
+# Cache config, events and views. Not routes: they depend on the locale in
+# the URL, so a route cache would only hold one language's.
+php artisan optimize --except=routes
 
 # Cache verbiages. It exits 1 if any one language fails. That mustn't keep the
 # whole site down: the cache still holds the last good replies unless this is

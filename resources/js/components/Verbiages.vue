@@ -209,14 +209,6 @@ async function copyText(text) {
     if (!copied) throw new Error('The browser refused to copy')
 }
 
-function setVueModel(obj, str, val) {
-    str = str.split('.')
-    while (str.length > 1) {
-        obj = obj[str.shift()]
-    }
-    return (obj[str.shift()] = val)
-}
-
 export default {
     props: {
         custom: Boolean

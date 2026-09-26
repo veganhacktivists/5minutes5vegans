@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Http\Request;
 
 class TweetController extends Controller
 {

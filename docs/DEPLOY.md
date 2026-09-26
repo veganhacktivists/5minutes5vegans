@@ -24,7 +24,7 @@ so it doesn't have to be rediscovered. Last checked 26 September 2026.
 
 `nixpacks/start.sh` runs, in order:
 1. the migrations
-2. the view and config caches, `optimize`, then `route:clear`
+2. `optimize --except=routes`, which caches config, events and views
 3. `tweets:generate`, to fill the replies cache
 4. the nginx config is generated from `nixpacks/nginx.template.conf`
 5. php-fpm, then supervisor, then nginx
