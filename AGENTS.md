@@ -50,10 +50,11 @@ for how production runs.
   - A new third-party host has to be added to the policy.
   - Check signed-in pages as well as guest ones. The icon picker for people's
     own messages broke because only guest pages were checked.
-- **Visitor IP:** in production `$request->ip()` is the Coolify proxy's address
-  for everyone. Anything per visitor has to use `$request->visitorIp()`, and a
-  rate limit has to be a named `RateLimiter::for(...)` keyed on it. A plain
-  `throttle:6,1` limits the whole site at once.
+- **Visitor IP:** `TrustProxies` trusts Coolify's proxy (`COOLIFY_PROXY_IPS`)
+  and Cloudflare's ranges, so `$request->ip()` is the visitor's address. It
+  trusts `X-Forwarded-For` only, because the proxy's `X-Forwarded-Proto: http`
+  would override `EnforceHttps`. If `COOLIFY_PROXY_IPS` isn't set, `ip()` is
+  the proxy's address for everyone and every rate limit covers the whole site.
 - **Phone layout:** Swiper owns `.swiper-pagination` and rewrites it. On phones
   the open reply box moves into `#reply-dock` (`toggleVerbiageMsg` in
   `Verbiages.vue`), so leave Swiper's elements alone.
