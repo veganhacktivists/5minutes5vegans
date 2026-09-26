@@ -31,7 +31,7 @@ services:
     networks:
       - sail
   mariadb:
-    image: 'mariadb:10'
+    image: 'mariadb:13'
     ports:
         - '${FORWARD_DB_PORT:-3306}:3306'
     environment:
