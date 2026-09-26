@@ -29,6 +29,19 @@ class TweetContentTest extends TestCase
         }
     }
 
+    public function testEveryLanguageListsTheSameTopicsInTheSameOrder()
+    {
+        // A language switch keeps the chosen topic by its place in the list
+        $icons = [];
+        foreach ($this->topicsByLocale() as $locale => $topics) {
+            $icons[$locale] = array_column($topics, 'icon');
+        }
+
+        foreach ($icons as $locale => $list) {
+            $this->assertSame($icons['en'], $list, $locale);
+        }
+    }
+
     public function testEveryTopicIsWellFormed()
     {
         foreach ($this->topicsByLocale() as $locale => $topics) {
