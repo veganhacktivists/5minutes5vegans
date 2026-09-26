@@ -8,10 +8,10 @@
     },
     "devDependencies": {
         "@playwright/test": "^1.62.0",
-        "@vitejs/plugin-vue": "^6.0.0",
-        "laravel-vite-plugin": "^2.0.0",
+        "@vitejs/plugin-vue": "^6.0.9",
+        "laravel-vite-plugin": "^3.2.0",
         "sass": "^1.89.2",
-        "vite": "^7.3.5"
+        "vite": "^8.3.1"
     },
     "dependencies": {
         "@popperjs/core": "^2.11.8",
