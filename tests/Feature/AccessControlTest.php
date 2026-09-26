@@ -125,4 +125,18 @@ class AccessControlTest extends TestCase
             ->assertJson(['message' => 'You can save up to 50 messages.']);
         $this->assertSame(50, $user->verbiages()->count());
     }
+
+    /** A title saved before the 50-character limit doesn't block edits to the rest. */
+    public function testAnOlderLongTitleCanBeKept()
+    {
+        $user = User::factory()->create();
+        $old = str_repeat('t', 60);
+        $verbiage = Verbiage::factory()->create(['user_id' => $user->id, 'title' => $old]);
+
+        $this->actingAs($user)->putJson(route('verbiage.update', $verbiage), ['title' => $old, 'icon' => 'fas fa-leaf', 'body' => 'New body'])
+            ->assertOk();
+        $this->actingAs($user)->putJson(route('verbiage.update', $verbiage), ['title' => str_repeat('u', 60), 'icon' => 'fas fa-leaf', 'body' => 'New body'])
+            ->assertStatus(422)->assertJsonValidationErrors('title');
+        $this->assertDatabaseHas('verbiages', ['id' => $verbiage->id, 'title' => $old, 'body' => 'New body']);
+    }
 }

@@ -34,7 +34,13 @@ class VerbiageController extends Controller
 
         abort_unless( (int) $verbiage->user_id === (int) Auth::id(), 403 );
 
-        $data = $request->validate($this::verbiageRules);
+        $rules = $this::verbiageRules;
+        // Titles saved before the 50-character limit can stay as they are
+        if ($request->input('title') === $verbiage->title) {
+            $rules['title'] = 'required|string|max:255';
+        }
+
+        $data = $request->validate($rules);
         $verbiage->update( $data );
 
         return response()->json( [ 'success' => true ] );
