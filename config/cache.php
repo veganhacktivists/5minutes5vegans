@@ -103,4 +103,17 @@ return [
 
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Serializable Classes
+    |--------------------------------------------------------------------------
+    |
+    | The cache only holds strings, numbers and booleans, so it never has to
+    | unserialize an object. Allowing none means a leaked APP_KEY can't be
+    | turned into PHP object injection through the cache.
+    |
+    */
+
+    'serializable_classes' => false,
+
 ];
