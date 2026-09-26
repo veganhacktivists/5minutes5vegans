@@ -9,25 +9,17 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ContentSecurityPolicy
 {
-    // Enforced. For a trial of a change to the policy, switch this to
-    // Content-Security-Policy-Report-Only, and browsers will log violations
-    // in the console without blocking anything.
+    // To trial a policy change, use Content-Security-Policy-Report-Only
     public const HEADER = 'Content-Security-Policy';
 
-    // vanilla-icon-picker, used when people make their own messages, fetches
-    // its Font Awesome icon lists from here. The path keeps the rest of
-    // GitHub's raw files out.
+    // Where vanilla-icon-picker fetches its icon lists
     private const ICON_SETS = 'https://raw.githubusercontent.com/iconify/icon-sets/';
 
-    /**
-     * Scripts run only with this request's nonce, or when loaded by a script
-     * that has it ('strict-dynamic'), which is how reCAPTCHA loads its own.
-     * 'https:' and 'unsafe-inline' are only for browsers too old to know
-     * nonces. Newer ones ignore them when a nonce is present.
-     */
+    // Scripts need this request's nonce, or a nonced script loading them
+    // ('strict-dynamic'). 'https:' and 'unsafe-inline' are for old browsers.
     public function handle(Request $request, Closure $next): Response
     {
-        // The Vite dev server's scripts and live reload don't carry the nonce
+        // The Vite dev server's scripts carry no nonce
         if (Vite::isRunningHot()) {
             return $next($request);
         }

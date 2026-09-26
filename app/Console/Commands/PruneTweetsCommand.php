@@ -11,11 +11,6 @@ class PruneTweetsCommand extends Command
 
     protected $description = 'Delete posts too old for the feed, and all but the newest in each language';
 
-    /**
-     * The feed only shows the newest 50 in each language from the last
-     * Tweet::FEED_DAYS days, so there's no need to keep every post, name and
-     * avatar the bot has ever sent.
-     */
     public function handle(): int
     {
         $keep = max(1, (int) $this->option('keep'));

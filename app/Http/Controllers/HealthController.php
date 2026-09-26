@@ -7,11 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class HealthController extends Controller
 {
-    /**
-     * For uptime monitors and Coolify's health check: the app is running and
-     * can reach its database. Failures aren't reported, since a monitor asks
-     * every few seconds and the cause shows up elsewhere.
-     */
+    // Not reported when down: monitors ask every few seconds
     public function __invoke(): JsonResponse
     {
         try {

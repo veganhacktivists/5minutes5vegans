@@ -24,7 +24,7 @@ so it doesn't have to be rediscovered. Last checked 26 September 2026.
 
 `nixpacks/start.sh` runs, in order:
 1. the migrations
-2. the view and config caches, `optimize`, then `route:clear`
+2. `optimize --except=routes`, which caches config, events and views
 3. `tweets:generate`, to fill the replies cache
 4. the nginx config is generated from `nixpacks/nginx.template.conf`
 5. php-fpm, then supervisor, then nginx
@@ -91,11 +91,13 @@ written here.
 | `MAIL_*` | Password reset emails and the failure alerts. |
 | `SENTRY_LARAVEL_DSN`, `SENTRY_TRACES_SAMPLE_RATE` | Error tracking, if it's set up. |
 
-Not yet checked:
-- `CACHE_DRIVER` and `SESSION_DRIVER`. `.env.example` uses `file`, which lives
-  in the container.
-- Whether `storage/` is on persistent storage, which decides whether the cache
+Checked in the container on 26 September 2026:
+- The cache and sessions use `file`, the queue is `sync` and mail is `smtp`.
+- `storage/` persists across deploys (its logs go back to 2025), so the cache
   and sessions survive a deploy.
+- Files under `storage/` are owned by root but writable by everyone, so
+  php-fpm (www-data) can write what the root scheduler creates.
+- Nothing is ever queued with `sync`, so the queue worker has nothing to do.
 
 ## Analytics
 

@@ -8,16 +8,10 @@ use Illuminate\Http\Request;
 
 class TrustProxies extends Middleware
 {
-    // Only X-Forwarded-For. EnforceHttps handles https, and a trusted
-    // X-Forwarded-Proto of "http" from the proxy would override it.
+    // Not X-Forwarded-Proto: the proxy's "http" would override EnforceHttps
     protected $headers = Request::HEADER_X_FORWARDED_FOR;
 
-    /**
-     * Requests come from Coolify's proxy, which adds the Cloudflare edge it
-     * heard from to X-Forwarded-For. Trusting both means $request->ip() skips
-     * them and returns the visitor. A request that didn't come through
-     * Cloudflare gets its real sender, whatever headers it made up.
-     */
+    // Coolify's proxy and Cloudflare, so $request->ip() is the visitor
     protected function proxies()
     {
         return [...config('services.coolify_proxy_ips'), ...Cloudflare::RANGES];
