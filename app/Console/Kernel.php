@@ -30,12 +30,13 @@ class Kernel extends ConsoleKernel
 
         $output = storage_path('logs/tweets-generate.log');
 
-        // The command runs every minute, so an outage would send an email a minute.
-        // Email at most once every six hours while it keeps failing.
-        // A run that's still going (say, waiting on Shlink) isn't started again.
-        // The lock lapses after ten minutes in case a run dies holding it.
+        // The replies only change on a deploy (start.sh builds them then) or
+        // when a failed short link is retried, which happens after ten minutes.
+        // A run still going isn't started again; the lock lapses after ten
+        // minutes in case a run dies holding it. Failures email at most every
+        // six hours.
         $schedule->command(GenerateTweetsCommand::class)
-            ->everyMinute()
+            ->everyTenMinutes()
             ->withoutOverlapping(10)
             ->sendOutputTo($output)
             ->onFailure(function () use ($output) {
