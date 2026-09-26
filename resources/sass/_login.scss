@@ -8,6 +8,15 @@
     z-index:-2;
 }
 
+// A forest wash over the photo ties it to the palette. It fades out towards
+// the top, so the logo keeps a light sky behind it.
+#login-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba($forest, 0.08), rgba($forest, 0.5) 45%);
+}
+
 #login-bg-overlay {
     position: fixed;
     height: 100%;
