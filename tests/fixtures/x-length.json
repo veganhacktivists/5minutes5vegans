@@ -1,0 +1,11 @@
+[
+    { "text": "Hello world", "length": 11, "why": "plain text is 1 a character" },
+    { "text": "Read this: https://example.org/a/very/long/path?with=query", "length": 34, "why": "a link is 23 however long it is" },
+    { "text": "Two links https://a.example/x https://b.example/y", "length": 57, "why": "each link is 23" },
+    { "text": "Café crème", "length": 10, "why": "accented Latin letters are 1" },
+    { "text": "🌱 Go vegan!", "length": 12, "why": "an emoji is 2" },
+    { "text": "👩‍🌾", "length": 2, "why": "an emoji made of several joined ones is still 2" },
+    { "text": "日本語", "length": 6, "why": "CJK characters are 2" },
+    { "text": "“Quote” – end", "length": 13, "why": "curly quotes and the en dash are in X's weight-1 ranges" },
+    { "text": "Wait…", "length": 6, "why": "the ellipsis is outside those ranges, so 2" }
+]

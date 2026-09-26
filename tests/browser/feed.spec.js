@@ -1,4 +1,5 @@
 import { test as base, expect } from '@playwright/test'
+import { readFileSync } from 'node:fs'
 
 const LANGUAGES = ['en', 'de', 'es', 'fr', 'it', 'nl', 'pt']
 
@@ -218,5 +219,21 @@ test('the reply box survives a phone turning into a wider screen', async ({ page
     await page.setViewportSize({ width: 1024, height: 800 })
 
     await expect(page.locator('.verbiage-msg')).toHaveCount(1)
+    await expect(page.locator('#reply-dock .verbiage-msg')).toHaveCount(0)
     await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
+})
+
+// The same cases pin the PHP check that every reply fits, in TweetContentTest
+const X_LENGTHS = JSON.parse(readFileSync(new URL('../fixtures/x-length.json', import.meta.url)))
+
+test('the character counter counts the way X does', async ({ page, isMobile }) => {
+    test.skip(isMobile, 'one size is enough')
+    await page.goto('/en')
+    const box = page.locator('.verbiage-msg textarea')
+
+    for (const { text, length, why } of X_LENGTHS) {
+        await box.fill(text)
+        await box.press('End')
+        expect(parseInt(await page.locator('.cc-count').innerText(), 10), `${text}: ${why}`).toBe(280 - length)
+    }
 })

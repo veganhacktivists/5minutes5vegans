@@ -69,6 +69,16 @@ class TweetContentTest extends TestCase
         }
     }
 
+    public function testTheLengthCountMatchesXsRules()
+    {
+        // The same cases pin the page's own counter, in tests/browser/feed.spec.js
+        $cases = json_decode(file_get_contents(base_path('tests/fixtures/x-length.json')), true);
+
+        foreach ($cases as $case) {
+            $this->assertSame($case['length'], $this->xLength($case['text']), "{$case['text']}: {$case['why']}");
+        }
+    }
+
     /** Length as X counts it: every link is 23, emoji are 2, most other characters 1. */
     private function xLength(string $text): int
     {
