@@ -121,6 +121,21 @@ $(() => {
 })
 
 // Post ages, and the posts already opened
+// The head script hides the feed's intro before the page draws once this is set
+const INTRO_DISMISSED_KEY = 'intro-dismissed'
+$(() => {
+    $('.feed-intro-dismiss').on('click', () => {
+        document.documentElement.classList.add('intro-dismissed')
+        $('.timeline .card').first().trigger('focus')
+        try {
+            localStorage.setItem(INTRO_DISMISSED_KEY, '1')
+        } catch {
+            // No storage, as in some private windows: it shows again next time
+        }
+    })
+    $('.feed-intro-how').on('click', () => track('How it works'))
+})
+
 const OPENED_POSTS_KEY = 'opened-posts'
 const OPENED_POSTS_LIMIT = 200
 

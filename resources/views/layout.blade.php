@@ -13,6 +13,9 @@
             $pageTitle = isset($pageName) ? "$pageName | $siteName" : ($isFeed ? $siteName.' | '.__('Help people on X go vegan') : $siteName);
         @endphp
         <title>{{ $pageTitle }}</title>
+        @if ($isFeed)
+            <script nonce="{{ Vite::cspNonce() }}">try { if (localStorage.getItem('intro-dismissed')) document.documentElement.classList.add('intro-dismissed') } catch (e) {}</script>
+        @endif
         <meta name="description" content="{{ __('landing.description') }}">
         @unless ($isFeed)
             <meta name="robots" content="noindex">
