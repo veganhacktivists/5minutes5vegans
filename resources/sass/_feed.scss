@@ -163,6 +163,14 @@
     }
 }
 
+#resetLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
+}
+
 .timer-display {
     font-size: 30px;
     color: $dark-text;
@@ -205,6 +213,7 @@
 }
 
 #minutes-left {
+    color: $label-green;
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: bold;
@@ -703,10 +712,19 @@
     }
 
     .timestamp {
+        display: flex;
+        align-items: center;
         color: $feed-card-muted;
         font-size: 13px;
         margin-top: 6px;
         margin-bottom: 0;
+    }
+
+    .reply-on-x {
+        margin-left: auto;
+        color: $label-green;
+        font-weight: bold;
+        white-space: nowrap;
     }
 
     .opened-label {

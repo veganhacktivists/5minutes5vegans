@@ -38,6 +38,7 @@
             <p class="timestamp">
                 <time datetime="{{ $tweet->date->toIso8601String() }}">{{ $tweet->date->format('h:i A · M d, Y') }}</time>
                 <span class="opened-label"><i class="fas fa-check"></i> @lang('Opened')</span>
+                <span class="reply-on-x">@lang('Reply on X') <i class="fas fa-arrow-up-right-from-square"></i></span>
             </p>
         </a>
     @empty

@@ -94,5 +94,6 @@
   "This deletes your account and the messages you've saved. It can't be undone.": "Cela supprime ton compte et les messages que tu as enregistrés. C'est irréversible.",
   "Delete my account": "Supprimer mon compte",
   "Delete your account and all your messages?": "Supprimer ton compte et tous tes messages ?",
-  "Current password": "Mot de passe actuel"
+  "Current password": "Mot de passe actuel",
+  "Reply on X": "Répondre sur X"
 }

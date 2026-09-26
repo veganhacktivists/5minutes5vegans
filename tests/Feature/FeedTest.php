@@ -32,7 +32,8 @@ class FeedTest extends TestCase
 
         $this->view('inc.twitter', ['tweets' => collect([$tweet])])
             ->assertSee('data-post="1234"', false)
-            ->assertSee('<time datetime="2026-09-25T10:00:00+00:00">', false);
+            ->assertSee('<time datetime="2026-09-25T10:00:00+00:00">', false)
+            ->assertSee('Reply on X');
     }
 
     public function testAnEmptyFeedLinksToTheEnglishOne()
