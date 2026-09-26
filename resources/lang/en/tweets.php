@@ -300,7 +300,7 @@ return [
                 'Good news on that one!',
             ],
             [
-                'Beans, lentils, rice, pasta, oats, potatoes and frozen veg are some of the cheapest foods there are. It\'s the specialty products that cost more.',
+                'Beans, lentils, rice, pasta, oats, potatoes and frozen veg are some of the cheapest foods there are. It\'s the speciality products that cost more.',
                 'An Oxford study found vegan diets could cut food bills by up to a third in countries like the UK and US: ' . generate_and_cache_shlink('https://www.ox.ac.uk/news/2021-11-11-sustainable-eating-cheaper-and-healthier-oxford-study'),
                 'This video goes through it well: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E') . ' Cooking with beans, lentils and tofu keeps it cheap.',
             ],
