@@ -35,42 +35,13 @@ html {
     background-color: #ff0097;
 }
 
-$swirve: 12px;
-$x-swirve: 17px;
-$xx-swirve: 22px;
-
-.swirvy-box-left {
-    border-radius: 0;
-    border-top-left-radius: $swirve !important;
-
-    @include for-tablet-portrait-up {
-        border-top-left-radius: $x-swirve !important;
-    }
-
-    @include for-desktop-up {
-        border-top-left-radius: $xx-swirve !important;
-    }
-}
-
-.swirvy-box-right {
-    border-radius: 0;
-    border-bottom-right-radius: $swirve !important;
-
-    @include for-tablet-portrait-up {
-        border-bottom-right-radius: $x-swirve !important;
-    }
-
-    @include for-desktop-up {
-        border-bottom-right-radius: $xx-swirve !important;
-    }
-}
-
-.swirvy-box {
-    @extend .swirvy-box-left, .swirvy-box-right;
+// Buttons, chips and the pager share these corners
+.soft-corners {
+    border-radius: $radius !important;
     outline: none;
 
     &:focus-visible {
-        outline: 3px solid $dark-text;
+        outline: 3px solid $forest;
         outline-offset: 2px;
     }
 }
@@ -159,7 +130,7 @@ a:hover, .btn-link:hover {
     gap: 6px;
 
     a {
-        @extend .swirvy-box;
+        @extend .soft-corners;
 
         display: inline-flex;
         align-items: center;
@@ -167,18 +138,18 @@ a:hover, .btn-link:hover {
         padding: 4px 10px;
         font-size: 15px;
         font-weight: bold;
-        color: $dark-text;
+        color: $forest;
         text-decoration: none;
         background-color: $white;
-        border: 2px solid $feed-teal;
+        border: 2px solid $canopy;
 
         &:hover {
-            background-color: $feed-mint;
+            background-color: $mint;
         }
 
         &.active {
             color: $white;
-            background-color: $button-cta-color;
+            background-color: $canopy;
         }
     }
 }
@@ -210,4 +181,11 @@ a:hover, .btn-link:hover {
         width: 30.6px;
         max-width: none;
     }
+}
+
+// The logo fills whatever holds it: the feed's nav or a column on the login pages
+.site-logo {
+    display: block;
+    width: 100%;
+    height: auto;
 }

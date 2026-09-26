@@ -20,7 +20,7 @@
          <input class="form-control mb-1" :placeholder="lang.confirmPassword" name="password_confirmation" type="password" autocomplete="new-password" value="">
 
          <div class="d-flex">
-            <input class="btn btn-large btn-primary swirvy-box ms-auto" type="submit" :value="lang.saveProfile">
+            <input class="btn btn-large btn-primary soft-corners ms-auto" type="submit" :value="lang.saveProfile">
          </div>
       </form>
 

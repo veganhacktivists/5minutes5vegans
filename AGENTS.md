@@ -37,6 +37,9 @@ for how production runs.
   [resources/lang/README.md](resources/lang/README.md).
 - **Say "posts"** in anything people read, not "tweets". Code and route names
   keep the old word.
+- **Colours** come from the Evergreen tokens at the top of
+  `resources/sass/_variables.scss`. Each comment gives its contrast on the ground
+  it's used on. The browser tests check that small text reaches 4.5:1.
 - **Translations:** a new UI string needs a translation in all six
   `resources/lang/{locale}.json` files. They use the informal register (du, tu,
   tú, je, você), and English copy is British English. `de.json`, `es.json` and
