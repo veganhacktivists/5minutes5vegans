@@ -78,6 +78,7 @@ jobs:
           touch "$DB_DATABASE"
           php artisan migrate --force
           php artisan db:seed --class='\TweetsTableSeeder' --force
+          php artisan db:seed --class='\BrowserTestUserSeeder' --force
           php artisan tweets:generate
 
       - run: pnpm exec playwright install --with-deps chromium

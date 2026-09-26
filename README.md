@@ -31,7 +31,9 @@ the tests with `./vendor/bin/sail artisan test`.
 
 The browser tests (Playwright, in `tests/browser`) open the feed at desktop and
 phone sizes. They need the front end built, some posts (`sail artisan db:seed
---class='\TweetsTableSeeder'`) and the replies (`sail artisan tweets:generate`).
+--class='\TweetsTableSeeder'`), the test user they sign in as (`sail artisan
+db:seed --class='\BrowserTestUserSeeder'`) and the replies (`sail artisan
+tweets:generate`).
 Then, from your machine:
 
 ```

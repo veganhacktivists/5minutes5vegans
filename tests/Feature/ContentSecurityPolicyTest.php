@@ -66,4 +66,11 @@ class ContentSecurityPolicyTest extends TestCase
         $this->assertStringContainsString("connect-src 'self' https://analytics.veganhacktivists.org", $policy);
         $this->assertStringContainsString('<script nonce="'.$this->nonce($policy).'" defer src="https://analytics.veganhacktivists.org/script.js"', $response->getContent());
     }
+
+    public function testTheIconPickerCanLoadItsIcons()
+    {
+        $policy = $this->get(route('login'))->headers->get(ContentSecurityPolicy::HEADER);
+
+        $this->assertMatchesRegularExpression('~connect-src [^;]*https://raw\.githubusercontent\.com/iconify/icon-sets/~', $policy);
+    }
 }

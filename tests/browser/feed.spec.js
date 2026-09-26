@@ -164,3 +164,25 @@ test('on a phone, the pager works from the keyboard', async ({ page, isMobile })
     await expect(messages).toHaveAttribute('aria-pressed', 'true')
     await expect(feed).toHaveAttribute('aria-pressed', 'false')
 })
+
+test('a signed-in volunteer can pick an icon for their own message', async ({ page, isMobile }) => {
+    // The icon lists normally come from GitHub. A stub keeps the test offline,
+    // and the browser still checks the Content-Security-Policy before asking.
+    await page.route('https://raw.githubusercontent.com/iconify/icon-sets/**', (route) => route.fulfill({
+        json: { icons: { leaf: { body: '<path d="M0 0h1v1H0z"/>' } }, width: 512, height: 512 },
+    }))
+
+    // Seeded by database/seeds/BrowserTestUserSeeder.php
+    await page.goto('/en/login')
+    await page.locator('input[name=email]').fill('browser-test@example.com')
+    await page.locator('input[name=password]').fill('password')
+    await page.locator('button[type=submit]').click()
+    await expect(page.locator('.verbiage-link').first()).toBeAttached()
+
+    if (isMobile) await page.locator('.swiper-pagination-bullet').first().click()
+    await page.getByRole('button', { name: 'Your own' }).click()
+    await page.getByRole('button', { name: 'New', exact: true }).click()
+    await page.locator('#icon-select').click()
+
+    await expect(page.locator('.icon-element').first()).toBeVisible()
+})
