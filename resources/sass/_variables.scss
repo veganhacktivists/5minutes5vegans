@@ -17,6 +17,22 @@ $radius-panel: 24px;
 $body-bg: $forest;
 $modal-bg: $forest;
 
+// Roles for the site's own styles. Each is a CSS variable set in _theme.scss,
+// so a theme can swap it. Bootstrap still gets the fixed colours above.
+$ground: var(--ground);
+$surface: var(--surface);
+$opened: var(--opened);
+$line: var(--line);
+$ink: var(--ink);
+$ink-soft: var(--ink-soft);
+$brand: var(--brand);
+$on-brand: var(--on-brand);
+$accent: var(--accent);
+$accent-strong: var(--accent-strong);
+$deep: var(--deep);
+$panel: var(--panel);
+$pane: var(--pane);
+
 // Typography
 $font-family-sans-serif: "PT Sans", sans-serif;
 $headings-font-family: "Rajdhani", sans-serif;
@@ -80,17 +96,17 @@ $cyan: #6cb2eb;
 }
 
 // Feed cards
-$feed-card-bg: $paper;
-$feed-card-border: $mint-line;
-$feed-card-hover: #F9FAFB;
-$feed-card-text: #000;
-$feed-card-muted: #666;
+$feed-card-bg: $surface;
+$feed-card-border: $line;
+$feed-card-hover: var(--card-hover);
+$feed-card-text: var(--card-ink);
+$feed-card-muted: $ink-soft;
 
 // Character count
-$count-fine: #495057;
-$count-warning: #8a5a00;
-$count-danger: #b3261e;
-$count-over: #DC3545;
+$count-fine: var(--count-fine);
+$count-warning: var(--count-warning);
+$count-danger: var(--count-danger);
+$count-over: var(--over-bg);
 
 // Form
 $primary: $canopy;
