@@ -76,6 +76,18 @@ class FeedTest extends TestCase
         $this->view('inc.twitter', ['tweets' => collect()])->assertDontSee('feed-intro');
     }
 
+    public function testEveryLanguageCanSayHowManyPostsWereOpened()
+    {
+        foreach (['You opened 1 post. Thank you!', 'You opened :count posts. Thank you!'] as $line) {
+            foreach (array_keys(config('laravellocalization.supportedLocales')) as $locale) {
+                if ($locale !== 'en') {
+                    $this->assertNotSame($line, __($line, [], $locale), "$locale: $line");
+                }
+            }
+        }
+        $this->assertStringContainsString(':count', __('You opened :count posts. Thank you!', [], 'de'));
+    }
+
     public function testEveryLanguageHasTheIntro()
     {
         foreach (array_keys(config('laravellocalization.supportedLocales')) as $locale) {
