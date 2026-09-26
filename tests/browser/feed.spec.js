@@ -347,3 +347,15 @@ test('in dark mode, small text on the feed is still readable', async ({ page }) 
         expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
     }
 })
+
+test('dark mode uses the dark palette and the light logo', async ({ page }) => {
+    await page.goto('/en')
+    expect(await page.locator('h1:visible img').evaluate((img) => img.currentSrc)).not.toContain('logo-dark')
+
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.reload()
+    expect(await page.locator('#feed').evaluate((el) => getComputedStyle(el).backgroundColor)).toBe('rgb(22, 25, 25)')
+    expect(await page.locator('.timeline .card').first().evaluate((el) => getComputedStyle(el).backgroundColor)).toBe('rgb(41, 41, 41)')
+    expect(await page.locator('h1:visible img').evaluate((img) => img.currentSrc)).toContain('logo-dark.svg')
+})
+
