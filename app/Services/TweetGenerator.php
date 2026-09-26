@@ -14,7 +14,7 @@ class TweetGenerator
      * flagging lots of identical copied replies as spam.
      *
      * @param  array<int, array{icon: string, title: string, body: array<int, array<int, string>>}>  $topics
-     * @return array<int, array{icon: string, title: string, body: string, variants: array<int, string>}>
+     * @return array<int, array{icon: string, title: string, variants: array<int, string>}>
      */
     public function generate(array $topics): array
     {
@@ -24,8 +24,6 @@ class TweetGenerator
             return [
                 'icon' => $topic['icon'],
                 'title' => $topic['title'],
-                // Pages loaded before the variants existed only read this
-                'body' => $variants[array_rand($variants)],
                 'variants' => $variants,
             ];
         }, $topics);

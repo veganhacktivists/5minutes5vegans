@@ -25,7 +25,7 @@ class TweetGeneratorTest extends TestCase
             'Hey! Going #vegan is easy. Good luck!',
             'Hey! Going #vegan is fun. Good luck!',
         ], $reply['variants']);
-        $this->assertContains($reply['body'], $reply['variants']);
+        $this->assertArrayNotHasKey('body', $reply);
     }
 
     public function testItTagsOnlyTheFirstStandaloneVegan()

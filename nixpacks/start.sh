@@ -21,7 +21,7 @@ php artisan route:clear
 # Cache verbiages. It exits 1 if any one language fails. That mustn't keep the
 # whole site down: the cache still holds the last good replies unless this is
 # a fresh container, the page shows a "didn't load" message if not, and the
-# scheduler tries again every minute.
+# scheduler tries again within ten minutes.
 php artisan tweets:generate || echo "tweets:generate failed, the scheduler will retry"
 
 # Transform the nginx configuration

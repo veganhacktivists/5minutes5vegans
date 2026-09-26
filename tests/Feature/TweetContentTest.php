@@ -60,7 +60,6 @@ class TweetContentTest extends TestCase
         foreach ($this->topicsByLocale() as $locale => $topics) {
             foreach ($generator->generate($topics) as $i => $topic) {
                 $this->assertCount(count($generator->combinations($topics[$i]['body'])), $topic['variants'], "$locale {$topic['title']}");
-                $this->assertContains($topic['body'], $topic['variants']);
 
                 foreach ($topic['variants'] as $reply) {
                     $this->assertLessThanOrEqual(self::X_LIMIT, $this->xLength($reply), "$locale {$topic['title']}: $reply");

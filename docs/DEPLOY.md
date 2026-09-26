@@ -31,7 +31,7 @@ so it doesn't have to be rediscovered. Last checked 26 September 2026.
 
 It stops at the first step that fails, apart from `tweets:generate`. If
 generation fails, the site starts anyway, and the scheduler tries again within
-a minute.
+ten minutes.
 
 ## Background jobs
 
@@ -41,7 +41,7 @@ Supervisor runs two programs:
   `nixpacks/laravel-scheduler.conf`
 
 The scheduler runs:
-- `tweets:generate` every minute. It never overlaps itself. If it keeps
+- `tweets:generate` every ten minutes. It never overlaps itself. If it keeps
   failing, admin@veganhacktivists.org gets an email at most every six hours.
 - `tweets:prune` daily at midnight UTC. It removes posts older than 60 days
   (the feed doesn't show them) and keeps the newest 500 per language.
@@ -62,7 +62,7 @@ tail -n 6 /var/log/laravel-scheduler.log
 ```
 
 `laravel-scheduler` should say RUNNING, and the log should show
-`tweets:generate` finishing once a minute.
+`tweets:generate` finishing every ten minutes.
 
 ## Health check
 

@@ -42,8 +42,8 @@ class GenerateTweetsCommandTest extends TestCase
 
         $this->artisan('tweets:generate')->assertSuccessful();
 
-        $this->assertSame([['title' => 'Fresh en']], Cache::get('tweetsen'));
-        $this->assertSame([['title' => 'Fresh de']], Cache::get('tweetsde'));
+        $this->assertSame([['title' => 'Fresh en']], json_decode(Cache::get('tweetsen'), true));
+        $this->assertSame([['title' => 'Fresh de']], json_decode(Cache::get('tweetsde'), true));
     }
 
     public function testAFailedLanguageFailsTheRunAndKeepsItsLastMessages()
@@ -56,8 +56,8 @@ class GenerateTweetsCommandTest extends TestCase
             ->assertFailed();
 
         $this->assertSame([['title' => 'Last good de']], Cache::get('tweetsde'));
-        $this->assertSame([['title' => 'Fresh en']], Cache::get('tweetsen'));
-        $this->assertSame([['title' => 'Fresh pt']], Cache::get('tweetspt'));
+        $this->assertSame([['title' => 'Fresh en']], json_decode(Cache::get('tweetsen'), true));
+        $this->assertSame([['title' => 'Fresh pt']], json_decode(Cache::get('tweetspt'), true));
     }
 
     public function testAFailingLanguageIsReportedOnceAnHour()
@@ -79,6 +79,7 @@ class GenerateTweetsCommandTest extends TestCase
 
         $this->assertTrue($event->withoutOverlapping);
         $this->assertSame(10, $event->expiresAt);
+        $this->assertSame('*/10 * * * *', $event->expression);
     }
 
     public function testFailuresEmailAtMostEverySixHours()

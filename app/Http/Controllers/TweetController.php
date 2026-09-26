@@ -21,8 +21,10 @@ class TweetController extends Controller
             return response()->json([], 503)->header('Retry-After', 60);
         }
 
-        return response()
-            ->json($tweets)
-            ->header('Cache-Control', 'public, max-age=60');
+        // Arrays are what the cache held before the replies were stored as JSON
+        return response(is_string($tweets) ? $tweets : json_encode($tweets), 200, [
+            'Content-Type' => 'application/json',
+            'Cache-Control' => 'public, max-age=300',
+        ]);
     }
 }

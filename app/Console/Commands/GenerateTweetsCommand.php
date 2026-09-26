@@ -57,7 +57,8 @@ class GenerateTweetsCommand extends Command
                 $tweets = $generator->generate($localizedTweets);
                 echo "tweets generated ($language) \n";
 
-                Cache::put($key, $tweets, self::NUM_SECONDS_TO_CACHE);
+                // Stored ready to send, so each request serves a string
+                Cache::put($key, json_encode($tweets, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR), self::NUM_SECONDS_TO_CACHE);
                 \Log::info('Finished Generating tweets', ['lang' => $language]);
             } catch (\Throwable $e) {
                 $failed[] = $language;
