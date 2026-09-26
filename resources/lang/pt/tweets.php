@@ -19,7 +19,7 @@ return [
             ],
             [
                 'Qualquer coisa, me chama!',
-                'Pode perguntar o que quiser!',
+                'Pode perguntar o que quiser.',
                 'Se travar, me dá um grito!',
             ],
         ],
@@ -42,7 +42,7 @@ return [
             [
                 'Você consegue!',
                 'Você vai tirar de letra!',
-                'Estamos torcendo por você!',
+                'Tô torcendo por você!',
                 'Precisando de ajuda, é só chamar!',
             ],
         ],
@@ -54,8 +54,8 @@ return [
         'body' => [
             [
                 'A carne vegana evoluiu muito!',
-                'Boa notícia, você não precisa sentir falta!',
-                'Entendo total, e os substitutos hoje estão muito bons!',
+                'Você não precisa sentir falta!',
+                'Entendo, mas os substitutos hoje estão muito bons.',
             ],
             [
                 'A maioria dos mercados já vende hambúrguer, linguiça, carne moída e nuggets à base de plantas. A Beyond Meat é um bom começo: ' . generate_and_cache_shlink('https://www.beyondmeat.com/'),
@@ -63,9 +63,9 @@ return [
                 'Muitos restaurantes e redes também já têm pratos à base de plantas. O HappyCow mostra lugares com opções veganas perto de você: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
             [
-                'Me chama se quiser indicações!',
-                'Posso te passar meus favoritos!',
-                'Divirta-se experimentando!',
+                'Me chama se quiser indicações.',
+                'Posso te passar meus favoritos, se quiser.',
+                'Aproveita pra experimentar!',
             ],
         ],
     ],
@@ -85,8 +85,8 @@ return [
                 'As marcas variam muito, então experimente algumas. O Violife é um bom começo e derrete na pizza e no sanduíche: ' . generate_and_cache_shlink('https://violifefoods.com/'),
             ],
             [
-                'Me chama se quiser mais ideias!',
-                'Posso te ajudar a achar alguns!',
+                'Me chama se quiser mais ideias.',
+                'Posso te indicar alguns.',
                 'Aproveite! 🧀',
             ],
         ],
@@ -97,9 +97,9 @@ return [
         'title' => 'Eu amo pizza',
         'body' => [
             [
-                'Boa notícia, pizza é fácil!',
+                'Pizza é fácil!',
                 'Você não precisa abrir mão da pizza!',
-                'Pizza é uma das trocas mais fáceis!',
+                'Hoje é fácil achar pizza vegana!',
             ],
             [
                 'Muitas redes já fazem pizza com queijo vegano ou sem queijo. O HappyCow lista lugares com opções veganas perto de você: ' . generate_and_cache_shlink('https://www.happycow.net'),
@@ -108,7 +108,7 @@ return [
             ],
             [
                 'Aproveite! 🍕',
-                'Me chama se precisar de ajuda pra achar uma!',
+                'Me chama se precisar de ajuda pra achar uma.',
                 'Bom apetite!',
             ],
         ],
@@ -120,7 +120,7 @@ return [
         'body' => [
             [
                 'Ovo é mais fácil de substituir do que parece!',
-                'Tem ótimos substitutos pro ovo!',
+                'Tem bons substitutos pro ovo.',
                 'Você tem várias opções!',
             ],
             [
@@ -129,9 +129,9 @@ return [
                 'Aqui tem um guia útil se você está com dificuldade de largar o ovo: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' E é assim que as galinhas poedeiras são tratadas: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/'),
             ],
             [
-                'Me chama se quiser receitas!',
-                'Posso te passar mais ideias!',
-                'Divirta-se experimentando!',
+                'Me chama se quiser receitas.',
+                'Tenho mais ideias, se quiser.',
+                'Aproveita pra testar umas receitas!',
             ],
         ],
     ],
@@ -153,7 +153,7 @@ return [
             [
                 'Aproveite! 🍦',
                 'Me conta qual é o seu favorito!',
-                'Me chama se quiser mais ideias!',
+                'Me chama se quiser mais ideias.',
             ],
         ],
     ],
@@ -165,7 +165,7 @@ return [
             [
                 'O frango vegano está muito bom hoje em dia!',
                 'Dá pra continuar comendo frango, só que vegetal!',
-                'Boa notícia, tem vários substitutos!',
+                'Tem vários substitutos!',
             ],
             [
                 'Procure nuggets, tirinhas e filés vegetais nos congelados e refrigerados do mercado. Tem muita marca pra experimentar.',
@@ -173,8 +173,8 @@ return [
                 'Seitan e frango de soja ficam ótimos em wraps e salteados. Aqui tem umas receitas fáceis: ' . generate_and_cache_shlink('https://veganuary.com/pt-br/receitas/'),
             ],
             [
-                'Me chama se quiser dicas de marcas!',
-                'Conta comigo!',
+                'Me chama se quiser dicas de marcas.',
+                'Experimenta algumas!',
                 'Aproveite!',
             ],
         ],
@@ -190,14 +190,14 @@ return [
                 'Ótimo jeito de começar!',
             ],
             [
-                'Aveia, soja, amêndoa, coco, castanha de caju, arroz... Os de aveia e soja ficam ótimos no café e no chá. Experimente alguns e veja qual você curte!',
+                'Aveia, soja, amêndoa, coco, castanha de caju, arroz... Os de aveia e soja ficam ótimos no café e no chá. Experimente alguns e veja qual você curte.',
                 'Se quiser saber por que as pessoas trocam, vale a pena ver este vídeo curto: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
                 'Procure versões enriquecidas com cálcio. O leite de soja tem mais ou menos a mesma quantidade de proteína que o de vaca.',
             ],
             [
-                'Me chama se tiver dúvidas!',
-                'Divirta-se experimentando!',
-                'Conta comigo!',
+                'Me chama se tiver dúvidas.',
+                'Vai testando até achar o seu!',
+                'Me conta como foi!',
             ],
         ],
     ],
@@ -219,7 +219,7 @@ return [
             [
                 'Me conta o que achou! 🌱',
                 'Me conta se assistir algum!',
-                'Se quiser, a gente conversa sobre eles!',
+                'Se quiser, depois a gente conversa sobre eles.',
             ],
         ],
     ],
@@ -239,9 +239,9 @@ return [
                 'É grátis e já fez muita gente mudar de ideia: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' É pesado de assistir, mas vale a pena.',
             ],
             [
-                'Me chama se quiser conversar sobre ele!',
+                'Me chama se quiser conversar sobre ele.',
                 'Qualquer dúvida, é só perguntar!',
-                'Se quiser ajuda pra começar no veganismo, tô aqui!',
+                'Se quiser começar no veganismo, posso te ajudar.',
             ],
         ],
     ],
@@ -262,8 +262,8 @@ return [
             ],
             [
                 'Você consegue!',
-                'Me chama se precisar de ajuda!',
-                'Cada passo conta!',
+                'Me chama se precisar de ajuda.',
+                'Não precisa fazer tudo de uma vez.',
             ],
         ],
     ],
@@ -283,8 +283,8 @@ return [
                 'Se quiser dar o próximo passo, o Challenge 22 é gratuito e te dá um mentor: ' . generate_and_cache_shlink('https://challenge22.com/'),
             ],
             [
-                'Me chama se tiver dúvidas!',
-                'Se quiser tentar, posso ajudar!',
+                'Me chama se tiver dúvidas.',
+                'Se quiser tentar, posso ajudar.',
                 'Você está quase lá!',
             ],
         ],
@@ -297,7 +297,7 @@ return [
             [
                 'Na verdade, pode sair mais barato!',
                 'Comida vegana pode ser bem barata!',
-                'Tenho uma boa notícia sobre isso!',
+                'Não precisa ser!',
             ],
             [
                 'Feijão, lentilha, arroz, macarrão, aveia, batata e legumes congelados estão entre os alimentos mais baratos que existem. O que sai mais caro são os produtos especializados.',
@@ -305,9 +305,9 @@ return [
                 'Este vídeo explica bem: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E') . ' Cozinhar com feijão, lentilha e tofu sai barato.',
             ],
             [
-                'Me chama se quiser receitas baratas!',
-                'Posso te passar ideias de pratos baratos!',
-                'Espero ter ajudado!',
+                'Me chama se quiser receitas baratas.',
+                'Posso te passar ideias de pratos baratos.',
+                'Depois me conta como foi!',
             ],
         ],
     ],
@@ -318,18 +318,18 @@ return [
         'body' => [
             [
                 'Conseguir proteína é mais fácil do que o pessoal pensa!',
-                'Boa pergunta!',
+                'Proteína não vai faltar!',
                 'Essa aparece bastante!',
             ],
             [
-                'Feijão, lentilha, tofu, tempeh, seitan, leite de soja, castanhas e sementes são cheios de proteína. Aqui tem um guia rápido: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
+                'Feijão, lentilha, tofu, tempeh, seitan, leite de soja, castanhas e sementes têm bastante proteína. Aqui tem um guia rápido: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
                 'Uma alimentação vegana variada te dá proteína de sobra. Aqui tem um resumo sobre o mito da proteína: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
                 'Este vídeo de um minuto resume bem: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk') . ' Tofu, lentilha, feijão e seitan são ótimas fontes.',
             ],
             [
-                'Me chama se tiver dúvidas!',
-                'Posso te ajudar com ideias de pratos!',
-                'Espero ter ajudado!',
+                'Me chama se tiver dúvidas.',
+                'Posso te passar umas ideias de pratos.',
+                'Boa sorte!',
             ],
         ],
     ],
@@ -349,9 +349,9 @@ return [
                 'Com tofu, seitan, lentilha, feijão e leite de soja fica fácil bater a meta de proteína. Tem muita dica de treino aqui: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganfitness/'),
             ],
             [
-                'Me chama se tiver dúvidas!',
+                'Me chama se tiver dúvidas.',
                 'Bons treinos! 💪',
-                'Conta comigo!',
+                'Depois me conta como foi!',
             ],
         ],
     ],
@@ -372,8 +372,8 @@ return [
             ],
             [
                 'Se precisar de qualquer coisa, me chama também!',
-                'Eu também posso ajudar!',
-                'Espero ter ajudado!',
+                'Também tô por aqui se quiser conversar.',
+                'Boa sorte!',
             ],
         ],
     ],
@@ -385,7 +385,7 @@ return [
             [
                 'Comer fora fica fácil rapidinho!',
                 'Está bem mais fácil do que antes!',
-                'Boa notícia, está ficando cada vez mais fácil!',
+                'É mais fácil do que parece!',
             ],
             [
                 'O HappyCow mostra lugares veganos e com opções veganas perto de você: ' . generate_and_cache_shlink('https://www.happycow.net'),
@@ -393,8 +393,8 @@ return [
                 'Veja o cardápio online antes e não tenha vergonha de pedir pra trocar ingredientes. O HappyCow ajuda a achar lugares bons: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
             [
-                'Aproveite! 🐮',
-                'Me chama se precisar de ajuda!',
+                'Aproveite! 🌱',
+                'Me chama se precisar de ajuda.',
                 'Bom apetite!',
             ],
         ],
@@ -406,7 +406,7 @@ return [
         'body' => [
             [
                 'É uma das coisas que mais fazem diferença pro planeta!',
-                'Boa pergunta!',
+                'Os dados deixam isso claro!',
                 'Faz uma diferença enorme!',
             ],
             [
@@ -415,9 +415,9 @@ return [
                 'Carne e laticínios têm uma pegada ambiental muito maior que os alimentos vegetais em emissões, uso de terra e água. Aqui estão os dados: ' . generate_and_cache_shlink('https://ourworldindata.org/environmental-impacts-of-food'),
             ],
             [
-                'Me chama se quiser saber mais! 🌍',
-                'Posso te passar mais informações!',
-                'Espero ter ajudado!',
+                'Me chama se quiser saber mais 🌍',
+                'Posso te passar mais informações, se quiser.',
+                'Vale dar uma olhada!',
             ],
         ],
     ],
@@ -428,8 +428,8 @@ return [
         'body' => [
             [
                 'As grandes entidades de saúde concordam com isso!',
-                'Boa notícia, os especialistas estão do seu lado!',
-                'Essa questão já está bem resolvida!',
+                'Os especialistas estão do seu lado!',
+                'Nisso os nutricionistas são bem claros!',
             ],
             [
                 'A Associação Dietética Britânica diz que dietas vegetais bem planejadas favorecem uma vida saudável em qualquer idade: ' . generate_and_cache_shlink('https://www.bda.uk.com/resource/vegetarian-vegan-plant-based-diet.html'),
@@ -437,9 +437,9 @@ return [
                 'O NHS, o SUS britânico, diz que com um bom planejamento dá pra ter todos os nutrientes que você precisa com alimentação vegana: ' . generate_and_cache_shlink('https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/the-vegan-diet/'),
             ],
             [
-                'Me chama se tiver dúvidas!',
-                'Conta comigo!',
-                'Espero ter ajudado!',
+                'Me chama se tiver dúvidas.',
+                'Vale a leitura!',
+                'Se quiser mais fontes, me fala.',
             ],
         ],
     ],
@@ -449,9 +449,9 @@ return [
         'title' => 'Saúde',
         'body' => [
             [
-                'Boa pergunta!',
+                'Muita gente vira vegana pela saúde!',
                 'Pode ser bem saudável!',
-                'Nesse ponto a notícia é boa!',
+                'Tem boas evidências disso!',
             ],
             [
                 'Dietas veganas bem planejadas estão ligadas a um menor risco de doenças cardíacas, diabetes tipo 2 e alguns tipos de câncer. O NHS, o SUS britânico, tem um bom guia: ' . generate_and_cache_shlink('https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/the-vegan-diet/'),
@@ -459,9 +459,9 @@ return [
                 'A Associação Dietética Britânica diz que dietas vegetais bem planejadas favorecem uma vida saudável em qualquer idade: ' . generate_and_cache_shlink('https://www.bda.uk.com/resource/vegetarian-vegan-plant-based-diet.html'),
             ],
             [
-                'Me chama se tiver dúvidas!',
-                'Posso te ajudar a planejar as refeições!',
-                'Espero ter ajudado!',
+                'Me chama se tiver dúvidas.',
+                'Posso te ajudar a planejar as refeições.',
+                'Vale a leitura!',
             ],
         ],
     ],
@@ -473,7 +473,7 @@ return [
             [
                 'Nem precisa cozinhar!',
                 'Sem problema nenhum!',
-                'Boa notícia, você não precisa cozinhar!',
+                'Dá pra comer vegano sem cozinhar!',
             ],
             [
                 'Os mercados hoje estão cheios de pratos prontos, sanduíches, pizzas congeladas e snacks veganos. É só pegar a versão vegana do que você já compra.',
@@ -481,9 +481,9 @@ return [
                 'Comer fora também é fácil. O HappyCow mostra lugares com opções veganas perto de você: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
             [
-                'Me chama se quiser ideias fáceis!',
+                'Me chama se quiser ideias fáceis.',
                 'Posso te passar meus favoritos pra dia de preguiça!',
-                'Espero ter ajudado!',
+                'Bom apetite!',
             ],
         ],
     ],
@@ -494,8 +494,8 @@ return [
         'body' => [
             [
                 'Não precisa ser assim!',
-                'Comida vegana pode ser incrível!',
-                'Pode acreditar, é tudo menos sem graça!',
+                'Comida vegana pode ser muito gostosa!',
+                'Tem muito mais que salada!',
             ],
             [
                 'Dá pra deixar quase qualquer prato vegano: curry, hambúrguer, macarrão, bolo. Aqui tem um monte de receitas: ' . generate_and_cache_shlink('https://veganuary.com/pt-br/receitas/'),
@@ -503,7 +503,7 @@ return [
                 'O r/veganrecipes está cheio de ideias: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganrecipes/') . ' E o HappyCow acha ótimos lugares pra comer: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
             [
-                'Me chama se quiser indicações!',
+                'Me chama se quiser indicações.',
                 'Aproveite! 😋',
                 'Divirta-se na cozinha!',
             ],
@@ -516,7 +516,7 @@ return [
         'body' => [
             [
                 'Essa é bem comum!',
-                'Boa pergunta, essa aparece bastante!',
+                'Pergunta justa!',
                 'Sempre escuto essa!',
             ],
             [
@@ -525,9 +525,9 @@ return [
                 'Este guia fala dos 30 mitos mais comuns: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . ' Ou, se preferir vídeo: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
             ],
             [
-                'Me chama se quiser conversar sobre isso!',
+                'Me chama se quiser conversar sobre isso.',
                 'Qualquer dúvida, é só perguntar!',
-                'Espero ter ajudado!',
+                'Vale dar uma olhada!',
             ],
         ],
     ],
