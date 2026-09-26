@@ -127,6 +127,16 @@ class SeoTest extends TestCase
         return $this->get(route('feed'))->assertOk()->getContent();
     }
 
+    public function testTheFeedsHeadingIsTheSiteName()
+    {
+        $feed = $this->feed();
+
+        // The nav is there twice, for phones and for the sidebar, and CSS shows one
+        $logos = preg_match_all('#<h1[^>]*>\s*<a [^>]*>\s*<img [^>]*alt="5 Minutes 5 Vegans"#', $feed);
+        $this->assertSame(2, $logos);
+        $this->assertSame($logos, substr_count($feed, '<h1'));
+    }
+
     public function testOnlyTheFeedIsOfferedToSearchEngines()
     {
         $this->assertStringNotContainsString('name="robots"', $this->feed());

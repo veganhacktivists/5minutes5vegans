@@ -279,3 +279,11 @@ test('the timer restart is big enough to tap', async ({ page }) => {
     expect(box.width).toBeGreaterThanOrEqual(24)
     expect(box.height).toBeGreaterThanOrEqual(24)
 })
+
+test('the feed shows one heading, the site name', async ({ page }) => {
+    await page.goto('/en')
+
+    const headings = page.locator('h1:visible')
+    await expect(headings).toHaveCount(1)
+    await expect(headings.locator('img')).toHaveAttribute('alt', '5 Minutes 5 Vegans')
+})

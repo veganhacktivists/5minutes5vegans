@@ -95,6 +95,10 @@
 
 #feed-nav-1 .logo, #feed-nav-2 .logo {
     width: 182px;
+    // It's an h1 on the feed, so undo the heading styles
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
 
     @include for-desktop-up {
         width: 200px;
