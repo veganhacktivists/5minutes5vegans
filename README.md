@@ -14,7 +14,7 @@ in seconds! In just 5 minutes you can help 5 or more people become vegan.
 
 Laravel 13 on PHP 8.4, run through [Laravel Sail](https://laravel.com/docs/13.x/sail),
 which brings up the app, MariaDB and MailHog in Docker. The front end needs
-Node 22 and pnpm.
+Node 24 and pnpm.
 
 ```
 cp .env.example .env
@@ -29,6 +29,28 @@ composer install
 The site is then at http://localhost and MailHog at http://localhost:8025. Run
 the tests with `./vendor/bin/sail artisan test`.
 
+`migrate` leaves the tables empty. To fill a local feed with sample data:
+
+```
+./vendor/bin/sail artisan db:seed
+./vendor/bin/sail artisan tweets:generate
+```
+
+The seed creates 30 users, 200 posts and 200 saved messages. The seeded users'
+password is `password`.
+
+The ready-made replies are cached, and each language's replies (such as
+`/en/tweets`) return 503 until `tweets:generate` has run. In production the scheduler runs it every ten
+minutes. Nothing runs the scheduler under Sail, so run it again after changing
+the replies. If `SHLINK_API_KEY` is set in `.env`, it asks Shlink at
+go.veganhacktivists.org for short links. Without a key, the replies use the full
+links.
+
+Posts on the live site come from
+[5minutes5vegans-bot](https://github.com/veganhacktivists/5minutes5vegans-bot),
+which sends them to `POST /api/tweets` with `API_KEY` in the `X-API-KEY` header.
+Locally, the seed is enough.
+
 The browser tests (Playwright, in `tests/browser`) open the feed at desktop and
 phone sizes. They need the front end built, some posts (`sail artisan db:seed
 --class='\TweetsTableSeeder'`), the test user they sign in as (`sail artisan
@@ -42,5 +64,5 @@ BASE_URL=http://localhost pnpm test:browser
 ```
 
 Without PHP and Composer on your machine, run that first `composer install` in a
-container instead — see
+container instead. See
 [Executing Composer Commands](https://laravel.com/docs/13.x/sail#executing-composer-commands).
