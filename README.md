@@ -12,7 +12,7 @@ in seconds! In just 5 minutes you can help 5 or more people become vegan.
 
 ## Setup
 
-Laravel 12 on PHP 8.4, run through [Laravel Sail](https://laravel.com/docs/12.x/sail),
+Laravel 13 on PHP 8.4, run through [Laravel Sail](https://laravel.com/docs/13.x/sail),
 which brings up the app, MariaDB and MailHog in Docker. The front end needs
 Node 22 and pnpm.
 
@@ -43,4 +43,4 @@ BASE_URL=http://localhost pnpm test:browser
 
 Without PHP and Composer on your machine, run that first `composer install` in a
 container instead — see
-[Executing Composer Commands](https://laravel.com/docs/12.x/sail#executing-composer-commands).
+[Executing Composer Commands](https://laravel.com/docs/13.x/sail#executing-composer-commands).
