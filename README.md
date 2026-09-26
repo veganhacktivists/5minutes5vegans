@@ -14,7 +14,7 @@ in seconds! In just 5 minutes you can help 5 or more people become vegan.
 
 Laravel 13 on PHP 8.4, run through [Laravel Sail](https://laravel.com/docs/13.x/sail),
 which brings up the app, MariaDB and MailHog in Docker. The front end needs
-Node 22 and pnpm.
+Node 24 and pnpm.
 
 ```
 cp .env.example .env
