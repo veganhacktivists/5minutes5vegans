@@ -74,6 +74,8 @@ class SeoTest extends TestCase
         $this->assertStringContainsString('font-awesome/6.7.2/css/solid.min.css', $html);
         $this->assertStringContainsString('font-awesome/6.7.2/css/brands.min.css', $html);
         $this->assertStringNotContainsString('use.fontawesome.com/releases/v5.8.1', $html);
+        // Subresource Integrity, so a changed file on the CDN isn't applied
+        $this->assertSame(3, preg_match_all('~font-awesome/6\.7\.2/css/[a-z]+\.min\.css" integrity="sha512-[A-Za-z0-9+/=]+" crossorigin="anonymous"~', $html));
         $this->assertStringNotContainsString('/css/all.css', $html);
     }
 
