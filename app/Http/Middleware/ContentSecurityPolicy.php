@@ -14,6 +14,11 @@ class ContentSecurityPolicy
     // in the console without blocking anything.
     public const HEADER = 'Content-Security-Policy';
 
+    // vanilla-icon-picker, used when people make their own messages, fetches
+    // its Font Awesome icon lists from here. The path keeps the rest of
+    // GitHub's raw files out.
+    private const ICON_SETS = 'https://raw.githubusercontent.com/iconify/icon-sets/';
+
     /**
      * Scripts run only with this request's nonce, or when loaded by a script
      * that has it ('strict-dynamic'), which is how reCAPTCHA loads its own.
@@ -46,7 +51,7 @@ class ContentSecurityPolicy
             "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com",
             "img-src 'self' data: https://pbs.twimg.com https://abs.twimg.com",
             "media-src 'self' https://video.twimg.com",
-            trim("connect-src 'self' $umami"),
+            implode(' ', array_filter(['connect-src', "'self'", $umami, self::ICON_SETS])),
             'frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/',
             "frame-ancestors 'self'",
             "base-uri 'self'",

@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" ref="verbiageRow">
                 <div class="col verbiage-msg" ref="verbiageMsg">
                     <textarea
                         v-model="selected.body"
@@ -252,6 +252,22 @@ export default {
         this.loadDefaultVerbiages()
     },
 
+    mounted: function() {
+        // Rotating a phone or widening the window puts the box back in place
+        this.wideScreen = window.matchMedia('(min-width: 768px)')
+        this.onScreenChange = (event) => {
+            if (event.matches) this.toggleVerbiageMsg(false)
+        }
+        this.wideScreen.addEventListener('change', this.onScreenChange)
+    },
+
+    // Take the box back before Vue removes the component (e.g. for Edit
+    // Profile), or it would be left behind in the dock
+    beforeUnmount: function() {
+        this.wideScreen.removeEventListener('change', this.onScreenChange)
+        this.toggleVerbiageMsg(false)
+    },
+
     methods: {
         loadDefaultVerbiages: function(attempt = 1) {
             axios.get(window.routes.tweets).then(
@@ -305,6 +321,7 @@ export default {
             this.selected.body = this.nextWording(this.selected)
             track('Reword', { topic: this.selected.title })
             clearTimeout(this.copyTimer)
+            clearTimeout(this.collapseTimer)
             this.copyState = null
             this.characterCountdown()
         },
@@ -327,26 +344,17 @@ export default {
             return variants[deck.pop()]
         },
 
-        toggleVerbiageMsg: function(toState) {
-            var x = window.matchMedia('(min-width: 768px)')
-            if (x.matches) return
+        // On phones the open box moves to #reply-dock under the pager. Wider
+        // screens show it in place, so there it only ever moves back.
+        toggleVerbiageMsg: function(open) {
+            if (open && window.matchMedia('(min-width: 768px)').matches) return
+            if (!open) clearTimeout(this.collapseTimer)
+            if (open === this.verbiageMsgToggled) return
 
-            this.verbiageMsgToggled = toState || !this.verbiageMsgToggled
-            if (this.verbiageMsgToggled === true) {
-                $(this.$refs.verbiageMsg)
-                    .detach()
-                    .appendTo('.swiper-pagination')
-            } else if (this.verbiageMsgToggled === false) {
-                $(this.$refs.verbiageMsg)
-                    .detach()
-                    .prependTo(this.$refs.verbiageMsgContainer)
-            }
-        },
-
-        hideVerbiageMsg: function(event) {
-            if (this.verbiageMsgToggled) {
-                this.toggleVerbiageMsg(false)
-            }
+            this.verbiageMsgToggled = open
+            const box = $(this.$refs.verbiageMsg).detach()
+            if (open) box.appendTo('#reply-dock')
+            else box.prependTo(this.$refs.verbiageRow)
         },
 
         createVerbiage: function() {
@@ -423,7 +431,7 @@ export default {
             // registered, tuck it away and go to the posts, the next step.
             if (this.verbiageMsgToggled) {
                 this.collapseTimer = setTimeout(() => {
-                    this.hideVerbiageMsg()
+                    this.toggleVerbiageMsg(false)
                     window.mySwiper?.slideTo(1)
                 }, 1200)
             }

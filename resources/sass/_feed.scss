@@ -32,13 +32,21 @@
     padding-bottom: 1rem;
     background-color: $feed-honeydew;
     bottom: 0 !important;
+}
+
+#reply-dock {
+    flex-shrink: 0;
+    background-color: $feed-honeydew;
 
     .verbiage-msg {
-        padding: 0 1rem;
+        margin-top: 0;
+        padding: 0 1rem 1rem;
     }
 }
 
-.swiper-pagination-bullet {
+// Scoped under .swiper-pagination to outrank Swiper's own
+// button.swiper-pagination-bullet reset (border: none; padding: 0)
+.swiper-pagination .swiper-pagination-bullet {
     font-family: inherit;
     line-height: inherit;
     color: inherit;
@@ -55,7 +63,7 @@
     margin-right: 4% !important;
 }
 
-.swiper-pagination-bullet-active {
+.swiper-pagination .swiper-pagination-bullet-active {
     color: $white;
     background: $button-cta-color;
     border-color: $button-cta-color;
@@ -368,7 +376,7 @@
 }
 
 // On phones the box sits under the pager with a close button in its corner
-.swiper-pagination .verbiage-msg textarea {
+#reply-dock .verbiage-msg textarea {
     padding-right: 3.5rem !important;
 }
 

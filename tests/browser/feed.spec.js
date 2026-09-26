@@ -164,3 +164,59 @@ test('on a phone, the pager works from the keyboard', async ({ page, isMobile })
     await expect(messages).toHaveAttribute('aria-pressed', 'true')
     await expect(feed).toHaveAttribute('aria-pressed', 'false')
 })
+
+test('a signed-in volunteer can pick an icon for their own message', async ({ page, isMobile }) => {
+    // The icon lists normally come from GitHub. A stub keeps the test offline,
+    // and the browser still checks the Content-Security-Policy before asking.
+    await page.route('https://raw.githubusercontent.com/iconify/icon-sets/**', (route) => route.fulfill({
+        json: { icons: { leaf: { body: '<path d="M0 0h1v1H0z"/>' } }, width: 512, height: 512 },
+    }))
+
+    // Seeded by database/seeds/BrowserTestUserSeeder.php
+    await page.goto('/en/login')
+    await page.locator('input[name=email]').fill('browser-test@example.com')
+    await page.locator('input[name=password]').fill('password')
+    await page.locator('button[type=submit]').click()
+    await expect(page.locator('.verbiage-link').first()).toBeAttached()
+
+    if (isMobile) await page.locator('.swiper-pagination-bullet').first().click()
+    await page.getByRole('button', { name: 'Your own' }).click()
+    await page.getByRole('button', { name: 'New', exact: true }).click()
+    await page.locator('#icon-select').click()
+
+    await expect(page.locator('.icon-element').first()).toBeVisible()
+})
+
+test('on a phone, the inactive pager tab keeps its outline', async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'phones only')
+    await page.goto('/en')
+
+    const messages = page.locator('.swiper-pagination-bullet').first()
+    await expect(messages).not.toHaveClass(/swiper-pagination-bullet-active/)
+    expect(await messages.evaluate((el) => getComputedStyle(el).borderTopWidth)).toBe('2px')
+})
+
+test('on a phone, rewording straight after copying keeps the box open', async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'phones only')
+    await openMessages(page, isMobile)
+    await page.locator('.verbiage-link').nth(12).click()
+
+    await page.locator('.copy-btn').click()
+    await page.locator('.reword-btn').click()
+    await page.waitForTimeout(1600)
+
+    await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
+    expect(await page.evaluate(() => window.mySwiper.activeIndex)).toBe(0)
+})
+
+test('the reply box survives a phone turning into a wider screen', async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'phones only')
+    await openMessages(page, isMobile)
+    await page.locator('.verbiage-link').nth(12).click()
+    await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
+
+    await page.setViewportSize({ width: 1024, height: 800 })
+
+    await expect(page.locator('.verbiage-msg')).toHaveCount(1)
+    await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
+})

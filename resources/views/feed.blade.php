@@ -36,6 +36,10 @@
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
         </div>
+
+        <!-- On phones the open reply box sits here, under the pager. Outside
+             .swiper-pagination, because Swiper rewrites that element. -->
+        <div id="reply-dock"></div>
     </div>
 
     @include('inc.how-it-works', ['onFeed' => true])
