@@ -59,7 +59,7 @@
         </div>
 
         <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary swirvy-box">@lang('Create Account')</button>
+            <button type="submit" class="btn btn-primary soft-corners">@lang('Create Account')</button>
         </div>
     </form>
 @endsection

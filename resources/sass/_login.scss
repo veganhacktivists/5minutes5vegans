@@ -57,7 +57,7 @@
     float: left;
     color: $forest;
     background-color: rgba($mint, 0.96);
-    border-radius: 90px 0 0 0;
+    border-radius: $radius-panel 0 0 $radius-panel;
 
     #register-pane p {
         font-size: 14px;
@@ -70,10 +70,7 @@
 
     float: right;
     background-color: rgba($forest, 0.95);
-
-    @include for-tablet-portrait-up {
-        border-radius: 0 0 90px 0;
-    }
+    border-radius: 0 $radius-panel $radius-panel 0;
 
     h3 {
         color: $leaf;
@@ -92,7 +89,7 @@
 }
 
 .login-how {
-    @extend .swirvy-box;
+    @extend .soft-corners;
 
     display: inline-flex;
     align-items: center;
@@ -137,7 +134,7 @@
     color: $forest;
     background-color: $mint;
     border: 0;
-    border-radius: 60px 0 60px 0;
+    border-radius: $radius-panel;
 
     .modal-header,
     .modal-footer {
@@ -185,7 +182,7 @@
     padding: 60px 6% 40px;
     color: $forest;
     background-color: rgba($mint, 0.96);
-    border-radius: 90px 0 90px 0;
+    border-radius: $radius-panel;
 
     h1 {
         font-size: 2rem;

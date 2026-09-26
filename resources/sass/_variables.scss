@@ -9,6 +9,10 @@ $mint: #EAF6EE;           // the page ground
 $mint-line: #D5E6DB;      // borders, scrollbars and hover on mint
 $paper: #FFFFFF;          // cards, tiles and the timer's boxes
 
+// Corners: $radius for buttons and chips, $radius-panel for large panels
+$radius: 10px;
+$radius-panel: 24px;
+
 // Body
 $body-bg: $forest;
 $modal-bg: $forest;

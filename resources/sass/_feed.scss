@@ -138,7 +138,7 @@
 }
 
 #donate-button {
-    @extend .swirvy-box;
+    @extend .soft-corners;
 
     display: inline-flex;
     align-items: center;
@@ -184,8 +184,7 @@
         display: inline-block;
         background-color: $paper;
         width: 50px;
-        border-top-left-radius: 7px;
-        border-bottom-right-radius: 7px;
+        border-radius: 8px;
         padding: 5px 0px;
     }
 
@@ -205,7 +204,7 @@
     font-weight: bold;
 
     .timer-restart {
-        @extend .swirvy-box;
+        @extend .soft-corners;
 
         margin-top: 4px;
         padding: 4px 14px;
@@ -272,6 +271,7 @@
     background-color: $paper;
     border: 0;
     border-top: 2px solid $mint-line;
+    border-radius: 8px;
     padding: 4px 6px;
     height: 100%;
     container-type: inline-size;
@@ -323,6 +323,7 @@
     flex-direction: column;
     background-color: $paper;
     border-top: 2px solid $mint-line;
+    border-radius: 8px;
 }
 
 .verbiage-index {
@@ -335,6 +336,7 @@
 
     textarea {
         display: block;
+        border-radius: $radius;
     }
 
     .msg-actions {
@@ -567,13 +569,12 @@
 
     @include for-tablet-portrait-up {
         min-height: 300px;
-        border-top-left-radius: 150px;
-        border-bottom-right-radius: 150px;
-        padding: 75px 30px 100px;
+        border-radius: $radius-panel;
+        padding: 28px 28px 32px;
     }
 
     @include for-tablet-landscape-up {
-        padding: 75px 50px;
+        padding: 32px 40px;
     }
 
     .lang-switch {
@@ -582,7 +583,7 @@
         margin: 0 auto 16px;
 
         @include for-tablet-portrait-up {
-            margin: -50px auto 20px;
+            margin: 0 auto 20px;
         }
 
         a {

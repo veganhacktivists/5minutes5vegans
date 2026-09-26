@@ -55,7 +55,7 @@
         <div class="empty">
             <p>@lang('No recent posts in this language. Check back later.')</p>
             @unless (App::isLocale('en'))
-                <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="btn btn-primary swirvy-box">@lang('See English posts')</a>
+                <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="btn btn-primary soft-corners">@lang('See English posts')</a>
             @endunless
         </div>
     @endforelse

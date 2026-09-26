@@ -35,38 +35,9 @@ html {
     background-color: #ff0097;
 }
 
-$swirve: 12px;
-$x-swirve: 17px;
-$xx-swirve: 22px;
-
-.swirvy-box-left {
-    border-radius: 0;
-    border-top-left-radius: $swirve !important;
-
-    @include for-tablet-portrait-up {
-        border-top-left-radius: $x-swirve !important;
-    }
-
-    @include for-desktop-up {
-        border-top-left-radius: $xx-swirve !important;
-    }
-}
-
-.swirvy-box-right {
-    border-radius: 0;
-    border-bottom-right-radius: $swirve !important;
-
-    @include for-tablet-portrait-up {
-        border-bottom-right-radius: $x-swirve !important;
-    }
-
-    @include for-desktop-up {
-        border-bottom-right-radius: $xx-swirve !important;
-    }
-}
-
-.swirvy-box {
-    @extend .swirvy-box-left, .swirvy-box-right;
+// Buttons, chips and the pager share these corners
+.soft-corners {
+    border-radius: $radius !important;
     outline: none;
 
     &:focus-visible {
@@ -159,7 +130,7 @@ a:hover, .btn-link:hover {
     gap: 6px;
 
     a {
-        @extend .swirvy-box;
+        @extend .soft-corners;
 
         display: inline-flex;
         align-items: center;

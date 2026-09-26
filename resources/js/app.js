@@ -82,7 +82,7 @@ $(() => {
             renderBullet: function(index, className) {
                 // Buttons, so keyboards and screen readers can use the pager
                 return `
-                <button type="button" class="swirvy-box ${className}">${
+                <button type="button" class="soft-corners ${className}">${
                     index === 0 ? window.lang.messages : window.lang.feed
                 }</button>
                 `
