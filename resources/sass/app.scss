@@ -70,7 +70,7 @@ $xx-swirve: 22px;
     outline: none;
 
     &:focus-visible {
-        outline: 3px solid $dark-text;
+        outline: 3px solid $forest;
         outline-offset: 2px;
     }
 }
@@ -167,18 +167,18 @@ a:hover, .btn-link:hover {
         padding: 4px 10px;
         font-size: 15px;
         font-weight: bold;
-        color: $dark-text;
+        color: $forest;
         text-decoration: none;
         background-color: $white;
-        border: 2px solid $feed-teal;
+        border: 2px solid $canopy;
 
         &:hover {
-            background-color: $feed-mint;
+            background-color: $mint;
         }
 
         &.active {
             color: $white;
-            background-color: $button-cta-color;
+            background-color: $canopy;
         }
     }
 }
@@ -210,4 +210,11 @@ a:hover, .btn-link:hover {
         width: 30.6px;
         max-width: none;
     }
+}
+
+// The logo fills whatever holds it: the feed's nav or a column on the login pages
+.site-logo {
+    display: block;
+    width: 100%;
+    height: auto;
 }
