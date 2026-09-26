@@ -323,3 +323,26 @@ test('icons come from the site itself', async ({ page }) => {
     expect(await page.evaluate(() => [...document.fonts].some((font) => font.family.includes('Font Awesome 6 Free') && font.status === 'loaded'))).toBe(true)
     expect(elsewhere).toEqual([])
 })
+
+test('when the five minutes are up, it says how many posts you opened', async ({ page, context }) => {
+    // Posts open on X in a new tab, which the test doesn't need
+    await context.route('https://x.com/**', (route) => route.abort())
+    context.on('page', (popup) => popup.close())
+    await page.clock.install()
+    await page.goto('/en')
+
+    const cards = page.locator('.timeline .card')
+    await cards.nth(0).click()
+    await cards.nth(1).click()
+    await cards.nth(0).click()
+
+    await page.clock.fastForward('05:02')
+    const tally = page.locator('.timer-tally:visible')
+    await expect(tally).toHaveText('You opened 2 posts. Thank you!')
+
+    // Starting again starts the count again
+    await page.locator('.timer-restart:visible').click()
+    await page.clock.fastForward('05:02')
+    await expect(page.locator('.timer-complete:visible')).toContainText("Time's up!")
+    await expect(tally).toHaveCount(0)
+})

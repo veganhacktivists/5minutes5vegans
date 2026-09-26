@@ -14,6 +14,9 @@ import App from './components/App.vue'
 // Timer
 
 var startTime, timerInterval
+// The posts opened since the timer started, for the count when it ends
+const openedThisRun = new Set()
+let timerRunning = false
 $(() => {
     startTimer()
     $('.timer-restart').click(startTimer)
@@ -26,6 +29,8 @@ function setTimer(minutes, seconds) {
 
 function startTimer() {
     clearInterval(timerInterval)
+    openedThisRun.clear()
+    timerRunning = true
     startTime = Date.now()
     timerInterval = setInterval(updateTimer, 1000)
     setTimer('05', '00')
@@ -33,10 +38,20 @@ function startTimer() {
     $('.timer-section').show(400)
 }
 
+function showTally() {
+    const count = openedThisRun.size
+    $('.timer-tally').each(function () {
+        const line = count === 1 ? this.dataset.one : this.dataset.many
+        $(this).text(line.replace(':count', count)).prop('hidden', count === 0)
+    })
+}
+
 function updateTimer() {
     var timestamp = 5 * 60 * 1000 + startTime - Date.now()
     if (timestamp < 0) {
         clearInterval(timerInterval)
+        timerRunning = false
+        showTally()
         $('.timer-section').hide(400)
         $('.timer-complete').show(400)
         return
@@ -217,6 +232,7 @@ $(() => {
 
         card.classList.add('opened')
         rememberOpened(card.dataset.post)
+        if (timerRunning) openedThisRun.add(card.dataset.post)
         track('Open post')
     }
     timeline.addEventListener('click', markOpened)
