@@ -19,7 +19,7 @@ return [
             ],
             [
                 'Hulp nodig? Stuur me een berichtje!',
-                'Ik beantwoord graag je vragen!',
+                'Vraag gerust als je iets wilt weten.',
                 'Laat het me weten als je vastloopt!',
             ],
         ],
@@ -41,8 +41,8 @@ return [
             ],
             [
                 'Je kunt het!',
-                'Het gaat je zeker lukken!',
-                'We duimen voor je!',
+                'Succes!',
+                'Ik duim voor je!',
                 'Hulp nodig? Stuur me een berichtje!',
             ],
         ],
@@ -54,8 +54,8 @@ return [
         'body' => [
             [
                 'Vegan vlees is de laatste jaren enorm verbeterd!',
-                'Goed nieuws: je hoeft het niet te missen!',
-                'Snap ik helemaal, en de vervangers zijn nu echt goed!',
+                'Je hoeft het niet te missen!',
+                'Snap ik, maar de vervangers zijn nu echt goed.',
             ],
             [
                 'De meeste supermarkten verkopen nu plantaardige burgers, worstjes, gehakt en nuggets. Beyond Meat is een goed begin: ' . generate_and_cache_shlink('https://www.beyondmeat.com/'),
@@ -63,8 +63,8 @@ return [
                 'Veel restaurants en ketens hebben nu ook plantaardige opties. Op HappyCow zie je veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
             [
-                'Stuur me een berichtje als je tips wilt!',
-                'Ik deel graag mijn favorieten!',
+                'Stuur me een berichtje als je tips wilt.',
+                'Ik kan je mijn favorieten sturen.',
                 'Veel plezier met uitproberen!',
             ],
         ],
@@ -85,8 +85,8 @@ return [
                 'Merken verschillen nogal, dus probeer er een paar. Begin bijvoorbeeld met Violife, dat smelt op pizza en in tosti\'s: ' . generate_and_cache_shlink('https://violifefoods.com/'),
             ],
             [
-                'Stuur me een berichtje als je meer ideeën wilt!',
-                'Ik help je graag iets lekkers te vinden!',
+                'Stuur me een berichtje als je meer ideeën wilt.',
+                'Ik kan je er een paar aanraden.',
                 'Geniet ervan! 🧀',
             ],
         ],
@@ -97,9 +97,9 @@ return [
         'title' => 'Ik hou van pizza',
         'body' => [
             [
-                'Goed nieuws: pizza is makkelijk!',
+                'Pizza is makkelijk!',
                 'Je hoeft pizza niet op te geven!',
-                'Pizza is een van de makkelijkste dingen om vegan te eten!',
+                'Vegan pizza vind je tegenwoordig makkelijk!',
             ],
             [
                 'Veel ketens hebben nu pizza\'s met vegan kaas of zonder kaas. Op HappyCow vind je veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
@@ -120,7 +120,7 @@ return [
         'body' => [
             [
                 'Eieren zijn makkelijker te vervangen dan je denkt!',
-                'Er zijn echt goede vervangers voor eieren!',
+                'Er zijn goede vervangers voor eieren.',
                 'Je hebt keus genoeg!',
             ],
             [
@@ -129,8 +129,8 @@ return [
                 'Hier is een handige gids als het je moeilijk valt om eieren op te geven: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' En zo worden legkippen behandeld: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/'),
             ],
             [
-                'Stuur me een berichtje als je recepten wilt!',
-                'Ik deel graag meer ideeën!',
+                'Stuur me een berichtje als je recepten wilt.',
+                'Ik heb nog meer ideeën als je wilt.',
                 'Veel plezier met uitproberen!',
             ],
         ],
@@ -143,7 +143,7 @@ return [
             [
                 'Vegan ijs is tegenwoordig zo lekker!',
                 'Je boft, vegan ijs is overal te krijgen!',
-                'Je hoeft niks te missen!',
+                'Je kunt gewoon ijs blijven eten!',
             ],
             [
                 'Ben & Jerry\'s heeft een hele zuivelvrije lijn: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
@@ -153,7 +153,7 @@ return [
             [
                 'Geniet ervan! 🍦',
                 'Laat me weten wat je favoriet is!',
-                'Stuur me een berichtje als je meer ideeën wilt!',
+                'Stuur me een berichtje als je meer ideeën wilt.',
             ],
         ],
     ],
@@ -165,7 +165,7 @@ return [
             [
                 'Vegan kip is echt lekker tegenwoordig!',
                 'Je kunt nog steeds kip eten, alleen dan plantaardig!',
-                'Goed nieuws: er zijn heel veel vervangers!',
+                'Er zijn heel veel vervangers!',
             ],
             [
                 'Kijk in de supermarkt eens in de vriezer en het koelvak: daar liggen plantaardige nuggets, reepjes en filets. Er zijn veel merken om te proberen.',
@@ -173,8 +173,8 @@ return [
                 'Seitan en sojakip zijn top in wraps en roerbakgerechten. Hier wat makkelijke recepten: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
             ],
             [
-                'Stuur me een berichtje als je merktips wilt!',
-                'Ik help je graag!',
+                'Stuur me een berichtje als je merktips wilt.',
+                'Probeer er gewoon een paar!',
                 'Eet smakelijk!',
             ],
         ],
@@ -190,14 +190,14 @@ return [
                 'Perfect om mee te beginnen!',
             ],
             [
-                'Haver, soja, amandel, kokos, cashew, rijst... Haver- en sojamelk zijn top in thee en koffie. Probeer er een paar en kijk welke je lekker vindt!',
+                'Haver, soja, amandel, kokos, cashew, rijst... Haver- en sojamelk zijn top in thee en koffie. Probeer er een paar en kijk welke je lekker vindt.',
                 'Wil je weten waarom mensen overstappen? Deze korte video is het bekijken waard: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
                 'Kies er een met toegevoegd calcium. Sojamelk bevat ongeveer net zoveel eiwit als koemelk.',
             ],
             [
                 'Vragen? Stuur me een berichtje!',
                 'Veel plezier met uitproberen!',
-                'Ik help je graag!',
+                'Laat me weten hoe het gaat!',
             ],
         ],
     ],
@@ -219,7 +219,7 @@ return [
             [
                 'Laat me weten wat je ervan vindt! 🌱',
                 'Laat het me weten als je er een kijkt!',
-                'Ik praat er graag met je over!',
+                'Als je wilt, praten we er daarna over.',
             ],
         ],
     ],
@@ -239,9 +239,9 @@ return [
                 'Hij is gratis en heeft al veel mensen van gedachten doen veranderen: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Zwaar om te zien, maar het is het waard.',
             ],
             [
-                'Stuur me een berichtje als je erover wilt praten!',
-                'Ik beantwoord graag je vragen!',
-                'Ik ben er als je hulp wilt om vegan te worden!',
+                'Stuur me een berichtje als je erover wilt praten.',
+                'Vraag gerust wat je wilt.',
+                'Als je vegan wilt worden, help ik je.',
             ],
         ],
     ],
@@ -252,7 +252,7 @@ return [
         'body' => [
             [
                 'Wat goed dat je erover nadenkt! 🐮',
-                'Wat gaaf!',
+                'Goed bezig!',
                 'Leuk dat je het gaat proberen!',
             ],
             [
@@ -263,7 +263,7 @@ return [
             [
                 'Je kunt het!',
                 'Hulp nodig? Stuur me een berichtje!',
-                'Elke stap telt!',
+                'Je hoeft niet alles in één keer te doen.',
             ],
         ],
     ],
@@ -274,7 +274,7 @@ return [
         'body' => [
             [
                 'Vegetarisch is een mooie stap!',
-                'Super, goed bezig!',
+                'Al vegetarisch? Super!',
                 'Mooi begin!',
             ],
             [
@@ -284,7 +284,7 @@ return [
             ],
             [
                 'Vragen? Stuur me een berichtje!',
-                'Ik help je graag als je het wilt proberen!',
+                'Als je het wilt proberen, help ik je.',
                 'Je bent er bijna!',
             ],
         ],
@@ -297,7 +297,7 @@ return [
             [
                 'Het kan juist goedkoper zijn!',
                 'Vegan eten kan heel goedkoop zijn!',
-                'Daar heb ik goed nieuws over!',
+                'Dat hoeft helemaal niet!',
             ],
             [
                 'Bonen, linzen, rijst, pasta, havermout, aardappelen en diepvriesgroenten horen bij het goedkoopste eten dat er is. Het zijn de speciale producten die meer kosten.',
@@ -305,9 +305,9 @@ return [
                 'Deze video legt het goed uit: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E') . ' Koken met bonen, linzen en tofu houdt het goedkoop.',
             ],
             [
-                'Stuur me een berichtje als je goedkope recepten wilt!',
-                'Ik deel graag ideeën voor goedkope maaltijden!',
-                'Hopelijk heb je hier wat aan!',
+                'Stuur me een berichtje als je goedkope recepten wilt.',
+                'Ik kan je wat ideeën voor goedkope maaltijden sturen.',
+                'Laat me weten hoe het gaat!',
             ],
         ],
     ],
@@ -318,18 +318,18 @@ return [
         'body' => [
             [
                 'Aan eiwit kom je makkelijker dan mensen denken!',
-                'Goede vraag!',
+                'Eiwit krijg je makkelijk genoeg binnen!',
                 'Die vraag komt vaak voorbij!',
             ],
             [
-                'Bonen, linzen, tofu, tempé, seitan, sojamelk, noten en zaden zitten allemaal vol eiwit. Hier een kort overzicht: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
+                'Bonen, linzen, tofu, tempé, seitan, sojamelk, noten en zaden bevatten allemaal veel eiwit. Hier een kort overzicht: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
                 'Met gevarieerd vegan eten krijg je ruim genoeg binnen. Hier een factsheet over de eiwitmythe: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
                 'Deze video van een minuut vat het samen: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk') . ' Tofu, linzen, bonen en seitan zijn allemaal uitstekende bronnen.',
             ],
             [
                 'Vragen? Stuur me een berichtje!',
-                'Ik help je graag met maaltijdideeën!',
-                'Hopelijk heb je hier wat aan!',
+                'Ik kan je wat maaltijdideeën sturen.',
+                'Succes!',
             ],
         ],
     ],
@@ -351,7 +351,7 @@ return [
             [
                 'Vragen? Stuur me een berichtje!',
                 'Succes met trainen! 💪',
-                'Ik help je graag!',
+                'Laat me weten hoe het gaat!',
             ],
         ],
     ],
@@ -371,9 +371,9 @@ return [
                 'Bij Challenge 22 krijg je een mentor en een groep mensen die tegelijk met jou vegan proberen: ' . generate_and_cache_shlink('https://challenge22.com/'),
             ],
             [
-                'Stuur mij ook gerust een berichtje als je iets nodig hebt!',
-                'Ik help je ook graag!',
-                'Hopelijk heb je hier wat aan!',
+                'Stuur mij ook gerust een berichtje als je iets nodig hebt.',
+                'Ik ben er ook als je wilt praten.',
+                'Succes!',
             ],
         ],
     ],
@@ -385,7 +385,7 @@ return [
             [
                 'Uit eten wordt snel makkelijker!',
                 'Het is veel makkelijker dan vroeger!',
-                'Goed nieuws: het wordt steeds makkelijker!',
+                'Makkelijker dan je denkt!',
             ],
             [
                 'Op HappyCow zie je vegan en veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
@@ -393,7 +393,7 @@ return [
                 'Check de menukaart eerst online, en vraag gerust of ze iets kunnen aanpassen. Met HappyCow vind je goede plekken: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
             [
-                'Geniet ervan! 🐮',
+                'Geniet ervan! 🌱',
                 'Hulp nodig? Stuur me een berichtje!',
                 'Eet smakelijk!',
             ],
@@ -406,7 +406,7 @@ return [
         'body' => [
             [
                 'Het is een van de grootste dingen die je voor de planeet kunt doen!',
-                'Goede vraag!',
+                'De cijfers zijn duidelijk!',
                 'Het maakt een enorm verschil!',
             ],
             [
@@ -416,8 +416,8 @@ return [
             ],
             [
                 'Wil je meer weten? Stuur me een berichtje! 🌍',
-                'Ik vertel je graag meer!',
-                'Hopelijk heb je hier wat aan!',
+                'Ik kan je meer sturen als je wilt.',
+                'Kijk maar eens!',
             ],
         ],
     ],
@@ -428,7 +428,7 @@ return [
         'body' => [
             [
                 'De grote gezondheidsorganisaties zijn het hierover eens!',
-                'Goed nieuws: de experts staan aan jouw kant!',
+                'De experts staan aan jouw kant!',
                 'Daar is weinig twijfel over!',
             ],
             [
@@ -438,8 +438,8 @@ return [
             ],
             [
                 'Vragen? Stuur me een berichtje!',
-                'Ik help je graag!',
-                'Hopelijk heb je hier wat aan!',
+                'Zeker het lezen waard!',
+                'Wil je meer bronnen? Laat het me weten.',
             ],
         ],
     ],
@@ -449,9 +449,9 @@ return [
         'title' => 'Gezondheid',
         'body' => [
             [
-                'Goede vraag!',
+                'Veel mensen worden vegan voor hun gezondheid!',
                 'Het kan heel gezond zijn!',
-                'Goed nieuws op dat vlak!',
+                'Daar is genoeg bewijs voor!',
             ],
             [
                 'Een goed samengesteld vegan eetpatroon wordt gelinkt aan een lager risico op hartziekten, diabetes type 2 en sommige soorten kanker. De Britse NHS legt het goed uit: ' . generate_and_cache_shlink('https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/the-vegan-diet/'),
@@ -461,7 +461,7 @@ return [
             [
                 'Vragen? Stuur me een berichtje!',
                 'Ik denk graag mee over je maaltijden!',
-                'Hopelijk heb je hier wat aan!',
+                'Zeker het lezen waard!',
             ],
         ],
     ],
@@ -472,8 +472,8 @@ return [
         'body' => [
             [
                 'Koken hoeft niet!',
-                'Helemaal prima!',
-                'Goed nieuws: je hoeft niet te koken!',
+                'Snap ik!',
+                'Je hoeft echt niet te koken!',
             ],
             [
                 'Supermarkten liggen nu vol met vegan kant-en-klaarmaaltijden, broodjes, diepvriespizza\'s en snacks. Pak gewoon de vegan versie van wat je normaal koopt.',
@@ -481,9 +481,9 @@ return [
                 'Uit eten is ook makkelijk. Op HappyCow zie je veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
             [
-                'Stuur me een berichtje als je makkelijke ideeën wilt!',
-                'Ik deel graag mijn luie favorieten!',
-                'Hopelijk heb je hier wat aan!',
+                'Stuur me een berichtje als je makkelijke ideeën wilt.',
+                'Vraag me gerust naar mijn luie favorieten!',
+                'Eet smakelijk!',
             ],
         ],
     ],
@@ -494,8 +494,8 @@ return [
         'body' => [
             [
                 'Dat hoeft echt niet!',
-                'Vegan eten kan geweldig zijn!',
-                'Geloof me, het is allesbehalve saai!',
+                'Vegan eten kan echt lekker zijn!',
+                'Er is zoveel meer dan salade!',
             ],
             [
                 'Bijna elk gerecht kun je vegan maken: curry\'s, burgers, pasta, taart. Hier vind je heel veel recepten: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
@@ -503,7 +503,7 @@ return [
                 'r/veganrecipes staat vol ideeën: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganrecipes/') . ' En met HappyCow vind je toffe plekken om te eten: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
             [
-                'Stuur me een berichtje als je tips wilt!',
+                'Stuur me een berichtje als je tips wilt.',
                 'Geniet ervan! 😋',
                 'Veel kookplezier!',
             ],
@@ -516,7 +516,7 @@ return [
         'body' => [
             [
                 'Dat hoor je echt vaak!',
-                'Goede vraag, die komt vaak voorbij!',
+                'Terechte vraag!',
                 'Die hoor ik heel vaak!',
             ],
             [
@@ -525,9 +525,9 @@ return [
                 'Deze gids behandelt de 30 meest voorkomende mythes: ' . generate_and_cache_shlink('https://www.all-creatures.org/articles2/act-earthling-ed.pdf') . ' Of als je liever video\'s kijkt: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
             ],
             [
-                'Stuur me een berichtje als je erover wilt praten!',
-                'Ik beantwoord graag je vragen!',
-                'Hopelijk heb je hier wat aan!',
+                'Stuur me een berichtje als je erover wilt praten.',
+                'Vraag gerust als je iets wilt weten.',
+                'Kijk maar eens!',
             ],
         ],
     ],
