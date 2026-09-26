@@ -19,6 +19,14 @@ so it doesn't have to be rediscovered. Last checked 26 September 2026.
   the container, then php-fpm running as www-data. Every request reaches the
   app from the proxy's address. The nginx access log in Coolify's Logs shows
   172.18.0.22. See "Visitor IP" in [AGENTS.md](../AGENTS.md).
+- **Redirects:** a Cloudflare Redirect Rule in the 5minutes5vegans.org zone,
+  "Main site: www and http to https (301)", sends GET and HEAD requests for
+  `www.5minutes5vegans.org`, and for `http://5minutes5vegans.org`, to
+  `https://5minutes5vegans.org` with a 301. It keeps the path and query string.
+  Other methods, like the bot's POST, still get Coolify's 307, which keeps the
+  method. "Always Use HTTPS" is off because `dev.` and `new.5minutes5vegans.org`
+  only answer over plain HTTP, and it would send them to an HTTPS that gives
+  Cloudflare error 526.
 
 ## Starting up
 
