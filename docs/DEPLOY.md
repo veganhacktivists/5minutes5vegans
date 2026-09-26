@@ -12,7 +12,7 @@ so it doesn't have to be rediscovered. Last checked 26 September 2026.
   roughly four to eight minutes. During a rolling update the old and new
   containers both answer for a few minutes, so a check right after a merge can
   still hit the old one. Coolify also has a Rollback page.
-- **Build:** nixpacks (`nixpacks.toml`) with PHP 8.4, Node 22 and
+- **Build:** nixpacks (`nixpacks.toml`) with PHP 8.4, Node 24 and
   `composer install --no-dev`, so dev packages such as tinker aren't in
   production.
 - **Traffic path:** Cloudflare, then Coolify's proxy (Traefik), then nginx in
