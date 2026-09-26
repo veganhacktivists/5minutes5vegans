@@ -66,17 +66,14 @@ class SeoTest extends TestCase
         $this->assertStringNotContainsString('gtag(', $html);
     }
 
-    public function testThePageLoadsFontAwesomeSixWithoutTheFullStylesheet()
+    public function testFontAwesomeComesFromTheSiteItself()
     {
         $html = $this->page();
 
-        $this->assertStringContainsString('font-awesome/6.7.2/css/fontawesome.min.css', $html);
-        $this->assertStringContainsString('font-awesome/6.7.2/css/solid.min.css', $html);
-        $this->assertStringContainsString('font-awesome/6.7.2/css/brands.min.css', $html);
-        $this->assertStringNotContainsString('use.fontawesome.com/releases/v5.8.1', $html);
-        // Subresource Integrity, so a changed file on the CDN isn't applied
-        $this->assertSame(3, preg_match_all('~font-awesome/6\.7\.2/css/[a-z]+\.min\.css" integrity="sha512-[A-Za-z0-9+/=]+" crossorigin="anonymous"~', $html));
-        $this->assertStringNotContainsString('/css/all.css', $html);
+        // app.js imports it, so Vite builds it into the site's own assets
+        $this->assertStringNotContainsString('cdnjs.cloudflare.com', $html);
+        $this->assertStringNotContainsString('fontawesome.com', $html);
+        $this->assertStringNotContainsString('cdnjs', $this->get(route('login'))->headers->get('Content-Security-Policy'));
     }
 
     public function testUmamiLoadsOnlyOnceConfigured()

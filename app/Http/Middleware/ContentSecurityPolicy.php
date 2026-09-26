@@ -39,8 +39,8 @@ class ContentSecurityPolicy
         return implode('; ', [
             "default-src 'self'",
             "script-src 'nonce-$nonce' 'strict-dynamic' https: 'unsafe-inline'",
-            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
-            "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com",
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+            "font-src 'self' data: https://fonts.gstatic.com",
             "img-src 'self' data: https://pbs.twimg.com https://abs.twimg.com",
             "media-src 'self' https://video.twimg.com",
             implode(' ', array_filter(['connect-src', "'self'", $umami, self::ICON_SETS])),
