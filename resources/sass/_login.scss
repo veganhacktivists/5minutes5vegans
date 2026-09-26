@@ -55,8 +55,8 @@
     @extend .login-pane;
 
     float: left;
-    color: $dark-text;
-    background-color: rgba($feed-honeydew, 0.96);
+    color: $forest;
+    background-color: rgba($mint, 0.96);
     border-radius: 90px 0 0 0;
 
     #register-pane p {
@@ -69,14 +69,14 @@
     @extend .login-pane;
 
     float: right;
-    background-color:#1d4737f2;
+    background-color: rgba($forest, 0.95);
 
     @include for-tablet-portrait-up {
         border-radius: 0 0 90px 0;
     }
 
     h3 {
-        color: #61df95;
+        color: $leaf;
     }
 
     h5 {
@@ -99,14 +99,14 @@
     padding: 6px 16px;
     font-size: 17px;
     font-weight: bold;
-    color: $dark-text;
+    color: $forest;
     background-color: rgba($white, 0.85);
-    border: 2px solid $feed-teal;
+    border: 2px solid $canopy;
     text-decoration: none;
 
     &:hover {
         color: $white;
-        background-color: $feed-teal;
+        background-color: $canopy;
     }
 }
 
@@ -123,19 +123,19 @@
     padding: 8px 24px;
     font-size: 17px;
     font-weight: bold;
-    color: $dark-text;
-    background-color: $feed-honeydew;
+    color: $forest;
+    background-color: $mint;
 
     &:hover,
     &:focus-visible {
-        color: $dark-text;
+        color: $forest;
         background-color: $white;
     }
 }
 
 .how-modal {
-    color: $dark-text;
-    background-color: $feed-honeydew;
+    color: $forest;
+    background-color: $mint;
     border: 0;
     border-radius: 60px 0 60px 0;
 
@@ -183,8 +183,8 @@
 
 .reset-pane {
     padding: 60px 6% 40px;
-    color: $dark-text;
-    background-color: rgba($feed-honeydew, 0.96);
+    color: $forest;
+    background-color: rgba($mint, 0.96);
     border-radius: 90px 0 90px 0;
 
     h1 {
@@ -200,16 +200,16 @@
 .reset-pane input:not([type = submit]):not([type = checkbox]) {
     background: transparent;
     border: none;
-    border-bottom: 2px solid $feed-teal;
+    border-bottom: 2px solid $canopy;
     border-radius: 0;
 
     &:focus {
-        border-bottom-color: $button-cta-color;
+        border-bottom-color: $canopy;
         box-shadow: none;
     }
 
     &::placeholder {
-        color: rgba($dark-text, 0.7);
+        color: rgba($forest, 0.7);
         text-transform: uppercase;
         letter-spacing: 0.5px;
         font-size: 13px;
