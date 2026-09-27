@@ -15,7 +15,7 @@ return [
             [
                 'La maggior parte dei vegani dice che l\'unico rimpianto è non averlo fatto prima. Per le domande c\'è r/vegan: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/') . ' e questi brevi video sciolgono i dubbi più comuni: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
                 'Un buon primo passo è la sfida gratuita di 31 giorni di Veganuary, che puoi iniziare quando vuoi. Ricevi ricette e un\'email al giorno: ' . generate_and_cache_shlink('https://veganuary.com/it/'),
-                'Challenge 22 è gratis e ti dà un mentore e dei dietisti per 22 giorni: ' . generate_and_cache_shlink('https://challenge22.com/') . ' Per capire perché è importante, guarda l\'inizio di Dominion: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+                'Il Vegan Discovery Tour è gratis e dura 20 giorni, con un tutor: ' . generate_and_cache_shlink('https://www.vegandiscoverytour.it/') . ' Per capire perché è importante, guarda l\'inizio di Dominion (in italiano): ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=sGov7OJDDO0'),
             ],
             [
                 'Scrivimi se ti serve aiuto.',
@@ -36,7 +36,7 @@ return [
             ],
             [
                 'Veganuary ha una sfida gratuita di 31 giorni che puoi iniziare quando vuoi, con ricette e un\'email al giorno: ' . generate_and_cache_shlink('https://veganuary.com/it/'),
-                'Challenge 22 è una sfida gratuita di 22 giorni, con un mentore tutto tuo e dei dietisti a disposizione: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Il Vegan Discovery Tour è un percorso gratuito di 20 giorni, con un tutor tutto tuo e webinar con un nutrizionista: ' . generate_and_cache_shlink('https://www.vegandiscoverytour.it/'),
                 'Vegan Bootcamp è gratuito e lo segui al tuo ritmo, con brevi corsi su cibo, nutrizione e altro: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
             ],
             [
@@ -80,9 +80,9 @@ return [
                 'Non immagini quanto sia buono oggi il formaggio vegano!',
             ],
             [
-                'Violife è ottimo per tutto e si scioglie bene: ' . generate_and_cache_shlink('https://violifefoods.com/') . ' Anche Follow Your Heart e Daiya sono buoni.',
-                'Ecco una guida ai formaggi vegani, da quelli a fette al brie: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/'),
-                'C\'è molta differenza tra le marche, quindi provane qualcuna. Violife è un buon inizio, e si scioglie su pizza e toast: ' . generate_and_cache_shlink('https://violifefoods.com/'),
+                'Violife è ottimo per tutto e si scioglie bene: ' . generate_and_cache_shlink('https://www.violife.com/it-it/'),
+                'Ecco una guida ai formaggi vegani, da quelli a fette al brie: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/i-formaggi-vegani-che-si-trovano-al-supermercato/'),
+                'C\'è molta differenza tra le marche, quindi provane qualcuna. Violife è un buon inizio, e si scioglie su pizza e toast: ' . generate_and_cache_shlink('https://www.violife.com/it-it/'),
             ],
             [
                 'Scrivimi se vuoi altre idee.',
@@ -103,8 +103,8 @@ return [
             ],
             [
                 'Tante catene ora fanno pizze con formaggio vegano o senza formaggio. HappyCow ti trova i locali vegan-friendly vicino a te: ' . generate_and_cache_shlink('https://www.happycow.net'),
-                'La maggior parte dei supermercati ora vende pizze vegane, ed ecco un elenco di catene con opzioni vegane: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/'),
-                'Daiya fa pizze vegane surgelate: ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' E tante pizzerie ti mettono il formaggio vegano se lo chiedi.',
+                'La maggior parte dei supermercati ora vende pizze vegane, e in pizzeria puoi farti fare una pizza vegana. Ecco qualche consiglio: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/veg-fuori-casa/'),
+                'Anche tra i surgelati trovi pizze vegane, e tante pizzerie ti mettono il formaggio vegano se lo chiedi.',
             ],
             [
                 'Buon appetito! 🍕',
@@ -124,9 +124,9 @@ return [
                 'Hai un sacco di opzioni!',
             ],
             [
-                'Il tofu strapazzato sostituisce benissimo le uova strapazzate, soprattutto con un po\' di spinaci: ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/'),
-                'JUST Egg è fatto con i fagioli mung e si strapazza proprio come l\'uovo: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs'),
-                'Ecco una guida utile se fai fatica a rinunciare alle uova: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' E qui vedi come vengono trattate le galline ovaiole: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/'),
+                'Il tofu strapazzato sostituisce benissimo le uova strapazzate, soprattutto con un po\' di spinaci: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/ricette/tofu-strapazzato-2/'),
+                'Con la farina di ceci fai una frittata senza uova: ' . generate_and_cache_shlink('https://www.vegolosi.it/ricette-vegane/frittata-vegana-con-i-piselli-curry/'),
+                'Ecco una guida utile se fai fatica a rinunciare alle uova: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/come-sostituire-le-uova/') . ' E qui vedi come vengono trattate le galline ovaiole: ' . generate_and_cache_shlink('https://www.essereanimali.org/2017/05/fasi-produzione-di-uova/'),
             ],
             [
                 'Scrivimi se vuoi qualche ricetta.',
@@ -146,9 +146,9 @@ return [
                 'Non devi rinunciarci!',
             ],
             [
-                'Ben & Jerry\'s ha un\'intera linea senza latticini: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
-                'Ecco una guida ai migliori gelati vegani, sia confezionati che fatti in casa: ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/'),
-                'Nella maggior parte dei supermercati trovi gelati all\'avena, alla soia, alle mandorle e al cocco, e anche Ben & Jerry\'s ha una linea senza latticini: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
+                'Valsoia ha un\'intera linea di gelati vegetali: ' . generate_and_cache_shlink('https://www.valsoia.it/prodotti/gelati-vegetali/'),
+                'Ecco una guida ai migliori gelati vegani che trovi al supermercato: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/gelati-vegani-che-si-trovano-al-supermercato/'),
+                'Nella maggior parte dei supermercati trovi gelati all\'avena, alla soia, alle mandorle e al cocco, e Valsoia ha un\'intera linea di gelati vegetali: ' . generate_and_cache_shlink('https://www.valsoia.it/prodotti/gelati-vegetali/'),
             ],
             [
                 'Buon gelato! 🍦',
@@ -170,7 +170,7 @@ return [
             [
                 'Cerca nuggets, straccetti e filetti vegetali nel banco frigo e tra i surgelati del supermercato. Ci sono tante marche da provare.',
                 'Tanti locali ora fanno burger e wrap con pollo vegano. Su HappyCow vedi cosa c\'è vicino a te: ' . generate_and_cache_shlink('https://www.happycow.net'),
-                'Il seitan e il pollo a base di soia sono ottimi nei wrap e nei saltati in padella. Ecco qualche ricetta facile: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+                'Il seitan e il pollo a base di soia sono ottimi nei wrap e nei saltati in padella. Ecco qualche ricetta facile: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/ricette/'),
             ],
             [
                 'Se vuoi, ti consiglio qualche marca.',
@@ -191,7 +191,7 @@ return [
             ],
             [
                 'Avena, soia, mandorla, cocco, anacardi, riso... Quelli di avena e soia sono ottimi nel tè e nel caffè. Provane qualcuno e vedi quale ti piace.',
-                'Se vuoi sapere perché c\'è chi lascia il latte di mucca, questo breve video merita: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
+                'Se vuoi sapere perché c\'è chi lascia il latte di mucca, questo breve video merita: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=UcN7SGGoCNI&cc_lang_pref=it&cc_load_policy=1'),
                 'Scegli latti arricchiti con calcio. Il latte di soia ha più o meno le stesse proteine del latte di mucca.',
             ],
             [
@@ -212,9 +212,9 @@ return [
                 'Due film che consiglio:',
             ],
             [
-                'Dominion, su come vengono trattati gli animali allevati (gratis): ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' The Game Changers, sugli atleti che mangiano vegetale: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
-                'Dominion si guarda gratis ed è difficile da dimenticare: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' I video brevi di Earthling Ed sono perfetti per le domande più comuni: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
-                'The Game Changers, sui grandi atleti che mangiano vegetale: ' . generate_and_cache_shlink('https://gamechangersmovie.com/') . ' E Dominion, gratis, sulla vita negli allevamenti: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+                'Dominion, su come vengono trattati gli animali allevati (gratis): ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=sGov7OJDDO0') . ' The Game Changers, sugli atleti che mangiano vegetale: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
+                'Dominion si guarda gratis ed è difficile da dimenticare: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=sGov7OJDDO0') . ' I video brevi di Earthling Ed sono perfetti per le domande più comuni: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'The Game Changers, sui grandi atleti che mangiano vegetale: ' . generate_and_cache_shlink('https://gamechangersmovie.com/') . ' E Dominion, gratis, sulla vita negli allevamenti: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=sGov7OJDDO0'),
             ],
             [
                 'Fammi sapere cosa ne pensi! 🌱',
@@ -234,9 +234,9 @@ return [
                 'Se guardi una cosa sola, che sia Dominion.',
             ],
             [
-                'È un documentario gratuito su come vengono trattati davvero gli animali negli allevamenti: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Anche solo i primi 15 minuti meritano.',
-                'Mostra cosa succede negli allevamenti e nei macelli, e si può guardare gratis: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
-                'È gratis e ha fatto cambiare idea a tante persone: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' È difficile da guardare, ma ne vale la pena.',
+                'È un documentario gratuito su come vengono trattati davvero gli animali negli allevamenti: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=sGov7OJDDO0') . ' Anche solo i primi 15 minuti meritano.',
+                'Mostra cosa succede negli allevamenti e nei macelli, e si può guardare gratis: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=sGov7OJDDO0'),
+                'È gratis e ha fatto cambiare idea a tante persone: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=sGov7OJDDO0') . ' È difficile da guardare, ma ne vale la pena.',
             ],
             [
                 'Scrivimi se vuoi parlarne.',
@@ -257,8 +257,8 @@ return [
             ],
             [
                 'Se ti sembra tanto, fai un passo alla volta. Inizia dal latte vegetale, poi passa al burro, poi alla carne. Vegan Bootcamp può guidarti: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
-                'Prova con un pasto vegano al giorno, e poi aumenta pian piano. Veganuary ha ricette facili per iniziare: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
-                'Parti dalle sostituzioni che ti sembrano più facili, come il latte o i burger, e vai avanti da lì. Challenge 22 ti dà un mentore che ti aiuta: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Prova con un pasto vegano al giorno, e poi aumenta pian piano. IoScelgoVeg ha ricette facili per iniziare: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/ricette/'),
+                'Parti dalle sostituzioni che ti sembrano più facili, come il latte o i burger, e vai avanti da lì. Il Vegan Discovery Tour ti dà un tutor che ti aiuta: ' . generate_and_cache_shlink('https://www.vegandiscoverytour.it/'),
             ],
             [
                 'Ce la farai!',
@@ -278,9 +278,9 @@ return [
                 'Ottimo inizio!',
             ],
             [
-                'Questo video spiega perché diventare vegani del tutto fa una differenza così grande: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg'),
-                'Purtroppo anche latticini e uova causano tanta sofferenza. Questo breve video lo spiega: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
-                'Se ti va di fare il passo successivo, Challenge 22 è gratis e ti dà un mentore: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Questo articolo spiega perché diventare vegani del tutto fa una differenza così grande: ' . generate_and_cache_shlink('https://www.essereanimali.org/2023/01/3-motivi-passare-alimentazione-vegetariana-a-vegana/'),
+                'Purtroppo anche latticini e uova causano tanta sofferenza. Questo breve video lo spiega: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=UcN7SGGoCNI&cc_lang_pref=it&cc_load_policy=1'),
+                'Se ti va di fare il passo successivo, il Vegan Discovery Tour è gratis e ti dà un tutor: ' . generate_and_cache_shlink('https://www.vegandiscoverytour.it/'),
             ],
             [
                 'Scrivimi se hai domande.',
@@ -301,8 +301,8 @@ return [
             ],
             [
                 'Fagioli, lenticchie, riso, pasta, avena, patate e verdure surgelate sono tra i cibi più economici che ci siano. A costare di più sono i prodotti di nicchia.',
-                'Secondo uno studio di Oxford, un\'alimentazione vegana potrebbe ridurre la spesa alimentare fino a un terzo in paesi come Regno Unito e USA: ' . generate_and_cache_shlink('https://www.ox.ac.uk/news/2021-11-11-sustainable-eating-cheaper-and-healthier-oxford-study'),
-                'Questo video lo spiega bene: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E') . ' Cucinando con fagioli, lenticchie e tofu spendi poco.',
+                'Secondo uno studio di Oxford, un\'alimentazione vegana potrebbe ridurre la spesa alimentare fino a un terzo in paesi ricchi come il Regno Unito: ' . generate_and_cache_shlink('https://www.vegolosi.it/news/la-scelta-vegana-e-la-meno-costosa-lo-studio-di-oxford-pubblicato-da-the-lancet/'),
+                'Questa guida lo spiega bene: ' . generate_and_cache_shlink('https://it.loveveg.com/mangiare-vegano-spendendo-poco-la-guida/') . ' Cucinando con fagioli, lenticchie e tofu spendi poco.',
             ],
             [
                 'Scrivimi se vuoi ricette economiche.',
@@ -322,8 +322,8 @@ return [
                 'Questa me la chiedono spesso!',
             ],
             [
-                'Fagioli, lenticchie, tofu, tempeh, seitan, latte di soia, frutta secca e semi sono ricchi di proteine. Ecco una guida veloce: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
-                'Un\'alimentazione vegana varia ti dà proteine in abbondanza. Ecco una scheda sul mito delle proteine: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
+                'Fagioli, lenticchie, tofu, tempeh, seitan, latte di soia, frutta secca e semi sono ricchi di proteine. Ecco una guida veloce: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/proteine-dove-trovarle/'),
+                'Un\'alimentazione vegana varia ti dà proteine in abbondanza. Qui una medica nutrizionista spiega il mito delle proteine: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/proteine-dove-trovarle/'),
                 'Questo video di un minuto riassume tutto: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk') . ' Tofu, lenticchie, fagioli e seitan sono tutte ottime fonti.',
             ],
             [
@@ -411,7 +411,7 @@ return [
             ],
             [
                 'Secondo Our World in Data, se tutti mangiassimo vegetale ci servirebbe circa il 75% di terreni agricoli in meno: ' . generate_and_cache_shlink('https://ourworldindata.org/land-use-diets'),
-                'Secondo uno studio di Oxford, una dieta vegana ha circa il 30% dell\'impatto ambientale di una dieta ricca di carne: ' . generate_and_cache_shlink('https://www.medsci.ox.ac.uk/news/vegan-diet-has-just-30-of-the-environmental-impact-of-a-high-meat-diet-major-study-finds'),
+                'Secondo uno studio di Oxford, una dieta vegana ha circa il 30% dell\'impatto ambientale di una dieta ricca di carne: ' . generate_and_cache_shlink('https://www.lifegate.it/dieta-vegana-impatto-ambientale'),
                 'Carne e latticini hanno un impatto molto più alto dei cibi vegetali su emissioni, suolo e acqua. Ecco i dati: ' . generate_and_cache_shlink('https://ourworldindata.org/environmental-impacts-of-food'),
             ],
             [
@@ -498,7 +498,7 @@ return [
                 'C\'è molto di più dell\'insalata!',
             ],
             [
-                'Quasi ogni piatto si può fare vegano: curry, burger, pasta, torte. Ecco un sacco di ricette: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+                'Quasi ogni piatto si può fare vegano: curry, burger, pasta, torte. Ecco un sacco di ricette: ' . generate_and_cache_shlink('https://www.ioscelgoveg.it/ricette/'),
                 'Prova a cercare il tuo piatto preferito aggiungendo \'vegano\': c\'è una versione di quasi tutto. Per mangiare fuori: ' . generate_and_cache_shlink('https://www.happycow.net'),
                 'r/veganrecipes è pieno di idee: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganrecipes/') . ' E HappyCow ti trova ottimi posti dove mangiare: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
