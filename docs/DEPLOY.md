@@ -19,6 +19,12 @@ so it doesn't have to be rediscovered. Last checked 26 September 2026.
   the container, then php-fpm running as www-data. Every request reaches the
   app from the proxy's address. The nginx access log in Coolify's Logs shows
   172.18.0.22. See "Visitor IP" in [AGENTS.md](../AGENTS.md).
+- **Reset links in the logs:** a password reset link carries its token and the
+  email address. The access log writes it as `/en/password/reset/[hidden]`, in
+  the request and in any Referer (`nixpacks/nginx.template.conf`), and the reset
+  page sends `Referrer-Policy: no-referrer`. nginx's error log can't be masked,
+  so a reset link that fails upstream (php-fpm down, say) is still written there
+  in full.
 - **Redirects:** a Cloudflare Redirect Rule in the 5minutes5vegans.org zone,
   "Main site: www and http to https (301)", sends GET and HEAD requests for
   `www.5minutes5vegans.org`, and for `http://5minutes5vegans.org`, to
