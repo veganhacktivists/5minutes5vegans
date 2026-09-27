@@ -1,5 +1,7 @@
 // Switching language loads a new page. Clicking a flag hands the timer and
 // the chosen topic to it in sessionStorage.
+// layout.blade.php's head repeats the key and the 30 seconds, to hide the
+// timer's digits before this script runs
 const KEY = 'carried-over'
 const FRESH_FOR = 30 * 1000
 

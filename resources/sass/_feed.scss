@@ -175,6 +175,12 @@
     min-height: 24px;
 }
 
+// Until app.js sets a timer carried over from the page before (layout.blade.php)
+.timer-carried .timer-display .minutes,
+.timer-carried .timer-display .seconds {
+    visibility: hidden;
+}
+
 .timer-display {
     font-size: 30px;
     color: $ink;

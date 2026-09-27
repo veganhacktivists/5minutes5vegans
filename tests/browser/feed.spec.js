@@ -115,6 +115,25 @@ test('if copying fails, the reply stays put with a note to copy it by hand', asy
 })
 
 test('switching language keeps the timer going and the chosen topic', async ({ page, isMobile }) => {
+    // On every page, once the markup is parsed and before scripts run: whether the
+    // timer's digits are hidden, and then every value scripts set the minutes to
+    await page.addInitScript(() => {
+        window.minutesSet = []
+        let parsed = false
+        new MutationObserver((mutations) => {
+            if (!parsed) return
+            for (const mutation of mutations) {
+                const minutes = mutation.target.closest?.('.timer-display .minutes') ?? mutation.target.parentElement?.closest('.timer-display .minutes')
+                if (minutes) window.minutesSet.push(minutes.textContent)
+            }
+        }).observe(document, { subtree: true, childList: true, characterData: true })
+        document.addEventListener('readystatechange', () => {
+            if (document.readyState !== 'interactive') return
+            parsed = true
+            const minutes = document.querySelector('.timer-display .minutes')
+            window.hiddenBeforeScripts = minutes && getComputedStyle(minutes).visibility === 'hidden'
+        })
+    })
     await page.clock.install()
     await openMessages(page, isMobile)
     await page.locator('.verbiage-link', { hasText: 'I Love Cheese' }).click()
@@ -126,13 +145,34 @@ test('switching language keeps the timer going and the chosen topic', async ({ p
     await page.waitForURL(/\/de/)
 
     await expect(page.locator('.timer-display .minutes:visible')).toHaveText('03')
+    expect(await page.evaluate(() => window.minutesSet)).not.toContain('05')
+    expect(await page.evaluate(() => window.hiddenBeforeScripts)).toBe(true)
     await expect(page.locator('.verbiage-link.active')).toHaveText('Ich liebe Käse')
     await expect(page.locator('.verbiage-msg textarea')).not.toHaveValue('')
+    // As after a tap, a phone shows the reply under the pager
+    if (isMobile) await expect(page.locator('#reply-dock .verbiage-msg')).toBeVisible()
 
-    // A plain reload starts afresh
+    // A plain reload starts afresh. The clock keeps running, so it may already say 04.
     await page.reload()
-    await expect(page.locator('.timer-display .minutes:visible')).toHaveText('05')
+    await expect(page.locator('.timer-display .minutes:visible')).toHaveText(/^0[45]$/)
+    expect(await page.evaluate(() => window.hiddenBeforeScripts)).toBe(false)
     await expect(page.locator('.verbiage-link.active')).toHaveCount(0)
+})
+
+test('a second switch before the topics load still keeps the chosen topic', async ({ page, isMobile }) => {
+    await openMessages(page, isMobile)
+    // I Love Cheese, fourth in every language
+    await page.locator('.verbiage-link').nth(3).click()
+    if (isMobile) await page.locator('.swiper-pagination-bullet').nth(1).click()
+
+    // Hold the German topics back, so the next flag is clicked before they arrive
+    await page.route('**/de/tweets', () => {})
+    await page.locator('.lang-switch a[hreflang="de"]:visible').click()
+    await page.waitForURL(/\/de/)
+    await page.locator('.lang-switch a[hreflang="fr"]:visible').click()
+    await page.waitForURL(/\/fr/)
+
+    await expect(page.locator('.verbiage-link').nth(3)).toHaveClass(/active/)
 })
 
 test('on a phone, picking a topic keeps everything on screen and Copy moves on to the feed', async ({ page, isMobile }) => {
