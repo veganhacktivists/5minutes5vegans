@@ -114,6 +114,27 @@ test('if copying fails, the reply stays put with a note to copy it by hand', asy
     await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
 })
 
+test('switching language keeps the timer going and the chosen topic', async ({ page, isMobile }) => {
+    await page.clock.install()
+    await openMessages(page, isMobile)
+    await page.locator('.verbiage-link', { hasText: 'I Love Cheese' }).click()
+
+    await page.clock.fastForward('01:30')
+    // Phones keep the flags on the feed
+    if (isMobile) await page.locator('.swiper-pagination-bullet').nth(1).click()
+    await page.locator('.lang-switch a[hreflang="de"]:visible').click()
+    await page.waitForURL(/\/de/)
+
+    await expect(page.locator('.timer-display .minutes:visible')).toHaveText('03')
+    await expect(page.locator('.verbiage-link.active')).toHaveText('Ich liebe Käse')
+    await expect(page.locator('.verbiage-msg textarea')).not.toHaveValue('')
+
+    // A plain reload starts afresh
+    await page.reload()
+    await expect(page.locator('.timer-display .minutes:visible')).toHaveText('05')
+    await expect(page.locator('.verbiage-link.active')).toHaveCount(0)
+})
+
 test('on a phone, picking a topic keeps everything on screen and Copy moves on to the feed', async ({ page, isMobile }) => {
     test.skip(!isMobile, 'phones only')
     await openMessages(page, isMobile)
@@ -135,6 +156,22 @@ test('the feed shows posts with how old they are', async ({ page }) => {
 
     const time = page.locator('.timeline .card time').first()
     await expect(time).toHaveText(/ago|now|yesterday/)
+})
+
+test('with no posts in a language, the message sits in the middle of the feed', async ({ page, isMobile }) => {
+    // Wide enough for the two-column feed
+    if (!isMobile) await page.setViewportSize({ width: 1700, height: 900 })
+    await page.goto('/de')
+
+    // The test data has posts in every language, so swap them for the empty state
+    const timeline = page.locator('.timeline')
+    await timeline.evaluate((el) => {
+        el.innerHTML = '<div class="empty"><p>No recent posts in this language. Check back later.</p><a href="#" class="btn btn-primary">See English posts</a></div>'
+    })
+
+    const middle = (box) => box.x + box.width / 2
+    expect(Math.abs(middle(await page.locator('.timeline .empty').boundingBox()) - middle(await timeline.boundingBox()))).toBeLessThan(1)
+    expect(await timeline.evaluate((el) => el.scrollWidth - el.clientWidth)).toBe(0)
 })
 
 test('the register page loads, reCAPTCHA included', async ({ page }) => {

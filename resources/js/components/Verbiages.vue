@@ -154,6 +154,7 @@
 </template>
 
 <script>
+    import { carryOverOnLanguageSwitch, pickUp } from '../carryOver';
     import IconPicker from 'vanilla-icon-picker';
     import { track } from '../track';
 
@@ -246,6 +247,12 @@ export default {
     created: function() {
         this.decks = {} // for each ready-made topic, the wordings not yet handed out
         this.loadDefaultVerbiages()
+
+        // Every language lists the same topics in the same order
+        carryOverOnLanguageSwitch('topic', () => {
+            const index = this.defaultVerbiages ? this.defaultVerbiages.indexOf(this.selected) : -1
+            return index === -1 ? undefined : index
+        })
     },
 
     mounted: function() {
@@ -272,6 +279,13 @@ export default {
             axios.get(window.routes.tweets).then(
                 (r) => {
                     this.defaultVerbiages = r.data
+
+                    const topic = this.defaultVerbiages[pickUp('topic')]
+                    if (topic) {
+                        if (topic.variants) topic.body = this.nextWording(topic)
+                        this.selected = topic
+                        this.characterCountdown()
+                    }
                 },
                 () => {
                     if (attempt >= 3) {
