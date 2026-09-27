@@ -17,6 +17,7 @@ import { Pagination } from 'swiper/modules'
 import { createApp } from 'vue'
 import { track } from './track'
 import { carryOverOnLanguageSwitch, pickUp } from './carryOver'
+import { initLanguageSwitch } from './languageSwitch'
 import App from './components/App.vue'
 
 // Timer
@@ -26,7 +27,11 @@ $(() => {
     // A language switch keeps the timer going from where it was
     startTimer(pickUp('timerStartedAt'))
     document.documentElement.classList.remove('timer-carried')
-    $('.timer-restart').click(() => startTimer())
+})
+$(document).on('click', '.timer-restart', () => startTimer())
+$(document).on('click', '.timer-reset-link', (event) => {
+    event.preventDefault()
+    startTimer()
 })
 
 function setTimer(minutes, seconds) {
@@ -48,6 +53,14 @@ function startTimer(startedAt = Date.now()) {
 
 function timeLeft() {
     return 5 * 60 * 1000 + startTime - Date.now()
+}
+
+// The timer as it stands, with no animation, on a nav a language switch swapped in
+function drawTimer() {
+    const over = timeLeft() < 0
+    $('.timer-section').toggle(!over)
+    $('.timer-complete').toggle(over)
+    if (!over) updateTimer()
 }
 
 function updateTimer() {
@@ -81,10 +94,14 @@ if (token) {
         'CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token',
     )
 
+let vueApp
+function mountApp() {
+    vueApp = createApp(App)
+    vueApp.mount('app')
+}
+
 $(() => {
-    if ($('app').length) {
-        createApp(App).mount('app')
-    }
+    if ($('app').length) mountApp()
 })
 
 // The phone pager
@@ -145,18 +162,16 @@ $(() => {
 // Post ages, and the posts already opened
 // The head script hides the feed's intro before the page draws once this is set
 const INTRO_DISMISSED_KEY = 'intro-dismissed'
-$(() => {
-    $('.feed-intro-dismiss').on('click', () => {
-        document.documentElement.classList.add('intro-dismissed')
-        $('.timeline .card').first().trigger('focus')
-        try {
-            localStorage.setItem(INTRO_DISMISSED_KEY, '1')
-        } catch {
-            // No storage, as in some private windows: it shows again next time
-        }
-    })
-    $('.feed-intro-how').on('click', () => track('How it works'))
+$(document).on('click', '.feed-intro-dismiss', () => {
+    document.documentElement.classList.add('intro-dismissed')
+    $('.timeline .card').first().trigger('focus')
+    try {
+        localStorage.setItem(INTRO_DISMISSED_KEY, '1')
+    } catch {
+        // No storage, as in some private windows: it shows again next time
+    }
 })
+$(document).on('click', '.feed-intro-how', () => track('How it works'))
 
 const OPENED_POSTS_KEY = 'opened-posts'
 const OPENED_POSTS_LIMIT = 200
@@ -215,7 +230,8 @@ document.addEventListener('error', (event) => {
     }
 }, true)
 
-$(() => {
+// Run again on the posts a language switch swaps in
+function setUpTimeline() {
     const timeline = document.querySelector('.timeline')
     if (!timeline) return
 
@@ -229,36 +245,44 @@ $(() => {
         card.classList.toggle('opened', opened.has(card.dataset.post))
     })
 
-    // auxclick catches a middle click, which also opens the post
-    const markOpened = (event) => {
-        const card = event.target.closest('.card[data-post]')
-        if (!card || (event.type === 'auxclick' && event.button !== 1)) return
-
-        card.classList.add('opened')
-        rememberOpened(card.dataset.post)
-        track('Open post')
-    }
-    timeline.addEventListener('click', markOpened)
-    timeline.addEventListener('auxclick', markOpened)
-
     showPostAges()
+}
+
+// auxclick catches a middle click, which also opens the post
+const markOpened = (event) => {
+    const card = event.target.closest('.timeline .card[data-post]')
+    if (!card || (event.type === 'auxclick' && event.button !== 1)) return
+
+    card.classList.add('opened')
+    rememberOpened(card.dataset.post)
+    track('Open post')
+}
+document.addEventListener('click', markOpened)
+document.addEventListener('auxclick', markOpened)
+
+$(() => {
+    setUpTimeline()
     setInterval(showPostAges, 60000)
 })
 
-// Timer restart and focus
+initLanguageSwitch(() => {
+    // The timer never stopped, so what was saved for a new page isn't needed
+    pickUp('timerStartedAt')
+    drawTimer()
+    setUpTimeline()
+    if (vueApp) {
+        vueApp.unmount()
+        mountApp()
+    }
+    window.mySwiper?.pagination.render()
+    window.mySwiper?.pagination.update()
+    document.querySelector('.lang-switch a[aria-current="page"]')?.focus()
+})
+
+// Start with the focus on the language bar
 window.onload = function() {
-    // set the focus to the language bar
     const languageFlags = document.getElementById('languageFlags');
     if (languageFlags) {
         languageFlags.focus();
     }
-
-    // reset the timer by clicking the icon
-    var as = document.querySelectorAll('.timer-reset-link')
-    as.forEach(function(a) {
-        a.onclick = function() {
-            startTimer()
-            return false
-        }
-    })
 }

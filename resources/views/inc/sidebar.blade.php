@@ -54,20 +54,27 @@
     ];
 
     $user = Auth::user();
+    if ($user) {
+        $routes['user.update'] = route('user.update', $user, false);
+        $routes['user.destroy'] = route('user.destroy', $user, false);
+    }
+
+    $pageData = [
+        'customVerbiages' => $verbiages,
+        'routes' => $routes,
+        'lang' => $lang,
+        'currentUser' => $user ? ['name' => $user->name, 'email' => $user->email] : null,
+    ];
 @endphp
 
+{{-- Also read by languageSwitch.js, which swaps in another language's page without reloading --}}
+<script type="application/json" id="page-data">@json($pageData)</script>
 <script nonce="{{ Vite::cspNonce() }}">
-    var customVerbiages = @json($verbiages);
-    var routes = @json($routes);
-    var lang = @json($lang);
-    @auth
-        var currentUser = @json([
-                'name' => $user->name,
-                'email' => $user->email,
-            ]);
-        routes['user.update'] = @json(route('user.update', Auth::user(), false));
-        routes['user.destroy'] = @json(route('user.destroy', Auth::user(), false));
-    @endauth
+    var pageData = JSON.parse(document.getElementById('page-data').textContent);
+    var customVerbiages = pageData.customVerbiages;
+    var routes = pageData.routes;
+    var lang = pageData.lang;
+    var currentUser = pageData.currentUser || undefined;
 </script>
 
 <App></App>

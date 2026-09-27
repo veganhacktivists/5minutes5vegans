@@ -114,7 +114,50 @@ test('if copying fails, the reply stays put with a note to copy it by hand', asy
     await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
 })
 
-test('switching language keeps the timer going and the chosen topic', async ({ page, isMobile }) => {
+test('switching language swaps the page in place, with the timer and the chosen topic kept', async ({ page, isMobile }) => {
+    await page.clock.install()
+    await openMessages(page, isMobile)
+    await page.locator('.verbiage-link', { hasText: 'I Love Cheese' }).click()
+    await page.clock.fastForward('01:30')
+
+    // Set on this page: gone if it reloads. And whether the topics ever show as loading.
+    await page.evaluate(() => {
+        window.samePage = true
+        window.sawLoading = false
+        new MutationObserver(() => {
+            if (document.querySelector('app')?.textContent.includes(window.lang.loading)) window.sawLoading = true
+        }).observe(document.body, { subtree: true, childList: true, characterData: true })
+    })
+    const english = await page.title()
+
+    // Phones keep the flags on the feed
+    if (isMobile) await page.locator('.swiper-pagination-bullet').nth(1).click()
+    await page.locator('.lang-switch a[hreflang="de"]:visible').click()
+    await page.waitForURL(/\/de/)
+
+    await expect(page.locator('html')).toHaveAttribute('lang', 'de')
+    await expect(page).not.toHaveTitle(english)
+    await expect(page.locator('.lang-switch a[aria-current="page"]')).toHaveAttribute('hreflang', 'de')
+    await expect(page.locator('.timer-display .minutes:visible')).toHaveText('03')
+    await expect(page.locator('.verbiage-link.active')).toHaveText('Ich liebe Käse')
+    await expect(page.locator('.verbiage-msg textarea')).not.toHaveValue('')
+    if (isMobile) {
+        await expect(page.locator('#reply-dock .verbiage-msg')).toBeVisible()
+        await expect(page.locator('.swiper-pagination-bullet').first()).toHaveText('Nachrichten')
+    }
+    expect(await page.evaluate(() => [window.samePage, window.sawLoading])).toEqual([true, false])
+
+    // Back switches back, still without a reload
+    await page.goBack()
+    await expect(page.locator('html')).toHaveAttribute('lang', 'en')
+    await expect(page.locator('.verbiage-link.active')).toHaveText('I Love Cheese')
+    expect(await page.evaluate(() => window.samePage)).toBe(true)
+})
+
+test('if the page can\'t be fetched to swap in, switching language loads it, keeping the timer and the chosen topic', async ({ page, isMobile }) => {
+    // Only the switch's own request fails, not the page load it falls back to
+    await page.route(/\/de$/, (route) => (route.request().resourceType() === 'fetch' ? route.abort() : route.continue()))
+
     // On every page, once the markup is parsed and before scripts run: whether the
     // timer's digits are hidden, and then every value scripts set the minutes to
     await page.addInitScript(() => {
