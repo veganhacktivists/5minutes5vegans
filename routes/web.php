@@ -19,7 +19,8 @@ Route::group( [
 
     Route::get('/', 'FeedController')->name('feed');
 
-    Route::get('/tweets', 'TweetController@tweets')->name('tweets');
+    Route::get('/tweets', 'TweetController@tweets')->name('tweets')
+        ->withoutMiddleware(['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']);
 
 });
 

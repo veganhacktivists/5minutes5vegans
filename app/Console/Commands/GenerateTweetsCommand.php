@@ -9,9 +9,6 @@ use Illuminate\Console\Command;
 
 class GenerateTweetsCommand extends Command
 {
-    // Outlives many runs, so a failed run leaves the last good replies
-    private const NUM_SECONDS_TO_CACHE = 60 * 60 * 24;
-
     protected $signature = 'tweets:generate';
 
     protected $description = 'Generate tweets in every supported language';
@@ -30,6 +27,10 @@ class GenerateTweetsCommand extends Command
             App::setLocale($language);
 
             $key = "tweets$language";
+            if (($lastGood = Cache::get($key)) !== null) {
+                Cache::forever($key, $lastGood);
+            }
+
             \Log::info('Generating tweets', ['lang' => $language]);
             try {
                 $localizedTweets = __('tweets'); // takes some time, in order to generate short URLs.
@@ -39,7 +40,7 @@ class GenerateTweetsCommand extends Command
                 echo "tweets generated ($language) \n";
 
                 // Stored as JSON, ready to send
-                Cache::put($key, json_encode($tweets, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR), self::NUM_SECONDS_TO_CACHE);
+                Cache::forever($key, json_encode($tweets, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR));
                 \Log::info('Finished Generating tweets', ['lang' => $language]);
             } catch (\Throwable $e) {
                 $failed[] = $language;
