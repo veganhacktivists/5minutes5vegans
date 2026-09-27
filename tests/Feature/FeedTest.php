@@ -7,6 +7,8 @@ use App\Models\Tweet;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\App;
+use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter;
+use Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect;
 use Tests\TestCase;
 
 class FeedTest extends TestCase
@@ -24,6 +26,20 @@ class FeedTest extends TestCase
         $this->assertCount(50, $tweets);
         $this->assertEquals(1104, $tweets->first()->id);
         $this->assertEquals(1055, $tweets->last()->id);
+    }
+
+    // The nav is on the page twice, for phones and for the sidebar
+    public function testNoIdIsUsedTwiceOnTheFeed()
+    {
+        $this->withoutVite();
+        $this->withoutMiddleware([LaravelLocalizationRedirectFilter::class, LocaleSessionRedirect::class]);
+        Tweet::factory()->count(3)->create(['lang' => 'en']);
+
+        $html = $this->get(route('feed'))->assertOk()->getContent();
+
+        preg_match_all('/\sid="([^"]+)"/', $html, $matches);
+        $repeated = array_keys(array_filter(array_count_values($matches[1]), fn ($count) => $count > 1));
+        $this->assertSame([], $repeated);
     }
 
     public function testCardsCarryThePostIdAndTimeForTheBrowser()

@@ -23,8 +23,10 @@ import App from './components/App.vue'
 
 var startTime, timerInterval
 $(() => {
-    startTimer()
-    $('.timer-restart').click(startTimer)
+    // A language switch keeps the timer going from where it was
+    startTimer(pickUp('timerStartedAt'))
+    document.documentElement.classList.remove('timer-carried')
+    $('.timer-restart').click(() => startTimer())
 })
 
 function setTimer(minutes, seconds) {
@@ -32,17 +34,24 @@ function setTimer(minutes, seconds) {
     $('.timer-display .seconds').html(seconds)
 }
 
-function startTimer() {
+function startTimer(startedAt = Date.now()) {
     clearInterval(timerInterval)
-    startTime = Date.now()
-    timerInterval = setInterval(updateTimer, 1000)
-    setTimer('05', '00')
-    $('.timer-complete').hide(400)
-    $('.timer-section').show(400)
+    startTime = startedAt
+    // A run carried over from the page before may already be over
+    if (timeLeft() >= 0) {
+        timerInterval = setInterval(updateTimer, 1000)
+        $('.timer-complete').hide(400)
+        $('.timer-section').show(400)
+    }
+    updateTimer()
+}
+
+function timeLeft() {
+    return 5 * 60 * 1000 + startTime - Date.now()
 }
 
 function updateTimer() {
-    var timestamp = 5 * 60 * 1000 + startTime - Date.now()
+    var timestamp = timeLeft()
     if (timestamp < 0) {
         clearInterval(timerInterval)
         $('.timer-section').hide(400)
@@ -57,15 +66,7 @@ function updateTimer() {
     )
 }
 
-// A language switch keeps the timer going. This runs after startTimer above.
 carryOverOnLanguageSwitch('timerStartedAt', () => startTime)
-$(() => {
-    const startedAt = pickUp('timerStartedAt')
-    if (startedAt === undefined) return
-
-    startTime = startedAt
-    updateTimer()
-})
 
 // Send Laravel's CSRF token with every axios request
 let token = document.head.querySelector('meta[name="csrf-token"]')
@@ -253,7 +254,7 @@ window.onload = function() {
     }
 
     // reset the timer by clicking the icon
-    var as = document.querySelectorAll('#resetLink')
+    var as = document.querySelectorAll('.timer-reset-link')
     as.forEach(function(a) {
         a.onclick = function() {
             startTimer()

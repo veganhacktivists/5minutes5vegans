@@ -246,11 +246,14 @@ export default {
 
     created: function() {
         this.decks = {} // for each ready-made topic, the wordings not yet handed out
+        // Taken now, so a flag clicked before the topics load can pass it on
+        this.carriedTopic = pickUp('topic')
         this.loadDefaultVerbiages()
 
         // Every language lists the same topics in the same order
         carryOverOnLanguageSwitch('topic', () => {
-            const index = this.defaultVerbiages ? this.defaultVerbiages.indexOf(this.selected) : -1
+            if (!this.defaultVerbiages) return this.carriedTopic
+            const index = this.defaultVerbiages.indexOf(this.selected)
             return index === -1 ? undefined : index
         })
     },
@@ -280,11 +283,13 @@ export default {
                 (r) => {
                     this.defaultVerbiages = r.data
 
-                    const topic = this.defaultVerbiages[pickUp('topic')]
+                    const topic = this.defaultVerbiages[this.carriedTopic]
                     if (topic) {
                         if (topic.variants) topic.body = this.nextWording(topic)
                         this.selected = topic
                         this.characterCountdown()
+                        // As a tap does, so a phone shows the reply under the pager
+                        this.$nextTick(() => this.toggleVerbiageMsg(true))
                     }
                 },
                 () => {

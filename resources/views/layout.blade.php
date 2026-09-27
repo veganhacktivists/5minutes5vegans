@@ -15,6 +15,8 @@
         <title>{{ $pageTitle }}</title>
         @if ($isFeed)
             <script nonce="{{ Vite::cspNonce() }}">try { if (localStorage.getItem('intro-dismissed')) document.documentElement.classList.add('intro-dismissed') } catch (e) {}</script>
+            {{-- A language switch hands the timer over (carryOver.js). Hide its digits until app.js shows where it had got to. --}}
+            <script nonce="{{ Vite::cspNonce() }}">try { var carried = JSON.parse(sessionStorage.getItem('carried-over')); if (carried && carried.timerStartedAt && Date.now() - carried.at < 30000) document.documentElement.classList.add('timer-carried') } catch (e) {}</script>
         @endif
         <meta name="description" content="{{ __('landing.description') }}">
         @unless ($isFeed)
