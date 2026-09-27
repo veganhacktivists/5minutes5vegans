@@ -76,6 +76,18 @@ class SeoTest extends TestCase
         $this->assertStringNotContainsString('cdnjs', $this->get(route('login'))->headers->get('Content-Security-Policy'));
     }
 
+    public function testTheTextFontsComeFromTheSiteItself()
+    {
+        $html = $this->page();
+
+        // app.js imports them from @fontsource, so Vite builds them into the site's own assets
+        $this->assertStringNotContainsString('fonts.googleapis.com', $html);
+        $this->assertStringNotContainsString('fonts.gstatic.com', $html);
+        $csp = $this->get(route('login'))->headers->get('Content-Security-Policy');
+        $this->assertStringNotContainsString('fonts.googleapis.com', $csp);
+        $this->assertStringNotContainsString('fonts.gstatic.com', $csp);
+    }
+
     public function testUmamiLoadsOnlyOnceConfigured()
     {
         $this->assertStringNotContainsString('data-website-id', $this->page());
