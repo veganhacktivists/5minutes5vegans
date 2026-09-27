@@ -471,11 +471,12 @@ test('when the five minutes are up, it says how many posts you opened', async ({
     await page.goto('/en')
     await openPostsWithoutLeaving(page)
 
-    const cards = page.locator('.timeline .card')
-    await cards.nth(0).click()
-    await cards.nth(1).click()
+    // The text, as a click on a video's controls plays it and opens nothing
+    const posts = page.locator('.timeline .card .body')
+    await posts.nth(0).click()
+    await posts.nth(1).click()
     // The same post again counts once
-    await cards.nth(0).click()
+    await posts.nth(0).click()
 
     await page.clock.fastForward('05:02')
     const tally = page.locator('.timer-tally:visible')
@@ -496,7 +497,7 @@ for (const [how, blockFetch] of [['in place', false], ['by loading the page', tr
         await page.goto('/en')
         await openPostsWithoutLeaving(page)
 
-        await page.locator('.timeline .card').first().click()
+        await page.locator('.timeline .card .body').first().click()
         await page.locator('.lang-switch a[hreflang="de"]:visible').click()
         await page.waitForURL(/\/de/)
         await page.clock.fastForward('05:02')
