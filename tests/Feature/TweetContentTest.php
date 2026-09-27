@@ -37,7 +37,7 @@ class TweetContentTest extends TestCase
 
             foreach ($topics as $topic) {
                 $this->assertNotEmpty($topic['title'], "$locale has a topic without a title");
-                $this->assertStringStartsWith('fa', $topic['icon'], "$locale {$topic['title']} has no icon");
+                $this->assertFileExists(resource_path("icons/topics/{$topic['icon']}.svg"), "$locale {$topic['title']} has no icon");
                 $this->assertNotEmpty($topic['body'], "$locale {$topic['title']} is empty");
 
                 foreach ($topic['body'] as $options) {

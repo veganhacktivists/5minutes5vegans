@@ -129,7 +129,7 @@ class SeoTest extends TestCase
         $feed = $this->feed();
 
         // The nav is there twice, for phones and for the sidebar, and CSS shows one
-        $logos = preg_match_all('#<h1[^>]*>\s*<a [^>]*>\s*<img [^>]*alt="5 Minutes 5 Vegans"#', $feed);
+        $logos = preg_match_all('#<h1[^>]*>\s*<a [^>]*>\s*(?:<picture>\s*<source [^>]*>\s*)?<img [^>]*alt="5 Minutes 5 Vegans"#', $feed);
         $this->assertSame(2, $logos);
         $this->assertSame($logos, substr_count($feed, '<h1'));
     }

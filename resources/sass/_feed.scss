@@ -22,7 +22,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: $mint-line transparent;
+    scrollbar-color: $line transparent;
 }
 
 .swiper-pagination {
@@ -30,13 +30,13 @@
     flex-shrink: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: $mint;
+    background-color: $ground;
     bottom: 0 !important;
 }
 
 #reply-dock {
     flex-shrink: 0;
-    background-color: $mint;
+    background-color: $ground;
 
     .verbiage-msg {
         margin-top: 0;
@@ -56,23 +56,23 @@
     font-size: 15px;
     font-weight: bold;
     opacity: .75;
-    background: $mint;
+    background: $ground;
     padding: 10px;
-    border: 2px solid $canopy;
+    border: 2px solid $brand;
     margin-left: 4% !important;
     margin-right: 4% !important;
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
-    color: $white;
-    background: $canopy;
-    border-color: $canopy;
+    color: $on-brand;
+    background: $brand;
+    border-color: $brand;
     opacity: 1;
 }
 
 #feed-nav-1 {
     flex: 0 1 auto;
-    color: $canopy;
+    color: $brand;
     padding: 30px 30px 0 30px;
 
     @include for-tablet-portrait-up {
@@ -144,26 +144,26 @@
     align-items: center;
     align-self: center;
     gap: 6px;
-    border: 2px solid $canopy;
+    border: 2px solid $brand;
     padding: 6px 16px;
     margin-left: auto;
     font-weight: bold;
-    color: $forest;
+    color: $ink;
 
     &:hover {
         transition: all .15s ease-in-out;
-        background-color: $canopy;
-        color: white;
+        background-color: $brand;
+        color: $on-brand;
         text-decoration: none;
 
         i {
-            color: white;
+            color: $on-brand;
             transition: all .15s ease-in-out;
         }
     }
 
     i {
-        color: $timer-red;
+        color: $accent;
     }
 }
 
@@ -177,12 +177,12 @@
 
 .timer-display {
     font-size: 30px;
-    color: $forest;
+    color: $ink;
     white-space: nowrap;
 
     & > div {
         display: inline-block;
-        background-color: $paper;
+        background-color: $surface;
         width: 50px;
         border-radius: 8px;
         padding: 5px 0px;
@@ -199,7 +199,7 @@
 
 .timer-complete {
     display: none;
-    color: $forest;
+    color: $ink;
     font-size: 22px;
     font-weight: bold;
 
@@ -209,14 +209,14 @@
         margin-top: 4px;
         padding: 4px 14px;
         font-size: 16px;
-        color: $forest;
+        color: $ink;
         background: transparent;
-        border: 2px solid $canopy;
+        border: 2px solid $brand;
     }
 }
 
 #minutes-left {
-    color: $canopy;
+    color: $brand;
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: bold;
@@ -224,7 +224,7 @@
 }
 
 #easy-to-copy-resources {
-    color: $forest;
+    color: $ink;
     text-align: center;
     width: 100%;
 
@@ -256,21 +256,26 @@
 }
 
 .verbiage-switch {
-    color: $forest;
+    color: $ink;
     font-size: 17px;
-    background-color: $mint-line;
+    background-color: $line;
 }
 
 .active {
-    background-color: $canopy;
+    background-color: $brand;
 }
 
 .verbiage-link {
+    // The icon sits at the top, on the same line in every tile, and the
+    // label is centred in the space under it
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     color: inherit;
-    background-color: $paper;
+    background-color: $surface;
     border: 0;
-    border-top: 2px solid $mint-line;
+    border-top: 2px solid $line;
     border-radius: 8px;
     padding: 4px 6px;
     height: 100%;
@@ -284,8 +289,8 @@
     &:hover,
     &:focus,
     &.active {
-        color: $timer-red-dark !important;
-        border-top-color: $timer-red;
+        color: $accent-strong !important;
+        border-top-color: $accent;
         span {
             color: inherit;
         }
@@ -296,15 +301,31 @@
         padding: 0px;
         padding-top: 3px;
         display: block;
-        margin: auto;
+        margin: 0 auto;
+    }
+
+    .topic-icon {
+        width: 26px;
+        height: 26px;
+        padding-top: 0;
+        margin-top: 0;
+
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     span {
-        color: $forest;
-        display: block;
+        color: $ink;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         line-height: 1.15;
-        margin: 4px 0 2px;
+        margin: 3px 0 1px;
         font-size: min(14.4px, 14.5cqi);
         text-wrap: balance;
         overflow-wrap: break-word;
@@ -321,8 +342,8 @@
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    background-color: $paper;
-    border-top: 2px solid $mint-line;
+    background-color: $surface;
+    border-top: 2px solid $line;
     border-radius: 8px;
 }
 
@@ -337,6 +358,8 @@
     textarea {
         display: block;
         border-radius: $radius;
+        color: $ink;
+        background-color: $surface;
     }
 
     .msg-actions {
@@ -366,7 +389,7 @@
 
     .copy-hint {
         margin: 0;
-        color: $forest;
+        color: $ink;
         font-size: 14px;
         text-align: right;
 
@@ -375,7 +398,7 @@
         }
 
         &.copy-failed {
-            color: $timer-red-dark;
+            color: $accent-strong;
         }
     }
 
@@ -393,13 +416,13 @@
 
 #feed {
     position: relative;
-    background-color: $mint;
+    background-color: $ground;
     display: flex;
     flex-flow: column;
     height: 100%;
 
     a {
-        color: $forest;
+        color: $ink;
         font-size: 15px;
 
         @include for-desktop-up {
@@ -421,8 +444,8 @@
 
     .footer {
         display: flex;
-        background-color: $forest;
-        border: 2px solid $forest;
+        background-color: $deep;
+        border: 2px solid $deep;
         padding: 10px;
         flex-shrink: 0;
         margin-top: auto;
@@ -459,7 +482,7 @@
             font-weight: 500;
             font-size: 18px;
             white-space: nowrap;
-            color: $forest;
+            color: $ink;
 
             @include for-desktop-up {
                 font-size: 22px;
@@ -477,26 +500,26 @@
 
         .verbiage-toggle {
             display: inline-flex;
-            border: 2px solid $canopy;
+            border: 2px solid $brand;
             overflow: hidden;
 
             a {
                 padding: 4px 16px;
                 font-size: 16px;
-                background-color: $paper;
+                background-color: $surface;
                 text-decoration: none;
 
                 &:hover {
-                    background-color: $mint-line;
+                    background-color: $line;
                 }
 
                 &.active {
-                    color: $white;
-                    background-color: $canopy;
+                    color: $on-brand;
+                    background-color: $brand;
                 }
 
                 + a {
-                    border-left: 2px solid $canopy;
+                    border-left: 2px solid $brand;
                 }
 
                 i {
@@ -507,7 +530,7 @@
         }
 
         .account-links {
-            color: $forest;
+            color: $ink;
             font-size: 16px;
 
             a {
@@ -521,7 +544,7 @@
 }
 
 #leftside {
-    color: $canopy;
+    color: $brand;
     flex: 1 0 auto;
     padding: 30px;
     padding-top: 0;
@@ -537,7 +560,7 @@
     overflow: hidden;
 
     @include for-tablet-portrait-up {
-        background-image: url('/images/background.svg');
+        background-image: var(--swirl);
         background-size: cover;
         width: 100%;
         padding: 10px;
@@ -560,7 +583,7 @@
 #rightside-inner {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: $panel;
     width: 100%;
     height: 100%;
     min-height: 0;
@@ -590,7 +613,7 @@
             font-size: 15px;
 
             &.active {
-                color: $white;
+                color: $on-brand;
             }
         }
     }
@@ -613,7 +636,7 @@
 }
 
 .cc-count.cc-is-expended {
-    color: $feed-card-bg !important;
+    color: var(--over-ink) !important;
     background-color: $count-over !important;
     border-radius: 2px;
     padding: 2px;
@@ -624,8 +647,8 @@
 .feed-intro {
     flex-shrink: 0;
     grid-column: 1 / -1;
-    background-color: $mint;
-    border: 1px solid $mint-line;
+    background-color: $ground;
+    border: 1px solid $line;
     border-radius: 12px;
     padding: 12px 14px;
     color: $feed-card-text;
@@ -649,14 +672,14 @@
         padding: 4px 0;
         border: 0;
         background: none;
-        color: $canopy;
+        color: $brand;
         font-weight: bold;
     }
 
     .feed-intro-dismiss {
         margin-left: auto;
         padding: 4px 12px;
-        border: 1px solid $canopy;
+        border: 1px solid $brand;
         border-radius: 8px;
     }
 }
@@ -671,7 +694,7 @@
     overflow: auto;
     padding-right: 12px;
     scrollbar-width: thin;
-    scrollbar-color: $mint-line transparent;
+    scrollbar-color: $line transparent;
 
     @include for-lg-desktop-up {
         display: grid;
@@ -770,7 +793,7 @@
 
     .reply-on-x {
         margin-left: auto;
-        color: $canopy;
+        color: $brand;
         font-weight: bold;
         white-space: nowrap;
     }
@@ -778,12 +801,12 @@
     .opened-label {
         display: none;
         margin-left: 8px;
-        color: $forest;
+        color: $ink;
         font-weight: bold;
     }
 
     .card.opened {
-        background-color: $mint !important;
+        background-color: $opened !important;
 
         .opened-label {
             display: inline;
@@ -830,7 +853,7 @@
         }
 
         .btn {
-            color: $white;
+            color: $on-brand;
             font-size: 16px;
             font-weight: bold;
             padding: 10px 24px;

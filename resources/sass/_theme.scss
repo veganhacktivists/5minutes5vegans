@@ -1,0 +1,113 @@
+// The site's colours by role. Light is Evergreen. Dark follows the device's
+// setting and keeps Evergreen's teal and red, lifted for a dark ground.
+:root {
+    --ground: #{$mint};
+    --surface: #{$paper};
+    --opened: #{$mint};
+    --line: #{$mint-line};
+    --ink: #{$forest};
+    --ink-soft: #666;
+    --card-ink: #000;
+    --card-hover: #F9FAFB;
+    --brand: #{$canopy};
+    --brand-rgb: #{to-rgb($canopy)};
+    --brand-hover: #{shade-color($canopy, 20%)};
+    --brand-hover-rgb: #{to-rgb(shade-color($canopy, 20%))};
+    --on-brand: #FFFFFF;
+    --accent: #{$timer-red};
+    --accent-strong: #{$timer-red-dark};
+    --deep: #{$forest};
+    --panel: #FFFFFF;
+    --pane: #{$forest};
+    --swirl: url('/images/background.svg');
+    --count-fine: #495057;
+    --count-warning: #8a5a00;
+    --count-danger: #b3261e;
+    --over-bg: #DC3545;
+    --over-ink: #FFFFFF;
+
+    // Bootstrap's links follow the brand colour in both modes
+    --bs-link-color-rgb: var(--brand-rgb);
+    --bs-link-hover-color-rgb: var(--brand-hover-rgb);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --ground: #17231F;
+        --surface: #243430;
+        --opened: #1D2A26;
+        --line: #3A4D47;
+        --ink: #FFFFFF;
+        --ink-soft: #B8C7C1;
+        --card-ink: #FFFFFF;
+        --card-hover: #2B3C37;
+        --brand: #4CC3A0;
+        --brand-rgb: 76, 195, 160;
+        --brand-hover: #3FB896;
+        --brand-hover-rgb: 63, 184, 150;
+        --on-brand: #17231F;
+        --accent: #FF7A66;
+        --accent-strong: #FF7A66;
+        --deep: #111C19;
+        --panel: #17231F;
+        --pane: #243430;
+        --swirl: none;
+        --count-fine: #B8C7C1;
+        --count-warning: #FFB35C;
+        --count-danger: #FF7A66;
+        --over-bg: #FF7A66;
+        --over-ink: #17231F;
+    }
+
+    // The photo behind the login and reset pages, dimmed so the panes stand
+    // out. The wash is darkest at the top, behind the light logo.
+    #login-bg {
+        filter: brightness(.7);
+    }
+
+    #login-bg::after {
+        background-image: linear-gradient(
+            color-mix(in srgb, var(--deep) 75%, transparent),
+            color-mix(in srgb, var(--deep) 45%, transparent) 45%
+        );
+    }
+
+    // X's logo is black
+    .x-logo {
+        filter: invert(1);
+    }
+}
+
+// Bootstrap builds its buttons from fixed colours, so point them at the roles
+.btn-primary {
+    --bs-btn-color: var(--on-brand);
+    --bs-btn-bg: var(--brand);
+    --bs-btn-border-color: var(--brand);
+    --bs-btn-hover-color: var(--on-brand);
+    --bs-btn-hover-bg: var(--brand-hover);
+    --bs-btn-hover-border-color: var(--brand-hover);
+    --bs-btn-active-color: var(--on-brand);
+    --bs-btn-active-bg: var(--brand-hover);
+    --bs-btn-active-border-color: var(--brand-hover);
+    --bs-btn-disabled-color: var(--on-brand);
+    --bs-btn-disabled-bg: var(--brand);
+    --bs-btn-disabled-border-color: var(--brand);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--brand);
+    --bs-btn-border-color: var(--brand);
+    --bs-btn-hover-color: var(--on-brand);
+    --bs-btn-hover-bg: var(--brand);
+    --bs-btn-hover-border-color: var(--brand);
+    --bs-btn-active-color: var(--on-brand);
+    --bs-btn-active-bg: var(--brand);
+    --bs-btn-active-border-color: var(--brand);
+}
+
+.btn-link {
+    --bs-btn-color: var(--brand);
+    --bs-btn-hover-color: var(--brand-hover);
+    --bs-btn-active-color: var(--brand-hover);
+}

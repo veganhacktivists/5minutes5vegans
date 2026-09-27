@@ -4,6 +4,9 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+// The site's colours by role, light and dark
+@import 'theme';
+
 @import 'swiper/css/pagination';
 
 @import 'vanilla-icon-picker/dist/themes/default.min.css';
@@ -41,7 +44,7 @@ html {
     outline: none;
 
     &:focus-visible {
-        outline: 3px solid $forest;
+        outline: 3px solid $ink;
         outline-offset: 2px;
     }
 }
@@ -88,7 +91,7 @@ html {
 
 // Button text colors
 .btn-primary {
-    color: white !important;
+    color: $on-brand !important;
 }
 
 // Remove underlines from links and buttons
@@ -102,7 +105,7 @@ a:hover, .btn-link:hover {
 
 // Ensure checkbox has white background when unchecked
 .form-check-input:not(:checked) {
-    background-color: white !important;
+    background-color: $surface !important;
 }
 
 .page-footer {
@@ -138,18 +141,18 @@ a:hover, .btn-link:hover {
         padding: 4px 10px;
         font-size: 15px;
         font-weight: bold;
-        color: $forest;
+        color: $ink;
         text-decoration: none;
-        background-color: $white;
-        border: 2px solid $canopy;
+        background-color: $surface;
+        border: 2px solid $brand;
 
         &:hover {
-            background-color: $mint;
+            background-color: $ground;
         }
 
         &.active {
-            color: $white;
-            background-color: $canopy;
+            color: $on-brand;
+            background-color: $brand;
         }
     }
 }
