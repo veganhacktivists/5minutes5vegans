@@ -431,6 +431,36 @@ test('on a phone, the footer has no empty space under it', async ({ page, isMobi
     expect(padding[1]).toBe(padding[0])
 })
 
+test('the Ready-made/Your own toggle and the links are centred when they wrap, and spread out when they fit', async ({ page, isMobile }) => {
+    const layout = async () => {
+        const [menu, toggle, links] = await Promise.all(['.verbiage-menu', '.verbiage-toggle', '.account-links'].map((selector) => page.locator(selector).first().boundingBox()))
+        const middle = menu.x + menu.width / 2
+        return {
+            wrapped: links.y > toggle.y + toggle.height / 2,
+            toggleOffCentre: Math.abs(toggle.x + toggle.width / 2 - middle),
+            linksOffCentre: Math.abs(links.x + links.width / 2 - middle),
+            toggleFromLeft: toggle.x - menu.x,
+            linksFromRight: menu.x + menu.width - links.x - links.width,
+        }
+    }
+
+    // A phone, or a desktop where the left column is narrow: they wrap
+    if (!isMobile) await page.setViewportSize({ width: 900, height: 900 })
+    await openMessages(page, isMobile)
+    await expect.poll(async () => (await layout()).toggleOffCentre).toBeLessThan(1)
+    let now = await layout()
+    expect(now.wrapped).toBe(true)
+    expect(now.linksOffCentre).toBeLessThan(1)
+
+    if (isMobile) return
+    // Wide enough for one line: the toggle on the left, the links on the right
+    await page.setViewportSize({ width: 1400, height: 900 })
+    await expect.poll(async () => (await layout()).toggleFromLeft).toBeLessThan(1)
+    now = await layout()
+    expect(now.wrapped).toBe(false)
+    expect(now.linksFromRight).toBeLessThan(1)
+})
+
 test('the timer restart is big enough to tap', async ({ page }) => {
     await page.goto('/en')
 
