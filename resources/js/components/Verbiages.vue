@@ -155,6 +155,7 @@
 
 <script>
     import { carryOverOnLanguageSwitch, pickUp } from '../carryOver';
+    import { takePrefetchedTopics } from '../languageSwitch';
     import IconPicker from 'vanilla-icon-picker';
     import { track } from '../track';
 
@@ -251,7 +252,7 @@ export default {
         this.loadDefaultVerbiages()
 
         // Every language lists the same topics in the same order
-        carryOverOnLanguageSwitch('topic', () => {
+        this.stopCarrying = carryOverOnLanguageSwitch('topic', () => {
             if (!this.defaultVerbiages) return this.carriedTopic
             const index = this.defaultVerbiages.indexOf(this.selected)
             return index === -1 ? undefined : index
@@ -270,28 +271,38 @@ export default {
     // Take the box back first, or it's left behind in the dock
     beforeUnmount: function() {
         this.wideScreen.removeEventListener('change', this.onScreenChange)
+        this.stopCarrying()
         this.toggleVerbiageMsg(false)
     },
 
     methods: {
+        showDefaultVerbiages: function(topics) {
+            this.defaultVerbiages = topics
+
+            const topic = this.defaultVerbiages[this.carriedTopic]
+            if (topic) {
+                if (topic.variants) topic.body = this.nextWording(topic)
+                this.selected = topic
+                this.characterCountdown()
+                // As a tap does, so a phone shows the reply under the pager
+                this.$nextTick(() => this.toggleVerbiageMsg(true))
+            }
+        },
+
         topicIcon: function(name) {
             return TOPIC_ICONS[name] ?? ''
         },
 
         loadDefaultVerbiages: function(attempt = 1) {
-            axios.get(window.routes.tweets).then(
-                (r) => {
-                    this.defaultVerbiages = r.data
+            // A language switch may have fetched them already
+            const prefetched = takePrefetchedTopics(window.routes.tweets)
+            if (prefetched) {
+                this.showDefaultVerbiages(prefetched)
+                return
+            }
 
-                    const topic = this.defaultVerbiages[this.carriedTopic]
-                    if (topic) {
-                        if (topic.variants) topic.body = this.nextWording(topic)
-                        this.selected = topic
-                        this.characterCountdown()
-                        // As a tap does, so a phone shows the reply under the pager
-                        this.$nextTick(() => this.toggleVerbiageMsg(true))
-                    }
-                },
+            axios.get(window.routes.tweets).then(
+                (r) => this.showDefaultVerbiages(r.data),
                 () => {
                     if (attempt >= 3) {
                         this.loadFailed = true
