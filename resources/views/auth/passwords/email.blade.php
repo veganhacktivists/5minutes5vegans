@@ -20,7 +20,7 @@
     @enderror
 
     <div class="d-flex justify-content-end mt-4">
-        <button type="submit" class="btn btn-primary swirvy-box">
+        <button type="submit" class="btn btn-primary soft-corners">
             {{ __('Send Password Reset Link') }}
         </button>
     </div>

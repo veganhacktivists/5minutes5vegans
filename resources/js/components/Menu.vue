@@ -1,6 +1,6 @@
 <template>
    <div class="verbiage-menu d-flex flex-wrap align-items-center justify-content-between">
-      <div class="verbiage-toggle swirvy-box" role="group">
+      <div class="verbiage-toggle soft-corners" role="group">
          <template v-if="currentUser">
             <a href="#"
                role="button"

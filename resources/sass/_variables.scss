@@ -1,6 +1,21 @@
+// Evergreen, the site's palette since September 2026. Contrast ratios are
+// against the ground each colour is used on.
+$forest: #004138;         // text and the wordmark, 10.4:1 on mint
+$canopy: #00705F;         // buttons, links and outlines: 5.4:1 on mint, 6.0:1 under white text
+$timer-red: #D2331D;      // the 5s and chosen tiles, 5.0:1 on white
+$timer-red-dark: #C42D17;
+$leaf: #BCDB6C;           // the logo's leaf only, never text
+$mint: #EAF6EE;           // the page ground
+$mint-line: #D5E6DB;      // borders, scrollbars and hover on mint
+$paper: #FFFFFF;          // cards, tiles and the timer's boxes
+
+// Corners: $radius for buttons and chips, $radius-panel for large panels
+$radius: 10px;
+$radius-panel: 24px;
+
 // Body
-$body-bg: #00312E;
-$modal-bg: #10413E;
+$body-bg: $forest;
+$modal-bg: $forest;
 
 // Typography
 $font-family-sans-serif: "PT Sans", sans-serif;
@@ -64,22 +79,9 @@ $cyan: #6cb2eb;
     }
 }
 
-// Challenge Page
-$dark-text: #19443A;
-
-// Feed page
-$feed-honeydew: #e3f3e5;
-$feed-mint: #E7F9EC;
-$feed-mint-dark: #D4E9D0;
-$feed-sage: #C8E0C1;
-$feed-border: #b7dbc7;
-$feed-teal: #41b9aa;
-$feed-red: #EC361F;
-$feed-red-dark: #C42D17;
-
 // Feed cards
-$feed-card-bg: #FFF;
-$feed-card-border: #E5E7EB;
+$feed-card-bg: $paper;
+$feed-card-border: $mint-line;
 $feed-card-hover: #F9FAFB;
 $feed-card-text: #000;
 $feed-card-muted: #666;
@@ -91,8 +93,5 @@ $count-danger: #b3261e;
 $count-over: #DC3545;
 
 // Form
-$button-cta-color: #00816A;
-// For small green text: at least 4.5:1 on the page's light greens and white
-$label-green: #007561;
-$primary: $button-cta-color;
+$primary: $canopy;
 

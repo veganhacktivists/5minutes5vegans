@@ -44,7 +44,7 @@
             <h5 style="letter-spacing: 1px;" class="mt-4 font-weight-bold"><div class="horz-line"></div>@lang('GET READY...')</h5>
             <div class="d-flex flex-wrap align-items-center gap-3 my-4">
                 <span class="me-auto text-white" style="font-size: 17px;">@lang('And take up the challenge!')</span>
-                <a href="{{ route('feed') }}" class="btn swirvy-box start-cta">@lang('loginregister.start')</a>
+                <a href="{{ route('feed') }}" class="btn soft-corners start-cta">@lang('loginregister.start')</a>
             </div>
         </div>
     </div>

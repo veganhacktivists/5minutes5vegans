@@ -27,7 +27,7 @@
         @enderror
 
         <div class="d-flex justify-content-end mt-5">
-            <button type="submit" class="btn btn-large btn-primary swirvy-box">@lang('loginregister.login')</button>
+            <button type="submit" class="btn btn-large btn-primary soft-corners">@lang('loginregister.login')</button>
         </div>
     </form>
 
