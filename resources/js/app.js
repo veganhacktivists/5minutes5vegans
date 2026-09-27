@@ -23,9 +23,12 @@ import App from './components/App.vue'
 // Timer
 
 var startTime, timerInterval
+// The posts opened since the timer started, for the count when it ends
+const openedThisRun = new Set()
+let timerRunning = false
 $(() => {
-    // A language switch keeps the timer going from where it was
-    startTimer(pickUp('timerStartedAt'))
+    // A language switch keeps the timer, and the posts opened, from where they were
+    startTimer(pickUp('timerStartedAt'), pickUp('openedThisRun'))
     document.documentElement.classList.remove('timer-carried')
 })
 $(document).on('click', '.timer-restart', () => startTimer())
@@ -39,11 +42,14 @@ function setTimer(minutes, seconds) {
     $('.timer-display .seconds').html(seconds)
 }
 
-function startTimer(startedAt = Date.now()) {
+function startTimer(startedAt = Date.now(), opened = []) {
     clearInterval(timerInterval)
     startTime = startedAt
+    openedThisRun.clear()
+    opened.forEach((id) => openedThisRun.add(id))
+    timerRunning = timeLeft() >= 0
     // A run carried over from the page before may already be over
-    if (timeLeft() >= 0) {
+    if (timerRunning) {
         timerInterval = setInterval(updateTimer, 1000)
         $('.timer-complete').hide(400)
         $('.timer-section').show(400)
@@ -60,13 +66,24 @@ function drawTimer() {
     const over = timeLeft() < 0
     $('.timer-section').toggle(!over)
     $('.timer-complete').toggle(over)
-    if (!over) updateTimer()
+    if (over) showTally()
+    else updateTimer()
+}
+
+function showTally() {
+    const count = openedThisRun.size
+    $('.timer-tally').each(function () {
+        const line = count === 1 ? this.dataset.one : this.dataset.many
+        $(this).text(line.replace(':count', count)).prop('hidden', count === 0)
+    })
 }
 
 function updateTimer() {
     var timestamp = timeLeft()
     if (timestamp < 0) {
         clearInterval(timerInterval)
+        timerRunning = false
+        showTally()
         $('.timer-section').hide(400)
         $('.timer-complete').show(400)
         return
@@ -80,6 +97,7 @@ function updateTimer() {
 }
 
 carryOverOnLanguageSwitch('timerStartedAt', () => startTime)
+carryOverOnLanguageSwitch('openedThisRun', () => [...openedThisRun])
 
 // Send Laravel's CSRF token with every axios request
 let token = document.head.querySelector('meta[name="csrf-token"]')
@@ -255,6 +273,7 @@ const markOpened = (event) => {
 
     card.classList.add('opened')
     rememberOpened(card.dataset.post)
+    if (timerRunning) openedThisRun.add(card.dataset.post)
     track('Open post')
 }
 document.addEventListener('click', markOpened)
@@ -268,6 +287,7 @@ $(() => {
 initLanguageSwitch(() => {
     // The timer never stopped, so what was saved for a new page isn't needed
     pickUp('timerStartedAt')
+    pickUp('openedThisRun')
     drawTimer()
     setUpTimeline()
     if (vueApp) {

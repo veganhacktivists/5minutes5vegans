@@ -18,6 +18,7 @@
         </div>
         <div class="timer-complete">
             <div>@lang("Time's up!")</div>
+            <div class="timer-tally" data-one="{{ __('You opened 1 post. Thank you!') }}" data-many="{{ __('You opened :count posts. Thank you!') }}" hidden></div>
             <button type="button" class="timer-restart">
                 <i class="fas fa-redo"></i> @lang('sidebar.repeat')
             </button>

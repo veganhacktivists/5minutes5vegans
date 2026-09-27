@@ -461,6 +461,50 @@ test('the Ready-made/Your own toggle and the links are centred when they wrap, a
     expect(now.linksFromRight).toBeLessThan(1)
 })
 
+// Posts open on X; the tally tests only need the click
+async function openPostsWithoutLeaving(page) {
+    await page.locator('.timeline .card').evaluateAll((cards) => cards.forEach((card) => card.addEventListener('click', (event) => event.preventDefault())))
+}
+
+test('when the five minutes are up, it says how many posts you opened', async ({ page }) => {
+    await page.clock.install()
+    await page.goto('/en')
+    await openPostsWithoutLeaving(page)
+
+    const cards = page.locator('.timeline .card')
+    await cards.nth(0).click()
+    await cards.nth(1).click()
+    // The same post again counts once
+    await cards.nth(0).click()
+
+    await page.clock.fastForward('05:02')
+    const tally = page.locator('.timer-tally:visible')
+    await expect(tally).toHaveText('You opened 2 posts. Thank you!')
+
+    // Starting again starts the count again, and a run with none opened says nothing
+    await page.locator('.timer-restart:visible').click()
+    await page.clock.fastForward('05:02')
+    await expect(page.locator('.timer-complete:visible')).toContainText("Time's up!")
+    await expect(tally).toHaveCount(0)
+})
+
+for (const [how, blockFetch] of [['in place', false], ['by loading the page', true]]) {
+    test(`the opened-post count carries across a language switch ${how}`, async ({ page, isMobile }) => {
+        test.skip(isMobile, 'one size is enough')
+        if (blockFetch) await page.route(/\/de$/, (route) => (route.request().resourceType() === 'fetch' ? route.abort() : route.continue()))
+        await page.clock.install()
+        await page.goto('/en')
+        await openPostsWithoutLeaving(page)
+
+        await page.locator('.timeline .card').first().click()
+        await page.locator('.lang-switch a[hreflang="de"]:visible').click()
+        await page.waitForURL(/\/de/)
+        await page.clock.fastForward('05:02')
+
+        await expect(page.locator('.timer-tally:visible')).toHaveText('Du hast 1 Post geöffnet. Danke!')
+    })
+}
+
 test('the timer restart is big enough to tap', async ({ page }) => {
     await page.goto('/en')
 
