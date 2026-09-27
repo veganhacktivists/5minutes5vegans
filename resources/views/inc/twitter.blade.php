@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <img src="{{ asset('images/twitter/logo.svg') }}" alt="X" width="20" height="20">
+                <img class="x-logo" src="{{ asset('images/twitter/logo.svg') }}" alt="X" width="20" height="20">
             </div>
 
             <p class="body">{{ strip_tags(html_entity_decode($tweet->text)) }}</p>
@@ -55,7 +55,7 @@
         <div class="empty">
             <p>@lang('No recent posts in this language. Check back later.')</p>
             @unless (App::isLocale('en'))
-                <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="btn btn-primary swirvy-box">@lang('See English posts')</a>
+                <a href="{{ LaravelLocalization::getLocalizedURL('en', null, [], true) }}" class="btn btn-primary soft-corners">@lang('See English posts')</a>
             @endunless
         </div>
     @endforelse

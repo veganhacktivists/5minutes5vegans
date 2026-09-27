@@ -4,7 +4,7 @@ require_once(app_path('generate_and_cache_shlink.php'));
 
 return [
     [
-        'icon' => 'fas fa-info-circle',
+        'icon' => 'info',
         'title' => 'Informazioni generali',
         'body' => [
             [
@@ -26,7 +26,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'calendar-check',
         'title' => 'Sfida vegana',
         'body' => [
             [
@@ -49,7 +49,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-bacon',
+        'icon' => 'hamburger',
         'title' => 'Amo la carne',
         'body' => [
             [
@@ -71,7 +71,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-cheese',
+        'icon' => 'cheese',
         'title' => 'Amo il formaggio',
         'body' => [
             [
@@ -93,7 +93,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-pizza-slice',
+        'icon' => 'pizza',
         'title' => 'Amo la pizza',
         'body' => [
             [
@@ -115,7 +115,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-egg',
+        'icon' => 'egg',
         'title' => 'Amo le uova',
         'body' => [
             [
@@ -137,7 +137,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-ice-cream',
+        'icon' => 'ice-cream',
         'title' => 'Amo il gelato',
         'body' => [
             [
@@ -159,7 +159,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-drumstick-bite',
+        'icon' => 'bird',
         'title' => 'Amo il pollo',
         'body' => [
             [
@@ -181,7 +181,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-glass-whiskey',
+        'icon' => 'pint-glass',
         'title' => 'Latti vegetali',
         'body' => [
             [
@@ -203,7 +203,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-video',
+        'icon' => 'film-slate',
         'title' => 'Documentari',
         'body' => [
             [
@@ -225,7 +225,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-sad-cry',
+        'icon' => 'eye',
         'title' => 'Dominion',
         'body' => [
             [
@@ -247,7 +247,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-baby',
+        'icon' => 'footprints',
         'title' => 'Un passo alla volta',
         'body' => [
             [
@@ -269,7 +269,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'carrot',
         'title' => 'Vegetariano',
         'body' => [
             [
@@ -291,7 +291,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-coins',
+        'icon' => 'piggy-bank',
         'title' => 'Troppo caro',
         'body' => [
             [
@@ -313,7 +313,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-calculator',
+        'icon' => 'bowl-food',
         'title' => 'Proteine',
         'body' => [
             [
@@ -335,7 +335,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-dumbbell',
+        'icon' => 'barbell',
         'title' => 'Sport e fitness',
         'body' => [
             [
@@ -357,7 +357,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-comments',
+        'icon' => 'users-three',
         'title' => 'Community',
         'body' => [
             [
@@ -379,7 +379,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-utensils',
+        'icon' => 'fork-knife',
         'title' => 'Mangiare fuori',
         'body' => [
             [
@@ -401,7 +401,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-tree',
+        'icon' => 'globe-hemisphere-west',
         'title' => 'Ambiente',
         'body' => [
             [
@@ -423,7 +423,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-flask',
+        'icon' => 'stethoscope',
         'title' => 'Gli esperti concordano',
         'body' => [
             [
@@ -445,7 +445,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-heartbeat',
+        'icon' => 'heartbeat',
         'title' => 'Salute',
         'body' => [
             [
@@ -467,7 +467,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'couch',
         'title' => 'Che fatica cucinare',
         'body' => [
             [
@@ -489,7 +489,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-meh-blank',
+        'icon' => 'pepper',
         'title' => 'Cibo noioso',
         'body' => [
             [
@@ -511,7 +511,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-fist-raised',
+        'icon' => 'chats-circle',
         'title' => '30+ argomenti',
         'body' => [
             [

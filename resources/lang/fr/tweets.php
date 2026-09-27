@@ -4,7 +4,7 @@ require_once(app_path('generate_and_cache_shlink.php'));
 
 return [
     [
-        'icon' => 'fas fa-info-circle',
+        'icon' => 'info',
         'title' => 'Infos générales',
         'body' => [
             [
@@ -26,7 +26,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'calendar-check',
         'title' => 'Défi vegan',
         'body' => [
             [
@@ -49,7 +49,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-bacon',
+        'icon' => 'hamburger',
         'title' => 'J\'adore la viande',
         'body' => [
             [
@@ -71,7 +71,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-cheese',
+        'icon' => 'cheese',
         'title' => 'J\'adore le fromage',
         'body' => [
             [
@@ -93,7 +93,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-pizza-slice',
+        'icon' => 'pizza',
         'title' => 'J\'adore la pizza',
         'body' => [
             [
@@ -115,7 +115,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-egg',
+        'icon' => 'egg',
         'title' => 'J\'adore les œufs',
         'body' => [
             [
@@ -137,7 +137,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-ice-cream',
+        'icon' => 'ice-cream',
         'title' => 'J\'adore les glaces',
         'body' => [
             [
@@ -159,7 +159,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-drumstick-bite',
+        'icon' => 'bird',
         'title' => 'J\'adore le poulet',
         'body' => [
             [
@@ -181,7 +181,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-glass-whiskey',
+        'icon' => 'pint-glass',
         'title' => 'Laits végétaux',
         'body' => [
             [
@@ -203,7 +203,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-video',
+        'icon' => 'film-slate',
         'title' => 'Documentaires',
         'body' => [
             [
@@ -225,7 +225,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-sad-cry',
+        'icon' => 'eye',
         'title' => 'Dominion',
         'body' => [
             [
@@ -247,7 +247,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-baby',
+        'icon' => 'footprints',
         'title' => 'Petit à petit',
         'body' => [
             [
@@ -269,7 +269,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'carrot',
         'title' => 'Végétarien',
         'body' => [
             [
@@ -291,7 +291,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-coins',
+        'icon' => 'piggy-bank',
         'title' => 'Trop cher',
         'body' => [
             [
@@ -313,7 +313,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-calculator',
+        'icon' => 'bowl-food',
         'title' => 'Protéines',
         'body' => [
             [
@@ -335,7 +335,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-dumbbell',
+        'icon' => 'barbell',
         'title' => 'Sport et fitness',
         'body' => [
             [
@@ -357,7 +357,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-comments',
+        'icon' => 'users-three',
         'title' => 'Communauté',
         'body' => [
             [
@@ -379,7 +379,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-utensils',
+        'icon' => 'fork-knife',
         'title' => 'Manger dehors',
         'body' => [
             [
@@ -401,7 +401,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-tree',
+        'icon' => 'globe-hemisphere-west',
         'title' => 'Environnement',
         'body' => [
             [
@@ -423,7 +423,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-flask',
+        'icon' => 'stethoscope',
         'title' => 'Avis d\'experts',
         'body' => [
             [
@@ -445,7 +445,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-heartbeat',
+        'icon' => 'heartbeat',
         'title' => 'Santé',
         'body' => [
             [
@@ -467,7 +467,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'couch',
         'title' => 'Pas envie de cuisiner',
         'body' => [
             [
@@ -489,7 +489,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-meh-blank',
+        'icon' => 'pepper',
         'title' => 'C\'est fade',
         'body' => [
             [
@@ -511,7 +511,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-fist-raised',
+        'icon' => 'chats-circle',
         'title' => '30+ arguments',
         'body' => [
             [

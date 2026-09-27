@@ -4,7 +4,7 @@ require_once(app_path('generate_and_cache_shlink.php'));
 
 return [
     [
-        'icon' => 'fas fa-info-circle',
+        'icon' => 'info',
         'title' => 'Información',
         'body' => [
             [
@@ -26,7 +26,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'calendar-check',
         'title' => 'Reto vegano',
         'body' => [
             [
@@ -49,7 +49,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-bacon',
+        'icon' => 'hamburger',
         'title' => 'Amo la carne',
         'body' => [
             [
@@ -71,7 +71,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-cheese',
+        'icon' => 'cheese',
         'title' => 'Amo el queso',
         'body' => [
             [
@@ -93,7 +93,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-pizza-slice',
+        'icon' => 'pizza',
         'title' => 'Amo la pizza',
         'body' => [
             [
@@ -115,7 +115,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-egg',
+        'icon' => 'egg',
         'title' => 'Amo el huevo',
         'body' => [
             [
@@ -137,7 +137,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-ice-cream',
+        'icon' => 'ice-cream',
         'title' => 'Amo el helado',
         'body' => [
             [
@@ -159,7 +159,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-drumstick-bite',
+        'icon' => 'bird',
         'title' => 'Amo el pollo',
         'body' => [
             [
@@ -181,7 +181,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-glass-whiskey',
+        'icon' => 'pint-glass',
         'title' => 'Leches vegetales',
         'body' => [
             [
@@ -203,7 +203,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-video',
+        'icon' => 'film-slate',
         'title' => 'Documentales',
         'body' => [
             [
@@ -225,7 +225,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-sad-cry',
+        'icon' => 'eye',
         'title' => 'Dominion',
         'body' => [
             [
@@ -247,7 +247,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-baby',
+        'icon' => 'footprints',
         'title' => 'Poco a poco',
         'body' => [
             [
@@ -269,7 +269,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'carrot',
         'title' => 'Vegetariano/a',
         'body' => [
             [
@@ -291,7 +291,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-coins',
+        'icon' => 'piggy-bank',
         'title' => 'Es muy caro',
         'body' => [
             [
@@ -313,7 +313,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-calculator',
+        'icon' => 'bowl-food',
         'title' => 'Proteínas',
         'body' => [
             [
@@ -335,7 +335,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-dumbbell',
+        'icon' => 'barbell',
         'title' => 'Deporte',
         'body' => [
             [
@@ -357,7 +357,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-comments',
+        'icon' => 'users-three',
         'title' => 'Comunidad',
         'body' => [
             [
@@ -379,7 +379,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-utensils',
+        'icon' => 'fork-knife',
         'title' => 'Comer fuera',
         'body' => [
             [
@@ -401,7 +401,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-tree',
+        'icon' => 'globe-hemisphere-west',
         'title' => 'Medio ambiente',
         'body' => [
             [
@@ -423,7 +423,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-flask',
+        'icon' => 'stethoscope',
         'title' => 'Consenso',
         'body' => [
             [
@@ -445,7 +445,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-heartbeat',
+        'icon' => 'heartbeat',
         'title' => 'Salud',
         'body' => [
             [
@@ -467,7 +467,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'couch',
         'title' => 'Pereza de cocinar',
         'body' => [
             [
@@ -489,7 +489,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-meh-blank',
+        'icon' => 'pepper',
         'title' => 'Comida aburrida',
         'body' => [
             [
@@ -511,7 +511,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-fist-raised',
+        'icon' => 'chats-circle',
         'title' => '30+ argumentos',
         'body' => [
             [

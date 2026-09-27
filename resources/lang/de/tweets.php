@@ -4,7 +4,7 @@ require_once(app_path('generate_and_cache_shlink.php'));
 
 return [
     [
-        'icon' => 'fas fa-info-circle',
+        'icon' => 'info',
         'title' => 'Allgemeines',
         'body' => [
             [
@@ -26,7 +26,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'calendar-check',
         'title' => 'Vegan-Challenge',
         'body' => [
             [
@@ -49,7 +49,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-bacon',
+        'icon' => 'hamburger',
         'title' => 'Ich liebe Fleisch',
         'body' => [
             [
@@ -71,7 +71,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-cheese',
+        'icon' => 'cheese',
         'title' => 'Ich liebe Käse',
         'body' => [
             [
@@ -93,7 +93,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-pizza-slice',
+        'icon' => 'pizza',
         'title' => 'Ich liebe Pizza',
         'body' => [
             [
@@ -115,7 +115,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-egg',
+        'icon' => 'egg',
         'title' => 'Ich liebe Eier',
         'body' => [
             [
@@ -137,7 +137,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-ice-cream',
+        'icon' => 'ice-cream',
         'title' => 'Ich liebe Eis',
         'body' => [
             [
@@ -159,7 +159,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-drumstick-bite',
+        'icon' => 'bird',
         'title' => 'Ich liebe Hähnchen',
         'body' => [
             [
@@ -181,7 +181,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-glass-whiskey',
+        'icon' => 'pint-glass',
         'title' => 'Pflanzenmilch',
         'body' => [
             [
@@ -203,7 +203,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-video',
+        'icon' => 'film-slate',
         'title' => 'Dokus',
         'body' => [
             [
@@ -225,7 +225,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-sad-cry',
+        'icon' => 'eye',
         'title' => 'Dominion',
         'body' => [
             [
@@ -247,7 +247,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-baby',
+        'icon' => 'footprints',
         'title' => 'Kleine Schritte',
         'body' => [
             [
@@ -269,7 +269,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'carrot',
         'title' => 'Vegetarisch',
         'body' => [
             [
@@ -291,7 +291,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-coins',
+        'icon' => 'piggy-bank',
         'title' => 'Zu teuer',
         'body' => [
             [
@@ -313,7 +313,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-calculator',
+        'icon' => 'bowl-food',
         'title' => 'Protein',
         'body' => [
             [
@@ -335,7 +335,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-dumbbell',
+        'icon' => 'barbell',
         'title' => 'Fitness',
         'body' => [
             [
@@ -357,7 +357,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-comments',
+        'icon' => 'users-three',
         'title' => 'Community',
         'body' => [
             [
@@ -379,7 +379,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-utensils',
+        'icon' => 'fork-knife',
         'title' => 'Auswärts essen',
         'body' => [
             [
@@ -401,7 +401,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-tree',
+        'icon' => 'globe-hemisphere-west',
         'title' => 'Umwelt',
         'body' => [
             [
@@ -423,7 +423,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-flask',
+        'icon' => 'stethoscope',
         'title' => 'Fachleute einig',
         'body' => [
             [
@@ -445,7 +445,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-heartbeat',
+        'icon' => 'heartbeat',
         'title' => 'Gesundheit',
         'body' => [
             [
@@ -467,7 +467,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'couch',
         'title' => 'Keine Lust zu kochen',
         'body' => [
             [
@@ -489,7 +489,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-meh-blank',
+        'icon' => 'pepper',
         'title' => 'Essen ist langweilig',
         'body' => [
             [
@@ -511,7 +511,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-fist-raised',
+        'icon' => 'chats-circle',
         'title' => '30+ Argumente',
         'body' => [
             [

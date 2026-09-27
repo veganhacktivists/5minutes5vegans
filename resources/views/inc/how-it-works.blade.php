@@ -15,9 +15,9 @@
             </div>
             <div class="modal-footer">
                 @if ($onFeed ?? false)
-                    <button type="button" class="btn btn-primary swirvy-box" data-bs-dismiss="modal">@lang('loginregister.start')</button>
+                    <button type="button" class="btn btn-primary soft-corners" data-bs-dismiss="modal">@lang('loginregister.start')</button>
                 @else
-                    <a href="{{ route('feed') }}" class="btn btn-primary swirvy-box">@lang('loginregister.start')</a>
+                    <a href="{{ route('feed') }}" class="btn btn-primary soft-corners">@lang('loginregister.start')</a>
                 @endif
             </div>
         </div>

@@ -4,7 +4,7 @@ require_once(app_path('generate_and_cache_shlink.php'));
 
 return [
     [
-        'icon' => 'fas fa-info-circle',
+        'icon' => 'info',
         'title' => 'Algemene info',
         'body' => [
             [
@@ -26,7 +26,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'calendar-check',
         'title' => 'Vegan challenge',
         'body' => [
             [
@@ -49,7 +49,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-bacon',
+        'icon' => 'hamburger',
         'title' => 'Ik hou van vlees',
         'body' => [
             [
@@ -71,7 +71,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-cheese',
+        'icon' => 'cheese',
         'title' => 'Ik hou van kaas',
         'body' => [
             [
@@ -93,7 +93,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-pizza-slice',
+        'icon' => 'pizza',
         'title' => 'Ik hou van pizza',
         'body' => [
             [
@@ -115,7 +115,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-egg',
+        'icon' => 'egg',
         'title' => 'Ik hou van eieren',
         'body' => [
             [
@@ -137,7 +137,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-ice-cream',
+        'icon' => 'ice-cream',
         'title' => 'Ik hou van ijs',
         'body' => [
             [
@@ -159,7 +159,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-drumstick-bite',
+        'icon' => 'bird',
         'title' => 'Ik hou van kip',
         'body' => [
             [
@@ -181,7 +181,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-glass-whiskey',
+        'icon' => 'pint-glass',
         'title' => 'Plantaardige melk',
         'body' => [
             [
@@ -203,7 +203,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-video',
+        'icon' => 'film-slate',
         'title' => 'Documentaires',
         'body' => [
             [
@@ -225,7 +225,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-sad-cry',
+        'icon' => 'eye',
         'title' => 'Dominion',
         'body' => [
             [
@@ -247,7 +247,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-baby',
+        'icon' => 'footprints',
         'title' => 'Stap voor stap',
         'body' => [
             [
@@ -269,7 +269,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'carrot',
         'title' => 'Vegetarisch',
         'body' => [
             [
@@ -291,7 +291,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-coins',
+        'icon' => 'piggy-bank',
         'title' => 'Te duur',
         'body' => [
             [
@@ -313,7 +313,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-calculator',
+        'icon' => 'bowl-food',
         'title' => 'Eiwitten',
         'body' => [
             [
@@ -335,7 +335,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-dumbbell',
+        'icon' => 'barbell',
         'title' => 'Sport en fitness',
         'body' => [
             [
@@ -357,7 +357,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-comments',
+        'icon' => 'users-three',
         'title' => 'Community',
         'body' => [
             [
@@ -379,7 +379,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-utensils',
+        'icon' => 'fork-knife',
         'title' => 'Uit eten',
         'body' => [
             [
@@ -401,7 +401,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-tree',
+        'icon' => 'globe-hemisphere-west',
         'title' => 'Milieu',
         'body' => [
             [
@@ -423,7 +423,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-flask',
+        'icon' => 'stethoscope',
         'title' => 'Experts zijn het eens',
         'body' => [
             [
@@ -445,7 +445,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-heartbeat',
+        'icon' => 'heartbeat',
         'title' => 'Gezondheid',
         'body' => [
             [
@@ -467,7 +467,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-leaf',
+        'icon' => 'couch',
         'title' => 'Geen zin om te koken',
         'body' => [
             [
@@ -489,7 +489,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-meh-blank',
+        'icon' => 'pepper',
         'title' => 'Eten is saai',
         'body' => [
             [
@@ -511,7 +511,7 @@ return [
     ],
 
     [
-        'icon' => 'fas fa-fist-raised',
+        'icon' => 'chats-circle',
         'title' => '30+ argumenten',
         'body' => [
             [

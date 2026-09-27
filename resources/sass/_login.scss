@@ -8,6 +8,15 @@
     z-index:-2;
 }
 
+// A forest wash over the photo ties it to the palette. It fades out towards
+// the top, so the logo keeps a light sky behind it.
+#login-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba($forest, 0.08), rgba($forest, 0.5) 45%);
+}
+
 #login-bg-overlay {
     position: fixed;
     height: 100%;
@@ -55,9 +64,9 @@
     @extend .login-pane;
 
     float: left;
-    color: $dark-text;
-    background-color: rgba($feed-honeydew, 0.96);
-    border-radius: 90px 0 0 0;
+    color: $ink;
+    background-color: color-mix(in srgb, #{$ground} 96%, transparent);
+    border-radius: $radius-panel 0 0 $radius-panel;
 
     #register-pane p {
         font-size: 14px;
@@ -69,14 +78,11 @@
     @extend .login-pane;
 
     float: right;
-    background-color:#1d4737f2;
-
-    @include for-tablet-portrait-up {
-        border-radius: 0 0 90px 0;
-    }
+    background-color: color-mix(in srgb, #{$pane} 95%, transparent);
+    border-radius: 0 $radius-panel $radius-panel 0;
 
     h3 {
-        color: #61df95;
+        color: $leaf;
     }
 
     h5 {
@@ -92,21 +98,21 @@
 }
 
 .login-how {
-    @extend .swirvy-box;
+    @extend .soft-corners;
 
     display: inline-flex;
     align-items: center;
     padding: 6px 16px;
     font-size: 17px;
     font-weight: bold;
-    color: $dark-text;
-    background-color: rgba($white, 0.85);
-    border: 2px solid $feed-teal;
+    color: $ink;
+    background-color: color-mix(in srgb, #{$surface} 85%, transparent);
+    border: 2px solid $brand;
     text-decoration: none;
 
     &:hover {
-        color: $white;
-        background-color: $feed-teal;
+        color: $on-brand;
+        background-color: $brand;
     }
 }
 
@@ -123,21 +129,21 @@
     padding: 8px 24px;
     font-size: 17px;
     font-weight: bold;
-    color: $dark-text;
-    background-color: $feed-honeydew;
+    color: $ink;
+    background-color: $ground;
 
     &:hover,
     &:focus-visible {
-        color: $dark-text;
-        background-color: $white;
+        color: $ink;
+        background-color: $surface;
     }
 }
 
 .how-modal {
-    color: $dark-text;
-    background-color: $feed-honeydew;
+    color: $ink;
+    background-color: $ground;
     border: 0;
-    border-radius: 60px 0 60px 0;
+    border-radius: $radius-panel;
 
     .modal-header,
     .modal-footer {
@@ -183,9 +189,9 @@
 
 .reset-pane {
     padding: 60px 6% 40px;
-    color: $dark-text;
-    background-color: rgba($feed-honeydew, 0.96);
-    border-radius: 90px 0 90px 0;
+    color: $ink;
+    background-color: color-mix(in srgb, #{$ground} 96%, transparent);
+    border-radius: $radius-panel;
 
     h1 {
         font-size: 2rem;
@@ -200,16 +206,16 @@
 .reset-pane input:not([type = submit]):not([type = checkbox]) {
     background: transparent;
     border: none;
-    border-bottom: 2px solid $feed-teal;
+    border-bottom: 2px solid $brand;
     border-radius: 0;
 
     &:focus {
-        border-bottom-color: $button-cta-color;
+        border-bottom-color: $brand;
         box-shadow: none;
     }
 
     &::placeholder {
-        color: rgba($dark-text, 0.7);
+        color: color-mix(in srgb, #{$ink} 70%, transparent);
         text-transform: uppercase;
         letter-spacing: 0.5px;
         font-size: 13px;

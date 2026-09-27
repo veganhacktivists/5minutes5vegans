@@ -14,7 +14,7 @@
                     v-bind:aria-pressed="selected.title == verbiage.title"
                     class="verbiage-link"
                     >
-                    <i :class="verbiage.icon" class="fa-fw"></i>
+                    <i class="topic-icon" v-html="topicIcon(verbiage.icon)"></i>
                     <span>{{ verbiage.title }}</span>
                 </button>
             </div>
@@ -156,6 +156,12 @@
 <script>
     import IconPicker from 'vanilla-icon-picker';
     import { track } from '../track';
+
+    // The ready-made topics' icons are Phosphor's, in resources/icons/topics
+    const TOPIC_ICONS = Object.fromEntries(
+        Object.entries(import.meta.glob('../../icons/topics/*.svg', { query: '?raw', import: 'default', eager: true }))
+            .map(([path, svg]) => [path.split('/').pop().replace('.svg', ''), svg]),
+    )
 // Counter colours, lowest threshold first
 const CHARACTER_COUNT_STATES = [
     { name: 'cc-is-expended', threshold: -1 },
@@ -258,6 +264,10 @@ export default {
     },
 
     methods: {
+        topicIcon: function(name) {
+            return TOPIC_ICONS[name] ?? ''
+        },
+
         loadDefaultVerbiages: function(attempt = 1) {
             axios.get(window.routes.tweets).then(
                 (r) => {

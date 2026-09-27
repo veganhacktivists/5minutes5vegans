@@ -62,6 +62,21 @@ test('a topic gives a reply that fits on X, and Reword changes it', async ({ pag
     await expect(box).not.toHaveValue(first)
 })
 
+test('every ready-made topic has its icon, level with the others in its row', async ({ page, isMobile }) => {
+    await openMessages(page, isMobile)
+
+    const icons = await page.locator('.verbiage-link').evaluateAll((tiles) => tiles.map((tile) => {
+        const icon = tile.querySelector('.topic-icon svg')
+        return { row: Math.round(tile.getBoundingClientRect().top), top: icon && Math.round(icon.getBoundingClientRect().top) }
+    }))
+    expect(icons.length).toBeGreaterThan(0)
+    expect(icons.filter((icon) => icon.top === null)).toEqual([])
+
+    // However many lines a label takes, the icons in a row line up
+    const rows = Map.groupBy(icons, (icon) => icon.row)
+    for (const [row, tiles] of rows) expect(new Set(tiles.map((tile) => tile.top)).size, `row at ${row}px`).toBe(1)
+})
+
 test('Copy puts the reply on the clipboard', async ({ page, context, isMobile }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write'])
     await openMessages(page, isMobile)
@@ -345,4 +360,24 @@ test('when the five minutes are up, it says how many posts you opened', async ({
     await page.clock.fastForward('05:02')
     await expect(page.locator('.timer-complete:visible')).toContainText("Time's up!")
     await expect(tally).toHaveCount(0)
+})
+
+test('in dark mode, small text on the feed is still readable', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/en')
+
+    for (const selector of ['#minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how', '#donate-button:visible']) {
+        expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
+    }
+})
+
+test('dark mode uses the dark palette and the light logo', async ({ page }) => {
+    await page.goto('/en')
+    expect(await page.locator('h1:visible img').evaluate((img) => img.currentSrc)).not.toContain('logo-dark')
+
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.reload()
+    expect(await page.locator('#feed').evaluate((el) => getComputedStyle(el).backgroundColor)).toBe('rgb(23, 35, 31)')
+    expect(await page.locator('.timeline .card').first().evaluate((el) => getComputedStyle(el).backgroundColor)).toBe('rgb(36, 52, 48)')
+    expect(await page.locator('h1:visible img').evaluate((img) => img.currentSrc)).toContain('logo-dark.svg')
 })
