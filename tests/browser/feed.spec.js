@@ -376,16 +376,17 @@ test('icons come from the site itself', async ({ page }) => {
     expect(elsewhere).toEqual([])
 })
 
-test('when the five minutes are up, it says how many posts you opened', async ({ page, context }) => {
-    // Posts open on X in a new tab, which the test doesn't need
-    await context.route('https://x.com/**', (route) => route.abort())
-    context.on('page', (popup) => popup.close())
+test('when the five minutes are up, it says how many posts you opened', async ({ page }) => {
     await page.clock.install()
     await page.goto('/en')
 
     const cards = page.locator('.timeline .card')
+    const ids = await cards.evaluateAll((cards) => cards.map((card) => card.dataset.post))
+    const second = ids.findIndex((id) => id !== ids[0])
+    expect(second).toBeGreaterThan(0)
+    await cards.evaluateAll((cards) => cards.forEach((card) => card.addEventListener('click', (event) => event.preventDefault())))
     await cards.nth(0).click()
-    await cards.nth(1).click()
+    await cards.nth(second).click()
     await cards.nth(0).click()
 
     await page.clock.fastForward('05:02')
@@ -399,13 +400,12 @@ test('when the five minutes are up, it says how many posts you opened', async ({
     await expect(tally).toHaveCount(0)
 })
 
-test('the opened-post count follows a language switch', async ({ page, context, isMobile }) => {
+test('the opened-post count follows a language switch', async ({ page, isMobile }) => {
     test.skip(isMobile, 'one size is enough')
-    await context.route('https://x.com/**', (route) => route.abort())
-    context.on('page', (popup) => popup.close())
     await page.clock.install()
     await page.goto('/en')
 
+    await page.locator('.timeline .card').first().evaluate((card) => card.addEventListener('click', (event) => event.preventDefault()))
     await page.locator('.timeline .card').first().click()
     await page.locator('.lang-switch a[hreflang="de"]:visible').click()
     await page.waitForURL(/\/de/)
