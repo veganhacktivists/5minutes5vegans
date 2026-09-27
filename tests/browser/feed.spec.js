@@ -137,6 +137,22 @@ test('the feed shows posts with how old they are', async ({ page }) => {
     await expect(time).toHaveText(/ago|now|yesterday/)
 })
 
+test('with no posts in a language, the message sits in the middle of the feed', async ({ page, isMobile }) => {
+    // Wide enough for the two-column feed
+    if (!isMobile) await page.setViewportSize({ width: 1700, height: 900 })
+    await page.goto('/de')
+
+    // The test data has posts in every language, so swap them for the empty state
+    const timeline = page.locator('.timeline')
+    await timeline.evaluate((el) => {
+        el.innerHTML = '<div class="empty"><p>No recent posts in this language. Check back later.</p><a href="#" class="btn btn-primary">See English posts</a></div>'
+    })
+
+    const middle = (box) => box.x + box.width / 2
+    expect(Math.abs(middle(await page.locator('.timeline .empty').boundingBox()) - middle(await timeline.boundingBox()))).toBeLessThan(1)
+    expect(await timeline.evaluate((el) => el.scrollWidth - el.clientWidth)).toBe(0)
+})
+
 test('the register page loads, reCAPTCHA included', async ({ page }) => {
     await page.goto('/en/register')
 
