@@ -1,6 +1,6 @@
 <template>
-   <div class="verbiage-menu d-flex flex-wrap align-items-center justify-content-between">
-      <div class="verbiage-toggle soft-corners" role="group">
+   <div ref="menu" class="verbiage-menu d-flex flex-wrap align-items-center" :class="wrapped ? 'justify-content-center' : 'justify-content-between'">
+      <div ref="toggle" class="verbiage-toggle soft-corners" role="group">
          <template v-if="currentUser">
             <a href="#"
                role="button"
@@ -28,7 +28,7 @@
          </template>
       </div>
 
-      <div class="account-links">
+      <div ref="links" class="account-links">
          <a href="#" data-bs-toggle="modal" data-bs-target="#how-it-works" @click.prevent="track('How it works')">{{ lang.howItWorks }}</a>
          ·
          <template v-if="currentUser">
@@ -64,7 +64,22 @@ export default {
          currentUser: window.currentUser,
          routes: window.routes,
          lang: window.lang,
+         wrapped: false,
       }
+   },
+
+   // When the toggle and the links don't fit on one line, as on a phone,
+   // both are centred instead of pushed to either side
+   mounted () {
+      this.resizeObserver = new ResizeObserver(() => {
+         const { toggle, links } = this.$refs
+         this.wrapped = links.offsetTop > toggle.offsetTop + toggle.offsetHeight / 2
+      })
+      this.resizeObserver.observe(this.$refs.menu)
+   },
+
+   beforeUnmount () {
+      this.resizeObserver.disconnect()
    },
 }
 </script>
