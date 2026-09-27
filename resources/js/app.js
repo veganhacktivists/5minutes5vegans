@@ -9,6 +9,7 @@ import Swiper from 'swiper'
 import { Pagination } from 'swiper/modules'
 import { createApp } from 'vue'
 import { track } from './track'
+import { carryOverOnLanguageSwitch, pickUp } from './carryOver'
 import App from './components/App.vue'
 
 // Timer
@@ -48,6 +49,16 @@ function updateTimer() {
         ('0' + time.getSeconds()).substr(-2),
     )
 }
+
+// A language switch keeps the timer going. This runs after startTimer above.
+carryOverOnLanguageSwitch('timerStartedAt', () => startTime)
+$(() => {
+    const startedAt = pickUp('timerStartedAt')
+    if (startedAt === undefined) return
+
+    startTime = startedAt
+    updateTimer()
+})
 
 // Send Laravel's CSRF token with every axios request
 let token = document.head.querySelector('meta[name="csrf-token"]')

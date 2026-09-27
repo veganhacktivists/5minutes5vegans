@@ -114,6 +114,27 @@ test('if copying fails, the reply stays put with a note to copy it by hand', asy
     await expect(page.locator('.verbiage-msg textarea')).toBeVisible()
 })
 
+test('switching language keeps the timer going and the chosen topic', async ({ page, isMobile }) => {
+    await page.clock.install()
+    await openMessages(page, isMobile)
+    await page.locator('.verbiage-link', { hasText: 'I Love Cheese' }).click()
+
+    await page.clock.fastForward('01:30')
+    // Phones keep the flags on the feed
+    if (isMobile) await page.locator('.swiper-pagination-bullet').nth(1).click()
+    await page.locator('.lang-switch a[hreflang="de"]:visible').click()
+    await page.waitForURL(/\/de/)
+
+    await expect(page.locator('.timer-display .minutes:visible')).toHaveText('03')
+    await expect(page.locator('.verbiage-link.active')).toHaveText('Ich liebe Käse')
+    await expect(page.locator('.verbiage-msg textarea')).not.toHaveValue('')
+
+    // A plain reload starts afresh
+    await page.reload()
+    await expect(page.locator('.timer-display .minutes:visible')).toHaveText('05')
+    await expect(page.locator('.verbiage-link.active')).toHaveCount(0)
+})
+
 test('on a phone, picking a topic keeps everything on screen and Copy moves on to the feed', async ({ page, isMobile }) => {
     test.skip(!isMobile, 'phones only')
     await openMessages(page, isMobile)
