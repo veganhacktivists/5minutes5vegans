@@ -33,6 +33,12 @@ function generate_and_cache_shlink($url)
         $error = $e->getMessage();
     }
 
+    // Volunteers copy the link as it comes back, so only take one on Shlink's own address
+    $short = $response?->json('shortUrl');
+    if ($error === null && ! (is_string($short) && str_starts_with($short, 'https://go.veganhacktivists.org/'))) {
+        $error = 'Not a go.veganhacktivists.org link: '.json_encode($short);
+    }
+
     if ($error !== null) {
         Log::error('Shlink API error', [
             'status'   => $response?->status(),
@@ -45,7 +51,6 @@ function generate_and_cache_shlink($url)
         return $url;
     }
 
-    $short = $response->json('shortUrl', $url);
     Cache::put($key, $short, 60 * 60 * 12);
 
     return $short;
