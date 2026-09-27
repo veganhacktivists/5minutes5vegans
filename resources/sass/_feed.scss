@@ -167,7 +167,13 @@
     }
 }
 
+// Hangs off the right of the digits, so the digits centre over "minutes left"
 .timer-reset-link {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 6px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -182,6 +188,8 @@
 }
 
 .timer-display {
+    position: relative;
+    display: inline-block;
     font-size: 30px;
     color: $ink;
     white-space: nowrap;
@@ -455,7 +463,6 @@
         padding: 10px;
         flex-shrink: 0;
         margin-top: auto;
-        padding-bottom: 4rem;
 
         @include for-tablet-portrait-up {
             padding-bottom: 0;
