@@ -45,7 +45,23 @@ function generate_and_cache_shlink($url)
         return $url;
     }
 
-    $short = $response->json('shortUrl', $url);
+    $short = $response->json('shortUrl');
+    $parts = is_string($short) ? parse_url($short) : false;
+
+    if (! is_string($short)
+        || ! filter_var($short, FILTER_VALIDATE_URL)
+        || ! is_array($parts)
+        || ($parts['scheme'] ?? null) !== 'https'
+        || ($parts['host'] ?? null) !== 'go.veganhacktivists.org'
+        || isset($parts['user'])
+        || isset($parts['pass'])
+        || isset($parts['port'])) {
+        Log::error('Shlink returned an invalid short URL');
+        Cache::put($key, $url, 60 * 10);
+
+        return $url;
+    }
+
     Cache::put($key, $short, 60 * 60 * 12);
 
     return $short;
