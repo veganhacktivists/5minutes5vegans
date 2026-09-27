@@ -362,10 +362,10 @@ test('first-time visitors see what the feed is for, until they dismiss it', asyn
     await expect(intro).toBeHidden()
 })
 
-test('icons come from the site itself', async ({ page }) => {
+test('icons and fonts come from the site itself', async ({ page }) => {
     const elsewhere = []
     page.on('request', (request) => {
-        if (request.url().includes('cdnjs.cloudflare.com')) elsewhere.push(request.url())
+        if (/cdnjs\.cloudflare\.com|fonts\.googleapis\.com|fonts\.gstatic\.com/.test(request.url())) elsewhere.push(request.url())
     })
     await page.goto('/en')
     await page.evaluate(() => document.fonts.ready)
@@ -373,6 +373,9 @@ test('icons come from the site itself', async ({ page }) => {
     const icon = page.locator('#resetLink:visible i')
     expect(await icon.evaluate((el) => getComputedStyle(el, '::before').fontFamily)).toContain('Font Awesome 6 Free')
     expect(await page.evaluate(() => [...document.fonts].some((font) => font.family.includes('Font Awesome 6 Free') && font.status === 'loaded'))).toBe(true)
+    for (const family of ['PT Sans', 'Rajdhani']) {
+        expect(await page.evaluate((family) => [...document.fonts].some((font) => font.family.includes(family) && font.status === 'loaded'), family), family).toBe(true)
+    }
     expect(elsewhere).toEqual([])
 })
 

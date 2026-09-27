@@ -55,9 +55,6 @@
             <script type="application/ld+json" nonce="{{ Vite::cspNonce() }}">{!! $structuredData !!}</script>
         @endif
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|Rajdhani:400,500,600,700&display=swap">
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @include('inc.umami')
         @yield('scripts')

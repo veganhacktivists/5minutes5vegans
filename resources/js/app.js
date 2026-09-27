@@ -2,6 +2,13 @@ import './bootstrap';
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 import '@fortawesome/fontawesome-free/css/solid.min.css'
 import '@fortawesome/fontawesome-free/css/brands.min.css'
+// The same weights the page used to load from Google Fonts
+import '@fontsource/pt-sans/400.css'
+import '@fontsource/pt-sans/700.css'
+import '@fontsource/rajdhani/400.css'
+import '@fontsource/rajdhani/500.css'
+import '@fontsource/rajdhani/600.css'
+import '@fontsource/rajdhani/700.css'
 import axios from 'axios';
 
 window.axios = axios;

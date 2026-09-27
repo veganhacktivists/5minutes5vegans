@@ -53,6 +53,26 @@ class ShortLinkTest extends TestCase
         $this->assertSame('https://go.veganhacktivists.org/abc', generate_and_cache_shlink(self::LONG));
     }
 
+    public function testALinkOnAnotherHostIsntUsed()
+    {
+        Http::fake(['go.veganhacktivists.org/*' => Http::sequence()
+            ->push(['shortUrl' => 'https://example.com/abc'])
+            ->push(['shortUrl' => 'https://go.veganhacktivists.org/abc'])]);
+
+        $this->assertSame(self::LONG, generate_and_cache_shlink(self::LONG));
+
+        $this->travel(11)->minutes();
+
+        $this->assertSame('https://go.veganhacktivists.org/abc', generate_and_cache_shlink(self::LONG));
+    }
+
+    public function testAnAnswerWithoutAShortLinkUsesTheFullLink()
+    {
+        Http::fake(['go.veganhacktivists.org/*' => Http::response(['detail' => 'nothing here'])]);
+
+        $this->assertSame(self::LONG, generate_and_cache_shlink(self::LONG));
+    }
+
     public function testATimeoutUsesTheFullLink()
     {
         Http::fake(fn () => throw new ConnectionException('Timed out'));

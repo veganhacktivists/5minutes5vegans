@@ -12,7 +12,7 @@ for how production runs.
 
 - Laravel 13 on PHP 8.4, still on the older `app/Http/Kernel.php` layout.
 - Vue 3 components in `resources/js/components`, alongside jQuery, Bootstrap 5.3
-  and Swiper 12, built by Vite with pnpm.
+  and Swiper 14, built by Vite with pnpm.
 - Seven languages: en, de, es, fr, it, nl and pt. Every page URL starts with the
   locale, as in `/en` or `/de/login`.
 
