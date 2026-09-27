@@ -103,7 +103,9 @@ class SeoTest extends TestCase
         $this->withoutMiddleware([LaravelLocalizationRedirectFilter::class, LocaleSessionRedirect::class]);
         config(['services.umami.website_id' => 'abc-123']);
 
-        $html = $this->get(route('password.reset', ['token' => 'a-secret-token']))->assertOk()->getContent();
+        $response = $this->get(route('password.reset', ['token' => 'a-secret-token']))->assertOk();
+        $response->assertHeader('Referrer-Policy', 'no-referrer');
+        $html = $response->getContent();
 
         $this->assertStringContainsString('a-secret-token', $html);
         $this->assertStringNotContainsString('data-website-id', $html);

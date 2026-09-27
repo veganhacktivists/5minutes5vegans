@@ -28,6 +28,9 @@ class ContentSecurityPolicy
 
         $response = $next($request);
         $response->headers->set(self::HEADER, $this->policy(Vite::cspNonce()));
+        if ($request->routeIs('password.reset')) {
+            $response->headers->set('Referrer-Policy', 'no-referrer');
+        }
 
         return $response;
     }
