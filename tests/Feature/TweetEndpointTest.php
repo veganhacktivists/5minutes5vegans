@@ -20,6 +20,16 @@ class TweetEndpointTest extends TestCase
         $this->assertSame('application/json', $response->headers->get('Content-Type'));
     }
 
+    public function testPublicRepliesDoNotSetSessionCookies()
+    {
+        Cache::put('tweetsen', '[{"title":"English"}]', 60);
+
+        $response = $this->get('/tweets');
+        $response->assertOk()->assertSeeText('English');
+        $this->assertSame([], $response->headers->getCookies());
+        $this->assertStringContainsString('public', $response->headers->get('Cache-Control'));
+    }
+
     public function testStillServesRepliesCachedAsAnArray()
     {
         Cache::put('tweetsen', [['icon' => 'fas fa-leaf', 'title' => 'Test', 'variants' => ['A message']]], 60);
