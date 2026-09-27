@@ -359,7 +359,7 @@ async function contrast(locator) {
 test('small text on the feed is readable', async ({ page }) => {
     await page.goto('/en')
 
-    for (const selector of ['#minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how']) {
+    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how']) {
         expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
     }
 })
@@ -367,7 +367,7 @@ test('small text on the feed is readable', async ({ page }) => {
 test('the timer restart is big enough to tap', async ({ page }) => {
     await page.goto('/en')
 
-    const box = await page.locator('#resetLink:visible').boundingBox()
+    const box = await page.locator('.timer-reset-link:visible').boundingBox()
     expect(box.width).toBeGreaterThanOrEqual(24)
     expect(box.height).toBeGreaterThanOrEqual(24)
 })
@@ -410,7 +410,7 @@ test('icons come from the site itself', async ({ page }) => {
     await page.goto('/en')
     await page.evaluate(() => document.fonts.ready)
 
-    const icon = page.locator('#resetLink:visible i')
+    const icon = page.locator('.timer-reset-link:visible i')
     expect(await icon.evaluate((el) => getComputedStyle(el, '::before').fontFamily)).toContain('Font Awesome 6 Free')
     expect(await page.evaluate(() => [...document.fonts].some((font) => font.family.includes('Font Awesome 6 Free') && font.status === 'loaded'))).toBe(true)
     expect(elsewhere).toEqual([])
@@ -420,7 +420,7 @@ test('in dark mode, small text on the feed is still readable', async ({ page }) 
     await page.emulateMedia({ colorScheme: 'dark' })
     await page.goto('/en')
 
-    for (const selector of ['#minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how', '#donate-button:visible']) {
+    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how', '.donate-button:visible']) {
         expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
     }
 })

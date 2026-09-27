@@ -55,7 +55,7 @@ export default {
       track,
 
       logout () {
-         document.getElementById('logout-form').submit()
+         document.querySelector('.logout-form').submit()
       },
    },
 

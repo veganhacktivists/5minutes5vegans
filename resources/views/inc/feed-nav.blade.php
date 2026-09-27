@@ -10,9 +10,9 @@
             <div class="timer-display">
                 <div class="minutes">05</div>
                 <div class="seconds">00</div>
-                <a id="resetLink" href="#" aria-label="{{ __('Restart timer') }}"><span><i class="fas fa-undo fa-sm" style="color:red"></i></span></a>
+                <a class="timer-reset-link" href="#" aria-label="{{ __('Restart timer') }}"><span><i class="fas fa-undo fa-sm" style="color:red"></i></span></a>
             </div>
-            <div id="minutes-left" class="text-center">
+            <div class="minutes-left text-center">
                 @lang('sidebar.minutes-left')
             </div>
         </div>
@@ -24,11 +24,11 @@
         </div>
     </div>
     <div class="col d-flex justify-content-end">
-        <a href="https://veganhacktivists.org/donate" id="donate-button">
+        <a href="https://veganhacktivists.org/donate" class="donate-button">
             @lang('Donate') <i class="fa fa-hand-holding-heart"></i>
         </a>
     </div>
 </nav>
-<form id="logout-form" method="post" action="{{ route('logout') }}">
+<form class="logout-form" method="post" action="{{ route('logout') }}">
     @csrf
 </form>

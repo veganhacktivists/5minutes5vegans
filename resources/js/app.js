@@ -247,7 +247,7 @@ window.onload = function() {
     }
 
     // reset the timer by clicking the icon
-    var as = document.querySelectorAll('#resetLink')
+    var as = document.querySelectorAll('.timer-reset-link')
     as.forEach(function(a) {
         a.onclick = function() {
             startTimer()

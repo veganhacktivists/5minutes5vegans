@@ -137,7 +137,7 @@
     }
 }
 
-#donate-button {
+.donate-button {
     @extend .soft-corners;
 
     display: inline-flex;
@@ -167,7 +167,7 @@
     }
 }
 
-#resetLink {
+.timer-reset-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -221,7 +221,7 @@
     }
 }
 
-#minutes-left {
+.minutes-left {
     color: $brand;
     letter-spacing: 1px;
     font-size: 14px;
@@ -440,7 +440,7 @@
         font-size: 20px !important;
     }
 
-    #donate-button {
+    .donate-button {
         font-size: 17px;
     }
 
