@@ -27,6 +27,10 @@ class Tweet extends Model
 
     protected $guarded = [];
 
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
     protected $casts = [
         'date'  => 'datetime',
         'media' => 'array',

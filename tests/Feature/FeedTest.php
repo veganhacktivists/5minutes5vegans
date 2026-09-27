@@ -36,6 +36,16 @@ class FeedTest extends TestCase
             ->assertSee('Reply on X');
     }
 
+    public function testLargePostIdsStayIntactInLinks()
+    {
+        $id = '9999999999999999999';
+        $tweet = Tweet::factory()->create(['id' => $id, 'lang' => 'en']);
+
+        $this->view('inc.twitter', ['tweets' => collect([$tweet])])
+            ->assertSee('data-post="'.$id.'"', false)
+            ->assertSee('/status/'.$id.'"', false);
+    }
+
     public function testAnEmptyFeedLinksToTheEnglishOne()
     {
         App::setLocale('it');
