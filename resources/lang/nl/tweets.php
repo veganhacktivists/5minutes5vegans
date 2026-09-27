@@ -13,9 +13,9 @@ return [
                 'Doen! Je krijgt er geen spijt van!',
             ],
             [
-                'De meeste veganisten zeggen dat ze alleen spijt hebben dat ze niet eerder begonnen. Vragen? Ga naar r/vegan: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/') . ' Twijfels? Kijk deze korte video\'s: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
-                'Een goede eerste stap is Veganuary: een gratis challenge van 31 dagen die je kunt beginnen wanneer je wilt. Je krijgt maaltijdplannen en dagelijkse mails: ' . generate_and_cache_shlink('https://veganuary.com/try-vegan/'),
-                'Challenge 22 is gratis en je krijgt 22 dagen lang een mentor en diëtisten: ' . generate_and_cache_shlink('https://challenge22.com/') . ' Waarom het belangrijk is, zie je in het begin van Dominion: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+                'De meeste veganisten zeggen dat ze alleen spijt hebben dat ze niet eerder begonnen. Vragen? Zie de FAQ van de NVV: ' . generate_and_cache_shlink('https://www.veganisme.org/veelgestelde-vragen/') . ' Twijfels? Kijk deze korte video\'s: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'Een goede eerste stap is de VeganChallenge: een gratis challenge van 30 dagen die je kunt beginnen wanneer je wilt. Je krijgt elke dag een mail met recepten en tips: ' . generate_and_cache_shlink('https://veganchallenge.nl/'),
+                'De Veggie Challenge van ProVeg is gratis: 30 dagen vegan, met recepten en dagelijkse tips: ' . generate_and_cache_shlink('https://veggiechallenge.nl/') . ' Waarom het belangrijk is, zie je in het begin van Dominion: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=LQRAfJyEsko'),
             ],
             [
                 'Hulp nodig? Stuur me een berichtje!',
@@ -35,8 +35,8 @@ return [
                 'Wat tof!',
             ],
             [
-                'Veganuary heeft een gratis challenge van 31 dagen die je kunt beginnen wanneer je wilt, met maaltijdplannen en dagelijkse mails: ' . generate_and_cache_shlink('https://veganuary.com/try-vegan/'),
-                'Challenge 22 is een gratis challenge van 22 dagen, met je eigen mentor en diëtisten die voor je klaarstaan: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'De VeganChallenge van de NVV is een gratis challenge van 30 dagen die je kunt beginnen wanneer je wilt, met elke dag een mail met recepten en tips: ' . generate_and_cache_shlink('https://veganchallenge.nl/'),
+                'De Veggie Challenge van ProVeg is gratis: 30 dagen vegan, met een app vol recepten, dagelijkse tips en een Facebookgroep voor je vragen: ' . generate_and_cache_shlink('https://veggiechallenge.nl/'),
                 'Vegan Bootcamp is gratis en je doet het in je eigen tempo, met korte cursussen over eten, voeding en meer: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
             ],
             [
@@ -58,7 +58,7 @@ return [
                 'Snap ik, maar de vervangers zijn nu echt goed.',
             ],
             [
-                'De meeste supermarkten verkopen nu plantaardige burgers, worstjes, gehakt en nuggets. Beyond Meat is een goed begin: ' . generate_and_cache_shlink('https://www.beyondmeat.com/'),
+                'De meeste supermarkten verkopen nu plantaardige burgers, worstjes, gehakt en nuggets. Beyond Meat is een goed begin: ' . generate_and_cache_shlink('https://www.beyondmeat.com/nl-NL/'),
                 'Je kunt nu bijna alles vervangen: burgers, worstjes, bacon, gehakt. Probeer een paar merken, ook het huismerk van je supermarkt, en kijk wat je lekker vindt.',
                 'Veel restaurants en ketens hebben nu ook plantaardige opties. Op HappyCow zie je veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
@@ -80,9 +80,9 @@ return [
                 'Je zou versteld staan hoe goed vegan kaas nu is!',
             ],
             [
-                'Violife is een echte allrounder en smelt mooi: ' . generate_and_cache_shlink('https://violifefoods.com/') . ' Follow Your Heart en Daiya zijn ook goed.',
-                'Hier is een overzicht van vegan kazen, van plakjes tot brie: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/everything-you-need-to-know-about-vegan-cheese/'),
-                'Merken verschillen nogal, dus probeer er een paar. Begin bijvoorbeeld met Violife, dat smelt op pizza en in tosti\'s: ' . generate_and_cache_shlink('https://violifefoods.com/'),
+                'Violife is een echte allrounder en smelt mooi: ' . generate_and_cache_shlink('https://www.violife.com/nl-nl/') . ' Wilmersburger en de huismerken van AH, Jumbo en Lidl zijn ook goed.',
+                'Hier is een overzicht van vegan kazen, van plakjes tot schimmelkaas: ' . generate_and_cache_shlink('https://veganchallenge.nl/kaasvervangers/'),
+                'Merken verschillen nogal, dus probeer er een paar. Begin bijvoorbeeld met Violife, dat smelt op pizza en in tosti\'s: ' . generate_and_cache_shlink('https://www.violife.com/nl-nl/'),
             ],
             [
                 'Stuur me een berichtje als je meer ideeën wilt.',
@@ -103,8 +103,8 @@ return [
             ],
             [
                 'Veel ketens hebben nu pizza\'s met vegan kaas of zonder kaas. Op HappyCow vind je veganvriendelijke plekken bij jou in de buurt: ' . generate_and_cache_shlink('https://www.happycow.net'),
-                'De meeste supermarkten verkopen nu vegan pizza\'s, en hier is een lijst met ketens die vegan opties hebben: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/'),
-                'Daiya maakt vegan diepvriespizza\'s: ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' En veel pizzeria\'s gebruiken vegan kaas als je erom vraagt.',
+                'De meeste supermarkten verkopen nu vegan pizza\'s, en hier is een lijst met ketens die vegan opties hebben: ' . generate_and_cache_shlink('https://www.vegareizen.nl/vegan-keten-in-nederland/'),
+                'In de Vegan Wiki van de NVV zie je welke vegan diepvriespizza\'s je kunt kopen: ' . generate_and_cache_shlink('https://veganwiki.nl/categorie/kant-en-klaar-maaltijden/pizza/') . ' En veel pizzeria\'s gebruiken vegan kaas als je erom vraagt.',
             ],
             [
                 'Geniet ervan! 🍕',
@@ -124,9 +124,9 @@ return [
                 'Je hebt keus genoeg!',
             ],
             [
-                'Tofu scramble is een heerlijk alternatief voor roerei, vooral met wat spinazie erdoor: ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/'),
-                'JUST Egg is gemaakt van mungbonen en je bakt er roerei van net als van echt ei: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs'),
-                'Hier is een handige gids als het je moeilijk valt om eieren op te geven: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' En zo worden legkippen behandeld: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/'),
+                'Tofu scramble is een heerlijk alternatief voor roerei, vooral met wat spinazie erdoor: ' . generate_and_cache_shlink('https://veganchallenge.nl/recepten/tofu-scramble/'),
+                'Met tofu of kikkererwtenmeel maak je makkelijk roerei zonder ei: ' . generate_and_cache_shlink('https://www.veganisme.org/informatie/voeding/alternatieven/ei-vervangen/'),
+                'Hier is een handige gids als het je moeilijk valt om eieren op te geven: ' . generate_and_cache_shlink('https://veganchallenge.nl/koken-en-bakken-zonder-ei-14-vervangers/') . ' En zo worden legkippen behandeld: ' . generate_and_cache_shlink('https://www.wakkerdier.nl/vee-industrie/dieren/legkippen/'),
             ],
             [
                 'Stuur me een berichtje als je recepten wilt.',
@@ -146,9 +146,9 @@ return [
                 'Je kunt gewoon ijs blijven eten!',
             ],
             [
-                'Ben & Jerry\'s heeft een hele zuivelvrije lijn: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
+                'Ben & Jerry\'s heeft ook zuivelvrije smaken: ' . generate_and_cache_shlink('https://www.benjerry.nl/smaken/non-dairy'),
                 'Hier is een gids met het beste vegan ijs, uit de winkel en zelfgemaakt: ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/'),
-                'De meeste supermarkten hebben ijs van haver, soja, amandel en kokos, en Ben & Jerry\'s heeft ook een zuivelvrije lijn: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
+                'De meeste supermarkten hebben ijs van haver, soja, amandel en kokos, en Ben & Jerry\'s heeft ook zuivelvrije smaken: ' . generate_and_cache_shlink('https://www.benjerry.nl/smaken/non-dairy'),
             ],
             [
                 'Geniet ervan! 🍦',
@@ -170,7 +170,7 @@ return [
             [
                 'Kijk in de supermarkt eens in de vriezer en het koelvak: daar liggen plantaardige nuggets, reepjes en filets. Er zijn veel merken om te proberen.',
                 'Veel zaken hebben nu vegan kipburgers en wraps. Op HappyCow zie je wat er bij jou in de buurt is: ' . generate_and_cache_shlink('https://www.happycow.net'),
-                'Seitan en sojakip zijn top in wraps en roerbakgerechten. Hier wat makkelijke recepten: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+                'Seitan en sojakip zijn top in wraps en roerbakgerechten. Hier wat makkelijke recepten: ' . generate_and_cache_shlink('https://veganchallenge.nl/recepten/'),
             ],
             [
                 'Stuur me een berichtje als je merktips wilt.',
@@ -212,9 +212,9 @@ return [
                 'Twee echte aanraders:',
             ],
             [
-                'Dominion, over hoe boerderijdieren worden behandeld (gratis): ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' The Game Changers, over sporters die plantaardig eten: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
-                'Dominion kun je gratis kijken en vergeet je niet snel: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' De korte video\'s van Earthling Ed zijn top voor de standaardvragen: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
-                'The Game Changers, over topsporters die plantaardig eten: ' . generate_and_cache_shlink('https://gamechangersmovie.com/') . ' En Dominion, gratis, over het leven op boerderijen: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+                'Dominion, over hoe boerderijdieren worden behandeld (gratis): ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=LQRAfJyEsko') . ' The Game Changers, over sporters die plantaardig eten: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
+                'Dominion kun je gratis kijken en vergeet je niet snel: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=LQRAfJyEsko') . ' De korte video\'s van Earthling Ed zijn top voor de standaardvragen: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'The Game Changers, over topsporters die plantaardig eten: ' . generate_and_cache_shlink('https://gamechangersmovie.com/') . ' En Dominion, gratis, over het leven op boerderijen: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=LQRAfJyEsko'),
             ],
             [
                 'Laat me weten wat je ervan vindt! 🌱',
@@ -234,9 +234,9 @@ return [
                 'Als je maar één ding kijkt, kijk dan Dominion.',
             ],
             [
-                'Het is een gratis documentaire over hoe boerderijdieren echt worden behandeld: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Zelfs de eerste 15 minuten zijn al de moeite waard.',
-                'De film laat zien wat er op boerderijen en in slachthuizen gebeurt, en je kunt hem gratis kijken: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
-                'Hij is gratis en heeft al veel mensen van gedachten doen veranderen: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Zwaar om te zien, maar het is het waard.',
+                'Het is een gratis documentaire over hoe boerderijdieren echt worden behandeld: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=LQRAfJyEsko') . ' Zelfs de eerste 15 minuten zijn al de moeite waard.',
+                'De film laat zien wat er op boerderijen en in slachthuizen gebeurt, en je kunt hem gratis kijken: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=LQRAfJyEsko'),
+                'Hij is gratis en heeft al veel mensen van gedachten doen veranderen: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=LQRAfJyEsko') . ' Zwaar om te zien, maar het is het waard.',
             ],
             [
                 'Stuur me een berichtje als je erover wilt praten.',
@@ -257,8 +257,8 @@ return [
             ],
             [
                 'Is het veel in één keer? Doe het dan stap voor stap. Begin met plantaardige melk, dan boter, dan vlees. Vegan Bootcamp kan je daarbij helpen: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
-                'Probeer eerst één vegan maaltijd per dag en bouw het daarna op. Veganuary heeft makkelijke recepten om mee te beginnen: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
-                'Begin met de vervangers die jou het makkelijkst lijken, zoals melk of burgers, en ga dan verder. Bij Challenge 22 krijg je een mentor die je helpt: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Probeer eerst één vegan maaltijd per dag en bouw het daarna op. De VeganChallenge heeft makkelijke recepten om mee te beginnen: ' . generate_and_cache_shlink('https://veganchallenge.nl/recepten/'),
+                'Begin met de vervangers die jou het makkelijkst lijken, zoals melk of burgers, en ga dan verder. De Veggie Challenge van ProVeg helpt je met recepten en dagelijkse tips: ' . generate_and_cache_shlink('https://veggiechallenge.nl/'),
             ],
             [
                 'Je kunt het!',
@@ -280,7 +280,7 @@ return [
             [
                 'Deze video legt uit waarom helemaal vegan worden zo\'n verschil maakt: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg'),
                 'Helaas veroorzaken zuivel en eieren ook veel leed. Deze korte video legt het uit: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
-                'Zin om de volgende stap te zetten? Challenge 22 is gratis en je krijgt een mentor: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Zin om de volgende stap te zetten? De Veggie Challenge van ProVeg is gratis en helpt je 30 dagen op weg: ' . generate_and_cache_shlink('https://veggiechallenge.nl/'),
             ],
             [
                 'Vragen? Stuur me een berichtje!',
@@ -302,7 +302,7 @@ return [
             [
                 'Bonen, linzen, rijst, pasta, havermout, aardappelen en diepvriesgroenten horen bij het goedkoopste eten dat er is. Het zijn de speciale producten die meer kosten.',
                 'Uit een studie van Oxford bleek dat een vegan eetpatroon je boodschappenrekening tot een derde kan verlagen in landen als het VK en de VS: ' . generate_and_cache_shlink('https://www.ox.ac.uk/news/2021-11-11-sustainable-eating-cheaper-and-healthier-oxford-study'),
-                'Deze video legt het goed uit: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=Vs_nXVmyP1E') . ' Koken met bonen, linzen en tofu houdt het goedkoop.',
+                'Hier staan goede tips: ' . generate_and_cache_shlink('https://proveg.org/nl/nieuws/goedkoop-vegan-eten/') . ' Koken met bonen, linzen en tofu houdt het goedkoop.',
             ],
             [
                 'Stuur me een berichtje als je goedkope recepten wilt.',
@@ -322,8 +322,8 @@ return [
                 'Die vraag komt vaak voorbij!',
             ],
             [
-                'Bonen, linzen, tofu, tempé, seitan, sojamelk, noten en zaden bevatten allemaal veel eiwit. Hier een kort overzicht: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
-                'Met gevarieerd vegan eten krijg je ruim genoeg binnen. Hier een factsheet over de eiwitmythe: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
+                'Bonen, linzen, tofu, tempé, seitan, sojamelk, noten en zaden bevatten allemaal veel eiwit. Hier een kort overzicht: ' . generate_and_cache_shlink('https://www.veganisme.org/informatie/voedingsstoffen/eiwitten/'),
+                'Met gevarieerd vegan eten krijg je ruim genoeg binnen. Hier lees je hoe het zit: ' . generate_and_cache_shlink('https://www.veganisme.org/informatie/voedingsstoffen/eiwitten/'),
                 'Deze video van een minuut vat het samen: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk') . ' Tofu, linzen, bonen en seitan zijn allemaal uitstekende bronnen.',
             ],
             [
@@ -367,8 +367,8 @@ return [
             ],
             [
                 'r/vegan is een enorme, vriendelijke community waar je alles kunt vragen: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/'),
-                'Probeer r/vegan voor steun en vragen: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/') . ' En r/veganrecipes voor receptideeën: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganrecipes/'),
-                'Bij Challenge 22 krijg je een mentor en een groep mensen die tegelijk met jou vegan proberen: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Probeer r/vegan voor steun en vragen: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/') . ' En de recepten van ProVeg voor ideeën: ' . generate_and_cache_shlink('https://proveg.org/nl/recepten/'),
+                'Bij de Veggie Challenge van ProVeg zit je in een Facebookgroep met mensen die tegelijk met jou vegan proberen: ' . generate_and_cache_shlink('https://veggiechallenge.nl/'),
             ],
             [
                 'Stuur mij ook gerust een berichtje als je iets nodig hebt.',
@@ -410,9 +410,9 @@ return [
                 'Het maakt een enorm verschil!',
             ],
             [
-                'Als iedereen plantaardig zou eten, hadden we volgens Our World in Data zo\'n 75% minder landbouwgrond nodig: ' . generate_and_cache_shlink('https://ourworldindata.org/land-use-diets'),
+                'Als iedereen plantaardig zou eten, hadden we tussen de helft en driekwart minder landbouwgrond nodig: ' . generate_and_cache_shlink('https://factcheck.vlaanderen/factcheck/minder-landbouwgrond-nodig-voor-plantaardig-dieet'),
                 'Volgens een studie van Oxford heeft een vegan eetpatroon ongeveer 30% van de milieu-impact van een eetpatroon met veel vlees: ' . generate_and_cache_shlink('https://www.medsci.ox.ac.uk/news/vegan-diet-has-just-30-of-the-environmental-impact-of-a-high-meat-diet-major-study-finds'),
-                'Vlees en zuivel hebben qua uitstoot, land- en watergebruik een veel grotere voetafdruk dan plantaardig eten. Hier de cijfers: ' . generate_and_cache_shlink('https://ourworldindata.org/environmental-impacts-of-food'),
+                'Vlees en zuivel hebben qua uitstoot, land- en watergebruik een veel grotere voetafdruk dan plantaardig eten. Hier de cijfers: ' . generate_and_cache_shlink('https://natuurenmilieu.nl/onderwerpen/eten-drinken/veganistisch-eten/de-impact-van-een-plantaardig-voedingspatroon/'),
             ],
             [
                 'Wil je meer weten? Stuur me een berichtje! 🌍',
@@ -498,9 +498,9 @@ return [
                 'Er is zoveel meer dan salade!',
             ],
             [
-                'Bijna elk gerecht kun je vegan maken: curry\'s, burgers, pasta, taart. Hier vind je heel veel recepten: ' . generate_and_cache_shlink('https://veganuary.com/recipes'),
+                'Bijna elk gerecht kun je vegan maken: curry\'s, burgers, pasta, taart. Hier vind je heel veel recepten: ' . generate_and_cache_shlink('https://veganchallenge.nl/recepten/'),
                 'Zoek eens op je favoriete gerecht plus \'vegan\', er is van bijna alles een versie. Voor uit eten: ' . generate_and_cache_shlink('https://www.happycow.net'),
-                'r/veganrecipes staat vol ideeën: ' . generate_and_cache_shlink('https://www.reddit.com/r/veganrecipes/') . ' En met HappyCow vind je toffe plekken om te eten: ' . generate_and_cache_shlink('https://www.happycow.net'),
+                'Bij ProVeg vind je heel veel recepten: ' . generate_and_cache_shlink('https://proveg.org/nl/recepten/') . ' En met HappyCow vind je toffe plekken om te eten: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
             [
                 'Stuur me een berichtje als je tips wilt.',
