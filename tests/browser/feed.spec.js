@@ -364,6 +364,30 @@ test('small text on the feed is readable', async ({ page }) => {
     }
 })
 
+test('the timer\'s digits sit centred over "minutes left", with the restart arrow beside them', async ({ page }) => {
+    // German has the longest label
+    await page.goto('/de')
+
+    const minutes = await page.locator('.timer-display:visible .minutes').boundingBox()
+    const seconds = await page.locator('.timer-display:visible .seconds').boundingBox()
+    const label = await page.locator('.minutes-left:visible').boundingBox()
+    const arrow = await page.locator('.timer-reset-link:visible').boundingBox()
+
+    expect(Math.abs((minutes.x + seconds.x + seconds.width) / 2 - (label.x + label.width / 2))).toBeLessThan(1)
+    expect(arrow.x).toBeGreaterThan(seconds.x + seconds.width)
+})
+
+test('on a phone, the footer has no empty space under it', async ({ page, isMobile }) => {
+    test.skip(!isMobile, 'phones only')
+    await page.goto('/en')
+
+    const padding = await page.locator('.swiper-slide.scrollable .footer').evaluate((footer) => {
+        const style = getComputedStyle(footer)
+        return [style.paddingTop, style.paddingBottom]
+    })
+    expect(padding[1]).toBe(padding[0])
+})
+
 test('the timer restart is big enough to tap', async ({ page }) => {
     await page.goto('/en')
 
