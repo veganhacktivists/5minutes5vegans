@@ -48,7 +48,7 @@ class GenerateTweetsCommandTest extends TestCase
 
     public function testAFailedLanguageFailsTheRunAndKeepsItsLastMessages()
     {
-        Cache::put('tweetsde', [['title' => 'Last good de']], 60);
+        Cache::put('tweetsde', [['title' => 'Last good de']], 1);
         $this->generatorFailingFor('de');
 
         $this->artisan('tweets:generate')
@@ -58,6 +58,10 @@ class GenerateTweetsCommandTest extends TestCase
         $this->assertSame([['title' => 'Last good de']], Cache::get('tweetsde'));
         $this->assertSame([['title' => 'Fresh en']], json_decode(Cache::get('tweetsen'), true));
         $this->assertSame([['title' => 'Fresh pt']], json_decode(Cache::get('tweetspt'), true));
+
+        $this->travel(2)->seconds();
+        $this->assertSame([['title' => 'Last good de']], Cache::get('tweetsde'));
+        $this->assertSame([['title' => 'Fresh en']], json_decode(Cache::get('tweetsen'), true));
     }
 
     public function testAFailingLanguageIsReportedOnceAnHour()
