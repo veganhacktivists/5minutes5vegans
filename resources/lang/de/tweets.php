@@ -14,8 +14,8 @@ return [
             ],
             [
                 'Die meisten sagen, sie bereuen nur, nicht früher vegan geworden zu sein. r/vegan hilft bei Fragen: ' . generate_and_cache_shlink('https://www.reddit.com/r/vegan/') . ' und diese Kurzvideos klären typische Zweifel: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
-                'Ein guter Einstieg ist die kostenlose 31-Tage-Challenge von Veganuary, die du jederzeit starten kannst. Dazu gibt\'s Essenspläne und tägliche Mails: ' . generate_and_cache_shlink('https://veganuary.com/de/'),
-                'Challenge 22 ist gratis und begleitet dich 22 Tage mit Mentoring und Ernährungsfachleuten: ' . generate_and_cache_shlink('https://challenge22.com/') . ' Warum das wichtig ist, zeigt der Anfang von Dominion: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+                'Ein guter Einstieg ist die kostenlose 31-Tage-Challenge von Veganuary, die du jederzeit starten kannst. Dazu gibt\'s Essenspläne und tägliche Mails: ' . generate_and_cache_shlink('https://veganuary.com/de/jetzt-mitmachen/'),
+                'Veganstart von PETA ist gratis und begleitet dich 30 Tage mit Rezepten und Tipps: ' . generate_and_cache_shlink('https://www.veganstart.de/') . ' Warum das wichtig ist, zeigt der Anfang von Dominion (auf Deutsch): ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=V7DrljVAaYk'),
             ],
             [
                 'Schreib mir, wenn du Hilfe brauchst.',
@@ -35,8 +35,8 @@ return [
                 'Wie cool!',
             ],
             [
-                'Veganuary hat eine kostenlose 31-Tage-Challenge, die du jederzeit starten kannst, mit Essensplänen und täglichen Mails: ' . generate_and_cache_shlink('https://veganuary.com/de/'),
-                'Challenge 22 ist eine kostenlose 22-Tage-Challenge mit persönlichem Mentoring und Ernährungsfachleuten an deiner Seite: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Veganuary hat eine kostenlose 31-Tage-Challenge, die du jederzeit starten kannst, mit Essensplänen und täglichen Mails: ' . generate_and_cache_shlink('https://veganuary.com/de/jetzt-mitmachen/'),
+                'Veganstart ist eine kostenlose 30-Tage-Challenge von PETA mit Rezepten, Tipps und einem Team, das deine Fragen beantwortet: ' . generate_and_cache_shlink('https://www.veganstart.de/'),
                 'Vegan Bootcamp ist kostenlos: kurze Kurse zu Essen, Ernährung und mehr, ganz in deinem Tempo: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
             ],
             [
@@ -58,7 +58,7 @@ return [
                 'Versteh ich, aber die Alternativen sind inzwischen echt gut.',
             ],
             [
-                'Die meisten Supermärkte haben inzwischen pflanzliche Burger, Würstchen, Hack und Nuggets. Beyond Meat ist ein guter Anfang: ' . generate_and_cache_shlink('https://www.beyondmeat.com/'),
+                'Die meisten Supermärkte haben inzwischen pflanzliche Burger, Würstchen, Hack und Nuggets. Beyond Meat ist ein guter Anfang: ' . generate_and_cache_shlink('https://www.beyondmeat.com/de-DE/'),
                 'Du kannst heute fast alles ersetzen: Burger, Würstchen, Speck, Hack. Probier ein paar Marken, auch die Eigenmarke deines Supermarkts, und schau, was dir schmeckt.',
                 'Auch viele Restaurants und Ketten haben jetzt pflanzliche Gerichte. HappyCow zeigt dir veganfreundliche Lokale in deiner Nähe: ' . generate_and_cache_shlink('https://www.happycow.net'),
             ],
@@ -80,9 +80,9 @@ return [
                 'Du wirst staunen, wie gut veganer Käse heute ist!',
             ],
             [
-                'Violife ist ein super Allrounder und schmilzt gut: ' . generate_and_cache_shlink('https://violifefoods.com/') . ' Auch gut: Follow Your Heart und Daiya.',
+                'Violife ist ein super Allrounder und schmilzt gut: ' . generate_and_cache_shlink('https://www.violife.com/de-de/') . ' Auch gut: Simply V und Bedda.',
                 'Hier ein Überblick über vegane Käsesorten, von Scheibenkäse bis Brie: ' . generate_and_cache_shlink('https://www.peta.de/veganleben/veganer-kaese/'),
-                'Die Marken unterscheiden sich stark, also probier ein paar aus. Violife ist ein guter Anfang und schmilzt auf Pizza und Toast: ' . generate_and_cache_shlink('https://violifefoods.com/'),
+                'Die Marken unterscheiden sich stark, also probier ein paar aus. Violife ist ein guter Anfang und schmilzt auf Pizza und Toast: ' . generate_and_cache_shlink('https://www.violife.com/de-de/'),
             ],
             [
                 'Schreib mir, wenn du mehr Ideen willst.',
@@ -103,8 +103,8 @@ return [
             ],
             [
                 'Viele Ketten haben inzwischen Pizza mit veganem Käse oder ganz ohne Käse. HappyCow zeigt dir veganfreundliche Lokale in deiner Nähe: ' . generate_and_cache_shlink('https://www.happycow.net'),
-                'Die meisten Supermärkte haben jetzt vegane Pizza, und hier ist eine Liste von Ketten mit veganen Optionen: ' . generate_and_cache_shlink('https://www.peta.org/lifestyle/food/pizza-places-vegan-options/'),
-                'Daiya macht vegane Tiefkühlpizza: ' . generate_and_cache_shlink('https://daiyafoods.com/collections/pizza-and-flatbread') . ' Und viele Pizzerien nehmen auf Nachfrage veganen Käse.',
+                'Die meisten Supermärkte haben jetzt vegane Pizza, hier eine Übersicht: ' . generate_and_cache_shlink('https://www.peta.de/veganleben/vegane-tiefkuehlpizza/'),
+                'Wagner hat vegane und vegetarische Tiefkühlpizzen: ' . generate_and_cache_shlink('https://www.original-wagner.de/produkte/vegan-vegetarisch') . ' Und viele Pizzerien nehmen auf Nachfrage veganen Käse.',
             ],
             [
                 'Guten Appetit! 🍕',
@@ -124,9 +124,9 @@ return [
                 'Da hast du viele Möglichkeiten!',
             ],
             [
-                'Rührtofu ist ein super Ersatz für Rührei, vor allem mit etwas Spinat: ' . generate_and_cache_shlink('https://simpleveganblog.com/simple-tofu-scramble/'),
-                'JUST Egg besteht aus Mungbohnen und wird in der Pfanne genau wie Rührei: ' . generate_and_cache_shlink('https://www.ju.st/eat/eggs'),
-                'Falls dir der Verzicht auf Eier schwerfällt, hilft dir dieser Guide: ' . generate_and_cache_shlink('https://chooseveg.com/blog/go-vegan-cant-give-up-eggs-help/') . ' Und so werden Legehennen behandelt: ' . generate_and_cache_shlink('https://viva.org.uk/animals/egg-laying-hens/'),
+                'Rührtofu ist ein super Ersatz für Rührei, vor allem mit etwas Spinat: ' . generate_and_cache_shlink('https://www.vegan-taste-week.de/rezepte/ruhrtofu-vegane-alternative-zu-ruhrei'),
+                'JUST Egg besteht aus Mungbohnen und wird in der Pfanne genau wie Rührei: ' . generate_and_cache_shlink('https://www.ju.st/just-egg-de'),
+                'Falls dir der Verzicht auf Eier schwerfällt, hilft dir dieser Guide: ' . generate_and_cache_shlink('https://proveg.org/de/5-pros/pro-genuss/veganer-ei-ersatz') . ' Und so werden Legehennen behandelt: ' . generate_and_cache_shlink('https://albert-schweitzer-stiftung.de/massentierhaltung/huehner/legehennen'),
             ],
             [
                 'Schreib mir, wenn du Rezepte willst.',
@@ -146,9 +146,9 @@ return [
                 'Auf Eis musst du nicht verzichten!',
             ],
             [
-                'Ben & Jerry\'s hat eine ganze milchfreie Reihe: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
-                'Hier ein Guide zu den besten veganen Eissorten, gekauft und selbst gemacht: ' . generate_and_cache_shlink('https://vegan.com/food/ice-cream/'),
-                'Die meisten Supermärkte haben Eis aus Hafer, Soja, Mandel und Kokos, und Ben & Jerry\'s hat auch eine milchfreie Reihe: ' . generate_and_cache_shlink('https://www.benjerry.com/flavors/non-dairy'),
+                'Ben & Jerry\'s hat auch vegane Sorten: ' . generate_and_cache_shlink('https://www.benjerry.de/sorten/non-dairy'),
+                'Hier ein Guide zu den besten veganen Eissorten, gekauft und selbst gemacht: ' . generate_and_cache_shlink('https://www.peta.de/veganleben/veganes-eis/'),
+                'Die meisten Supermärkte haben Eis aus Hafer, Soja, Mandel und Kokos, und Ben & Jerry\'s hat auch vegane Sorten: ' . generate_and_cache_shlink('https://www.benjerry.de/sorten/non-dairy'),
             ],
             [
                 'Lass es dir schmecken! 🍦',
@@ -212,9 +212,9 @@ return [
                 'Zwei richtig gute Dokus:',
             ],
             [
-                'Dominion (gratis) zeigt, wie Tiere in der Landwirtschaft behandelt werden: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' The Game Changers handelt von Sportprofis mit pflanzlicher Ernährung: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
-                'Dominion ist kostenlos und lässt dich so schnell nicht los: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Die kurzen Videos von Earthling Ed sind super für die üblichen Fragen: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
-                'The Game Changers, über Spitzensport mit pflanzlicher Ernährung: ' . generate_and_cache_shlink('https://gamechangersmovie.com/') . ' Und Dominion, kostenlos, über das Leben in der Tierhaltung: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
+                'Dominion (gratis) zeigt, wie Tiere in der Landwirtschaft behandelt werden: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=V7DrljVAaYk') . ' The Game Changers handelt von Sportprofis mit pflanzlicher Ernährung: ' . generate_and_cache_shlink('https://gamechangersmovie.com/'),
+                'Dominion ist kostenlos und lässt dich so schnell nicht los: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=V7DrljVAaYk') . ' Die kurzen Videos von Earthling Ed sind super für die üblichen Fragen: ' . generate_and_cache_shlink('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'),
+                'The Game Changers, über Spitzensport mit pflanzlicher Ernährung: ' . generate_and_cache_shlink('https://gamechangersmovie.com/') . ' Und Dominion, kostenlos, über das Leben in der Tierhaltung: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=V7DrljVAaYk'),
             ],
             [
                 'Sag mir, wie du sie findest! 🌱',
@@ -234,9 +234,9 @@ return [
                 'Wenn du dir nur eine Sache anschaust, dann Dominion.',
             ],
             [
-                'Das ist eine kostenlose Doku darüber, wie Tiere in der Landwirtschaft wirklich behandelt werden: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Schon die ersten 15 Minuten lohnen sich.',
-                'Der Film zeigt, was in Ställen und Schlachthöfen passiert, und ist kostenlos: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43'),
-                'Die Doku ist gratis und hat schon viele zum Umdenken gebracht: ' . generate_and_cache_shlink('https://youtu.be/ny6aqdFy9SI?t=43') . ' Schwer anzuschauen, aber es lohnt sich.',
+                'Das ist eine kostenlose Doku darüber, wie Tiere in der Landwirtschaft wirklich behandelt werden: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=V7DrljVAaYk') . ' Schon die ersten 15 Minuten lohnen sich.',
+                'Der Film zeigt, was in Ställen und Schlachthöfen passiert, und ist kostenlos: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=V7DrljVAaYk'),
+                'Die Doku ist gratis und hat schon viele zum Umdenken gebracht: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=V7DrljVAaYk') . ' Schwer anzuschauen, aber es lohnt sich.',
             ],
             [
                 'Schreib mir, wenn du darüber reden willst.',
@@ -258,7 +258,7 @@ return [
             [
                 'Wenn dir das zu viel auf einmal ist, geh es Schritt für Schritt an: erst Pflanzenmilch, dann Butter, dann Fleisch. Vegan Bootcamp begleitet dich dabei: ' . generate_and_cache_shlink('https://veganbootcamp.org'),
                 'Probier eine vegane Mahlzeit am Tag und steigere dich dann. Veganuary hat einfache Rezepte für den Anfang: ' . generate_and_cache_shlink('https://veganuary.com/de/rezepte/'),
-                'Fang mit dem Einfachsten an, etwa Milch oder Burger, und mach dann weiter. Challenge 22 unterstützt dich dabei mit Mentoring: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Fang mit dem Einfachsten an, etwa Milch oder Burger, und mach dann weiter. Veganstart unterstützt dich dabei 30 Tage lang mit Rezepten und Tipps: ' . generate_and_cache_shlink('https://www.veganstart.de/'),
             ],
             [
                 'Du schaffst das!',
@@ -280,7 +280,7 @@ return [
             [
                 'Dieses Video erklärt, warum es so viel ausmacht, ganz vegan zu leben: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=uWna6-niYEg'),
                 'Leider steckt auch in Milch und Eiern viel Leid. Dieses kurze Video erklärt, warum: ' . generate_and_cache_shlink('https://youtu.be/UcN7SGGoCNI'),
-                'Lust auf den nächsten Schritt? Challenge 22 ist kostenlos, mit persönlichem Mentoring: ' . generate_and_cache_shlink('https://challenge22.com/'),
+                'Lust auf den nächsten Schritt? Veganstart ist kostenlos und begleitet dich 30 Tage: ' . generate_and_cache_shlink('https://www.veganstart.de/'),
             ],
             [
                 'Schreib mir, wenn du Fragen hast.',
@@ -322,8 +322,8 @@ return [
                 'Das fragen viele!',
             ],
             [
-                'Bohnen, Linsen, Tofu, Tempeh, Seitan, Sojamilch, Nüsse und Samen haben alle viel Protein. Hier ein kurzer Überblick: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
-                'Mit abwechslungsreicher veganer Ernährung bekommst du reichlich davon. Hier ein Faktenblatt zum Protein-Mythos: ' . generate_and_cache_shlink('https://viva.org.uk/materials/protein-myth-fact-sheet/'),
+                'Bohnen, Linsen, Tofu, Tempeh, Seitan, Sojamilch, Nüsse und Samen haben alle viel Protein. Hier ein kurzer Überblick: ' . generate_and_cache_shlink('https://proveg.org/de/5-pros/pro-gesundheit/eiweiss-proteinmangel-vegan-vorbeugen'),
+                'Mit abwechslungsreicher veganer Ernährung bekommst du reichlich davon. Hier ein Überblick von ProVeg: ' . generate_and_cache_shlink('https://proveg.org/de/5-pros/pro-gesundheit/eiweiss-proteinmangel-vegan-vorbeugen'),
                 'Dieses Ein-Minuten-Video fasst es zusammen: ' . generate_and_cache_shlink('https://www.youtube.com/watch?v=1elt5YCRLbk') . ' Tofu, Linsen, Bohnen und Seitan sind super Proteinquellen.',
             ],
             [
@@ -410,9 +410,9 @@ return [
                 'Das macht einen riesigen Unterschied!',
             ],
             [
-                'Würden alle pflanzlich essen, bräuchten wir laut Our World in Data etwa 75 % weniger Agrarfläche: ' . generate_and_cache_shlink('https://ourworldindata.org/land-use-diets'),
+                'Würden alle pflanzlich essen, bräuchten wir laut einer großen Oxford-Studie rund 75 % weniger Agrarfläche: ' . generate_and_cache_shlink('https://de.wikipedia.org/wiki/Veganismus#Umweltvertr%C3%A4glichkeit'),
                 'Laut einer Oxford-Studie hat vegane Ernährung etwa 30 % der Umweltbelastung einer fleischreichen Ernährung: ' . generate_and_cache_shlink('https://www.medsci.ox.ac.uk/news/vegan-diet-has-just-30-of-the-environmental-impact-of-a-high-meat-diet-major-study-finds'),
-                'Fleisch und Milchprodukte haben bei Emissionen, Landnutzung und Wasser einen viel größeren Fußabdruck als Pflanzenkost. Hier die Daten: ' . generate_and_cache_shlink('https://ourworldindata.org/environmental-impacts-of-food'),
+                'Fleisch und Milchprodukte haben bei Emissionen, Landnutzung und Wasser einen viel größeren Fußabdruck als Pflanzenkost. Hier die Daten (PDF): ' . generate_and_cache_shlink('https://www.umweltbundesamt.de/system/files/medien/6232/dokumente/ifeu_2020_oekologische-fussabdruecke-von-lebensmitteln.pdf'),
             ],
             [
                 'Schreib mir, wenn du mehr wissen willst 🌍',
