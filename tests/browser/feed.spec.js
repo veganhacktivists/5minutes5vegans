@@ -399,6 +399,21 @@ test('when the five minutes are up, it says how many posts you opened', async ({
     await expect(tally).toHaveCount(0)
 })
 
+test('the opened-post count follows a language switch', async ({ page, context, isMobile }) => {
+    test.skip(isMobile, 'one size is enough')
+    await context.route('https://x.com/**', (route) => route.abort())
+    context.on('page', (popup) => popup.close())
+    await page.clock.install()
+    await page.goto('/en')
+
+    await page.locator('.timeline .card').first().click()
+    await page.locator('.lang-switch a[hreflang="de"]:visible').click()
+    await page.waitForURL(/\/de/)
+    await page.clock.fastForward('05:02')
+
+    await expect(page.locator('.timer-tally:visible')).toHaveText('Du hast 1 Post geöffnet. Danke!')
+})
+
 test('in dark mode, small text on the feed is still readable', async ({ page }) => {
     await page.emulateMedia({ colorScheme: 'dark' })
     await page.goto('/en')

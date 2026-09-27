@@ -67,10 +67,13 @@ function updateTimer() {
 
 // A language switch keeps the timer going. This runs after startTimer above.
 carryOverOnLanguageSwitch('timerStartedAt', () => startTime)
+carryOverOnLanguageSwitch('openedPostsThisRun', () => [...openedThisRun])
 $(() => {
     const startedAt = pickUp('timerStartedAt')
     if (startedAt === undefined) return
 
+    const opened = pickUp('openedPostsThisRun')
+    if (Array.isArray(opened)) opened.forEach((id) => openedThisRun.add(id))
     startTime = startedAt
     updateTimer()
 })
