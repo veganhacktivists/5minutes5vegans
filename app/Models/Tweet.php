@@ -27,6 +27,11 @@ class Tweet extends Model
 
     protected $guarded = [];
 
+    // Post IDs are strings in the database; as integers, large ones overflow
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
     protected $casts = [
         'date'  => 'datetime',
         'media' => 'array',
