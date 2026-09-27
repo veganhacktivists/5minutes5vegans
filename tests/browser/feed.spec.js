@@ -338,3 +338,24 @@ test('icons come from the site itself', async ({ page }) => {
     expect(await page.evaluate(() => [...document.fonts].some((font) => font.family.includes('Font Awesome 6 Free') && font.status === 'loaded'))).toBe(true)
     expect(elsewhere).toEqual([])
 })
+
+test('in dark mode, small text on the feed is still readable', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.goto('/en')
+
+    for (const selector of ['#minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how', '#donate-button:visible']) {
+        expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
+    }
+})
+
+test('dark mode uses the dark palette and the light logo', async ({ page }) => {
+    await page.goto('/en')
+    expect(await page.locator('h1:visible img').evaluate((img) => img.currentSrc)).not.toContain('logo-dark')
+
+    await page.emulateMedia({ colorScheme: 'dark' })
+    await page.reload()
+    expect(await page.locator('#feed').evaluate((el) => getComputedStyle(el).backgroundColor)).toBe('rgb(23, 35, 31)')
+    expect(await page.locator('.timeline .card').first().evaluate((el) => getComputedStyle(el).backgroundColor)).toBe('rgb(36, 52, 48)')
+    expect(await page.locator('h1:visible img').evaluate((img) => img.currentSrc)).toContain('logo-dark.svg')
+})
+

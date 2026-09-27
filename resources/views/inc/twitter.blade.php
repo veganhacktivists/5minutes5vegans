@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <img src="{{ asset('images/twitter/logo.svg') }}" alt="X" width="20" height="20">
+                <img class="x-logo" src="{{ asset('images/twitter/logo.svg') }}" alt="X" width="20" height="20">
             </div>
 
             <p class="body">{{ strip_tags(html_entity_decode($tweet->text)) }}</p>
