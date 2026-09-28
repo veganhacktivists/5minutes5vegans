@@ -25,14 +25,7 @@
         "vanilla-icon-picker": "^1.4.1",
         "vue": "^3.5.17"
     },
-    "pnpm": {
-        "overrides": {
-            "immutable": "^5.1.5",
-            "picomatch": "^4.0.4",
-            "rollup": "^4.59.0"
-        }
-    },
-    "packageManager": "pnpm@9.15.9+sha512.68046141893c66fad01c079231128e9afb89ef87e2691d69e4d40eee228988295fd4682181bae55b58418c3a253bde65a505ec7c5f9403ece5cc3cd37dcf2531",
+    "packageManager": "pnpm@12.6.0+sha512.3ef68f951cb111ac204b4a5a16f0b2ddf0da56a96e0413e81d855d9f0b55ef926714709028e1cd00c405c2c5fb7b9e8ec4dc46777c805d0373c2f2ff00fd20ec",
     "engines": {
         "node": "24.21.0"
     }
