@@ -13,7 +13,7 @@ nixPkgs = [
 [phases.install]
 cmds = [
     'corepack enable',
-    'corepack prepare pnpm@9.14.2 --activate',
+    'corepack install',
     'mkdir -p /var/log/nginx && mkdir -p /var/cache/nginx',
     'composer install --no-dev --no-interaction --no-progress --prefer-dist',
     'pnpm install --frozen-lockfile',

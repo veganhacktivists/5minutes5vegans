@@ -1,0 +1,10 @@
+# Security fixes for packages that come in through other dependencies
+overrides:
+  immutable: ^5.1.5
+  picomatch: ^4.0.4
+  rollup: ^4.59.0
+
+# Neither needs its install script: both ship prebuilt binaries
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: false
