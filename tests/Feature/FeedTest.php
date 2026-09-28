@@ -52,6 +52,16 @@ class FeedTest extends TestCase
             ->assertSee('Reply on X');
     }
 
+    public function testLargePostIdsStayIntactInLinks()
+    {
+        $id = '9999999999999999999';
+        $tweet = Tweet::factory()->create(['id' => $id, 'lang' => 'en']);
+
+        $this->view('inc.twitter', ['tweets' => collect([$tweet])])
+            ->assertSee('data-post="'.$id.'"', false)
+            ->assertSee('/status/'.$id.'"', false);
+    }
+
     public function testAnEmptyFeedLinksToTheEnglishOne()
     {
         App::setLocale('it');
@@ -90,6 +100,18 @@ class FeedTest extends TestCase
     public function testAnEmptyFeedHasNoIntro()
     {
         $this->view('inc.twitter', ['tweets' => collect()])->assertDontSee('feed-intro');
+    }
+
+    public function testEveryLanguageCanSayHowManyPostsWereOpened()
+    {
+        foreach (['You opened 1 post. Thank you!', 'You opened :count posts. Thank you!'] as $line) {
+            foreach (array_keys(config('laravellocalization.supportedLocales')) as $locale) {
+                if ($locale !== 'en') {
+                    $this->assertNotSame($line, __($line, [], $locale), "$locale: $line");
+                }
+            }
+        }
+        $this->assertStringContainsString(':count', __('You opened :count posts. Thank you!', [], 'de'));
     }
 
     public function testEveryLanguageHasTheIntro()
