@@ -185,7 +185,7 @@ importers:
         version: 2.11.8
       axios:
         specifier: ^1.18.0
-        version: 1.20.0
+        version: 1.20.0(debug@4.4.3)
       bootstrap:
         specifier: ^5.3.0
         version: 5.3.8(@popperjs/core@2.11.8)
@@ -194,7 +194,7 @@ importers:
         version: 4.0.0
       swiper:
         specifier: ^14.2.0
-        version: 14.2.0
+        version: 14.3.0
       vanilla-icon-picker:
         specifier: ^1.4.1
         version: 1.4.2
@@ -959,8 +959,8 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  swiper@14.2.0:
-    resolution: {integrity: sha512-GsL4M9Fq7Sg22OyL3SjdNj/0bxTfIxPJJHHW394Li0u5vYtExi0a09iBUc8CuLafJi5pAlH2AHUe1PocxHl45g==}
+  swiper@14.3.0:
+    resolution: {integrity: sha512-qw0Xv1+sylM8KCQxWxV2iYAK2G6XjFGPZ/8F1baEsY8DK4A3sTnLx6jUJ0G71rDbVQ05JHMWkcWmJ5NvlxZO0w==}
     engines: {node: '>= 4.7.0'}
 
   terser@5.43.1:
@@ -1342,9 +1342,9 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  axios@1.20.0:
+  axios@1.20.0(debug@4.4.3):
     dependencies:
-      follow-redirects: 1.16.0
+      follow-redirects: 1.16.0(debug@4.4.3)
       form-data: 4.0.6
       https-proxy-agent: 5.0.1
       proxy-from-env: 2.1.0
@@ -1444,7 +1444,9 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.5
 
-  follow-redirects@1.16.0: {}
+  follow-redirects@1.16.0(debug@4.4.3):
+    optionalDependencies:
+      debug: 4.4.3
 
   form-data@4.0.6:
     dependencies:
@@ -1646,7 +1648,7 @@ snapshots:
   source-map@0.6.1:
     optional: true
 
-  swiper@14.2.0: {}
+  swiper@14.3.0: {}
 
   terser@5.43.1:
     dependencies:
