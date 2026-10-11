@@ -184,6 +184,17 @@ class SeoTest extends TestCase
         $this->assertStringNotContainsString('<meta property="og:locale:alternate" content="en_GB">', $feed);
     }
 
+    public function testLinkPreviewsUseTheEvergreenImage()
+    {
+        $feed = $this->feed();
+
+        $this->assertStringContainsString('<meta property="og:image" content="'.asset('images/og-image.png').'?v=evergreen">', $feed);
+        $this->assertStringContainsString('<meta property="og:image:width" content="1200">', $feed);
+        $this->assertStringContainsString('<meta property="og:image:height" content="630">', $feed);
+        $this->assertStringContainsString('<meta name="theme-color" content="#00705F">', $feed);
+        $this->assertSame([1200, 630], array_slice(getimagesize(public_path('images/og-image.png')), 0, 2));
+    }
+
     public function testEveryLanguageHasItsOwnSearchSnippet()
     {
         $english = __('landing.description', [], 'en');

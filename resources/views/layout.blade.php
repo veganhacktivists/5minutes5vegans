@@ -40,8 +40,14 @@
         <meta property="og:title" content="{{ $pageTitle }}">
         <meta property="og:description" content="{{ __('landing.description') }}">
         <meta property="og:url" content="{{ url()->current() }}">
-        <meta property="og:image" content="{{ asset('images/og-image.png') }}">
+        {{-- Bump the version when the image changes, or Facebook and Discord keep showing their cached copy --}}
+        <meta property="og:image" content="{{ asset('images/og-image.png') }}?v=evergreen">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="{{ $siteName }}">
         <meta name="twitter:card" content="summary_large_image">
+        {{-- Discord colours the edge of a link preview with this --}}
+        <meta name="theme-color" content="#00705F">
         @if ($isFeed)
             @php
                 $structuredData = json_encode([
