@@ -45,6 +45,7 @@ return [
     ],
 
     'shlink' => [
+        'enabled' => env('SHLINK_ENABLED', true),
         'api_key' => env('SHLINK_API_KEY'),
     ],
 
