@@ -1,6 +1,6 @@
 [phases.setup]
 nixpkgsArchive = '02c087f3fe673c9e317f206a627cb6b910336dbe'
-nixOverlays = ['...', 'https://github.com/veganhacktivists/nixpkgs-php-overlay/archive/a0187ebe6fcff482fa953e562c3020d4412bf1bc.tar.gz']
+nixOverlays = ['...', 'https://github.com/veganhacktivists/nixpkgs-php-overlay/archive/78aac5143b12d44de233eedf6194ce1c1862e8b3.tar.gz']
 nixPkgs = [
     "...",
     "nodejs_24",
