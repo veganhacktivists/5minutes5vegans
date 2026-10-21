@@ -38,6 +38,17 @@ class ShortLinkTest extends TestCase
         Http::assertNothingSent();
     }
 
+    public function testSwitchedOffTheFullLinkIsUsedEvenWhenAShortOneIsRemembered()
+    {
+        Http::fake(['go.veganhacktivists.org/*' => Http::response(['shortUrl' => 'https://go.veganhacktivists.org/abc'])]);
+        $this->assertSame('https://go.veganhacktivists.org/abc', generate_and_cache_shlink(self::LONG));
+
+        config(['services.shlink.enabled' => false]);
+
+        $this->assertSame(self::LONG, generate_and_cache_shlink(self::LONG));
+        Http::assertSentCount(1);
+    }
+
     public function testAFailureUsesTheFullLinkAndTriesAgainInTenMinutes()
     {
         Http::fake(['go.veganhacktivists.org/*' => Http::sequence()

@@ -7,15 +7,16 @@ use Illuminate\Support\Facades\Log;
 
 function generate_and_cache_shlink($url)
 {
+    // No key locally or in CI. Checked before the cache, so switching Shlink
+    // off with SHLINK_ENABLED=false stops handing out the short links already made.
+    if (! config('services.shlink.enabled') || ! config('services.shlink.api_key')) {
+        return $url;
+    }
+
     $key = 'shlink-url-' . $url;
 
     if (($cached = Cache::get($key)) !== null) {
         return $cached;
-    }
-
-    // No key locally or in CI
-    if (! config('services.shlink.api_key')) {
-        return $url;
     }
 
     // One run shortens every language's links, so don't wait long on each
