@@ -4545,16 +4545,16 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v8.1.7",
+            "version": "v8.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "773ac57f20e2795bdadb65b5b1b5f4850d498283"
+                "reference": "8d1232052c9cdef170ed9608b3147bca4f61ff69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/773ac57f20e2795bdadb65b5b1b5f4850d498283",
-                "reference": "773ac57f20e2795bdadb65b5b1b5f4850d498283",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/8d1232052c9cdef170ed9608b3147bca4f61ff69",
+                "reference": "8d1232052c9cdef170ed9608b3147bca4f61ff69",
                 "shasum": ""
             },
             "require": {
@@ -4607,7 +4607,7 @@
                 "mime-type"
             ],
             "support": {
-                "source": "https://github.com/symfony/mime/tree/v8.1.7"
+                "source": "https://github.com/symfony/mime/tree/v8.1.10"
             },
             "funding": [
                 {
@@ -4627,7 +4627,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-04T11:02:17+00:00"
+            "time": "2026-10-28T17:58:38+00:00"
         },
         {
             "name": "symfony/options-resolver",
@@ -6685,6 +6685,7 @@
                     "type": "yoomoney"
                 }
             ],
+            "abandoned": true,
             "time": "2026-03-17T21:50:20+00:00"
         },
         {
@@ -6754,7 +6755,7 @@
                     "type": "yoomoney"
                 }
             ],
-            "abandoned": true,
+            "abandoned": "symfony/var-exporter",
             "time": "2025-02-24T15:35:24+00:00"
         },
         {
@@ -7113,16 +7114,16 @@
         },
         {
             "name": "laravel-lang/lang",
-            "version": "15.37.4",
+            "version": "15.37.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/lang.git",
-                "reference": "a3a9ef9b039d10db442bfb3bed0a97c9b50f30a7"
+                "reference": "a3c03e04bef3feef72935b16be37a11192774e16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/a3a9ef9b039d10db442bfb3bed0a97c9b50f30a7",
-                "reference": "a3a9ef9b039d10db442bfb3bed0a97c9b50f30a7",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/a3c03e04bef3feef72935b16be37a11192774e16",
+                "reference": "a3c03e04bef3feef72935b16be37a11192774e16",
                 "shasum": ""
             },
             "require": {
@@ -7183,7 +7184,7 @@
                     "type": "yoomoney"
                 }
             ],
-            "time": "2026-10-09T09:55:05+00:00"
+            "time": "2026-10-31T20:36:55+00:00"
         },
         {
             "name": "laravel-lang/locale-list",
