@@ -210,7 +210,7 @@ importers:
         version: 6.0.10(vite@8.3.8(@types/node@24.0.14)(esbuild@0.28.1)(sass@1.106.1)(terser@5.43.1))(vue@3.5.45)
       laravel-vite-plugin:
         specifier: ^3.2.0
-        version: 3.2.0(vite@8.3.8(@types/node@24.0.14)(esbuild@0.28.1)(sass@1.106.1)(terser@5.43.1))
+        version: 3.2.1(vite@8.3.8(@types/node@24.0.14)(esbuild@0.28.1)(sass@1.106.1)(terser@5.43.1))
       sass:
         specifier: ^1.89.2
         version: 1.106.1
@@ -834,12 +834,12 @@ packages:
   jquery@4.0.0:
     resolution: {integrity: sha512-TXCHVR3Lb6TZdtw1l3RTLf8RBWVGexdxL6AC8/e0xZKEpBflBsjh9/8LXw+dkNFuOyW9B7iB3O1sP7hS0Kiacg==}
 
-  laravel-vite-plugin@3.2.0:
-    resolution: {integrity: sha512-xSxY9Gzeb/eancd8WeK09piAFP+a6i5QIBqNCKNv9L0Eq6wziwzSem7F1GvMSrtjMh5F/QVKFxn8t9naGOA66A==}
+  laravel-vite-plugin@3.2.1:
+    resolution: {integrity: sha512-VqWn6U4YC1zRYVDlR/hu7JHesXqwj+DsEBSlVAe7al1MlAE5aYslyuyYV7v47DCGLGKJZxfbaZnApsIHdYIBJA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
-      fontaine: ^0.8.0
+      fontaine: ^0.8.0 || ^1.0.0
       vite: ^8.0.0
     peerDependenciesMeta:
       fontaine:
@@ -947,10 +947,6 @@ packages:
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
-
-  picomatch@4.0.5:
-    resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
-    engines: {node: '>=12'}
 
   picomatch@4.0.7:
     resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
@@ -1518,9 +1514,9 @@ snapshots:
 
   estree-walker@2.0.2: {}
 
-  fdir@6.5.0(picomatch@4.0.5):
+  fdir@6.5.0(picomatch@4.0.7):
     optionalDependencies:
-      picomatch: 4.0.5
+      picomatch: 4.0.7
 
   follow-redirects@1.16.3(debug@4.4.3):
     optionalDependencies:
@@ -1588,7 +1584,7 @@ snapshots:
 
   jquery@4.0.0: {}
 
-  laravel-vite-plugin@3.2.0(vite@8.3.8(@types/node@24.0.14)(esbuild@0.28.1)(sass@1.106.1)(terser@5.43.1)):
+  laravel-vite-plugin@3.2.1(vite@8.3.8(@types/node@24.0.14)(esbuild@0.28.1)(sass@1.106.1)(terser@5.43.1)):
     dependencies:
       picocolors: 1.1.1
       tinyglobby: 0.2.17
@@ -1665,8 +1661,6 @@ snapshots:
 
   picocolors@1.1.1: {}
 
-  picomatch@4.0.5: {}
-
   picomatch@4.0.7: {}
 
   playwright-core@1.64.1: {}
@@ -1738,8 +1732,8 @@ snapshots:
 
   tinyglobby@0.2.17:
     dependencies:
-      fdir: 6.5.0(picomatch@4.0.5)
-      picomatch: 4.0.5
+      fdir: 6.5.0(picomatch@4.0.7)
+      picomatch: 4.0.7
 
   tslib@2.9.1:
     optional: true
@@ -1752,7 +1746,7 @@ snapshots:
   vite-plugin-full-reload@1.2.0:
     dependencies:
       picocolors: 1.1.1
-      picomatch: 4.0.5
+      picomatch: 4.0.7
 
   vite@8.3.8(@types/node@24.0.14)(esbuild@0.28.1)(sass@1.106.1)(terser@5.43.1):
     dependencies:
