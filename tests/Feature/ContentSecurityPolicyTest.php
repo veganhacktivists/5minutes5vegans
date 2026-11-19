@@ -56,6 +56,13 @@ class ContentSecurityPolicyTest extends TestCase
         $this->assertNotSame($first, $second);
     }
 
+    public function testBlueskyAvatarsCanLoad()
+    {
+        $policy = $this->get(route('login'))->headers->get(ContentSecurityPolicy::HEADER);
+
+        $this->assertMatchesRegularExpression('/img-src [^;]*https:\/\/cdn\.bsky\.app/', $policy);
+    }
+
     public function testUmamiCanSendItsEvents()
     {
         config(['services.umami.website_id' => 'abc-123']);

@@ -8,15 +8,16 @@
                 <button type="button" class="feed-intro-dismiss">@lang('Got it')</button>
             </div>
         </div>
+        @include('inc.platform-toggle')
     @endif
     @forelse ($tweets as $tweet)
-        <a class="card" data-post="{{ $tweet->id }}" href="https://x.com/{{ $tweet->from_user_name }}/status/{{ $tweet->id }}" target="_blank">
+        <a class="card" data-post="{{ $tweet->id }}" data-platform="{{ $tweet->platform }}" href="{{ $tweet->link() }}" target="_blank">
             <div class="header">
                 <div class="avatar">
                     <img class="profile-pic"
                          alt=""
                          loading="lazy"
-                         src="{{ $tweet->from_profile_image }}">
+                         src="{{ $tweet->from_profile_image ?? \App\Models\Tweet::DEFAULT_AVATAR }}">
 
                     <div class="user-info">
                         <span class="fullname">{{ $tweet->from_full_name }}</span>
@@ -24,7 +25,11 @@
                     </div>
                 </div>
 
-                <img class="x-logo" src="{{ asset('images/twitter/logo.svg') }}" alt="X" width="20" height="20">
+                @if ($tweet->platform === 'bluesky')
+                    <img class="platform-logo" src="{{ asset('images/bluesky/logo.svg') }}" alt="Bluesky" width="20" height="20">
+                @else
+                    <img class="platform-logo x-logo" src="{{ asset('images/twitter/logo.svg') }}" alt="X" width="20" height="20">
+                @endif
             </div>
 
             <p class="body">{{ strip_tags(html_entity_decode($tweet->text)) }}</p>
@@ -48,7 +53,11 @@
             <p class="timestamp">
                 <time datetime="{{ $tweet->date->toIso8601String() }}">{{ $tweet->date->format('h:i A · M d, Y') }}</time>
                 <span class="opened-label"><i class="fas fa-check"></i> @lang('Opened')</span>
-                <span class="reply-on-x">@lang('Reply on X') <i class="fas fa-arrow-up-right-from-square"></i></span>
+                @if ($tweet->platform === 'bluesky')
+                    <span class="reply-on reply-on-bluesky">@lang('Reply on Bluesky') <i class="fas fa-arrow-up-right-from-square"></i></span>
+                @else
+                    <span class="reply-on reply-on-x">@lang('Reply on X') <i class="fas fa-arrow-up-right-from-square"></i></span>
+                @endif
             </p>
         </a>
     @empty

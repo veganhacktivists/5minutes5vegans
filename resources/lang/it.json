@@ -132,5 +132,9 @@
     "Delete my account": "Elimina il mio account",
     "Delete your account and all your messages?": "Eliminare il tuo account e tutti i tuoi messaggi?",
     "Current password": "Password attuale",
-    "Reply on X": "Rispondi su X"
+    "Reply on X": "Rispondi su X",
+    "Reply on Bluesky": "Rispondi su Bluesky",
+    "Show posts from": "Mostra i post da",
+    "No recent X posts in this language.": "Nessun post recente da X in questa lingua.",
+    "No recent Bluesky posts in this language.": "Nessun post recente da Bluesky in questa lingua."
 }

@@ -191,6 +191,21 @@ function xLength(text) {
     return length
 }
 
+// Count the way Bluesky's app does: graphemes, with each link cut to its host
+// and at most 16 characters of the rest (toShortUrl in bluesky-social/social-app)
+function blueskyLength(text) {
+    const withShortLinks = text.replace(/https?:\/\/\S+/g, (link) => {
+        try {
+            const url = new URL(link)
+            const rest = (url.pathname === '/' ? '' : url.pathname) + url.search + url.hash
+            return url.host + (rest.length > 15 ? rest.slice(0, 13) + '...' : rest)
+        } catch {
+            return link
+        }
+    })
+    return segmenter ? Array.from(segmenter.segment(withShortLinks)).length : Array.from(withShortLinks).length
+}
+
 // The Clipboard API, falling back to copying from a hidden box where it's
 // missing or refused
 async function copyText(text) {
@@ -236,6 +251,7 @@ export default {
                 body: ''
             },
             maxCount: 280, // The most X allows in a post
+            blueskyMaxCount: 300,
             remainingCount: 280,
             defaultMessage: window.lang.placeholder,
             lang: window.lang,
@@ -475,7 +491,11 @@ export default {
         },
 
         characterCountdown: function() {
-            this.remainingCount = this.maxCount - xLength(this.selected.body)
+            // The reply may go to either platform, so show the tighter fit
+            this.remainingCount = Math.min(
+                this.maxCount - xLength(this.selected.body),
+                this.blueskyMaxCount - blueskyLength(this.selected.body),
+            )
 
             var thresholds = CHARACTER_COUNT_STATES.filter(
                 (f) => f.threshold >= this.remainingCount,

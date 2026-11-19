@@ -257,6 +257,88 @@ test('with no posts in a language, the message sits in the middle of the feed', 
     expect(await timeline.evaluate((el) => el.scrollWidth - el.clientWidth)).toBe(0)
 })
 
+test('switching X off leaves only Bluesky posts, and the choice survives a reload', async ({ page }) => {
+    await page.goto('/en')
+    const toggle = page.locator('.platform-toggle')
+    const x = toggle.getByRole('button', { name: 'X', exact: true })
+    const bluesky = toggle.getByRole('button', { name: 'Bluesky' })
+
+    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeVisible()
+    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeVisible()
+
+    await x.click()
+    await expect(x).toHaveAttribute('aria-pressed', 'false')
+    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeHidden()
+    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeVisible()
+
+    // Hidden from the first paint, not after the page has drawn it
+    await page.reload()
+    await expect(page.locator('html')).toHaveClass(/hide-x/)
+    await expect(x).toHaveAttribute('aria-pressed', 'false')
+
+    await x.click()
+    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeVisible()
+    await expect(bluesky).toHaveAttribute('aria-pressed', 'true')
+})
+
+test('the last platform left on can\'t be switched off', async ({ page }) => {
+    await page.goto('/en')
+    const toggle = page.locator('.platform-toggle')
+    const x = toggle.getByRole('button', { name: 'X', exact: true })
+    const bluesky = toggle.getByRole('button', { name: 'Bluesky' })
+
+    await bluesky.click()
+    await expect(x).toHaveAttribute('aria-disabled', 'true')
+    // Playwright won't click a disabled button on its own
+    await x.click({ force: true })
+    await expect(x).toHaveAttribute('aria-pressed', 'true')
+    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeVisible()
+})
+
+test('the platform choice holds after a language switch', async ({ page, isMobile }) => {
+    await page.goto('/en')
+    await page.locator('.platform-toggle').getByRole('button', { name: 'X', exact: true }).click()
+    // Gone if the page reloads, which would set the choice from storage instead
+    await page.evaluate(() => { window.samePage = true })
+
+    await page.locator('.lang-switch a[hreflang="de"]:visible').click()
+    await page.waitForURL(/\/de/)
+    expect(await page.evaluate(() => window.samePage)).toBe(true)
+
+    await expect(page.locator('.platform-toggle').getByRole('button', { name: 'X', exact: true })).toHaveAttribute('aria-pressed', 'false')
+    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeHidden()
+    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeVisible()
+})
+
+test('with no posts from the platform left on, the feed says so', async ({ page }) => {
+    await page.goto('/en')
+    await page.locator('.timeline .card[data-platform="bluesky"]').evaluateAll((cards) => cards.forEach((card) => card.remove()))
+
+    await page.locator('.platform-toggle').getByRole('button', { name: 'X', exact: true }).click()
+
+    await expect(page.locator('.platform-empty:visible')).toHaveText('No recent Bluesky posts in this language.')
+})
+
+test('with X hidden, dismissing the intro moves to the first Bluesky post', async ({ page }) => {
+    await page.goto('/en')
+    // The sample posts are random, so put an X post first
+    await page.locator('.timeline').evaluate((timeline) => {
+        timeline.querySelector('.card').before(timeline.querySelector('.card[data-platform="x"]'))
+    })
+    await page.locator('.platform-toggle').getByRole('button', { name: 'X', exact: true }).click()
+
+    await page.locator('.feed-intro').getByRole('button', { name: 'Got it' }).click()
+    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeFocused()
+})
+
+test('a stored choice that makes no sense shows both platforms', async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem('hidden-platform', 'mastodon'))
+    await page.goto('/en')
+
+    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeVisible()
+    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeVisible()
+})
+
 test('the register page loads, reCAPTCHA included', async ({ page }) => {
     await page.goto('/en/register')
 
@@ -361,6 +443,18 @@ test('the reply box survives a phone turning into a wider screen', async ({ page
 // The same cases pin the PHP check that every reply fits, in TweetContentTest
 const X_LENGTHS = JSON.parse(readFileSync(new URL('../fixtures/x-length.json', import.meta.url)))
 
+test('the character counter allows for Bluesky when a long link makes it the tighter fit', async ({ page, isMobile }) => {
+    test.skip(isMobile, 'one size is enough')
+    await page.goto('/en')
+    const box = page.locator('.verbiage-msg textarea')
+
+    // X counts the link as 23 (6 left). Bluesky counts its host and path, 62 here (13 over).
+    const host = `www.${'a'.repeat(50)}.org`
+    await box.fill(`${'a'.repeat(250)} https://${host}/abc`)
+    await box.press('End')
+    expect(parseInt(await page.locator('.cc-count').innerText(), 10)).toBe(300 - (251 + host.length + 4))
+})
+
 test('the character counter counts the way X does', async ({ page, isMobile }) => {
     test.skip(isMobile, 'one size is enough')
     await page.goto('/en')
@@ -402,7 +496,7 @@ async function contrast(locator) {
 test('small text on the feed is readable', async ({ page }) => {
     await page.goto('/en')
 
-    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how']) {
+    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card .reply-on-bluesky', '.timeline .card time', '.feed-intro-how', '.platform-toggle-label']) {
         expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
     }
 })
@@ -565,7 +659,7 @@ test('in dark mode, small text on the feed is still readable', async ({ page }) 
     await page.emulateMedia({ colorScheme: 'dark' })
     await page.goto('/en')
 
-    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card time', '.feed-intro-how', '.donate-button:visible']) {
+    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card .reply-on-bluesky', '.timeline .card time', '.feed-intro-how', '.platform-toggle-label', '.donate-button:visible']) {
         expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
     }
 })

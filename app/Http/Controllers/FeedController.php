@@ -15,7 +15,11 @@ class FeedController extends Controller
     {
         $verbiages = Auth::check() ? Auth::user()->verbiages : false;
 
-        $tweets = Tweet::timeline(App::getLocale())->recent()->take(self::FEED_SIZE)->get();
+        // The newest from each platform, so a busy X can't push Bluesky out
+        $tweets = collect(Tweet::PLATFORMS)
+            ->flatMap(fn (string $platform) => Tweet::timeline(App::getLocale(), $platform)->recent()->take(self::FEED_SIZE)->get())
+            ->sortByDesc(fn (Tweet $tweet) => $tweet->date->getTimestamp())
+            ->values();
 
         return view('feed', [
             'verbiages' => $verbiages,
