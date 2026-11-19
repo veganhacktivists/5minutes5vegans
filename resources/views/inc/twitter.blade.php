@@ -24,12 +24,6 @@
                         <span class="username">{{ "@{$tweet->from_user_name}" }}</span>
                     </div>
                 </div>
-
-                @if ($tweet->platform === 'bluesky')
-                    <img class="platform-logo" src="{{ asset('images/bluesky/logo.svg') }}" alt="Bluesky" width="20" height="20">
-                @else
-                    <img class="platform-logo x-logo" src="{{ asset('images/twitter/logo.svg') }}" alt="X" width="20" height="20">
-                @endif
             </div>
 
             <p class="body">{{ strip_tags(html_entity_decode($tweet->text)) }}</p>

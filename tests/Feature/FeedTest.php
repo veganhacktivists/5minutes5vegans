@@ -126,6 +126,25 @@ class FeedTest extends TestCase
             ->assertDontSee('x.com/');
     }
 
+    // The toggle above the feed already says which platform is showing
+    public function testCardsNameTheirPlatformOnceInTheReplyLink()
+    {
+        $posts = collect([
+            Tweet::factory()->make(['id' => '1234', 'lang' => 'en']),
+            Tweet::factory()->bluesky()->make(['lang' => 'en']),
+        ]);
+
+        $html = (string) $this->view('inc.twitter', ['tweets' => $posts]);
+        preg_match_all('~<a class="card".*?</a>~s', $html, $cards);
+
+        $this->assertCount(2, $cards[0]);
+        foreach ($cards[0] as $card) {
+            $this->assertStringNotContainsString('logo.svg', $card);
+        }
+        $this->assertStringContainsString('Reply on X', $cards[0][0]);
+        $this->assertStringContainsString('Reply on Bluesky', $cards[0][1]);
+    }
+
     public function testABlueskyCardWithoutAnAvatarUsesTheDefault()
     {
         $post = Tweet::factory()->bluesky()->make(['lang' => 'en', 'from_profile_image' => null]);
