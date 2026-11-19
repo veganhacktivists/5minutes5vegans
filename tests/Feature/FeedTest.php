@@ -183,7 +183,7 @@ class FeedTest extends TestCase
     public function testTheFeedSaysWhatItIsWhenThereArePosts()
     {
         $this->view('inc.twitter', ['tweets' => collect([Tweet::factory()->make(['id' => '3001', 'lang' => 'en'])])])
-            ->assertSee('These are posts from people on X who are thinking about going vegan.')
+            ->assertSee('These are posts from people on X or Bluesky who are thinking about going vegan.')
             ->assertSee('How does it work?')
             ->assertSee('Got it');
     }

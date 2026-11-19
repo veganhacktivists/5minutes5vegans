@@ -10,7 +10,7 @@
             $siteName = __('5 Minutes 5 Vegans');
             // Pages set $pageName; the feed is the only page search engines should list
             $isFeed = request()->routeIs('feed');
-            $pageTitle = isset($pageName) ? "$pageName | $siteName" : ($isFeed ? $siteName.' | '.__('Help people on X go vegan') : $siteName);
+            $pageTitle = isset($pageName) ? "$pageName | $siteName" : ($isFeed ? $siteName.' | '.__('Help people on X and Bluesky go vegan') : $siteName);
         @endphp
         <title>{{ $pageTitle }}</title>
         @if ($isFeed)

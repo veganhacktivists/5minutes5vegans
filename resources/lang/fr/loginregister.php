@@ -2,8 +2,8 @@
 
 return [
     'how' => 'Comment ça marche ?',
-    'how-find' => 'Notre bot cherche sur X des personnes qui pensent devenir vegan et affiche leurs posts dans le fil.',
-    'how-reply' => 'Choisis-en un, copie une réponse toute prête avec des liens utiles et publie-la sur X. Il te faut un compte X.',
+    'how-find' => 'Notre bot cherche sur X et Bluesky des personnes qui pensent devenir vegan et affiche leurs posts dans le fil.',
+    'how-reply' => 'Choisis-en un, copie une réponse toute prête avec des liens utiles et publie-la sur X ou Bluesky. Il te faut un compte X ou Bluesky.',
     'how-register' => 'Avec un compte gratuit, tu peux écrire tes propres réponses et les garder à côté des nôtres.',
     'start' => 'Commencer',
     'intro' => 'Avec un compte gratuit, tu peux modifier et ajouter des réponses rapides à copier pour les questions les plus fréquentes des personnes qui s\'intéressent au véganisme.',

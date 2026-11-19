@@ -158,7 +158,7 @@ class SeoTest extends TestCase
 
     public function testEachPageHasItsOwnTitle()
     {
-        $this->assertStringContainsString('<title>5 Minutes 5 Vegans | Help people on X go vegan</title>', $this->feed());
+        $this->assertStringContainsString('<title>5 Minutes 5 Vegans | Help people on X and Bluesky go vegan</title>', $this->feed());
 
         foreach (['login' => 'Login', 'register' => 'Register', 'password.request' => 'Reset Password'] as $route => $name) {
             $html = $this->get(route($route))->assertOk()->getContent();
@@ -206,7 +206,7 @@ class SeoTest extends TestCase
 
             if ($locale !== 'en') {
                 $this->assertNotSame($english, $description, $locale);
-                $this->assertNotSame('Help people on X go vegan', __('Help people on X go vegan', [], $locale), $locale);
+                $this->assertNotSame('Help people on X and Bluesky go vegan', __('Help people on X and Bluesky go vegan', [], $locale), $locale);
             }
         }
     }
