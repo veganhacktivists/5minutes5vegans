@@ -1,6 +1,6 @@
 [phases.setup]
 nixpkgsArchive = '02c087f3fe673c9e317f206a627cb6b910336dbe'
-nixOverlays = ['...', 'https://github.com/veganhacktivists/nixpkgs-php-overlay/archive/78aac5143b12d44de233eedf6194ce1c1862e8b3.tar.gz']
+nixOverlays = ['...', 'https://github.com/veganhacktivists/nixpkgs-php-overlay/archive/2d9868fbe0b05663b811b3e769e1f21264cd371c.tar.gz']
 nixPkgs = [
     "...",
     "nodejs_24",
@@ -14,7 +14,7 @@ nixPkgs = [
 [phases.install]
 cmds = [
     'php -v',
-    '''php -r 'if (version_compare(PHP_VERSION, "8.4.27", "<")) { fwrite(STDERR, "PHP " . PHP_VERSION . " is older than required version\n"); exit(1); }' ''',
+    '''php -r 'if (version_compare(PHP_VERSION, "8.4.28", "<")) { fwrite(STDERR, "PHP " . PHP_VERSION . " is older than required version\n"); exit(1); }' ''',
     'corepack enable',
     'corepack install',
     'mkdir -p /var/log/nginx && mkdir -p /var/cache/nginx',
