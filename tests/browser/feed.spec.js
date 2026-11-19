@@ -257,47 +257,50 @@ test('with no posts in a language, the message sits in the middle of the feed', 
     expect(await timeline.evaluate((el) => el.scrollWidth - el.clientWidth)).toBe(0)
 })
 
-test('switching X off leaves only Bluesky posts, and the choice survives a reload', async ({ page }) => {
+const xButton = (page) => page.locator('.platform-toggle').getByRole('button', { name: 'X', exact: true })
+const blueskyButton = (page) => page.locator('.platform-toggle').getByRole('button', { name: 'Bluesky' })
+const cards = (page, platform) => page.locator(`.timeline .card[data-platform="${platform}"]`)
+
+test('the feed starts on X posts only', async ({ page }) => {
     await page.goto('/en')
-    const toggle = page.locator('.platform-toggle')
-    const x = toggle.getByRole('button', { name: 'X', exact: true })
-    const bluesky = toggle.getByRole('button', { name: 'Bluesky' })
 
-    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeVisible()
-    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeVisible()
-
-    await x.click()
-    await expect(x).toHaveAttribute('aria-pressed', 'false')
-    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeHidden()
-    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeVisible()
-
-    // Hidden from the first paint, not after the page has drawn it
-    await page.reload()
-    await expect(page.locator('html')).toHaveClass(/hide-x/)
-    await expect(x).toHaveAttribute('aria-pressed', 'false')
-
-    await x.click()
-    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeVisible()
-    await expect(bluesky).toHaveAttribute('aria-pressed', 'true')
+    await expect(xButton(page)).toHaveAttribute('aria-pressed', 'true')
+    await expect(blueskyButton(page)).toHaveAttribute('aria-pressed', 'false')
+    await expect(cards(page, 'x').first()).toBeVisible()
+    await expect(cards(page, 'bluesky').first()).toBeHidden()
 })
 
-test('the last platform left on can\'t be switched off', async ({ page }) => {
+test('choosing Bluesky shows only Bluesky posts, and the choice survives a reload', async ({ page }) => {
     await page.goto('/en')
-    const toggle = page.locator('.platform-toggle')
-    const x = toggle.getByRole('button', { name: 'X', exact: true })
-    const bluesky = toggle.getByRole('button', { name: 'Bluesky' })
 
-    await bluesky.click()
-    await expect(x).toHaveAttribute('aria-disabled', 'true')
-    // Playwright won't click a disabled button on its own
-    await x.click({ force: true })
-    await expect(x).toHaveAttribute('aria-pressed', 'true')
-    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeVisible()
+    await blueskyButton(page).click()
+    await expect(blueskyButton(page)).toHaveAttribute('aria-pressed', 'true')
+    await expect(xButton(page)).toHaveAttribute('aria-pressed', 'false')
+    await expect(cards(page, 'bluesky').first()).toBeVisible()
+    await expect(cards(page, 'x').first()).toBeHidden()
+
+    // Chosen from the first paint, not after the page has drawn it
+    await page.reload()
+    await expect(page.locator('html')).toHaveClass(/hide-x/)
+    await expect(blueskyButton(page)).toHaveAttribute('aria-pressed', 'true')
+
+    await xButton(page).click()
+    await expect(cards(page, 'x').first()).toBeVisible()
+    await expect(cards(page, 'bluesky').first()).toBeHidden()
+})
+
+test('choosing the platform already shown changes nothing', async ({ page }) => {
+    await page.goto('/en')
+
+    await xButton(page).click()
+    await expect(xButton(page)).toHaveAttribute('aria-pressed', 'true')
+    await expect(cards(page, 'x').first()).toBeVisible()
+    await expect(cards(page, 'bluesky').first()).toBeHidden()
 })
 
 test('the platform choice holds after a language switch', async ({ page, isMobile }) => {
     await page.goto('/en')
-    await page.locator('.platform-toggle').getByRole('button', { name: 'X', exact: true }).click()
+    await blueskyButton(page).click()
     // Gone if the page reloads, which would set the choice from storage instead
     await page.evaluate(() => { window.samePage = true })
 
@@ -305,38 +308,41 @@ test('the platform choice holds after a language switch', async ({ page, isMobil
     await page.waitForURL(/\/de/)
     expect(await page.evaluate(() => window.samePage)).toBe(true)
 
-    await expect(page.locator('.platform-toggle').getByRole('button', { name: 'X', exact: true })).toHaveAttribute('aria-pressed', 'false')
-    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeHidden()
-    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeVisible()
+    await expect(blueskyButton(page)).toHaveAttribute('aria-pressed', 'true')
+    await expect(cards(page, 'x').first()).toBeHidden()
+    await expect(cards(page, 'bluesky').first()).toBeVisible()
 })
 
-test('with no posts from the platform left on, the feed says so', async ({ page }) => {
+test('with no posts from the chosen platform, the feed says so', async ({ page }) => {
     await page.goto('/en')
-    await page.locator('.timeline .card[data-platform="bluesky"]').evaluateAll((cards) => cards.forEach((card) => card.remove()))
+    await cards(page, 'bluesky').evaluateAll((all) => all.forEach((card) => card.remove()))
 
-    await page.locator('.platform-toggle').getByRole('button', { name: 'X', exact: true }).click()
+    await blueskyButton(page).click()
 
     await expect(page.locator('.platform-empty:visible')).toHaveText('No recent Bluesky posts in this language.')
+    await xButton(page).click()
+    await expect(page.locator('.platform-empty:visible')).toHaveCount(0)
 })
 
-test('with X hidden, dismissing the intro moves to the first Bluesky post', async ({ page }) => {
+test('on Bluesky, dismissing the intro moves to the first Bluesky post', async ({ page }) => {
     await page.goto('/en')
     // The sample posts are random, so put an X post first
     await page.locator('.timeline').evaluate((timeline) => {
         timeline.querySelector('.card').before(timeline.querySelector('.card[data-platform="x"]'))
     })
-    await page.locator('.platform-toggle').getByRole('button', { name: 'X', exact: true }).click()
+    await blueskyButton(page).click()
 
     await page.locator('.feed-intro').getByRole('button', { name: 'Got it' }).click()
-    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeFocused()
+    await expect(cards(page, 'bluesky').first()).toBeFocused()
 })
 
-test('a stored choice that makes no sense shows both platforms', async ({ page }) => {
-    await page.addInitScript(() => localStorage.setItem('hidden-platform', 'mastodon'))
+test('a stored choice that makes no sense shows X', async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem('platform', 'mastodon'))
     await page.goto('/en')
 
-    await expect(page.locator('.timeline .card[data-platform="x"]').first()).toBeVisible()
-    await expect(page.locator('.timeline .card[data-platform="bluesky"]').first()).toBeVisible()
+    await expect(xButton(page)).toHaveAttribute('aria-pressed', 'true')
+    await expect(cards(page, 'x').first()).toBeVisible()
+    await expect(cards(page, 'bluesky').first()).toBeHidden()
 })
 
 test('the register page loads, reCAPTCHA included', async ({ page }) => {
@@ -496,7 +502,7 @@ async function contrast(locator) {
 test('small text on the feed is readable', async ({ page }) => {
     await page.goto('/en')
 
-    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card .reply-on-bluesky', '.timeline .card time', '.feed-intro-how', '.platform-toggle-label']) {
+    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card .reply-on-bluesky', '.timeline .card time', '.feed-intro-how', '.platform-toggle-label', '.platform-toggle button[aria-pressed="false"]']) {
         expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
     }
 })
@@ -566,7 +572,7 @@ test('when the five minutes are up, it says how many posts you opened', async ({
     await openPostsWithoutLeaving(page)
 
     // The text, as a click on a video's controls plays it and opens nothing
-    const posts = page.locator('.timeline .card .body')
+    const posts = page.locator('.timeline .card:visible .body')
     await posts.nth(0).click()
     await posts.nth(1).click()
     // The same post again counts once
@@ -591,7 +597,7 @@ for (const [how, blockFetch] of [['in place', false], ['by loading the page', tr
         await page.goto('/en')
         await openPostsWithoutLeaving(page)
 
-        await page.locator('.timeline .card .body').first().click()
+        await page.locator('.timeline .card:visible .body').first().click()
         await page.locator('.lang-switch a[hreflang="de"]:visible').click()
         await page.waitForURL(/\/de/)
         await page.clock.fastForward('05:02')
@@ -630,7 +636,7 @@ test('first-time visitors see what the feed is for, until they dismiss it', asyn
 
     await intro.getByRole('button', { name: 'Got it' }).click()
     await expect(intro).toBeHidden()
-    await expect(page.locator('.timeline .card').first()).toBeFocused()
+    await expect(page.locator('.timeline .card:visible').first()).toBeFocused()
 
     // Hidden from the first paint, not after the page has drawn it
     await page.reload()
@@ -659,7 +665,7 @@ test('in dark mode, small text on the feed is still readable', async ({ page }) 
     await page.emulateMedia({ colorScheme: 'dark' })
     await page.goto('/en')
 
-    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card .reply-on-bluesky', '.timeline .card time', '.feed-intro-how', '.platform-toggle-label', '.donate-button:visible']) {
+    for (const selector of ['.minutes-left:visible', '.cc-count', '.timeline .card .reply-on-x', '.timeline .card .reply-on-bluesky', '.timeline .card time', '.feed-intro-how', '.platform-toggle-label', '.platform-toggle button[aria-pressed="false"]', '.donate-button:visible']) {
         expect(await contrast(page.locator(selector).first()), selector).toBeGreaterThanOrEqual(4.5)
     }
 })

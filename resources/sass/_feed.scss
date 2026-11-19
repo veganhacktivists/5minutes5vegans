@@ -704,7 +704,7 @@
     }
 }
 
-// X and Bluesky switches above the posts
+// Chooses X or Bluesky posts, above the feed
 .platform-toggle {
     flex-shrink: 0;
     grid-column: 1 / -1;
@@ -729,6 +729,7 @@
         &[aria-pressed="true"] {
             border-color: $brand;
             box-shadow: inset 0 0 0 1px $brand;
+            cursor: default;
         }
 
         &[aria-pressed="false"] {
@@ -737,10 +738,6 @@
             .platform-logo {
                 opacity: .5;
             }
-        }
-
-        &[aria-disabled="true"] {
-            cursor: default;
         }
     }
 }
