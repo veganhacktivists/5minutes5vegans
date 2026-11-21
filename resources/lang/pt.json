@@ -6,7 +6,7 @@
     "All rights reserved.": "Todos os direitos reservados.",
     "Before proceeding, please check your email for a verification link.": "Antes de prosseguir, por favor verifique seu e-mail para obter um link de verificação.",
     "Got it": "Entendi",
-    "Help people on X go vegan": "Ajude pessoas no X a virar veganas",
+    "Help people on X and Bluesky go vegan": "Ajude pessoas no X e no Bluesky a virar veganas",
     "You opened 1 post. Thank you!": "Você abriu 1 post. Valeu!",
     "You opened :count posts. Thank you!": "Você abriu :count posts. Valeu!",
     "click here to request another": "clique aqui para solicitar outro",
@@ -132,5 +132,9 @@
     "Delete my account": "Excluir minha conta",
     "Delete your account and all your messages?": "Excluir sua conta e todas as suas mensagens?",
     "Current password": "Senha atual",
-    "Reply on X": "Responder no X"
+    "Reply on X": "Responder no X",
+    "Reply on Bluesky": "Responder no Bluesky",
+    "Show posts from": "Mostrar posts de",
+    "No recent X posts in this language.": "Nenhum post recente do X neste idioma.",
+    "No recent Bluesky posts in this language.": "Nenhum post recente do Bluesky neste idioma."
 }

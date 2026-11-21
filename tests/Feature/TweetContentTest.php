@@ -11,6 +11,8 @@ class TweetContentTest extends TestCase
 {
     private const X_LIMIT = 280;
 
+    private const BLUESKY_LIMIT = 300;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -79,6 +81,45 @@ class TweetContentTest extends TestCase
                 }
             }
         }
+    }
+
+    public function testEveryReplyThePageCanGetFitsOnBluesky()
+    {
+        $generator = new TweetGenerator;
+
+        foreach ($this->topicsByLocale() as $locale => $topics) {
+            foreach ($generator->generate($topics) as $topic) {
+                foreach ($topic['variants'] as $reply) {
+                    $this->assertLessThanOrEqual(self::BLUESKY_LIMIT, $this->blueskyLength($reply), "$locale {$topic['title']}: $reply");
+                }
+            }
+        }
+    }
+
+    public function testTheBlueskyCountShortensLinksLikeItsApp()
+    {
+        $this->assertSame(30, $this->blueskyLength('https://go.veganhacktivists.org/abc123'));
+        $this->assertSame(31, $this->blueskyLength('https://www.youtube.com/playlist?list=PLubRo9PzBgLzTR_ElF2IQ1i-zdEB8fMs2'));
+        $this->assertSame(1, $this->blueskyLength('🌱'));
+    }
+
+    /**
+     * Length as Bluesky's app counts it: graphemes, with each link cut to its host and at most
+     * 16 characters of the rest (toShortUrl in bluesky-social/social-app).
+     */
+    private function blueskyLength(string $text): int
+    {
+        $text = preg_replace_callback('~https?://\S+~u', function ($match) {
+            $parts = parse_url($match[0]);
+            $path = ($parts['path'] ?? '') === '/' ? '' : ($parts['path'] ?? '');
+            $path .= isset($parts['query']) ? '?'.$parts['query'] : '';
+            $path .= isset($parts['fragment']) ? '#'.$parts['fragment'] : '';
+
+            return $parts['host'].(mb_strlen($path) > 15 ? mb_substr($path, 0, 13).'...' : $path);
+        }, $text);
+        preg_match_all('/\X/u', $text, $graphemes);
+
+        return count($graphemes[0]);
     }
 
     public function testTheLengthCountMatchesXsRules()

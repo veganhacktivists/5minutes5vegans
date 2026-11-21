@@ -27,6 +27,21 @@ class TweetFactory extends Factory
         ];
     }
 
+    public function bluesky(): static
+    {
+        return $this->state(function () {
+            $did = 'did:plc:'.$this->faker->regexify('[a-z2-7]{24}');
+
+            return [
+                'platform'           => 'bluesky',
+                'id'                 => "at://$did/app.bsky.feed.post/".$this->faker->regexify('[a-z2-7]{13}'),
+                'media'              => [],
+                'from_user_name'     => $this->faker->regexify('[a-z]{5,12}').'.bsky.social',
+                'from_profile_image' => "https://cdn.bsky.app/img/avatar/plain/$did/".$this->faker->regexify('[a-z2-7]{20}').'@jpeg',
+            ];
+        });
+    }
+
     public function configure(): static
     {
         return $this->afterMaking(function (Tweet $tweet) {

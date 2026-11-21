@@ -10,11 +10,12 @@
             $siteName = __('5 Minutes 5 Vegans');
             // Pages set $pageName; the feed is the only page search engines should list
             $isFeed = request()->routeIs('feed');
-            $pageTitle = isset($pageName) ? "$pageName | $siteName" : ($isFeed ? $siteName.' | '.__('Help people on X go vegan') : $siteName);
+            $pageTitle = isset($pageName) ? "$pageName | $siteName" : ($isFeed ? $siteName.' | '.__('Help people on X and Bluesky go vegan') : $siteName);
         @endphp
         <title>{{ $pageTitle }}</title>
         @if ($isFeed)
             <script nonce="{{ Vite::cspNonce() }}">try { if (localStorage.getItem('intro-dismissed')) document.documentElement.classList.add('intro-dismissed') } catch (e) {}</script>
+            <script nonce="{{ Vite::cspNonce() }}">var shown = 'x'; try { if (localStorage.getItem('platform') === 'bluesky') shown = 'bluesky' } catch (e) {} document.documentElement.classList.add(shown === 'x' ? 'hide-bluesky' : 'hide-x')</script>
             {{-- A language switch hands the timer over (carryOver.js). Hide its digits until app.js shows where it had got to. --}}
             <script nonce="{{ Vite::cspNonce() }}">try { var carried = JSON.parse(sessionStorage.getItem('carried-over')); if (carried && carried.timerStartedAt && Date.now() - carried.at < 30000) document.documentElement.classList.add('timer-carried') } catch (e) {}</script>
         @endif
