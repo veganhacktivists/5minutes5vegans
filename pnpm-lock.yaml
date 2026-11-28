@@ -191,7 +191,7 @@ importers:
         version: 5.3.9(@popperjs/core@2.11.8)
       jquery:
         specifier: ^4.0.0
-        version: 4.0.0
+        version: 4.1.0
       swiper:
         specifier: ^14.2.0
         version: 14.4.0
@@ -812,8 +812,8 @@ packages:
     resolution: {integrity: sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==}
     engines: {node: '>=0.10.0'}
 
-  jquery@4.0.0:
-    resolution: {integrity: sha512-TXCHVR3Lb6TZdtw1l3RTLf8RBWVGexdxL6AC8/e0xZKEpBflBsjh9/8LXw+dkNFuOyW9B7iB3O1sP7hS0Kiacg==}
+  jquery@4.1.0:
+    resolution: {integrity: sha512-tnN2N83S+xD3yhmdBP4nnJ1XOO0Fl586rG23FA5h/JAe8XN3W9a1zGwDMltBptn+UpcqEKicnO61+jQ0EiF2fw==}
 
   laravel-vite-plugin@3.2.1:
     resolution: {integrity: sha512-VqWn6U4YC1zRYVDlR/hu7JHesXqwj+DsEBSlVAe7al1MlAE5aYslyuyYV7v47DCGLGKJZxfbaZnApsIHdYIBJA==}
@@ -1540,7 +1540,7 @@ snapshots:
       is-extglob: 2.1.1
     optional: true
 
-  jquery@4.0.0: {}
+  jquery@4.1.0: {}
 
   laravel-vite-plugin@3.2.1(vite@8.4.0(@types/node@24.0.14)(esbuild@0.28.1)(sass@1.108.2)(terser@5.43.1)):
     dependencies:
