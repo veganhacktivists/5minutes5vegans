@@ -16,16 +16,35 @@ class PruneTweetsCommandTest extends TestCase
     public function testOnlyTheNewestPostsInEachLanguageAreKept()
     {
         Tweet::factory()->count(7)
-            ->state(new Sequence(fn (Sequence $sequence) => ['id' => (string) (1001 + $sequence->index), 'lang' => 'en']))
+            ->state(new Sequence(fn (Sequence $sequence) => ['id' => (string) (1001 + $sequence->index), 'lang' => 'en', 'date' => now()->subHours(7 - $sequence->index)]))
             ->create();
         Tweet::factory()->count(3)
-            ->state(new Sequence(fn (Sequence $sequence) => ['id' => (string) (2001 + $sequence->index), 'lang' => 'de']))
+            ->state(new Sequence(fn (Sequence $sequence) => ['id' => (string) (2001 + $sequence->index), 'lang' => 'de', 'date' => now()->subHours(3 - $sequence->index)]))
             ->create();
 
         $this->artisan('tweets:prune', ['--keep' => 5])->assertSuccessful();
 
         $this->assertEquals(['1003', '1004', '1005', '1006', '1007'], Tweet::where('lang', 'en')->orderBy('id')->pluck('id')->all());
         $this->assertSame(3, Tweet::where('lang', 'de')->count());
+    }
+
+    public function testEachPlatformKeepsItsOwnNewestPosts()
+    {
+        // Seven new X posts, then three older Bluesky ones
+        Tweet::factory()->count(7)
+            ->state(new Sequence(fn (Sequence $sequence) => ['id' => (string) (1001 + $sequence->index), 'lang' => 'en', 'date' => now()->subHours(7 - $sequence->index)]))
+            ->create();
+        $bluesky = Tweet::factory()->bluesky()->count(3)
+            ->state(new Sequence(fn (Sequence $sequence) => ['lang' => 'en', 'date' => now()->subDays(3 - $sequence->index)]))
+            ->create();
+
+        $this->artisan('tweets:prune', ['--keep' => 2])->assertSuccessful();
+
+        $this->assertEquals(['1006', '1007'], Tweet::where('platform', 'x')->orderBy('id')->pluck('id')->all());
+        $this->assertEqualsCanonicalizing(
+            $bluesky->sortBy('date')->skip(1)->pluck('id')->all(),
+            Tweet::where('platform', 'bluesky')->pluck('id')->all(),
+        );
     }
 
     public function testItRunsDaily()

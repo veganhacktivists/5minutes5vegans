@@ -18,6 +18,7 @@ import { createApp } from 'vue'
 import { track } from './track'
 import { carryOverOnLanguageSwitch, pickUp } from './carryOver'
 import { initLanguageSwitch } from './languageSwitch'
+import { applyPlatforms, initPlatformToggle } from './platformToggle'
 import App from './components/App.vue'
 
 // Timer
@@ -182,7 +183,7 @@ $(() => {
 const INTRO_DISMISSED_KEY = 'intro-dismissed'
 $(document).on('click', '.feed-intro-dismiss', () => {
     document.documentElement.classList.add('intro-dismissed')
-    $('.timeline .card').first().trigger('focus')
+    $('.timeline .card:visible').first().trigger('focus')
     try {
         localStorage.setItem(INTRO_DISMISSED_KEY, '1')
     } catch {
@@ -263,6 +264,7 @@ function setUpTimeline() {
         card.classList.toggle('opened', opened.has(card.dataset.post))
     })
 
+    applyPlatforms()
     showPostAges()
 }
 
@@ -278,6 +280,8 @@ const markOpened = (event) => {
 }
 document.addEventListener('click', markOpened)
 document.addEventListener('auxclick', markOpened)
+
+initPlatformToggle()
 
 $(() => {
     setUpTimeline()

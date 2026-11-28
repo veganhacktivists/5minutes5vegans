@@ -15,10 +15,14 @@ class TweetApiController extends Controller
 {
     public function store(Request $request): JsonResponse
     {
+        // The bot sent X posts before it knew Bluesky, so no platform means X
+        $platform = $request->input('platform') ?? 'x';
+
         $validator = Validator::make($request->all(), [
-            'lang'   => ['required', 'string', Rule::in(array_keys(config('laravellocalization.supportedLocales')))],
-            'tweets' => 'required|array|max:50',
-            ...ValidationRules::merge('tweets', Tweet::$rules, true)
+            'lang'     => ['required', 'string', Rule::in(array_keys(config('laravellocalization.supportedLocales')))],
+            'platform' => ['nullable', Rule::in(Tweet::PLATFORMS)],
+            'tweets'   => 'required|array|max:50',
+            ...ValidationRules::merge('tweets', Tweet::rulesFor(is_string($platform) ? $platform : 'x'), true)
         ]);
 
         if ($validator->fails()) {
@@ -39,6 +43,7 @@ class TweetApiController extends Controller
 
             Tweet::create([
                 'lang' => $validated['lang'],
+                'platform' => $platform,
                 ...$tweet,
             ]);
         }

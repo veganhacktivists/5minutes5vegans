@@ -1,7 +1,7 @@
 # Working on 5 Minutes 5 Vegans
 
-Volunteers open the site, pick a post from someone on X who's thinking about
-going vegan, copy a ready-made reply and post it. A separate bot
+Volunteers open the site, pick a post from someone on X or Bluesky who's
+thinking about going vegan, copy a ready-made reply and post it. A separate bot
 ([veganhacktivists/5minutes5vegans-bot](https://github.com/veganhacktivists/5minutes5vegans-bot))
 finds the posts and sends them to `POST /api/tweets` with an `X-API-KEY` header.
 
@@ -31,8 +31,9 @@ for how production runs.
 ## Rules that are easy to break
 
 - **Replies** live in `resources/lang/{locale}/tweets.php` as plain-text parts,
-  each a list of options. Every combination has to fit on X, and
-  `TweetContentTest` checks that. Links go through `generate_and_cache_shlink()`.
+  each a list of options. Every combination has to fit on X and on Bluesky
+  (300 characters, links counted the way Bluesky's app shortens them), and
+  `TweetContentTest` checks both. Links go through `generate_and_cache_shlink()`.
   Leave `#vegan` out, because the site adds it. More in
   [resources/lang/README.md](resources/lang/README.md).
 - **Say "posts"** in anything people read, not "tweets". Code and route names

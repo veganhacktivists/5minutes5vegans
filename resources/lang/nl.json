@@ -6,7 +6,7 @@
     "All rights reserved.": "Alle rechten voorbehouden.",
     "Before proceeding, please check your email for a verification link.": "Om verder te gaan, check je e-mail voor een verificatielink.",
     "Got it": "Begrepen",
-    "Help people on X go vegan": "Help mensen op X vegan te worden",
+    "Help people on X and Bluesky go vegan": "Help mensen op X en Bluesky vegan te worden",
     "You opened 1 post. Thank you!": "Je hebt 1 post geopend. Bedankt!",
     "You opened :count posts. Thank you!": "Je hebt :count posts geopend. Bedankt!",
     "click here to request another": "vraag hier een andere aan",
@@ -132,5 +132,9 @@
     "Delete my account": "Mijn account verwijderen",
     "Delete your account and all your messages?": "Je account en al je berichten verwijderen?",
     "Current password": "Huidig wachtwoord",
-    "Reply on X": "Reageer op X"
+    "Reply on X": "Reageer op X",
+    "Reply on Bluesky": "Reageer op Bluesky",
+    "Show posts from": "Posts tonen van",
+    "No recent X posts in this language.": "Geen recente X-posts in deze taal.",
+    "No recent Bluesky posts in this language.": "Geen recente Bluesky-posts in deze taal."
 }

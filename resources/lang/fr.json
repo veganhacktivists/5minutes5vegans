@@ -3,7 +3,7 @@
   "All rights reserved.": "Tous droits réservés.",
   "Before proceeding, please check your email for a verification link.": "Avant de continuer, vérifie tes emails : tu as dû recevoir un lien de vérification.",
   "Got it": "Compris",
-  "Help people on X go vegan": "Aide des gens sur X à devenir vegan",
+  "Help people on X and Bluesky go vegan": "Aide des gens sur X et Bluesky à devenir vegan",
   "You opened 1 post. Thank you!": "Tu as ouvert 1 post. Merci !",
   "You opened :count posts. Thank you!": "Tu as ouvert :count posts. Merci !",
   "click here to request another": "cliquer ici pour faire une autre demande",
@@ -99,5 +99,9 @@
   "Delete my account": "Supprimer mon compte",
   "Delete your account and all your messages?": "Supprimer ton compte et tous tes messages ?",
   "Current password": "Mot de passe actuel",
-  "Reply on X": "Répondre sur X"
+  "Reply on X": "Répondre sur X",
+  "Reply on Bluesky": "Répondre sur Bluesky",
+  "Show posts from": "Afficher les posts de",
+  "No recent X posts in this language.": "Pas de posts X récents dans cette langue.",
+  "No recent Bluesky posts in this language.": "Pas de posts Bluesky récents dans cette langue."
 }

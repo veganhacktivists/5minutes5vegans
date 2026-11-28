@@ -41,7 +41,7 @@ class ContentSecurityPolicy
             "script-src 'nonce-$nonce' 'strict-dynamic' https: 'unsafe-inline'",
             "style-src 'self' 'unsafe-inline'",
             "font-src 'self' data:",
-            "img-src 'self' data: https://pbs.twimg.com https://abs.twimg.com",
+            "img-src 'self' data: https://pbs.twimg.com https://abs.twimg.com https://cdn.bsky.app",
             "media-src 'self' https://video.twimg.com",
             implode(' ', array_filter(['connect-src', "'self'", $umami, self::ICON_SETS])),
             'frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/',

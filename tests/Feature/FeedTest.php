@@ -18,7 +18,11 @@ class FeedTest extends TestCase
     public function testTheFeedShowsOnlyTheLatestFiftyTweets()
     {
         Tweet::factory()->count(105)
-            ->state(new Sequence(fn (Sequence $sequence) => ['id' => (string) (1000 + $sequence->index), 'lang' => 'en']))
+            ->state(new Sequence(fn (Sequence $sequence) => [
+                'id' => (string) (1000 + $sequence->index),
+                'lang' => 'en',
+                'date' => now()->subMinutes(105 - $sequence->index),
+            ]))
             ->create();
 
         $tweets = (new FeedController)()->getData()['tweets'];
@@ -26,6 +30,49 @@ class FeedTest extends TestCase
         $this->assertCount(50, $tweets);
         $this->assertEquals(1104, $tweets->first()->id);
         $this->assertEquals(1055, $tweets->last()->id);
+    }
+
+    public function testTheFeedShowsTheLatestFiftyFromEachPlatformNewestFirst()
+    {
+        // X posts on even minutes, Bluesky on odd ones, so the two interleave
+        Tweet::factory()->count(60)
+            ->state(new Sequence(fn (Sequence $sequence) => [
+                'id' => (string) (1000 + $sequence->index),
+                'lang' => 'en',
+                'date' => now()->subMinutes(2 * $sequence->index),
+            ]))
+            ->create();
+        Tweet::factory()->bluesky()->count(60)
+            ->state(new Sequence(fn (Sequence $sequence) => [
+                'lang' => 'en',
+                'date' => now()->subMinutes(2 * $sequence->index + 1),
+            ]))
+            ->create();
+
+        $tweets = (new FeedController)()->getData()['tweets'];
+
+        $this->assertCount(100, $tweets);
+        $this->assertSame(50, $tweets->where('platform', 'x')->count());
+        $this->assertSame(50, $tweets->where('platform', 'bluesky')->count());
+        $this->assertSame(['x', 'bluesky', 'x', 'bluesky'], $tweets->take(4)->pluck('platform')->all());
+
+        $dates = $tweets->map(fn ($tweet) => $tweet->date->getTimestamp())->all();
+        $sorted = $dates;
+        rsort($sorted);
+        $this->assertSame($sorted, $dates);
+    }
+
+    public function testBusyXDoesNotPushBlueskyOut()
+    {
+        Tweet::factory()->count(100)
+            ->state(new Sequence(fn (Sequence $sequence) => ['id' => (string) (1000 + $sequence->index), 'lang' => 'en', 'date' => now()->subMinutes($sequence->index)]))
+            ->create();
+        Tweet::factory()->bluesky()->create(['lang' => 'en', 'date' => now()->subDays(3)]);
+
+        $tweets = (new FeedController)()->getData()['tweets'];
+
+        $this->assertSame(1, $tweets->where('platform', 'bluesky')->count());
+        $this->assertSame('bluesky', $tweets->last()->platform);
     }
 
     // The nav is on the page twice, for phones and for the sidebar
@@ -50,6 +97,69 @@ class FeedTest extends TestCase
             ->assertSee('data-post="1234"', false)
             ->assertSee('<time datetime="2026-09-25T10:00:00+00:00">', false)
             ->assertSee('Reply on X');
+    }
+
+    public function testXCardsAreMarkedAsX()
+    {
+        $tweet = Tweet::factory()->make(['id' => '1234', 'lang' => 'en', 'from_user_name' => 'someone']);
+
+        $this->view('inc.twitter', ['tweets' => collect([$tweet])])
+            ->assertSee('data-platform="x"', false)
+            ->assertSee('href="https://x.com/someone/status/1234"', false);
+    }
+
+    public function testBlueskyCardsLinkToBluesky()
+    {
+        $post = Tweet::factory()->bluesky()->make([
+            'id' => 'at://did:plc:abc123/app.bsky.feed.post/3kxyz',
+            'lang' => 'en',
+            'from_user_name' => 'someone.bsky.social',
+        ]);
+
+        $this->view('inc.twitter', ['tweets' => collect([$post])])
+            ->assertSee('data-platform="bluesky"', false)
+            ->assertSee('data-post="at://did:plc:abc123/app.bsky.feed.post/3kxyz"', false)
+            ->assertSee('href="https://bsky.app/profile/did:plc:abc123/post/3kxyz"', false)
+            ->assertSee('@someone.bsky.social')
+            ->assertSee('Reply on Bluesky')
+            ->assertDontSee('Reply on X')
+            ->assertDontSee('x.com/');
+    }
+
+    // The toggle above the feed already says which platform is showing
+    public function testCardsNameTheirPlatformOnceInTheReplyLink()
+    {
+        $posts = collect([
+            Tweet::factory()->make(['id' => '1234', 'lang' => 'en']),
+            Tweet::factory()->bluesky()->make(['lang' => 'en']),
+        ]);
+
+        $html = (string) $this->view('inc.twitter', ['tweets' => $posts]);
+        preg_match_all('~<a class="card".*?</a>~s', $html, $cards);
+
+        $this->assertCount(2, $cards[0]);
+        foreach ($cards[0] as $card) {
+            $this->assertStringNotContainsString('logo.svg', $card);
+        }
+        $this->assertStringContainsString('Reply on X', $cards[0][0]);
+        $this->assertStringContainsString('Reply on Bluesky', $cards[0][1]);
+    }
+
+    public function testABlueskyCardWithoutAnAvatarUsesTheDefault()
+    {
+        $post = Tweet::factory()->bluesky()->make(['lang' => 'en', 'from_profile_image' => null]);
+
+        $this->view('inc.twitter', ['tweets' => collect([$post])])
+            ->assertSee('src="'.Tweet::DEFAULT_AVATAR.'"', false);
+    }
+
+    public function testReplyOnBlueskyIsTranslated()
+    {
+        App::setLocale('de');
+        $post = Tweet::factory()->bluesky()->make(['lang' => 'de']);
+
+        $this->view('inc.twitter', ['tweets' => collect([$post])])
+            ->assertSee('Auf Bluesky antworten');
     }
 
     public function testLargePostIdsStayIntactInLinks()
@@ -92,7 +202,7 @@ class FeedTest extends TestCase
     public function testTheFeedSaysWhatItIsWhenThereArePosts()
     {
         $this->view('inc.twitter', ['tweets' => collect([Tweet::factory()->make(['id' => '3001', 'lang' => 'en'])])])
-            ->assertSee('These are posts from people on X who are thinking about going vegan.')
+            ->assertSee('These are posts from people on X or Bluesky who are thinking about going vegan.')
             ->assertSee('How does it work?')
             ->assertSee('Got it');
     }
