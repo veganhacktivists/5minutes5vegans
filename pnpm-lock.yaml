@@ -194,7 +194,7 @@ importers:
         version: 4.0.0
       swiper:
         specifier: ^14.2.0
-        version: 14.4.0
+        version: 14.5.0
       vanilla-icon-picker:
         specifier: ^1.4.1
         version: 1.4.2
@@ -986,8 +986,8 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  swiper@14.4.0:
-    resolution: {integrity: sha512-6axnAuBsttFJe0gwsM5tT203/Bts0vcI+FwIX6dqFE4pUFVW6qrdRprNFQVxOYMW7V0S6A/KIqJ6JaPpNN2MCw==}
+  swiper@14.5.0:
+    resolution: {integrity: sha512-d4fR/Dj27KfLksSpz9/Ji2PdZJZZPTLBP83vZGHfJEDuWBt8EPXMpy9aM7KEEE+oSWR7T2i7lfrgJMdaox8WSg==}
     engines: {node: '>= 4.7.0'}
 
   terser@5.43.1:
@@ -1687,7 +1687,7 @@ snapshots:
   source-map@0.6.1:
     optional: true
 
-  swiper@14.4.0: {}
+  swiper@14.5.0: {}
 
   terser@5.43.1:
     dependencies:
